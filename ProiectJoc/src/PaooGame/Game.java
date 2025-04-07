@@ -3,6 +3,7 @@ package PaooGame;
 import PaooGame.GameWindow.GameWindow;
 import PaooGame.Graphics.Assets;
 import PaooGame.Tiles.Tile;
+import PaooGame.Config.Constants;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -92,7 +93,7 @@ public class Game implements Runnable
      */
     private void InitGame()
     {
-        wnd = new GameWindow("Schelet Proiect PAOO", 800, 600);
+        // wnd = new GameWindow("Schelet Proiect PAOO", Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT);
             /// Este construita fereastra grafica.
         wnd.BuildGameWindow();
             /// Se incarca toate elementele grafice (dale)
@@ -197,7 +198,7 @@ public class Game implements Runnable
      */
     private void Update()
     {
-
+        wnd.Update();
     }
 
     /*! \fn private void Draw()
@@ -237,6 +238,9 @@ public class Game implements Runnable
             Tile.waterTile.Draw(g, 2 * Tile.TILE_WIDTH, 0);
             Tile.mountainTile.Draw(g, 3 * Tile.TILE_WIDTH, 0);
             Tile.treeTile.Draw(g, 4 * Tile.TILE_WIDTH, 0);
+
+            wnd.testHitbox1.print_Hitbox(g);
+            wnd.getTestHitbox2.print_Hitbox(g);
 
             g.drawRect(1 * Tile.TILE_WIDTH, 1 * Tile.TILE_HEIGHT, Tile.TILE_WIDTH, Tile.TILE_HEIGHT);
 

@@ -2,6 +2,10 @@ package PaooGame.GameWindow;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+
+import PaooGame.Input.*;
+import PaooGame.Hitbox.Hitbox;
 
 /*! \class GameWindow
     \brief Implementeaza notiunea de fereastra a jocului.
@@ -17,7 +21,13 @@ public class GameWindow
     private int     wndWidth;       /*!< latimea ferestrei in pixeli*/
     private int     wndHeight;      /*!< inaltimea ferestrei in pixeli*/
 
+    private KeyboardInput kbIn;
+    private MouseInput mouseIn;
+
     private Canvas  canvas;         /*!< "panza/tablou" in care se poate desena*/
+
+    public Hitbox testHitbox1=new Hitbox(100,40,100,60);
+    public Hitbox getTestHitbox2=new Hitbox(120,300,200,100);
 
     /*! \fn GameWindow(String title, int width, int height)
             \brief Constructorul cu parametri al clasei GameWindow
@@ -36,6 +46,8 @@ public class GameWindow
         wndWidth    = width;    /*!< Retine latimea ferestrei.*/
         wndHeight   = height;   /*!< Retine inaltimea ferestrei.*/
         wndFrame    = null;     /*!< Fereastra nu este construita.*/
+
+
     }
 
     /*! \fn private void BuildGameWindow()
@@ -52,6 +64,9 @@ public class GameWindow
         {
             return;
         }
+
+
+
             /// Aloca memorie pentru obiectul de tip fereastra si seteaza denumirea
             /// ce apare in bara de titlu
         wndFrame = new JFrame(wndTitle);
@@ -77,6 +92,12 @@ public class GameWindow
 
             /// Creaza obiectul de tip canvas (panza) pe care se poate desena.
         canvas = new Canvas();
+        kbIn=new KeyboardInput();
+        mouseIn=new MouseInput();
+        canvas.addKeyListener(kbIn);
+        canvas.addMouseListener(mouseIn);
+        canvas.addMouseMotionListener(mouseIn);
+        canvas.setFocusable(true);
             /// In aceeasi maniera trebuiesc setate proprietatile pentru acest obiect
             /// canvas (panza): dimensiuni preferabile, minime, maxime etc.
             /// Urmotorul apel de functie seteaza dimensiunea "preferata"/implicita
@@ -118,5 +139,24 @@ public class GameWindow
      */
     public Canvas GetCanvas() {
         return canvas;
+    }
+
+
+    public void Update(){
+        //problema e ca update se realizeaza de multe ori pe secunda, deci o apasare se realizeaza de multe ori chiar daca
+        //count ramane pe 1, deci incrementez in fiecare functie un vector copie
+        int[] kbPressedCount=kbIn.getKeyPressedCount(); //vector copie care da in momentul inceperii update-ului starea apasarii
+        //daca de exemplu am apasat space o singura data, tot se va realiza de mai multe ori
+
+        int mousePressCount=mouseIn.getNumberOfMousePresses();
+
+        if(1==kbPressedCount[KeyEvent.VK_SPACE]++){ //daca la prima verificare space e apasat o data, atunci incrementeaza counter-ul pentru a arata ca s-a procesat acel input
+            System.out.println("JUMP!!");
+        }
+
+        if(1==mousePressCount++){
+            System.out.println(mouseIn.getMouseX()+" "+mouseIn.getMouseY());
+        }
+
     }
 }
