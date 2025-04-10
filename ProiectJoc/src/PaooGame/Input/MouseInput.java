@@ -18,10 +18,11 @@ public class MouseInput implements MouseInputListener, MouseMotionListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        if(numberOfMousePresses<Integer.MAX_VALUE) //NU merge cum as vrea
-            numberOfMousePresses+=1;
-        mouseX= MouseInfo.getPointerInfo().getLocation().x;
-        mouseY= MouseInfo.getPointerInfo().getLocation().y;
+        if(numberOfMousePresses < Integer.MAX_VALUE)
+            numberOfMousePresses += 1;
+
+        mouseX = e.getX();  // ← corect față de componenta care a primit evenimentul
+        mouseY = e.getY();  // ← la fel
     }
 
     @Override
@@ -33,7 +34,8 @@ public class MouseInput implements MouseInputListener, MouseMotionListener {
 
     @Override
     public void mouseMoved(MouseEvent e) {
-
+        mouseX = e.getX();
+        mouseY = e.getY();
     }
 
     @Override

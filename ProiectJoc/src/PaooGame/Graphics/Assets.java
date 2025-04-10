@@ -9,9 +9,9 @@ import java.awt.image.BufferedImage;
  */
 public class Assets
 {
-        /// Referinte catre elementele grafice (dale) utilizate in joc.
-    public static BufferedImage playerLeft;
-    public static BufferedImage playerRight;
+    /// Referinte catre elementele grafice (dale) utilizate in joc.
+    public static BufferedImage heroLeft;
+    public static BufferedImage heroRight;
     public static BufferedImage soil;
     public static BufferedImage grass;
     public static BufferedImage mountain;
@@ -33,10 +33,10 @@ public class Assets
      */
     public static void Init()
     {
-            /// Se creaza temporar un obiect SpriteSheet initializat prin intermediul clasei ImageLoader
+        /// Se creaza temporar un obiect SpriteSheet initializat prin intermediul clasei ImageLoader
         SpriteSheet sheet = new SpriteSheet(ImageLoader.LoadImage("/textures/PaooGameSpriteSheet.png"));
 
-            /// Se obtin subimaginile corespunzatoare elementelor necesare.
+        /// Se obtin subimaginile corespunzatoare elementelor necesare.
         grass = sheet.crop(0, 0);
         soil = sheet.crop(1, 0);
         water = sheet.crop(2, 0);
@@ -45,8 +45,8 @@ public class Assets
         townGrassDestroyed = sheet.crop(1, 1);
         townSoil = sheet.crop(2, 1);
         tree = sheet.crop(3, 1);
-        playerLeft = sheet.crop(0, 2);
-        playerRight = sheet.crop(1, 2);
+        heroLeft = sheet.crop(0, 2);
+        heroRight = sheet.crop(1, 2);
         rockUp = sheet.crop(2, 2);
         rockDown = sheet.crop(3, 2);
         rockLeft = sheet.crop(0, 3);
