@@ -39,12 +39,11 @@ public class MenuState extends State  {
 
         if (mouse.getNumberOfMousePresses() > 0) {
             if (startButton.contains(mx, my)) {
-                System.out.println("Start Game apăsat!");
-                State.SetState(refLink.GetGame().GetPlayState());
-            } else if (settingsButton.contains(mx, my)) {
-                System.out.println("Settings apăsat!");
-            } else if (quitButton.contains(mx, my)) {
-                System.out.println("Quit apăsat!");
+                State.SetState(refLink.GetGame().GetLevel1State());
+            }
+            else if (settingsButton.contains(mx, my)) {
+            }
+            else if (quitButton.contains(mx, my)) {
                 System.exit(0);
             }
             // Resetăm mouse-ul după ce a fost tratat
@@ -112,22 +111,19 @@ public class MenuState extends State  {
     }
 
 
-    // Adaugă mouse listener (poți să-l adaugi în Game sau JFrame)
-    public void mousePressed(MouseEvent e) {
-        int mx = e.getX();
-        int my = e.getY();
-
-        if (startButton.contains(mx, my)) {
-            // Start game
-            State.SetState(refLink.GetGame().GetPlayState());
-        } else if (settingsButton.contains(mx, my)) {
-            // Settings - schimbă în SettingsState, dacă ai unul
-            System.out.println("Settings pressed");
-        } else if (quitButton.contains(mx, my)) {
-            System.exit(0);
-        }
-        if (startButton.contains(mx, my)) {
-            State.SetState(refLink.GetGame().GetPlayState());
-        }
-    }
+//    // Adaugă mouse listener (poți să-l adaugi în Game sau JFrame)
+//    public void mousePressed(MouseEvent e) {
+//        int mx = e.getX();
+//        int my = e.getY();
+//
+//        if (startButton.contains(mx, my)) {
+//            // Start game
+//            State.SetState(refLink.GetGame().GetLevel1State());
+//        } else if (settingsButton.contains(mx, my)) {
+//            // Settings - schimbă în SettingsState, dacă ai unul
+//            System.out.println("Settings pressed");
+//        } else if (quitButton.contains(mx, my)) {
+//            System.exit(0);
+//        }
+//    }
 }

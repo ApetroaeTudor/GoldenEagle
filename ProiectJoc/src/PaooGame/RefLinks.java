@@ -1,90 +1,49 @@
 package PaooGame;
 
 import PaooGame.Input.MouseInput;
-import PaooGame.Maps.Map;
 
 import PaooGame.Input.KeyManager;
+import PaooGame.Tiles.TileCache;
 
-/*! \class public class RefLinks
-    \brief Clasa ce retine o serie de referinte ale unor elemente pentru a fi usor accesibile.
+import java.awt.*;
 
-    Altfel ar trebui ca functiile respective sa aiba o serie intreaga de parametri si ar ingreuna programarea.
- */
 public class RefLinks
 {
-    private Game game;          /*!< Referinta catre obiectul Game.*/
-    private Map map;            /*!< Referinta catre harta curenta.*/
+    private Game game;
     private KeyManager keyManager;
     private MouseInput mouseInput;
 
-    /*! \fn public RefLinks(Game game)
-        \brief Constructorul de initializare al clasei.
+    private TileCache tileCache;
 
-        \param game Referinta catre obiectul game.
-     */
     public RefLinks(Game game)
     {
         this.game = game;
+        this.tileCache=new TileCache();
     }
 
-    /*! \fn public KeyManager GetKeyManager()
-        \brief Returneaza referinta catre managerul evenimentelor de tastatura.
-     */
     public KeyManager GetKeyManager()
     {
         return game.GetKeyManager();
     }
 
-    /*! \fn public int GetWidth()
-        \brief Returneaza latimea ferestrei jocului.
-     */
     public int GetWidth()
     {
         return game.GetWidth();
     }
 
-    /*! \fn public int GetHeight()
-        \brief Returneaza inaltimea ferestrei jocului.
-     */
     public int GetHeight()
     {
         return game.GetHeight();
     }
 
-    /*! \fn public Game GetGame()
-        \brief Intoarce referinta catre obiectul Game.
-     */
     public Game GetGame()
     {
         return game;
     }
 
-    /*! \fn public void SetGame(Game game)
-        \brief Seteaza referinta catre un obiect Game.
-
-        \param game Referinta obiectului Game.
-     */
     public void SetGame(Game game)
     {
         this.game = game;
-    }
-
-    /*! \fn public Map GetMap()
-        \brief Intoarce referinta catre harta curenta.
-     */
-    public Map GetMap()
-    {
-        return map;
-    }
-
-    /*! \fn public void SetMap(Map map)
-        \brief Seteaza referinta catre harta curenta.
-
-        \param map Referinta catre harta curenta.
-     */
-    public void SetMap(Map map)
-    {
-        this.map = map;
     }
 
     public void SetKeyManager(KeyManager keyManager) {
@@ -96,5 +55,13 @@ public class RefLinks
 
     public void SetMouseInput(MouseInput mouseInput) {
         this.mouseInput = mouseInput;
+    }
+
+
+    public void setTileCache(TileCache tileCache){
+        this.tileCache=tileCache;
+    }
+    public TileCache getTileCache(){
+        return this.tileCache;
     }
 }
