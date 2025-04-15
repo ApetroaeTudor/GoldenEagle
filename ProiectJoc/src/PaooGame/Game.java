@@ -53,7 +53,9 @@ public class Game implements Runnable
 
         mouseInput = new MouseInput();
         keyManager = new KeyManager();
-        wnd.GetWndFrame().addKeyListener(keyManager);
+        wnd.GetCanvas().addKeyListener(keyManager);
+        wnd.GetCanvas().setFocusable(true);
+        wnd.GetCanvas().requestFocusInWindow();
         wnd.GetCanvas().addMouseListener(mouseInput);
         wnd.GetCanvas().addMouseMotionListener(mouseInput);
         Assets.Init();
