@@ -1,42 +1,111 @@
-
 package PaooGame.States;
-import PaooGame.Items.Hero; // adaugă importul pentru Hero
+
+import PaooGame.Camera.Camera;
 import PaooGame.Config.Constants;
+import PaooGame.HUD.HealthBar;
+import PaooGame.Hero.Hero;
+import PaooGame.Input.MouseInput;
 import PaooGame.Maps.Level1;
 import PaooGame.RefLinks;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
+import PaooGame.HUD.PauseButton;
+
 
 public class Level1State extends State {
     private Level1 level1;
-    private Hero hero;
-    private BufferedImage backgroundImage;
+    private Camera camera;
+    private HealthBar healthBar;
+    private PauseButton pauseButton;
+    private int levelWidth;  // Lățimea totală a nivelului în pixeli
+    private int levelHeight; // Înălțimea totală a nivelului în pixeli
 
     public Level1State(RefLinks refLink) {
         super(refLink);
         level1 = new Level1();
-        hero = new Hero(refLink, 100, 470);
+        camera = new Camera(0, 0, Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT);
+        healthBar = new HealthBar(refLink.GetHero());
+        pauseButton = new PauseButton(refLink.GetHero(), 80, 50);
+        // Calculează dimensiunile totale ale nivelului
+        levelWidth = Constants.LEVEL1_WIDTH * Constants.TILE_SIZE;
+        levelHeight = Constants.LEVEL1_HEIGHT * Constants.TILE_SIZE;
     }
 
     @Override
     public void Update() {
-        hero.Update();
+        this.refLink.GetHero().Update();
+        Hero hero = refLink.GetHero();
+
+        if (refLink.GetKeyManager().isKeyPressedOnce(KeyEvent.VK_ESCAPE)) {
+            State.SetState(refLink.GetGame().GetPauseMenuState());
+
+        }
+        MouseInput mouse = refLink.GetMouseInput();
+        Point mousePos = new Point(mouse.getMouseX(), mouse.getMouseY());
+        pauseButton.updateHover(mousePos.x, mousePos.y); // fără transformare
+        if (mouse.getNumberOfMousePresses() > 0 && pauseButton.isClicked(mousePos.x, mousePos.y)) {
+            State.SetState(refLink.GetGame().GetPauseMenuState()); // Acum trimite către meniul de pauză
+            mouse.mouseReleased(null);
+            return;
+        }
+
+
+        // Calculează centrul eroului
+        float heroCenterX = hero.getX() + hero.getWidth() / 2;
+        float heroCenterY = hero.getY() + hero.getHeight() / 2;
+
+        // Calculează poziția camerei
+        double cameraX = heroCenterX - (Constants.WINDOW_WIDTH / 2) / camera.getScale();
+        double cameraY = heroCenterY - (Constants.WINDOW_HEIGHT / 2) / camera.getScale();
+
+        camera.setPosition(
+                heroCenterX - (Constants.WINDOW_WIDTH / 2.0) / camera.getScale(),
+                heroCenterY - (Constants.WINDOW_HEIGHT / 2.0) / camera.getScale()
+        );
+
+        // Limitează camera la dimensiunile nivelului
+        cameraX = Math.max(cameraX, 0);
+        cameraX = Math.min(cameraX, levelWidth - Constants.WINDOW_WIDTH / camera.getScale());
+        cameraY = Math.max(cameraY, 0);
+        cameraY = Math.min(cameraY, levelHeight - Constants.WINDOW_HEIGHT / camera.getScale());
+
+        camera.setPosition(cameraX, cameraY);
     }
 
     @Override
     public void Draw(Graphics g) {
-        BufferedImage backgroundImage = level1.getBackgroundImage();
-        g.drawImage(backgroundImage, 0, 0, Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT, null);
+        Graphics2D g2d = (Graphics2D) g;
+        AffineTransform originalTransform = g2d.getTransform();
 
+        // Aplică transformarea camerei
+        camera.apply(g2d);
+
+        // Desenează fundalul (acoperă întregul nivel)
+        BufferedImage backgroundImage = this.refLink.getTileCache().getBackground(Constants.LEVEL1_BG_PATH);
+        g.drawImage(backgroundImage, 0, 0, levelWidth, levelHeight, null); // Folosește levelWidth și levelHeight
+
+        // Desenează tile-urile nivelului
         for (int i = 0; i < Constants.LEVEL1_TILE_NR; ++i) {
             int currentID = this.level1.getVisualIDs()[i];
             if (currentID != -1) {
                 this.refLink.getTileCache()
-                        .getTile(this.level1.getLevel1TexturesPath(), currentID)
-                        .Draw(g, (i % 70) * 16, (i / 70) * 16);
+                        .getTile(Constants.LEVEL1_TEXTURES_PATH, currentID)
+                        .Draw(g, (i % Constants.LEVEL1_WIDTH) * Constants.TILE_SIZE,
+                                (i / Constants.LEVEL1_WIDTH) * Constants.TILE_SIZE);
             }
         }
-        hero.Draw(g); // desenează eroul după tile-uri
+
+        this.refLink.GetHero().Draw(g);
+
+        // Restabilește transformarea
+        g2d.setTransform(originalTransform);
+        healthBar.draw(g2d);
+        pauseButton.draw(g2d);
+    }
+
+    public Level1 getLevel1() {
+        return level1;
     }
 }
-

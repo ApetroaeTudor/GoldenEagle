@@ -3,6 +3,7 @@ package PaooGame;
 import PaooGame.Config.Constants;
 import PaooGame.GameWindow.GameWindow;
 import PaooGame.Graphics.Assets;
+import PaooGame.Hero.Hero;
 import PaooGame.Input.KeyManager;
 import PaooGame.Input.MouseInput;
 import PaooGame.Maps.Level1;
@@ -11,21 +12,20 @@ import PaooGame.Tiles.Tile;
 import PaooGame.Tiles.TileCache;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
 
-public class Game implements Runnable
-{
+public class Game implements Runnable {
     private GameWindow wnd;
     private boolean runState;
     private Thread gameThread;
     private BufferStrategy bs;
 
     private Graphics g;
-
-    private PlayState playState;
     private State menuState;
     private State settingsState;
     private Level1State level1State;
+    private State pauseMenuState;
     private State aboutState;
     private KeyManager keyManager;
     private RefLinks refLink;
@@ -33,31 +33,32 @@ public class Game implements Runnable
 
     private TileCache tileCache;
     private Level1 level1;
+    private Hero hero;
 
     private Tile tile;
 
-    public Game(String title, int width, int height)
-    {
+    public Game(String title, int width, int height) {
         wnd = new GameWindow(title, width, height);
         runState = false;
-        keyManager = new KeyManager();
     }
 
-    private void InitGame()
-    {
-        tileCache=new TileCache();
-        level1=new Level1();
+    private void InitGame() {
+
+
+        tileCache = TileCache.getInstance();
+        level1 = new Level1();
 
 
         wnd.BuildGameWindow();
 
         mouseInput = new MouseInput();
-        keyManager = new KeyManager();
+        this.keyManager = new KeyManager();
+//        wnd.GetWndFrame().addKeyListener(keyManager);
         wnd.GetCanvas().addKeyListener(keyManager);
-        wnd.GetCanvas().setFocusable(true);
-        wnd.GetCanvas().requestFocusInWindow();
         wnd.GetCanvas().addMouseListener(mouseInput);
         wnd.GetCanvas().addMouseMotionListener(mouseInput);
+
+
         Assets.Init();
 
 
@@ -66,29 +67,32 @@ public class Game implements Runnable
         refLink.SetMouseInput(mouseInput);
         refLink.setTileCache(tileCache);
 
-        playState       = new PlayState(refLink);
-        menuState       = new MenuState(refLink);
-        settingsState   = new SettingsState(refLink);
-        aboutState      = new AboutState(refLink);
-        level1State     = new Level1State(refLink);
+
+        hero = new Hero(refLink, 100, 100);
+        this.refLink.SetHero(hero);
+
+
+        menuState = new MenuState(refLink);
+        settingsState = new SettingsState(refLink);
+        aboutState = new AboutState(refLink);
+        level1State = new PaooGame.States.Level1State(refLink);
+        pauseMenuState = new PauseMenuState(refLink);
         State.SetState(menuState);
     }
 
-    public void run()
-    {
+
+    public void run() {
         InitGame();
         long oldTime = System.nanoTime();
         long curentTime;
 
 
-        final int framesPerSecond   = 60;
-        final double timeFrame      = 1000000000 / framesPerSecond;
+        final int framesPerSecond = 60;
+        final double timeFrame = 1000000000 / framesPerSecond;
 
-        while (runState == true)
-        {
+        while (runState == true) {
             curentTime = System.nanoTime();
-            if((curentTime - oldTime) > timeFrame)
-            {
+            if ((curentTime - oldTime) > timeFrame) {
                 Update();
                 Draw();
                 oldTime = curentTime;
@@ -97,69 +101,49 @@ public class Game implements Runnable
 
     }
 
-    public synchronized void StartGame()
-    {
-        if(runState == false)
-        {
+    public synchronized void StartGame() {
+        if (runState == false) {
             runState = true;
             gameThread = new Thread(this);
             gameThread.start();
-        }
-        else
-        {
+        } else {
             return;
         }
     }
 
-    public synchronized void StopGame()
-    {
-        if(runState == true)
-        {
+    public synchronized void StopGame() {
+        if (runState == true) {
             runState = false;
-            try
-            {
+            try {
                 gameThread.join();
-            }
-            catch(InterruptedException ex)
-            {
+            } catch (InterruptedException ex) {
                 ex.printStackTrace();
             }
-        }
-        else
-        {
+        } else {
             return;
         }
     }
 
-    private void Update()
-    {
-        keyManager.Update();
-        if(State.GetState() != null)
-        {
+    private void Update() {
+        if (State.GetState() != null) {
             State.GetState().Update();
         }
     }
 
-    private void Draw()
-    {
+    private void Draw() {
         bs = wnd.GetCanvas().getBufferStrategy();
-        if(bs == null)
-        {
-            try
-            {
+        if (bs == null) {
+            try {
                 wnd.GetCanvas().createBufferStrategy(3);
                 return;
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
         g = bs.getDrawGraphics();
         g.clearRect(0, 0, wnd.GetWndWidth(), wnd.GetWndHeight());
 
-        if(State.GetState() != null)
-        {
+        if (State.GetState() != null) {
             State.GetState().Draw(g);
         }
 
@@ -168,30 +152,40 @@ public class Game implements Runnable
         g.dispose();
     }
 
-    public int GetWidth()
-    {
+    public int GetWidth() {
         return wnd.GetWndWidth();
     }
 
-    public int GetHeight()
-    {
+    public int GetHeight() {
         return wnd.GetWndHeight();
     }
 
-    public KeyManager GetKeyManager()
-    {
+    public KeyManager GetKeyManager() {
         return keyManager;
     }
 
-    public Level1State GetLevel1State(){
+    public Level1State GetLevel1State() {
         return level1State;
     }
-    public PlayState GetPlayState() {
-        return playState;
-    }
+
     public MouseInput GetMouseInput() {
         return mouseInput;
     }
 
-}
+    public State GetPlayState() {
+        return level1State;
+    }
 
+
+    public State GetPauseMenuState() {
+        return pauseMenuState;
+    }
+
+    public State GetMenuState() {
+        return menuState;
+    }
+
+    public void ResetLevel1State() {
+        level1State = new Level1State(refLink);
+    }
+}

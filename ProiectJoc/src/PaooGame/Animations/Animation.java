@@ -1,39 +1,37 @@
 package PaooGame.Animations;
 
+import PaooGame.RefLinks;
+
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class Animation {
-    private int speed, index;
-    private long lastTime, timer;
-    private BufferedImage[] frames;
+public abstract class Animation {
 
-    public Animation(int speed, BufferedImage[] frames) {
-        this.speed = speed;
-        this.frames = frames;
-        index = 0;
-        timer = 0;
-        lastTime = System.currentTimeMillis();
+
+    protected BufferedImage imageSheet;
+    protected BufferedImage[] animationArray;
+    protected int animationState;
+    protected int animationSpeed;
+    protected int nrOfFrames;
+
+    protected RefLinks reflink;
+
+    protected int tick;
+
+    protected int ImgWidth;
+    protected int ImgHeight;
+
+    protected Animation(){
+        animationState=0;
+        animationSpeed=0;
+        nrOfFrames=0;
+        tick=0;
+        ImgHeight=0;
+        ImgWidth=0;
     }
 
-    public void Update() {
-        timer += System.currentTimeMillis() - lastTime;
-        lastTime = System.currentTimeMillis();
+    public abstract void loadAnimation();
+    public abstract void updateAnimation();
 
-        if (timer > speed) {
-            index++;
-            timer = 0;
-            if (index >= frames.length)
-                index = 0;
-        }
-    }
-
-    public BufferedImage getCurrentFrame() {
-        return frames[index];
-    }
-
-    public void reset() {
-        index = 0;
-        timer = 0;
-        lastTime = System.currentTimeMillis();
-    }
+    public abstract void paintAnimation(Graphics g, int x, int y,boolean flipped);
 }

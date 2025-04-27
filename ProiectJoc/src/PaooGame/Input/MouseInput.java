@@ -21,8 +21,8 @@ public class MouseInput implements MouseInputListener, MouseMotionListener {
         if(numberOfMousePresses < Integer.MAX_VALUE)
             numberOfMousePresses += 1;
 
-        mouseX = e.getX();  // ← corect față de componenta care a primit evenimentul
-        mouseY = e.getY();  // ← la fel
+        mouseX = e.getX();
+        mouseY = e.getY();
     }
 
     @Override

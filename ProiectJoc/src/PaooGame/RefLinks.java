@@ -1,5 +1,6 @@
 package PaooGame;
 
+import PaooGame.Hero.Hero;
 import PaooGame.Input.MouseInput;
 
 import PaooGame.Input.KeyManager;
@@ -13,12 +14,15 @@ public class RefLinks
     private KeyManager keyManager;
     private MouseInput mouseInput;
 
+
+    private Hero hero;
+
     private TileCache tileCache;
 
     public RefLinks(Game game)
     {
         this.game = game;
-        this.tileCache=new TileCache();
+//        this.tileCache=new TileCache();
     }
 
     public KeyManager GetKeyManager()
@@ -57,11 +61,23 @@ public class RefLinks
         this.mouseInput = mouseInput;
     }
 
+    public void SetHero(Hero hero){
+        this.hero=hero;
+    }
+    public Hero GetHero(){
+        return this.hero;
+    }
+
 
     public void setTileCache(TileCache tileCache){
         this.tileCache=tileCache;
     }
     public TileCache getTileCache(){
         return this.tileCache;
+    }
+
+
+    public MouseInput getMouseInput() {
+        return this.mouseInput;
     }
 }

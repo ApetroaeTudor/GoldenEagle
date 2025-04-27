@@ -1,18 +1,36 @@
 package PaooGame.Tiles;
+import PaooGame.Config.Constants;
+
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 import java.util.AbstractMap;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 public class TileCache {
+
+    private TileCache(){
+
+    }
+
+    private static TileCache instance=null;
+
+    public static TileCache getInstance(){
+        if(instance==null){
+            return new TileCache();
+        }
+        return instance;
+    }
+
     private static final Map<Entry<String,Integer>,Tile> cache = new HashMap<>();
     //mapare context-id-tileCuTextura
     private static final Map<String,BufferedImage> tilesheets=new HashMap<>();
 
+    private static final Map<String,BufferedImage> backgrounds=new HashMap<>();
+
+    private static final Map<String,BufferedImage> HeroStates=new HashMap<>();
 
     public Tile getTile(String path, int id){
         Entry<String,Integer> key=new AbstractMap.SimpleEntry<>(path,id);
@@ -51,6 +69,77 @@ public class TileCache {
         return tile;
 
     }
-   //vreau sa le pastrez in hash map cu source - id -->> tile cu loaded texture
-    // la find vreau sa dau sursa si id-ul si sa imi returneze tile-ul sau sa creeze unul nou si sa il returneze
+
+
+    public BufferedImage getBackground(String path){
+        if(backgrounds.containsKey(path)){
+            return backgrounds.get(path);
+        }
+        else{
+            try{
+                File f=new File(Constants.LEVEL1_BG_PATH);
+                if(!f.exists()){
+                    System.err.println("Background file not found: "+ Constants.LEVEL1_BG_PATH);
+
+                }
+                else{
+                    backgrounds.put(path,ImageIO.read(f));
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return backgrounds.get(path);
+
+    }
+
+
+    public BufferedImage getHeroState(Constants.HERO_STATES state){
+        BufferedImage returnIMG=null;
+        try{
+            File heroFileSheet=new File(Constants.HERO_SPRITE_SHEET_PATH);
+            if(!heroFileSheet.exists()){
+                System.err.println("No file found at path " + Constants.HERO_SPRITE_SHEET_PATH);
+            }
+            switch (state){
+                case IDLE:
+                    if(!HeroStates.containsKey("IDLE"))
+                        HeroStates.put("IDLE",ImageIO.read(heroFileSheet).getSubimage(0,48*0,48*10,48));
+                    returnIMG=HeroStates.get("IDLE");
+                    break;
+                case RUNNING:
+                    if(!HeroStates.containsKey("RUNNING"))
+                        HeroStates.put("RUNNING",ImageIO.read(heroFileSheet).getSubimage(0,48*1,48*10,48));
+                    returnIMG=HeroStates.get("RUNNING");
+                    break;
+                case JUMPING:
+                    if(!HeroStates.containsKey("JUMPING"))
+                        HeroStates.put("JUMPING",ImageIO.read(heroFileSheet).getSubimage(0,48*2,48*10,48));
+                    returnIMG=HeroStates.get("JUMPING");
+                    break;
+                case ATTACKING:
+                    if(!HeroStates.containsKey("ATTACKING"))
+                        HeroStates.put("ATTACKING",ImageIO.read(heroFileSheet).getSubimage(0,48*3,48*10,48));
+                    returnIMG=HeroStates.get("ATTACKING");
+                    break;
+                case CROUCHING:
+                    if(!HeroStates.containsKey("CROUCHING"))
+                        HeroStates.put("CROUCHING",ImageIO.read(heroFileSheet).getSubimage(0,48*4,48*10,48));
+                    returnIMG=HeroStates.get("CROUCHING");
+                    break;
+                case FALLING:
+                    if(!HeroStates.containsKey("FALLING"))
+                        HeroStates.put("FALLING",ImageIO.read(heroFileSheet).getSubimage(0,48*2,48*10,48));
+                    returnIMG=HeroStates.get("FALLING");
+                    break;
+                default:
+                    System.err.println("INVALID STATE GIVEN");
+                    break;
+            }
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+        return returnIMG;
+    }
 }
