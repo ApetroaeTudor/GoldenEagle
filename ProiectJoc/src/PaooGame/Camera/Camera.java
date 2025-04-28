@@ -9,32 +9,29 @@ import static PaooGame.Config.Constants.*;
 
 public class Camera {
     private double xOffset, yOffset;
-    private int screenWidth, screenHeight;
-    private double scale = 1.0;
-    private int levelWidthInPixels;
-    private int levelHeightInPixels;
+    private double scale = 2.3;
 
-    public Camera(double xOffset, double yOffset, int screenWidth, int screenHeight) {
+    public Camera(double xOffset, double yOffset) {
         this.xOffset = xOffset;
         this.yOffset = yOffset;
-        this.screenWidth = screenWidth;
-        this.screenHeight = screenHeight;
     }
 
     public void apply(Graphics2D g2d) {
-        g2d.translate(-xOffset, -yOffset);
+        AffineTransform transform = new AffineTransform();
+        transform.translate(-xOffset* Constants.MAGIC_NUMBER, -yOffset);
+        transform.scale(scale, scale);
+        g2d.transform(transform);
     }
 
-
-    public void smoothFollow(double targetX, double targetY, double smoothness) {
-        xOffset += (targetX - xOffset) * smoothness;
-        yOffset += (targetY - yOffset) * smoothness;
-
-        xOffset = Math.max(0, Math.min(xOffset, levelWidthInPixels - screenWidth));
-        yOffset = Math.max(0, Math.min(yOffset, levelHeightInPixels - screenHeight));
-
-        System.out.println("Camera offset: " + xOffset + ", " + yOffset);
-    }
+//    public void smoothFollow(double targetX, double targetY, double smoothness) {
+//        xOffset += (targetX - xOffset) * smoothness;
+//        yOffset += (targetY - yOffset) * smoothness;
+//
+//        xOffset = Math.max(0, Math.min(xOffset, levelWidthInPixels - screenWidth));
+//        yOffset = Math.max(0, Math.min(yOffset, levelHeightInPixels - screenHeight));
+//
+//        System.out.println("Camera offset: " + xOffset + ", " + yOffset);
+//    }
 
 
 
@@ -52,11 +49,6 @@ public class Camera {
 
     public double getyOffset() {
         return yOffset;
-    }
-
-    public void setLevelBounds(int levelWidthInTiles, int levelHeightInTiles) {
-        this.levelWidthInPixels = levelWidthInTiles * Constants.TILE_SIZE;
-        this.levelHeightInPixels = levelHeightInTiles * Constants.TILE_SIZE;
     }
 
 

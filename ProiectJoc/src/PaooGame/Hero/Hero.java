@@ -89,9 +89,6 @@ public class Hero {
         updateVisualPosition();
         updateAnimationState();
 
-        System.out.println(this.headingLeft);
-
-
     }
 
     private void handleInput() {
@@ -309,7 +306,7 @@ public class Hero {
 //        this.idleAnimation.paintAnimation(g,(int)this.x,(int)this.y);
         this.getAnimationByState().paintAnimation(g,(int)this.x,(int)this.y,this.headingLeft);
 
-        this.hitbox.printHitbox(g);
+//        this.hitbox.printHitbox(g);
     }
 
     public float getX() {

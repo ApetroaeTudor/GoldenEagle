@@ -25,7 +25,7 @@ public class Level1State extends State {
     public Level1State(RefLinks refLink) {
         super(refLink);
         level1 = new Level1();
-        camera = new Camera(0, 0, Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT);
+        camera = new Camera(0, 0);
         healthBar = new HealthBar(refLink.GetHero());
         pauseButton = new PauseButton(refLink.GetHero(), 80, 50);
         // Calculează dimensiunile totale ale nivelului
@@ -60,16 +60,12 @@ public class Level1State extends State {
         double cameraX = heroCenterX - (Constants.WINDOW_WIDTH / 2) / camera.getScale();
         double cameraY = heroCenterY - (Constants.WINDOW_HEIGHT / 2) / camera.getScale();
 
-        camera.setPosition(
-                heroCenterX - (Constants.WINDOW_WIDTH / 2.0) / camera.getScale(),
-                heroCenterY - (Constants.WINDOW_HEIGHT / 2.0) / camera.getScale()
-        );
+        double maxCameraX = levelWidth - (Constants.WINDOW_WIDTH / camera.getScale()) +100;
+        double maxCameraY = Constants.WINDOW_HEIGHT;// levelHeight - (Constants.WINDOW_HEIGHT / camera.getScale());
 
-        // Limitează camera la dimensiunile nivelului
-        cameraX = Math.max(cameraX, 0);
-        cameraX = Math.min(cameraX, levelWidth - Constants.WINDOW_WIDTH / camera.getScale());
-        cameraY = Math.max(cameraY, 0);
-        cameraY = Math.min(cameraY, levelHeight - Constants.WINDOW_HEIGHT / camera.getScale());
+        cameraX = Math.max(0, Math.min(cameraX, maxCameraX));
+        cameraY = Math.max(0, Math.min(cameraY, maxCameraY))+350;
+
 
         camera.setPosition(cameraX, cameraY);
     }
@@ -82,11 +78,11 @@ public class Level1State extends State {
         // Aplică transformarea camerei
         camera.apply(g2d);
 
-        // Desenează fundalul (acoperă întregul nivel)
         BufferedImage backgroundImage = this.refLink.getTileCache().getBackground(Constants.LEVEL1_BG_PATH);
         g.drawImage(backgroundImage, 0, 0, levelWidth, levelHeight, null); // Folosește levelWidth și levelHeight
 
-        // Desenează tile-urile nivelului
+
+//         Desenează tile-urile nivelului
         for (int i = 0; i < Constants.LEVEL1_TILE_NR; ++i) {
             int currentID = this.level1.getVisualIDs()[i];
             if (currentID != -1) {
@@ -96,6 +92,7 @@ public class Level1State extends State {
                                 (i / Constants.LEVEL1_WIDTH) * Constants.TILE_SIZE);
             }
         }
+
 
         this.refLink.GetHero().Draw(g);
 

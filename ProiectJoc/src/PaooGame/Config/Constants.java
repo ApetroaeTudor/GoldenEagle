@@ -17,6 +17,9 @@ public class Constants {
     public static final int LEVEL1_HEIGHT = 45;
 
 
+    public static final double MAGIC_NUMBER = 2.27;
+
+
     public static final int CHARACTER_TILE_SIZE = 48;
     public static final int CHARACTER_LEFT_OFFSET = 15;
     public static final int CHARACTER_RIGHT_OFFSET = 17;

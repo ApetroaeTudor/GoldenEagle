@@ -68,7 +68,7 @@ public class Game implements Runnable {
         refLink.setTileCache(tileCache);
 
 
-        hero = new Hero(refLink, 100, 100);
+        hero = new Hero(refLink, 100, 420);
         this.refLink.SetHero(hero);
 
 
