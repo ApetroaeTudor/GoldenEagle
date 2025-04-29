@@ -96,6 +96,7 @@ public class PauseMenuState extends State {
                 rect.x, rect.y + rect.height,
                 hover ? new Color(50, 100, 150) : new Color(40, 40, 40)
         );
+
         g2d.setPaint(gp);
         g2d.fillRoundRect(rect.x, rect.y, rect.width, rect.height, 15, 15);
 

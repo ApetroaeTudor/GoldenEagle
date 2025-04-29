@@ -110,20 +110,4 @@ public class MenuState extends State  {
         g2d.drawString(text, textX, textY);
     }
 
-
-//    // Adaugă mouse listener (poți să-l adaugi în Game sau JFrame)
-//    public void mousePressed(MouseEvent e) {
-//        int mx = e.getX();
-//        int my = e.getY();
-//
-//        if (startButton.contains(mx, my)) {
-//            // Start game
-//            State.SetState(refLink.GetGame().GetLevel1State());
-//        } else if (settingsButton.contains(mx, my)) {
-//            // Settings - schimbă în SettingsState, dacă ai unul
-//            System.out.println("Settings pressed");
-//        } else if (quitButton.contains(mx, my)) {
-//            System.exit(0);
-//        }
-//    }
 }

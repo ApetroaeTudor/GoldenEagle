@@ -26,6 +26,7 @@ public class Level1State extends State {
         super(refLink);
         level1 = new Level1();
         camera = new Camera(0, 0);
+
         healthBar = new HealthBar(refLink.GetHero());
         pauseButton = new PauseButton(refLink.GetHero(), 80, 50);
         // Calculează dimensiunile totale ale nivelului
@@ -40,11 +41,14 @@ public class Level1State extends State {
 
         if (refLink.GetKeyManager().isKeyPressedOnce(KeyEvent.VK_ESCAPE)) {
             State.SetState(refLink.GetGame().GetPauseMenuState());
-
         }
+
         MouseInput mouse = refLink.GetMouseInput();
+
+
         Point mousePos = new Point(mouse.getMouseX(), mouse.getMouseY());
         pauseButton.updateHover(mousePos.x, mousePos.y); // fără transformare
+
         if (mouse.getNumberOfMousePresses() > 0 && pauseButton.isClicked(mousePos.x, mousePos.y)) {
             State.SetState(refLink.GetGame().GetPauseMenuState()); // Acum trimite către meniul de pauză
             mouse.mouseReleased(null);
@@ -60,7 +64,7 @@ public class Level1State extends State {
         double cameraX = heroCenterX - (Constants.WINDOW_WIDTH / 2) / camera.getScale();
         double cameraY = heroCenterY - (Constants.WINDOW_HEIGHT / 2) / camera.getScale();
 
-        double maxCameraX = levelWidth - (Constants.WINDOW_WIDTH / camera.getScale()) +100;
+        double maxCameraX = levelWidth - (Constants.WINDOW_WIDTH / camera.getScale());
         double maxCameraY = Constants.WINDOW_HEIGHT;// levelHeight - (Constants.WINDOW_HEIGHT / camera.getScale());
 
         cameraX = Math.max(0, Math.min(cameraX, maxCameraX));
@@ -74,9 +78,10 @@ public class Level1State extends State {
     public void Draw(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         AffineTransform originalTransform = g2d.getTransform();
-
         // Aplică transformarea camerei
         camera.apply(g2d);
+
+
 
         BufferedImage backgroundImage = this.refLink.getTileCache().getBackground(Constants.LEVEL1_BG_PATH);
         g.drawImage(backgroundImage, 0, 0, levelWidth, levelHeight, null); // Folosește levelWidth și levelHeight

@@ -50,7 +50,7 @@ public class Hero {
 
         this.gravity = 0.15f;        // Acceleration due to gravity (pixels/frame^2). Adjust!
         this.maxFallSpeed = 6.0f;    // Max downward speed (pixels/frame). Adjust!
-        this.jumpStrength = -3.2f;   // Initial upward velocity (negative Y). Adjust! Needs to be > gravity per frame initially.
+        this.jumpStrength = -3.5f;//-3.2f;   // Initial upward velocity (negative Y). Adjust! Needs to be > gravity per frame initially.
 
         this.speed = 2;             // Base horizontal speed
         this.health = 100;
@@ -292,21 +292,9 @@ public class Hero {
 
 
     public void Draw(Graphics g) {
-//        BufferedImage imgToDraw = this.reflink.getTileCache().getHeroState(this.currentState);
-//        if (imgToDraw != null && imgToDraw.getWidth() >= 48 && imgToDraw.getHeight() >= 48) {
-//            imgToDraw = imgToDraw.getSubimage(0, 0, 48, 48);
-//            g.drawImage(imgToDraw, (int) this.x, (int) this.y, 48, 48, null);
-//        } else {
-//            g.setColor(Color.MAGENTA);
-//            g.fillRect((int) this.x, (int) this.y, 48, 48);
-//            g.setColor(Color.BLACK);
-//            g.drawString("?", (int) this.x + 20, (int) this.y + 30);
-//        }
 
-//        this.idleAnimation.paintAnimation(g,(int)this.x,(int)this.y);
         this.getAnimationByState().paintAnimation(g,(int)this.x,(int)this.y,this.headingLeft);
 
-//        this.hitbox.printHitbox(g);
     }
 
     public float getX() {
