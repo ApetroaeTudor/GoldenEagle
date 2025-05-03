@@ -1,6 +1,6 @@
 package PaooGame.HUD;
 
-import PaooGame.Hero.Hero;
+import Entities.Hero;
 import java.awt.Color;
 import java.awt.Graphics2D;
 

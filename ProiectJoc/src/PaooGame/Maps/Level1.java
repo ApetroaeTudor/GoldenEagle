@@ -1,5 +1,7 @@
 package PaooGame.Maps;
 
+import Entities.Entity;
+import Entities.Tiger;
 import PaooGame.Config.Constants;
 import PaooGame.Hitbox.Hitbox;
 import PaooGame.RefLinks;
@@ -12,11 +14,14 @@ import java.io.*;
 
 public class Level1 extends Level {
 
+
     public Level1(){
         this.VisualTiles=new int[Constants.LEVEL1_WIDTH][Constants.LEVEL1_HEIGHT];
         this.BehaviorTiles=new int[Constants.LEVEL1_WIDTH][Constants.LEVEL1_HEIGHT];
         this.visualIDs=new int[Constants.LEVEL1_TILE_NR];
         this.behaviorIDs=new int[Constants.LEVEL1_TILE_NR];
+
+
 
 
         String line;

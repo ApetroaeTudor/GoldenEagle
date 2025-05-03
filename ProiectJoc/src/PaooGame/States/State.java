@@ -12,6 +12,10 @@ import PaooGame.RefLinks;
  */
 public abstract class State
 {
+    protected String stateName = "";
+
+
+
     ///Urmatoarele atribute sunt statice pentru a evita dealocarea spatiului de memorie la trecerea dintr-o stare in alta.
     private static State previousState  = null; /*!< Referinta catre starea anterioara a jocului.*/
     private static State currentState   = null; /*!< Referinta catre starea curenta a jocului: game, meniu, settings, about etc.*/
@@ -32,10 +36,15 @@ public abstract class State
         currentState = state;
     }
 
+
+
     public static State GetState()
     {
         return currentState;
     }
+
+
+    public abstract String getStateName();
 
     ///Metoda abstracta destinata actualizarii starii curente
     public abstract void Update();

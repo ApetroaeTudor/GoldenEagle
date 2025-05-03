@@ -1,5 +1,6 @@
 package PaooGame.States;
 
+import PaooGame.Config.Constants;
 import PaooGame.RefLinks;
 
 import java.awt.*;
@@ -14,11 +15,18 @@ public class AboutState extends State
 
         \param refLink O referinta catre un obiect "shortcut", obiect ce contine o serie de referinte utile in program.
      */
+    protected String stateName = Constants.ABOUT_STATE;
     public AboutState(RefLinks refLink)
     {
         ///Apel al constructorului clasei de baza.
         super(refLink);
     }
+
+    @Override
+    public String getStateName(){
+        return stateName;
+    }
+
     /*! \fn public void Update()
         \brief Actualizeaza starea curenta a meniu about.
      */

@@ -1,5 +1,6 @@
 package PaooGame.Maps;
 
+import Entities.Entity;
 import PaooGame.Config.Constants;
 import PaooGame.Hitbox.Hitbox;
 
@@ -16,7 +17,8 @@ public abstract class Level {
     public int[][] getBehaviorTiles(){return this.BehaviorTiles;}
 
 
-    public int checkFalling(Hitbox hitbox) {
+
+    public int checkFalling(Hitbox hitbox,int LEVEL_WIDTH,int LEVEL_HEIGHT) {
         float hitboxX = hitbox.getX();
         float hitboxY = hitbox.getY();
         float hitboxWidth = hitbox.getWidth();
@@ -28,17 +30,17 @@ public abstract class Level {
         float checkY = hitboxY + hitboxHeight; // The coordinate defining the top of the tile row below
         int tileRowToCheck = (int) Math.floor(checkY / Constants.TILE_SIZE);
 
-        if (tileRowToCheck < 0 || tileRowToCheck >= Constants.LEVEL1_HEIGHT) {
+        if (tileRowToCheck < 0 || tileRowToCheck >= LEVEL_HEIGHT) {
             return -1; // Off map vertically (below or above), considered falling.
         }
 
         for (int tileX = startX; tileX <= endX; tileX++) {
-            if (tileX < 0 || tileX >= Constants.LEVEL1_WIDTH) {
+            if (tileX < 0 || tileX >= LEVEL_WIDTH) {
                 // Treat out-of-bounds as air, but continue checking other tiles
                 continue;
             }
 
-            int index = tileRowToCheck * Constants.LEVEL1_WIDTH + tileX;
+            int index = tileRowToCheck * LEVEL_WIDTH + tileX;
 
             if (index < 0 || index >= behaviorIDs.length) {
                 System.err.println("Error: Calculated map index out of bounds: " + index);
@@ -68,7 +70,7 @@ public abstract class Level {
     }
 
 
-    public boolean checkWallCollision(Hitbox hitbox, boolean checkRight) {
+    public boolean checkWallCollision(Hitbox hitbox, boolean checkRight, int LEVEL_WIDTH,int LEVEL_HEIGHT) {
         float hitboxX = hitbox.getX();
         float hitboxY = hitbox.getY();
         float hitboxWidth = hitbox.getWidth();
@@ -100,15 +102,15 @@ public abstract class Level {
         int checkTileX = (int) Math.floor(checkXCoord / Constants.TILE_SIZE);
 
         for (int tileY = startTileY; tileY <= endTileY; tileY++) {
-            if (checkTileX < 0 || checkTileX >= Constants.LEVEL1_WIDTH || tileY < 0 || tileY >= Constants.LEVEL1_HEIGHT) {
-                if (checkRight && checkTileX >= Constants.LEVEL1_WIDTH) return true; // Hit right world boundary
+            if (checkTileX < 0 || checkTileX >= LEVEL_WIDTH || tileY < 0 || tileY >= LEVEL_WIDTH) {
+                if (checkRight && checkTileX >= LEVEL_WIDTH) return true; // Hit right world boundary
                 if (!checkRight && checkTileX < 0) return true;             // Hit left world boundary
                 // If only vertically out of bounds, might not be a wall (e.g., above map),
                 // but let's treat it as non-colliding for wall check purposes within this loop.
                 continue; // Skip processing for tiles outside vertical map bounds
             }
 
-            int index = tileY * Constants.LEVEL1_WIDTH + checkTileX;
+            int index = tileY * LEVEL_WIDTH + checkTileX;
 
             if (index < 0 || index >= behaviorIDs.length) {
                 System.err.println("Warning: checkWallCollision calculated invalid map index: " + index + " for tile (" + checkTileX + ", " + tileY + ")");
@@ -128,7 +130,7 @@ public abstract class Level {
     }
 
 
-    public boolean checkCeilingCollision(Hitbox hitbox) {
+    public boolean checkCeilingCollision(Hitbox hitbox, int LEVEL_WIDTH, int LEVEL_HEIGHT) {
         float hitboxX = hitbox.getX();
         float hitboxY = hitbox.getY();
         float hitboxWidth = hitbox.getWidth();
@@ -142,16 +144,16 @@ public abstract class Level {
         if (tileRowToCheck < 0) {
             return false;
         }
-        if (tileRowToCheck >= Constants.LEVEL1_HEIGHT) {
+        if (tileRowToCheck >= LEVEL_HEIGHT) {
             return false;
         }
 
         for (int tileX = startTileX; tileX <= endTileX; tileX++) {
-            if (tileX < 0 || tileX >= Constants.LEVEL1_WIDTH) {
+            if (tileX < 0 || tileX >= LEVEL_WIDTH) {
                 continue; // Skip this column, check the next one within the hitbox's span
             }
 
-            int index = tileRowToCheck * Constants.LEVEL1_WIDTH + tileX;
+            int index = tileRowToCheck * LEVEL_WIDTH + tileX;
 
             if (index < 0 || index >= behaviorIDs.length) {
                 System.err.println("Warning: checkCeilingCollision calculated invalid map index: " + index + " for tile (" + tileX + ", " + tileRowToCheck + ")");
@@ -165,5 +167,34 @@ public abstract class Level {
             }
         }
         return false;
+    }
+
+    public boolean isTileSolid(int tileX, int tileY, int LEVEL_WIDTH, int LEVEL_HEIGHT){
+        if (tileX < 0 || tileX >= LEVEL_WIDTH || tileY < 0 || tileY >= LEVEL_HEIGHT) {
+            return false;
+        }
+
+        int index = tileY * LEVEL_WIDTH + tileX;
+        int behavior = behaviorIDs[index];
+        return behavior == 2;
+    }
+
+
+    public boolean isGroundAhead(Hitbox hitbox, boolean headingLeft,int LEVEL_WIDTH,int LEVEL_HEIGHT) {
+        int checkTileX;
+        // Determine the x-coordinate of the tile to check, just outside the hitbox edge
+        if (headingLeft) {
+            // Check tile just to the left of the bottom-left corner
+            checkTileX = (int) Math.floor((hitbox.getX() - Constants.EPSILON) / Constants.TILE_SIZE);
+        } else {
+            // Check tile just to the right of the bottom-right corner
+            checkTileX = (int) Math.floor((hitbox.getX() + hitbox.getWidth() + Constants.EPSILON) / Constants.TILE_SIZE);
+        }
+
+        // Check the tile directly below the leading edge
+        int checkTileY = (int) Math.floor((hitbox.getY() + hitbox.getHeight() + Constants.EPSILON) / Constants.TILE_SIZE);
+
+        // Check bounds and solidity (Implement this based on your level data)
+        return isTileSolid(checkTileX, checkTileY,LEVEL_WIDTH,LEVEL_HEIGHT);
     }
 }

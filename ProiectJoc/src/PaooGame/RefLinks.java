@@ -1,12 +1,10 @@
 package PaooGame;
 
-import PaooGame.Hero.Hero;
+import Entities.Hero;
 import PaooGame.Input.MouseInput;
 
 import PaooGame.Input.KeyManager;
 import PaooGame.Tiles.TileCache;
-
-import java.awt.*;
 
 public class RefLinks
 {
@@ -25,46 +23,46 @@ public class RefLinks
 //        this.tileCache=new TileCache();
     }
 
-    public KeyManager GetKeyManager()
+    public KeyManager getKeyManager()
     {
-        return game.GetKeyManager();
+        return game.getKeyManager();
     }
 
-    public int GetWidth()
+    public int getWidth()
     {
-        return game.GetWidth();
+        return game.getWidth();
     }
 
-    public int GetHeight()
+    public int getHeight()
     {
-        return game.GetHeight();
+        return game.getHeight();
     }
 
-    public Game GetGame()
+    public Game getGame()
     {
         return game;
     }
 
-    public void SetGame(Game game)
+    public void setGame(Game game)
     {
         this.game = game;
     }
 
-    public void SetKeyManager(KeyManager keyManager) {
+    public void setKeyManager(KeyManager keyManager) {
         this.keyManager = keyManager;
     }
-    public MouseInput GetMouseInput() {
+    public MouseInput getMouseInput() {
         return mouseInput;
     }
 
-    public void SetMouseInput(MouseInput mouseInput) {
+    public void setMouseInput(MouseInput mouseInput) {
         this.mouseInput = mouseInput;
     }
 
-    public void SetHero(Hero hero){
+    public void setHero(Hero hero){
         this.hero=hero;
     }
-    public Hero GetHero(){
+    public Hero getHero(){
         return this.hero;
     }
 
@@ -77,7 +75,4 @@ public class RefLinks
     }
 
 
-    public MouseInput getMouseInput() {
-        return this.mouseInput;
-    }
 }

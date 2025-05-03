@@ -31,6 +31,7 @@ public class TileCache {
     private static final Map<String,BufferedImage> backgrounds=new HashMap<>();
 
     private static final Map<String,BufferedImage> HeroStates=new HashMap<>();
+    private static final Map<String,BufferedImage> TigerStates=new HashMap<>();
 
     public Tile getTile(String path, int id){
         Entry<String,Integer> key=new AbstractMap.SimpleEntry<>(path,id);
@@ -77,7 +78,7 @@ public class TileCache {
         }
         else{
             try{
-                File f=new File(Constants.LEVEL1_BG_PATH);
+                File f=new File(path);
                 if(!f.exists()){
                     System.err.println("Background file not found: "+ Constants.LEVEL1_BG_PATH);
 
@@ -91,6 +92,48 @@ public class TileCache {
         }
         return backgrounds.get(path);
 
+    }
+
+    public BufferedImage getTigerState(Constants.ENEMY_STATES state){
+        BufferedImage returnIMG = null;
+        try{
+            File tigerFileSheet = new File(Constants.TIGER_SPRITE_SHEET_PATH);
+            if(!tigerFileSheet.exists()){
+                System.err.println("No file found at path " + Constants.TIGER_SPRITE_SHEET_PATH);
+            }
+            switch(state){
+                case FALLING:
+                    if(!TigerStates.containsKey("FALLING")){
+                        TigerStates.put("FALLING",ImageIO.read(tigerFileSheet).getSubimage(0,32*0,64*1,32));
+                        //scot doar prima imagine pentru ca nu am animatie de falling pe tigru
+                    }
+                    returnIMG = TigerStates.get("FALLING");
+                    break;
+                case WALKING:
+                    if(!TigerStates.containsKey("WALKING")){
+                        TigerStates.put("WALKING",ImageIO.read(tigerFileSheet).getSubimage(0,32*0+64*0,64*4,32));
+                    }
+                    returnIMG = TigerStates.get("WALKING");
+                    break;
+                case IN_FIGHT_IDLE:
+                    if(!TigerStates.containsKey("IN_FIGHT_IDLE")){
+                        TigerStates.put("IN_FIGHT_IDLE",ImageIO.read(tigerFileSheet).getSubimage(0,32*1+64*1,32*1,64));
+                        //aici imaginea e portrait
+                    }
+                    returnIMG = TigerStates.get("IN_FIGHT_IDLE");
+                    break;
+                case IN_FIGHT_ATTACKING:
+                    if(!TigerStates.containsKey("IN_FIGHT_ATTACKING")){
+                        TigerStates.put("IN_FIGHT_ATTACKING",ImageIO.read(tigerFileSheet).getSubimage(0,32*1+64*0,32*4,64));
+                    }
+                    returnIMG = TigerStates.get("IN_FIGHT_ATTACKING");
+                    break;
+            }
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+        return returnIMG;
     }
 
 

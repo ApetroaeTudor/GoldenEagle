@@ -1,9 +1,11 @@
 package PaooGame.States;
 
+import Entities.Entity;
+import Entities.Tiger;
 import PaooGame.Camera.Camera;
 import PaooGame.Config.Constants;
 import PaooGame.HUD.HealthBar;
-import PaooGame.Hero.Hero;
+import Entities.Hero;
 import PaooGame.Input.MouseInput;
 import PaooGame.Maps.Level1;
 import PaooGame.RefLinks;
@@ -22,13 +24,28 @@ public class Level1State extends State {
     private int levelWidth;  // Lățimea totală a nivelului în pixeli
     private int levelHeight; // Înălțimea totală a nivelului în pixeli
 
+
+    protected boolean transitioning = false;
+    protected boolean transition_to_fight = false;
+
+    private Entity [] enemies;
+
+    protected String stateName = Constants.LEVEL1_STATE;
+
+    protected double targetBlackIntensity = 0.0;
+    protected double blackFadeStep = 0.05;
+
     public Level1State(RefLinks refLink) {
         super(refLink);
         level1 = new Level1();
         camera = new Camera(0, 0);
 
-        healthBar = new HealthBar(refLink.GetHero());
-        pauseButton = new PauseButton(refLink.GetHero(), 80, 50);
+        enemies = new Entity[2];
+        enemies[0] = new Tiger(this.refLink,400,450);
+        enemies[1] = new Tiger(this.refLink,720,470);
+
+        healthBar = new HealthBar(refLink.getHero());
+        pauseButton = new PauseButton(refLink.getHero(), 80, 50);
         // Calculează dimensiunile totale ale nivelului
         levelWidth = Constants.LEVEL1_WIDTH * Constants.TILE_SIZE;
         levelHeight = Constants.LEVEL1_HEIGHT * Constants.TILE_SIZE;
@@ -36,21 +53,33 @@ public class Level1State extends State {
 
     @Override
     public void Update() {
-        this.refLink.GetHero().Update();
-        Hero hero = refLink.GetHero();
+        this.refLink.getHero().Update();
+        Hero hero = refLink.getHero();
 
-        if (refLink.GetKeyManager().isKeyPressedOnce(KeyEvent.VK_ESCAPE)) {
-            State.SetState(refLink.GetGame().GetPauseMenuState());
+        for(Entity enemy : enemies){
+            if(refLink.getHero().getHitbox().intersects(enemy.getHitbox())){
+                enemy.setIsEngaged(true);
+                this.transitioning = true;
+                this.transition_to_fight = true;
+            }
+            else{
+                enemy.setIsEngaged(false);
+            }
+            enemy.Update();
         }
 
-        MouseInput mouse = refLink.GetMouseInput();
+        if (refLink.getKeyManager().isKeyPressedOnce(KeyEvent.VK_ESCAPE)) {
+            State.SetState(refLink.getGame().getPauseMenuState());
+        }
+
+        MouseInput mouse = refLink.getMouseInput();
 
 
         Point mousePos = new Point(mouse.getMouseX(), mouse.getMouseY());
         pauseButton.updateHover(mousePos.x, mousePos.y); // fără transformare
 
         if (mouse.getNumberOfMousePresses() > 0 && pauseButton.isClicked(mousePos.x, mousePos.y)) {
-            State.SetState(refLink.GetGame().GetPauseMenuState()); // Acum trimite către meniul de pauză
+            State.SetState(refLink.getGame().getPauseMenuState()); // Acum trimite către meniul de pauză
             mouse.mouseReleased(null);
             return;
         }
@@ -72,6 +101,12 @@ public class Level1State extends State {
 
 
         camera.setPosition(cameraX, cameraY);
+
+        if(this.transition_to_fight && this.targetBlackIntensity==1) {
+            State.SetState(refLink.getGame().getFightState());
+            this.targetBlackIntensity = 0;
+            this.transitioning = false;
+        }
     }
 
     @Override
@@ -80,6 +115,8 @@ public class Level1State extends State {
         AffineTransform originalTransform = g2d.getTransform();
         // Aplică transformarea camerei
         camera.apply(g2d);
+
+
 
 
 
@@ -99,7 +136,27 @@ public class Level1State extends State {
         }
 
 
-        this.refLink.GetHero().Draw(g);
+        this.refLink.getHero().Draw(g);
+        for(Entity enemy : enemies){
+            enemy.Draw(g);
+        }
+
+        if(this.transitioning) {
+            Color originalColor = g2d.getColor();
+            this.targetBlackIntensity += this.blackFadeStep;
+            if(this.targetBlackIntensity>=1){
+                this.targetBlackIntensity = 1;
+            }
+            int alpha = (int)(this.targetBlackIntensity * 255.0);
+
+            g2d.setColor(new Color(0, 0, 0, alpha));
+            g.fillRect(0, 0, Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT);
+
+
+
+            g2d.setColor(originalColor);
+            System.out.println(alpha);
+        }
 
         // Restabilește transformarea
         g2d.setTransform(originalTransform);
@@ -109,5 +166,10 @@ public class Level1State extends State {
 
     public Level1 getLevel1() {
         return level1;
+    }
+
+    @Override
+    public String getStateName(){
+        return stateName;
     }
 }

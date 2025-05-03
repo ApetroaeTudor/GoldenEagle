@@ -1,41 +1,27 @@
-package PaooGame.Hero;
+package Entities;
 
 import PaooGame.Animations.Animation;
 import PaooGame.Animations.PlayerAnimations.PlayerActionAnimation;
 import PaooGame.Config.Constants;
 import PaooGame.Hitbox.Hitbox;
 import PaooGame.RefLinks;
+import PaooGame.States.State;
 
-import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
 
-public class Hero {
-
-    private float x;
-    private float y;
-
-    private float gravity; // Gravity should accelerate
-    private float maxFallSpeed;
+public class Hero extends Entity {
     private float jumpStrength;
 
-    private int speed;
-    private double health;
-
     private int jumpCap;
-    private boolean isGrounded;
-    private boolean headingLeft;
-
-    private Hitbox hitbox;
 
     private Constants.HERO_STATES currentState;
-    private RefLinks reflink;
 
-    private float velocityX;
-    private float velocityY;
 
     private float hitboxOffsetX = 16;
     private float hitboxOffsetY = 9;
+
+    private int LEVEL_WIDTH;
+    private int LEVEL_HEIGHT;
 
 
     private Animation idleAnimation;
@@ -46,27 +32,18 @@ public class Hero {
     private Animation crounchingAnimation;
 
     public Hero(RefLinks refLink, int startX, int startY) {
-        this.reflink = refLink;
+        super(refLink,startX,startY);
 
-        this.gravity = 0.15f;        // Acceleration due to gravity (pixels/frame^2). Adjust!
-        this.maxFallSpeed = 6.0f;    // Max downward speed (pixels/frame). Adjust!
+
         this.jumpStrength = -3.5f;//-3.2f;   // Initial upward velocity (negative Y). Adjust! Needs to be > gravity per frame initially.
 
         this.speed = 2;             // Base horizontal speed
-        this.health = 100;
         this.jumpCap = 10;          // Stamina/resource for jumps
 
-        this.x = startX;
-        this.y = startY;
 
         this.hitbox = new Hitbox(this.x + this.hitboxOffsetX, this.y + this.hitboxOffsetY, 16, 27);
 
-        this.isGrounded = false;    // Assume starting in the air initially
         this.currentState = Constants.HERO_STATES.FALLING;
-        this.velocityX = 0f;
-        this.velocityY = 0f;        // Start with no initial vertical velocity
-        this.headingLeft=false;
-
 
         this.idleAnimation=new PlayerActionAnimation(this.reflink,Constants.HERO_STATES.IDLE,4,10);
         this.idleAnimation.loadAnimation();
@@ -82,6 +59,7 @@ public class Hero {
 
     }
 
+    @Override
     public void Update() {
         handleInput(); // Sets velocityX, checks for jump press
         applyGravity();
@@ -89,13 +67,16 @@ public class Hero {
         updateVisualPosition();
         updateAnimationState();
 
+        getContext();
+
+
     }
 
     private void handleInput() {
-        boolean jumpPressed = reflink.GetKeyManager().isKeyPressedOnce(KeyEvent.VK_SPACE);
-        boolean rightPressed = reflink.GetKeyManager().getKeyState()[KeyEvent.VK_D];
-        boolean leftPressed = reflink.GetKeyManager().getKeyState()[KeyEvent.VK_A];
-        boolean crouchPressed = reflink.GetKeyManager().getKeyState()[KeyEvent.VK_C];
+        boolean jumpPressed = reflink.getKeyManager().isKeyPressedOnce(KeyEvent.VK_SPACE);
+        boolean rightPressed = reflink.getKeyManager().getKeyState()[KeyEvent.VK_D];
+        boolean leftPressed = reflink.getKeyManager().getKeyState()[KeyEvent.VK_A];
+        boolean crouchPressed = reflink.getKeyManager().getKeyState()[KeyEvent.VK_C];
 
         this.velocityX = 0;
         if (rightPressed && !leftPressed) {
@@ -112,16 +93,6 @@ public class Hero {
     }
 
 
-    private void applyGravity() {
-        if (!this.isGrounded) {
-            this.velocityY += this.gravity; //velocitatea accelereaza cu cat cad mai mult
-            if (this.velocityY > this.maxFallSpeed) { //impiedic caderea exagerata
-                this.velocityY = this.maxFallSpeed;
-            }
-        }
-    }
-
-
     private void jump() {
         if (this.isGrounded) { //incep jump o singura data doar daca sunt grounded
             this.velocityY = this.jumpStrength;
@@ -130,7 +101,8 @@ public class Hero {
         }
     }
 
-    private void moveAndCollide() {
+    @Override
+    protected void moveAndCollide() {
         float originalX = this.hitbox.getX(); //partea stanga a hitbox-ului
         float deltaX = this.velocityX; //cat ar trebui sa se deplaseze
 
@@ -143,14 +115,14 @@ public class Hero {
         //pentru pereti
 
 
-        if(this.reflink.GetGame().GetLevel1State().getLevel1().checkCeilingCollision(hitbox)){
+        if(this.reflink.getGame().getLevel1State().getLevel1().checkCeilingCollision(hitbox,this.LEVEL_WIDTH,this.LEVEL_HEIGHT)){
             this.velocityY=1;
         }
 
 
 
         if (this.velocityX > 0) { //coliziune perete dreapta
-            if (reflink.GetGame().GetLevel1State().getLevel1().checkWallCollision(hitbox, true)) {
+            if (reflink.getGame().getLevel1State().getLevel1().checkWallCollision(hitbox, true,this.LEVEL_WIDTH,this.LEVEL_HEIGHT)) {
                 horizontalCollision = true;
 
                 //trebuie sa verific daca aceasta coliziune se intampla IN hitbox sau nu
@@ -169,7 +141,7 @@ public class Hero {
 
             }
         } else if (this.velocityX < 0) { // Moving Left
-            if (reflink.GetGame().GetLevel1State().getLevel1().checkWallCollision(hitbox, false)) {
+            if (reflink.getGame().getLevel1State().getLevel1().checkWallCollision(hitbox, false,this.LEVEL_WIDTH,this.LEVEL_HEIGHT)) {
                 horizontalCollision = true;
 
                 float checkCoordOutsideLeft = hitbox.getX() - Constants.EPSILON;
@@ -183,10 +155,10 @@ public class Hero {
         }
 
         if(this.velocityX<0){
-            this.headingLeft=true;
+            this.flipped=true;
         }
         else if(velocityX>0){
-            this.headingLeft=false;
+            this.flipped=false;
         }
 
         if (horizontalCollision) {
@@ -197,7 +169,7 @@ public class Hero {
         float deltaY = this.velocityY;
         this.hitbox.setY(originalY + deltaY);
 
-        int fallCheckResult = reflink.GetGame().GetLevel1State().getLevel1().checkFalling(hitbox);
+        int fallCheckResult = reflink.getGame().getLevel1State().getLevel1().checkFalling(hitbox,this.LEVEL_WIDTH,this.LEVEL_HEIGHT);
 
 
 
@@ -205,7 +177,7 @@ public class Hero {
             if (fallCheckResult == 0) { // Hit ground
                 this.isGrounded = true;
                 this.velocityY = 0;
-                reflink.GetGame().GetLevel1State().getLevel1().snapToGround(this.hitbox);
+                reflink.getGame().getLevel1State().getLevel1().snapToGround(this.hitbox);
                 this.jumpCap = 10; //resetare jump
             } else {
                 this.isGrounded = false;
@@ -216,7 +188,8 @@ public class Hero {
         } else { // velocityY == 0
             if (fallCheckResult == 0) { // Standing still on ground
                 if (!this.isGrounded) { // Just landed precisely
-                    reflink.GetGame().GetLevel1State().getLevel1().snapToGround(this.hitbox);
+                    reflink.getGame().getLevel1State().getLevel1().snapToGround(this.hitbox);
+                    //functia tine de clasa parinte abstracta Level deci nu conteaza ca depinde de Level1, va merge si pt Level2,3
                     this.jumpCap = 10;
                 }
                 this.isGrounded = true;
@@ -227,14 +200,14 @@ public class Hero {
         }
     }
 
-
-    private void updateVisualPosition() {
+    @Override
+    protected void updateVisualPosition() {
         this.x = this.hitbox.getX() - hitboxOffsetX;
         this.y = this.hitbox.getY() - hitboxOffsetY;
     }
 
-
-    private Animation getAnimationByState(){
+    @Override
+    protected Animation getAnimationByState(){
         switch (this.currentState){
             case IDLE:
                 return this.idleAnimation;
@@ -243,7 +216,7 @@ public class Hero {
             case ATTACKING:
                 return this.attackingAnimation;
             case FALLING:
-                if(reflink.GetKeyManager().isKeyPressed(KeyEvent.VK_SPACE)){
+                if(reflink.getKeyManager().isKeyPressed(KeyEvent.VK_SPACE)){
                     return this.jumpingAnimation;
 
                 }
@@ -259,12 +232,12 @@ public class Hero {
         return this.idleAnimation;
     }
 
+    @Override
+    protected void updateAnimationState() {
 
-    private void updateAnimationState() {
-
-        boolean rightPressed = reflink.GetKeyManager().getKeyState()[KeyEvent.VK_D];
-        boolean leftPressed = reflink.GetKeyManager().getKeyState()[KeyEvent.VK_A];
-        boolean crouchPressed = reflink.GetKeyManager().getKeyState()[KeyEvent.VK_C];
+        boolean rightPressed = reflink.getKeyManager().getKeyState()[KeyEvent.VK_D];
+        boolean leftPressed = reflink.getKeyManager().getKeyState()[KeyEvent.VK_A];
+        boolean crouchPressed = reflink.getKeyManager().getKeyState()[KeyEvent.VK_C];
 
         if (this.isGrounded) {
             if (crouchPressed) {
@@ -285,37 +258,19 @@ public class Hero {
 
         this.getAnimationByState().updateAnimation();
 
-
-        // Note: ATTACKING state would need separate logic based on attack input/cooldowns
     }
 
 
-
-    public void Draw(Graphics g) {
-
-        this.getAnimationByState().paintAnimation(g,(int)this.x,(int)this.y,this.headingLeft);
-
-    }
-
-    public float getX() {
-        return x;
-    }
-
-    public float getY() {
-        return y;
-    }
-
-    public float getWidth() {
-        return hitbox.getWidth();
-    }
-
-    public float getHeight() {
-        return hitbox.getHeight();
-    }
-
-    // Hero.java
-    public double getHealth() {
-        return health;
+    private void getContext(){
+        switch (State.GetState().getStateName()){
+            case Constants.LEVEL1_STATE:
+                this.LEVEL_HEIGHT = Constants.LEVEL1_HEIGHT;
+                this.LEVEL_WIDTH = Constants.LEVEL1_WIDTH;
+                break;
+            default:
+                this.LEVEL_HEIGHT = Constants.LEVEL1_HEIGHT;
+                this.LEVEL_WIDTH = Constants.LEVEL1_WIDTH; //placeholder, se va modifica la introducerea niv2 si niv3
+        }
     }
 
 }

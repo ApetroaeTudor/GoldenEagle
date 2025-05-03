@@ -1,8 +1,7 @@
 package PaooGame.HUD;
-import PaooGame.Hero.Hero;
+import Entities.Hero;
 
 import java.awt.*;
-import java.awt.geom.Point2D;
 
 public class PauseButton extends HUD {
     private Rectangle bounds;

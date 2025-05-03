@@ -1,45 +1,48 @@
 
 package PaooGame.States;
 
+import PaooGame.Config.Constants;
 import PaooGame.Graphics.ImageLoader;
 import PaooGame.Input.MouseInput;
 import PaooGame.RefLinks;
 import java.awt.image.BufferedImage;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import javax.imageio.ImageIO;
-import java.io.IOException;
 import java.awt.*;
 
 public class MenuState extends State  {
     private BufferedImage background;
     private Rectangle startButton, settingsButton, quitButton;
 
+    protected String stateName = Constants.MENU_STATE;
     public MenuState(RefLinks refLink) {
         super(refLink);
 
         // Încarcă imaginea de fundal
         background = ImageLoader.LoadImage("/textures/menu_background.png");
-        int screenWidth = refLink.GetWidth();
-        int screenHeight = refLink.GetHeight();
+        int screenWidth = refLink.getWidth();
+        int screenHeight = refLink.getHeight();
         System.out.println( screenHeight + " /// " + screenWidth);
 
         // Definim zonele butoanelor
-        int centerX = refLink.GetWidth() / 2 -100 ;
+        int centerX = refLink.getWidth() / 2 -100 ;
         startButton = new Rectangle(centerX, 200, 200, 50);
         settingsButton = new Rectangle(centerX, 270, 200, 50);
         quitButton = new Rectangle(centerX, 340, 200, 50);
     }
 
     @Override
+    public String getStateName(){
+        return stateName;
+    }
+
+    @Override
     public void Update() {
-        MouseInput mouse = refLink.GetMouseInput();
+        MouseInput mouse = refLink.getMouseInput();
         int mx = mouse.getMouseX();
         int my = mouse.getMouseY();
 
         if (mouse.getNumberOfMousePresses() > 0) {
             if (startButton.contains(mx, my)) {
-                State.SetState(refLink.GetGame().GetLevel1State());
+                State.SetState(refLink.getGame().getLevel1State());
             }
             else if (settingsButton.contains(mx, my)) {
             }
@@ -56,16 +59,16 @@ public class MenuState extends State  {
         // Desenează fundal
 
         if(background != null) {
-            g.drawImage(background, 0, 0, refLink.GetWidth(), refLink.GetHeight(), null);
+            g.drawImage(background, 0, 0, refLink.getWidth(), refLink.getHeight(), null);
         } else {
             // Fallback dacă imaginea lipsește
             g.setColor(Color.BLACK);
-            g.fillRect(0, 0, refLink.GetWidth(), refLink.GetHeight());
+            g.fillRect(0, 0, refLink.getWidth(), refLink.getHeight());
         }
 
 
         // Coordonate mouse
-        MouseInput mouse = refLink.GetMouseInput();
+        MouseInput mouse = refLink.getMouseInput();
         int mx = mouse.getMouseX();
         int my = mouse.getMouseY();
 

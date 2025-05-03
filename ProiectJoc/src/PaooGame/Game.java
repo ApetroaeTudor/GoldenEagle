@@ -1,9 +1,7 @@
 package PaooGame;
 
-import PaooGame.Config.Constants;
 import PaooGame.GameWindow.GameWindow;
-import PaooGame.Graphics.Assets;
-import PaooGame.Hero.Hero;
+import Entities.Hero;
 import PaooGame.Input.KeyManager;
 import PaooGame.Input.MouseInput;
 import PaooGame.Maps.Level1;
@@ -12,7 +10,6 @@ import PaooGame.Tiles.Tile;
 import PaooGame.Tiles.TileCache;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
 
 public class Game implements Runnable {
@@ -27,6 +24,7 @@ public class Game implements Runnable {
     private Level1State level1State;
     private State pauseMenuState;
     private State aboutState;
+    private State fightState;
     private KeyManager keyManager;
     private RefLinks refLink;
     private MouseInput mouseInput;
@@ -53,28 +51,27 @@ public class Game implements Runnable {
 
         mouseInput = new MouseInput();
         this.keyManager = new KeyManager();
-//        wnd.GetWndFrame().addKeyListener(keyManager);
         wnd.GetCanvas().addKeyListener(keyManager);
         wnd.GetCanvas().addMouseListener(mouseInput);
         wnd.GetCanvas().addMouseMotionListener(mouseInput);
 
 
-        Assets.Init();
 
 
         refLink = new RefLinks(this);
-        refLink.SetKeyManager(keyManager);
-        refLink.SetMouseInput(mouseInput);
+        refLink.setKeyManager(keyManager);
+        refLink.setMouseInput(mouseInput);
         refLink.setTileCache(tileCache);
 
 
         hero = new Hero(refLink, 100, 420);
-        this.refLink.SetHero(hero);
+        this.refLink.setHero(hero);
 
 
         menuState = new MenuState(refLink);
         settingsState = new SettingsState(refLink);
         aboutState = new AboutState(refLink);
+        fightState = new FightState(refLink);
         level1State = new PaooGame.States.Level1State(refLink);
         pauseMenuState = new PauseMenuState(refLink);
         State.SetState(menuState);
@@ -152,40 +149,42 @@ public class Game implements Runnable {
         g.dispose();
     }
 
-    public int GetWidth() {
+    public int getWidth() {
         return wnd.GetWndWidth();
     }
 
-    public int GetHeight() {
+    public int getHeight() {
         return wnd.GetWndHeight();
     }
 
-    public KeyManager GetKeyManager() {
+    public KeyManager getKeyManager() {
         return keyManager;
     }
 
-    public Level1State GetLevel1State() {
+    public Level1State getLevel1State() {
         return level1State;
     }
 
-    public MouseInput GetMouseInput() {
+    public MouseInput getMouseInput() {
         return mouseInput;
     }
 
-    public State GetPlayState() {
+    public State getPlayState() {
         return level1State;
     }
 
+    public State getFightState(){ return fightState; }
 
-    public State GetPauseMenuState() {
+
+    public State getPauseMenuState() {
         return pauseMenuState;
     }
 
-    public State GetMenuState() {
+    public State getMenuState() {
         return menuState;
     }
 
-    public void ResetLevel1State() {
+    public void resetLevel1State() {
         level1State = new Level1State(refLink);
     }
 }
