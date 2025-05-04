@@ -2,7 +2,7 @@ package PaooGame.States;
 
 import java.awt.*;
 
-import Entities.Entity;
+import PaooGame.Entities.Entity;
 import PaooGame.RefLinks;
 
 /*! \class State
@@ -32,7 +32,7 @@ public abstract class State
 
         \param state Noua stare a programului (jocului).
      */
-    public static void SetState(State state)
+    public static void setState(State state)
     {
         previousState = currentState;
         currentState = state;
@@ -40,7 +40,7 @@ public abstract class State
 
 
 
-    public static State GetState()
+    public static State getState()
     {
         return currentState;
     }
@@ -50,7 +50,9 @@ public abstract class State
     public abstract void setEnemy(Entity enemy);
 
     ///Metoda abstracta destinata actualizarii starii curente
-    public abstract void Update();
+    public abstract void update();
     ///Metoda abstracta destinata desenarii starii curente
-    public abstract void Draw(Graphics g);
+    public abstract void draw(Graphics g);
+
+    public abstract void restoreState();
 }

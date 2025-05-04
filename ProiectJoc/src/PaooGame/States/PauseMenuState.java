@@ -1,6 +1,6 @@
 package PaooGame.States;
 
-import Entities.Entity;
+import PaooGame.Entities.Entity;
 import PaooGame.Config.Constants;
 import PaooGame.Input.MouseInput;
 import PaooGame.RefLinks;
@@ -36,19 +36,19 @@ public class PauseMenuState extends State {
     }
 
     @Override
-    public void Update() {
+    public void update() {
         MouseInput mouse = refLink.getMouseInput();
         int mx = mouse.getMouseX();
         int my = mouse.getMouseY();
 
         if (mouse.getNumberOfMousePresses() > 0) {
             if (continueButton.contains(mx, my)) {
-                State.SetState(refLink.getGame().getLevel1State());
+                State.setState(refLink.getGame().getLevel1State());
                 mouse.mouseReleased(null);
             } else if (exitToMenuButton.contains(mx, my)) {
                 // Resetează Level1State și revino la meniul principal
                 refLink.getGame().resetLevel1State(); // Aici se apelează resetarea
-                State.SetState(refLink.getGame().getMenuState());
+                State.setState(refLink.getGame().getMenuState());
                 mouse.mouseReleased(null);
             } else if (exitButton.contains(mx, my)) {
                 System.exit(0);
@@ -57,10 +57,10 @@ public class PauseMenuState extends State {
     }
 
     @Override
-    public void Draw(Graphics g) {
+    public void draw(Graphics g) {
         // Fundalul nivelului
         if (refLink.getGame().getLevel1State() != null) {
-            refLink.getGame().getLevel1State().Draw(g);
+            refLink.getGame().getLevel1State().draw(g);
         }
 
         Graphics2D g2d = (Graphics2D) g;
@@ -97,6 +97,11 @@ public class PauseMenuState extends State {
         drawModernButton(g2d, continueButton, "CONTINUE", mx, my);
         drawModernButton(g2d, exitToMenuButton, "MAIN MENU", mx, my);
         drawModernButton(g2d, exitButton, "QUIT GAME", mx, my);
+    }
+
+    @Override
+    public void restoreState() {
+
     }
 
     private void drawModernButton(Graphics2D g2d, Rectangle rect, String text, int mx, int my) {

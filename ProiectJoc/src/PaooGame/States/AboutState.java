@@ -1,6 +1,6 @@
 package PaooGame.States;
 
-import Entities.Entity;
+import PaooGame.Entities.Entity;
 import PaooGame.Config.Constants;
 import PaooGame.RefLinks;
 
@@ -37,7 +37,7 @@ public class AboutState extends State
         \brief Actualizeaza starea curenta a meniu about.
      */
     @Override
-    public void Update()
+    public void update()
     {
 
     }
@@ -48,8 +48,13 @@ public class AboutState extends State
         \param g Contextul grafic in care trebuie sa deseneze starea jocului pe ecran.
      */
     @Override
-    public void Draw(Graphics g)
+    public void draw(Graphics g)
     {
+
+    }
+
+    @Override
+    public void restoreState() {
 
     }
 }

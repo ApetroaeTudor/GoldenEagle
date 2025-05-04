@@ -1,5 +1,4 @@
 package PaooGame.Tiles;
-import Entities.Entity;
 import PaooGame.Config.Constants;
 
 import java.awt.image.BufferedImage;

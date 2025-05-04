@@ -1,6 +1,6 @@
 package PaooGame.HUD;
 
-import Entities.Entity;
+import PaooGame.Entities.Entity;
 
 import java.awt.*;
 
@@ -8,8 +8,8 @@ public class AttackButton extends HUD {
     private boolean isHovered;
     private int x;
     private int y;
-    private int buttonWidth = 80;
-    private int buttonHeight = 30;
+    private int buttonWidth = 500;
+    private int buttonHeight = 70;
 
     private Rectangle bounds;
 
@@ -37,7 +37,7 @@ public class AttackButton extends HUD {
 
         // --- Button Text ---
         String label = "Attack";
-        g2d.setFont(new Font("Arial", Font.BOLD, 14)); // Choose font
+        g2d.setFont(new Font("Arial", Font.BOLD, 35)); // Choose font
         FontMetrics fm = g2d.getFontMetrics();
         int textWidth = fm.stringWidth(label);
 
@@ -75,4 +75,5 @@ public class AttackButton extends HUD {
     public boolean isHovered() {
         return isHovered;
     }
+    public void setIsHovered(boolean isHovered) {this.isHovered = isHovered;}
 }

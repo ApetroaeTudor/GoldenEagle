@@ -1,15 +1,7 @@
 package PaooGame.Maps;
 
-import Entities.Entity;
-import Entities.Tiger;
 import PaooGame.Config.Constants;
-import PaooGame.Hitbox.Hitbox;
-import PaooGame.RefLinks;
-import PaooGame.Tiles.Tile;
 
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.*;
 
 public class Level1 extends Level {
@@ -20,10 +12,6 @@ public class Level1 extends Level {
         this.BehaviorTiles=new int[Constants.LEVEL1_WIDTH][Constants.LEVEL1_HEIGHT];
         this.visualIDs=new int[Constants.LEVEL1_TILE_NR];
         this.behaviorIDs=new int[Constants.LEVEL1_TILE_NR];
-
-
-
-
         String line;
         try
         {
@@ -63,8 +51,11 @@ public class Level1 extends Level {
     }
 
 
+
+
     void update(){
     }
+
 
 
 }

@@ -1,5 +1,5 @@
 package PaooGame.HUD;
-import Entities.Hero;
+import PaooGame.Entities.Hero;
 
 import java.awt.*;
 

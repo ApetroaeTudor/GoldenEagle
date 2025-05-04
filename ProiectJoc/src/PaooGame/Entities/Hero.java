@@ -1,18 +1,25 @@
-package Entities;
+package PaooGame.Entities;
 
 import PaooGame.Animations.Animation;
 import PaooGame.Animations.PlayerAnimations.PlayerActionAnimation;
 import PaooGame.Config.Constants;
-import PaooGame.HUD.HealthBar;
 import PaooGame.Hitbox.Hitbox;
 import PaooGame.RefLinks;
 import PaooGame.States.State;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class Hero extends Entity {
     private float jumpStrength;
+
+    private Timer deathAnimationTimer;
+    private int timeoutInMillisForDeathAnimation = 600;
+    private boolean isDying = false;
+    private double fallingSpeedCap = 2.0;
+    private double tick = 0;
+
 
 
 
@@ -38,14 +45,16 @@ public class Hero extends Entity {
     public Hero(RefLinks refLink, int startX, int startY) {
         super(refLink,startX,startY);
 
-        this.damage = 30;
-
-
+        this.deathAnimationTimer = new Timer(this.timeoutInMillisForDeathAnimation,e->{
+           this.health = 0;
+           this.isDying = false;
+        });
+        this.deathAnimationTimer.setRepeats(false);
 
 
         this.jumpStrength = -3.5f;//-3.2f;   // Initial upward velocity (negative Y). Adjust! Needs to be > gravity per frame initially.
 
-        this.speed = 2;             // Base horizontal speed
+        this.speed = Constants.HERO_BASE_SPEED;             // Base horizontal speed
         this.jumpCap = 10;          // Stamina/resource for jumps
 
 
@@ -65,6 +74,21 @@ public class Hero extends Entity {
         this.attackingAnimation.loadAnimation();
         this.crounchingAnimation=new PlayerActionAnimation(this.reflink,Constants.HERO_STATES.CROUCHING,1,1);
 
+
+        this.damage = Constants.HERO_BASE_DAMAGE;
+        this.health = Constants.HERO_BASE_HEALTH;
+
+    }
+
+    @Override
+    public void restoreEntity() {
+        this.x = 100;
+        this.y = 420;
+        this.speed = Constants.HERO_BASE_SPEED;
+        this.hitbox.setX(this.x);
+        this.hitbox.setY(this.y);
+        this.resetHealthBarDefaultValues();
+        this.setHealth(100);
     }
 
     @Override
@@ -76,6 +100,21 @@ public class Hero extends Entity {
         updateAnimationState();
 
         getContext();
+
+        if(this.reflink.getGame().getLevel1State().getLevel1().isTileUnderCharacterLethal(this.getHitbox(),this.LEVEL_WIDTH,this.LEVEL_HEIGHT)){
+            this.deathAnimationTimer.start();
+            this.isDying = true;
+        }
+
+        if(this.isDying){
+            this.speed =0.1f;
+            this.tick++;
+            if(this.tick==this.fallingSpeedCap){
+                this.tick = 0;
+                this.y+=1;
+                this.hitbox.setY(this.hitbox.getY()+1);
+            }
+        }
 
 
     }
@@ -270,7 +309,7 @@ public class Hero extends Entity {
 
 
     private void getContext(){
-        switch (State.GetState().getStateName()){
+        switch (State.getState().getStateName()){
             case Constants.LEVEL1_STATE:
                 this.LEVEL_HEIGHT = Constants.LEVEL1_HEIGHT;
                 this.LEVEL_WIDTH = Constants.LEVEL1_WIDTH;
@@ -287,10 +326,37 @@ public class Hero extends Entity {
         return "Player";
     }
 
-//    @Override
-//    public void Draw(Graphics g){
-//        super.Draw(g);
-//        super.DrawHealthBar(g);
-//    }
+
+
+    @Override
+    public void attack() {
+
+    }
+
+    @Override
+    public String getSource() {
+        return "GAME";
+    }
+
+
+    @Override
+    public void Draw(Graphics g){
+
+        this.hitbox.printHitbox(g);
+        this.getAnimationByState().paintAnimation(g,(int)this.x,(int)this.y,this.flipped);
+
+        if(this.isDying){
+            Graphics2D g2d = (Graphics2D) g;
+            Composite originalComposite = g2d.getComposite();
+            g2d.setComposite(AlphaComposite.SrcOver.derive(0.1f));
+            Color originalColor = g2d.getColor();
+            g2d.setColor(Color.RED);
+            g2d.fillRect(0,0,Constants.WINDOW_WIDTH,Constants.WINDOW_HEIGHT);
+            g2d.setColor(originalColor);
+            g2d.setComposite(originalComposite);
+
+        }
+
+    }
 
 }

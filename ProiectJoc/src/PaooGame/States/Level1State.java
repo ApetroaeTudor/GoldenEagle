@@ -1,11 +1,10 @@
 package PaooGame.States;
 
-import Entities.Entity;
-import Entities.Tiger;
+import PaooGame.Entities.Entity;
+import PaooGame.Entities.Tiger;
 import PaooGame.Camera.Camera;
 import PaooGame.Config.Constants;
-import PaooGame.HUD.HealthBar;
-import Entities.Hero;
+import PaooGame.Entities.Hero;
 import PaooGame.Input.MouseInput;
 import PaooGame.Maps.Level1;
 import PaooGame.RefLinks;
@@ -22,6 +21,13 @@ public class Level1State extends State {
     private PauseButton pauseButton;
     private int levelWidth;  // Lățimea totală a nivelului în pixeli
     private int levelHeight; // Înălțimea totală a nivelului în pixeli
+
+    private int tiger1X =400;
+    private int tiger1Y =450;
+    private int tiger2X =720;
+    private int tiger2Y =470;
+
+
 
 
     protected boolean transitioning = false;
@@ -40,8 +46,8 @@ public class Level1State extends State {
         camera = new Camera(0, 0);
 
         enemies = new Entity[2];
-        enemies[0] = new Tiger(this.refLink,400,450);
-        enemies[1] = new Tiger(this.refLink,720,470);
+        enemies[0] = new Tiger(this.refLink,this.tiger1X,this.tiger1Y);
+        enemies[1] = new Tiger(this.refLink,this.tiger2X,this.tiger2Y);
 
         pauseButton = new PauseButton(refLink.getHero(), 80, 50);
         pauseButton = new PauseButton(refLink.getHero(), 80, 50);
@@ -51,26 +57,44 @@ public class Level1State extends State {
     }
 
     @Override
-    public void Update() {
+    public void restoreState() {
+        this.enemies[0].setX(this.tiger1X);
+        this.enemies[0].setY(this.tiger1Y);
+        this.enemies[1].setX(this.tiger2X);
+        this.enemies[1].setY(this.tiger2Y);
+        for(Entity enemy: enemies){
+            enemy.restoreEntity();
+        }
+    }
+
+
+    @Override
+    public void update() {
         this.refLink.getHero().Update();
         Hero hero = refLink.getHero();
 
-        for(Entity enemy : enemies){
-            if(refLink.getHero().getHitbox().intersects(enemy.getHitbox())){
-                enemy.setIsEngaged(true);
-                this.transitioning = true;
-                this.transition_to_fight = true;
-                refLink.getGame().getFightState().setEnemy(enemy);
 
+        for(Entity enemy : enemies){
+            if(enemy.getHealth()==0){
+                enemy.nullifyHitbox();
             }
-//            else{
-//                enemy.setIsEngaged(false);
-//            }
+            else{
+                if(refLink.getHero().getHitbox().intersects(enemy.getHitbox())){
+                    enemy.setIsEngaged(true);
+                    this.transitioning = true;
+                    this.transition_to_fight = true;
+                    refLink.getGame().getFightState().setEnemy(enemy);
+
+                }
+            }
+
+
+
             enemy.Update();
         }
 
         if (refLink.getKeyManager().isKeyPressedOnce(KeyEvent.VK_ESCAPE)) {
-            State.SetState(refLink.getGame().getPauseMenuState());
+            State.setState(refLink.getGame().getPauseMenuState());
         }
 
         MouseInput mouse = refLink.getMouseInput();
@@ -80,7 +104,7 @@ public class Level1State extends State {
         pauseButton.updateHover(mousePos.x, mousePos.y); // fără transformare
 
         if (mouse.getNumberOfMousePresses() > 0 && pauseButton.isClicked(mousePos.x, mousePos.y)) {
-            State.SetState(refLink.getGame().getPauseMenuState()); // Acum trimite către meniul de pauză
+            State.setState(refLink.getGame().getPauseMenuState()); // Acum trimite către meniul de pauză
             mouse.mouseReleased(null);
             return;
         }
@@ -105,15 +129,24 @@ public class Level1State extends State {
 
         if(this.transition_to_fight && this.targetBlackIntensity==1) {
             FightState fightState = (FightState) refLink.getGame().getFightState();
-            State.SetState(fightState);
-
             this.targetBlackIntensity = 0;
             this.transitioning = false;
+            this.transition_to_fight = false;
+            State.setState(fightState);
+
+
+        }
+        if(this.refLink.getHero().getHealth() == 0 && this.targetBlackIntensity == 1){
+            this.targetBlackIntensity = 0;
+
+            this.refLink.getGame().getDeathState().restoreState();
+            State.setState(this.refLink.getGame().getDeathState());
+//            this.transitioning = false;
         }
     }
 
     @Override
-    public void Draw(Graphics g) {
+    public void draw(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         AffineTransform originalTransform = g2d.getTransform();
         // Aplică transformarea camerei
@@ -141,24 +174,23 @@ public class Level1State extends State {
 
 
         for(Entity enemy : enemies){
-            enemy.Draw(g);
+            if(enemy.getHealth()>0){
+                enemy.Draw(g);
+            }
         }
 
         if(this.transitioning) {
             Color originalColor = g2d.getColor();
             this.targetBlackIntensity += this.blackFadeStep;
             if(this.targetBlackIntensity>=1){
-                this.targetBlackIntensity = 1;
+                this.targetBlackIntensity = 1.0;
             }
             int alpha = (int)(this.targetBlackIntensity * 255.0);
 
             g2d.setColor(new Color(0, 0, 0, alpha));
             g.fillRect(0, 0, Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT);
 
-
-
             g2d.setColor(originalColor);
-            System.out.println(alpha);
         }
 
         // Restabilește transformarea
@@ -166,7 +198,22 @@ public class Level1State extends State {
         g2d.setTransform(originalTransform);
         this.refLink.getHero().DrawHealthBar(g);
         pauseButton.draw(g2d);
+
+        if(refLink.getHero().getHealth() == 0){
+            this.targetBlackIntensity+=this.blackFadeStep;
+            Color originalColor = g2d.getColor();
+            if(this.targetBlackIntensity>=1.0){
+                this.targetBlackIntensity = 1.0;
+
+            }
+            int alpha = (int)(this.targetBlackIntensity*255.0);
+            g2d.setColor(new Color(0,0,0,alpha));
+            g.fillRect(0,0,Constants.WINDOW_WIDTH,Constants.WINDOW_HEIGHT);
+            g2d.setColor(originalColor);
+        }
     }
+
+
 
     public Level1 getLevel1() {
         return level1;

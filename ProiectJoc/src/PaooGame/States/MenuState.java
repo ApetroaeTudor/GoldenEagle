@@ -1,7 +1,7 @@
 
 package PaooGame.States;
 
-import Entities.Entity;
+import PaooGame.Entities.Entity;
 import PaooGame.Config.Constants;
 import PaooGame.Graphics.ImageLoader;
 import PaooGame.Input.MouseInput;
@@ -41,14 +41,14 @@ public class MenuState extends State  {
     }
 
     @Override
-    public void Update() {
+    public void update() {
         MouseInput mouse = refLink.getMouseInput();
         int mx = mouse.getMouseX();
         int my = mouse.getMouseY();
 
         if (mouse.getNumberOfMousePresses() > 0) {
             if (startButton.contains(mx, my)) {
-                State.SetState(refLink.getGame().getLevel1State());
+                State.setState(refLink.getGame().getLevel1State());
             }
             else if (settingsButton.contains(mx, my)) {
             }
@@ -61,7 +61,7 @@ public class MenuState extends State  {
     }
 
     @Override
-    public void Draw(Graphics g) {
+    public void draw(Graphics g) {
         // Desenează fundal
 
         if(background != null) {
@@ -88,6 +88,11 @@ public class MenuState extends State  {
         drawButton(g2d, startButton, "Start Game", mx, my);
         drawButton(g2d, settingsButton, "Settings", mx, my);
         drawButton(g2d, quitButton, "Quit", mx, my);
+    }
+
+    @Override
+    public void restoreState() {
+
     }
 
     private void drawButton(Graphics2D g2d, Rectangle button, String text, int mx, int my) {

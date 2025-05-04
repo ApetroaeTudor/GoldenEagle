@@ -1,7 +1,6 @@
 package PaooGame.HUD;
 
-import Entities.Entity;
-import Entities.Hero;
+import PaooGame.Entities.Entity;
 import PaooGame.Config.Constants;
 
 import java.awt.Color;
@@ -43,11 +42,6 @@ public class HealthBar extends HUD {
                 displayedHealth = targetHealth;
             }
         }
-
-        // Desenăm textul
-//        g2d.setColor(Color.WHITE);
-//        g2d.setFont(g2d.getFont().deriveFont(16f));
-//        g2d.drawString("Health:", 20, y + 15);
 
         // Fundal roșu
         g2d.setColor(Color.RED);

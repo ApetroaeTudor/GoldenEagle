@@ -1,7 +1,6 @@
-package Entities;
+package PaooGame.Entities;
 
 import PaooGame.Animations.Animation;
-import PaooGame.Config.Constants;
 import PaooGame.HUD.HealthBar;
 import PaooGame.Hitbox.Hitbox;
 import PaooGame.RefLinks;
@@ -45,7 +44,6 @@ public abstract class Entity {
         this.reflink = reflink;
         this.gravity = 0.15f;
         this.maxFallSpeed = 6.0f;
-        this.health = 100;
 
         this.velocityX = 0f;
         this.velocityY = 0f;
@@ -97,6 +95,7 @@ public abstract class Entity {
     public double getHealth() {
         return health;
     }
+    public void setHealth(double health) {this.health = health;}
 
     public Hitbox getHitbox() { return this.hitbox; }
 
@@ -114,11 +113,7 @@ public abstract class Entity {
     public abstract String getName();
 
 
-    public void Draw(Graphics g){
 
-//        this.hitbox.printHitbox(g);
-        this.getAnimationByState().paintAnimation(g,(int)this.x,(int)this.y,this.flipped);
-    }
 
     public void DrawHealthBar(Graphics g){
         Graphics2D g2d = (Graphics2D)g;
@@ -151,12 +146,32 @@ public abstract class Entity {
 
     public void resetHealthBarDefaultValues(){this.healthBar.resetPositionToDefault();}
 
-    public void reduceHealth(double health) { this.health-=health; if(this.health > 100){this.health = 100;}}
+    public void reduceHealth(double health) { this.health-=health; if(this.health < 0){this.health = 0;}}
 
-    public void restoreHealth(double health) { this.health+=health; if(this.health < 0){this.health = 0;}}
+    public void restoreHealth(double health) { this.health+=health; if(this.health > 100){this.health = 100;}}
 
     public double getDamage(){ return this.damage; }
     public void setDamage(double damage){this.damage = damage;}
+
+    public void nullifyHitbox(){
+        this.hitbox.setX(0);
+        this.hitbox.setY(0);
+        this.hitbox.setWidth(0);
+        this.hitbox.setHeight(0);
+    }
+
+    public abstract void restoreEntity();
+
+
+    public abstract void attack();
+
+    public abstract String getSource();
+
+    public void Draw(Graphics g){
+
+//        this.hitbox.printHitbox(g);
+        this.getAnimationByState().paintAnimation(g,(int)this.x,(int)this.y,this.flipped);
+    }
 
 
 

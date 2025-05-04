@@ -1,6 +1,6 @@
 package PaooGame.States;
 
-import Entities.Entity;
+import PaooGame.Entities.Entity;
 import PaooGame.Config.Constants;
 import PaooGame.RefLinks;
 
@@ -40,7 +40,7 @@ public class SettingsState extends State
         \brief Actualizeaza starea setarilor.
      */
     @Override
-    public void Update()
+    public void update()
     {
 
     }
@@ -51,8 +51,13 @@ public class SettingsState extends State
         \param g Contextul grafic in care trebuie sa deseneze starea setarilor pe ecran.
      */
     @Override
-    public void Draw(Graphics g)
+    public void draw(Graphics g)
     {
+
+    }
+
+    @Override
+    public void restoreState() {
 
     }
 }

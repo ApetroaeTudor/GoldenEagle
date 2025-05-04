@@ -1,7 +1,7 @@
 package PaooGame.HUD;
 
-import Entities.Entity;
-import Entities.Hero;
+import PaooGame.Entities.Entity;
+
 import java.awt.Graphics2D;
 
 public abstract class HUD {

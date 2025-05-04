@@ -1,7 +1,7 @@
 package PaooGame;
 
 import PaooGame.GameWindow.GameWindow;
-import Entities.Hero;
+import PaooGame.Entities.Hero;
 import PaooGame.Input.KeyManager;
 import PaooGame.Input.MouseInput;
 import PaooGame.Maps.Level1;
@@ -25,6 +25,7 @@ public class Game implements Runnable {
     private State pauseMenuState;
     private State aboutState;
     private State fightState;
+    private State deathState;
     private KeyManager keyManager;
     private RefLinks refLink;
     private MouseInput mouseInput;
@@ -73,8 +74,9 @@ public class Game implements Runnable {
         aboutState = new AboutState(refLink);
         fightState = new FightState(refLink);
         level1State = new PaooGame.States.Level1State(refLink);
+        deathState = new DeathState(refLink);
         pauseMenuState = new PauseMenuState(refLink);
-        State.SetState(menuState);
+        State.setState(menuState);
     }
 
 
@@ -122,8 +124,8 @@ public class Game implements Runnable {
     }
 
     private void Update() {
-        if (State.GetState() != null) {
-            State.GetState().Update();
+        if (State.getState() != null) {
+            State.getState().update();
         }
     }
 
@@ -140,8 +142,8 @@ public class Game implements Runnable {
         g = bs.getDrawGraphics();
         g.clearRect(0, 0, wnd.GetWndWidth(), wnd.GetWndHeight());
 
-        if (State.GetState() != null) {
-            State.GetState().Draw(g);
+        if (State.getState() != null) {
+            State.getState().draw(g);
         }
 
         bs.show();
@@ -183,6 +185,8 @@ public class Game implements Runnable {
     public State getMenuState() {
         return menuState;
     }
+
+    public State getDeathState() {return deathState;}
 
     public void resetLevel1State() {
         level1State = new Level1State(refLink);

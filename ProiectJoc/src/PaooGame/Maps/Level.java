@@ -1,6 +1,5 @@
 package PaooGame.Maps;
 
-import Entities.Entity;
 import PaooGame.Config.Constants;
 import PaooGame.Hitbox.Hitbox;
 
@@ -55,6 +54,45 @@ public abstract class Level {
 
         // All tiles checked are air or out-of-bounds
         return -1;
+    }
+
+    public boolean isTileUnderCharacterLethal(Hitbox hitbox, int LEVEL_WIDTH,int LEVEL_HEIGHT){
+        float hitboxX = hitbox.getX();
+        float hitboxY = hitbox.getY();
+        float hitboxWidth = hitbox.getWidth();
+        float hitboxHeight = hitbox.getHeight();
+
+        int startX = (int) Math.floor(hitboxX / Constants.TILE_SIZE);
+        int endX = (int) Math.floor((hitboxX + hitboxWidth - Constants.EPSILON) / Constants.TILE_SIZE);
+
+        float checkY = hitboxY + hitboxHeight; // The coordinate defining the top of the tile row below
+        int tileRowToCheck = (int) Math.floor(checkY / Constants.TILE_SIZE);
+
+        if (tileRowToCheck < 0 || tileRowToCheck >= LEVEL_HEIGHT) {
+            return false; // Off map vertically (below or above), considered falling.
+        }
+
+        for (int tileX = startX; tileX <= endX; tileX++) {
+            if (tileX < 0 || tileX >= LEVEL_WIDTH) {
+                // Treat out-of-bounds as air, but continue checking other tiles
+                continue;
+            }
+
+            int index = tileRowToCheck * LEVEL_WIDTH + tileX;
+
+            if (index < 0 || index >= behaviorIDs.length) {
+                System.err.println("Error: Calculated map index out of bounds: " + index);
+                continue; // Treat invalid index as air and continue
+            }
+
+            int behavior = behaviorIDs[index];
+            if (behavior == 0 || behavior == 1) {
+                return true; // water -- death
+            }
+        }
+
+        // All tiles checked are air or out-of-bounds
+        return false;
     }
 
     public void snapToGround(Hitbox hitbox) {
@@ -197,4 +235,5 @@ public abstract class Level {
         // Check bounds and solidity (Implement this based on your level data)
         return isTileSolid(checkTileX, checkTileY,LEVEL_WIDTH,LEVEL_HEIGHT);
     }
+
 }

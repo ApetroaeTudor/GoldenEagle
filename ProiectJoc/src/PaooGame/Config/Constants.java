@@ -32,6 +32,7 @@ public class Constants {
     public static final String LEVEL1_BEHAVIOR_CSV = "res/Level1/Level1Behavior.csv";
     public static final String LEVEL1_BG_PATH = "res/Level1/Level1Background.png";
     public static final String TIGER_FIGHT_BG_PATH = "res/Level1/TigerFightBg.jpg";
+    public static final String DEATH_SCREEN_BG_PATH = "res/Effects/YouDied.jpg";
     public static final String HERO_SPRITE_SHEET_PATH = "res/Characters/Hero/Hero_SpriteSheet1.png";
     public static final String TIGER_SPRITE_SHEET_PATH = "res/Enemies/Tiger.png";
     public static final String ATTACK_EXPLOSION_SHEET_PATH = "res/Effects/HitExplosion.png";
@@ -47,6 +48,15 @@ public class Constants {
     public static final Color GREEN_HEALTH_BAR_COLOR_2 = new Color(0, 150, 0);
     public static final Color YELLOW_HEALTH_BAR_COLOR_1 = new Color(255, 255, 0);
     public static final Color YELLOW_HEALTH_BAR_COLOR_2 = new Color(200, 200, 0);
+
+    public static final double HERO_BASE_HEALTH = 100.0;
+    public static final double HERO_BASE_DAMAGE = 30.0;
+    public static final float HERO_BASE_SPEED = 2.0f;
+
+    public static final double TIGER_HEALTH = 100.0;
+    public static final double TIGER_DAMAGE = 30.0;
+    public static final float TIGER_SPEED =-0.4f;
+
 
     public static enum EFFECTS{
         ATTACK_EXPLOSION

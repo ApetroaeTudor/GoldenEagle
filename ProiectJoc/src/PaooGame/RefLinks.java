@@ -1,6 +1,6 @@
 package PaooGame;
 
-import Entities.Hero;
+import PaooGame.Entities.Hero;
 import PaooGame.Input.MouseInput;
 
 import PaooGame.Input.KeyManager;
