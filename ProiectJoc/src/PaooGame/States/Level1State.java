@@ -25,7 +25,7 @@ public class Level1State extends State {
     private int tiger1X =400;
     private int tiger1Y =450;
     private int tiger2X =720;
-    private int tiger2Y =470;
+    private int tiger2Y =460;
 
 
 
@@ -88,8 +88,6 @@ public class Level1State extends State {
                 }
             }
 
-
-
             enemy.Update();
         }
 
@@ -128,11 +126,12 @@ public class Level1State extends State {
         camera.setPosition(cameraX, cameraY);
 
         if(this.transition_to_fight && this.targetBlackIntensity==1) {
-            FightState fightState = (FightState) refLink.getGame().getFightState();
             this.targetBlackIntensity = 0;
             this.transitioning = false;
             this.transition_to_fight = false;
-            State.setState(fightState);
+            refLink.getGame().getFightState().restoreState();
+
+            State.setState(refLink.getGame().getFightState());
 
 
         }

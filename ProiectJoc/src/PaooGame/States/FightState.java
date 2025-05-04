@@ -28,10 +28,12 @@ public class FightState extends State {
     private Timer timer2;
     private Timer timer3;
     private Timer popupTimer;
+    private Timer waitForEnemyDeathTimer;
 
     private int popupTimeInMillis = 700;
     private int timeoutInMillis = 1000;
     private int timeoutInMillisForDelayingPlayerTurn = 1500;
+    private int timeoutInMillisWaitForEnemyDeath = 1000;
     private boolean isTimerStarted;
     private boolean isTimerFinished;
     private boolean isWaitingForPlayerTurn;
@@ -102,10 +104,15 @@ public class FightState extends State {
             this.printingDamageDealtPopup = false;
             this.latestDamageDealt = 0.0;
         });
+        this.waitForEnemyDeathTimer = new Timer(this.timeoutInMillisWaitForEnemyDeath,e->{
+            transitioningToVictory = true;
+
+        });
         this.timer.setRepeats(false);
         this.timer2.setRepeats(false);
         this.timer3.setRepeats(false);
         this.popupTimer.setRepeats(false);
+        this.waitForEnemyDeathTimer.setRepeats(false);
 
         this.attackButton = new AttackButton(reflink.getHero(),310,620);
 
@@ -183,7 +190,8 @@ public class FightState extends State {
 
 
         if(this.enemy.getHealth() == 0){
-            transitioningToVictory = true;
+            this.waitForEnemyDeathTimer.start();
+
         }
         if(this.refLink.getHero().getHealth()==0){
             this.timer3.start();
@@ -317,6 +325,15 @@ public class FightState extends State {
         fadeToBlackStep = 0.05;
         this.transitioningToDeath = false;
         this.transitioningToVictory = false;
+
+        this.printingDamageDealtPopup = false;
+        this.printingDamageReceivedPopup = false;
+
+        this.latestDamageDealt = 0.0;
+        this.latestDamageReceived = 0.0;
+        this.progressOnSpace = 0;
+        this.enemyTurnProgress = 0;
+        this.blockingBar.updateValue(this.enemyTurnProgress);
     }
 
     @Override

@@ -50,11 +50,11 @@ public class Constants {
     public static final Color YELLOW_HEALTH_BAR_COLOR_2 = new Color(200, 200, 0);
 
     public static final double HERO_BASE_HEALTH = 100.0;
-    public static final double HERO_BASE_DAMAGE = 30.0;
+    public static final double HERO_BASE_DAMAGE = 40.0;
     public static final float HERO_BASE_SPEED = 2.0f;
 
     public static final double TIGER_HEALTH = 100.0;
-    public static final double TIGER_DAMAGE = 30.0;
+    public static final double TIGER_DAMAGE = 20.0;
     public static final float TIGER_SPEED =-0.4f;
 
 
