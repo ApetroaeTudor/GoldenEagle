@@ -3,14 +3,18 @@ package Entities;
 import PaooGame.Animations.Animation;
 import PaooGame.Animations.PlayerAnimations.PlayerActionAnimation;
 import PaooGame.Config.Constants;
+import PaooGame.HUD.HealthBar;
 import PaooGame.Hitbox.Hitbox;
 import PaooGame.RefLinks;
 import PaooGame.States.State;
 
+import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class Hero extends Entity {
     private float jumpStrength;
+
+
 
     private int jumpCap;
 
@@ -33,6 +37,10 @@ public class Hero extends Entity {
 
     public Hero(RefLinks refLink, int startX, int startY) {
         super(refLink,startX,startY);
+
+        this.damage = 30;
+
+
 
 
         this.jumpStrength = -3.5f;//-3.2f;   // Initial upward velocity (negative Y). Adjust! Needs to be > gravity per frame initially.
@@ -272,5 +280,17 @@ public class Hero extends Entity {
                 this.LEVEL_WIDTH = Constants.LEVEL1_WIDTH; //placeholder, se va modifica la introducerea niv2 si niv3
         }
     }
+
+
+    @Override
+    public String getName(){
+        return "Player";
+    }
+
+//    @Override
+//    public void Draw(Graphics g){
+//        super.Draw(g);
+//        super.DrawHealthBar(g);
+//    }
 
 }

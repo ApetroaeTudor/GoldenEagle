@@ -1,6 +1,8 @@
 package PaooGame.States;
 
 import java.awt.*;
+
+import Entities.Entity;
 import PaooGame.RefLinks;
 
 /*! \class State
@@ -45,6 +47,7 @@ public abstract class State
 
 
     public abstract String getStateName();
+    public abstract void setEnemy(Entity enemy);
 
     ///Metoda abstracta destinata actualizarii starii curente
     public abstract void Update();

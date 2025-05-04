@@ -1,5 +1,6 @@
 package PaooGame.States;
 
+import Entities.Entity;
 import PaooGame.Config.Constants;
 import PaooGame.Input.MouseInput;
 import PaooGame.RefLinks;
@@ -27,6 +28,11 @@ public class PauseMenuState extends State {
     @Override
     public String getStateName(){
         return stateName;
+    }
+
+    @Override
+    public void setEnemy(Entity enemy) {
+
     }
 
     @Override

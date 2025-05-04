@@ -1,4 +1,5 @@
 package PaooGame.Tiles;
+import Entities.Entity;
 import PaooGame.Config.Constants;
 
 import java.awt.image.BufferedImage;
@@ -32,6 +33,7 @@ public class TileCache {
 
     private static final Map<String,BufferedImage> HeroStates=new HashMap<>();
     private static final Map<String,BufferedImage> TigerStates=new HashMap<>();
+    private static final Map<String,BufferedImage> Effects=new HashMap<>();
 
     public Tile getTile(String path, int id){
         Entry<String,Integer> key=new AbstractMap.SimpleEntry<>(path,id);
@@ -72,6 +74,7 @@ public class TileCache {
     }
 
 
+
     public BufferedImage getBackground(String path){
         if(backgrounds.containsKey(path)){
             return backgrounds.get(path);
@@ -92,6 +95,31 @@ public class TileCache {
         }
         return backgrounds.get(path);
 
+    }
+
+    public BufferedImage getEffect(Constants.EFFECTS selectEffect){
+        BufferedImage returnIMG = null;
+        try{
+            File effectFileSheet = null;
+            switch (selectEffect){
+                case ATTACK_EXPLOSION:
+                    effectFileSheet = new File(Constants.ATTACK_EXPLOSION_SHEET_PATH);
+                    if(!effectFileSheet.exists()){
+                        System.err.println("Error working with effect sheet file");
+                    }
+                    if(!Effects.containsKey("ATTACK_EXPLOSION")){
+                        Effects.put("ATTACK_EXPLOSION",ImageIO.read(effectFileSheet).getSubimage(0,0,112*8,112));
+                    }
+                    returnIMG = Effects.get("ATTACK_EXPLOSION");
+                    break;
+            }
+
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+
+        return returnIMG;
     }
 
     public BufferedImage getTigerState(Constants.ENEMY_STATES state){

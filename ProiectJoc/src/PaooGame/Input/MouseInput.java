@@ -16,8 +16,13 @@ public class MouseInput implements MouseInputListener, MouseMotionListener {
     private int mouseX=0;
     private int mouseY=0;
 
+    private boolean isMousePressed = false;
+    private boolean clickDetected = false;
+
+
     @Override
     public void mousePressed(MouseEvent e) {
+        isMousePressed = true;
         if(numberOfMousePresses < Integer.MAX_VALUE)
             numberOfMousePresses += 1;
 
@@ -27,6 +32,8 @@ public class MouseInput implements MouseInputListener, MouseMotionListener {
 
     @Override
     public void mouseReleased(MouseEvent e) {
+        isMousePressed = false;
+        clickDetected = false;
         numberOfMousePresses=0;
         mouseX=0;
         mouseY=0;
@@ -66,7 +73,11 @@ public class MouseInput implements MouseInputListener, MouseMotionListener {
     }
 
 
-//    public boolean getMousePressedState(){
-//        return isMousePressed;
-//    }
+    public boolean isOneClick() {
+        if (isMousePressed && !clickDetected) {
+            clickDetected = true;
+            return true;
+        }
+        return false;
+    }
 }

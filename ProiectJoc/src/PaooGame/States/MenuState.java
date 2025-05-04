@@ -1,6 +1,7 @@
 
 package PaooGame.States;
 
+import Entities.Entity;
 import PaooGame.Config.Constants;
 import PaooGame.Graphics.ImageLoader;
 import PaooGame.Input.MouseInput;
@@ -32,6 +33,11 @@ public class MenuState extends State  {
     @Override
     public String getStateName(){
         return stateName;
+    }
+
+    @Override
+    public void setEnemy(Entity enemy) {
+
     }
 
     @Override

@@ -26,6 +26,8 @@ public class PlayerActionAnimation extends Animation {
 
 
         this.animationSpeed=animationSpeed; //mai mare =  mai lent
+
+        this.playOnce = false;
     }
 
     @Override
@@ -37,18 +39,32 @@ public class PlayerActionAnimation extends Animation {
 
     @Override
     public void updateAnimation() {
+        if(this.playOnce && this.isFinished){
+            return;
+        }
         tick++;
         if(tick>=animationSpeed) {
             tick=0;
             animationState++;
             if(animationState>=nrOfFrames) {
+                this.isFinished = true;
                 animationState=0;
             }
         }
     }
 
     @Override
+    public void triggerOnce() {
+        this.isFinished = false;
+        this.animationState = 0;
+        this.tick = 0;
+    }
+
+    @Override
     public void paintAnimation(Graphics g, int x, int y,boolean flipped) {
+        if(this.playOnce && this.isFinished){
+            return;
+        }
         if (flipped){
             BufferedImage currentFrame=animationArray[animationState];
             Graphics2D g2d = (Graphics2D) g.create(); // 1. Create a copy

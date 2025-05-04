@@ -5,6 +5,7 @@ import PaooGame.Animations.EnemyAnimations.TigerActionAnimation;
 import PaooGame.Config.Constants;
 import PaooGame.Hitbox.Hitbox;
 import PaooGame.RefLinks;
+import PaooGame.States.State;
 
 public class Tiger extends Entity {
     private Constants.ENEMY_STATES currentState;
@@ -21,6 +22,9 @@ public class Tiger extends Entity {
         this.hitbox = new Hitbox(this.x,this.y,(int)( (64.0/100.0)*50.0 ),(int)( (32.0/100)*50.0 ));
         this.currentState = Constants.ENEMY_STATES.FALLING;
 
+        this.setHealthBarColor1(Constants.YELLOW_HEALTH_BAR_COLOR_1);
+        this.setHealthBarColor2(Constants.YELLOW_HEALTH_BAR_COLOR_2);
+
         this.walkingAnimation = new TigerActionAnimation(this.reflink,Constants.ENEMY_STATES.WALKING,4,10);
         this.walkingAnimation.loadAnimation();
         this.inFightAttackingAnimation = new TigerActionAnimation(this.reflink,Constants.ENEMY_STATES.IN_FIGHT_ATTACKING,4,10);
@@ -28,14 +32,29 @@ public class Tiger extends Entity {
         this.inFightIdleAnimation = new TigerActionAnimation(this.reflink,Constants.ENEMY_STATES.IN_FIGHT_IDLE,1,10);
         this.inFightIdleAnimation.loadAnimation();
 
+        this.damage = 10;
+
     }
 
     @Override
     public void Update(){
-        applyGravity();
-        moveAndCollide();
-        updateVisualPosition();
+        switch(this.currentState)   {
+            case IN_FIGHT_ATTACKING:
+            case IN_FIGHT_IDLE:
+                this.hitbox.setWidth(32*5);
+                this.hitbox.setHeight(64*5);
+                break;
+            case FALLING:
+            case WALKING:
+                this.hitbox.setWidth((int)( (64.0/100.0)*50.0 ));
+                this.hitbox.setHeight((int)( (32.0/100)*50.0 ));
+                applyGravity();
+                moveAndCollide();
+                updateVisualPosition();
+        }
+
         updateAnimationState();
+
     }
 
     @Override
@@ -61,18 +80,17 @@ public class Tiger extends Entity {
     @Override
     protected void updateAnimationState() {
         if(this.isGrounded){
-            if(this.isEngaged){
-                this.currentState = Constants.ENEMY_STATES.IN_FIGHT_IDLE;
-            }
-            else{
-                this.currentState = Constants.ENEMY_STATES.WALKING;
-            }
-
+            this.currentState = Constants.ENEMY_STATES.WALKING;
         }
         else{
             this.currentState = Constants.ENEMY_STATES.FALLING;
         }
 
+        if(this.isEngaged && State.GetState().getStateName()==Constants.FIGHT_STATE){
+            this.currentState = Constants.ENEMY_STATES.IN_FIGHT_IDLE;
+//            this.gravity = 0;
+//            this.speed = 0;
+        }
         this.getAnimationByState().updateAnimation();
     }
 
@@ -140,6 +158,18 @@ public class Tiger extends Entity {
             }
         }
     }
+
+    public void setCurrentState(Constants.ENEMY_STATES state){
+        this.currentState = state;
+    }
+
+    @Override
+    public String getName(){
+        return "Tiger";
+    }
+
+
+
 
 
 

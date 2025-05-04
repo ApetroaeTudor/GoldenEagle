@@ -1,4 +1,4 @@
-package PaooGame.Animations.EnemyAnimations;
+package PaooGame.Animations.EffectsAnimations;
 
 import PaooGame.Animations.Animation;
 import PaooGame.Config.Constants;
@@ -8,43 +8,30 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 
-public class TigerActionAnimation extends Animation {
+public class EffectAnimation extends Animation {
 
-    private Constants.ENEMY_STATES purpose;
+    private Constants.EFFECTS selectedEffect;
 
-    public TigerActionAnimation(RefLinks reflink, Constants.ENEMY_STATES purpose, int nrOfFrames, int animationSpeed){
+    public EffectAnimation(RefLinks refLink,Constants.EFFECTS selectedEffect,int nrOfFrames,int animationSpeed){
         super();
-        this.purpose = purpose;
-        this.reflink = reflink;
-        this.imageSheet = reflink.getTileCache().getTigerState(purpose);
+        this.playOnce = true;
+        this.reflink = refLink;
+        this.selectedEffect = selectedEffect;
         this.nrOfFrames = nrOfFrames;
-        switch (purpose){
-            case FALLING:
-            case WALKING:
-                this.ImgWidth = Constants.TIGER_PASSIVE_TILE_WIDTH;
-                this.ImgHeight = Constants.TIGER_PASSIVE_TILE_HEIGHT;
-                break;
-            case IN_FIGHT_IDLE:
-                this.ImgWidth = Constants.TIGER_FIGHTING_TILE_WIDTH;
-                this.ImgHeight = Constants.TIGER_FIGHTING_TILE_HEIGHT;
-                this.playOnce = false;
-                break;
-            case IN_FIGHT_ATTACKING:
-                this.ImgWidth = Constants.TIGER_FIGHTING_TILE_WIDTH;
-                this.ImgHeight = Constants.TIGER_FIGHTING_TILE_HEIGHT;
-                this.playOnce = true;
+        this.animationSpeed = animationSpeed;
+        this.imageSheet = refLink.getTileCache().getEffect(this.selectedEffect);
+        this.animationArray = new BufferedImage[this.nrOfFrames];
+        switch (selectedEffect){
+            case ATTACK_EXPLOSION:
+                this.ImgWidth = Constants.ATTACK_EXPLOSION_TILE_SIZE;
+                this.ImgHeight = Constants.ATTACK_EXPLOSION_TILE_SIZE;
                 break;
         }
-
-        this.animationArray = new BufferedImage[this.nrOfFrames];
-
-        this.animationSpeed = animationSpeed;
     }
 
     @Override
-    public void loadAnimation(){
+    public void loadAnimation() {
         for(int i = 0; i<this.nrOfFrames; ++i){
-
             animationArray[i] = this.imageSheet.getSubimage(i*this.ImgWidth,0,this.ImgWidth,this.ImgHeight);
         }
     }
@@ -70,6 +57,7 @@ public class TigerActionAnimation extends Animation {
         this.isFinished = false;
         this.animationState = 0;
         this.tick = 0;
+
     }
 
     @Override
@@ -88,12 +76,16 @@ public class TigerActionAnimation extends Animation {
 
         try {
             AffineTransform transform = AffineTransform.getTranslateInstance(x, y);
-            double scale = 0.5;
-            if(this.purpose == Constants.ENEMY_STATES.IN_FIGHT_IDLE || this.purpose == Constants.ENEMY_STATES.IN_FIGHT_ATTACKING){
-                scale = 5;
+            double scale = 1;
+            switch (this.selectedEffect){
+                case ATTACK_EXPLOSION:
+                    scale = 3;
             }
 
+
+
             transform.scale(scale, scale);
+
             if (flipped) {
                 transform.translate(ImgWidth, 0);
                 transform.scale(-1, 1);
@@ -105,9 +97,4 @@ public class TigerActionAnimation extends Animation {
             g2d.dispose(); // Dispose of the graphics copy to restore original state
         }
     }
-
-
-    }
-
-
-
+}

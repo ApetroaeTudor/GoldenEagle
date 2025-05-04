@@ -1,5 +1,6 @@
 package PaooGame.States;
 
+import Entities.Entity;
 import PaooGame.Config.Constants;
 import PaooGame.RefLinks;
 
@@ -25,6 +26,11 @@ public class AboutState extends State
     @Override
     public String getStateName(){
         return stateName;
+    }
+
+    @Override
+    public void setEnemy(Entity enemy) {
+
     }
 
     /*! \fn public void Update()

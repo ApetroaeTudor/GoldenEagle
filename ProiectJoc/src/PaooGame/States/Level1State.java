@@ -19,7 +19,6 @@ import PaooGame.HUD.PauseButton;
 public class Level1State extends State {
     private Level1 level1;
     private Camera camera;
-    private HealthBar healthBar;
     private PauseButton pauseButton;
     private int levelWidth;  // Lățimea totală a nivelului în pixeli
     private int levelHeight; // Înălțimea totală a nivelului în pixeli
@@ -44,7 +43,7 @@ public class Level1State extends State {
         enemies[0] = new Tiger(this.refLink,400,450);
         enemies[1] = new Tiger(this.refLink,720,470);
 
-        healthBar = new HealthBar(refLink.getHero());
+        pauseButton = new PauseButton(refLink.getHero(), 80, 50);
         pauseButton = new PauseButton(refLink.getHero(), 80, 50);
         // Calculează dimensiunile totale ale nivelului
         levelWidth = Constants.LEVEL1_WIDTH * Constants.TILE_SIZE;
@@ -61,10 +60,12 @@ public class Level1State extends State {
                 enemy.setIsEngaged(true);
                 this.transitioning = true;
                 this.transition_to_fight = true;
+                refLink.getGame().getFightState().setEnemy(enemy);
+
             }
-            else{
-                enemy.setIsEngaged(false);
-            }
+//            else{
+//                enemy.setIsEngaged(false);
+//            }
             enemy.Update();
         }
 
@@ -103,7 +104,9 @@ public class Level1State extends State {
         camera.setPosition(cameraX, cameraY);
 
         if(this.transition_to_fight && this.targetBlackIntensity==1) {
-            State.SetState(refLink.getGame().getFightState());
+            FightState fightState = (FightState) refLink.getGame().getFightState();
+            State.SetState(fightState);
+
             this.targetBlackIntensity = 0;
             this.transitioning = false;
         }
@@ -136,7 +139,7 @@ public class Level1State extends State {
         }
 
 
-        this.refLink.getHero().Draw(g);
+
         for(Entity enemy : enemies){
             enemy.Draw(g);
         }
@@ -159,8 +162,9 @@ public class Level1State extends State {
         }
 
         // Restabilește transformarea
+        this.refLink.getHero().Draw(g);
         g2d.setTransform(originalTransform);
-        healthBar.draw(g2d);
+        this.refLink.getHero().DrawHealthBar(g);
         pauseButton.draw(g2d);
     }
 
@@ -171,5 +175,10 @@ public class Level1State extends State {
     @Override
     public String getStateName(){
         return stateName;
+    }
+
+    @Override
+    public void setEnemy(Entity enemy) {
+
     }
 }

@@ -1,6 +1,8 @@
 
 package PaooGame.Config;
 
+import java.awt.*;
+
 public class Constants {
     public static final float EPSILON = 0.01f;
 
@@ -22,6 +24,7 @@ public class Constants {
     public static final int TIGER_PASSIVE_TILE_HEIGHT = 32;
     public static final int TIGER_FIGHTING_TILE_WIDTH = 32;
     public static final int TIGER_FIGHTING_TILE_HEIGHT = 64;
+    public static final int ATTACK_EXPLOSION_TILE_SIZE = 112;
 
 
     public static final String LEVEL1_TEXTURES_PATH = "res/Level1/Level1Textures.png";
@@ -31,6 +34,7 @@ public class Constants {
     public static final String TIGER_FIGHT_BG_PATH = "res/Level1/TigerFightBg.jpg";
     public static final String HERO_SPRITE_SHEET_PATH = "res/Characters/Hero/Hero_SpriteSheet1.png";
     public static final String TIGER_SPRITE_SHEET_PATH = "res/Enemies/Tiger.png";
+    public static final String ATTACK_EXPLOSION_SHEET_PATH = "res/Effects/HitExplosion.png";
 
     public static final String LEVEL1_STATE = "LEVEL1_STATE";
     public static final String ABOUT_STATE = "ABOUT_STATE";
@@ -38,6 +42,15 @@ public class Constants {
     public static final String PAUSE_MENU_STATE = "PAUSE_MENU_STATE";
     public static final String SETTINGS_STATE = "SETTINGS_STATE";
     public static final String FIGHT_STATE = "FIGHT_STATE";
+
+    public static final Color GREEN_HEALTH_BAR_COLOR_1 = new Color(0, 255, 0);
+    public static final Color GREEN_HEALTH_BAR_COLOR_2 = new Color(0, 150, 0);
+    public static final Color YELLOW_HEALTH_BAR_COLOR_1 = new Color(255, 255, 0);
+    public static final Color YELLOW_HEALTH_BAR_COLOR_2 = new Color(200, 200, 0);
+
+    public static enum EFFECTS{
+        ATTACK_EXPLOSION
+    }
 
     public static enum HERO_STATES {
         IDLE, ATTACKING, JUMPING, RUNNING, CROUCHING, FALLING

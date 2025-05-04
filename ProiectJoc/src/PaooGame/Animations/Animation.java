@@ -14,6 +14,9 @@ public abstract class Animation {
     protected int animationSpeed;
     protected int nrOfFrames;
 
+    protected boolean isFinished = true;
+    protected boolean playOnce = false;
+
     protected RefLinks reflink;
 
     protected int tick;
@@ -32,6 +35,8 @@ public abstract class Animation {
 
     public abstract void loadAnimation();
     public abstract void updateAnimation();
+
+    public abstract void triggerOnce();
 
     public abstract void paintAnimation(Graphics g, int x, int y,boolean flipped);
 }

@@ -1,6 +1,8 @@
 package Entities;
 
 import PaooGame.Animations.Animation;
+import PaooGame.Config.Constants;
+import PaooGame.HUD.HealthBar;
 import PaooGame.Hitbox.Hitbox;
 import PaooGame.RefLinks;
 
@@ -9,6 +11,9 @@ import java.awt.*;
 public abstract class Entity {
     protected float x;
     protected float y;
+    private HealthBar healthBar;
+
+
 
     protected boolean isEngaged;
 
@@ -17,6 +22,7 @@ public abstract class Entity {
 
     protected float speed;
     protected double health;
+    protected double damage;
 
     protected boolean isGrounded;
     protected boolean flipped;
@@ -32,6 +38,8 @@ public abstract class Entity {
     protected float hitboxOffsetY = 0;
 
     public Entity(RefLinks reflink, int startX, int startY){
+        this.healthBar = new HealthBar(this);
+
         this.x = startX;
         this.y = startY;
         this.reflink = reflink;
@@ -66,18 +74,17 @@ public abstract class Entity {
 
     protected abstract void updateAnimationState();
 
-    public void Draw(Graphics g){
-        this.hitbox.printHitbox(g);
-        this.getAnimationByState().paintAnimation(g,(int)this.x,(int)this.y,this.flipped);
-    }
+
 
     public float getX() {
         return x;
     }
+    public void setX(float x){this.x = x;}
 
     public float getY() {
         return y;
     }
+    public void setY(float y){this.y = y;}
 
     public float getWidth() {
         return hitbox.getWidth();
@@ -95,11 +102,62 @@ public abstract class Entity {
 
     public void setHitbox(Hitbox hitbox) { this.hitbox = hitbox; }
 
+    public HealthBar getHealthBar(){return this.healthBar; }
+
     public boolean getIsEngaged(){
         return this.isEngaged;
     }
     public void setIsEngaged(boolean isEngaged){
         this.isEngaged = isEngaged;
     }
+
+    public abstract String getName();
+
+
+    public void Draw(Graphics g){
+
+//        this.hitbox.printHitbox(g);
+        this.getAnimationByState().paintAnimation(g,(int)this.x,(int)this.y,this.flipped);
+    }
+
+    public void DrawHealthBar(Graphics g){
+        Graphics2D g2d = (Graphics2D)g;
+        healthBar.draw(g2d);
+    }
+
+    public void setHealthBarX(int x){
+        this.healthBar.setX(x);
+    }
+    public void setHealthBarY(int y){
+        this.healthBar.setY(y);
+    }
+    public void setHealthBarWidth(int width){
+        this.healthBar.setWidth(width);
+    }
+    public void setHealthBarHeight(int height){
+        this.healthBar.setHeight(height);
+    }
+
+    public int getHealthBarX(){return this.healthBar.getX();}
+    public int getHealthBarY(){return this.healthBar.getY();}
+    public int getHealthBarWidth(){return this.healthBar.getWidth();}
+    public int getHealthBarHeight(){return this.healthBar.getHeight();}
+
+    public Color getHealthBarColor1(){return this.healthBar.getColor1();}
+    public Color getHealthBarColor2(){return this.healthBar.getColor2();}
+
+    public void setHealthBarColor1(Color color1){this.healthBar.setColor1(color1);}
+    public void setHealthBarColor2(Color color2){this.healthBar.setColor2(color2);}
+
+    public void resetHealthBarDefaultValues(){this.healthBar.resetPositionToDefault();}
+
+    public void reduceHealth(double health) { this.health-=health; if(this.health > 100){this.health = 100;}}
+
+    public void restoreHealth(double health) { this.health+=health; if(this.health < 0){this.health = 0;}}
+
+    public double getDamage(){ return this.damage; }
+    public void setDamage(double damage){this.damage = damage;}
+
+
 
 }
