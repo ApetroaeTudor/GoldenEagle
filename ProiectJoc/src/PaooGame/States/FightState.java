@@ -33,7 +33,7 @@ public class FightState extends State {
     private int popupTimeInMillis = 700;
     private int timeoutInMillis = 1000;
     private int timeoutInMillisForDelayingPlayerTurn = 1500;
-    private int timeoutInMillisWaitForEnemyDeath = 1000;
+    private int timeoutInMillisWaitForEnemyDeath = 3000;
     private boolean isTimerStarted;
     private boolean isTimerFinished;
     private boolean isWaitingForPlayerTurn;
