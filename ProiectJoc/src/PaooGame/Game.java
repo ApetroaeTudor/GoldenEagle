@@ -1,10 +1,12 @@
 package PaooGame;
 
+import PaooGame.Config.Constants;
 import PaooGame.GameWindow.GameWindow;
 import PaooGame.Entities.Hero;
 import PaooGame.Input.KeyManager;
 import PaooGame.Input.MouseInput;
 import PaooGame.Maps.Level1;
+import PaooGame.Maps.Level2;
 import PaooGame.States.*;
 import PaooGame.Tiles.Tile;
 import PaooGame.Tiles.TileCache;
@@ -21,7 +23,8 @@ public class Game implements Runnable {
     private Graphics g;
     private State menuState;
     private State settingsState;
-    private Level1State level1State;
+    private State level1State;
+    private State level2State;
     private State pauseMenuState;
     private State aboutState;
     private State fightState;
@@ -32,6 +35,7 @@ public class Game implements Runnable {
 
     private TileCache tileCache;
     private Level1 level1;
+    private Level2 level2;
     private Hero hero;
 
     private Tile tile;
@@ -45,7 +49,6 @@ public class Game implements Runnable {
 
 
         tileCache = TileCache.getInstance();
-        level1 = new Level1();
 
 
         wnd.BuildGameWindow();
@@ -65,15 +68,18 @@ public class Game implements Runnable {
         refLink.setTileCache(tileCache);
 
 
-        hero = new Hero(refLink, 100, 420);
+        hero = new Hero(refLink, Constants.HERO_LEVEL1_STARTING_X, Constants.HERO_LEVEL1_STARTING_Y); //100 - 420
         this.refLink.setHero(hero);
 
+        level1 = new Level1();
+        level2 = new Level2();
 
         menuState = new MenuState(refLink);
         settingsState = new SettingsState(refLink);
         aboutState = new AboutState(refLink);
         fightState = new FightState(refLink);
-        level1State = new PaooGame.States.Level1State(refLink);
+        level1State = new Level1State(refLink,level1);
+        level2State = new Level2State(refLink,level2);
         deathState = new DeathState(refLink);
         pauseMenuState = new PauseMenuState(refLink);
         State.setState(menuState);
@@ -145,9 +151,7 @@ public class Game implements Runnable {
         if (State.getState() != null) {
             State.getState().draw(g);
         }
-
         bs.show();
-
         g.dispose();
     }
 
@@ -163,8 +167,11 @@ public class Game implements Runnable {
         return keyManager;
     }
 
-    public Level1State getLevel1State() {
+    public State getLevel1State() {
         return level1State;
+    }
+    public State getLevel2State() {
+        return level2State;
     }
 
     public MouseInput getMouseInput() {
@@ -188,7 +195,15 @@ public class Game implements Runnable {
 
     public State getDeathState() {return deathState;}
 
+    public Level1 getLevel1(){ return this.level1; }
+    public Level2 getLevel2() {return this.level2; }
+
     public void resetLevel1State() {
-        level1State = new Level1State(refLink);
+        level1State.restoreState();
     }
+    public void resetLevel2State(){
+        level2State.restoreState();
+    }
+
+
 }

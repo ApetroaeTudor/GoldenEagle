@@ -4,20 +4,20 @@ import PaooGame.Config.Constants;
 import PaooGame.Hitbox.Hitbox;
 
 public abstract class Level {
-    protected int [][] VisualTiles;
-    protected int [][] BehaviorTiles;
+    protected int [][] visualTiles;
+    protected int [][] behaviorTiles;
     int[] visualIDs;
     int[] behaviorIDs;
 
 
     public int[] getVisualIDs(){return this.visualIDs;}
     public int[] getBehaviorIDs(){return this.behaviorIDs;}
-    public int[][] getVisualTiles(){return this.VisualTiles;}
-    public int[][] getBehaviorTiles(){return this.BehaviorTiles;}
+    public int[][] getVisualTiles(){return this.visualTiles;}
+    public int[][] getBehaviorTiles(){return this.behaviorTiles;}
 
 
 
-    public int checkFalling(Hitbox hitbox,int LEVEL_WIDTH,int LEVEL_HEIGHT) {
+    public static int checkFalling(Hitbox hitbox,int LEVEL_WIDTH,int LEVEL_HEIGHT, int[] behaviorIDs) {
         float hitboxX = hitbox.getX();
         float hitboxY = hitbox.getY();
         float hitboxWidth = hitbox.getWidth();
@@ -47,16 +47,24 @@ public abstract class Level {
             }
 
             int behavior = behaviorIDs[index];
-            if (behavior != -1) {
-                return 0; // Found a solid tile, not falling
+
+
+            //death
+            if(behavior == 1 || behavior == 0){
+                return 1;
             }
+            else if(behavior == 2 ){
+                return 0;
+            }
+
+
         }
 
         // All tiles checked are air or out-of-bounds
         return -1;
     }
 
-    public boolean isTileUnderCharacterLethal(Hitbox hitbox, int LEVEL_WIDTH,int LEVEL_HEIGHT){
+    public static boolean isTileUnderCharacterLethal(Hitbox hitbox, int LEVEL_WIDTH,int LEVEL_HEIGHT, int[] behaviorIDs){
         float hitboxX = hitbox.getX();
         float hitboxY = hitbox.getY();
         float hitboxWidth = hitbox.getWidth();
@@ -95,7 +103,7 @@ public abstract class Level {
         return false;
     }
 
-    public void snapToGround(Hitbox hitbox) {
+    public static void snapToGround(Hitbox hitbox) {
         // 1. Calculate the Y coordinate of the bottom of the hitbox.
         float bottomY = hitbox.getY() + hitbox.getHeight();
 
@@ -108,7 +116,7 @@ public abstract class Level {
     }
 
 
-    public boolean checkWallCollision(Hitbox hitbox, boolean checkRight, int LEVEL_WIDTH,int LEVEL_HEIGHT) {
+    public static boolean checkWallCollision(Hitbox hitbox, boolean checkRight, int LEVEL_WIDTH,int LEVEL_HEIGHT, int[] behaviorIDs) {
         float hitboxX = hitbox.getX();
         float hitboxY = hitbox.getY();
         float hitboxWidth = hitbox.getWidth();
@@ -168,7 +176,7 @@ public abstract class Level {
     }
 
 
-    public boolean checkCeilingCollision(Hitbox hitbox, int LEVEL_WIDTH, int LEVEL_HEIGHT) {
+    public static boolean checkCeilingCollision(Hitbox hitbox, int LEVEL_WIDTH, int LEVEL_HEIGHT, int[] behaviorIDs) {
         float hitboxX = hitbox.getX();
         float hitboxY = hitbox.getY();
         float hitboxWidth = hitbox.getWidth();
@@ -207,7 +215,7 @@ public abstract class Level {
         return false;
     }
 
-    public boolean isTileSolid(int tileX, int tileY, int LEVEL_WIDTH, int LEVEL_HEIGHT){
+    public static boolean isTileSolid(int tileX, int tileY, int LEVEL_WIDTH, int LEVEL_HEIGHT,int[] behaviorIDs){
         if (tileX < 0 || tileX >= LEVEL_WIDTH || tileY < 0 || tileY >= LEVEL_HEIGHT) {
             return false;
         }
@@ -218,7 +226,7 @@ public abstract class Level {
     }
 
 
-    public boolean isGroundAhead(Hitbox hitbox, boolean headingLeft,int LEVEL_WIDTH,int LEVEL_HEIGHT) {
+    public static boolean isGroundAhead(Hitbox hitbox, boolean headingLeft,int LEVEL_WIDTH,int LEVEL_HEIGHT, int[] behaviorIDs) {
         int checkTileX;
         // Determine the x-coordinate of the tile to check, just outside the hitbox edge
         if (headingLeft) {
@@ -233,7 +241,8 @@ public abstract class Level {
         int checkTileY = (int) Math.floor((hitbox.getY() + hitbox.getHeight() + Constants.EPSILON) / Constants.TILE_SIZE);
 
         // Check bounds and solidity (Implement this based on your level data)
-        return isTileSolid(checkTileX, checkTileY,LEVEL_WIDTH,LEVEL_HEIGHT);
+        return isTileSolid(checkTileX, checkTileY,LEVEL_WIDTH,LEVEL_HEIGHT,behaviorIDs);
     }
+
 
 }

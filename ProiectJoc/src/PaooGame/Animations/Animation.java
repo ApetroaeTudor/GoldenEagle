@@ -10,6 +10,7 @@ public abstract class Animation {
 
     protected BufferedImage imageSheet;
     protected BufferedImage[] animationArray;
+
     protected int animationState;
     protected int animationSpeed;
     protected int nrOfFrames;

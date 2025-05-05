@@ -3,6 +3,7 @@ package PaooGame.States;
 import java.awt.*;
 
 import PaooGame.Entities.Entity;
+import PaooGame.Maps.Level;
 import PaooGame.RefLinks;
 
 /*! \class State
@@ -55,4 +56,6 @@ public abstract class State
     public abstract void draw(Graphics g);
 
     public abstract void restoreState();
+
+
 }

@@ -4,6 +4,7 @@ import PaooGame.Animations.Animation;
 import PaooGame.Animations.PlayerAnimations.PlayerActionAnimation;
 import PaooGame.Config.Constants;
 import PaooGame.Hitbox.Hitbox;
+import PaooGame.Maps.Level;
 import PaooGame.RefLinks;
 import PaooGame.States.State;
 
@@ -52,7 +53,7 @@ public class Hero extends Entity {
         this.deathAnimationTimer.setRepeats(false);
 
 
-        this.jumpStrength = -3.5f;//-3.2f;   // Initial upward velocity (negative Y). Adjust! Needs to be > gravity per frame initially.
+        this.jumpStrength = Constants.HERO_BASE_JUMP_STRENGTH;//-3.2f;   // Initial upward velocity (negative Y). Adjust! Needs to be > gravity per frame initially.
 
         this.speed = Constants.HERO_BASE_SPEED;             // Base horizontal speed
         this.jumpCap = 10;          // Stamina/resource for jumps
@@ -92,7 +93,26 @@ public class Hero extends Entity {
     }
 
     @Override
-    public void Update() {
+    public void update() {
+
+
+        switch (State.getState().getStateName()){
+            case Constants.LEVEL1_STATE:
+                this.LEVEL_WIDTH = Constants.LEVEL1_WIDTH;
+                this.LEVEL_HEIGHT = Constants.LEVEL1_HEIGHT;
+                this.behaviorIDsToRespect = reflink.getGame().getLevel1().getBehaviorIDs();
+                break;
+            case Constants.LEVEL2_STATE:
+                this.LEVEL_WIDTH = Constants.LEVEL2_WIDTH;
+                this.LEVEL_HEIGHT = Constants.LEVEL2_HEIGHT;
+                this.behaviorIDsToRespect = reflink.getGame().getLevel2().getBehaviorIDs();
+                break;
+        }
+
+        if( Level.checkFalling(this.getHitbox(),this.LEVEL_WIDTH,this.LEVEL_HEIGHT,this.behaviorIDsToRespect) ==1){
+            this.deathAnimationTimer.start();
+            this.isDying = true;
+        }
         handleInput(); // Sets velocityX, checks for jump press
         applyGravity();
         moveAndCollide(); // Updates hitbox position, handles collisions, sets isGrounded
@@ -101,10 +121,13 @@ public class Hero extends Entity {
 
         getContext();
 
-        if(this.reflink.getGame().getLevel1State().getLevel1().isTileUnderCharacterLethal(this.getHitbox(),this.LEVEL_WIDTH,this.LEVEL_HEIGHT)){
-            this.deathAnimationTimer.start();
-            this.isDying = true;
-        }
+
+
+
+//        if(Level.isTileUnderCharacterLethal(this.getHitbox(),this.LEVEL_WIDTH,this.LEVEL_HEIGHT,this.behaviorIDsToRespect)){
+//            this.deathAnimationTimer.start();
+//            this.isDying = true;
+//        }
 
         if(this.isDying){
             this.speed =0.1f;
@@ -162,14 +185,14 @@ public class Hero extends Entity {
         //pentru pereti
 
 
-        if(this.reflink.getGame().getLevel1State().getLevel1().checkCeilingCollision(hitbox,this.LEVEL_WIDTH,this.LEVEL_HEIGHT)){
+        if(Level.checkCeilingCollision(hitbox,this.LEVEL_WIDTH,this.LEVEL_HEIGHT,this.behaviorIDsToRespect)){
             this.velocityY=1;
         }
 
 
 
         if (this.velocityX > 0) { //coliziune perete dreapta
-            if (reflink.getGame().getLevel1State().getLevel1().checkWallCollision(hitbox, true,this.LEVEL_WIDTH,this.LEVEL_HEIGHT)) {
+            if (Level.checkWallCollision(hitbox, true,this.LEVEL_WIDTH,this.LEVEL_HEIGHT,this.behaviorIDsToRespect)) {
                 horizontalCollision = true;
 
                 //trebuie sa verific daca aceasta coliziune se intampla IN hitbox sau nu
@@ -188,7 +211,7 @@ public class Hero extends Entity {
 
             }
         } else if (this.velocityX < 0) { // Moving Left
-            if (reflink.getGame().getLevel1State().getLevel1().checkWallCollision(hitbox, false,this.LEVEL_WIDTH,this.LEVEL_HEIGHT)) {
+            if (Level.checkWallCollision(hitbox, false,this.LEVEL_WIDTH,this.LEVEL_HEIGHT,this.behaviorIDsToRespect)) {
                 horizontalCollision = true;
 
                 float checkCoordOutsideLeft = hitbox.getX() - Constants.EPSILON;
@@ -216,7 +239,7 @@ public class Hero extends Entity {
         float deltaY = this.velocityY;
         this.hitbox.setY(originalY + deltaY);
 
-        int fallCheckResult = reflink.getGame().getLevel1State().getLevel1().checkFalling(hitbox,this.LEVEL_WIDTH,this.LEVEL_HEIGHT);
+        int fallCheckResult = Level.checkFalling(hitbox,this.LEVEL_WIDTH,this.LEVEL_HEIGHT,this.behaviorIDsToRespect);
 
 
 
@@ -224,7 +247,7 @@ public class Hero extends Entity {
             if (fallCheckResult == 0) { // Hit ground
                 this.isGrounded = true;
                 this.velocityY = 0;
-                reflink.getGame().getLevel1State().getLevel1().snapToGround(this.hitbox);
+                Level.snapToGround(this.hitbox);
                 this.jumpCap = 10; //resetare jump
             } else {
                 this.isGrounded = false;
@@ -235,7 +258,7 @@ public class Hero extends Entity {
         } else { // velocityY == 0
             if (fallCheckResult == 0) { // Standing still on ground
                 if (!this.isGrounded) { // Just landed precisely
-                    reflink.getGame().getLevel1State().getLevel1().snapToGround(this.hitbox);
+                    Level.snapToGround(this.hitbox);
                     //functia tine de clasa parinte abstracta Level deci nu conteaza ca depinde de Level1, va merge si pt Level2,3
                     this.jumpCap = 10;
                 }
@@ -331,6 +354,13 @@ public class Hero extends Entity {
     @Override
     public void attack() {
 
+    }
+
+    public float getJumpStrength(){
+        return this.jumpStrength;
+    }
+    public void setJumpStrength(float jumpStrength){
+        this.jumpStrength = jumpStrength;
     }
 
     @Override

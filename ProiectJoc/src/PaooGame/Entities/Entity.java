@@ -11,6 +11,8 @@ public abstract class Entity {
     protected float x;
     protected float y;
     private HealthBar healthBar;
+    protected int[] behaviorIDsToRespect;
+
 
 
 
@@ -64,7 +66,7 @@ public abstract class Entity {
 
     protected abstract void moveAndCollide();
 
-    public abstract void Update();
+    public abstract void update();
 
     protected abstract void updateVisualPosition();
 

@@ -127,7 +127,7 @@ public class FightState extends State {
         if(this.enemy!=null){
             this.enemy.setX(480);
             this.enemy.setY(100);
-            this.enemy.Update();
+            this.enemy.update();
             this.enemy.setHealthBarX(460);
             this.enemy.setHealthBarY(80);
 

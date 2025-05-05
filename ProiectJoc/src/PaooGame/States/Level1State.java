@@ -6,6 +6,7 @@ import PaooGame.Camera.Camera;
 import PaooGame.Config.Constants;
 import PaooGame.Entities.Hero;
 import PaooGame.Input.MouseInput;
+import PaooGame.Maps.Level;
 import PaooGame.Maps.Level1;
 import PaooGame.RefLinks;
 import java.awt.*;
@@ -40,16 +41,17 @@ public class Level1State extends State {
     protected double targetBlackIntensity = 0.0;
     protected double blackFadeStep = 0.05;
 
-    public Level1State(RefLinks refLink) {
+    private boolean isSwitchingToLevel2 = false;
+
+    public Level1State(RefLinks refLink, Level1 level1) {
         super(refLink);
-        level1 = new Level1();
+        this.level1 = level1;
         camera = new Camera(0, 0);
 
         enemies = new Entity[2];
         enemies[0] = new Tiger(this.refLink,this.tiger1X,this.tiger1Y);
         enemies[1] = new Tiger(this.refLink,this.tiger2X,this.tiger2Y);
 
-        pauseButton = new PauseButton(refLink.getHero(), 80, 50);
         pauseButton = new PauseButton(refLink.getHero(), 80, 50);
         // Calculează dimensiunile totale ale nivelului
         levelWidth = Constants.LEVEL1_WIDTH * Constants.TILE_SIZE;
@@ -70,7 +72,7 @@ public class Level1State extends State {
 
     @Override
     public void update() {
-        this.refLink.getHero().Update();
+        this.refLink.getHero().update();
         Hero hero = refLink.getHero();
 
 
@@ -88,7 +90,7 @@ public class Level1State extends State {
                 }
             }
 
-            enemy.Update();
+            enemy.update();
         }
 
         if (refLink.getKeyManager().isKeyPressedOnce(KeyEvent.VK_ESCAPE)) {
@@ -125,6 +127,21 @@ public class Level1State extends State {
 
         camera.setPosition(cameraX, cameraY);
 
+        if(this.refLink.getHero().getX() > 735 && this.refLink.getHero().getX() < 930 && this.refLink.getHero().getY() > 650){
+            this.isSwitchingToLevel2 = true;
+        }
+
+        if(this.isSwitchingToLevel2 && this.targetBlackIntensity ==1){
+            this.targetBlackIntensity = 0;
+            this.isSwitchingToLevel2 = false;
+            State.setState(refLink.getGame().getLevel2State());
+            this.refLink.getHero().setX(Constants.HERO_LEVEL2_STARTING_X);
+            this.refLink.getHero().setY(Constants.HERO_LEVEL2_STARTING_Y);
+            this.refLink.getHero().getHitbox().setX(Constants.HERO_LEVEL2_STARTING_X);
+            this.refLink.getHero().getHitbox().setY((Constants.HERO_LEVEL2_STARTING_Y));
+            this.refLink.getHero().setJumpStrength(Constants.HERO_LEVEL2_JUMP_STRENGTH);
+        }
+
         if(this.transition_to_fight && this.targetBlackIntensity==1) {
             this.targetBlackIntensity = 0;
             this.transitioning = false;
@@ -142,6 +159,8 @@ public class Level1State extends State {
             State.setState(this.refLink.getGame().getDeathState());
 //            this.transitioning = false;
         }
+
+
     }
 
     @Override
@@ -178,7 +197,7 @@ public class Level1State extends State {
             }
         }
 
-        if(this.transitioning) {
+        if(this.transitioning || this.isSwitchingToLevel2) {
             Color originalColor = g2d.getColor();
             this.targetBlackIntensity += this.blackFadeStep;
             if(this.targetBlackIntensity>=1){
@@ -191,6 +210,7 @@ public class Level1State extends State {
 
             g2d.setColor(originalColor);
         }
+
 
         // Restabilește transformarea
         this.refLink.getHero().Draw(g);
@@ -210,6 +230,7 @@ public class Level1State extends State {
             g.fillRect(0,0,Constants.WINDOW_WIDTH,Constants.WINDOW_HEIGHT);
             g2d.setColor(originalColor);
         }
+
     }
 
 

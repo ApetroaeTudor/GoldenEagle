@@ -8,10 +8,10 @@ public class Level1 extends Level {
 
 
     public Level1(){
-        this.VisualTiles=new int[Constants.LEVEL1_WIDTH][Constants.LEVEL1_HEIGHT];
-        this.BehaviorTiles=new int[Constants.LEVEL1_WIDTH][Constants.LEVEL1_HEIGHT];
-        this.visualIDs=new int[Constants.LEVEL1_TILE_NR];
-        this.behaviorIDs=new int[Constants.LEVEL1_TILE_NR];
+        this.visualTiles =new int[Constants.LEVEL1_WIDTH][Constants.LEVEL1_HEIGHT];
+        this.behaviorTiles =new int[Constants.LEVEL1_WIDTH][Constants.LEVEL1_HEIGHT];
+        this.visualIDs = new int[Constants.LEVEL1_TILE_NR];
+        this.behaviorIDs = new int[Constants.LEVEL1_TILE_NR];
         String line;
         try
         {
@@ -37,25 +37,17 @@ public class Level1 extends Level {
         }
         catch (FileNotFoundException e) {
             e.printStackTrace();
-            System.err.println("file not found");
+            System.err.println("File not found in loading tiles in level1");
         }
         catch (IOException e) {
             e.printStackTrace();
-            System.err.println("IoException");
+            System.err.println("IoException in loading tiles in level1");
         }
         catch(NumberFormatException e){
             e.printStackTrace();
-            System.err.println("NumberFormatException");
+            System.err.println("NumberFormatException in loading tiles in level1");
         }
 
     }
-
-
-
-
-    void update(){
-    }
-
-
-
+    
 }

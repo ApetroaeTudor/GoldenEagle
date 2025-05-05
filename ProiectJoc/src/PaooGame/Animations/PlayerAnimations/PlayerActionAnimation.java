@@ -42,6 +42,7 @@ public class PlayerActionAnimation extends Animation {
         if(this.playOnce && this.isFinished){
             return;
         }
+
         tick++;
         if(tick>=animationSpeed) {
             tick=0;

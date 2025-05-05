@@ -4,6 +4,7 @@ import PaooGame.Animations.Animation;
 import PaooGame.Animations.EnemyAnimations.TigerActionAnimation;
 import PaooGame.Config.Constants;
 import PaooGame.Hitbox.Hitbox;
+import PaooGame.Maps.Level;
 import PaooGame.RefLinks;
 import PaooGame.States.State;
 
@@ -35,6 +36,9 @@ public class Tiger extends Entity {
         this.damage = Constants.TIGER_DAMAGE;
         this.health = Constants.TIGER_HEALTH;
 
+        this.behaviorIDsToRespect = reflink.getGame().getLevel1().getBehaviorIDs();
+
+
     }
 
     @Override
@@ -50,7 +54,7 @@ public class Tiger extends Entity {
     }
 
     @Override
-    public void Update(){
+    public void update(){
         switch(this.currentState)   {
             case IN_FIGHT_ATTACKING:
             case IN_FIGHT_IDLE:
@@ -126,7 +130,7 @@ public class Tiger extends Entity {
         float originalX = this.hitbox.getX(); //partea stanga a hitbox-ului
         float deltaX = this.velocityX; //cat ar trebui sa se deplaseze
 
-        boolean changingDirection = !this.reflink.getGame().getLevel1State().getLevel1().isGroundAhead(this.hitbox,!this.flipped,Constants.LEVEL1_WIDTH,Constants.LEVEL1_HEIGHT);
+        boolean changingDirection = !Level.isGroundAhead(this.hitbox,!this.flipped,Constants.LEVEL1_WIDTH,Constants.LEVEL1_HEIGHT,this.behaviorIDsToRespect);
         if(directionSwitchCounter == 5){
             if(changingDirection){
 //            this.flipped = !this.flipped;
@@ -158,14 +162,14 @@ public class Tiger extends Entity {
         float deltaY = this.velocityY;
         this.hitbox.setY(originalY + deltaY);
 
-        int fallCheckResult = reflink.getGame().getLevel1State().getLevel1().checkFalling(hitbox,Constants.LEVEL1_WIDTH,Constants.LEVEL1_HEIGHT);
+        int fallCheckResult = Level.checkFalling(hitbox,Constants.LEVEL1_WIDTH,Constants.LEVEL1_HEIGHT,this.behaviorIDsToRespect);
 
 
         if (this.velocityY > 0) { // Moving Down
             if (fallCheckResult == 0) { // Hit ground
                 this.isGrounded = true;
                 this.velocityY = 0;
-                reflink.getGame().getLevel1State().getLevel1().snapToGround(this.hitbox);
+                Level.snapToGround(this.hitbox);
             } else {
                 this.isGrounded = false;
             }
@@ -175,7 +179,7 @@ public class Tiger extends Entity {
         } else { // velocityY == 0
             if (fallCheckResult == 0) { // Standing still on ground
                 if (!this.isGrounded) { // Just landed precisely
-                    reflink.getGame().getLevel1State().getLevel1().snapToGround(this.hitbox);
+                    Level.snapToGround(this.hitbox);
                 }
                 this.isGrounded = true;
                 this.velocityY = 0; // Ensure velocity is 0 when grounded
