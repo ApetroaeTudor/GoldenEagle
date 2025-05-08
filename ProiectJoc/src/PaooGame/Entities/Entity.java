@@ -1,6 +1,7 @@
 package PaooGame.Entities;
 
 import PaooGame.Animations.Animation;
+import PaooGame.Config.Constants;
 import PaooGame.HUD.HealthBar;
 import PaooGame.Hitbox.Hitbox;
 import PaooGame.RefLinks;
@@ -44,8 +45,8 @@ public abstract class Entity {
         this.x = startX;
         this.y = startY;
         this.reflink = reflink;
-        this.gravity = 0.15f;
-        this.maxFallSpeed = 6.0f;
+        this.gravity = Constants.BASE_ENTITY_GRAVITY;
+        this.maxFallSpeed = Constants.BASE_MAX_ENTITY_FALL_SPEED;
 
         this.velocityX = 0f;
         this.velocityY = 0f;

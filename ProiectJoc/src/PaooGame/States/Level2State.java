@@ -120,7 +120,7 @@ public class Level2State extends State{
             }
             int alpha = (int)(this.targetBlackIntensity*255.0);
             g2d.setColor(new Color(0,0,0,alpha));
-            g.fillRect(0,0,Constants.WINDOW_WIDTH,Constants.WINDOW_HEIGHT);
+            g.fillRect((int)this.refLink.getHero().getX()-Constants.WINDOW_WIDTH/2,0,Constants.WINDOW_WIDTH*2,Constants.WINDOW_HEIGHT*2);
             g2d.setColor(originalColor);
         }
 

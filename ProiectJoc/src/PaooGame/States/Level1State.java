@@ -125,7 +125,9 @@ public class Level1State extends State {
         cameraY = Math.max(0, Math.min(cameraY, maxCameraY))+350;
 
 
-        camera.setPosition(cameraX, cameraY);
+        if(!refLink.getHero().getIsDying()){
+            camera.setPosition(cameraX, cameraY);
+        }
 
         if(this.refLink.getHero().getX() > 735 && this.refLink.getHero().getX() < 930 && this.refLink.getHero().getY() > 650){
             this.isSwitchingToLevel2 = true;

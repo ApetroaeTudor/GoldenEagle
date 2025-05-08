@@ -18,8 +18,6 @@ public class Hero extends Entity {
     private Timer deathAnimationTimer;
     private int timeoutInMillisForDeathAnimation = 600;
     private boolean isDying = false;
-    private double fallingSpeedCap = 2.0;
-    private double tick = 0;
 
 
 
@@ -65,7 +63,7 @@ public class Hero extends Entity {
 
         this.idleAnimation=new PlayerActionAnimation(this.reflink,Constants.HERO_STATES.IDLE,4,10);
         this.idleAnimation.loadAnimation();
-        this.runningAnimation=new PlayerActionAnimation(this.reflink,Constants.HERO_STATES.RUNNING,3,10);
+        this.runningAnimation=new PlayerActionAnimation(this.reflink,Constants.HERO_STATES.RUNNING,3,7);
         this.runningAnimation.loadAnimation();
         this.fallingAnimation=new PlayerActionAnimation(this.reflink,Constants.HERO_STATES.FALLING,1,1);
         this.fallingAnimation.loadAnimation();
@@ -130,13 +128,12 @@ public class Hero extends Entity {
 //        }
 
         if(this.isDying){
-            this.speed =0.1f;
-            this.tick++;
-            if(this.tick==this.fallingSpeedCap){
-                this.tick = 0;
-                this.y+=1;
-                this.hitbox.setY(this.hitbox.getY()+1);
-            }
+           this.gravity = Constants.DYING_ENTITY_GRAVITY;
+           this.maxFallSpeed = Constants.DYING_MAX_ENTITY_FALL_SPEED;
+        }
+        else{
+            this.gravity = Constants.BASE_ENTITY_GRAVITY;
+            this.maxFallSpeed = Constants.BASE_MAX_ENTITY_FALL_SPEED;
         }
 
 
@@ -286,17 +283,17 @@ public class Hero extends Entity {
             case ATTACKING:
                 return this.attackingAnimation;
             case FALLING:
-                if(reflink.getKeyManager().isKeyPressed(KeyEvent.VK_SPACE)){
-                    return this.jumpingAnimation;
-
-                }
-                else{
-                    return this.fallingAnimation;
-                }
+//                if(reflink.getKeyManager().isKeyPressed(KeyEvent.VK_SPACE)){
+//                    return this.jumpingAnimation;
+//
+//                }
+//                else{
+//                    return this.fallingAnimation;
+//                }
             case JUMPING:
                 return this.jumpingAnimation;
             case CROUCHING:
-                return this.crounchingAnimation;
+//                return this.crounchingAnimation;
         }
 
         return this.idleAnimation;
@@ -328,6 +325,10 @@ public class Hero extends Entity {
 
         this.getAnimationByState().updateAnimation();
 
+    }
+
+    public boolean getIsDying(){
+        return this.isDying;
     }
 
 
@@ -381,7 +382,7 @@ public class Hero extends Entity {
             g2d.setComposite(AlphaComposite.SrcOver.derive(0.1f));
             Color originalColor = g2d.getColor();
             g2d.setColor(Color.RED);
-            g2d.fillRect(0,0,Constants.WINDOW_WIDTH,Constants.WINDOW_HEIGHT);
+            g2d.fillRect((int)this.x-Constants.WINDOW_WIDTH/2,0,Constants.WINDOW_WIDTH*2,Constants.WINDOW_HEIGHT*2);
             g2d.setColor(originalColor);
             g2d.setComposite(originalComposite);
 

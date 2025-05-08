@@ -20,6 +20,10 @@ public class Constants {
     public static final int LEVEL2_HEIGHT = 30;
     public static final int LEVEL2_TILE_NR = LEVEL2_WIDTH*LEVEL2_HEIGHT;
 
+    public static final int LEVEL3_WIDTH = 350;
+    public static final int LEVEL3_HEIGHT = 170;
+    public static final int LEVEL3_TILE_NR = LEVEL3_WIDTH*LEVEL3_HEIGHT;
+
 
     public static final double MAGIC_NUMBER = 2.27;
 
@@ -60,6 +64,11 @@ public class Constants {
     public static final Color GREEN_HEALTH_BAR_COLOR_2 = new Color(0, 150, 0);
     public static final Color YELLOW_HEALTH_BAR_COLOR_1 = new Color(255, 255, 0);
     public static final Color YELLOW_HEALTH_BAR_COLOR_2 = new Color(200, 200, 0);
+
+    public static final float BASE_ENTITY_GRAVITY = 0.15f;
+    public static final float BASE_MAX_ENTITY_FALL_SPEED = 6.0f;
+    public static final float DYING_MAX_ENTITY_FALL_SPEED = 2.0f;
+    public static final float DYING_ENTITY_GRAVITY = 0.001f;
 
     public static final double HERO_BASE_HEALTH = 100.0;
     public static final double HERO_BASE_DAMAGE = 100.0;
