@@ -168,6 +168,9 @@ public abstract class Entity {
 
     public abstract void attack();
 
+    public float getVelocityX(){return this.velocityX;}
+    public float getVelocityY(){return this.velocityY;}
+
     public abstract String getSource();
 
     public void Draw(Graphics g){

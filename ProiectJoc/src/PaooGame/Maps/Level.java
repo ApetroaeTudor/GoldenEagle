@@ -3,6 +3,11 @@ package PaooGame.Maps;
 import PaooGame.Config.Constants;
 import PaooGame.Hitbox.Hitbox;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 public abstract class Level {
     protected int [][] visualTiles;
     protected int [][] behaviorTiles;
@@ -14,6 +19,42 @@ public abstract class Level {
     public int[] getBehaviorIDs(){return this.behaviorIDs;}
     public int[][] getVisualTiles(){return this.visualTiles;}
     public int[][] getBehaviorTiles(){return this.behaviorTiles;}
+
+    protected void setIDs(String TexturesCsv, String BehaviorCsv ){
+        String line;
+
+        try{
+            int i = 0;
+            BufferedReader br = new BufferedReader(new FileReader(TexturesCsv));
+            BufferedReader br2 = new BufferedReader(new FileReader(BehaviorCsv));
+
+            while((line = br.readLine())!=null){
+                String [] tokens;
+                tokens = line.split(",");
+                for(String token: tokens){
+                    visualIDs[i++]=Integer.parseInt(token);
+                }
+            }
+            i = 0;
+            while( (line = br2.readLine())!=null ){
+                String [] tokens;
+                tokens = line.split(",");
+                for(String token : tokens){
+                    behaviorIDs[i++] = Integer.parseInt(token);
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.err.println("File not found in loading tiles in level2");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("IoException In loading tiles in level2");
+        } catch (NumberFormatException e){
+            e.printStackTrace();
+            System.out.println("NumberFormatException in loading tiles in level2");
+        }
+    }
 
 
 
@@ -215,14 +256,24 @@ public abstract class Level {
         return false;
     }
 
-    public static boolean isTileSolid(int tileX, int tileY, int LEVEL_WIDTH, int LEVEL_HEIGHT,int[] behaviorIDs){
-        if (tileX < 0 || tileX >= LEVEL_WIDTH || tileY < 0 || tileY >= LEVEL_HEIGHT) {
+    public static boolean isTileSolid(int tileX, int tileY, int LEVEL_WIDTH_IN_NR_TILES, int LEVEL_HEIGHT_IN_NR_TILES,int[] behaviorIDs){
+        if (tileX < 0 || tileX >= LEVEL_WIDTH_IN_NR_TILES || tileY < 0 || tileY >= LEVEL_HEIGHT_IN_NR_TILES) {
             return false;
         }
 
-        int index = tileY * LEVEL_WIDTH + tileX;
+        int index = tileY * LEVEL_WIDTH_IN_NR_TILES + tileX;
         int behavior = behaviorIDs[index];
         return behavior == 2;
+    }
+
+    public static int getTileBehavior(int tileX, int tileY, int LEVEL_WIDTH_IN_NR_TILES, int LEVEL_HEIGHT_IN_NR_TILES, int[] behaviorIDs){
+        if (tileX < 0 || tileX >= LEVEL_WIDTH_IN_NR_TILES || tileY < 0 || tileY >= LEVEL_HEIGHT_IN_NR_TILES) {
+            return -2;
+        }
+
+        int index = tileY * LEVEL_WIDTH_IN_NR_TILES + tileX;
+        int behavior = behaviorIDs[index];
+        return behavior;
     }
 
 

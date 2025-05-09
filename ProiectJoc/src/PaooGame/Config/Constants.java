@@ -46,6 +46,11 @@ public class Constants {
     public static final String LEVEL2_BEHAVIOR_CSV = "res/Level2/Level2Behaviors.csv";
     public static final String LEVEL2_BG_PATH = "res/Level2/Level2Background.png";
 
+    public static final String LEVEL3_TEXTURES_PATH = "res/Level3/Level3Textures.png" ;
+    public static final String LEVEL3_TEXTURES_CSV = "res/Level3/Level3Textures.csv";
+    public static final String LEVEL3_BEHAVIOR_CSV = "res/Level3/Level3Behaviors.csv";
+    public static final String LEVEL3_BG_PATH = "res/Level3/Level3Background.png";
+
     public static final String TIGER_FIGHT_BG_PATH = "res/Level1/TigerFightBg.jpg";
     public static final String DEATH_SCREEN_BG_PATH = "res/Effects/YouDied.jpg";
     public static final String HERO_SPRITE_SHEET_PATH = "res/Characters/Hero/Hero_SpriteSheet1.png";
@@ -54,6 +59,7 @@ public class Constants {
 
     public static final String LEVEL1_STATE = "LEVEL1_STATE";
     public static final String LEVEL2_STATE = "LEVEL2_STATE";
+    public static final String LEVEL3_STATE = "LEVEL3_STATE";
     public static final String ABOUT_STATE = "ABOUT_STATE";
     public static final String MENU_STATE = "MENU_STATE";
     public static final String PAUSE_MENU_STATE = "PAUSE_MENU_STATE";
@@ -74,11 +80,12 @@ public class Constants {
     public static final double HERO_BASE_DAMAGE = 100.0;
     public static final float HERO_BASE_SPEED = 2.0f;
     public static final float HERO_BASE_JUMP_STRENGTH = -3.5f;
-    public static final float HERO_LEVEL2_JUMP_STRENGTH = -4.0f;
+    public static final float HERO_LEVEL2_JUMP_STRENGTH = -6.0f;
     public static final int HERO_LEVEL1_STARTING_X = 100;
     public static final int HERO_LEVEL1_STARTING_Y = 420;
     public static final int HERO_LEVEL2_STARTING_X = 415;
     public static final int HERO_LEVEL2_STARTING_Y = 100;
+    public static final int HERO_GRAPPLE_RANGE = 6;
 
 
 
@@ -87,6 +94,7 @@ public class Constants {
     public static final float TIGER_SPEED =-0.4f;
 
     //exit level1 x<= (735,930); y<=aprox 650
+    //exit level2 x<= (1855,1890);  MAX_X = 1870
 
 
     public static enum EFFECTS{

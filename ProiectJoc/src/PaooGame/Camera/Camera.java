@@ -41,12 +41,16 @@ public class Camera {
 
 
     public void setPosition(double x, double y) {
-
         this.xOffset = x;
-
         this.yOffset = y;
+    }
 
+    public void updatePosition(double x, double y){
+        this.xOffset+=x;
+        this.yOffset+=y;
     }
 }
+
+
 
 

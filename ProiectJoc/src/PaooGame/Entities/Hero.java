@@ -18,6 +18,15 @@ public class Hero extends Entity {
     private Timer deathAnimationTimer;
     private int timeoutInMillisForDeathAnimation = 600;
     private boolean isDying = false;
+    private int currentGrappleX = 0;
+    private int currentGrappleY = 0;
+    private boolean isGrappling = false;
+
+    private Timer grappleExpiredTimer;
+    private int grappleTimeoutMillis = 120;
+    private boolean isGrapplingTimerExpired = false;
+    private boolean grappleInterrupt = false;
+    private boolean didJumpAfterGrapple = false;
 
 
 
@@ -49,6 +58,19 @@ public class Hero extends Entity {
            this.isDying = false;
         });
         this.deathAnimationTimer.setRepeats(false);
+
+        this.grappleExpiredTimer = new Timer(this.grappleTimeoutMillis,e -> {
+            this.isGrappling = false;
+            this.isGrapplingTimerExpired = true;
+            if(!this.didJumpAfterGrapple){
+                this.velocityY = this.jumpStrength*1.2f;
+                this.isGrounded = false;
+                this.jumpCap -= 4;
+            }
+            this.didJumpAfterGrapple = false;
+
+        });
+        this.grappleExpiredTimer.setRepeats(false);
 
 
         this.jumpStrength = Constants.HERO_BASE_JUMP_STRENGTH;//-3.2f;   // Initial upward velocity (negative Y). Adjust! Needs to be > gravity per frame initially.
@@ -92,6 +114,10 @@ public class Hero extends Entity {
 
     @Override
     public void update() {
+//        System.out.println(this.isGrappling);
+
+        System.out.println("x:"+ this.x + "y"+ this.y);
+
 
 
         switch (State.getState().getStateName()){
@@ -105,6 +131,16 @@ public class Hero extends Entity {
                 this.LEVEL_HEIGHT = Constants.LEVEL2_HEIGHT;
                 this.behaviorIDsToRespect = reflink.getGame().getLevel2().getBehaviorIDs();
                 break;
+            case Constants.LEVEL3_STATE:
+                this.LEVEL_WIDTH = Constants.LEVEL3_WIDTH;
+                this.LEVEL_HEIGHT = Constants.LEVEL3_HEIGHT;
+                this.behaviorIDsToRespect = reflink.getGame().getLevel3().getBehaviorIDs();
+                if(this.x > 3500){
+                    this.jumpStrength= Constants.HERO_BASE_JUMP_STRENGTH*1.2f;
+                }
+                else{
+                    this.jumpStrength = Constants.HERO_BASE_JUMP_STRENGTH;
+                }
         }
 
         if( Level.checkFalling(this.getHitbox(),this.LEVEL_WIDTH,this.LEVEL_HEIGHT,this.behaviorIDsToRespect) ==1){
@@ -144,19 +180,55 @@ public class Hero extends Entity {
         boolean rightPressed = reflink.getKeyManager().getKeyState()[KeyEvent.VK_D];
         boolean leftPressed = reflink.getKeyManager().getKeyState()[KeyEvent.VK_A];
         boolean crouchPressed = reflink.getKeyManager().getKeyState()[KeyEvent.VK_C];
+        boolean grapplePressed = reflink.getKeyManager().getKeyState()[KeyEvent.VK_G];
+
+        if(this.currentGrappleX!=0 && this.currentGrappleY!=0 && grapplePressed && !this.isGrapplingTimerExpired){
+            this.isGrappling = true;
+            this.grappleExpiredTimer.start();
+        }
+        if(!grapplePressed || (this.currentGrappleX==0 && this.currentGrappleY ==0) ){
+            this.isGrappling = false;
+            this.isGrapplingTimerExpired = false;
+            this.didJumpAfterGrapple = false;
+
+        }
+        if(this.isGrappling && this.grappleInterrupt ){
+            this.velocityY = this.jumpStrength*1.2f;
+            this.isGrounded = false;
+            this.jumpCap -= 4;
+            this.didJumpAfterGrapple = true;
+        }
 
         this.velocityX = 0;
-        if (rightPressed && !leftPressed) {
-            this.velocityX = this.speed;
-        } else if (leftPressed && !rightPressed) {
-            this.velocityX = -this.speed;
+
+        if(this.isGrappling){
+            if(this.currentGrappleX*Constants.TILE_SIZE>this.getHitbox().getX()){
+                this.velocityX = this.speed*2;
+            }
+            else{
+                this.velocityX = -this.speed*2;
+            }
+            if(this.currentGrappleY*Constants.TILE_SIZE>this.getHitbox().getY()){
+                this.velocityY = this.speed*2;
+            }
+            else{
+                this.velocityY = -this.speed*2;
+            }
         }
-        if (jumpPressed && this.isGrounded && this.jumpCap > 0) {
-            jump();
+        else{
+            if (rightPressed && !leftPressed) {
+                this.velocityX = this.speed;
+            } else if (leftPressed && !rightPressed) {
+                this.velocityX = -this.speed;
+            }
+            if (jumpPressed && this.isGrounded && this.jumpCap > 0) {
+                jump();
+            }
         }
-        if (crouchPressed && isGrounded) {
-            // Placeholder: Set state if needed, but full implementation is complex
-        }
+
+//        if (crouchPressed && isGrounded) {
+//            // Placeholder: Set state if needed, but full implementation is complex
+//        }
     }
 
 
@@ -239,32 +311,32 @@ public class Hero extends Entity {
         int fallCheckResult = Level.checkFalling(hitbox,this.LEVEL_WIDTH,this.LEVEL_HEIGHT,this.behaviorIDsToRespect);
 
 
-
-        if (this.velocityY > 0) { // Moving Down
-            if (fallCheckResult == 0) { // Hit ground
-                this.isGrounded = true;
-                this.velocityY = 0;
-                Level.snapToGround(this.hitbox);
-                this.jumpCap = 10; //resetare jump
-            } else {
-                this.isGrounded = false;
-            }
-        } else if (this.velocityY < 0) { // Moving Up
-            this.isGrounded = false;
-
-        } else { // velocityY == 0
-            if (fallCheckResult == 0) { // Standing still on ground
-                if (!this.isGrounded) { // Just landed precisely
+            if (this.velocityY > 0) { // Moving Down
+                if (fallCheckResult == 0) { // Hit ground
+                    this.isGrounded = true;
+                    this.velocityY = 0;
                     Level.snapToGround(this.hitbox);
-                    //functia tine de clasa parinte abstracta Level deci nu conteaza ca depinde de Level1, va merge si pt Level2,3
-                    this.jumpCap = 10;
+                    this.jumpCap = 10; //resetare jump
+                } else {
+                    this.isGrounded = false;
                 }
-                this.isGrounded = true;
-                this.velocityY = 0; // Ensure velocity is 0 when grounded
-            } else { // Standing still in air
+            } else if (this.velocityY < 0) { // Moving Up
                 this.isGrounded = false;
-            }
+
+            } else { // velocityY == 0
+                if (fallCheckResult == 0) { // Standing still on ground
+                    if (!this.isGrounded) { // Just landed precisely
+                        Level.snapToGround(this.hitbox);
+                        //functia tine de clasa parinte abstracta Level deci nu conteaza ca depinde de Level1, va merge si pt Level2,3
+                        this.jumpCap = 10;
+                    }
+                    this.isGrounded = true;
+                        this.velocityY = 0; // Ensure velocity is 0 when grounded
+                } else { // Standing still in air
+                    this.isGrounded = false;
+                }
         }
+
     }
 
     @Override
@@ -369,6 +441,11 @@ public class Hero extends Entity {
         return "GAME";
     }
 
+    public void setGrapplePoint(int x,int y){
+        this.currentGrappleX = x;
+        this.currentGrappleY = y;
+    }
+
 
     @Override
     public void Draw(Graphics g){
@@ -389,5 +466,11 @@ public class Hero extends Entity {
         }
 
     }
+
+    public boolean getFlipped() {return this.flipped;}
+    public void setGrappleInterrupt(boolean isInterrupted) { this .grappleInterrupt = isInterrupted;}
+
+    public int getCurrentGrappleX() {return this.currentGrappleX;}
+    public int getCurrentGrappleY() {return this.currentGrappleY;}
 
 }

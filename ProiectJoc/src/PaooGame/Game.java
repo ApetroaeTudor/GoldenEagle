@@ -10,6 +10,7 @@ import PaooGame.Maps.Level2;
 import PaooGame.States.*;
 import PaooGame.Tiles.Tile;
 import PaooGame.Tiles.TileCache;
+import PaooGame.Maps.Level3;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -23,8 +24,14 @@ public class Game implements Runnable {
     private Graphics g;
     private State menuState;
     private State settingsState;
+
     private State level1State;
+    private Level1 level1;
     private State level2State;
+    private Level2 level2;
+    private State level3State;
+    private Level3 level3;
+
     private State pauseMenuState;
     private State aboutState;
     private State fightState;
@@ -34,8 +41,6 @@ public class Game implements Runnable {
     private MouseInput mouseInput;
 
     private TileCache tileCache;
-    private Level1 level1;
-    private Level2 level2;
     private Hero hero;
 
     private Tile tile;
@@ -68,11 +73,13 @@ public class Game implements Runnable {
         refLink.setTileCache(tileCache);
 
 
-        hero = new Hero(refLink, Constants.HERO_LEVEL1_STARTING_X, Constants.HERO_LEVEL1_STARTING_Y); //100 - 420
+        hero = new Hero(refLink, 1770, 252); //100 - 420
+//        hero = new Hero(refLink,284,1300);
         this.refLink.setHero(hero);
 
         level1 = new Level1();
         level2 = new Level2();
+        level3 = new Level3();
 
         menuState = new MenuState(refLink);
         settingsState = new SettingsState(refLink);
@@ -80,6 +87,7 @@ public class Game implements Runnable {
         fightState = new FightState(refLink);
         level1State = new Level1State(refLink,level1);
         level2State = new Level2State(refLink,level2);
+        level3State = new Level3State(refLink,level3);
         deathState = new DeathState(refLink);
         pauseMenuState = new PauseMenuState(refLink);
         State.setState(menuState);
@@ -173,6 +181,7 @@ public class Game implements Runnable {
     public State getLevel2State() {
         return level2State;
     }
+    public State getLevel3State() {return level3State;}
 
     public MouseInput getMouseInput() {
         return mouseInput;
@@ -197,6 +206,7 @@ public class Game implements Runnable {
 
     public Level1 getLevel1(){ return this.level1; }
     public Level2 getLevel2() {return this.level2; }
+    public Level3 getLevel3() {return this.level3;}
 
     public void resetLevel1State() {
         level1State.restoreState();
@@ -204,6 +214,7 @@ public class Game implements Runnable {
     public void resetLevel2State(){
         level2State.restoreState();
     }
+    public void resetLevel3State() { level3State.restoreState(); }
 
 
 }
