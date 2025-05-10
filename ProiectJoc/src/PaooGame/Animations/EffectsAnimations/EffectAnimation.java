@@ -23,8 +23,8 @@ public class EffectAnimation extends Animation {
         this.animationArray = new BufferedImage[this.nrOfFrames];
         switch (selectedEffect){
             case ATTACK_EXPLOSION:
-                this.ImgWidth = Constants.ATTACK_EXPLOSION_TILE_SIZE;
-                this.ImgHeight = Constants.ATTACK_EXPLOSION_TILE_SIZE;
+                this.imgWidth = Constants.ATTACK_EXPLOSION_TILE_SIZE;
+                this.imgHeight = Constants.ATTACK_EXPLOSION_TILE_SIZE;
                 break;
         }
     }
@@ -32,7 +32,7 @@ public class EffectAnimation extends Animation {
     @Override
     public void loadAnimation() {
         for(int i = 0; i<this.nrOfFrames; ++i){
-            animationArray[i] = this.imageSheet.getSubimage(i*this.ImgWidth,0,this.ImgWidth,this.ImgHeight);
+            animationArray[i] = this.imageSheet.getSubimage(i*this.imgWidth,0,this.imgWidth,this.imgHeight);
         }
     }
 
@@ -87,7 +87,7 @@ public class EffectAnimation extends Animation {
             transform.scale(scale, scale);
 
             if (flipped) {
-                transform.translate(ImgWidth, 0);
+                transform.translate(imgWidth, 0);
                 transform.scale(-1, 1);
             }
 

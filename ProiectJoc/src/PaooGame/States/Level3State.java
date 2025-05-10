@@ -7,6 +7,7 @@ import PaooGame.Entities.Entity;
 import PaooGame.HUD.PauseButton;
 import PaooGame.Hitbox.Hitbox;
 import PaooGame.Input.MouseInput;
+import PaooGame.Items.SaveItem;
 import PaooGame.Items.WhipItem;
 import PaooGame.Maps.Level;
 import PaooGame.Maps.Level3;
@@ -36,6 +37,7 @@ public class Level3State extends State{
     private WhipItem whip;
 
 
+
     private boolean cameraIsSet = false;
     private boolean adjustingCameraForDepth = false;
     private boolean adjustingCameraForArena = false;
@@ -44,6 +46,8 @@ public class Level3State extends State{
     protected boolean transition_to_fight = false;
 
     private Entity[] enemies; //TODO
+    private SaveItem[] saves;
+    private int nrOfSaves = 4;
 
     protected String stateName = Constants.LEVEL3_STATE;
 
@@ -53,6 +57,7 @@ public class Level3State extends State{
     public Level3State(RefLinks reflink, Level3 level3){
         super(reflink);
         this.whip = new WhipItem(this.refLink,Constants.WHIP_POSITION_X,Constants.WHIP_POSITION_Y);
+        this.saves = new SaveItem[this.nrOfSaves];
 
         this.level3 = level3;
         this.MarkedHooks = new LinkedList<Point>();
@@ -63,6 +68,12 @@ public class Level3State extends State{
         this.unmarkHookTimer.setRepeats(false);
 
         pauseButton = new PauseButton(reflink.getHero(),80,50);
+
+        this.saves[0] = new SaveItem(this.refLink,Constants.LEVEL3_SAVE1_X,Constants.LEVEL3_SAVE1_Y);
+        this.saves[1] = new SaveItem(this.refLink,Constants.LEVEL3_SAVE2_X,Constants.LEVEL3_SAVE2_Y);
+        this.saves[2] = new SaveItem(this.refLink,Constants.LEVEL3_SAVE3_X,Constants.LEVEL3_SAVE3_Y);
+        this.saves[3] = new SaveItem(this.refLink,Constants.LEVEL3_SAVE4_X,Constants.LEVEL3_SAVE4_Y);
+
 
     }
 
@@ -86,6 +97,13 @@ public class Level3State extends State{
         this.refLink.getHero().update();
         if(refLink.getKeyManager().isKeyPressed(KeyEvent.VK_ESCAPE)){
             State.setState(refLink.getGame().getMenuState());
+        }
+
+        for(int i =0;i<this.nrOfSaves;++i){
+            this.saves[i].updateItem();
+        }
+        if(this.refLink.getHero().getHitbox().intersects(this.saves[0].getHitbox())){
+            System.out.println("Interaction");
         }
 
         MouseInput mouse = refLink.getMouseInput();
@@ -257,6 +275,10 @@ public class Level3State extends State{
                         .Draw(g, (i % Constants.LEVEL3_WIDTH) * Constants.TILE_SIZE,
                                 (i / Constants.LEVEL3_WIDTH) * Constants.TILE_SIZE);
             }
+        }
+
+        for(int i =0;i<this.nrOfSaves;++i){
+            this.saves[i].drawItem(g);
         }
 
         if(refLink.getHero().getHealth() == 0 || this.transitioning){

@@ -22,16 +22,16 @@ public abstract class Animation {
 
     protected int tick;
 
-    protected int ImgWidth;
-    protected int ImgHeight;
+    protected int imgWidth;
+    protected int imgHeight;
 
     protected Animation(){
         animationState=0;
         animationSpeed=0;
         nrOfFrames=0;
         tick=0;
-        ImgHeight=0;
-        ImgWidth=0;
+        imgHeight =0;
+        imgWidth =0;
     }
 
     public abstract void loadAnimation();

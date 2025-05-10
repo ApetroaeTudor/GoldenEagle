@@ -6,7 +6,6 @@ import PaooGame.RefLinks;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
-import java.sql.Ref;
 
 public class FloatingItemAnimation extends Animation {
     private String itemSheetPath;
@@ -18,9 +17,9 @@ public class FloatingItemAnimation extends Animation {
         this.itemSheetPath = itemSheetPath;
         this.nrOfFrames = nrOfFrames;
         this.animationSpeed = animationSpeed;
-        this.ImgHeight = imgHeight;
-        this.ImgWidth = imgWidth;
-        this.imageSheet = reflink.getTileCache().getSpecial(this.itemSheetPath,this.ImgWidth,this.ImgHeight,this.nrOfFrames);
+        this.imgHeight = imgHeight;
+        this.imgWidth = imgWidth;
+        this.imageSheet = reflink.getTileCache().getSpecial(this.itemSheetPath,this.imgWidth,this.imgHeight,this.nrOfFrames);
         this.animationArray = new BufferedImage[this.nrOfFrames];
 
     }
@@ -28,7 +27,7 @@ public class FloatingItemAnimation extends Animation {
     @Override
     public void loadAnimation() {
         for(int i = 0; i<this.nrOfFrames; ++i){
-            animationArray[i] = this.imageSheet.getSubimage(i*this.ImgWidth,0,this.ImgWidth,this.ImgHeight);
+            animationArray[i] = this.imageSheet.getSubimage(i*this.imgWidth,0,this.imgWidth,this.imgHeight);
         }
     }
 
@@ -77,7 +76,7 @@ public class FloatingItemAnimation extends Animation {
             transform.scale(scale, scale);
 
             if (flipped) {
-                transform.translate(ImgWidth, 0);
+                transform.translate(imgWidth, 0);
                 transform.scale(-1, 1);
             }
 

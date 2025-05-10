@@ -36,9 +36,24 @@ public class Constants {
     public static final int ATTACK_EXPLOSION_TILE_SIZE = 112;
 
     public static final int ITEM_FLOATING_TILE_SIZE = 48;
+    public static final int BONFIRE_TILE_SIZE = 32;
     public static final int WHIP_POSITION_X = 495;
     public static final int WHIP_POSITION_Y = 1308;
 
+    public static final int LEVEL1_SAVE1_X = 565;
+    public static final int LEVEL1_SAVE1_Y = 450;
+
+    public static final int LEVEL2_SAVE1_X = 950;
+    public static final int LEVEL2_SAVE1_Y = 337;
+
+    public static final int LEVEL3_SAVE1_X = 572;
+    public static final int LEVEL3_SAVE1_Y = 1010;
+    public static final int LEVEL3_SAVE2_X = 1340;
+    public static final int LEVEL3_SAVE2_Y = 1106;
+    public static final int LEVEL3_SAVE3_X = 2590;
+    public static final int LEVEL3_SAVE3_Y = 962;
+    public static final int LEVEL3_SAVE4_X = 4260;
+    public static final int LEVEL3_SAVE4_Y = 1298;
 
 
 
@@ -64,6 +79,7 @@ public class Constants {
     public static final String ATTACK_EXPLOSION_SHEET_PATH = "res/Effects/HitExplosion.png";
 
     public static final String WHIP_FRAMED_SHEET_PATH = "res/Items/WhipFramed.png";
+    public static final String BONFIRE_SHEET_PATH = "res/Items/save_bonfire.png";
 
     public static final String LEVEL1_STATE = "LEVEL1_STATE";
     public static final String LEVEL2_STATE = "LEVEL2_STATE";
@@ -74,7 +90,8 @@ public class Constants {
     public static final String SETTINGS_STATE = "SETTINGS_STATE";
     public static final String FIGHT_STATE = "FIGHT_STATE";
 
-    public static final String WHIP_NAME = "WHIP_NAME";
+    public static final String WHIP_NAME = "WHIP";
+    public static final String BONFIRE_NAME = "BONFIRE";
 
     public static final Color GREEN_HEALTH_BAR_COLOR_1 = new Color(0, 255, 0);
     public static final Color GREEN_HEALTH_BAR_COLOR_2 = new Color(0, 150, 0);

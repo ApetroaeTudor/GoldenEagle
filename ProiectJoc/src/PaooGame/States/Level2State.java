@@ -5,6 +5,7 @@ import PaooGame.Config.Constants;
 import PaooGame.Entities.Entity;
 import PaooGame.HUD.PauseButton;
 import PaooGame.Input.MouseInput;
+import PaooGame.Items.SaveItem;
 import PaooGame.Maps.Level2;
 import PaooGame.RefLinks;
 
@@ -25,6 +26,8 @@ public class Level2State extends State{
     private boolean isCameraSet = false;
 
     private Entity[] enemies;
+    private SaveItem[] saves;
+    private int nrOfSaves = 1;
 
     protected String stateName = Constants.LEVEL2_STATE;
 
@@ -34,11 +37,14 @@ public class Level2State extends State{
     public Level2State(RefLinks reflink,Level2 level2){
         super(reflink);
         this.level2 = level2;
+        this.saves = new SaveItem[this.nrOfSaves];
+
         levelWidth = Constants.LEVEL2_WIDTH*Constants.TILE_SIZE;
         levelHeight = Constants.LEVEL2_WIDTH*Constants.TILE_SIZE;
         camera = new Camera(0,0);
 
         //TODO enemies
+        this.saves[0] = new SaveItem(this.refLink,Constants.LEVEL2_SAVE1_X,Constants.LEVEL2_SAVE1_Y);
 
         pauseButton = new PauseButton(reflink.getHero(),80,50);
 
@@ -53,6 +59,13 @@ public class Level2State extends State{
     @Override
     public void update(){
         this.refLink.getHero().update();
+        for(int i =0;i<this.nrOfSaves;++i){
+            this.saves[i].updateItem();
+        }
+        if(this.refLink.getHero().getHitbox().intersects(this.saves[0].getHitbox())){
+            System.out.println("Interaction");
+        }
+
         if(this.refLink.getHero().getX()>1880){
             this.refLink.getHero().setX(1870);
             this.refLink.getHero().getHitbox().setX(1870);
@@ -135,6 +148,10 @@ public class Level2State extends State{
                         .Draw(g, (i % Constants.LEVEL2_WIDTH) * Constants.TILE_SIZE,
                                 (i / Constants.LEVEL2_WIDTH) * Constants.TILE_SIZE);
             }
+        }
+
+        for(int i =0;i<this.nrOfSaves;++i){
+            this.saves[i].drawItem(g);
         }
 
 

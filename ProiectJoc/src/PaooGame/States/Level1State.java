@@ -6,6 +6,7 @@ import PaooGame.Camera.Camera;
 import PaooGame.Config.Constants;
 import PaooGame.Entities.Hero;
 import PaooGame.Input.MouseInput;
+import PaooGame.Items.SaveItem;
 import PaooGame.Maps.Level;
 import PaooGame.Maps.Level1;
 import PaooGame.RefLinks;
@@ -28,6 +29,9 @@ public class Level1State extends State {
     private int tiger2X =720;
     private int tiger2Y =460;
 
+    private SaveItem[] saves;
+    private int nrOfSaves = 1;
+
 
 
 
@@ -47,10 +51,12 @@ public class Level1State extends State {
         super(refLink);
         this.level1 = level1;
         camera = new Camera(0, 0);
+        this.saves = new SaveItem[this.nrOfSaves];
 
         enemies = new Entity[2];
         enemies[0] = new Tiger(this.refLink,this.tiger1X,this.tiger1Y);
         enemies[1] = new Tiger(this.refLink,this.tiger2X,this.tiger2Y);
+        this.saves[0] = new SaveItem(this.refLink,Constants.LEVEL1_SAVE1_X,Constants.LEVEL1_SAVE1_Y);
 
         pauseButton = new PauseButton(refLink.getHero(), 80, 50);
         // Calculează dimensiunile totale ale nivelului
@@ -74,6 +80,12 @@ public class Level1State extends State {
     public void update() {
         this.refLink.getHero().update();
         Hero hero = refLink.getHero();
+        for(int i =0;i<this.nrOfSaves;++i){
+            this.saves[i].updateItem();
+        }
+        if(this.refLink.getHero().getHitbox().intersects(this.saves[0].getHitbox())){
+            System.out.println("Interaction");
+        }
 
 
         for(Entity enemy : enemies){
@@ -189,6 +201,10 @@ public class Level1State extends State {
                         .Draw(g, (i % Constants.LEVEL1_WIDTH) * Constants.TILE_SIZE,
                                 (i / Constants.LEVEL1_WIDTH) * Constants.TILE_SIZE);
             }
+        }
+
+        for(int i =0;i<this.nrOfSaves;++i){
+            this.saves[i].drawItem(g);
         }
 
 

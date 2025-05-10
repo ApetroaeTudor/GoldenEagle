@@ -72,8 +72,8 @@ public class Game implements Runnable {
         refLink.setMouseInput(mouseInput);
         refLink.setTileCache(tileCache);
 
-
-        hero = new Hero(refLink, 1770, 252); //100 - 420
+        hero = new Hero(refLink,Constants.HERO_LEVEL1_STARTING_X,Constants.HERO_LEVEL1_STARTING_Y);
+        //hero = new Hero(refLink, 1770, 252); //100 - 420
 //        hero = new Hero(refLink,284,1300);
         this.refLink.setHero(hero);
 
@@ -138,6 +138,7 @@ public class Game implements Runnable {
     }
 
     private void Update() {
+        System.out.println("HeroX: " + this.refLink.getHero().getX() + " HeroY: " +this.refLink.getHero().getY());
         if (State.getState() != null) {
             State.getState().update();
         }

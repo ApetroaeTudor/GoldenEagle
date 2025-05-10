@@ -20,8 +20,8 @@ public class PlayerActionAnimation extends Animation {
         this.reflink=reflink;
         this.imageSheet=reflink.getTileCache().getHeroState(purpose);
         this.nrOfFrames=nrOfFrames;
-        this.ImgHeight=Constants.CHARACTER_TILE_SIZE;
-        this.ImgWidth=Constants.CHARACTER_TILE_SIZE;
+        this.imgHeight =Constants.CHARACTER_TILE_SIZE;
+        this.imgWidth =Constants.CHARACTER_TILE_SIZE;
         this.animationArray=new BufferedImage[this.nrOfFrames];
 
 
@@ -33,7 +33,7 @@ public class PlayerActionAnimation extends Animation {
     @Override
     public void loadAnimation() {
         for(int i=0;i<this.nrOfFrames;++i){
-            animationArray[i]=this.imageSheet.getSubimage(i*this.ImgWidth,0,this.ImgWidth,this.ImgHeight);
+            animationArray[i]=this.imageSheet.getSubimage(i*this.imgWidth,0,this.imgWidth,this.imgHeight);
         }
     }
 
@@ -71,7 +71,7 @@ public class PlayerActionAnimation extends Animation {
             Graphics2D g2d = (Graphics2D) g.create(); // 1. Create a copy
             try {
                 // 2. Define the transformation (Translate to right edge, then scale)
-                AffineTransform transform = AffineTransform.getTranslateInstance(x + ImgWidth, y);
+                AffineTransform transform = AffineTransform.getTranslateInstance(x + imgWidth, y);
                 transform.scale(-1, 1); // Flip horizontally around the translated origin
 
                 // 3. Draw using the Graphics2D object and the transform
@@ -82,7 +82,7 @@ public class PlayerActionAnimation extends Animation {
             }
         }
         else{
-            g.drawImage(animationArray[animationState], x, y, this.ImgWidth, this.ImgHeight, null);
+            g.drawImage(animationArray[animationState], x, y, this.imgWidth, this.imgHeight, null);
         }
 
 

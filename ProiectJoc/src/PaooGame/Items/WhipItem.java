@@ -6,30 +6,34 @@ import PaooGame.Hitbox.Hitbox;
 import PaooGame.RefLinks;
 
 import java.awt.*;
-import java.sql.Ref;
 
 public class WhipItem extends Item{
     private boolean whipFloatingUp = true;
+    protected int floatingTick;
+    protected int floatingTickCap;
+
 
     public WhipItem(RefLinks reflink,int x, int y){
         super();
+        this.floatingTick = 0;
+        this.floatingTickCap = 5;
         this.x = x;
         this.y = y;
         this.itemName = Constants.WHIP_NAME;
         this.itemSheetPath = Constants.WHIP_FRAMED_SHEET_PATH;
         this.hitbox = new Hitbox(this.x,this.y,Constants.ITEM_FLOATING_TILE_SIZE,Constants.ITEM_FLOATING_TILE_SIZE);
-        this.floatAnimation = new FloatingItemAnimation(reflink,this.itemSheetPath,4,5,Constants.ITEM_FLOATING_TILE_SIZE,Constants.ITEM_FLOATING_TILE_SIZE);
-        this.floatAnimation.loadAnimation();
+        this.animation = new FloatingItemAnimation(reflink,this.itemSheetPath,4,5,Constants.ITEM_FLOATING_TILE_SIZE,Constants.ITEM_FLOATING_TILE_SIZE);
+        this.animation.loadAnimation();
     }
 
     @Override
     public void updateItem(){
-        this.floatAnimation.updateAnimation();
+        this.animation.updateAnimation();
     }
 
     @Override
     public void drawItem(Graphics g){
-        this.floatAnimation.paintAnimation(g,Constants.WHIP_POSITION_X,this.y,false);
+        this.animation.paintAnimation(g,Constants.WHIP_POSITION_X,this.y,false);
         executeWhipFloating();
     }
 

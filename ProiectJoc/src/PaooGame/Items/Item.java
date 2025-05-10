@@ -10,15 +10,10 @@ public abstract class Item {
     protected int y;
     protected String itemName;
     protected String itemSheetPath;
-    protected int floatingTick;
-    protected int floatingTickCap;
     protected Hitbox hitbox;
-    protected Animation floatAnimation;
+    protected Animation animation;
 
-    public Item(){
-        this.floatingTick = 0;
-        this.floatingTickCap = 5;
-    }
+    public Item(){}
 
     public Hitbox getHitbox() {return this.hitbox;}
     public String getItemName() {return this.itemName;}
