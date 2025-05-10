@@ -33,6 +33,7 @@ public class TileCache {
     private static final Map<String,BufferedImage> HeroStates=new HashMap<>();
     private static final Map<String,BufferedImage> TigerStates=new HashMap<>();
     private static final Map<String,BufferedImage> Effects=new HashMap<>();
+    private static final Map<String,BufferedImage> Specials=new HashMap<>();
 
     public Tile getTile(String path, int id){
         Entry<String,Integer> key=new AbstractMap.SimpleEntry<>(path,id);
@@ -112,6 +113,26 @@ public class TileCache {
                     returnIMG = Effects.get("ATTACK_EXPLOSION");
                     break;
             }
+
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+
+        return returnIMG;
+    }
+
+    public BufferedImage getSpecial(String specialPath,int tileWidth,int tileHeight, int nrOfFrames){
+        BufferedImage returnIMG = null;
+        try{
+            File specialFileSheet = new File(specialPath);
+            if(!specialFileSheet.exists()){
+                System.err.println("Error working with special sheet file");
+            }
+            if(!Specials.containsKey(specialPath)){
+                Specials.put(specialPath,ImageIO.read(specialFileSheet).getSubimage(0,0,tileWidth*nrOfFrames,tileHeight));
+            }
+            returnIMG = Specials.get(specialPath);
 
         }
         catch (IOException e){

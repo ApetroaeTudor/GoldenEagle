@@ -35,6 +35,12 @@ public class Constants {
     public static final int TIGER_FIGHTING_TILE_HEIGHT = 64;
     public static final int ATTACK_EXPLOSION_TILE_SIZE = 112;
 
+    public static final int ITEM_FLOATING_TILE_SIZE = 48;
+    public static final int WHIP_POSITION_X = 495;
+    public static final int WHIP_POSITION_Y = 1308;
+
+
+
 
     public static final String LEVEL1_TEXTURES_PATH = "res/Level1/Level1Textures.png";
     public static final String LEVEL1_TEXTURES_CSV = "res/Level1/Level1Textures.csv";
@@ -57,6 +63,8 @@ public class Constants {
     public static final String TIGER_SPRITE_SHEET_PATH = "res/Enemies/Tiger.png";
     public static final String ATTACK_EXPLOSION_SHEET_PATH = "res/Effects/HitExplosion.png";
 
+    public static final String WHIP_FRAMED_SHEET_PATH = "res/Items/WhipFramed.png";
+
     public static final String LEVEL1_STATE = "LEVEL1_STATE";
     public static final String LEVEL2_STATE = "LEVEL2_STATE";
     public static final String LEVEL3_STATE = "LEVEL3_STATE";
@@ -65,6 +73,8 @@ public class Constants {
     public static final String PAUSE_MENU_STATE = "PAUSE_MENU_STATE";
     public static final String SETTINGS_STATE = "SETTINGS_STATE";
     public static final String FIGHT_STATE = "FIGHT_STATE";
+
+    public static final String WHIP_NAME = "WHIP_NAME";
 
     public static final Color GREEN_HEALTH_BAR_COLOR_1 = new Color(0, 255, 0);
     public static final Color GREEN_HEALTH_BAR_COLOR_2 = new Color(0, 150, 0);
@@ -85,6 +95,8 @@ public class Constants {
     public static final int HERO_LEVEL1_STARTING_Y = 420;
     public static final int HERO_LEVEL2_STARTING_X = 415;
     public static final int HERO_LEVEL2_STARTING_Y = 100;
+    public static final int HERO_LEVEL3_STARTING_X = 110;
+    public static final int HERO_LEVEL3_STARTING_Y = 900;
     public static final int HERO_GRAPPLE_RANGE = 6;
 
 

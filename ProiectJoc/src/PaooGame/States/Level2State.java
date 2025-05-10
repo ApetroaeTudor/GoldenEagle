@@ -107,15 +107,10 @@ public class Level2State extends State{
             this.transitioning = false;
 
             State.setState(this.refLink.getGame().getLevel3State());
-            this.refLink.getHero().setX(100);
-            this.refLink.getHero().getHitbox().setX(100);
-            this.refLink.getHero().setY(900);
-            this.refLink.getHero().getHitbox().setY(900);
-//            this.refLink.getHero().setX(284);
-//            this.refLink.getHero().getHitbox().setX(284);
-//            this.refLink.getHero().setY(1300);
-//            this.refLink.getHero().getHitbox().setY(1300);
-
+            this.refLink.getHero().setX(Constants.HERO_LEVEL3_STARTING_X);
+            this.refLink.getHero().getHitbox().setX(Constants.HERO_LEVEL3_STARTING_X);
+            this.refLink.getHero().setY(Constants.HERO_LEVEL3_STARTING_Y);
+            this.refLink.getHero().getHitbox().setY(Constants.HERO_LEVEL3_STARTING_Y);
 
         }
 

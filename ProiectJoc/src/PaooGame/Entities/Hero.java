@@ -22,6 +22,8 @@ public class Hero extends Entity {
     private int currentGrappleY = 0;
     private boolean isGrappling = false;
 
+    private boolean hasWhip = false;
+
     private Timer grappleExpiredTimer;
     private int grappleTimeoutMillis = 120;
     private boolean isGrapplingTimerExpired = false;
@@ -115,8 +117,8 @@ public class Hero extends Entity {
     @Override
     public void update() {
 //        System.out.println(this.isGrappling);
+        System.out.println(this.x+";"+this.y);
 
-        System.out.println("x:"+ this.x + "y"+ this.y);
 
 
 
@@ -147,7 +149,22 @@ public class Hero extends Entity {
             this.deathAnimationTimer.start();
             this.isDying = true;
         }
-        handleInput(); // Sets velocityX, checks for jump press
+
+        if(this.isDying){
+//            this.gravity = Constants.DYING_ENTITY_GRAVITY;
+//            this.maxFallSpeed = Constants.DYING_MAX_ENTITY_FALL_SPEED;
+            this.velocityX = 0;
+            this.velocityY = 1;
+        }
+        else{
+            if(this.health>0){
+//                this.gravity = Constants.BASE_ENTITY_GRAVITY;
+//                this.maxFallSpeed = Constants.BASE_MAX_ENTITY_FALL_SPEED;
+                handleInput();
+
+            }
+
+        }
         applyGravity();
         moveAndCollide(); // Updates hitbox position, handles collisions, sets isGrounded
         updateVisualPosition();
@@ -158,19 +175,9 @@ public class Hero extends Entity {
 
 
 
-//        if(Level.isTileUnderCharacterLethal(this.getHitbox(),this.LEVEL_WIDTH,this.LEVEL_HEIGHT,this.behaviorIDsToRespect)){
-//            this.deathAnimationTimer.start();
-//            this.isDying = true;
-//        }
 
-        if(this.isDying){
-           this.gravity = Constants.DYING_ENTITY_GRAVITY;
-           this.maxFallSpeed = Constants.DYING_MAX_ENTITY_FALL_SPEED;
-        }
-        else{
-            this.gravity = Constants.BASE_ENTITY_GRAVITY;
-            this.maxFallSpeed = Constants.BASE_MAX_ENTITY_FALL_SPEED;
-        }
+
+
 
 
     }
@@ -182,17 +189,17 @@ public class Hero extends Entity {
         boolean crouchPressed = reflink.getKeyManager().getKeyState()[KeyEvent.VK_C];
         boolean grapplePressed = reflink.getKeyManager().getKeyState()[KeyEvent.VK_G];
 
-        if(this.currentGrappleX!=0 && this.currentGrappleY!=0 && grapplePressed && !this.isGrapplingTimerExpired){
+        if(this.currentGrappleX!=0 && this.currentGrappleY!=0 && grapplePressed && !this.isGrapplingTimerExpired && this.hasWhip){
             this.isGrappling = true;
             this.grappleExpiredTimer.start();
         }
-        if(!grapplePressed || (this.currentGrappleX==0 && this.currentGrappleY ==0) ){
+        if(!grapplePressed || (this.currentGrappleX==0 && this.currentGrappleY ==0 && this.hasWhip) ){
             this.isGrappling = false;
             this.isGrapplingTimerExpired = false;
             this.didJumpAfterGrapple = false;
 
         }
-        if(this.isGrappling && this.grappleInterrupt ){
+        if(this.isGrappling && this.grappleInterrupt && this.hasWhip){
             this.velocityY = this.jumpStrength*1.2f;
             this.isGrounded = false;
             this.jumpCap -= 4;
@@ -201,7 +208,7 @@ public class Hero extends Entity {
 
         this.velocityX = 0;
 
-        if(this.isGrappling){
+        if(this.isGrappling && this.hasWhip){
             if(this.currentGrappleX*Constants.TILE_SIZE>this.getHitbox().getX()){
                 this.velocityX = this.speed*2;
             }
@@ -472,5 +479,8 @@ public class Hero extends Entity {
 
     public int getCurrentGrappleX() {return this.currentGrappleX;}
     public int getCurrentGrappleY() {return this.currentGrappleY;}
+
+    public boolean getHasWhip(){return this.hasWhip;}
+    public void setHasWhip(boolean hasWhip){this.hasWhip = hasWhip;}
 
 }

@@ -1,9 +1,13 @@
 package PaooGame.States;
+import PaooGame.Animations.Animation;
+import PaooGame.Animations.ItemsAnimations.FloatingItemAnimation;
 import PaooGame.Camera.Camera;
 import PaooGame.Config.Constants;
 import PaooGame.Entities.Entity;
 import PaooGame.HUD.PauseButton;
+import PaooGame.Hitbox.Hitbox;
 import PaooGame.Input.MouseInput;
+import PaooGame.Items.WhipItem;
 import PaooGame.Maps.Level;
 import PaooGame.Maps.Level3;
 import PaooGame.RefLinks;
@@ -28,8 +32,13 @@ public class Level3State extends State{
     private Timer unmarkHookTimer;
     private int hookTimeoutMillis = 100;
 
+
+    private WhipItem whip;
+
+
     private boolean cameraIsSet = false;
     private boolean adjustingCameraForDepth = false;
+    private boolean adjustingCameraForArena = false;
 
     protected boolean transitioning = false;
     protected boolean transition_to_fight = false;
@@ -43,6 +52,8 @@ public class Level3State extends State{
 
     public Level3State(RefLinks reflink, Level3 level3){
         super(reflink);
+        this.whip = new WhipItem(this.refLink,Constants.WHIP_POSITION_X,Constants.WHIP_POSITION_Y);
+
         this.level3 = level3;
         this.MarkedHooks = new LinkedList<Point>();
         levelWidth = Constants.LEVEL3_WIDTH*Constants.TILE_SIZE;
@@ -88,57 +99,69 @@ public class Level3State extends State{
         int heroTileY = (int)(heroCenterY / Constants.TILE_SIZE);
         boolean isHeroFlipped = this.refLink.getHero().getFlipped();
 
-        int closestX = -1;
-        int closestY = -1;
-        double closestDistance = 100;
-        final int GRAPPLE_TILE_ID = 3;
+        if(this.refLink.getHero().getHitbox().intersects(this.whip.getHitbox())){
+            this.refLink.getHero().setHasWhip(true);
+        }
 
-        for (int radius = 0; radius <= Constants.HERO_GRAPPLE_RANGE; radius++) {
-            boolean foundInThisRadius = false;
+        if(this.refLink.getHero().getHasWhip()){
+            int closestX = -1;
+            int closestY = -1;
+            double closestDistance = 100;
+            final int GRAPPLE_TILE_ID = 3;
 
-            for (int x = (isHeroFlipped? (heroTileX - radius): heroTileX); x<= (isHeroFlipped? heroTileX:(heroTileX + radius)); x++) {
-                for (int y = heroTileY - radius; y <= heroTileY + radius; y++) {
-                    if (Math.abs(x - heroTileX) == radius || Math.abs(y - heroTileY) == radius) { //verific daca sunt pe marginile exterioare
-                        if (x >= 0 && x < Constants.LEVEL3_WIDTH &&
-                                y >= 0 && y < Constants.LEVEL3_HEIGHT) {//verific daca sunt in raza nivelului
-                            if (Level.getTileBehavior(x, y, Constants.LEVEL3_WIDTH, Constants.LEVEL3_HEIGHT, this.getLevel3().getBehaviorIDs()) == GRAPPLE_TILE_ID) {
-                                double distance = Math.sqrt(Math.pow(x - heroTileX, 2) + Math.pow(y - heroTileY, 2)); //calculez distanta cu formula distantei
-                                if (distance < closestDistance) {
-                                    closestDistance = distance;
-                                    closestX = x;
-                                    closestY = y;
-                                    foundInThisRadius = true;
+
+            for (int radius = 0; radius <= Constants.HERO_GRAPPLE_RANGE; radius++) {
+                boolean foundInThisRadius = false;
+
+                for (int x = (isHeroFlipped? (heroTileX - radius): heroTileX); x<= (isHeroFlipped? heroTileX:(heroTileX + radius)); x++) {
+                    for (int y = heroTileY - radius; y <= heroTileY + radius; y++) {
+                        if (Math.abs(x - heroTileX) == radius || Math.abs(y - heroTileY) == radius) { //verific daca sunt pe marginile exterioare
+                            if (x >= 0 && x < Constants.LEVEL3_WIDTH &&
+                                    y >= 0 && y < Constants.LEVEL3_HEIGHT) {//verific daca sunt in raza nivelului
+                                if (Level.getTileBehavior(x, y, Constants.LEVEL3_WIDTH, Constants.LEVEL3_HEIGHT, this.getLevel3().getBehaviorIDs()) == GRAPPLE_TILE_ID) {
+                                    double distance = Math.sqrt(Math.pow(x - heroTileX, 2) + Math.pow(y - heroTileY, 2)); //calculez distanta cu formula distantei
+                                    if (distance < closestDistance) {
+                                        closestDistance = distance;
+                                        closestX = x;
+                                        closestY = y;
+                                        foundInThisRadius = true;
+                                    }
                                 }
                             }
                         }
                     }
                 }
+                if (foundInThisRadius) { //daca am gasit pe o raza, inseamna ca pot sa ies, pentru ca pe razele urmatoare nu se poate decat sa fie tile-uri mai departate
+                    break;
+                }
             }
-            if (foundInThisRadius) { //daca am gasit pe o raza, inseamna ca pot sa ies, pentru ca pe razele urmatoare nu se poate decat sa fie tile-uri mai departate
-                break;
-            }
-        }
 
-        if (closestX != -1) {
+            if (closestX != -1) {
 //            System.out.printf("Closest grapple tile at (%d,%d), distance: %.1f tiles%n",
 //                    closestX, closestY, closestDistance);
-            Point pt = new Point(closestX,closestY);
-            // You can return or use these coordinates here
-            if(!this.MarkedHooks.contains(pt)){
-                if(closestDistance> 3){
-                    this.refLink.getHero().setGrapplePoint(closestX,closestY);
-                    this.MarkedHooks.add(pt);
-                    startUnmarkHookTimerWithParameters(pt);
-                    this.refLink.getHero().setGrappleInterrupt(false);
-                }
-                else{
-                    this.refLink.getHero().setGrappleInterrupt(true);
-                }
+                Point pt = new Point(closestX,closestY);
+                // You can return or use these coordinates here
+                if(!this.MarkedHooks.contains(pt)){
+                    if(closestDistance> 3){
+                        this.refLink.getHero().setGrapplePoint(closestX,closestY);
+                        this.MarkedHooks.add(pt);
+                        startUnmarkHookTimerWithParameters(pt);
+                        this.refLink.getHero().setGrappleInterrupt(false);
+                    }
+                    else{
+                        this.refLink.getHero().setGrappleInterrupt(true);
+                    }
 
+                }
+            } else {
+                this.refLink.getHero().setGrapplePoint(0,0); //punctele sunt relative la heroCenter point
             }
-        } else {
-            this.refLink.getHero().setGrapplePoint(0,0); //punctele sunt relative la heroCenter point
         }
+        else{
+            this.whip.updateItem();
+        }
+
+
 
 
 
@@ -162,7 +185,6 @@ public class Level3State extends State{
         cameraX = Math.max(0, Math.min(cameraX, maxCameraX));
         cameraY = Math.max(0, Math.min(cameraY, maxCameraY))+350;
 
-//        cameraY = Math.max(0,Math.min(cameraY,this.levelHeight));
 
         if(State.getState().getStateName() == this.stateName && !cameraIsSet){
             camera.setPosition(cameraX, cameraY);
@@ -176,7 +198,26 @@ public class Level3State extends State{
             adjustingCameraForDepth = true;
         }
 
-        camera.updatePosition(this.refLink.getHero().getVelocityX(),this.refLink.getHero().getVelocityY()*2);
+
+        if(adjustingCameraForDepth && this.refLink.getHero().getY()<1500 && this.refLink.getHero().getX()>4100 && !this.adjustingCameraForArena){
+            cameraY+=200;
+            cameraX+=200;
+            camera.setPosition(cameraX,cameraY);
+            this.adjustingCameraForArena = true;
+        }
+
+
+        if(this.refLink.getHero().getX()<4820)
+            camera.updatePosition(this.refLink.getHero().getVelocityX(),this.refLink.getHero().getVelocityY()*2);
+
+        int currentCameraXProblem = (int)(this.refLink.getHero().getX() - camera.getxOffset());
+        if(currentCameraXProblem<94){
+            camera.updatePosition(-1,0);
+        }
+        else if(currentCameraXProblem>94){
+            camera.updatePosition(1,0);
+        }
+
 
 
 
@@ -186,6 +227,9 @@ public class Level3State extends State{
             this.refLink.getGame().getDeathState().restoreState();
             State.setState(this.refLink.getGame().getDeathState());
         }
+
+
+
     }
 
     @Override
@@ -224,14 +268,24 @@ public class Level3State extends State{
             }
             int alpha = (int)(this.targetBlackIntensity*255.0);
             g2d.setColor(new Color(0,0,0,alpha));
-            g.fillRect((int)this.refLink.getHero().getX()-Constants.WINDOW_WIDTH/2,0,Constants.WINDOW_WIDTH*2,Constants.WINDOW_HEIGHT*2);
+            g.fillRect(0,0,this.levelWidth,this.levelHeight);
             g2d.setColor(originalColor);
         }
 
-        Color originalColor1 = g2d.getColor();
-        g2d.setColor(new Color(255,0,0,(int)(255*0.2)));
-        g2d.fillRect(this.refLink.getHero().getCurrentGrappleX()*16,this.refLink.getHero().getCurrentGrappleY()*16,16,16);
-        g2d.setColor(originalColor1);
+        if(refLink.getHero().getHasWhip()){
+            Color originalColor1 = g2d.getColor();
+            g2d.setColor(new Color(255,0,0,(int)(255*0.2)));
+            g2d.fillRect(this.refLink.getHero().getCurrentGrappleX()*16,this.refLink.getHero().getCurrentGrappleY()*16,16,16);
+            g2d.setColor(originalColor1);
+        }
+        else{
+            this.whip.drawItem(g);
+        }
+
+        if(!refLink.getHero().getHasWhip()){
+
+        }
+
 
         this.refLink.getHero().Draw(g);
         g2d.setTransform(originalTransform);
@@ -252,7 +306,6 @@ public class Level3State extends State{
     public void setEnemy(Entity enemy){
 
     }
-
 
 
 }
