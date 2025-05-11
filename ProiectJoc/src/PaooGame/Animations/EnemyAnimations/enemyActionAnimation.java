@@ -8,33 +8,59 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 
-public class TigerActionAnimation extends Animation {
+public class enemyActionAnimation extends Animation {
 
     private Constants.ENEMY_STATES purpose;
 
-    public TigerActionAnimation(RefLinks reflink, Constants.ENEMY_STATES purpose, int nrOfFrames, int animationSpeed){
+    public enemyActionAnimation(RefLinks reflink, Constants.ENEMY_STATES purpose, int nrOfFrames, int animationSpeed, String entityName){
         super();
         this.purpose = purpose;
         this.reflink = reflink;
-        this.imageSheet = reflink.getTileCache().getTigerState(purpose);
         this.nrOfFrames = nrOfFrames;
-        switch (purpose){
-            case FALLING:
-            case WALKING:
-                this.imgWidth = Constants.TIGER_PASSIVE_TILE_WIDTH;
-                this.imgHeight = Constants.TIGER_PASSIVE_TILE_HEIGHT;
-                break;
-            case IN_FIGHT_IDLE:
-                this.imgWidth = Constants.TIGER_FIGHTING_TILE_WIDTH;
-                this.imgHeight = Constants.TIGER_FIGHTING_TILE_HEIGHT;
-                this.playOnce = false;
-                break;
-            case IN_FIGHT_ATTACKING:
-                this.imgWidth = Constants.TIGER_FIGHTING_TILE_WIDTH;
-                this.imgHeight = Constants.TIGER_FIGHTING_TILE_HEIGHT;
-                this.playOnce = true;
-                break;
+
+        if(entityName == "Tiger"){
+            this.imageSheet = reflink.getTileCache().getEnemySheetByState(purpose,"Tiger");
+            switch (purpose){
+                case FALLING:
+                case WALKING:
+                    this.imgWidth = Constants.TIGER_PASSIVE_TILE_WIDTH;
+                    this.imgHeight = Constants.TIGER_PASSIVE_TILE_HEIGHT;
+                    break;
+                case IN_FIGHT_IDLE:
+                    this.imgWidth = Constants.TIGER_FIGHTING_TILE_WIDTH;
+                    this.imgHeight = Constants.TIGER_FIGHTING_TILE_HEIGHT;
+                    this.playOnce = false;
+                    break;
+                case IN_FIGHT_ATTACKING:
+                    this.imgWidth = Constants.TIGER_FIGHTING_TILE_WIDTH;
+                    this.imgHeight = Constants.TIGER_FIGHTING_TILE_HEIGHT;
+                    this.playOnce = true;
+                    break;
+            }
+
         }
+        else if(entityName == "BasicSkeleton"){
+            this.imageSheet = reflink.getTileCache().getEnemySheetByState(purpose,"BasicSkeleton");
+            switch (purpose){
+                case FALLING:
+                case WALKING:
+                    this.imgWidth = Constants.BASIC_SKELETON_PASSIVE_TILE_WIDTH;
+                    this.imgHeight = Constants.BASIC_SKELETON_PASSIVE_TILE_HEIGHT;
+                    break;
+                case IN_FIGHT_IDLE:
+                    this.imgWidth = Constants.BASIC_SKELETON_FIGHTING_TILE_WIDTH;
+                    this.imgHeight = Constants.BASIC_SKELETON_FIGHTING_TILE_HEIGHT;
+                    this.playOnce = false;
+                    break;
+                case IN_FIGHT_ATTACKING:
+                    this.imgWidth = Constants.BASIC_SKELETON_FIGHTING_TILE_WIDTH;
+                    this.imgHeight = Constants.BASIC_SKELETON_FIGHTING_TILE_HEIGHT;
+                    this.playOnce = true;
+                    break;
+            }
+
+        }
+
 
         this.animationArray = new BufferedImage[this.nrOfFrames];
 
@@ -73,7 +99,7 @@ public class TigerActionAnimation extends Animation {
     }
 
     @Override
-    public void paintAnimation(Graphics g, int x, int y, boolean flipped) {
+    public void paintAnimation(Graphics g, int x, int y, boolean flipped,double scale) {
 
         if(this.playOnce && this.isFinished){
             return;
@@ -88,7 +114,7 @@ public class TigerActionAnimation extends Animation {
 
         try {
             AffineTransform transform = AffineTransform.getTranslateInstance(x, y);
-            double scale = 0.5;
+            scale = 1;
             if(this.purpose == Constants.ENEMY_STATES.IN_FIGHT_IDLE || this.purpose == Constants.ENEMY_STATES.IN_FIGHT_ATTACKING){
                 scale = 5;
             }

@@ -56,7 +56,7 @@ public class FloatingItemAnimation extends Animation {
     }
 
     @Override
-    public void paintAnimation(Graphics g, int x, int y, boolean flipped) {
+    public void paintAnimation(Graphics g, int x, int y, boolean flipped,double scale) {
 
         if(this.playOnce && this.isFinished){
             return;
@@ -71,7 +71,6 @@ public class FloatingItemAnimation extends Animation {
 
         try {
             AffineTransform transform = AffineTransform.getTranslateInstance(x, y);
-            double scale = 1;
 
             transform.scale(scale, scale);
 

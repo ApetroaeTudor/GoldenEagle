@@ -39,7 +39,7 @@ public abstract class Animation {
 
     public abstract void triggerOnce();
 
-    public abstract void paintAnimation(Graphics g, int x, int y,boolean flipped);
+    public abstract void paintAnimation(Graphics g, int x, int y,boolean flipped,double scale);
 
     public boolean getIsFinished(){return this.isFinished;}
     public boolean getPlayOnce(){return this.playOnce;}

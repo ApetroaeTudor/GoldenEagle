@@ -8,6 +8,7 @@ import PaooGame.HUD.AttackButton;
 import PaooGame.HUD.VerticalGradientBar;
 import PaooGame.Input.MouseInput;
 import PaooGame.RefLinks;
+import PaooGame.Strategies.Fight.FightStrategy;
 
 import javax.swing.*;
 
@@ -30,10 +31,14 @@ public class FightState extends State {
     private Timer popupTimer;
     private Timer waitForEnemyDeathTimer;
 
+    private FightStrategy fightStrategy = null;
+    private FightStrategy tigerStrategy = null;
+    private FightStrategy basicSkeletonStrategy = null;
+
     private int popupTimeInMillis = 700;
     private int timeoutInMillis = 1000;
     private int timeoutInMillisForDelayingPlayerTurn = 1500;
-    private int timeoutInMillisWaitForEnemyDeath = 3000;
+    private int timeoutInMillisWaitForEnemyDeath = 1300;
     private boolean isTimerStarted;
     private boolean isTimerFinished;
     private boolean isWaitingForPlayerTurn;
@@ -66,6 +71,7 @@ public class FightState extends State {
 
     public FightState(RefLinks reflink){
         super(reflink);
+
         this.isTimerFinished = false;
         this.isTimerStarted = false;
         this.isWaitingForPlayerTurn = false;
@@ -73,6 +79,8 @@ public class FightState extends State {
 
         this.blockingBar = new VerticalGradientBar(50,50);
         this.blockingBar.setPosition(935,250);
+
+
 
         this.timer = new Timer(timeoutInMillis, e->{
             this.isTimerFinished = true;
@@ -124,12 +132,54 @@ public class FightState extends State {
 
     @Override
     public void update() {
+        if(this.tigerStrategy ==null){
+            if(this.enemy!=null){
+                switch (this.enemy.getName()){
+                    case "Tiger":
+                        this.tigerStrategy = new FightStrategy.FightStrategyBuilder(this.enemy)
+                                .x(480)
+                                .y(100)
+                            .width(this.enemy.getWidth())
+                            .height(this.enemy.getHeight())
+                                .healthBarX(460)
+                                .healthBarY(80)
+                            .healthBarWidth(this.enemy.getHealthBarWidth())
+                            .healthBarHeight(this.enemy.getHealthBarHeight())
+                                .backgroundImgPath(Constants.TIGER_FIGHT_BG_PATH)
+                                .defence(0f)
+                                .ownerState(refLink.getGame().getLevel1State()).
+                                build();
+                        break;
+                    case "BasicSkeleton":
+                        this.basicSkeletonStrategy = new FightStrategy.FightStrategyBuilder(this.enemy)
+                                .x(480)
+                                .y(100)
+                                .width(this.enemy.getWidth())
+                                .height(this.enemy.getHeight())
+                                .healthBarX(460)
+                                .healthBarY(80)
+                                .healthBarWidth(this.enemy.getHealthBarWidth())
+                                .healthBarHeight(this.enemy.getHealthBarHeight())
+                                .backgroundImgPath(Constants.BASIC_SKELETON_FIGHT_BG_PATH)
+                                .defence(0f)
+                                .ownerState(refLink.getGame().getLevel2State()).
+                                build();
+                        break;
+                }
+            }
+        }
+
         if(this.enemy!=null){
-            this.enemy.setX(480);
-            this.enemy.setY(100);
+            switch (this.enemy.getName()){
+                case "Tiger":
+                    this.fightStrategy = tigerStrategy;
+                    break;
+                case "BasicSkeleton":
+                    this.fightStrategy = basicSkeletonStrategy;
+                    break;
+            }
+            this.fightStrategy.update();
             this.enemy.update();
-            this.enemy.setHealthBarX(460);
-            this.enemy.setHealthBarY(80);
 
 
             this.refLink.getHero().setHealthBarX(20);
@@ -150,11 +200,14 @@ public class FightState extends State {
             this.attackButton.updateHover(mx,my);
             if(this.attackButton.isClicked(mx,my,mouse.isOneClick())){
                 this.attackAnimation.triggerOnce();
-                this.enemy.reduceHealth(this.refLink.getHero().getDamage());
+                this.fightStrategy.takeDamage((float)this.refLink.getHero().getDamage());
                 this.printingDamageDealtPopup = true;
-                this.latestDamageDealt = this.refLink.getHero().getDamage();
+                this.latestDamageDealt = (double)this.fightStrategy.calculateDamage((float)this.refLink.getHero().getDamage());
                 this.attackButton.setIsHovered(false);
-                this.isPlayerTurn = false;
+                if(this.fightStrategy.getEnemy().getHealth()>0){
+                    this.isPlayerTurn = false;
+
+                }
             }
         }
         else{
@@ -187,21 +240,12 @@ public class FightState extends State {
             }
         }
 
-
-
         if(this.enemy.getHealth() == 0){
             this.waitForEnemyDeathTimer.start();
 
         }
         if(this.refLink.getHero().getHealth()==0){
             this.timer3.start();
-        }
-        if(this.transitioningToVictory && this.fadeToBlackProgress==1){
-            this.transitioningToVictory = false;
-            this.fadeToBlackProgress = 0.0;
-            this.attackAnimation.setIsFinished(true);
-            State.setState(refLink.getGame().getLevel1State());
-            this.refLink.getHero().resetHealthBarDefaultValues();
         }
         if(this.transitioningToDeath && this.fadeToBlackProgress==1){
             this.transitioningToDeath = false;
@@ -217,114 +261,129 @@ public class FightState extends State {
         if(this.scrollX <= -Constants.WINDOW_WIDTH){
             this.scrollX = 0;
         }
+        if(this.transitioningToVictory && this.fadeToBlackProgress==1){
+            this.transitioningToVictory = false;
+            this.fadeToBlackProgress = 0.0;
+            this.attackAnimation.setIsFinished(true);
+            State.setState(this.fightStrategy.getOwnerState());
+            this.refLink.getHero().resetHealthBarDefaultValues();
+            this.restoreState();
+
+        }
+
 
     }
 
     @Override
     public void draw(Graphics g) {
-        BufferedImage backgroundImg = this.refLink.getTileCache().getBackground(Constants.TIGER_FIGHT_BG_PATH);
+        if(this.fightStrategy!=null){
+            if(this.fightStrategy.getBackgroundImgPath()!=null){
+                BufferedImage backgroundImg = this.refLink.getTileCache().getBackground(this.fightStrategy.getBackgroundImgPath());
+                g.drawImage(backgroundImg,scrollX,0,Constants.WINDOW_WIDTH,Constants.WINDOW_HEIGHT,null);
+                //scrollX ca offsett si acum ramane o gaura in background, trebuie acoperita cu o a doua img
+                g.drawImage(backgroundImg,scrollX+ Constants.WINDOW_WIDTH,0,Constants.WINDOW_WIDTH,Constants.WINDOW_HEIGHT,null);
+                //a doua imagine e printata fix dupa prima pentru a parea o singura imagine
+            }
 //        g.drawImage(backgroundImg, 0, 0, Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT, null);
 
-        g.drawImage(backgroundImg,scrollX,0,Constants.WINDOW_WIDTH,Constants.WINDOW_HEIGHT,null);
-        //scrollX ca offsett si acum ramane o gaura in background, trebuie acoperita cu o a doua img
-        g.drawImage(backgroundImg,scrollX+ Constants.WINDOW_WIDTH,0,Constants.WINDOW_WIDTH,Constants.WINDOW_HEIGHT,null);
-        //a doua imagine e printata fix dupa prima pentru a parea o singura imagine
-
-        Graphics2D g2d = (Graphics2D)g;
-        this.blockingBar.draw(g2d);
-        Color originalColor = g2d.getColor();
-        if(this.blackIntensity>=1){
-            this.blackIntensity = 1;
-        }
-        if(this.blackIntensity<0){
-            this.blackIntensity = 0;
-        }
-        g2d.setColor(new Color(0,0,0,(int)(blackIntensity*255.0) ));
-        this.blackIntensity-=this.fadeSpeed;
-
-        g.fillRect(0,0,Constants.WINDOW_WIDTH,Constants.WINDOW_HEIGHT);
-        g2d.setColor(originalColor);
-
-        if(this.enemy!=null){
-            this.enemy.Draw(g);
-        }
-
-        g2d.setFont(new Font("Arial",Font.BOLD,30));
-        g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-
-        String enemyName = enemy.getName();
-        switch (enemyName){
-            case "Tiger":
-                g2d.setColor(Color.RED);
-                g2d.drawString(enemyName,520,60);
-                break;
-        }
-        g2d.setFont(new Font("Arial",Font.BOLD,20));
-        g2d.setColor(Color.WHITE);
-        if(this.isPlayerTurn){
-            g2d.drawString("Current Turn: Player",20,30);
-        }
-        else{
-            g2d.setColor(Color.RED);
-            String printString = "Current Turn: " + enemy.getName();
-            g2d.drawString(printString,20,30);
-            g2d.setColor(Color.WHITE);
-        }
-        g2d.drawString("Your health:",20,630);
-        g2d.drawString("Press space",900,687);
-        g2d.setFont(new Font("Arial",Font.BOLD,10));
-        g2d.drawString("(When the bar is fuller you block more damage)",840,710);
-
-        if(this.printingDamageReceivedPopup){
-            g2d.setFont(new Font("Arial",Font.BOLD,30));
-            originalColor = g2d.getColor();
-            g2d.setColor(Color.RED);
-            String damageToPrint = String.format("-%.2f",this.latestDamageReceived);
-            g2d.drawString(damageToPrint,80,600);
-
-            g2d.setColor(originalColor);
-        }
-
-        if(this.printingDamageDealtPopup){
-            g2d.setFont(new Font("Arial",Font.BOLD,30));
-            originalColor = g2d.getColor();
-            g2d.setColor(Color.GREEN);
-            String damageToPrint = String.format("-%.2f",this.latestDamageDealt);
-            g2d.drawString(damageToPrint,350,170);
-
-            g2d.setColor(originalColor);
-        }
 
 
-        this.enemy.DrawHealthBar(g);
-        refLink.getHero().DrawHealthBar(g);
-
-        this.attackButton.draw(g2d);
-        this.attackAnimation.paintAnimation(g,380,200,false);
 
 
-        if(transitioningToVictory || transitioningToDeath){
-            originalColor = g2d.getColor();
-            this.fadeToBlackProgress +=this.fadeToBlackStep;
-            if(this.fadeToBlackProgress >=1 ){
-                this.fadeToBlackProgress = 1;
+            Graphics2D g2d = (Graphics2D)g;
+            this.blockingBar.draw(g2d);
+            Color originalColor = g2d.getColor();
+            if(this.blackIntensity>=1){
+                this.blackIntensity = 1;
             }
-            int alpha = (int)(this.fadeToBlackProgress*255.0);
-            g2d.setColor(new Color(0,0,0,alpha));
+            if(this.blackIntensity<0){
+                this.blackIntensity = 0;
+            }
+            g2d.setColor(new Color(0,0,0,(int)(blackIntensity*255.0) ));
+            this.blackIntensity-=this.fadeSpeed;
+
             g.fillRect(0,0,Constants.WINDOW_WIDTH,Constants.WINDOW_HEIGHT);
             g2d.setColor(originalColor);
+
+            if(this.enemy!=null){
+                this.enemy.draw(g);
+            }
+
+            g2d.setFont(new Font("Arial",Font.BOLD,30));
+            g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+
+            g2d.setColor(Color.RED);
+            g2d.drawString(fightStrategy.getEnemy().getName(),520,60);
+
+            g2d.setFont(new Font("Arial",Font.BOLD,20));
+            g2d.setColor(Color.WHITE);
+            if(this.isPlayerTurn){
+                g2d.drawString("Current Turn: Player",20,30);
+            }
+            else{
+                g2d.setColor(Color.RED);
+                String printString = "Current Turn: " + fightStrategy.getEnemy().getName();
+                g2d.drawString(printString,20,30);
+                g2d.setColor(Color.WHITE);
+            }
+            g2d.drawString("Your health:",20,630);
+            g2d.drawString("Press space",900,687);
+            g2d.setFont(new Font("Arial",Font.BOLD,10));
+            g2d.drawString("(When the bar is fuller you block more damage)",840,710);
+
+            if(this.printingDamageReceivedPopup){
+                g2d.setFont(new Font("Arial",Font.BOLD,30));
+                originalColor = g2d.getColor();
+                g2d.setColor(Color.RED);
+                String damageToPrint = String.format("-%.2f",this.latestDamageReceived);
+                g2d.drawString(damageToPrint,80,600);
+
+                g2d.setColor(originalColor);
+            }
+
+            if(this.printingDamageDealtPopup){
+                g2d.setFont(new Font("Arial",Font.BOLD,30));
+                originalColor = g2d.getColor();
+                g2d.setColor(Color.GREEN);
+                String damageToPrint = String.format("-%.2f",this.latestDamageDealt);
+                g2d.drawString(damageToPrint,350,170);
+
+                g2d.setColor(originalColor);
+            }
+
+
+            this.fightStrategy.getEnemy().DrawHealthBar(g);
+            refLink.getHero().DrawHealthBar(g);
+
+            this.attackButton.draw(g2d);
+            this.attackAnimation.paintAnimation(g,380,200,false,1);
+
+
+            if(transitioningToVictory || transitioningToDeath){
+                originalColor = g2d.getColor();
+                this.fadeToBlackProgress +=this.fadeToBlackStep;
+                if(this.fadeToBlackProgress >=1 ){
+                    this.fadeToBlackProgress = 1;
+                }
+                int alpha = (int)(this.fadeToBlackProgress*255.0);
+                g2d.setColor(new Color(0,0,0,alpha));
+                g.fillRect(0,0,Constants.WINDOW_WIDTH,Constants.WINDOW_HEIGHT);
+                g2d.setColor(originalColor);
+            }
         }
+
 
     }
 
     @Override
     public void restoreState() {
         blackIntensity = 1.0;
-        fadeSpeed = 0.05;
         fadeToBlackProgress = 0.0;
-        fadeToBlackStep = 0.05;
+
+
         this.transitioningToDeath = false;
         this.transitioningToVictory = false;
+        this.isPlayerTurn = true;
 
         this.printingDamageDealtPopup = false;
         this.printingDamageReceivedPopup = false;
@@ -333,7 +392,25 @@ public class FightState extends State {
         this.latestDamageReceived = 0.0;
         this.progressOnSpace = 0;
         this.enemyTurnProgress = 0;
-        this.blockingBar.updateValue(this.enemyTurnProgress);
+        if(this.blockingBar!=null){
+            this.blockingBar.updateValue(this.enemyTurnProgress);
+
+        }
+        this.enemyTurnProgressTick = 0;
+        this.enemy = null;
+        this.fightStrategy = null;
+        this.tigerStrategy = null;
+
+        this.isTimerStarted = false;
+        this.isTimerFinished = false;
+        this.isWaitingForPlayerTurn = false;
+        this.didEnemyAttackAlready = false;
+
+        if (timer != null) timer.stop();
+        if (timer2 != null) timer2.stop();
+        if (timer3 != null) timer3.stop();
+        if (popupTimer != null) popupTimer.stop();
+        if (waitForEnemyDeathTimer != null) waitForEnemyDeathTimer.stop();
     }
 
     @Override

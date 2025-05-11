@@ -53,7 +53,7 @@ public class StaticItemAnimation extends Animation{
     }
 
     @Override
-    public void paintAnimation(Graphics g, int x, int y, boolean flipped) {
+    public void paintAnimation(Graphics g, int x, int y, boolean flipped,double scale) {
 
         if(this.playOnce && this.isFinished){
             return;
@@ -68,7 +68,6 @@ public class StaticItemAnimation extends Animation{
 
         try {
             AffineTransform transform = AffineTransform.getTranslateInstance(x, y);
-            double scale = 1;
 
             transform.scale(scale, scale);
 
@@ -79,6 +78,21 @@ public class StaticItemAnimation extends Animation{
 
             g2d.drawImage(currentFrame, transform, null);
 
+        } finally {
+            g2d.dispose();
+        }
+    }
+
+    public void paintFullScreen(Graphics g, int screenWidth, int screenHeight) {
+        Graphics2D g2d = (Graphics2D) g.create();
+        try {
+            AffineTransform transform = new AffineTransform();
+            double scaleX = (double) screenWidth / animationArray[animationState].getWidth();
+            double scaleY = (double) screenHeight / animationArray[animationState].getHeight();
+
+            transform.scale(scaleX, scaleY);
+
+            g2d.drawImage(animationArray[animationState], transform, null);
         } finally {
             g2d.dispose();
         }

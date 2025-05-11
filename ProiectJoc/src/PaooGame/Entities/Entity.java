@@ -173,11 +173,14 @@ public abstract class Entity {
 
     public abstract String getSource();
 
-    public void Draw(Graphics g){
+    public void draw(Graphics g){
 
-//        this.hitbox.printHitbox(g);
-        this.getAnimationByState().paintAnimation(g,(int)this.x,(int)this.y,this.flipped);
+        this.hitbox.printHitbox(g);
+        this.getAnimationByState().paintAnimation(g,(int)this.x,(int)this.y,this.flipped,1);
     }
+
+    public void setIsFlipped(boolean flipped )  {this.flipped = flipped;}
+    public boolean getIsFlipped() { return this.flipped;}
 
 
 

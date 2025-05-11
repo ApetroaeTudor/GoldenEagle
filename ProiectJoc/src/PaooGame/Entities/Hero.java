@@ -117,7 +117,6 @@ public class Hero extends Entity {
     @Override
     public void update() {
 //        System.out.println(this.isGrappling);
-        System.out.println(this.x+";"+this.y);
 
 
 
@@ -455,10 +454,10 @@ public class Hero extends Entity {
 
 
     @Override
-    public void Draw(Graphics g){
+    public void draw(Graphics g){
 
         this.hitbox.printHitbox(g);
-        this.getAnimationByState().paintAnimation(g,(int)this.x,(int)this.y,this.flipped);
+        this.getAnimationByState().paintAnimation(g,(int)this.x,(int)this.y,this.flipped,1);
 
         if(this.isDying){
             Graphics2D g2d = (Graphics2D) g;

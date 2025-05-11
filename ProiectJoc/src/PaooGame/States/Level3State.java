@@ -1,11 +1,8 @@
 package PaooGame.States;
-import PaooGame.Animations.Animation;
-import PaooGame.Animations.ItemsAnimations.FloatingItemAnimation;
 import PaooGame.Camera.Camera;
 import PaooGame.Config.Constants;
 import PaooGame.Entities.Entity;
 import PaooGame.HUD.PauseButton;
-import PaooGame.Hitbox.Hitbox;
 import PaooGame.Input.MouseInput;
 import PaooGame.Items.SaveItem;
 import PaooGame.Items.WhipItem;
@@ -309,7 +306,7 @@ public class Level3State extends State{
         }
 
 
-        this.refLink.getHero().Draw(g);
+        this.refLink.getHero().draw(g);
         g2d.setTransform(originalTransform);
         this.refLink.getHero().DrawHealthBar(g);
         pauseButton.draw(g2d);

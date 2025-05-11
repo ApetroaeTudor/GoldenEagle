@@ -33,7 +33,7 @@ public class WhipItem extends Item{
 
     @Override
     public void drawItem(Graphics g){
-        this.animation.paintAnimation(g,Constants.WHIP_POSITION_X,this.y,false);
+        this.animation.paintAnimation(g,Constants.WHIP_POSITION_X,this.y,false,1);
         executeWhipFloating();
     }
 

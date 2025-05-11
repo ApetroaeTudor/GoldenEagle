@@ -26,14 +26,14 @@ public class TileCache {
 
     private static final Map<Entry<String,Integer>,Tile> cache = new HashMap<>();
     //mapare context-id-tileCuTextura
-    private static final Map<String,BufferedImage> tilesheets=new HashMap<>();
+    private static final Map<String,BufferedImage> tileSheets =new HashMap<>();
 
     private static final Map<String,BufferedImage> backgrounds=new HashMap<>();
 
-    private static final Map<String,BufferedImage> HeroStates=new HashMap<>();
-    private static final Map<String,BufferedImage> TigerStates=new HashMap<>();
-    private static final Map<String,BufferedImage> Effects=new HashMap<>();
-    private static final Map<String,BufferedImage> Specials=new HashMap<>();
+    private static final Map<String,BufferedImage> heroStatesSheets =new HashMap<>();
+    private static final Map<String,BufferedImage> enemyStatesSheets =new HashMap<>();
+    private static final Map<String,BufferedImage> effectsSheets =new HashMap<>();
+    private static final Map<String,BufferedImage> specialsSheets =new HashMap<>();
 
     public Tile getTile(String path, int id){
         Entry<String,Integer> key=new AbstractMap.SimpleEntry<>(path,id);
@@ -41,7 +41,7 @@ public class TileCache {
             return cache.get(key);
         }
 
-        BufferedImage sheet= tilesheets.computeIfAbsent(path,p->{
+        BufferedImage sheet= tileSheets.computeIfAbsent(path, p->{
             try{
                 File f= new File(p);
                 if(!f.exists()){
@@ -107,10 +107,10 @@ public class TileCache {
                     if(!effectFileSheet.exists()){
                         System.err.println("Error working with effect sheet file");
                     }
-                    if(!Effects.containsKey("ATTACK_EXPLOSION")){
-                        Effects.put("ATTACK_EXPLOSION",ImageIO.read(effectFileSheet).getSubimage(0,0,112*8,112));
+                    if(!effectsSheets.containsKey("ATTACK_EXPLOSION")){
+                        effectsSheets.put("ATTACK_EXPLOSION",ImageIO.read(effectFileSheet).getSubimage(0,0,112*8,112));
                     }
-                    returnIMG = Effects.get("ATTACK_EXPLOSION");
+                    returnIMG = effectsSheets.get("ATTACK_EXPLOSION");
                     break;
             }
 
@@ -129,10 +129,10 @@ public class TileCache {
             if(!specialFileSheet.exists()){
                 System.err.println("Error working with special sheet file");
             }
-            if(!Specials.containsKey(specialPath)){
-                Specials.put(specialPath,ImageIO.read(specialFileSheet).getSubimage(0,0,tileWidth*nrOfFrames,tileHeight));
+            if(!specialsSheets.containsKey(specialPath)){
+                specialsSheets.put(specialPath,ImageIO.read(specialFileSheet).getSubimage(0,0,tileWidth*nrOfFrames,tileHeight));
             }
-            returnIMG = Specials.get(specialPath);
+            returnIMG = specialsSheets.get(specialPath);
 
         }
         catch (IOException e){
@@ -142,46 +142,95 @@ public class TileCache {
         return returnIMG;
     }
 
-    public BufferedImage getTigerState(Constants.ENEMY_STATES state){
+    public BufferedImage getEnemySheetByState(Constants.ENEMY_STATES state, String enemyType){
         BufferedImage returnIMG = null;
+        File enemyFileSheet;
+        String sheetPath = "";
+        int passiveTileWidth=0;
+        int passiveTileHeight=0;
+        int inFightTileWidth=0;
+        int inFightTileHeight=0;
+        String fallingMessage="";
+        String walkingMessage="";
+        String inFightIdleMessage="";
+        String inFightAttackingMessage="";
+        int walkingAnimationNrOfTiles=0;
+        int inFightIdleNrOfTiles=0;
+        int inFightAttackingNrOfTiles=0;
+
+        switch (enemyType){
+            case "Tiger":
+                sheetPath = Constants.TIGER_SPRITE_SHEET_PATH;
+                passiveTileHeight = Constants.TIGER_PASSIVE_TILE_HEIGHT;
+                passiveTileWidth = Constants.TIGER_PASSIVE_TILE_WIDTH;
+                inFightTileWidth = Constants.TIGER_FIGHTING_TILE_WIDTH;
+                inFightTileHeight = Constants.TIGER_FIGHTING_TILE_HEIGHT;
+                walkingAnimationNrOfTiles = 4;
+                inFightIdleNrOfTiles = 1;
+                inFightAttackingNrOfTiles = 4;
+                fallingMessage = "TIGER_FALLING";
+                inFightIdleMessage = "TIGER_IN_FIGHT_IDLE";
+                inFightAttackingMessage = "TIGER_IN_FIGHT_ATTACKING";
+
+                break;
+            case "BasicSkeleton":
+                sheetPath = Constants.BASIC_SKELETON_SPRITE_SHEET_PATH;
+                passiveTileHeight = Constants.BASIC_SKELETON_PASSIVE_TILE_HEIGHT;
+                passiveTileWidth = Constants.BASIC_SKELETON_PASSIVE_TILE_WIDTH;
+                inFightTileWidth = Constants.BASIC_SKELETON_FIGHTING_TILE_WIDTH;
+                inFightTileHeight = Constants.BASIC_SKELETON_FIGHTING_TILE_HEIGHT;
+                walkingAnimationNrOfTiles = 13;
+                inFightIdleNrOfTiles = 11;
+                inFightAttackingNrOfTiles = 18;
+                walkingMessage = "BASIC_SKELETON_WALKING";
+                fallingMessage = "BASIC_SKELETON_FALLING";
+                inFightIdleMessage = "BASIC_SKELETON_IN_FIGHT_IDLE";
+                inFightAttackingMessage = "BASIC_SKELETON_IN_FIGHT_ATTACKING";
+                break;
+        }
         try{
-            File tigerFileSheet = new File(Constants.TIGER_SPRITE_SHEET_PATH);
-            if(!tigerFileSheet.exists()){
-                System.err.println("No file found at path " + Constants.TIGER_SPRITE_SHEET_PATH);
-            }
-            switch(state){
-                case FALLING:
-                    if(!TigerStates.containsKey("FALLING")){
-                        TigerStates.put("FALLING",ImageIO.read(tigerFileSheet).getSubimage(0,32*0,64*1,32));
-                        //scot doar prima imagine pentru ca nu am animatie de falling pe tigru
+            enemyFileSheet = new File(sheetPath);
+                    if(!enemyFileSheet.exists()){
+                        System.err.println("No file found at path " + sheetPath);
                     }
-                    returnIMG = TigerStates.get("FALLING");
-                    break;
-                case WALKING:
-                    if(!TigerStates.containsKey("WALKING")){
-                        TigerStates.put("WALKING",ImageIO.read(tigerFileSheet).getSubimage(0,32*0+64*0,64*4,32));
+                    switch(state){
+                        case FALLING:
+                            if(!enemyStatesSheets.containsKey(fallingMessage)){
+                                enemyStatesSheets.put(fallingMessage,ImageIO.read(enemyFileSheet).getSubimage(0,passiveTileHeight*0,passiveTileWidth*1,passiveTileHeight));
+                                //scot doar prima imagine pentru ca nu am animatie de falling pe tigru
+                            }
+                            returnIMG = enemyStatesSheets.get(fallingMessage);
+                            break;
+                        case WALKING:
+                            if(!enemyStatesSheets.containsKey(walkingMessage)){
+                                enemyStatesSheets.put(walkingMessage,ImageIO.read(enemyFileSheet).getSubimage(0,passiveTileHeight*0+passiveTileWidth*0,passiveTileWidth*walkingAnimationNrOfTiles,passiveTileHeight));
+                            }
+                            returnIMG = enemyStatesSheets.get(walkingMessage);
+                            break;
+                        case IN_FIGHT_IDLE:
+                            if(!enemyStatesSheets.containsKey(inFightIdleMessage)){
+                                enemyStatesSheets.put(inFightIdleMessage,ImageIO.read(enemyFileSheet).getSubimage(0,passiveTileHeight*1+inFightTileHeight*1,inFightIdleNrOfTiles*inFightTileWidth,inFightTileHeight));
+                                //aici imaginea e portrait
+                            }
+                            returnIMG = enemyStatesSheets.get(inFightIdleMessage);
+                            break;
+                        case IN_FIGHT_ATTACKING:
+                            if(!enemyStatesSheets.containsKey(inFightAttackingMessage)){
+                                enemyStatesSheets.put(inFightAttackingMessage,ImageIO.read(enemyFileSheet).getSubimage(0,passiveTileHeight*1+inFightTileHeight*0,inFightTileWidth*inFightAttackingNrOfTiles,inFightTileHeight));
+                            }
+                            returnIMG = enemyStatesSheets.get(inFightAttackingMessage);
+                            break;
                     }
-                    returnIMG = TigerStates.get("WALKING");
-                    break;
-                case IN_FIGHT_IDLE:
-                    if(!TigerStates.containsKey("IN_FIGHT_IDLE")){
-                        TigerStates.put("IN_FIGHT_IDLE",ImageIO.read(tigerFileSheet).getSubimage(0,32*1+64*1,32*1,64));
-                        //aici imaginea e portrait
-                    }
-                    returnIMG = TigerStates.get("IN_FIGHT_IDLE");
-                    break;
-                case IN_FIGHT_ATTACKING:
-                    if(!TigerStates.containsKey("IN_FIGHT_ATTACKING")){
-                        TigerStates.put("IN_FIGHT_ATTACKING",ImageIO.read(tigerFileSheet).getSubimage(0,32*1+64*0,32*4,64));
-                    }
-                    returnIMG = TigerStates.get("IN_FIGHT_ATTACKING");
-                    break;
-            }
         }
         catch (IOException e){
             e.printStackTrace();
         }
+
         return returnIMG;
+
+
+
+
     }
 
 
@@ -194,34 +243,34 @@ public class TileCache {
             }
             switch (state){
                 case IDLE:
-                    if(!HeroStates.containsKey("IDLE"))
-                        HeroStates.put("IDLE",ImageIO.read(heroFileSheet).getSubimage(0,48*0,48*10,48));
-                    returnIMG=HeroStates.get("IDLE");
+                    if(!heroStatesSheets.containsKey("IDLE"))
+                        heroStatesSheets.put("IDLE",ImageIO.read(heroFileSheet).getSubimage(0,48*0,48*10,48));
+                    returnIMG= heroStatesSheets.get("IDLE");
                     break;
                 case RUNNING:
-                    if(!HeroStates.containsKey("RUNNING"))
-                        HeroStates.put("RUNNING",ImageIO.read(heroFileSheet).getSubimage(0,48*1,48*10,48));
-                    returnIMG=HeroStates.get("RUNNING");
+                    if(!heroStatesSheets.containsKey("RUNNING"))
+                        heroStatesSheets.put("RUNNING",ImageIO.read(heroFileSheet).getSubimage(0,48*1,48*10,48));
+                    returnIMG= heroStatesSheets.get("RUNNING");
                     break;
                 case JUMPING:
-                    if(!HeroStates.containsKey("JUMPING"))
-                        HeroStates.put("JUMPING",ImageIO.read(heroFileSheet).getSubimage(0,48*2,48*10,48));
-                    returnIMG=HeroStates.get("JUMPING");
+                    if(!heroStatesSheets.containsKey("JUMPING"))
+                        heroStatesSheets.put("JUMPING",ImageIO.read(heroFileSheet).getSubimage(0,48*2,48*10,48));
+                    returnIMG= heroStatesSheets.get("JUMPING");
                     break;
                 case ATTACKING:
-                    if(!HeroStates.containsKey("ATTACKING"))
-                        HeroStates.put("ATTACKING",ImageIO.read(heroFileSheet).getSubimage(0,48*3,48*10,48));
-                    returnIMG=HeroStates.get("ATTACKING");
+                    if(!heroStatesSheets.containsKey("ATTACKING"))
+                        heroStatesSheets.put("ATTACKING",ImageIO.read(heroFileSheet).getSubimage(0,48*3,48*10,48));
+                    returnIMG= heroStatesSheets.get("ATTACKING");
                     break;
                 case CROUCHING:
-                    if(!HeroStates.containsKey("CROUCHING"))
-                        HeroStates.put("CROUCHING",ImageIO.read(heroFileSheet).getSubimage(0,48*4,48*10,48));
-                    returnIMG=HeroStates.get("CROUCHING");
+                    if(!heroStatesSheets.containsKey("CROUCHING"))
+                        heroStatesSheets.put("CROUCHING",ImageIO.read(heroFileSheet).getSubimage(0,48*4,48*10,48));
+                    returnIMG= heroStatesSheets.get("CROUCHING");
                     break;
                 case FALLING:
-                    if(!HeroStates.containsKey("FALLING"))
-                        HeroStates.put("FALLING",ImageIO.read(heroFileSheet).getSubimage(0,48*2,48*10,48));
-                    returnIMG=HeroStates.get("FALLING");
+                    if(!heroStatesSheets.containsKey("FALLING"))
+                        heroStatesSheets.put("FALLING",ImageIO.read(heroFileSheet).getSubimage(0,48*2,48*10,48));
+                    returnIMG= heroStatesSheets.get("FALLING");
                     break;
                 default:
                     System.err.println("INVALID STATE GIVEN");

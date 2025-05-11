@@ -1,33 +1,38 @@
 
 package PaooGame.States;
 
+import PaooGame.Animations.ItemsAnimations.StaticItemAnimation;
 import PaooGame.Entities.Entity;
 import PaooGame.Config.Constants;
-import PaooGame.Graphics.ImageLoader;
 import PaooGame.Input.MouseInput;
 import PaooGame.RefLinks;
 import java.awt.image.BufferedImage;
 import java.awt.*;
 
 public class MenuState extends State  {
-    private BufferedImage background;
     private Rectangle startButton, settingsButton, quitButton;
+    private StaticItemAnimation bgAnimation;
+
+    private int buttonHeight = 70;
+    private int topOffset = 300;
 
     protected String stateName = Constants.MENU_STATE;
     public MenuState(RefLinks refLink) {
         super(refLink);
 
         // Încarcă imaginea de fundal
-        background = ImageLoader.LoadImage("/textures/menu_background.png");
         int screenWidth = refLink.getWidth();
         int screenHeight = refLink.getHeight();
         System.out.println( screenHeight + " /// " + screenWidth);
 
         // Definim zonele butoanelor
         int centerX = refLink.getWidth() / 2 -100 ;
-        startButton = new Rectangle(centerX, 200, 200, 50);
-        settingsButton = new Rectangle(centerX, 270, 200, 50);
-        quitButton = new Rectangle(centerX, 340, 200, 50);
+        startButton = new Rectangle(centerX, topOffset, 200, 50);
+        settingsButton = new Rectangle(centerX, topOffset+buttonHeight, 200, 50);
+        quitButton = new Rectangle(centerX, topOffset+buttonHeight*2, 200, 50);
+
+        this.bgAnimation = new StaticItemAnimation(this.refLink,Constants.MAIN_MENU_BG_PATH,Constants.MAIN_MENU_BG_FRAME_NR,5,Constants.MAIN_MENU_BG_IMG_WIDTH,Constants.MAIN_MENU_BG_IMG_HEIGHT);
+        this.bgAnimation.loadAnimation();
     }
 
     @Override
@@ -45,10 +50,11 @@ public class MenuState extends State  {
         MouseInput mouse = refLink.getMouseInput();
         int mx = mouse.getMouseX();
         int my = mouse.getMouseY();
+        this.bgAnimation.updateAnimation();
 
         if (mouse.getNumberOfMousePresses() > 0) {
             if (startButton.contains(mx, my)) {
-                State.setState(refLink.getGame().getLevel1State());
+                State.setState(refLink.getGame().getLevel2State());
             }
             else if (settingsButton.contains(mx, my)) {
             }
@@ -62,15 +68,9 @@ public class MenuState extends State  {
 
     @Override
     public void draw(Graphics g) {
-        // Desenează fundal
 
-        if(background != null) {
-            g.drawImage(background, 0, 0, refLink.getWidth(), refLink.getHeight(), null);
-        } else {
-            // Fallback dacă imaginea lipsește
-            g.setColor(Color.BLACK);
-            g.fillRect(0, 0, refLink.getWidth(), refLink.getHeight());
-        }
+
+        this.bgAnimation.paintFullScreen(g,Constants.WINDOW_WIDTH,Constants.WINDOW_HEIGHT);
 
 
         // Coordonate mouse

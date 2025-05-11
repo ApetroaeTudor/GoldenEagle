@@ -2,6 +2,7 @@ package PaooGame.States;
 
 import PaooGame.Camera.Camera;
 import PaooGame.Config.Constants;
+import PaooGame.Entities.BasicSkeleton;
 import PaooGame.Entities.Entity;
 import PaooGame.HUD.PauseButton;
 import PaooGame.Input.MouseInput;
@@ -25,6 +26,8 @@ public class Level2State extends State{
     protected boolean transition_to_fight = false;
     private boolean isCameraSet = false;
 
+
+    private int nrOfEnemies = 1;
     private Entity[] enemies;
     private SaveItem[] saves;
     private int nrOfSaves = 1;
@@ -38,6 +41,7 @@ public class Level2State extends State{
         super(reflink);
         this.level2 = level2;
         this.saves = new SaveItem[this.nrOfSaves];
+        this.enemies = new Entity[this.nrOfEnemies];
 
         levelWidth = Constants.LEVEL2_WIDTH*Constants.TILE_SIZE;
         levelHeight = Constants.LEVEL2_WIDTH*Constants.TILE_SIZE;
@@ -45,6 +49,7 @@ public class Level2State extends State{
 
         //TODO enemies
         this.saves[0] = new SaveItem(this.refLink,Constants.LEVEL2_SAVE1_X,Constants.LEVEL2_SAVE1_Y);
+        this.enemies[0] = new BasicSkeleton(this.refLink,Constants.HERO_LEVEL2_STARTING_X,Constants.HERO_LEVEL2_STARTING_Y);
 
         pauseButton = new PauseButton(reflink.getHero(),80,50);
 
@@ -64,6 +69,31 @@ public class Level2State extends State{
         }
         if(this.refLink.getHero().getHitbox().intersects(this.saves[0].getHitbox())){
             System.out.println("Interaction");
+        }
+
+
+        for(Entity enemy : enemies){
+            if(enemy.getHealth()==0){
+                enemy.nullifyHitbox();
+            }
+            else{
+                if(refLink.getHero().getHitbox().intersects(enemy.getHitbox())){
+                    enemy.setIsEngaged(true);
+                    this.transitioning = true;
+                    this.transition_to_fight = true;
+                    refLink.getGame().getFightState().setEnemy(enemy);
+
+                }
+            }
+            enemy.update();
+        }
+        if(this.transition_to_fight && this.targetBlackIntensity==1) {
+            this.targetBlackIntensity = 0;
+            this.transitioning = false;
+            this.transition_to_fight = false;
+//            refLink.getGame().getFightState().restoreState();
+
+            State.setState(refLink.getGame().getFightState());
         }
 
         if(this.refLink.getHero().getX()>1880){
@@ -114,7 +144,7 @@ public class Level2State extends State{
             State.setState(this.refLink.getGame().getDeathState());
 //            this.transitioning = false;
         }
-        if(this.transitioning && this.targetBlackIntensity == 1){
+        if(this.transitioning && this.targetBlackIntensity == 1 &&this.refLink.getHero().getX()>1850){
             this.targetBlackIntensity = 0;
             this.refLink.getHero().setJumpStrength(Constants.HERO_BASE_JUMP_STRENGTH);
             this.transitioning = false;
@@ -154,8 +184,14 @@ public class Level2State extends State{
             this.saves[i].drawItem(g);
         }
 
+        for(Entity enemy : enemies){
+            if(enemy.getHealth()>0){
+                enemy.draw(g);
+            }
+        }
 
-        if(refLink.getHero().getHealth() == 0 || this.transitioning){
+
+        if(refLink.getHero().getHealth() == 0 || (this.transitioning&&this.refLink.getHero().getX()>1850) || this.transition_to_fight){
             this.targetBlackIntensity+=this.blackFadeStep;
             Color originalColor = g2d.getColor();
             if(this.targetBlackIntensity>=1.0){
@@ -169,7 +205,7 @@ public class Level2State extends State{
         }
 
 
-        this.refLink.getHero().Draw(g);
+        this.refLink.getHero().draw(g);
         g2d.setTransform(originalTransform);
         this.refLink.getHero().DrawHealthBar(g);
         pauseButton.draw(g2d);

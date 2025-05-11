@@ -27,7 +27,7 @@ public class SaveItem extends Item{
 
     @Override
     public void drawItem(Graphics g) {
-        this.animation.paintAnimation(g,this.x,this.y,false);
+        this.animation.paintAnimation(g,this.x,this.y,false,1);
     }
 
     @Override

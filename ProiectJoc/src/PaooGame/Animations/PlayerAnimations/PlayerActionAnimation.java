@@ -62,7 +62,7 @@ public class PlayerActionAnimation extends Animation {
     }
 
     @Override
-    public void paintAnimation(Graphics g, int x, int y,boolean flipped) {
+    public void paintAnimation(Graphics g, int x, int y,boolean flipped,double scale) {
         if(this.playOnce && this.isFinished){
             return;
         }

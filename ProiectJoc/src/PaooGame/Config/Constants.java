@@ -29,10 +29,7 @@ public class Constants {
 
 
     public static final int CHARACTER_TILE_SIZE = 48;
-    public static final int TIGER_PASSIVE_TILE_WIDTH = 64;
-    public static final int TIGER_PASSIVE_TILE_HEIGHT = 32;
-    public static final int TIGER_FIGHTING_TILE_WIDTH = 32;
-    public static final int TIGER_FIGHTING_TILE_HEIGHT = 64;
+
     public static final int ATTACK_EXPLOSION_TILE_SIZE = 112;
 
     public static final int ITEM_FLOATING_TILE_SIZE = 48;
@@ -62,6 +59,12 @@ public class Constants {
     public static final String LEVEL1_BEHAVIOR_CSV = "res/Level1/Level1Behavior.csv";
     public static final String LEVEL1_BG_PATH = "res/Level1/Level1Background.png";
 
+    public static final String MAIN_MENU_BG_PATH = "res/Backgrounds/bgCropped_tilemapMainMenu.png";
+    public static final int MAIN_MENU_BG_IMG_WIDTH = 778;
+    public static final int MAIN_MENU_BG_IMG_HEIGHT = 500 ;
+    public static final int MAIN_MENU_BG_FRAME_NR = 66;
+
+
     public static final String LEVEL2_TEXTURES_PATH = "res/Level2/Level2Textures.png";
     public static final String LEVEL2_TEXTURES_CSV = "res/Level2/Level2Tilemap.csv";
     public static final String LEVEL2_BEHAVIOR_CSV = "res/Level2/Level2Behaviors.csv";
@@ -72,10 +75,8 @@ public class Constants {
     public static final String LEVEL3_BEHAVIOR_CSV = "res/Level3/Level3Behaviors.csv";
     public static final String LEVEL3_BG_PATH = "res/Level3/Level3Background.png";
 
-    public static final String TIGER_FIGHT_BG_PATH = "res/Level1/TigerFightBg.jpg";
     public static final String DEATH_SCREEN_BG_PATH = "res/Effects/YouDied.jpg";
     public static final String HERO_SPRITE_SHEET_PATH = "res/Characters/Hero/Hero_SpriteSheet1.png";
-    public static final String TIGER_SPRITE_SHEET_PATH = "res/Enemies/Tiger.png";
     public static final String ATTACK_EXPLOSION_SHEET_PATH = "res/Effects/HitExplosion.png";
 
     public static final String WHIP_FRAMED_SHEET_PATH = "res/Items/WhipFramed.png";
@@ -104,7 +105,7 @@ public class Constants {
     public static final float DYING_ENTITY_GRAVITY = 0.001f;
 
     public static final double HERO_BASE_HEALTH = 100.0;
-    public static final double HERO_BASE_DAMAGE = 100.0;
+    public static final double HERO_BASE_DAMAGE = 50.0;
     public static final float HERO_BASE_SPEED = 2.0f;
     public static final float HERO_BASE_JUMP_STRENGTH = -3.5f;
     public static final float HERO_LEVEL2_JUMP_STRENGTH = -6.0f;
@@ -118,9 +119,29 @@ public class Constants {
 
 
 
+
+
+    public static final int TIGER_PASSIVE_TILE_WIDTH = 64;
+    public static final int TIGER_PASSIVE_TILE_HEIGHT = 32;
+    public static final int TIGER_FIGHTING_TILE_WIDTH = 32;
+    public static final int TIGER_FIGHTING_TILE_HEIGHT = 64;
+    public static final String TIGER_SPRITE_SHEET_PATH = "res/Enemies/Tiger.png";
+    public static final String TIGER_FIGHT_BG_PATH = "res/Backgrounds/TigerFightBg.jpg";
     public static final double TIGER_HEALTH = 100.0;
     public static final double TIGER_DAMAGE = 20.0;
     public static final float TIGER_SPEED =-0.4f;
+
+    public static final int BASIC_SKELETON_PASSIVE_TILE_WIDTH = 32;
+    public static final int BASIC_SKELETON_PASSIVE_TILE_HEIGHT = 32;
+    public static final int BASIC_SKELETON_FIGHTING_TILE_WIDTH = 48;
+    public static final int BASIC_SKELETON_FIGHTING_TILE_HEIGHT = 48;
+    public static final String BASIC_SKELETON_SPRITE_SHEET_PATH = "res/Enemies/skeleton_basic.png";
+    public static final String BASIC_SKELETON_FIGHT_BG_PATH = "res/Backgrounds/SkeletonBasic_Background.png";
+    public static final double BASIC_SKELETON_HEALTH = 100.0;
+    public static final double BASIC_SKELETON_DAMAGE = 30.0;
+    public static final float BASIC_SKELETON_SPEED = -0.6f;
+
+
 
     //exit level1 x<= (735,930); y<=aprox 650
     //exit level2 x<= (1855,1890);  MAX_X = 1870

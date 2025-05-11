@@ -61,7 +61,7 @@ public class EffectAnimation extends Animation {
     }
 
     @Override
-    public void paintAnimation(Graphics g, int x, int y, boolean flipped) {
+    public void paintAnimation(Graphics g, int x, int y, boolean flipped,double scale) {
 
         if(this.playOnce && this.isFinished){
             return;
@@ -76,7 +76,6 @@ public class EffectAnimation extends Animation {
 
         try {
             AffineTransform transform = AffineTransform.getTranslateInstance(x, y);
-            double scale = 1;
             switch (this.selectedEffect){
                 case ATTACK_EXPLOSION:
                     scale = 3;

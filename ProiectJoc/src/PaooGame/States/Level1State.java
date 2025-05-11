@@ -7,7 +7,6 @@ import PaooGame.Config.Constants;
 import PaooGame.Entities.Hero;
 import PaooGame.Input.MouseInput;
 import PaooGame.Items.SaveItem;
-import PaooGame.Maps.Level;
 import PaooGame.Maps.Level1;
 import PaooGame.RefLinks;
 import java.awt.*;
@@ -160,7 +159,7 @@ public class Level1State extends State {
             this.targetBlackIntensity = 0;
             this.transitioning = false;
             this.transition_to_fight = false;
-            refLink.getGame().getFightState().restoreState();
+//            refLink.getGame().getFightState().restoreState();
 
             State.setState(refLink.getGame().getFightState());
 
@@ -211,7 +210,7 @@ public class Level1State extends State {
 
         for(Entity enemy : enemies){
             if(enemy.getHealth()>0){
-                enemy.Draw(g);
+                enemy.draw(g);
             }
         }
 
@@ -231,7 +230,7 @@ public class Level1State extends State {
 
 
         // Restabilește transformarea
-        this.refLink.getHero().Draw(g);
+        this.refLink.getHero().draw(g);
         g2d.setTransform(originalTransform);
         this.refLink.getHero().DrawHealthBar(g);
         pauseButton.draw(g2d);
