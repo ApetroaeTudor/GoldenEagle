@@ -4,6 +4,8 @@ import PaooGame.Camera.Camera;
 import PaooGame.Config.Constants;
 import PaooGame.Entities.Enemy;
 import PaooGame.Entities.Entity;
+import PaooGame.HUD.ContextHUD;
+import PaooGame.HUD.MessageTriggerZone;
 import PaooGame.HUD.PauseButton;
 import PaooGame.Input.MouseInput;
 import PaooGame.Items.SaveItem;
@@ -27,6 +29,10 @@ public class Level2State extends State{
     private boolean isCameraSet = false;
 
 
+    private ContextHUD contextHUD;
+
+
+
     private int nrOfEnemies = 1;
     private Entity[] enemies;
     private SaveItem[] saves;
@@ -43,6 +49,10 @@ public class Level2State extends State{
         this.saves = new SaveItem[this.nrOfSaves];
         this.enemies = new Entity[this.nrOfEnemies];
 
+
+        this.contextHUD = new ContextHUD(refLink.getHero());
+
+
         levelWidth = Constants.LEVEL2_WIDTH*Constants.TILE_SIZE;
         levelHeight = Constants.LEVEL2_WIDTH*Constants.TILE_SIZE;
         camera = new Camera(0,0);
@@ -53,6 +63,42 @@ public class Level2State extends State{
 
         pauseButton = new PauseButton(reflink.getHero(),80,50);
 
+
+        int platformX = 415; // Coordonata X a platformei (ajustați în funcție de nivel)
+        int platformY = 150; // Coordonata Y a platformei
+        int triggerWidth = 80;
+        int triggerHeight = 50;
+        contextHUD.addTrigger(new MessageTriggerZone(
+                platformX, platformY, triggerWidth, triggerHeight,
+                "Parcurge peste pentru a trece la nivelul următor!"
+        ));
+
+        int platformX2 = 800; // Coordonata X a platformei (ajustați în funcție de nivel)
+        int platformY2 = 220; // Coordonata Y a platformei
+        int triggerWidth2 = 80;
+        int triggerHeight2 = 50;
+        contextHUD.addTrigger(new MessageTriggerZone(
+                platformX2, platformY2, triggerWidth2, triggerHeight2,
+                "Ai grija, unde flori sunt otravitoare! "
+        ));
+
+        int platformX3 = 1830; // Coordonata X a platformei (ajustați în funcție de nivel)
+        int platformY3 = 380; // Coordonata Y a platformei
+        int triggerWidth3 = 60;
+        int triggerHeight3 = 50;
+        contextHUD.addTrigger(new MessageTriggerZone(
+                platformX3, platformY3, triggerWidth3, triggerHeight3,
+                "Apasa E pentru a deschide usa catre nivelul 3"
+        ));
+
+        int platformX4 = 1500; // Coordonata X a platformei (ajustați în funcție de nivel)
+        int platformY4 = 280; // Coordonata Y a platformei
+        int triggerWidth4 = 60;
+        int triggerHeight4 = 50;
+        contextHUD.addTrigger(new MessageTriggerZone(
+                platformX4, platformY4, triggerWidth4, triggerHeight4,
+                "Acest jump este foarte riscant, asigura te ca esti bine pozitionat"
+        ));
 
     }
 
@@ -160,6 +206,9 @@ public class Level2State extends State{
 
         }
 
+
+
+        this.contextHUD.update();
     }
 
     @Override
@@ -212,6 +261,9 @@ public class Level2State extends State{
         g2d.setTransform(originalTransform);
         this.refLink.getHero().DrawHealthBar(g);
         pauseButton.draw(g2d);
+
+        this.contextHUD.draw(g2d);
+
 
     }
 

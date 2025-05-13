@@ -5,6 +5,8 @@ import PaooGame.Entities.Enemy;
 import PaooGame.Camera.Camera;
 import PaooGame.Config.Constants;
 import PaooGame.Entities.Hero;
+import PaooGame.HUD.ContextHUD;
+import PaooGame.HUD.MessageTriggerZone;
 import PaooGame.Input.MouseInput;
 import PaooGame.Items.SaveItem;
 import PaooGame.Maps.Level1;
@@ -31,6 +33,9 @@ public class Level1State extends State {
     private SaveItem[] saves;
     private int nrOfSaves = 1;
 
+    private ContextHUD contextHUD;
+
+
 
 
 
@@ -52,6 +57,9 @@ public class Level1State extends State {
         camera = new Camera(0, 0);
         this.saves = new SaveItem[this.nrOfSaves];
 
+        this.contextHUD = new ContextHUD(refLink.getHero());
+
+
         enemies = new Entity[2];
         enemies[0] = new Enemy(this.refLink,this.tiger1X,this.tiger1Y,Constants.TIGER_NAME);
         enemies[1] = new Enemy(this.refLink,this.tiger2X,this.tiger2Y,Constants.TIGER_NAME);
@@ -61,6 +69,18 @@ public class Level1State extends State {
         // Calculează dimensiunile totale ale nivelului
         levelWidth = Constants.LEVEL1_WIDTH * Constants.TILE_SIZE;
         levelHeight = Constants.LEVEL1_HEIGHT * Constants.TILE_SIZE;
+
+
+        for (Entity enemy : enemies) {
+            contextHUD.addTrigger(new MessageTriggerZone(
+                    enemy, -30, -100, 120, 150,
+                    "Învinge tigrul!"
+            ));
+        }
+        contextHUD.addTrigger(new MessageTriggerZone(
+                850, 600, 100, 50, // x, y, width, height
+                "Sari în peșteră!"
+        ));
     }
 
     @Override
@@ -173,7 +193,7 @@ public class Level1State extends State {
 //            this.transitioning = false;
         }
 
-
+        contextHUD.update();
     }
 
     @Override
@@ -247,6 +267,8 @@ public class Level1State extends State {
             g.fillRect(0,0,Constants.WINDOW_WIDTH,Constants.WINDOW_HEIGHT);
             g2d.setColor(originalColor);
         }
+
+        contextHUD.draw(g2d);
 
     }
 

@@ -161,7 +161,7 @@ public class FightState extends State {
                                 .healthBarWidth(this.enemy.getHealthBarWidth())
                                 .healthBarHeight(this.enemy.getHealthBarHeight())
                                 .backgroundImgPath(Constants.BASIC_SKELETON_FIGHT_BG_PATH)
-                                .defence(0f)
+                                .defence(0.4f)
                                 .ownerState(refLink.getGame().getLevel2State()).
                                 build();
                         break;
