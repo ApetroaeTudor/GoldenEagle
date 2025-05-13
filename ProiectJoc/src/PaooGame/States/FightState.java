@@ -35,7 +35,9 @@ public class FightState extends State {
     private FightStrategy fightStrategy = null;
     private FightStrategy tigerStrategy = null;
     private FightStrategy wizardStrategy = null;
+    private FightStrategy minotaurStrategy = null;
     private FightStrategy basicSkeletonStrategy = null;
+    private FightStrategy ghostStrategy = null;
 
     private int popupTimeInMillis = 700;
     private int timeoutInMillis = 1000;
@@ -95,9 +97,9 @@ public class FightState extends State {
             this.didEnemyAttackAlready = false;
             this.enemyTurnProgress = 0;
             this.blockingBar.updateValue(this.enemyTurnProgress);
-            this.refLink.getHero().reduceHealth(this.enemy.getDamage()* (  (100.0-this.progressOnSpace)/100.0) );
-            this.latestDamageReceived = this.enemy.getDamage()* (  (100.0-this.progressOnSpace)/100.0);
-            System.out.println("Reduced damage: " + this.enemy.getDamage()* (  (100.0-this.progressOnSpace)/100.0) );
+            this.refLink.getHero().reduceHealth(this.enemy.getDamage()* (  (100.0-this.progressOnSpace*1.5f)/100.0) );
+            this.latestDamageReceived = this.enemy.getDamage()* (  (100.0-this.progressOnSpace*1.5f)/100.0);
+            System.out.println("Reduced damage: " + this.enemy.getDamage()* (  (100.0-this.progressOnSpace*1.5f)/100.0) );
             System.out.println("Original damage: " + this.enemy.getDamage());
             this.progressOnSpace = 0;
             this.printingDamageReceivedPopup = true;
@@ -154,8 +156,8 @@ public class FightState extends State {
                         break;
                     case Constants.BASIC_SKELETON_NAME:
                         this.basicSkeletonStrategy = new FightStrategy.FightStrategyBuilder(this.enemy)
-                                .x(480)
-                                .y(100)
+                                .x(285)
+                                .y(0)
                                 .width(this.enemy.getWidth())
                                 .height(this.enemy.getHeight())
                                 .healthBarX(460)
@@ -182,6 +184,36 @@ public class FightState extends State {
                                 .ownerState(refLink.getGame().getLevel3State())
                                 .build();
                         break;
+                    case Constants.MINOTAUR_NAME:
+                        this.minotaurStrategy = new FightStrategy.FightStrategyBuilder(this.enemy)
+                                .x(20)
+                                .y(0)
+                                .width(this.enemy.getWidth())
+                                .height(this.enemy.getHeight())
+                                .healthBarX(410)
+                                .healthBarY(80)
+                                .healthBarWidth(Constants.MINOTAUR_HEALTH_BAR_WIDTH)
+                                .healthBarHeight(Constants.MINOTAUR_HEALTH_BAR_HEIGHT)
+                                .backgroundImgPath(Constants.MINOTAUR_FIGHT_BG_PATH)
+                                .defence(Constants.MINOTAUR_DEFENCE)
+                                .ownerState(refLink.getGame().getLevel3State())
+                                .build();
+                        break;
+                    case Constants.GHOST_NAME:
+                        this.ghostStrategy = new FightStrategy.FightStrategyBuilder(this.enemy)
+                                .x(330)
+                                .y(80)
+                                .width(this.enemy.getWidth())
+                                .height(this.enemy.getHeight())
+                                .healthBarX(460)
+                                .healthBarY(80)
+                                .healthBarWidth(Constants.GHOST_HEALTH_BAR_WIDTH)
+                                .healthBarHeight(Constants.GHOST_HEALTH_BAR_HEIGHT)
+                                .backgroundImgPath(Constants.GHOST_FIGHT_BG_PATH)
+                                .defence(Constants.GHOST_DEFENCE)
+                                .ownerState(refLink.getGame().getLevel3State())
+                                .build();
+                        break;
                 }
             }
         }
@@ -196,6 +228,12 @@ public class FightState extends State {
                     break;
                 case Constants.WIZARD_NAME:
                     this.fightStrategy = wizardStrategy;
+                    break;
+                case Constants.MINOTAUR_NAME:
+                    this.fightStrategy = minotaurStrategy;
+                    break;
+                case Constants.GHOST_NAME:
+                    this.fightStrategy = ghostStrategy;
                     break;
             }
             this.fightStrategy.update();

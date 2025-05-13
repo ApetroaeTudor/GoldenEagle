@@ -201,6 +201,34 @@ public class TileCache {
                 inFightIdleMessage = "WIZARD_IN_FIGHT_IDLE";
                 inFightAttackingMessage = "WIZARD_IN_FIGHT_ATTACKING";
                 break;
+            case Constants.MINOTAUR_NAME:
+                sheetPath = Constants.MINOTAUR_SPRITE_SHEET_PATH;
+                passiveTileHeight = Constants.MINOTAUR_PASSIVE_TILE_HEIGHT;
+                passiveTileWidth = Constants.MINOTAUR_PASSIVE_TILE_WIDTH;
+                inFightTileWidth = Constants.MINOTAUR_FIGHTING_TILE_WIDTH;
+                inFightTileHeight = Constants.MINOTAUR_FIGHTING_TILE_HEIGHT;
+                walkingAnimationNrOfTiles = Constants.MINOTAUR_PASSIVE_TILE_NR;
+                inFightIdleNrOfTiles = Constants.MINOTAUR_IN_FIGHT_IDLE_TILE_NR;
+                inFightAttackingNrOfTiles = Constants.MINOTAUR_ATTACKING_TILE_NR;
+                walkingMessage = "MINOTAUR_WALKING";
+                fallingMessage = "MINOTAUR_FALLING";
+                inFightIdleMessage = "MINOTAUR_IN_FIGHT_IDLE";
+                inFightAttackingMessage = "MINOTAUR_IN_FIGHT_ATTACKING";
+                break;
+            case Constants.GHOST_NAME:
+                sheetPath = Constants.GHOST_SPRITE_SHEET_PATH;
+                passiveTileHeight = Constants.GHOST_PASSIVE_TILE_HEIGHT;
+                passiveTileWidth = Constants.GHOST_PASSIVE_TILE_WIDTH;
+                inFightTileWidth = Constants.GHOST_FIGHTING_TILE_WIDTH;
+                inFightTileHeight = Constants.GHOST_FIGHTING_TILE_HEIGHT;
+                walkingAnimationNrOfTiles = Constants.GHOST_PASSIVE_TILE_NR;
+                inFightIdleNrOfTiles = Constants.GHOST_IN_FIGHT_IDLE_TILE_NR;
+                inFightAttackingNrOfTiles = Constants.GHOST_ATTACKING_TILE_NR;
+                walkingMessage = "GHOST_WALKING";
+                fallingMessage = "GHOST_FALLING";
+                inFightIdleMessage = "GHOST_IN_FIGHT_IDLE";
+                inFightAttackingMessage = "GHOST_IN_FIGHT_ATTACKING";
+                break;
         }
         try{
             enemyFileSheet = new File(sheetPath);

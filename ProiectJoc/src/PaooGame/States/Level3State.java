@@ -43,8 +43,8 @@ public class Level3State extends State{
     protected boolean transitioning = false;
     protected boolean transition_to_fight = false;
 
-    private Enemy[] enemies; //TODO
-    private int nrOfEnemies = 1;
+    private Enemy[] enemies;
+    private int nrOfEnemies = 5;
 
 
     private SaveItem[] saves;
@@ -73,6 +73,11 @@ public class Level3State extends State{
         this.enemies = new Enemy[this.nrOfEnemies];
 
         this.enemies[0] = new Enemy(this.refLink,5150,1200,Constants.WIZARD_NAME);
+        this.enemies[1] = new Enemy(this.refLink,710,1000,Constants.MINOTAUR_NAME);
+        this.enemies[2] = new Enemy(this.refLink,2968,610,Constants.MINOTAUR_NAME);
+        this.enemies[3] = new Enemy(this.refLink,3312,1970,Constants.GHOST_NAME);
+        this.enemies[4] = new Enemy(this.refLink,3852,1890,Constants.GHOST_NAME);
+
 
         this.saves[0] = new SaveItem(this.refLink,Constants.LEVEL3_SAVE1_X,Constants.LEVEL3_SAVE1_Y);
         this.saves[1] = new SaveItem(this.refLink,Constants.LEVEL3_SAVE2_X,Constants.LEVEL3_SAVE2_Y);

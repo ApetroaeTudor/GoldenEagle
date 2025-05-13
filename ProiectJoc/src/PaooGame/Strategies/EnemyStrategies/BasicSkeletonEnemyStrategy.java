@@ -56,8 +56,13 @@ public class BasicSkeletonEnemyStrategy extends EnemyStrategy {
 
     @Override
     public void drawName(Graphics2D g2d){
+        Color originalColor = g2d.getColor();
+        Font originalFont = g2d.getFont();
+        g2d.setFont(new Font("Arial",Font.BOLD,30));
         g2d.setColor(Color.RED);
-        g2d.drawString(this.getName(),520,60);
+        g2d.drawString(this.getName(),494,60);
+        g2d.setFont(originalFont);
+        g2d.setColor(originalColor);
     }
 
 }

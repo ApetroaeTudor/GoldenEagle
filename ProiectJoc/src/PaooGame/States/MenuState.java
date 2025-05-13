@@ -55,7 +55,7 @@ public class MenuState extends State  {
 
         if (mouse.getNumberOfMousePresses() > 0) {
             if (startButton.contains(mx, my)) {
-                State.setState(refLink.getGame().getLevel3State());
+                State.setState(refLink.getGame().getLevel2State());
             }
             else if (settingsButton.contains(mx, my)) {
             }

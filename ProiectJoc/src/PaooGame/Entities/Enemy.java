@@ -27,10 +27,16 @@ public class Enemy extends Entity {
                 this.enemyStrategy = this.reflink.getTigerEnemyStrategy();
                 break;
             case Constants.BASIC_SKELETON_NAME:
-                this.enemyStrategy = this.reflink.getBasicSkeletonStrategy();
+                this.enemyStrategy = this.reflink.getBasicSkeletonEnemyStrategy();
                 break;
             case Constants.WIZARD_NAME:
-                this.enemyStrategy = this.reflink.getWizardStrategy();
+                this.enemyStrategy = this.reflink.getWizardEnemyStrategy();
+                break;
+            case Constants.MINOTAUR_NAME:
+                this.enemyStrategy = this.reflink.getMinotaurEnemyStrategy();
+                break;
+            case Constants.GHOST_NAME:
+                this.enemyStrategy = this.reflink.getGhostEnemyStrategy();
                 break;
         }
 

@@ -141,10 +141,10 @@ public class Constants {
     public static final int BASIC_SKELETON_FIGHTING_TILE_WIDTH = 48;
     public static final int BASIC_SKELETON_FIGHTING_TILE_HEIGHT = 48;
     public static final String BASIC_SKELETON_SPRITE_SHEET_PATH = "res/Enemies/skeleton_basic.png";
-    public static final String BASIC_SKELETON_FIGHT_BG_PATH = "res/Backgrounds/SkeletonBasic_Background.png";
+    public static final String BASIC_SKELETON_FIGHT_BG_PATH = "res/Backgrounds/BasicSkeletonBG.png";
     public static final double BASIC_SKELETON_HEALTH = 100.0;
     public static final double BASIC_SKELETON_DAMAGE = 15.0;
-    public static final float BASIC_SKELETON_SPEED = -0.6f;
+    public static final float BASIC_SKELETON_SPEED = 0.6f;
     public static final float BASIC_SKELETON_DEFENCE = 0.4f;
     public static final String BASIC_SKELETON_NAME = "Skeleton";
 
@@ -166,6 +166,46 @@ public class Constants {
     public static final String WIZARD_SPRITE_SHEET_PATH = "res/Enemies/wizard.png";
     public static final String WIZARD_FIGHT_BG_PATH = "res/Backgrounds/WizardBg.jpg";
     public static final String WIZARD_NAME = "EVIL WIZARD";
+
+
+    public static final int MINOTAUR_HEALTH_BAR_WIDTH = 300;
+    public static final int MINOTAUR_HEALTH_BAR_HEIGHT = 30;
+    public static final int MINOTAUR_PASSIVE_TILE_WIDTH = 128;
+    public static final int MINOTAUR_PASSIVE_TILE_HEIGHT = 112;
+    public static final int MINOTAUR_FIGHTING_TILE_WIDTH = 224;
+    public static final int MINOTAUR_FIGHTING_TILE_HEIGHT = 128;
+    public static final int MINOTAUR_PASSIVE_TILE_NR = 12;
+    public static final int MINOTAUR_IN_FIGHT_IDLE_TILE_NR = 16;
+    public static final int MINOTAUR_ATTACKING_TILE_NR = 16;
+    public static final double MINOTAUR_HEALTH = 100f;
+    public static final double MINOTAUR_DAMAGE = 30f;
+    public static final float MINOTAUR_SPEED = -0.5f;
+    public static final float MINOTAUR_DEFENCE = 0.2f;
+    public static final String MINOTAUR_SPRITE_SHEET_PATH = "res/Enemies/minotaur.png";
+    public static final String MINOTAUR_FIGHT_BG_PATH = "res/Backgrounds/MinotaurBG.png";
+    public static final String MINOTAUR_NAME = "MINOTAUR";
+
+    public static final int GHOST_HEALTH_BAR_WIDTH = 200;
+    public static final int GHOST_HEALTH_BAR_HEIGHT = 20;
+    public static final int GHOST_PASSIVE_TILE_WIDTH = 32;
+    public static final int GHOST_PASSIVE_TILE_HEIGHT = 32;
+    public static final int GHOST_FIGHTING_TILE_WIDTH = 32;
+    public static final int GHOST_FIGHTING_TILE_HEIGHT = 32;
+    public static final int GHOST_PASSIVE_TILE_NR = 4;
+    public static final int GHOST_IN_FIGHT_IDLE_TILE_NR = 8;
+    public static final int GHOST_ATTACKING_TILE_NR = 3;
+    public static final double GHOST_HEALTH = 100f;
+    public static final double GHOST_DAMAGE = 5f;
+    public static final float GHOST_SPEED = -0.3f;
+    public static final float GHOST_DEFENCE = 0f;
+    public static final String GHOST_SPRITE_SHEET_PATH = "res/Enemies/ghost2.png";
+    public static final String GHOST_FIGHT_BG_PATH = "res/Backgrounds/GhostBG.png";
+    public static final String GHOST_NAME = "Ghost";
+
+    public static final int STRONG_SKELETON_FIGHTING_PASSIVE_TILE_WIDTH = 64;
+    public static final int STRONG_SKELETON_FIGHTING_PASSIVE_TILE_HEIGHT = 48;
+    public static final int STRONG_SKELETON_PASSIVE_TILE_WIDTH = 48;
+    public static final int STRONG_SKELETON_PASSIVE_TILE_HEIGHT = 32;
 
 
 

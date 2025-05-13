@@ -15,8 +15,10 @@ public class RefLinks
     private MouseInput mouseInput;
 
     private EnemyStrategy tigerEnemyStrategy;
-    private EnemyStrategy basicSkeletonStrategy;
-    private EnemyStrategy wizardStrategy;
+    private EnemyStrategy basicSkeletonEnemyStrategy;
+    private EnemyStrategy wizardEnemyStrategy;
+    private EnemyStrategy minotaurEnemyStrategy;
+    private EnemyStrategy ghostEnemyStrategy;
 
 
     private Hero hero;
@@ -29,23 +31,41 @@ public class RefLinks
 //        this.tileCache=new TileCache();
     }
 
+
+    public void setGhostEnemyStrategy(EnemyStrategy ghostEnemyStrategy){
+        this.ghostEnemyStrategy = ghostEnemyStrategy;
+    }
+    public EnemyStrategy getGhostEnemyStrategy(){
+        return this.ghostEnemyStrategy;
+    }
+
+    public void setMinotaurEnemyStrategy(EnemyStrategy minotaurEnemyStrategy){
+        this.minotaurEnemyStrategy = minotaurEnemyStrategy;
+    }
+    public EnemyStrategy getMinotaurEnemyStrategy(){
+        return this.minotaurEnemyStrategy;
+    }
+
     public void setTigerEnemyStrategy(EnemyStrategy tigerEnemyStrategy){
         this.tigerEnemyStrategy = tigerEnemyStrategy;
     }
     public EnemyStrategy getTigerEnemyStrategy(){
         return this.tigerEnemyStrategy;
     }
+
     public void setBasicSkeletonStrategy(EnemyStrategy basicSkeletonStrategy){
-        this.basicSkeletonStrategy = basicSkeletonStrategy;
+        this.basicSkeletonEnemyStrategy = basicSkeletonStrategy;
     }
-    public EnemyStrategy getBasicSkeletonStrategy(){
-        return this.basicSkeletonStrategy;
+    public EnemyStrategy getBasicSkeletonEnemyStrategy(){
+        return this.basicSkeletonEnemyStrategy;
     }
-    public void setWizardStrategy(EnemyStrategy wizardStrategy){
-        this.wizardStrategy = wizardStrategy;
+
+
+    public void setWizardEnemyStrategy(EnemyStrategy wizardStrategy){
+        this.wizardEnemyStrategy = wizardStrategy;
     }
-    public EnemyStrategy getWizardStrategy(){
-        return this.wizardStrategy;
+    public EnemyStrategy getWizardEnemyStrategy(){
+        return this.wizardEnemyStrategy;
     }
 
 

@@ -59,7 +59,7 @@ public class WizardEnemyStrategy extends EnemyStrategy{
         Font originalFont = g2d.getFont();
         g2d.setFont(new Font("Arial",Font.BOLD,50));
         g2d.setColor(Color.RED);
-        g2d.drawString(this.getName(),385,95);
+        g2d.drawString(this.getName(),390,95);
         g2d.setFont(originalFont);
         g2d.setColor(originalColor);
     }

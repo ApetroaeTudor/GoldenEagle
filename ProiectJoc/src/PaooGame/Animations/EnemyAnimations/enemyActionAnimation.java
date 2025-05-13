@@ -80,7 +80,46 @@ public class enemyActionAnimation extends Animation {
                     this.playOnce = true;
                     break;
             }
-
+        }
+        else if(entityName == Constants.MINOTAUR_NAME){
+            this.imageSheet = reflink.getTileCache().getEnemySheetByState(purpose,Constants.MINOTAUR_NAME);
+            switch (purpose){
+                case FALLING:
+                case WALKING:
+                    this.imgWidth = Constants.MINOTAUR_PASSIVE_TILE_WIDTH;
+                    this.imgHeight = Constants.MINOTAUR_PASSIVE_TILE_HEIGHT;
+                    break;
+                case IN_FIGHT_IDLE:
+                    this.imgWidth = Constants.MINOTAUR_FIGHTING_TILE_WIDTH;
+                    this.imgHeight = Constants.MINOTAUR_FIGHTING_TILE_HEIGHT;
+                    this.playOnce = false;
+                    break;
+                case IN_FIGHT_ATTACKING:
+                    this.imgWidth = Constants.MINOTAUR_FIGHTING_TILE_WIDTH;
+                    this.imgHeight = Constants.MINOTAUR_FIGHTING_TILE_HEIGHT;
+                    this.playOnce = true;
+                    break;
+            }
+        }
+        else if(entityName == Constants.GHOST_NAME){
+            this.imageSheet = reflink.getTileCache().getEnemySheetByState(purpose,Constants.GHOST_NAME);
+            switch (purpose){
+                case FALLING:
+                case WALKING:
+                    this.imgWidth = Constants.GHOST_PASSIVE_TILE_WIDTH;
+                    this.imgHeight = Constants.GHOST_PASSIVE_TILE_HEIGHT;
+                    break;
+                case IN_FIGHT_IDLE:
+                    this.imgWidth = Constants.GHOST_FIGHTING_TILE_WIDTH;
+                    this.imgHeight = Constants.GHOST_FIGHTING_TILE_HEIGHT;
+                    this.playOnce = false;
+                    break;
+                case IN_FIGHT_ATTACKING:
+                    this.imgWidth = Constants.GHOST_FIGHTING_TILE_WIDTH;
+                    this.imgHeight = Constants.GHOST_FIGHTING_TILE_HEIGHT;
+                    this.playOnce = true;
+                    break;
+            }
         }
 
 
@@ -136,11 +175,17 @@ public class enemyActionAnimation extends Animation {
 
         try {
             AffineTransform transform = AffineTransform.getTranslateInstance(x, y);
-            if(this.entityName == "Tiger"){
+            if(this.entityName == Constants.TIGER_NAME || this.entityName == Constants.MINOTAUR_NAME){
                 scale = 0.5;
             }
             if(this.purpose == Constants.ENEMY_STATES.IN_FIGHT_IDLE || this.purpose == Constants.ENEMY_STATES.IN_FIGHT_ATTACKING){
                 scale = 5;
+                if(this.entityName == Constants.GHOST_NAME){
+                    scale = 15;
+                }
+                if(this.entityName == Constants.BASIC_SKELETON_NAME){
+                    scale = 10;
+                }
             }
 
             transform.scale(scale, scale);
