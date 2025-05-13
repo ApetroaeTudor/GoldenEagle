@@ -29,14 +29,17 @@ public class Enemy extends Entity {
             case Constants.BASIC_SKELETON_NAME:
                 this.enemyStrategy = this.reflink.getBasicSkeletonStrategy();
                 break;
+            case Constants.WIZARD_NAME:
+                this.enemyStrategy = this.reflink.getWizardStrategy();
+                break;
         }
 
-        this.speed = -0.4f; //
-        this.hitbox = new Hitbox(this.x,this.y,(int)( (64.0/100.0)*50.0 ),(int)( (32.0/100)*50.0 )); //
+        this.speed = this.enemyStrategy.getSpeed();
+        this.hitbox = new Hitbox(this.x,this.y,this.enemyStrategy.getHitboxWidth(),this.enemyStrategy.getHitboxHeight()); //
         this.currentState = Constants.ENEMY_STATES.FALLING;
 
-        this.setHealthBarColor1(Constants.YELLOW_HEALTH_BAR_COLOR_1); //
-        this.setHealthBarColor2(Constants.YELLOW_HEALTH_BAR_COLOR_2); //
+        this.setHealthBarColor1(this.enemyStrategy.getHealthBarColor1()); //
+        this.setHealthBarColor2(this.enemyStrategy.getHealthBarColor2()); //
 
         this.walkingAnimation = this.enemyStrategy.getWalkingAnimation();// new enemyActionAnimation(this.reflink,Constants.ENEMY_STATES.WALKING,4,10,this.getName()); //
 //        this.walkingAnimation.loadAnimation();
@@ -217,4 +220,7 @@ public class Enemy extends Entity {
     public void setX(int x){this.x = x;}
     public void setY(int y){this.y = y;}
 
+    public EnemyStrategy getEnemyStrategy() {
+        return enemyStrategy;
+    }
 }

@@ -2,6 +2,7 @@
 package PaooGame.States;
 
 import PaooGame.Animations.ItemsAnimations.StaticItemAnimation;
+import PaooGame.Entities.Enemy;
 import PaooGame.Entities.Entity;
 import PaooGame.Config.Constants;
 import PaooGame.Input.MouseInput;
@@ -41,7 +42,7 @@ public class MenuState extends State  {
     }
 
     @Override
-    public void setEnemy(Entity enemy) {
+    public void setEnemy(Enemy enemy) {
 
     }
 
@@ -54,7 +55,7 @@ public class MenuState extends State  {
 
         if (mouse.getNumberOfMousePresses() > 0) {
             if (startButton.contains(mx, my)) {
-                State.setState(refLink.getGame().getLevel1State());
+                State.setState(refLink.getGame().getLevel3State());
             }
             else if (settingsButton.contains(mx, my)) {
             }

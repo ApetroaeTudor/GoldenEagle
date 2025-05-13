@@ -5,6 +5,7 @@ import PaooGame.Animations.EnemyAnimations.enemyActionAnimation;
 import PaooGame.Config.Constants;
 import PaooGame.RefLinks;
 
+import java.awt.*;
 import java.sql.Ref;
 
 public class BasicSkeletonEnemyStrategy extends EnemyStrategy {
@@ -30,7 +31,7 @@ public class BasicSkeletonEnemyStrategy extends EnemyStrategy {
 
     public BasicSkeletonEnemyStrategy(RefLinks reflink){
         super(reflink);
-        this.speed = -0.4f;
+        this.speed = Constants.BASIC_SKELETON_SPEED;
         this.hitboxWidth = 32;
         this.hitboxHeight = 32;
 
@@ -51,6 +52,12 @@ public class BasicSkeletonEnemyStrategy extends EnemyStrategy {
         this.inFightIdleAnimation.loadAnimation();
 
         this.behaviorIDsToRespect = reflink.getGame().getLevel2().getBehaviorIDs();
+    }
+
+    @Override
+    public void drawName(Graphics2D g2d){
+        g2d.setColor(Color.RED);
+        g2d.drawString(this.getName(),520,60);
     }
 
 }

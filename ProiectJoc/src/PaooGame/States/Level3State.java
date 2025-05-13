@@ -1,6 +1,7 @@
 package PaooGame.States;
 import PaooGame.Camera.Camera;
 import PaooGame.Config.Constants;
+import PaooGame.Entities.Enemy;
 import PaooGame.Entities.Entity;
 import PaooGame.HUD.PauseButton;
 import PaooGame.Input.MouseInput;
@@ -42,7 +43,10 @@ public class Level3State extends State{
     protected boolean transitioning = false;
     protected boolean transition_to_fight = false;
 
-    private Entity[] enemies; //TODO
+    private Enemy[] enemies; //TODO
+    private int nrOfEnemies = 1;
+
+
     private SaveItem[] saves;
     private int nrOfSaves = 4;
 
@@ -65,6 +69,10 @@ public class Level3State extends State{
         this.unmarkHookTimer.setRepeats(false);
 
         pauseButton = new PauseButton(reflink.getHero(),80,50);
+
+        this.enemies = new Enemy[this.nrOfEnemies];
+
+        this.enemies[0] = new Enemy(this.refLink,5150,1200,Constants.WIZARD_NAME);
 
         this.saves[0] = new SaveItem(this.refLink,Constants.LEVEL3_SAVE1_X,Constants.LEVEL3_SAVE1_Y);
         this.saves[1] = new SaveItem(this.refLink,Constants.LEVEL3_SAVE2_X,Constants.LEVEL3_SAVE2_Y);
@@ -91,6 +99,9 @@ public class Level3State extends State{
 
     @Override
     public void update(){
+
+        System.out.println("x: " + this.refLink.getHero().getX() + " y: "+this.refLink.getHero().getY());
+
         this.refLink.getHero().update();
         if(refLink.getKeyManager().isKeyPressed(KeyEvent.VK_ESCAPE)){
             State.setState(refLink.getGame().getMenuState());
@@ -100,8 +111,39 @@ public class Level3State extends State{
             this.saves[i].updateItem();
         }
         if(this.refLink.getHero().getHitbox().intersects(this.saves[0].getHitbox())){
-            System.out.println("Interaction");
+//            System.out.println("Interaction");
         }
+
+
+        for(Enemy enemy : enemies){
+            if(enemy!=null){
+                if(enemy.getHealth()==0){
+                    enemy.nullifyHitbox();
+                }
+                else{
+                    if(refLink.getHero().getHitbox().intersects(enemy.getHitbox())){
+                        enemy.setIsEngaged(true);
+                        this.transitioning = true;
+                        this.transition_to_fight = true;
+                        refLink.getGame().getFightState().setEnemy(enemy);
+
+                    }
+                }
+                enemy.update();
+            }
+
+        }
+        if(this.transition_to_fight && this.targetBlackIntensity==1) {
+            this.targetBlackIntensity = 0;
+            this.transitioning = false;
+            this.transition_to_fight = false;
+//            refLink.getGame().getFightState().restoreState();
+
+            State.setState(refLink.getGame().getFightState());
+        }
+
+
+
 
         MouseInput mouse = refLink.getMouseInput();
         Point mousePos = new Point(mouse.getMouseX(),mouse.getMouseY());
@@ -253,6 +295,8 @@ public class Level3State extends State{
         AffineTransform originalTransform = g2d.getTransform();
 
 
+
+
         camera.apply(g2d);
 
 
@@ -278,7 +322,7 @@ public class Level3State extends State{
             this.saves[i].drawItem(g);
         }
 
-        if(refLink.getHero().getHealth() == 0 || this.transitioning){
+        if(refLink.getHero().getHealth() == 0 || this.transitioning || this.transition_to_fight){
             this.targetBlackIntensity+=this.blackFadeStep;
             Color originalColor = g2d.getColor();
             if(this.targetBlackIntensity>=1.0){
@@ -290,6 +334,8 @@ public class Level3State extends State{
             g.fillRect(0,0,this.levelWidth,this.levelHeight);
             g2d.setColor(originalColor);
         }
+
+
 
         if(refLink.getHero().getHasWhip()){
             Color originalColor1 = g2d.getColor();
@@ -304,6 +350,14 @@ public class Level3State extends State{
         if(!refLink.getHero().getHasWhip()){
 
         }
+
+        for(Enemy enemy : enemies){
+            if(enemy!=null && enemy.getHealth()>0){
+                enemy.draw(g);
+            }
+        }
+
+
 
 
         this.refLink.getHero().draw(g);
@@ -322,7 +376,7 @@ public class Level3State extends State{
     }
 
     @Override
-    public void setEnemy(Entity enemy){
+    public void setEnemy(Enemy enemy){
 
     }
 

@@ -60,6 +60,26 @@ public class enemyActionAnimation extends Animation {
                     this.playOnce = true;
                     break;
             }
+        }
+        else if(entityName == Constants.WIZARD_NAME){
+            this.imageSheet = reflink.getTileCache().getEnemySheetByState(purpose,Constants.WIZARD_NAME);
+            switch (purpose){
+                case FALLING:
+                case WALKING:
+                    this.imgWidth = Constants.WIZARD_PASSIVE_TILE_WIDTH;
+                    this.imgHeight = Constants.WIZARD_PASSIVE_TILE_HEIGHT;
+                    break;
+                case IN_FIGHT_IDLE:
+                    this.imgWidth = Constants.WIZARD_FIGHTING_TILE_WIDTH;
+                    this.imgHeight = Constants.WIZARD_FIGHTING_TILE_HEIGHT;
+                    this.playOnce = false;
+                    break;
+                case IN_FIGHT_ATTACKING:
+                    this.imgWidth = Constants.WIZARD_FIGHTING_TILE_WIDTH;
+                    this.imgHeight = Constants.WIZARD_FIGHTING_TILE_HEIGHT;
+                    this.playOnce = true;
+                    break;
+            }
 
         }
 

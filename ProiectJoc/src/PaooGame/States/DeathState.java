@@ -1,5 +1,6 @@
 package PaooGame.States;
 
+import PaooGame.Entities.Enemy;
 import PaooGame.Entities.Entity;
 import PaooGame.Config.Constants;
 import PaooGame.RefLinks;
@@ -37,7 +38,7 @@ public class DeathState extends State {
     }
 
     @Override
-    public void setEnemy(Entity enemy) {
+    public void setEnemy(Enemy enemy) {
 
     }
 

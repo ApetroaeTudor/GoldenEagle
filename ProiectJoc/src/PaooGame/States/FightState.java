@@ -1,5 +1,6 @@
 package PaooGame.States;
 
+import PaooGame.Entities.Enemy;
 import PaooGame.Entities.Entity;
 import PaooGame.Animations.Animation;
 import PaooGame.Animations.EffectsAnimations.EffectAnimation;
@@ -20,7 +21,7 @@ import java.awt.image.BufferedImage;
 //un progressOnSpace == 50 inseamna 50% damage reduction
 
 public class FightState extends State {
-    private Entity enemy=null;
+    private Enemy enemy=null;
     private boolean isPlayerTurn;
     private double blackIntensity = 1.0;
     private double fadeSpeed = 0.05;
@@ -33,6 +34,7 @@ public class FightState extends State {
 
     private FightStrategy fightStrategy = null;
     private FightStrategy tigerStrategy = null;
+    private FightStrategy wizardStrategy = null;
     private FightStrategy basicSkeletonStrategy = null;
 
     private int popupTimeInMillis = 700;
@@ -146,7 +148,7 @@ public class FightState extends State {
                             .healthBarWidth(this.enemy.getHealthBarWidth())
                             .healthBarHeight(this.enemy.getHealthBarHeight())
                                 .backgroundImgPath(Constants.TIGER_FIGHT_BG_PATH)
-                                .defence(0f)
+                                .defence(Constants.TIGER_DEFENCE)
                                 .ownerState(refLink.getGame().getLevel1State()).
                                 build();
                         break;
@@ -161,9 +163,24 @@ public class FightState extends State {
                                 .healthBarWidth(this.enemy.getHealthBarWidth())
                                 .healthBarHeight(this.enemy.getHealthBarHeight())
                                 .backgroundImgPath(Constants.BASIC_SKELETON_FIGHT_BG_PATH)
-                                .defence(0.4f)
-                                .ownerState(refLink.getGame().getLevel2State()).
-                                build();
+                                .defence(Constants.BASIC_SKELETON_DEFENCE)
+                                .ownerState(refLink.getGame().getLevel2State())
+                                .build();
+                        break;
+                    case Constants.WIZARD_NAME:
+                        this.wizardStrategy = new FightStrategy.FightStrategyBuilder(this.enemy)
+                                .x(340)
+                                .y(60)
+                                .width(this.enemy.getWidth())
+                                .height(this.enemy.getHeight())
+                                .healthBarX(265)
+                                .healthBarY(120)
+                                .healthBarWidth(Constants.WIZARD_HEALTH_BAR_WIDTH)
+                                .healthBarHeight(Constants.WIZARD_HEALTH_BAR_HEIGHT )
+                                .backgroundImgPath(Constants.WIZARD_FIGHT_BG_PATH)
+                                .defence(Constants.WIZARD_DEFENCE)
+                                .ownerState(refLink.getGame().getLevel3State())
+                                .build();
                         break;
                 }
             }
@@ -176,6 +193,9 @@ public class FightState extends State {
                     break;
                 case Constants.BASIC_SKELETON_NAME:
                     this.fightStrategy = basicSkeletonStrategy;
+                    break;
+                case Constants.WIZARD_NAME:
+                    this.fightStrategy = wizardStrategy;
                     break;
             }
             this.fightStrategy.update();
@@ -312,8 +332,7 @@ public class FightState extends State {
             g2d.setFont(new Font("Arial",Font.BOLD,30));
             g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 
-            g2d.setColor(Color.RED);
-            g2d.drawString(fightStrategy.getEnemy().getName(),520,60);
+            this.fightStrategy.getEnemy().getEnemyStrategy().drawName(g2d);
 
             g2d.setFont(new Font("Arial",Font.BOLD,20));
             g2d.setColor(Color.WHITE);
@@ -331,6 +350,15 @@ public class FightState extends State {
             g2d.setFont(new Font("Arial",Font.BOLD,10));
             g2d.drawString("(When the bar is fuller you block more damage)",840,710);
 
+
+
+
+            this.fightStrategy.getEnemy().DrawHealthBar(g);
+            refLink.getHero().DrawHealthBar(g);
+
+            this.attackButton.draw(g2d);
+            this.attackAnimation.paintAnimation(g,380,200,false,1);
+
             if(this.printingDamageReceivedPopup){
                 g2d.setFont(new Font("Arial",Font.BOLD,30));
                 originalColor = g2d.getColor();
@@ -346,17 +374,10 @@ public class FightState extends State {
                 originalColor = g2d.getColor();
                 g2d.setColor(Color.GREEN);
                 String damageToPrint = String.format("-%.2f",this.latestDamageDealt);
-                g2d.drawString(damageToPrint,350,170);
+                g2d.drawString(damageToPrint,320,250);
 
                 g2d.setColor(originalColor);
             }
-
-
-            this.fightStrategy.getEnemy().DrawHealthBar(g);
-            refLink.getHero().DrawHealthBar(g);
-
-            this.attackButton.draw(g2d);
-            this.attackAnimation.paintAnimation(g,380,200,false,1);
 
 
             if(transitioningToVictory || transitioningToDeath){
@@ -414,7 +435,7 @@ public class FightState extends State {
     }
 
     @Override
-    public void setEnemy(Entity enemy){
+    public void setEnemy(Enemy enemy){
         this.enemy = enemy;
     }
 

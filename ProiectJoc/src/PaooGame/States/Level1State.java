@@ -42,7 +42,7 @@ public class Level1State extends State {
     protected boolean transitioning = false;
     protected boolean transition_to_fight = false;
 
-    private Entity [] enemies;
+    private Enemy [] enemies;
 
     protected String stateName = Constants.LEVEL1_STATE;
 
@@ -60,7 +60,7 @@ public class Level1State extends State {
         this.contextHUD = new ContextHUD(refLink.getHero());
 
 
-        enemies = new Entity[2];
+        enemies = new Enemy[2];
         enemies[0] = new Enemy(this.refLink,this.tiger1X,this.tiger1Y,Constants.TIGER_NAME);
         enemies[1] = new Enemy(this.refLink,this.tiger2X,this.tiger2Y,Constants.TIGER_NAME);
         this.saves[0] = new SaveItem(this.refLink,Constants.LEVEL1_SAVE1_X,Constants.LEVEL1_SAVE1_Y);
@@ -71,7 +71,7 @@ public class Level1State extends State {
         levelHeight = Constants.LEVEL1_HEIGHT * Constants.TILE_SIZE;
 
 
-        for (Entity enemy : enemies) {
+        for (Enemy enemy : enemies) {
             contextHUD.addTrigger(new MessageTriggerZone(
                     enemy, -30, -100, 120, 150,
                     "Învinge tigrul!"
@@ -89,7 +89,7 @@ public class Level1State extends State {
         this.enemies[0].setY(this.tiger1Y);
         this.enemies[1].setX(this.tiger2X);
         this.enemies[1].setY(this.tiger2Y);
-        for(Entity enemy: enemies){
+        for(Enemy enemy: enemies){
             enemy.restoreEntity();
         }
     }
@@ -103,11 +103,11 @@ public class Level1State extends State {
             this.saves[i].updateItem();
         }
         if(this.refLink.getHero().getHitbox().intersects(this.saves[0].getHitbox())){
-            System.out.println("Interaction");
+//            System.out.println("Interaction");
         }
 
 
-        for(Entity enemy : enemies){
+        for(Enemy enemy : enemies){
             if(enemy.getHealth()==0){
                 enemy.nullifyHitbox();
             }
@@ -228,7 +228,7 @@ public class Level1State extends State {
 
 
 
-        for(Entity enemy : enemies){
+        for(Enemy enemy : enemies){
             if(enemy.getHealth()>0){
                 enemy.draw(g);
             }
@@ -284,7 +284,7 @@ public class Level1State extends State {
     }
 
     @Override
-    public void setEnemy(Entity enemy) {
+    public void setEnemy(Enemy enemy) {
 
     }
 }

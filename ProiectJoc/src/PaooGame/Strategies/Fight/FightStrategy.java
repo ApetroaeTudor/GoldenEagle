@@ -1,5 +1,6 @@
 package PaooGame.Strategies.Fight;
 
+import PaooGame.Entities.Enemy;
 import PaooGame.Entities.Entity;
 import PaooGame.States.State;
 
@@ -13,7 +14,7 @@ public class FightStrategy {
     protected int healthBarWidth;
     protected int healthBarHeight;
     protected String backgroundImgPath;
-    protected Entity enemy;
+    protected Enemy enemy;
     protected float defence;
     protected State ownerState;
 
@@ -59,11 +60,11 @@ public class FightStrategy {
         private int healthBarWidth = 0;
         private int healthBarHeight = 0;
         private String backgroundImgPath;
-        private Entity enemy = null;
+        private Enemy enemy = null;
         private float defence = 0f;
         private State ownerState = null;
 
-        public FightStrategyBuilder(Entity enemy){
+        public FightStrategyBuilder(Enemy enemy){
             this.enemy = enemy;
         }
         public FightStrategyBuilder x(float x){
@@ -116,7 +117,7 @@ public class FightStrategy {
         }
     }
 
-    public void setEnemy(Entity enemy) {
+    public void setEnemy(Enemy enemy) {
         this.enemy = enemy;
     }
 
@@ -166,7 +167,7 @@ public class FightStrategy {
         return defence;
     }
 
-    public Entity getEnemy() {
+    public Enemy getEnemy() {
         return enemy;
     }
 

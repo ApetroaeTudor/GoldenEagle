@@ -98,6 +98,8 @@ public class Constants {
     public static final Color GREEN_HEALTH_BAR_COLOR_2 = new Color(0, 150, 0);
     public static final Color YELLOW_HEALTH_BAR_COLOR_1 = new Color(255, 255, 0);
     public static final Color YELLOW_HEALTH_BAR_COLOR_2 = new Color(200, 200, 0);
+    public static final Color PURPLE_HEALTH_BAR_COLOR_1 = new Color(148, 0, 211);  // Dark Violet
+    public static final Color PURPLE_HEALTH_BAR_COLOR_2 = new Color(186, 85, 211);  // Medium Orchid
 
     public static final float BASE_ENTITY_GRAVITY = 0.15f;
     public static final float BASE_MAX_ENTITY_FALL_SPEED = 6.0f;
@@ -128,8 +130,11 @@ public class Constants {
     public static final String TIGER_SPRITE_SHEET_PATH = "res/Enemies/Tiger.png";
     public static final String TIGER_FIGHT_BG_PATH = "res/Backgrounds/TigerFightBg.jpg";
     public static final double TIGER_HEALTH = 100.0;
-    public static final double TIGER_DAMAGE = 20.0;
+    public static final double TIGER_DAMAGE = 10.0;
     public static final float TIGER_SPEED =-0.4f;
+    public static final float TIGER_DEFENCE = 0f;
+    public static final String TIGER_NAME = "Tiger";
+
 
     public static final int BASIC_SKELETON_PASSIVE_TILE_WIDTH = 32;
     public static final int BASIC_SKELETON_PASSIVE_TILE_HEIGHT = 32;
@@ -138,15 +143,36 @@ public class Constants {
     public static final String BASIC_SKELETON_SPRITE_SHEET_PATH = "res/Enemies/skeleton_basic.png";
     public static final String BASIC_SKELETON_FIGHT_BG_PATH = "res/Backgrounds/SkeletonBasic_Background.png";
     public static final double BASIC_SKELETON_HEALTH = 100.0;
-    public static final double BASIC_SKELETON_DAMAGE = 30.0;
+    public static final double BASIC_SKELETON_DAMAGE = 15.0;
     public static final float BASIC_SKELETON_SPEED = -0.6f;
+    public static final float BASIC_SKELETON_DEFENCE = 0.4f;
+    public static final String BASIC_SKELETON_NAME = "Skeleton";
+
+
+
+    public static final int WIZARD_HEALTH_BAR_WIDTH = 600;
+    public static final int WIZARD_HEALTH_BAR_HEIGHT = 60;
+    public static final int WIZARD_PASSIVE_TILE_NR = 7;
+    public static final int WIZARD_ATTACKING_TILE_NR = 8;
+    public static final int WIZARD_IN_FIGHT_IDLE_TILE_NR = 6;
+    public static final int WIZARD_PASSIVE_TILE_WIDTH = 80;
+    public static final int WIZARD_PASSIVE_TILE_HEIGHT = 80;
+    public static final int WIZARD_FIGHTING_TILE_WIDTH = 144;
+    public static final int WIZARD_FIGHTING_TILE_HEIGHT = 112;
+    public static final double WIZARD_HEALTH = 100f;
+    public static final double WIZARD_DAMAGE = 30f;
+    public static final float WIZARD_SPEED = -1f;
+    public static final float WIZARD_DEFENCE = 0.7f;
+    public static final String WIZARD_SPRITE_SHEET_PATH = "res/Enemies/wizard.png";
+    public static final String WIZARD_FIGHT_BG_PATH = "res/Backgrounds/WizardBg.jpg";
+    public static final String WIZARD_NAME = "EVIL WIZARD";
+
 
 
 
     public static final String LEVEL_1 = "LEVEL_1";
     public static final String LEVEL_2 = "LEVEL_2";
-    public static final String TIGER_NAME = "Tiger";
-    public static final String BASIC_SKELETON_NAME = "Skeleton";
+    public static final String LEVEL_3 = "LEVEL_3";
 
 
 

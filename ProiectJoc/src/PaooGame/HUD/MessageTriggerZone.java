@@ -42,7 +42,7 @@ public class MessageTriggerZone {
     public boolean checkTrigger(Rectangle target) {
         boolean isTriggered = isActive && bounds.intersects(target);
         if (isTriggered) {
-            System.out.println("Trigger activat: " + message);
+//            System.out.println("Trigger activat: " + message);
         }
         return isTriggered;
     }

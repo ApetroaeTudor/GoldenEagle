@@ -22,7 +22,7 @@ public class TigerEnemyStrategy extends EnemyStrategy {
 
     public TigerEnemyStrategy(RefLinks reflink){
         super(reflink);
-        this.speed = -0.4f;
+        this.speed = Constants.TIGER_SPEED;
         this.hitboxWidth = (int)( (64.0/100.0)*50.0 );
         this.hitboxHeight = (int)( (32.0/100)*50.0 );
 
@@ -54,6 +54,12 @@ public class TigerEnemyStrategy extends EnemyStrategy {
     @Override
     public String getSource(){
         return Constants.LEVEL_1;
+    }
+
+    @Override
+    public void drawName(Graphics2D g2d){
+        g2d.setColor(Color.RED);
+        g2d.drawString(this.getName(),520,60);
     }
 
 

@@ -2,6 +2,7 @@ package PaooGame.States;
 
 import java.awt.*;
 
+import PaooGame.Entities.Enemy;
 import PaooGame.Entities.Entity;
 import PaooGame.Maps.Level;
 import PaooGame.RefLinks;
@@ -48,7 +49,7 @@ public abstract class State
 
 
     public abstract String getStateName();
-    public abstract void setEnemy(Entity enemy);
+    public abstract void setEnemy(Enemy enemy);
 
     ///Metoda abstracta destinata actualizarii starii curente
     public abstract void update();

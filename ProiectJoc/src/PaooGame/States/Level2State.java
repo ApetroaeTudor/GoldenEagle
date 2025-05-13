@@ -3,7 +3,6 @@ package PaooGame.States;
 import PaooGame.Camera.Camera;
 import PaooGame.Config.Constants;
 import PaooGame.Entities.Enemy;
-import PaooGame.Entities.Entity;
 import PaooGame.HUD.ContextHUD;
 import PaooGame.HUD.MessageTriggerZone;
 import PaooGame.HUD.PauseButton;
@@ -34,7 +33,7 @@ public class Level2State extends State{
 
 
     private int nrOfEnemies = 1;
-    private Entity[] enemies;
+    private Enemy[] enemies;
     private SaveItem[] saves;
     private int nrOfSaves = 1;
 
@@ -47,7 +46,7 @@ public class Level2State extends State{
         super(reflink);
         this.level2 = level2;
         this.saves = new SaveItem[this.nrOfSaves];
-        this.enemies = new Entity[this.nrOfEnemies];
+        this.enemies = new Enemy[this.nrOfEnemies];
 
 
         this.contextHUD = new ContextHUD(refLink.getHero());
@@ -114,11 +113,11 @@ public class Level2State extends State{
             this.saves[i].updateItem();
         }
         if(this.refLink.getHero().getHitbox().intersects(this.saves[0].getHitbox())){
-            System.out.println("Interaction");
+//            System.out.println("Interaction");
         }
 
 
-        for(Entity enemy : enemies){
+        for(Enemy enemy : enemies){
             if(enemy!=null){
                 if(enemy.getHealth()==0){
                     enemy.nullifyHitbox();
@@ -236,7 +235,7 @@ public class Level2State extends State{
             this.saves[i].drawItem(g);
         }
 
-        for(Entity enemy : enemies){
+        for(Enemy enemy : enemies){
             if(enemy!=null && enemy.getHealth()>0){
                 enemy.draw(g);
             }
@@ -275,7 +274,7 @@ public class Level2State extends State{
     }
 
     @Override
-    public void setEnemy(Entity enemy) {
+    public void setEnemy(Enemy enemy) {
 
     }
 

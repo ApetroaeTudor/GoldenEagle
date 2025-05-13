@@ -187,6 +187,20 @@ public class TileCache {
                 inFightIdleMessage = "BASIC_SKELETON_IN_FIGHT_IDLE";
                 inFightAttackingMessage = "BASIC_SKELETON_IN_FIGHT_ATTACKING";
                 break;
+            case Constants.WIZARD_NAME:
+                sheetPath = Constants.WIZARD_SPRITE_SHEET_PATH;
+                passiveTileHeight = Constants.WIZARD_PASSIVE_TILE_HEIGHT;
+                passiveTileWidth = Constants.WIZARD_PASSIVE_TILE_WIDTH;
+                inFightTileWidth = Constants.WIZARD_FIGHTING_TILE_WIDTH;
+                inFightTileHeight = Constants.WIZARD_FIGHTING_TILE_HEIGHT;
+                walkingAnimationNrOfTiles = Constants.WIZARD_PASSIVE_TILE_NR;
+                inFightIdleNrOfTiles = Constants.WIZARD_IN_FIGHT_IDLE_TILE_NR;
+                inFightAttackingNrOfTiles = Constants.WIZARD_ATTACKING_TILE_NR;
+                walkingMessage = "WIZARD_WALKING";
+                fallingMessage = "WIZARD_FALLING";
+                inFightIdleMessage = "WIZARD_IN_FIGHT_IDLE";
+                inFightAttackingMessage = "WIZARD_IN_FIGHT_ATTACKING";
+                break;
         }
         try{
             enemyFileSheet = new File(sheetPath);

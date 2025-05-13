@@ -16,6 +16,7 @@ public class RefLinks
 
     private EnemyStrategy tigerEnemyStrategy;
     private EnemyStrategy basicSkeletonStrategy;
+    private EnemyStrategy wizardStrategy;
 
 
     private Hero hero;
@@ -39,6 +40,12 @@ public class RefLinks
     }
     public EnemyStrategy getBasicSkeletonStrategy(){
         return this.basicSkeletonStrategy;
+    }
+    public void setWizardStrategy(EnemyStrategy wizardStrategy){
+        this.wizardStrategy = wizardStrategy;
+    }
+    public EnemyStrategy getWizardStrategy(){
+        return this.wizardStrategy;
     }
 
 
