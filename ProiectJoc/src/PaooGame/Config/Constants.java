@@ -105,7 +105,7 @@ public class Constants {
     public static final float DYING_ENTITY_GRAVITY = 0.001f;
 
     public static final double HERO_BASE_HEALTH = 100.0;
-    public static final double HERO_BASE_DAMAGE = 50.0;
+    public static final double HERO_BASE_DAMAGE = 100.0;
     public static final float HERO_BASE_SPEED = 2.0f;
     public static final float HERO_BASE_JUMP_STRENGTH = -3.5f;
     public static final float HERO_LEVEL2_JUMP_STRENGTH = -6.0f;
@@ -140,6 +140,13 @@ public class Constants {
     public static final double BASIC_SKELETON_HEALTH = 100.0;
     public static final double BASIC_SKELETON_DAMAGE = 30.0;
     public static final float BASIC_SKELETON_SPEED = -0.6f;
+
+
+
+    public static final String LEVEL_1 = "LEVEL_1";
+    public static final String LEVEL_2 = "LEVEL_2";
+    public static final String TIGER_NAME = "Tiger";
+    public static final String BASIC_SKELETON_NAME = "Skeleton";
 
 
 

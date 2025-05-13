@@ -159,7 +159,7 @@ public class TileCache {
         int inFightAttackingNrOfTiles=0;
 
         switch (enemyType){
-            case "Tiger":
+            case Constants.TIGER_NAME:
                 sheetPath = Constants.TIGER_SPRITE_SHEET_PATH;
                 passiveTileHeight = Constants.TIGER_PASSIVE_TILE_HEIGHT;
                 passiveTileWidth = Constants.TIGER_PASSIVE_TILE_WIDTH;
@@ -173,7 +173,7 @@ public class TileCache {
                 inFightAttackingMessage = "TIGER_IN_FIGHT_ATTACKING";
 
                 break;
-            case "BasicSkeleton":
+            case Constants.BASIC_SKELETON_NAME:
                 sheetPath = Constants.BASIC_SKELETON_SPRITE_SHEET_PATH;
                 passiveTileHeight = Constants.BASIC_SKELETON_PASSIVE_TILE_HEIGHT;
                 passiveTileWidth = Constants.BASIC_SKELETON_PASSIVE_TILE_WIDTH;

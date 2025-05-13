@@ -1,7 +1,7 @@
 package PaooGame.States;
 
 import PaooGame.Entities.Entity;
-import PaooGame.Entities.Tiger;
+import PaooGame.Entities.Enemy;
 import PaooGame.Camera.Camera;
 import PaooGame.Config.Constants;
 import PaooGame.Entities.Hero;
@@ -53,8 +53,8 @@ public class Level1State extends State {
         this.saves = new SaveItem[this.nrOfSaves];
 
         enemies = new Entity[2];
-        enemies[0] = new Tiger(this.refLink,this.tiger1X,this.tiger1Y);
-        enemies[1] = new Tiger(this.refLink,this.tiger2X,this.tiger2Y);
+        enemies[0] = new Enemy(this.refLink,this.tiger1X,this.tiger1Y,Constants.TIGER_NAME);
+        enemies[1] = new Enemy(this.refLink,this.tiger2X,this.tiger2Y,Constants.TIGER_NAME);
         this.saves[0] = new SaveItem(this.refLink,Constants.LEVEL1_SAVE1_X,Constants.LEVEL1_SAVE1_Y);
 
         pauseButton = new PauseButton(refLink.getHero(), 80, 50);
@@ -155,7 +155,7 @@ public class Level1State extends State {
             this.refLink.getHero().setJumpStrength(Constants.HERO_LEVEL2_JUMP_STRENGTH);
         }
 
-        if(this.transition_to_fight && this.targetBlackIntensity==1) {
+        if(this.transition_to_fight && this.targetBlackIntensity==1 && !this.isSwitchingToLevel2) {
             this.targetBlackIntensity = 0;
             this.transitioning = false;
             this.transition_to_fight = false;

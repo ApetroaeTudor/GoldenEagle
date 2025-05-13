@@ -4,6 +4,8 @@ import PaooGame.Entities.Hero;
 import PaooGame.Input.MouseInput;
 
 import PaooGame.Input.KeyManager;
+import PaooGame.Strategies.EnemyStrategies.EnemyStrategy;
+import PaooGame.Strategies.EnemyStrategies.TigerEnemyStrategy;
 import PaooGame.Tiles.TileCache;
 
 public class RefLinks
@@ -11,6 +13,9 @@ public class RefLinks
     private Game game;
     private KeyManager keyManager;
     private MouseInput mouseInput;
+
+    private EnemyStrategy tigerEnemyStrategy;
+    private EnemyStrategy basicSkeletonStrategy;
 
 
     private Hero hero;
@@ -22,6 +27,21 @@ public class RefLinks
         this.game = game;
 //        this.tileCache=new TileCache();
     }
+
+    public void setTigerEnemyStrategy(EnemyStrategy tigerEnemyStrategy){
+        this.tigerEnemyStrategy = tigerEnemyStrategy;
+    }
+    public EnemyStrategy getTigerEnemyStrategy(){
+        return this.tigerEnemyStrategy;
+    }
+    public void setBasicSkeletonStrategy(EnemyStrategy basicSkeletonStrategy){
+        this.basicSkeletonStrategy = basicSkeletonStrategy;
+    }
+    public EnemyStrategy getBasicSkeletonStrategy(){
+        return this.basicSkeletonStrategy;
+    }
+
+
 
     public KeyManager getKeyManager()
     {

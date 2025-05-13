@@ -11,15 +11,17 @@ import java.awt.image.BufferedImage;
 public class enemyActionAnimation extends Animation {
 
     private Constants.ENEMY_STATES purpose;
+    private String entityName;
 
     public enemyActionAnimation(RefLinks reflink, Constants.ENEMY_STATES purpose, int nrOfFrames, int animationSpeed, String entityName){
         super();
         this.purpose = purpose;
         this.reflink = reflink;
         this.nrOfFrames = nrOfFrames;
+        this.entityName = entityName;
 
-        if(entityName == "Tiger"){
-            this.imageSheet = reflink.getTileCache().getEnemySheetByState(purpose,"Tiger");
+        if(entityName == Constants.TIGER_NAME){
+            this.imageSheet = reflink.getTileCache().getEnemySheetByState(purpose,Constants.TIGER_NAME);
             switch (purpose){
                 case FALLING:
                 case WALKING:
@@ -39,8 +41,8 @@ public class enemyActionAnimation extends Animation {
             }
 
         }
-        else if(entityName == "BasicSkeleton"){
-            this.imageSheet = reflink.getTileCache().getEnemySheetByState(purpose,"BasicSkeleton");
+        else if(entityName == Constants.BASIC_SKELETON_NAME){
+            this.imageSheet = reflink.getTileCache().getEnemySheetByState(purpose,Constants.BASIC_SKELETON_NAME);
             switch (purpose){
                 case FALLING:
                 case WALKING:
@@ -114,7 +116,9 @@ public class enemyActionAnimation extends Animation {
 
         try {
             AffineTransform transform = AffineTransform.getTranslateInstance(x, y);
-            scale = 1;
+            if(this.entityName == "Tiger"){
+                scale = 0.5;
+            }
             if(this.purpose == Constants.ENEMY_STATES.IN_FIGHT_IDLE || this.purpose == Constants.ENEMY_STATES.IN_FIGHT_ATTACKING){
                 scale = 5;
             }

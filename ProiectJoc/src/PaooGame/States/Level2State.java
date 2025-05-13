@@ -2,7 +2,7 @@ package PaooGame.States;
 
 import PaooGame.Camera.Camera;
 import PaooGame.Config.Constants;
-import PaooGame.Entities.BasicSkeleton;
+import PaooGame.Entities.Enemy;
 import PaooGame.Entities.Entity;
 import PaooGame.HUD.PauseButton;
 import PaooGame.Input.MouseInput;
@@ -49,7 +49,7 @@ public class Level2State extends State{
 
         //TODO enemies
         this.saves[0] = new SaveItem(this.refLink,Constants.LEVEL2_SAVE1_X,Constants.LEVEL2_SAVE1_Y);
-        this.enemies[0] = new BasicSkeleton(this.refLink,Constants.HERO_LEVEL2_STARTING_X,Constants.HERO_LEVEL2_STARTING_Y);
+        this.enemies[0] = new Enemy(this.refLink,Constants.HERO_LEVEL2_STARTING_X+300,Constants.HERO_LEVEL2_STARTING_Y,Constants.BASIC_SKELETON_NAME);
 
         pauseButton = new PauseButton(reflink.getHero(),80,50);
 
@@ -73,19 +73,22 @@ public class Level2State extends State{
 
 
         for(Entity enemy : enemies){
-            if(enemy.getHealth()==0){
-                enemy.nullifyHitbox();
-            }
-            else{
-                if(refLink.getHero().getHitbox().intersects(enemy.getHitbox())){
-                    enemy.setIsEngaged(true);
-                    this.transitioning = true;
-                    this.transition_to_fight = true;
-                    refLink.getGame().getFightState().setEnemy(enemy);
-
+            if(enemy!=null){
+                if(enemy.getHealth()==0){
+                    enemy.nullifyHitbox();
                 }
+                else{
+                    if(refLink.getHero().getHitbox().intersects(enemy.getHitbox())){
+                        enemy.setIsEngaged(true);
+                        this.transitioning = true;
+                        this.transition_to_fight = true;
+                        refLink.getGame().getFightState().setEnemy(enemy);
+
+                    }
+                }
+                enemy.update();
             }
-            enemy.update();
+
         }
         if(this.transition_to_fight && this.targetBlackIntensity==1) {
             this.targetBlackIntensity = 0;
@@ -185,7 +188,7 @@ public class Level2State extends State{
         }
 
         for(Entity enemy : enemies){
-            if(enemy.getHealth()>0){
+            if(enemy!=null && enemy.getHealth()>0){
                 enemy.draw(g);
             }
         }

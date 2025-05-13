@@ -1,54 +1,66 @@
 package PaooGame.Entities;
 
 import PaooGame.Animations.Animation;
-import PaooGame.Animations.EnemyAnimations.enemyActionAnimation;
 import PaooGame.Config.Constants;
 import PaooGame.Hitbox.Hitbox;
 import PaooGame.Maps.Level;
 import PaooGame.RefLinks;
 import PaooGame.States.State;
+import PaooGame.Strategies.EnemyStrategies.EnemyStrategy;
 
-public class Tiger extends Entity {
+public class Enemy extends Entity {
     private Constants.ENEMY_STATES currentState;
 
     private Animation walkingAnimation;
     private Animation inFightIdleAnimation;
     private Animation inFightAttackingAnimation;
 
+    private EnemyStrategy enemyStrategy;
+
     private int directionSwitchCounter = 5;
 
-    public Tiger(RefLinks reflink, int startX, int startY){
+    public Enemy(RefLinks reflink, int startX, int startY, String enemyType){
         super(reflink,startX,startY);
-        this.speed = -0.4f;
-        this.hitbox = new Hitbox(this.x,this.y,(int)( (64.0/100.0)*50.0 ),(int)( (32.0/100)*50.0 ));
+
+        switch (enemyType){
+            case Constants.TIGER_NAME:
+                this.enemyStrategy = this.reflink.getTigerEnemyStrategy();
+                break;
+            case Constants.BASIC_SKELETON_NAME:
+                this.enemyStrategy = this.reflink.getBasicSkeletonStrategy();
+                break;
+        }
+
+        this.speed = -0.4f; //
+        this.hitbox = new Hitbox(this.x,this.y,(int)( (64.0/100.0)*50.0 ),(int)( (32.0/100)*50.0 )); //
         this.currentState = Constants.ENEMY_STATES.FALLING;
 
-        this.setHealthBarColor1(Constants.YELLOW_HEALTH_BAR_COLOR_1);
-        this.setHealthBarColor2(Constants.YELLOW_HEALTH_BAR_COLOR_2);
+        this.setHealthBarColor1(Constants.YELLOW_HEALTH_BAR_COLOR_1); //
+        this.setHealthBarColor2(Constants.YELLOW_HEALTH_BAR_COLOR_2); //
 
-        this.walkingAnimation = new enemyActionAnimation(this.reflink,Constants.ENEMY_STATES.WALKING,4,10,this.getName());
-        this.walkingAnimation.loadAnimation();
-        this.inFightAttackingAnimation = new enemyActionAnimation(this.reflink,Constants.ENEMY_STATES.IN_FIGHT_ATTACKING,4,15,this.getName());
-        this.inFightAttackingAnimation.loadAnimation();
-        this.inFightIdleAnimation = new enemyActionAnimation(this.reflink,Constants.ENEMY_STATES.IN_FIGHT_IDLE,1,10,this.getName());
-        this.inFightIdleAnimation.loadAnimation();
+        this.walkingAnimation = this.enemyStrategy.getWalkingAnimation();// new enemyActionAnimation(this.reflink,Constants.ENEMY_STATES.WALKING,4,10,this.getName()); //
+//        this.walkingAnimation.loadAnimation();
+        this.inFightAttackingAnimation = this.enemyStrategy.getInFightAttackingAnimation();//new enemyActionAnimation(this.reflink,Constants.ENEMY_STATES.IN_FIGHT_ATTACKING,4,15,this.getName()); //
+//        this.inFightAttackingAnimation.loadAnimation();
+        this.inFightIdleAnimation = this.enemyStrategy.getInFightIdleAnimation();//new enemyActionAnimation(this.reflink,Constants.ENEMY_STATES.IN_FIGHT_IDLE,1,10,this.getName()); //
+//        this.inFightIdleAnimation.loadAnimation();
 
-        this.damage = Constants.TIGER_DAMAGE;
-        this.health = Constants.TIGER_HEALTH;
+        this.damage = this.enemyStrategy.getDamage();//Constants.TIGER_DAMAGE; //
+        this.health = this.enemyStrategy.getHealth();//Constants.TIGER_HEALTH; //
 
-        this.behaviorIDsToRespect = reflink.getGame().getLevel1().getBehaviorIDs();
+        this.behaviorIDsToRespect = this.enemyStrategy.getBehaviorIDsToRespect();//reflink.getGame().getLevel1().getBehaviorIDs(); //
 
 
     }
 
     @Override
-    public void restoreEntity() {
+    public void restoreEntity() { //
         this.health = 100.0;
-        this.speed = Constants.TIGER_SPEED;
+        this.speed = this.enemyStrategy.getSpeed();//Constants.TIGER_SPEED;
         this.hitbox.setX(this.x);
         this.hitbox.setY(this.y);
-        this.hitbox.setWidth((int)( (64.0/100.0)*50.0 ));
-        this.hitbox.setHeight((int)( (32.0/100)*50.0 ));
+        this.hitbox.setWidth(this.enemyStrategy.getHitboxWidth());
+        this.hitbox.setHeight(this.enemyStrategy.getHitboxHeight());
         this.currentState = Constants.ENEMY_STATES.FALLING;
         this.isEngaged = false;
     }
@@ -56,8 +68,8 @@ public class Tiger extends Entity {
     @Override
     public void update(){
         if(this.currentState == Constants.ENEMY_STATES.FALLING || this.currentState == Constants.ENEMY_STATES.WALKING){
-            this.hitbox.setWidth((int)( (64.0/100.0)*50.0 ));
-            this.hitbox.setHeight((int)( (32.0/100)*50.0 ));
+            this.hitbox.setWidth(this.enemyStrategy.getHitboxWidth()); //
+            this.hitbox.setHeight(this.enemyStrategy.getHitboxHeight()); //
             applyGravity();
             moveAndCollide();
             updateVisualPosition();
@@ -121,7 +133,7 @@ public class Tiger extends Entity {
         float originalX = this.hitbox.getX(); //partea stanga a hitbox-ului
         float deltaX = this.velocityX; //cat ar trebui sa se deplaseze
 
-        boolean changingDirection = !Level.isGroundAhead(this.hitbox,!this.flipped,Constants.LEVEL1_WIDTH,Constants.LEVEL1_HEIGHT,this.behaviorIDsToRespect);
+        boolean changingDirection = !Level.isGroundAhead(this.hitbox,!this.flipped,this.enemyStrategy.getLevelWidthInTiles(),this.enemyStrategy.getLevelHeightInTiles(),this.behaviorIDsToRespect); //
         if(directionSwitchCounter == 5){
             if(changingDirection){
 //            this.flipped = !this.flipped;
@@ -153,7 +165,7 @@ public class Tiger extends Entity {
         float deltaY = this.velocityY;
         this.hitbox.setY(originalY + deltaY);
 
-        int fallCheckResult = Level.checkFalling(hitbox,Constants.LEVEL1_WIDTH,Constants.LEVEL1_HEIGHT,this.behaviorIDsToRespect);
+        int fallCheckResult = Level.checkFalling(hitbox,this.enemyStrategy.getLevelWidthInTiles(),this.enemyStrategy.getLevelHeightInTiles(),this.behaviorIDsToRespect); //
 
 
         if (this.velocityY > 0) { // Moving Down
@@ -186,8 +198,8 @@ public class Tiger extends Entity {
 
     @Override
     public String getName(){
-        return "Tiger";
-    }
+        return this.enemyStrategy.getName();
+    } //
 
 
 
@@ -199,8 +211,8 @@ public class Tiger extends Entity {
 
     @Override
     public String getSource() {
-        return "LEVEL_1";
-    }
+        return this.enemyStrategy.getSource();
+    } //
 
     public void setX(int x){this.x = x;}
     public void setY(int y){this.y = y;}

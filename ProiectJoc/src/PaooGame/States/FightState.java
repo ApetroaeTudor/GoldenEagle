@@ -135,7 +135,7 @@ public class FightState extends State {
         if(this.tigerStrategy ==null){
             if(this.enemy!=null){
                 switch (this.enemy.getName()){
-                    case "Tiger":
+                    case Constants.TIGER_NAME:
                         this.tigerStrategy = new FightStrategy.FightStrategyBuilder(this.enemy)
                                 .x(480)
                                 .y(100)
@@ -150,7 +150,7 @@ public class FightState extends State {
                                 .ownerState(refLink.getGame().getLevel1State()).
                                 build();
                         break;
-                    case "BasicSkeleton":
+                    case Constants.BASIC_SKELETON_NAME:
                         this.basicSkeletonStrategy = new FightStrategy.FightStrategyBuilder(this.enemy)
                                 .x(480)
                                 .y(100)
@@ -171,10 +171,10 @@ public class FightState extends State {
 
         if(this.enemy!=null){
             switch (this.enemy.getName()){
-                case "Tiger":
+                case Constants.TIGER_NAME:
                     this.fightStrategy = tigerStrategy;
                     break;
-                case "BasicSkeleton":
+                case Constants.BASIC_SKELETON_NAME:
                     this.fightStrategy = basicSkeletonStrategy;
                     break;
             }

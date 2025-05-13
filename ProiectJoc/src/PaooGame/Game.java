@@ -8,6 +8,9 @@ import PaooGame.Input.MouseInput;
 import PaooGame.Maps.Level1;
 import PaooGame.Maps.Level2;
 import PaooGame.States.*;
+import PaooGame.Strategies.EnemyStrategies.BasicSkeletonEnemyStrategy;
+import PaooGame.Strategies.EnemyStrategies.EnemyStrategy;
+import PaooGame.Strategies.EnemyStrategies.TigerEnemyStrategy;
 import PaooGame.Tiles.Tile;
 import PaooGame.Tiles.TileCache;
 import PaooGame.Maps.Level3;
@@ -25,6 +28,9 @@ public class Game implements Runnable {
     private State menuState;
     private State settingsState;
 
+    private EnemyStrategy tigerEnemyStrategy;
+    private EnemyStrategy basicSkeletonStrategy;
+
     private State level1State;
     private Level1 level1;
     private State level2State;
@@ -39,6 +45,7 @@ public class Game implements Runnable {
     private KeyManager keyManager;
     private RefLinks refLink;
     private MouseInput mouseInput;
+
 
     private TileCache tileCache;
     private Hero hero;
@@ -72,8 +79,8 @@ public class Game implements Runnable {
         refLink.setMouseInput(mouseInput);
         refLink.setTileCache(tileCache);
 
-//        hero = new Hero(refLink,Constants.HERO_LEVEL1_STARTING_X,Constants.HERO_LEVEL1_STARTING_Y);
-        hero = new Hero(refLink,Constants.HERO_LEVEL2_STARTING_X,Constants.HERO_LEVEL2_STARTING_Y);
+        hero = new Hero(refLink,Constants.HERO_LEVEL1_STARTING_X,Constants.HERO_LEVEL1_STARTING_Y);
+//        hero = new Hero(refLink,Constants.HERO_LEVEL2_STARTING_X,Constants.HERO_LEVEL2_STARTING_Y);
 
         //hero = new Hero(refLink, 1770, 252); //100 - 420
 //        hero = new Hero(refLink,284,1300);
@@ -82,6 +89,12 @@ public class Game implements Runnable {
         level1 = new Level1();
         level2 = new Level2();
         level3 = new Level3();
+
+        tigerEnemyStrategy = TigerEnemyStrategy.getInstance(refLink);
+        this.refLink.setTigerEnemyStrategy(this.tigerEnemyStrategy);
+
+        basicSkeletonStrategy = BasicSkeletonEnemyStrategy.getInstance(refLink);
+        this.refLink.setBasicSkeletonStrategy(this.basicSkeletonStrategy);
 
         menuState = new MenuState(refLink);
         settingsState = new SettingsState(refLink);
@@ -93,6 +106,8 @@ public class Game implements Runnable {
         deathState = new DeathState(refLink);
         pauseMenuState = new PauseMenuState(refLink);
         State.setState(menuState);
+
+
     }
 
 
