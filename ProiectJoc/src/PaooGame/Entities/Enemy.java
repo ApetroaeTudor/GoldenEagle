@@ -65,16 +65,18 @@ public class Enemy extends Entity {
 
     }
 
+
+
     @Override
     public void restoreEntity() { //
-        this.health = 100.0;
-        this.speed = this.enemyStrategy.getSpeed();//Constants.TIGER_SPEED;
-        this.hitbox.setX(this.x);
-        this.hitbox.setY(this.y);
-        this.hitbox.setWidth(this.enemyStrategy.getHitboxWidth());
-        this.hitbox.setHeight(this.enemyStrategy.getHitboxHeight());
-        this.currentState = Constants.ENEMY_STATES.FALLING;
-        this.isEngaged = false;
+//        this.health = 100.0;
+//        this.speed = this.enemyStrategy.getSpeed();//Constants.TIGER_SPEED;
+//        this.hitbox.setX(this.x);
+//        this.hitbox.setY(this.y);
+//        this.hitbox.setWidth(this.enemyStrategy.getHitboxWidth());
+//        this.hitbox.setHeight(this.enemyStrategy.getHitboxHeight());
+//        this.currentState = Constants.ENEMY_STATES.FALLING;
+//        this.isEngaged = false;
     }
 
     @Override

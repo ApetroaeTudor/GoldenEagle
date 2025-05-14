@@ -7,14 +7,18 @@ import PaooGame.HUD.ContextHUD;
 import PaooGame.HUD.MessageTriggerZone;
 import PaooGame.HUD.PauseButton;
 import PaooGame.Input.MouseInput;
+import PaooGame.Items.FloppyItem;
 import PaooGame.Items.SaveItem;
 import PaooGame.Maps.Level2;
 import PaooGame.RefLinks;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
+import java.nio.file.AccessDeniedException;
+import java.time.Instant;
 
 public class Level2State extends State{
     private Level2 level2;
@@ -27,11 +31,9 @@ public class Level2State extends State{
     protected boolean transition_to_fight = false;
     private boolean isCameraSet = false;
 
-    private BufferedImage[] shadows;
-    private int nrOfShadows = 2;
-
-
     private ContextHUD contextHUD;
+
+
 
 
 
@@ -39,6 +41,7 @@ public class Level2State extends State{
     private Enemy[] enemies;
     private SaveItem[] saves;
     private int nrOfSaves = 1;
+    private FloppyItem[] floppyDisks;
 
     protected String stateName = Constants.LEVEL2_STATE;
 
@@ -50,8 +53,7 @@ public class Level2State extends State{
         this.level2 = level2;
         this.saves = new SaveItem[this.nrOfSaves];
         this.enemies = new Enemy[this.nrOfEnemies];
-        this.shadows = new BufferedImage[this.nrOfShadows];
-        this.shadows[0] = this.reflink.getTileCache().getSpecial(Constants.SHADOW_PATH,64,32,1);
+        this.floppyDisks = new FloppyItem[this.nrOfSaves];
 
 
         this.contextHUD = new ContextHUD(this.reflink.getHero());
@@ -63,8 +65,9 @@ public class Level2State extends State{
 
         this.saves[0] = new SaveItem(this.reflink,Constants.LEVEL2_SAVE1_X,Constants.LEVEL2_SAVE1_Y);
         this.enemies[0] = new Enemy(this.reflink,Constants.HERO_LEVEL2_STARTING_X+300,Constants.HERO_LEVEL2_STARTING_Y,Constants.BASIC_SKELETON_NAME); //basicSkeleton0
-        this.enemies[1] = new Enemy(this.reflink,1020,320,Constants.STRONG_SKELETON_NAME); //basicSkeleton1
-        this.enemies[2] = new Enemy(this.reflink,1700,240,Constants.BASIC_SKELETON_NAME); //basicSkeleton2
+        this.enemies[1] = new Enemy(this.reflink,1020,320,Constants.STRONG_SKELETON_NAME); //strongSkeleton0
+        this.enemies[2] = new Enemy(this.reflink,1700,240,Constants.BASIC_SKELETON_NAME); //basicSkeleton1
+        this.floppyDisks[0] = new FloppyItem(this.reflink,Constants.LEVEL2_SAVE1_X+10,Constants.LEVEL2_SAVE1_Y-30);
 
         pauseButton = new PauseButton(reflink.getHero(),80,50);
 
@@ -116,6 +119,7 @@ public class Level2State extends State{
     public void update(){
         //System.out.println("X = " + this.reflink.getHero().getX() + "Y = " + this.reflink.getHero().getY());
         this.reflink.getHero().update();
+        this.floppyDisks[0].updateItem();
 
 
 
@@ -123,7 +127,21 @@ public class Level2State extends State{
             this.saves[i].updateItem();
         }
         if(this.reflink.getHero().getHitbox().intersects(this.saves[0].getHitbox())){
-//            System.out.println("Interaction");
+            if(this.reflink.getHero().getNrOfCollectedSaves() == 1){
+                if(this.reflink.getHero().getHitbox().intersects(this.floppyDisks[0].getHitbox())){
+                    this.reflink.getHero().setNrOfCollectedSaves(this.reflink.getHero().getNrOfCollectedSaves()+1);
+                    this.reflink.getHero().setNrOfEscapes(this.reflink.getHero().getMaxNrOfEscapes());
+                    this.reflink.setHeroStoreDoneSignal(false);
+                    this.reflink.setLevel2StoreDoneSignal(false);
+                    this.reflink.getHero().storeHeroState(true);
+                    this.storeState(true);
+                    try{
+                        this.reflink.getDataProxy().storeBuffer(true);
+                    } catch (AccessDeniedException e){
+                        System.err.println(e.getMessage());
+                    }
+                }
+            }
         }
 
 
@@ -207,11 +225,44 @@ public class Level2State extends State{
             this.reflink.getHero().setJumpStrength(Constants.HERO_BASE_JUMP_STRENGTH);
             this.transitioning = false;
 
-            State.setState(this.reflink.getGame().getLevel3State());
+
+//            this.reflink.setDataStoreSignal(true);
+
+            if(this.reflink.getHero().getNrOfCompletedLevels() == 1){
+                this.reflink.getHero().setNrOfCompletedLevels(2);
+                this.reflink.setLevel2StoreDoneSignal(false);
+                this.storeState(true);
+
+                this.reflink.setHeroStoreDoneSignal(false);
+                this.reflink.getHero().storeHeroState(true);
+                try{
+                    this.reflink.getDataProxy().storeBuffer(true);
+                } catch (AccessDeniedException e){
+                    System.err.println(e.getMessage());
+                }
+            }
+
+//            try{
+//                this.reflink.getDataProxy().store(Constants.CURRENT_STATE,3,true);
+//            } catch (AccessDeniedException | IllegalArgumentException exc){
+//                System.err.println(exc.getMessage());
+//            }
             this.reflink.getHero().setX(Constants.HERO_LEVEL3_STARTING_X);
             this.reflink.getHero().getHitbox().setX(Constants.HERO_LEVEL3_STARTING_X);
             this.reflink.getHero().setY(Constants.HERO_LEVEL3_STARTING_Y);
             this.reflink.getHero().getHitbox().setY(Constants.HERO_LEVEL3_STARTING_Y);
+            this.reflink.getHero().setJumpStrength(-3.5f);
+            this.reflink.getHero().setNrOfCompletedLevels(2);
+            State.setState(this.reflink.getGame().getLevel3State());
+
+
+
+
+
+
+//            this.saveTimer.start();
+
+
 
         }
 
@@ -265,6 +316,10 @@ public class Level2State extends State{
             g2d.setColor(originalColor);
         }
 
+        if(this.reflink.getHero().getNrOfCollectedSaves()==1 /* && this.floppyDisks[0].getDrawable()*/){
+            this.floppyDisks[0].drawItem(g);
+        }
+
 
         this.reflink.getHero().draw(g);
         g2d.setTransform(originalTransform);
@@ -293,9 +348,34 @@ public class Level2State extends State{
         if(this.reflink.getLevel2RefreshDoneSignal()) {
             return;
         }
-        this.reflink.setLevel2RefreshDoneSignal(true);
+        try{
+            this.enemies[0].setHealth(this.reflink.getDataProxy().load(Constants.BASIC_SKELETON0_HEALTH,access));
+            this.enemies[1].setHealth(this.reflink.getDataProxy().load(Constants.STRONG_SKELETON0_HEALTH,access));
+            this.enemies[2].setHealth(this.reflink.getDataProxy().load(Constants.BASIC_SKELETON1_HEALTH,access));
+            this.reflink.setLevel2RefreshDoneSignal(true);
+        }catch (AccessDeniedException | IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+        }
     }
 
+    @Override
+    public void storeState(boolean access) {
+        if(this.reflink.getLevel2StoreDoneSignal()){
+            return;
+        }
+        try{
+            if(State.getState().getStateName().compareTo(this.stateName) == 0){
+                this.reflink.getDataProxy().store(Constants.CURRENT_STATE,2,access);
+            }
+            this.reflink.getDataProxy().store(Constants.TIMESTAMP,(int) Instant.now().getEpochSecond(),access);
+            this.reflink.getDataProxy().store(Constants.BASIC_SKELETON0_HEALTH,(int)this.enemies[0].getHealth(),access);
+            this.reflink.getDataProxy().store(Constants.STRONG_SKELETON0_HEALTH,(int)this.enemies[1].getHealth(),access);
+            this.reflink.getDataProxy().store(Constants.BASIC_SKELETON1_HEALTH,(int)this.enemies[2].getHealth(),access);
+            this.reflink.setLevel2StoreDoneSignal(true);
+        }catch (AccessDeniedException | IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+        }
+    }
 
 
 }

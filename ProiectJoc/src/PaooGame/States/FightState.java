@@ -552,6 +552,11 @@ public class FightState extends State {
     }
 
     @Override
+    public void storeState(boolean access) {
+
+    }
+
+    @Override
     public void setEnemy(Enemy enemy){
         this.enemy = enemy;
     }

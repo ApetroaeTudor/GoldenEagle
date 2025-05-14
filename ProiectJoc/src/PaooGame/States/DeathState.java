@@ -74,11 +74,12 @@ public class DeathState extends State {
             Graphics2D g2d = (Graphics2D) g;
             Color originalColor = g2d.getColor();
             if(this.blackIntensity>1){
-                this.restoreState();
-                this.blackIntensity = 1.0;
-                this.reflink.getHero().restoreEntity();
-                this.reflink.getGame().getLevel1State().restoreState();
-                this.reflink.getGame().getFightState().restoreState();
+                this.reflink.setDataRefreshSignal(true);
+//                this.restoreState();
+//                this.blackIntensity = 1.0;
+//                this.reflink.getHero().restoreEntity();
+//                this.reflink.getGame().getLevel1State().restoreState();
+//                this.reflink.getGame().getFightState().restoreState();
                 State.setState(this.reflink.getGame().getMenuState());
 
             }
@@ -103,6 +104,11 @@ public class DeathState extends State {
 
     @Override
     public void loadState(boolean access) {
+
+    }
+
+    @Override
+    public void storeState(boolean access) {
 
     }
 

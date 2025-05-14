@@ -204,13 +204,36 @@ public class Game implements Runnable {
             this.refLink.setLevel1RefreshDoneSignal(false);
             this.refLink.setLevel2RefreshDoneSignal(false);
             this.refLink.setLevel3RefreshDoneSignal(false);
-            this.refLink.getHero().loadHeroState(true);
+            this.refLink.setDataRefreshSignal(false);
+
             this.level1State.loadState(true);
             this.level2State.loadState(true);
             this.level3State.loadState(true);
+            this.refLink.getHero().loadHeroState(true);
+            System.out.println("refreshing");
+
         }
         if(this.refLink.getHeroRefreshDoneSignal() && this.refLink.getLevel1RefreshDoneSignal() && this.refLink.getLevel2RefreshDoneSignal() && this.refLink.getLevel3RefreshDoneSignal()){
-            this.refLink.setDataRefreshSignal(false);
+//            this.refLink.setDataRefreshSignal(false);
+        }
+
+        if(this.refLink.getDataStoreSignal()){
+            this.refLink.setHeroRefreshDoneSignal(false);
+            this.refLink.setLevel1RefreshDoneSignal(false);
+            this.refLink.setLevel2RefreshDoneSignal(false);
+            this.refLink.setLevel3RefreshDoneSignal(false);
+            this.refLink.setDataStoreSignal(false);
+
+            this.level1State.storeState(true);
+            this.level2State.storeState(true);
+            this.level3State.storeState(true);
+            this.refLink.getHero().storeHeroState(true);
+            System.out.println("storing");
+
+
+        }
+        if(this.refLink.getHeroStoreDoneSignal() && this.refLink.getLevel1StoreDoneSignal() && this.refLink.getLevel2RefreshDoneSignal() && this.refLink.getLevel3RefreshDoneSignal()){
+//            this.refLink.setDataStoreSignal(false);
         }
 
         if (State.getState() != null) {

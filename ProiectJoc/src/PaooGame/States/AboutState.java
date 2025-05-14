@@ -63,4 +63,9 @@ public class AboutState extends State
     public void loadState(boolean access) {
 
     }
+
+    @Override
+    public void storeState(boolean access) {
+
+    }
 }

@@ -32,6 +32,59 @@ public class RefLinks
     private boolean heroRefreshDoneSignal;
 
 
+    private boolean dataStoreSignal;
+    private boolean level1StoreDoneSignal;
+    private boolean level2StoreDoneSignal;
+    private boolean level3StoreDoneSignal;
+    private boolean heroStoreDoneSignal;
+
+    public void setDataStoreSignal(boolean dataStoreSignal) {
+        this.dataStoreSignal = dataStoreSignal;
+    }
+
+    public void setLevel1StoreDoneSignal(boolean level1StoreDoneSignal) {
+        this.level1StoreDoneSignal = level1StoreDoneSignal;
+    }
+
+    public void setLevel2StoreDoneSignal(boolean level2StoreDoneSignal) {
+        this.level2StoreDoneSignal = level2StoreDoneSignal;
+    }
+
+    public void setLevel3StoreDoneSignal(boolean level3StoreDoneSignal) {
+        this.level3StoreDoneSignal = level3StoreDoneSignal;
+    }
+
+    public void setHeroStoreDoneSignal(boolean heroStoreDoneSignal) {
+        this.heroStoreDoneSignal = heroStoreDoneSignal;
+    }
+
+
+
+    public boolean getDataStoreSignal() {
+        return dataStoreSignal;
+    }
+
+    public boolean getLevel1StoreDoneSignal() {
+        return level1StoreDoneSignal;
+    }
+
+    public boolean getLevel2StoreDoneSignal() {
+        return level2StoreDoneSignal;
+    }
+
+    public boolean getLevel3StoreDoneSignal() {
+        return level3StoreDoneSignal;
+    }
+
+    public boolean getHeroStoreDoneSignal() {
+        return heroStoreDoneSignal;
+    }
+
+
+
+
+
+
 
     public boolean getHeroRefreshDoneSignal(){
         return heroRefreshDoneSignal;

@@ -42,6 +42,7 @@ public class Constants {
     public static final int BOOT_TILE_WIDTH = 34;
     public static final int BOOT_TILE_HEIGHT = 28;
     public static final int ITEM_FLOATING_TILE_SIZE = 48;
+    public static final int SAVE_ITEM_TILE_SIZE = 16;
     public static final int BONFIRE_TILE_SIZE = 32;
     public static final int WHIP_POSITION_X = 495;
     public static final int WHIP_POSITION_Y = 1308;
@@ -91,6 +92,7 @@ public class Constants {
     public static final String WHIP_FRAMED_SHEET_PATH = "res/Items/WhipFramed.png";
     public static final String BONFIRE_SHEET_PATH = "res/Items/save_bonfire.png";
     public static final String SHADOW_PATH = "res/Items/shadow.png";
+    public static final String SAVE_ITEM_PATH = "res/Items/SaveFloppy.png";
 
     public static final String LEVEL1_STATE = "LEVEL1_STATE";
     public static final String LEVEL2_STATE = "LEVEL2_STATE";
@@ -103,6 +105,7 @@ public class Constants {
 
     public static final String WHIP_NAME = "WHIP";
     public static final String BONFIRE_NAME = "BONFIRE";
+    public static final String SAVE_ITEM_NAME = "SAVE";
 
     public static final Color GREEN_HEALTH_BAR_COLOR_1 = new Color(0, 255, 0);
     public static final Color GREEN_HEALTH_BAR_COLOR_2 = new Color(0, 150, 0);
@@ -117,7 +120,7 @@ public class Constants {
     public static final float DYING_ENTITY_GRAVITY = 0.001f;
 
     public static final double HERO_BASE_HEALTH = 100.0;
-    public static final double HERO_BASE_DAMAGE = 90.0;
+    public static final double HERO_BASE_DAMAGE = 100.0;
     public static final float HERO_BASE_SPEED = 2.0f;
     public static final float HERO_BASE_JUMP_STRENGTH = -5f;//-3.5f;
     public static final float HERO_LEVEL2_JUMP_STRENGTH = -6.0f;
@@ -257,6 +260,8 @@ public class Constants {
     public static final String HERO_Y = "HERO_Y";
     public static final String HERO_HAS_WHIP = "HERO_HAS_WHIP";
     public static final String HERO_NR_OF_FLEES = "HERO_NR_OF_FLEES";
+    public static final String HERO_NR_OF_COLLECTED_SAVES = "HERO_NR_OF_COLLECTED_SAVES";
+    public static final String HERO_NR_OF_FINISHED_LEVELS = "HERO_NR_OF_FINISHED_LEVELS";
 
     public static final String TIGER0_HEALTH = "TIGER0_HEALTH";
     public static final String TIGER1_HEALTH = "TIGER1_HEALTH";
@@ -273,9 +278,83 @@ public class Constants {
 
     public static final String TIMESTAMP = "TIMESTAMP";
 
+    public static final int NR_OF_DB_CONSTANTS = 19;
+
+
     public static String[] ALL_DATA_MANAGEMENT_CONSTANTS = {
-        CURRENT_STATE,HERO_HEALTH,HERO_X,HERO_Y,HERO_HAS_WHIP,HERO_NR_OF_FLEES,TIGER0_HEALTH,TIGER1_HEALTH,
-        BASIC_SKELETON0_HEALTH,BASIC_SKELETON1_HEALTH,STRONG_SKELETON0_HEALTH,BOSS_HEALTH,MINOTAUR0_HEALTH,
-        MINOTAUR1_HEALTH,GHOST0_HEALTH,GHOST1_HEALTH,TIMESTAMP
+        TIMESTAMP,
+            CURRENT_STATE,
+            HERO_HEALTH,
+            HERO_X,
+            HERO_Y,
+            HERO_HAS_WHIP,
+            HERO_NR_OF_FLEES,
+            HERO_NR_OF_COLLECTED_SAVES,
+            HERO_NR_OF_FINISHED_LEVELS,
+            TIGER0_HEALTH,
+            TIGER1_HEALTH,
+            BASIC_SKELETON0_HEALTH,
+            BASIC_SKELETON1_HEALTH,
+            STRONG_SKELETON0_HEALTH,
+            BOSS_HEALTH,
+            MINOTAUR0_HEALTH,
+            MINOTAUR1_HEALTH,
+            GHOST0_HEALTH,
+            GHOST1_HEALTH
     };
+
+    public static final int DB_MAX_ENTRIES = 5;
+
+    public static final String CREATE_TABLE_CMD = "CREATE TABLE IF NOT EXISTS GameData("+
+                                                    Constants.TIMESTAMP + " PRIMARY KEY, "+
+                                                    Constants.CURRENT_STATE + " INTEGER, "+
+                                                    Constants.HERO_HEALTH + " INTEGER, "+
+                                                    Constants.HERO_X + " INTEGER, "+
+                                                    Constants.HERO_Y + " INTEGER, "+
+                                                    Constants.HERO_HAS_WHIP + " INTEGER, "+
+                                                    Constants.HERO_NR_OF_FLEES + " INTEGER, "+
+                                                    Constants.HERO_NR_OF_COLLECTED_SAVES + " INTEGER, "+
+                                                    Constants.HERO_NR_OF_FINISHED_LEVELS + " INTEGER, "+
+                                                    Constants.TIGER0_HEALTH + " INTEGER, "+
+                                                    Constants.TIGER1_HEALTH + " INTEGER, "+
+                                                    Constants.BASIC_SKELETON0_HEALTH + " INTEGER, "+
+                                                    Constants.BASIC_SKELETON1_HEALTH + " INTEGER, "+
+                                                    Constants.STRONG_SKELETON0_HEALTH + " INTEGER, "+
+                                                    Constants.BOSS_HEALTH + " INTEGER, "+
+                                                    Constants.MINOTAUR0_HEALTH + " INTEGER, "+
+                                                    Constants.MINOTAUR1_HEALTH + " INTEGER, "+
+                                                    Constants.GHOST0_HEALTH + " INTEGER, "+
+                                                    Constants.GHOST1_HEALTH + " INTEGER);";
+
+    public static final String INSERT_CMD = "INSERT INTO GameData("+
+                                                    Constants.TIMESTAMP + ", "+
+                                                    Constants.CURRENT_STATE + ", "+
+                                                    Constants.HERO_HEALTH + ", "+
+                                                    Constants.HERO_X + ", "+
+                                                    Constants.HERO_Y + ", "+
+                                                    Constants.HERO_HAS_WHIP + ", "+
+                                                    Constants.HERO_NR_OF_FLEES + ", "+
+                                                    Constants.HERO_NR_OF_COLLECTED_SAVES + ", "+
+                                                    Constants.HERO_NR_OF_FINISHED_LEVELS + ", "+
+                                                    Constants.TIGER0_HEALTH + ", "+
+                                                    Constants.TIGER1_HEALTH + ", "+
+                                                    Constants.BASIC_SKELETON0_HEALTH + ", "+
+                                                    Constants.BASIC_SKELETON1_HEALTH + ", "+
+                                                    Constants.STRONG_SKELETON0_HEALTH + ", "+
+                                                    Constants.BOSS_HEALTH + ", "+
+                                                    Constants.MINOTAUR0_HEALTH + ", "+
+                                                    Constants.MINOTAUR1_HEALTH + ", "+
+                                                    Constants.GHOST0_HEALTH + ", "+
+                                                    Constants.GHOST1_HEALTH + ") VALUES ("+
+                                                    "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+
+    public static final String QUERY_SELECT_LATEST_SAVE_CMD = "SELECT * FROM GameData "+
+                                                        "ORDER BY " + Constants.TIMESTAMP + " DESC "+
+                                                        "LIMIT 1;";
+
+    public static final String DELETE_OLDEST_ENTRY_CMD = "DELETE FROM GameData WHERE rowid = " +
+                                                        "(SELECT rowid FROM GameData ORDER BY TIMESTAMP ASC LIMIT 1)";
+
+
+    public static final String QUERY_NR_OF_ENTRIES_CMD = "SELECT COUNT(*) FROM GameData;";
 }

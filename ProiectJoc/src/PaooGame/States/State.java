@@ -57,6 +57,7 @@ public abstract class State
     public abstract void restoreState();
 
     public abstract void loadState(boolean access);
+    public abstract void storeState(boolean access);
 
 
 }

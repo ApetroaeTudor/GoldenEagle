@@ -7,6 +7,7 @@ import PaooGame.Entities.Hero;
 import PaooGame.HUD.ContextHUD;
 import PaooGame.HUD.MessageTriggerZone;
 import PaooGame.Input.MouseInput;
+import PaooGame.Items.FloppyItem;
 import PaooGame.Items.SaveItem;
 import PaooGame.Maps.Level1;
 import PaooGame.RefLinks;
@@ -14,7 +15,12 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
+import java.nio.file.AccessDeniedException;
+import java.time.Instant;
+
 import PaooGame.HUD.PauseButton;
+
+import javax.swing.*;
 
 
 public class Level1State extends State {
@@ -31,8 +37,12 @@ public class Level1State extends State {
 
     private SaveItem[] saves;
     private int nrOfSaves = 1;
+    private FloppyItem[] floppyDisks;
 
     private ContextHUD contextHUD;
+
+    private Timer saveTimer;
+    private int saveDelayMillis = 100;
 
 
 
@@ -60,9 +70,11 @@ public class Level1State extends State {
 
 
         enemies = new Enemy[2];
+        floppyDisks = new FloppyItem[this.nrOfSaves];
         enemies[0] = new Enemy(this.reflink,this.tiger1X,this.tiger1Y,Constants.TIGER_NAME); //tiger0
         enemies[1] = new Enemy(this.reflink,this.tiger2X,this.tiger2Y,Constants.TIGER_NAME); //tiger1
         this.saves[0] = new SaveItem(this.reflink,Constants.LEVEL1_SAVE1_X,Constants.LEVEL1_SAVE1_Y);
+        this.floppyDisks[0] = new FloppyItem(this.reflink,Constants.LEVEL1_SAVE1_X+10,Constants.LEVEL1_SAVE1_Y-30);
 
         pauseButton = new PauseButton(refLink.getHero(), 80, 50);
         // Calculează dimensiunile totale ale nivelului
@@ -80,17 +92,21 @@ public class Level1State extends State {
                 850, 600, 100, 50, // x, y, width, height
                 "Sari în peșteră!"
         ));
+
+
+        this.saveTimer = new Timer(this.saveDelayMillis,e->{
+            this.reflink.setDataStoreSignal(true);
+            try{
+                this.reflink.getDataProxy().store(Constants.CURRENT_STATE,2,true);
+            } catch (AccessDeniedException | IllegalArgumentException exc){
+                System.err.println(exc.getMessage());
+            }
+        });
+        this.saveTimer.setRepeats(false);
     }
 
     @Override
     public void restoreState() {
-        this.enemies[0].setX(this.tiger1X);
-        this.enemies[0].setY(this.tiger1Y);
-        this.enemies[1].setX(this.tiger2X);
-        this.enemies[1].setY(this.tiger2Y);
-        for(Enemy enemy: enemies){
-            enemy.restoreEntity();
-        }
     }
 
 
@@ -98,14 +114,28 @@ public class Level1State extends State {
     public void update() {
         this.reflink.getHero().update();
 
-
+        this.floppyDisks[0].updateItem();
 
         Hero hero = reflink.getHero();
         for(int i =0;i<this.nrOfSaves;++i){
             this.saves[i].updateItem();
         }
         if(this.reflink.getHero().getHitbox().intersects(this.saves[0].getHitbox())){
-//            System.out.println("Interaction");
+            if(this.reflink.getHero().getNrOfCollectedSaves() == 0){
+                if(this.reflink.getHero().getHitbox().intersects(this.floppyDisks[0].getHitbox())){
+                    this.reflink.getHero().setNrOfCollectedSaves(this.reflink.getHero().getNrOfCollectedSaves()+1);
+                    this.reflink.getHero().setNrOfEscapes(this.reflink.getHero().getMaxNrOfEscapes());
+                    this.reflink.setHeroStoreDoneSignal(false);
+                    this.reflink.setLevel1StoreDoneSignal(false);
+                    this.reflink.getHero().storeHeroState(true);
+                    this.storeState(true);
+                    try{
+                        this.reflink.getDataProxy().storeBuffer(true);
+                    } catch (AccessDeniedException e){
+                        System.err.println(e.getMessage());
+                    }
+                }
+            }
         }
 
 
@@ -169,12 +199,37 @@ public class Level1State extends State {
         if(this.isSwitchingToLevel2 && this.targetBlackIntensity ==1){
             this.targetBlackIntensity = 0;
             this.isSwitchingToLevel2 = false;
-            State.setState(reflink.getGame().getLevel2State());
+
+
+            if(this.reflink.getHero().getNrOfCompletedLevels() == 0){
+                this.reflink.getHero().setNrOfCompletedLevels(1);
+                this.reflink.getHero().getHitbox().setY(650);
+                this.reflink.setLevel1StoreDoneSignal(false);
+                this.storeState(true);
+                this.reflink.setHeroStoreDoneSignal(false);
+                this.reflink.getHero().storeHeroState(true);
+                try{
+                    this.reflink.getDataProxy().storeBuffer(true);
+                } catch (AccessDeniedException e){
+                    System.err.println(e.getMessage());
+                }
+            }
+
+
+//            this.reflink.setDataStoreSignal(true);
+
+
             this.reflink.getHero().setX(Constants.HERO_LEVEL2_STARTING_X);
             this.reflink.getHero().setY(Constants.HERO_LEVEL2_STARTING_Y);
             this.reflink.getHero().getHitbox().setX(Constants.HERO_LEVEL2_STARTING_X);
             this.reflink.getHero().getHitbox().setY((Constants.HERO_LEVEL2_STARTING_Y));
             this.reflink.getHero().setJumpStrength(Constants.HERO_LEVEL2_JUMP_STRENGTH);
+            this.reflink.getHero().setNrOfCollectedSaves(1);
+
+            State.setState(reflink.getGame().getLevel2State());
+//            this.saveTimer.start();
+
+
         }
 
         if(this.transition_to_fight && this.targetBlackIntensity==1 && !this.isSwitchingToLevel2) {
@@ -236,6 +291,10 @@ public class Level1State extends State {
             }
         }
 
+        if(this.reflink.getHero().getNrOfCollectedSaves()==0 /* && this.floppyDisks[0].getDrawable()*/){
+            this.floppyDisks[0].drawItem(g);
+        }
+
         if(this.transitioning || this.isSwitchingToLevel2) {
             Color originalColor = g2d.getColor();
             this.targetBlackIntensity += this.blackFadeStep;
@@ -295,6 +354,33 @@ public class Level1State extends State {
         if(this.reflink.getLevel1RefreshDoneSignal()) {
             return;
         }
-        this.reflink.setLevel1RefreshDoneSignal(true);
+        try{
+            this.enemies[0].setHealth(this.reflink.getDataProxy().load(Constants.TIGER0_HEALTH,access));
+            this.enemies[1].setHealth(this.reflink.getDataProxy().load(Constants.TIGER1_HEALTH,access));
+            this.reflink.setLevel1RefreshDoneSignal(true);
+
+        }catch (AccessDeniedException | IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+        }
     }
+
+    @Override
+    public void storeState(boolean access) {
+        if(this.reflink.getLevel1StoreDoneSignal()){
+            return;
+        }
+        try{
+            if(State.getState().getStateName().compareTo(this.stateName) == 0){
+                this.reflink.getDataProxy().store(Constants.CURRENT_STATE,1,access);
+            }
+            this.reflink.getDataProxy().store(Constants.TIMESTAMP,(int) Instant.now().getEpochSecond(),access);
+            this.reflink.getDataProxy().store(Constants.TIGER0_HEALTH,(int)this.enemies[0].getHealth(),access);
+            this.reflink.getDataProxy().store(Constants.TIGER1_HEALTH,(int)this.enemies[1].getHealth(),access);
+            this.reflink.setLevel1StoreDoneSignal(true);
+        }catch (AccessDeniedException | IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+
 }

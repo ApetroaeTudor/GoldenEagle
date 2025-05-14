@@ -4,6 +4,7 @@ import PaooGame.Config.Constants;
 import PaooGame.Entities.Enemy;
 import PaooGame.HUD.PauseButton;
 import PaooGame.Input.MouseInput;
+import PaooGame.Items.FloppyItem;
 import PaooGame.Items.SaveItem;
 import PaooGame.Items.WhipItem;
 import PaooGame.Maps.Level;
@@ -16,6 +17,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
+import java.nio.file.AccessDeniedException;
+import java.time.Instant;
 import java.util.LinkedList;
 
 
@@ -48,6 +51,7 @@ public class Level3State extends State{
 
     private SaveItem[] saves;
     private int nrOfSaves = 4;
+    private FloppyItem[] floppyDisks;
 
     protected String stateName = Constants.LEVEL3_STATE;
 
@@ -58,6 +62,7 @@ public class Level3State extends State{
         super(reflink);
         this.whip = new WhipItem(this.reflink,Constants.WHIP_POSITION_X,Constants.WHIP_POSITION_Y);
         this.saves = new SaveItem[this.nrOfSaves];
+        this.floppyDisks = new FloppyItem[this.nrOfSaves];
 
         this.level3 = level3;
         this.MarkedHooks = new LinkedList<Point>();
@@ -82,6 +87,10 @@ public class Level3State extends State{
         this.saves[1] = new SaveItem(this.reflink,Constants.LEVEL3_SAVE2_X,Constants.LEVEL3_SAVE2_Y);
         this.saves[2] = new SaveItem(this.reflink,Constants.LEVEL3_SAVE3_X,Constants.LEVEL3_SAVE3_Y);
         this.saves[3] = new SaveItem(this.reflink,Constants.LEVEL3_SAVE4_X,Constants.LEVEL3_SAVE4_Y);
+        this.floppyDisks[0] = new FloppyItem(this.reflink,Constants.LEVEL3_SAVE1_X+10,Constants.LEVEL3_SAVE1_Y-20);
+        this.floppyDisks[1] = new FloppyItem(this.reflink,Constants.LEVEL3_SAVE2_X+10,Constants.LEVEL3_SAVE2_Y-20);
+        this.floppyDisks[2] = new FloppyItem(this.reflink,Constants.LEVEL3_SAVE3_X+10,Constants.LEVEL3_SAVE3_Y-20);
+        this.floppyDisks[3] = new FloppyItem(this.reflink,Constants.LEVEL3_SAVE4_X+10,Constants.LEVEL3_SAVE4_Y-20);
 
 
     }
@@ -98,11 +107,14 @@ public class Level3State extends State{
 
     @Override
     public void restoreState(){
-
     }
 
     @Override
     public void update(){
+
+        for(FloppyItem disk : this.floppyDisks){
+            disk.updateItem();
+        }
 
        // System.out.println("x: " + this.reflink.getHero().getX() + " y: "+this.reflink.getHero().getY());
 
@@ -114,10 +126,25 @@ public class Level3State extends State{
 
         for(int i =0;i<this.nrOfSaves;++i){
             this.saves[i].updateItem();
+            if(i+2 == this.reflink.getHero().getNrOfCollectedSaves()){
+                if(this.reflink.getHero().getHitbox().intersects(this.floppyDisks[i].getHitbox())){
+                    this.reflink.getHero().setNrOfCollectedSaves(this.reflink.getHero().getNrOfCollectedSaves()+1);
+                    this.reflink.getHero().setNrOfEscapes(this.reflink.getHero().getMaxNrOfEscapes());
+                    this.reflink.setHeroStoreDoneSignal(false);
+                    this.reflink.setLevel3StoreDoneSignal(false);
+                    this.reflink.getHero().storeHeroState(true);
+                    this.storeState(true);
+                    try{
+                        this.reflink.getDataProxy().storeBuffer(true);
+                    } catch (AccessDeniedException e){
+                        System.err.println(e.getMessage());
+                    }
+                }
+            }
         }
-        if(this.reflink.getHero().getHitbox().intersects(this.saves[0].getHitbox())){
-//            System.out.println("Interaction");
-        }
+//        if(this.reflink.getHero().getHitbox().intersects(this.saves[0].getHitbox())){
+////            System.out.println("Interaction");
+//        }
 
 
         for(Enemy enemy : enemies){
@@ -327,6 +354,12 @@ public class Level3State extends State{
             this.saves[i].drawItem(g);
         }
 
+        for(int i = 0;i<this.nrOfSaves;++i){
+            if(this.reflink.getHero().getNrOfCollectedSaves() == i+2){
+                this.floppyDisks[i].drawItem(g);
+            }
+        }
+
         if(reflink.getHero().getHealth() == 0 || this.transitioning || this.transition_to_fight){
             this.targetBlackIntensity+=this.blackFadeStep;
             Color originalColor = g2d.getColor();
@@ -390,7 +423,42 @@ public class Level3State extends State{
         if(this.reflink.getLevel3RefreshDoneSignal()) {
             return;
         }
-        this.reflink.setLevel3RefreshDoneSignal(true);
+        try{
+            System.out.println("Loading level3");
+            this.enemies[0].setHealth(this.reflink.getDataProxy().load(Constants.BOSS_HEALTH,access));
+            this.enemies[1].setHealth(this.reflink.getDataProxy().load(Constants.MINOTAUR0_HEALTH,access));
+            this.enemies[2].setHealth(this.reflink.getDataProxy().load(Constants.MINOTAUR1_HEALTH,access));
+            this.enemies[3].setHealth(this.reflink.getDataProxy().load(Constants.GHOST0_HEALTH,access));
+            this.enemies[4].setHealth(this.reflink.getDataProxy().load(Constants.GHOST1_HEALTH,access));
+            this.cameraIsSet = false;
+
+            this.reflink.setLevel3RefreshDoneSignal(true);
+
+
+        }catch (AccessDeniedException | IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    @Override
+    public void storeState(boolean access) {
+        if(this.reflink.getLevel3StoreDoneSignal()){
+            return;
+        }
+        try{
+            if(State.getState().getStateName().compareTo(this.stateName) == 0){
+                this.reflink.getDataProxy().store(Constants.CURRENT_STATE,3,access);
+            }
+            this.reflink.getDataProxy().store(Constants.TIMESTAMP,(int) Instant.now().getEpochSecond(),access);
+            this.reflink.getDataProxy().store(Constants.BOSS_HEALTH,(int)this.enemies[0].getHealth(),access);
+            this.reflink.getDataProxy().store(Constants.MINOTAUR0_HEALTH,(int)this.enemies[1].getHealth(),access);
+            this.reflink.getDataProxy().store(Constants.MINOTAUR1_HEALTH,(int)this.enemies[2].getHealth(),access);
+            this.reflink.getDataProxy().store(Constants.GHOST0_HEALTH,(int)this.enemies[3].getHealth(),access);
+            this.reflink.getDataProxy().store(Constants.GHOST1_HEALTH,(int)this.enemies[4].getHealth(),access);
+            this.reflink.setLevel3StoreDoneSignal(true);
+        }catch (AccessDeniedException | IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+        }
     }
 
 

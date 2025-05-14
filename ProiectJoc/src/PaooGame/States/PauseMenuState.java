@@ -109,6 +109,11 @@ public class PauseMenuState extends State {
 
     }
 
+    @Override
+    public void storeState(boolean access) {
+
+    }
+
     private void drawModernButton(Graphics2D g2d, Rectangle rect, String text, int mx, int my) {
         boolean hover = rect.contains(mx, my);
 

@@ -9,6 +9,8 @@ import java.awt.*;
 
 public class SaveItem extends Item{
 
+    private boolean isUsed = false;
+
 
     public SaveItem(RefLinks reflink,int x,int y){
         super();
@@ -34,4 +36,7 @@ public class SaveItem extends Item{
     public void updateItem() {
         this.animation.updateAnimation();
     }
+
+    public boolean getIsUsed() { return this.isUsed; }
+    public void setIsUsed(boolean isUsed) { this.isUsed = isUsed;}
 }

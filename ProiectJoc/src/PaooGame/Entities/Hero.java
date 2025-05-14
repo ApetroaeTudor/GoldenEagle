@@ -34,6 +34,10 @@ public class Hero extends Entity {
 
     private int nrOfEscapes = 2;
     private int maxNrOfEscapes = 2;
+    private int nrOfCompletedLevels = 0;
+
+    private int nrOfCollectedSaves = 0;
+
 
 
 
@@ -121,6 +125,7 @@ public class Hero extends Entity {
 
     @Override
     public void update() {
+
 
 
 
@@ -502,6 +507,7 @@ public class Hero extends Entity {
         }
 
         try{
+            System.out.println("Loading Character");
             this.health = this.reflink.getDataProxy().load(Constants.HERO_HEALTH,access);
             this.x = this.reflink.getDataProxy().load(Constants.HERO_X,access);
             this.getHitbox().setX(this.x);
@@ -509,7 +515,29 @@ public class Hero extends Entity {
             this.getHitbox().setY(this.y);
             this.hasWhip = this.reflink.getDataProxy().load(Constants.HERO_HAS_WHIP, access) == 1;
             this.nrOfEscapes = this.reflink.getDataProxy().load(Constants.HERO_NR_OF_FLEES,access);
+            this.nrOfCollectedSaves = this.reflink.getDataProxy().load(Constants.HERO_NR_OF_COLLECTED_SAVES,access);
+            this.nrOfCompletedLevels = this.reflink.getDataProxy().load(Constants.HERO_NR_OF_FINISHED_LEVELS,access);
             this.reflink.setHeroRefreshDoneSignal(true);
+        } catch (AccessDeniedException | IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public void storeHeroState(boolean access){
+        if(this.reflink.getHeroStoreDoneSignal()){
+            return;
+        }
+
+        try{
+            this.reflink.getDataProxy().store(Constants.HERO_HEALTH,(int)this.health,access);
+            this.reflink.getDataProxy().store(Constants.HERO_X,(int)this.getHitbox().getX(),access);
+            this.reflink.getDataProxy().store(Constants.HERO_Y,(int)this.getHitbox().getY(), access);
+            int storeWhip = this.hasWhip ? 1:0;
+            this.reflink.getDataProxy().store(Constants.HERO_HAS_WHIP,storeWhip, access);
+            this.reflink.getDataProxy().store(Constants.HERO_NR_OF_FLEES,this.nrOfEscapes,access);
+            this.reflink.getDataProxy().store(Constants.HERO_NR_OF_COLLECTED_SAVES,this.nrOfCollectedSaves,access);
+            this.reflink.getDataProxy().store(Constants.HERO_NR_OF_FINISHED_LEVELS,this.nrOfCompletedLevels,access);
+            this.reflink.setHeroStoreDoneSignal(true);
         } catch (AccessDeniedException | IllegalArgumentException e) {
             System.err.println(e.getMessage());
         }
@@ -517,4 +545,10 @@ public class Hero extends Entity {
 
 
     }
+
+    public int getNrOfCollectedSaves() { return this.nrOfCollectedSaves;}
+    public void setNrOfCollectedSaves(int nr) { this.nrOfCollectedSaves = nr;}
+
+    public int getNrOfCompletedLevels() { return this.nrOfCompletedLevels;}
+    public void setNrOfCompletedLevels(int nrOfCompletedLevels) { this.nrOfCompletedLevels = nrOfCompletedLevels;}
 }

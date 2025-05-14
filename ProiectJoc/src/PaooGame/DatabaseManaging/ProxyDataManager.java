@@ -20,6 +20,8 @@ public class ProxyDataManager implements DataManager {
         if(!access){
             throw new AccessDeniedException("Sorry, you don't have the permission to load..\n");
         }
+        System.out.println(key);
+
         boolean keyFound = false;
         for(String token : Constants.ALL_DATA_MANAGEMENT_CONSTANTS){
             if(key.compareTo(token)==0){
@@ -48,8 +50,6 @@ public class ProxyDataManager implements DataManager {
         if(!access){
             throw new AccessDeniedException("Sorry, you don't have the permission to save..\n");
         }
-        int levelWidth = 0;
-        int levelHeight = 0;
         switch (key){
             case Constants.CURRENT_STATE:
                 if( !(value==1 || value==2 || value==3) ){
@@ -81,51 +81,21 @@ public class ProxyDataManager implements DataManager {
                     throw new IllegalArgumentException("Invalid argument given.\nThe value has to be between 0 and " + this.reflink.getHero().getMaxNrOfEscapes()+".\nSave failed..");
                 }
                 break;
-            case Constants.TIMESTAMP:
-                if(value<0){
-                    throw new IllegalArgumentException("Invalid argument given.\nThe timestamp epoch time value should always be positive.\nSave failed..");
+            case Constants.HERO_NR_OF_COLLECTED_SAVES:
+                if( value < 0 || value >6){
+                    throw new IllegalArgumentException("Invalid argument given.\nThe value has to be between 0 and  6.\nSave failed..");
+                }
+                break;
+            case Constants.HERO_NR_OF_FINISHED_LEVELS:
+                if(!(value == 0 || value == 1 || value ==2 || value == 3)){
+                    throw new IllegalArgumentException("Invalid argument given.\nThe value has to be between 0 and  3.\nSave failed..");
                 }
                 break;
             case Constants.HERO_X:
-                if(this.concreteDataManager == null){
-                    this.concreteDataManager =ConcreteDataManager.getInstance(this.reflink);
-                }
-                switch (this.concreteDataManager.load(Constants.CURRENT_STATE,true)){
-                    case 1:
-                        levelWidth = Constants.LEVEL1_PIXEL_WIDTH;
-                        break;
-                    case 2:
-                        levelWidth = Constants.LEVEL2_PIXEL_WIDTH;
-                        break;
-                    case 3:
-                        levelWidth = Constants.LEVEL3_PIXEL_WIDTH;
-                        break;
-                    default:
-                        throw new IllegalArgumentException("Can't extract level data in order to check player x and y.\n Please first save the CURRENT_STATE.\nSave failed..");
-                }
-                if(value<0 || value > levelWidth){
-                    throw new IllegalArgumentException("The given player X is invalid.\nSave failed..");
-                }
-                break;
             case Constants.HERO_Y:
-                if(this.concreteDataManager == null){
-                    this.concreteDataManager =ConcreteDataManager.getInstance(this.reflink);
-                }
-                switch (this.concreteDataManager.load(Constants.CURRENT_STATE,true)){
-                    case 1:
-                        levelHeight = Constants.LEVEL1_PIXEL_HEIGHT;
-                        break;
-                    case 2:
-                        levelHeight = Constants.LEVEL2_PIXEL_HEIGHT;
-                        break;
-                    case 3:
-                        levelHeight = Constants.LEVEL3_PIXEL_HEIGHT;
-                        break;
-                    default:
-                        throw new IllegalArgumentException("Can't extract level data in order to check player x and y.\n Please first save the CURRENT_STATE.\nSave failed..");
-                }
-                if(value<0 || value > levelHeight){
-                    throw new IllegalArgumentException("The given player Y is invalid.\nSave failed..");
+            case Constants.TIMESTAMP:
+                if(value<0){
+                    throw new IllegalArgumentException("Invalid argument given.\nThe timestamp epoch time value should always be positive.\nSave failed..");
                 }
                 break;
             default:
@@ -147,6 +117,43 @@ public class ProxyDataManager implements DataManager {
             this.concreteDataManager = ConcreteDataManager.getInstance(this.reflink);
         }
         this.concreteDataManager.resetBuffer(true);
+    }
+
+    @Override
+    public void loadBuffer(boolean access) throws AccessDeniedException {
+        if(!access){
+            throw new AccessDeniedException("Sorry, you don't have the permission to access the Concrete Data Manager..\n");
+        }
+
+        if(this.concreteDataManager == null){
+            this.concreteDataManager = ConcreteDataManager.getInstance(this.reflink);
+        }
+
+        this.concreteDataManager.loadBuffer(access);
+    }
+
+    @Override
+    public void storeBuffer(boolean access) throws AccessDeniedException, IllegalArgumentException {
+        if(!access){
+            throw new AccessDeniedException("Sorry, you don't have the permission to access the Concrete Data Manager..\n");
+        }
+        if(this.concreteDataManager == null){
+            this.concreteDataManager = ConcreteDataManager.getInstance(this.reflink);
+        }
+
+        boolean invalidData=false;
+
+        for(String key : Constants.ALL_DATA_MANAGEMENT_CONSTANTS){
+            if(this.concreteDataManager.load(key,access)==-1){
+                invalidData = true;
+            }
+        }
+
+        if(invalidData){
+            throw new IllegalArgumentException("Can't currently store data in the database.\nSome values are invalid.\nStoring failed..");
+        }
+
+        this.concreteDataManager.storeBuffer(access);
     }
 
 }

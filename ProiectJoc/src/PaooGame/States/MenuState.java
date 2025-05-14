@@ -82,7 +82,26 @@ public class MenuState extends State  {
             }
             else if(continueButton.contains(mx,my)) {
                 System.out.println("Loading data// adica continui normal");
-                State.setState(reflink.getGame().getLevel1State());
+                try{
+                    this.reflink.getDataProxy().resetBuffer(true);
+                    this.reflink.getDataProxy().loadBuffer(true);
+                    this.reflink.setDataRefreshSignal(true);
+
+
+                    switch (this.reflink.getDataProxy().load(Constants.CURRENT_STATE,true)){
+                        case 1:
+                            State.setState(this.reflink.getGame().getLevel1State());
+                            break;
+                        case 2:
+                            State.setState(this.reflink.getGame().getLevel2State());
+                            break;
+                        case 3:
+                            State.setState(this.reflink.getGame().getLevel3State());
+                            break;
+                    }
+                } catch (AccessDeniedException e) {
+                    System.err.println(e.getMessage());
+                }
             }
             // Resetăm mouse-ul după ce a fost tratat
             mouse.mouseReleased(null);
@@ -121,6 +140,11 @@ public class MenuState extends State  {
 
     @Override
     public void loadState(boolean access) {
+
+    }
+
+    @Override
+    public void storeState(boolean access) {
 
     }
 
