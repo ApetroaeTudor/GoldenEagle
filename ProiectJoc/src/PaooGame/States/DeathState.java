@@ -1,7 +1,6 @@
 package PaooGame.States;
 
 import PaooGame.Entities.Enemy;
-import PaooGame.Entities.Entity;
 import PaooGame.Config.Constants;
 import PaooGame.RefLinks;
 
@@ -52,7 +51,7 @@ public class DeathState extends State {
 
     @Override
     public void draw(Graphics g) {
-        BufferedImage backgroundImg = this.refLink.getTileCache().getBackground(Constants.DEATH_SCREEN_BG_PATH);
+        BufferedImage backgroundImg = this.reflink.getTileCache().getBackground(Constants.DEATH_SCREEN_BG_PATH);
         g.drawImage(backgroundImg,0,0,Constants.WINDOW_WIDTH,Constants.WINDOW_HEIGHT,null);
 
         if(Objects.equals(State.getState().getStateName(), this.stateName) && !this.isFadedIn){
@@ -77,10 +76,10 @@ public class DeathState extends State {
             if(this.blackIntensity>1){
                 this.restoreState();
                 this.blackIntensity = 1.0;
-                this.refLink.getHero().restoreEntity();
-                this.refLink.getGame().getLevel1State().restoreState();
-                this.refLink.getGame().getFightState().restoreState();
-                State.setState(this.refLink.getGame().getMenuState());
+                this.reflink.getHero().restoreEntity();
+                this.reflink.getGame().getLevel1State().restoreState();
+                this.reflink.getGame().getFightState().restoreState();
+                State.setState(this.reflink.getGame().getMenuState());
 
             }
             if(this.blackIntensity<0){
@@ -99,6 +98,11 @@ public class DeathState extends State {
     public void restoreState() {
         this.isFadedIn = false;
         this.isFadingOut = false;
+
+    }
+
+    @Override
+    public void loadState(boolean access) {
 
     }
 

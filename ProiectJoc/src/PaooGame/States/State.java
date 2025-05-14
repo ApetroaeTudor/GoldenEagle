@@ -3,8 +3,6 @@ package PaooGame.States;
 import java.awt.*;
 
 import PaooGame.Entities.Enemy;
-import PaooGame.Entities.Entity;
-import PaooGame.Maps.Level;
 import PaooGame.RefLinks;
 
 /*! \class State
@@ -23,10 +21,10 @@ public abstract class State
     ///Urmatoarele atribute sunt statice pentru a evita dealocarea spatiului de memorie la trecerea dintr-o stare in alta.
     private static State previousState  = null; /*!< Referinta catre starea anterioara a jocului.*/
     private static State currentState   = null; /*!< Referinta catre starea curenta a jocului: game, meniu, settings, about etc.*/
-    protected RefLinks refLink;
+    protected RefLinks reflink;
     public State(RefLinks refLink)
     {
-        this.refLink = refLink;
+        this.reflink = refLink;
     }
 
     /*! \fn public static void SetState(State state)
@@ -57,6 +55,8 @@ public abstract class State
     public abstract void draw(Graphics g);
 
     public abstract void restoreState();
+
+    public abstract void loadState(boolean access);
 
 
 }

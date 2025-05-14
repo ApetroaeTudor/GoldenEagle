@@ -61,4 +61,9 @@ public class SettingsState extends State
     public void restoreState() {
 
     }
+
+    @Override
+    public void loadState(boolean access) {
+
+    }
 }

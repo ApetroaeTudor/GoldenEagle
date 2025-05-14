@@ -1,6 +1,8 @@
 package PaooGame;
 
 import PaooGame.Config.Constants;
+import PaooGame.DatabaseManaging.DataManager;
+import PaooGame.DatabaseManaging.ProxyDataManager;
 import PaooGame.GameWindow.GameWindow;
 import PaooGame.Entities.Hero;
 import PaooGame.Input.KeyManager;
@@ -32,6 +34,13 @@ public class Game implements Runnable {
     private EnemyStrategy minotaurStrategy;
     private EnemyStrategy ghostStrategy;
     private EnemyStrategy strongSkeletonStrategy;
+
+    private DataManager dataProxy;
+//    private boolean dataRefreshSignal;
+//    private boolean level1RefreshDoneSignal;
+//    private boolean level2RefreshDoneSignal;
+//    private boolean level3RefreshDoneSignal;
+//    private boolean heroRefreshDoneSignal;
 
     private State level1State;
     private Level1 level1;
@@ -82,8 +91,8 @@ public class Game implements Runnable {
         refLink.setTileCache(tileCache);
 
 
-//        hero = new Hero(refLink,Constants.HERO_LEVEL1_STARTING_X,Constants.HERO_LEVEL1_STARTING_Y);
-        hero = new Hero(refLink,Constants.HERO_LEVEL2_STARTING_X,Constants.HERO_LEVEL2_STARTING_Y);
+        hero = new Hero(refLink,Constants.HERO_LEVEL1_STARTING_X,Constants.HERO_LEVEL1_STARTING_Y);
+//        hero = new Hero(refLink,Constants.HERO_LEVEL2_STARTING_X,Constants.HERO_LEVEL2_STARTING_Y);
 //        hero = new Hero(refLink,3190,1932);
 
 
@@ -94,6 +103,22 @@ public class Game implements Runnable {
         level1 = new Level1();
         level2 = new Level2();
         level3 = new Level3();
+
+
+//        dataRefreshSignal = false;
+//        level1RefreshDoneSignal = false;
+//        level2RefreshDoneSignal = false;
+//        level3RefreshDoneSignal = false;
+//        heroRefreshDoneSignal = false;
+
+        this.refLink.setDataRefreshSignal(false);
+        this.refLink.setLevel1RefreshDoneSignal(false);
+        this.refLink.setLevel2RefreshDoneSignal(false);
+        this.refLink.setLevel3RefreshDoneSignal(false);
+        this.refLink.setHeroRefreshDoneSignal(false);
+
+        this.dataProxy = new ProxyDataManager(this.refLink);
+        this.refLink.setDataProxy(this.dataProxy);
 
 
         strongSkeletonStrategy = StrongSkeletonEnemyStrategy.getInstance(refLink);
@@ -173,6 +198,21 @@ public class Game implements Runnable {
     }
 
     private void Update() {
+
+        if(this.refLink.getDataRefreshSignal()){
+            this.refLink.setHeroRefreshDoneSignal(false);
+            this.refLink.setLevel1RefreshDoneSignal(false);
+            this.refLink.setLevel2RefreshDoneSignal(false);
+            this.refLink.setLevel3RefreshDoneSignal(false);
+            this.refLink.getHero().loadHeroState(true);
+            this.level1State.loadState(true);
+            this.level2State.loadState(true);
+            this.level3State.loadState(true);
+        }
+        if(this.refLink.getHeroRefreshDoneSignal() && this.refLink.getLevel1RefreshDoneSignal() && this.refLink.getLevel2RefreshDoneSignal() && this.refLink.getLevel3RefreshDoneSignal()){
+            this.refLink.setDataRefreshSignal(false);
+        }
+
         if (State.getState() != null) {
             State.getState().update();
         }

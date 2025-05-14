@@ -27,6 +27,9 @@ public class Level2State extends State{
     protected boolean transition_to_fight = false;
     private boolean isCameraSet = false;
 
+    private BufferedImage[] shadows;
+    private int nrOfShadows = 2;
+
 
     private ContextHUD contextHUD;
 
@@ -47,19 +50,21 @@ public class Level2State extends State{
         this.level2 = level2;
         this.saves = new SaveItem[this.nrOfSaves];
         this.enemies = new Enemy[this.nrOfEnemies];
+        this.shadows = new BufferedImage[this.nrOfShadows];
+        this.shadows[0] = this.reflink.getTileCache().getSpecial(Constants.SHADOW_PATH,64,32,1);
 
 
-        this.contextHUD = new ContextHUD(refLink.getHero());
+        this.contextHUD = new ContextHUD(this.reflink.getHero());
 
 
         levelWidth = Constants.LEVEL2_WIDTH*Constants.TILE_SIZE;
         levelHeight = Constants.LEVEL2_WIDTH*Constants.TILE_SIZE;
         camera = new Camera(0,0);
 
-        this.saves[0] = new SaveItem(this.refLink,Constants.LEVEL2_SAVE1_X,Constants.LEVEL2_SAVE1_Y);
-        this.enemies[0] = new Enemy(this.refLink,Constants.HERO_LEVEL2_STARTING_X+300,Constants.HERO_LEVEL2_STARTING_Y,Constants.BASIC_SKELETON_NAME);
-        this.enemies[1] = new Enemy(this.refLink,1020,320,Constants.STRONG_SKELETON_NAME);
-        this.enemies[2] = new Enemy(this.refLink,1700,240,Constants.BASIC_SKELETON_NAME);
+        this.saves[0] = new SaveItem(this.reflink,Constants.LEVEL2_SAVE1_X,Constants.LEVEL2_SAVE1_Y);
+        this.enemies[0] = new Enemy(this.reflink,Constants.HERO_LEVEL2_STARTING_X+300,Constants.HERO_LEVEL2_STARTING_Y,Constants.BASIC_SKELETON_NAME); //basicSkeleton0
+        this.enemies[1] = new Enemy(this.reflink,1020,320,Constants.STRONG_SKELETON_NAME); //basicSkeleton1
+        this.enemies[2] = new Enemy(this.reflink,1700,240,Constants.BASIC_SKELETON_NAME); //basicSkeleton2
 
         pauseButton = new PauseButton(reflink.getHero(),80,50);
 
@@ -109,12 +114,15 @@ public class Level2State extends State{
 
     @Override
     public void update(){
-        System.out.println("X = " + this.refLink.getHero().getX() + "Y = " + this.refLink.getHero().getY());
-        this.refLink.getHero().update();
+        //System.out.println("X = " + this.reflink.getHero().getX() + "Y = " + this.reflink.getHero().getY());
+        this.reflink.getHero().update();
+
+
+
         for(int i =0;i<this.nrOfSaves;++i){
             this.saves[i].updateItem();
         }
-        if(this.refLink.getHero().getHitbox().intersects(this.saves[0].getHitbox())){
+        if(this.reflink.getHero().getHitbox().intersects(this.saves[0].getHitbox())){
 //            System.out.println("Interaction");
         }
 
@@ -125,11 +133,11 @@ public class Level2State extends State{
                     enemy.nullifyHitbox();
                 }
                 else{
-                    if(refLink.getHero().getHitbox().intersects(enemy.getHitbox())&& refLink.getHero().getCanEngage()){
+                    if(reflink.getHero().getHitbox().intersects(enemy.getHitbox())&& reflink.getHero().getCanEngage()){
                         enemy.setIsEngaged(true);
                         this.transitioning = true;
                         this.transition_to_fight = true;
-                        refLink.getGame().getFightState().setEnemy(enemy);
+                        reflink.getGame().getFightState().setEnemy(enemy);
 
                     }
                 }
@@ -143,34 +151,34 @@ public class Level2State extends State{
             this.transition_to_fight = false;
 //            refLink.getGame().getFightState().restoreState();
 
-            State.setState(refLink.getGame().getFightState());
+            State.setState(reflink.getGame().getFightState());
         }
 
-        if(this.refLink.getHero().getX()>1880){
-            this.refLink.getHero().setX(1870);
-            this.refLink.getHero().getHitbox().setX(1870);
+        if(this.reflink.getHero().getX()>1880){
+            this.reflink.getHero().setX(1870);
+            this.reflink.getHero().getHitbox().setX(1870);
         }
-        if(this.refLink.getHero().getX()>1855 && this.refLink.getHero().getY()<400){
+        if(this.reflink.getHero().getX()>1855 && this.reflink.getHero().getY()<400){
             this.transitioning = true;
         }
 
-        if(refLink.getKeyManager().isKeyPressedOnce(KeyEvent.VK_ESCAPE)){
-            State.setState(refLink.getGame().getPauseMenuState());
+        if(reflink.getKeyManager().isKeyPressedOnce(KeyEvent.VK_ESCAPE)){
+            State.setState(reflink.getGame().getPauseMenuState());
         }
 
-        MouseInput mouse = refLink.getMouseInput();
+        MouseInput mouse = reflink.getMouseInput();
         Point mousePos = new Point(mouse.getMouseX(),mouse.getMouseY());
         pauseButton.updateHover(mousePos.x,mousePos.y);
 
         if (mouse.getNumberOfMousePresses() > 0 && pauseButton.isClicked(mousePos.x, mousePos.y)) {
-            State.setState(refLink.getGame().getPauseMenuState()); // Acum trimite către meniul de pauză
+            State.setState(reflink.getGame().getPauseMenuState()); // Acum trimite către meniul de pauză
             mouse.mouseReleased(null);
             return;
         }
 
         if(State.getState().getStateName() == this.stateName && !this.isCameraSet){
-            float heroCenterX = this.refLink.getHero().getX() + this.refLink.getHero().getWidth() / 2;
-            float heroCenterY = this.refLink.getHero().getY() + this.refLink.getHero().getHeight() / 2;
+            float heroCenterX = this.reflink.getHero().getX() + this.reflink.getHero().getWidth() / 2;
+            float heroCenterY = this.reflink.getHero().getY() + this.reflink.getHero().getHeight() / 2;
             double cameraX = heroCenterX - (Constants.WINDOW_WIDTH / 2) / camera.getScale();
             double cameraY = heroCenterY - (Constants.WINDOW_HEIGHT / 2) / camera.getScale()-1000;
 
@@ -182,28 +190,28 @@ public class Level2State extends State{
 
             camera.setPosition(cameraX, cameraY);
         }
-        camera.updatePosition(this.refLink.getHero().getVelocityX(),0);
+        camera.updatePosition(this.reflink.getHero().getVelocityX(),0);
 
 
 
 
-        if(this.refLink.getHero().getHealth() == 0 && this.targetBlackIntensity == 1){
+        if(this.reflink.getHero().getHealth() == 0 && this.targetBlackIntensity == 1){
             this.targetBlackIntensity = 0;
 
-            this.refLink.getGame().getDeathState().restoreState();
-            State.setState(this.refLink.getGame().getDeathState());
+            this.reflink.getGame().getDeathState().restoreState();
+            State.setState(this.reflink.getGame().getDeathState());
 //            this.transitioning = false;
         }
-        if(this.transitioning && this.targetBlackIntensity == 1 &&this.refLink.getHero().getX()>1850){
+        if(this.transitioning && this.targetBlackIntensity == 1 &&this.reflink.getHero().getX()>1850){
             this.targetBlackIntensity = 0;
-            this.refLink.getHero().setJumpStrength(Constants.HERO_BASE_JUMP_STRENGTH);
+            this.reflink.getHero().setJumpStrength(Constants.HERO_BASE_JUMP_STRENGTH);
             this.transitioning = false;
 
-            State.setState(this.refLink.getGame().getLevel3State());
-            this.refLink.getHero().setX(Constants.HERO_LEVEL3_STARTING_X);
-            this.refLink.getHero().getHitbox().setX(Constants.HERO_LEVEL3_STARTING_X);
-            this.refLink.getHero().setY(Constants.HERO_LEVEL3_STARTING_Y);
-            this.refLink.getHero().getHitbox().setY(Constants.HERO_LEVEL3_STARTING_Y);
+            State.setState(this.reflink.getGame().getLevel3State());
+            this.reflink.getHero().setX(Constants.HERO_LEVEL3_STARTING_X);
+            this.reflink.getHero().getHitbox().setX(Constants.HERO_LEVEL3_STARTING_X);
+            this.reflink.getHero().setY(Constants.HERO_LEVEL3_STARTING_Y);
+            this.reflink.getHero().getHitbox().setY(Constants.HERO_LEVEL3_STARTING_Y);
 
         }
 
@@ -219,14 +227,14 @@ public class Level2State extends State{
 
         camera.apply(g2d);
 
-        BufferedImage backgroundImage = this.refLink.getTileCache().getBackground(Constants.LEVEL2_BG_PATH);
+        BufferedImage backgroundImage = this.reflink.getTileCache().getBackground(Constants.LEVEL2_BG_PATH);
         g.drawImage(backgroundImage, 0, -210, Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT, null);
         g.drawImage(backgroundImage,Constants.WINDOW_WIDTH,-210,Constants.WINDOW_WIDTH,Constants.WINDOW_HEIGHT,null);
 
         for (int i = 0; i < Constants.LEVEL2_TILE_NR; ++i) {
             int currentID = this.level2.getVisualIDs()[i];
             if (currentID != -1) {
-                this.refLink.getTileCache()
+                this.reflink.getTileCache()
                         .getTile(Constants.LEVEL2_TEXTURES_PATH, currentID)
                         .Draw(g, (i % Constants.LEVEL2_WIDTH) * Constants.TILE_SIZE,
                                 (i / Constants.LEVEL2_WIDTH) * Constants.TILE_SIZE);
@@ -244,7 +252,7 @@ public class Level2State extends State{
         }
 
 
-        if(refLink.getHero().getHealth() == 0 || (this.transitioning&&this.refLink.getHero().getX()>1850) || this.transition_to_fight){
+        if(reflink.getHero().getHealth() == 0 || (this.transitioning&&this.reflink.getHero().getX()>1850) || this.transition_to_fight){
             this.targetBlackIntensity+=this.blackFadeStep;
             Color originalColor = g2d.getColor();
             if(this.targetBlackIntensity>=1.0){
@@ -253,19 +261,19 @@ public class Level2State extends State{
             }
             int alpha = (int)(this.targetBlackIntensity*255.0);
             g2d.setColor(new Color(0,0,0,alpha));
-            g.fillRect((int)this.refLink.getHero().getX()-Constants.WINDOW_WIDTH/2,0,Constants.WINDOW_WIDTH*2,Constants.WINDOW_HEIGHT*2);
+            g.fillRect((int)this.reflink.getHero().getX()-Constants.WINDOW_WIDTH/2,0,Constants.WINDOW_WIDTH*2,Constants.WINDOW_HEIGHT*2);
             g2d.setColor(originalColor);
         }
 
 
-        this.refLink.getHero().draw(g);
+        this.reflink.getHero().draw(g);
         g2d.setTransform(originalTransform);
-        this.refLink.getHero().DrawHealthBar(g);
+        this.reflink.getHero().DrawHealthBar(g);
         pauseButton.draw(g2d);
 
+
+
         this.contextHUD.draw(g2d);
-
-
     }
 
     public Level2 getLevel2(){return level2;}
@@ -278,6 +286,14 @@ public class Level2State extends State{
     @Override
     public void setEnemy(Enemy enemy) {
 
+    }
+
+    @Override
+    public void loadState(boolean access){
+        if(this.reflink.getLevel2RefreshDoneSignal()) {
+            return;
+        }
+        this.reflink.setLevel2RefreshDoneSignal(true);
     }
 
 

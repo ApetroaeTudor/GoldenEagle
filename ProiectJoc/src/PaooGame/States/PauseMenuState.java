@@ -1,7 +1,6 @@
 package PaooGame.States;
 
 import PaooGame.Entities.Enemy;
-import PaooGame.Entities.Entity;
 import PaooGame.Config.Constants;
 import PaooGame.Input.MouseInput;
 import PaooGame.RefLinks;
@@ -38,18 +37,18 @@ public class PauseMenuState extends State {
 
     @Override
     public void update() {
-        MouseInput mouse = refLink.getMouseInput();
+        MouseInput mouse = reflink.getMouseInput();
         int mx = mouse.getMouseX();
         int my = mouse.getMouseY();
 
         if (mouse.getNumberOfMousePresses() > 0) {
             if (continueButton.contains(mx, my)) {
-                State.setState(refLink.getGame().getLevel1State());
+                State.setState(reflink.getGame().getLevel1State());
                 mouse.mouseReleased(null);
             } else if (exitToMenuButton.contains(mx, my)) {
                 // Resetează Level1State și revino la meniul principal
-                refLink.getGame().resetLevel1State(); // Aici se apelează resetarea
-                State.setState(refLink.getGame().getMenuState());
+                reflink.getGame().resetLevel1State(); // Aici se apelează resetarea
+                State.setState(reflink.getGame().getMenuState());
                 mouse.mouseReleased(null);
             } else if (exitButton.contains(mx, my)) {
                 System.exit(0);
@@ -60,20 +59,20 @@ public class PauseMenuState extends State {
     @Override
     public void draw(Graphics g) {
         // Fundalul nivelului
-        if (refLink.getGame().getLevel1State() != null) {
-            refLink.getGame().getLevel1State().draw(g);
+        if (reflink.getGame().getLevel1State() != null) {
+            reflink.getGame().getLevel1State().draw(g);
         }
 
         Graphics2D g2d = (Graphics2D) g;
 
         // Overlay întunecat
         g2d.setColor(new Color(0, 0, 0, 150));
-        g2d.fillRect(0, 0, refLink.getWidth(), refLink.getHeight());
+        g2d.fillRect(0, 0, reflink.getWidth(), reflink.getHeight());
 
         // Chenar principal
         int panelWidth = 400;
         int panelHeight = 350;
-        int panelX = refLink.getWidth()/2 - panelWidth/2;
+        int panelX = reflink.getWidth()/2 - panelWidth/2;
         int panelY = 100;
 
         // Fundal chenar
@@ -93,8 +92,8 @@ public class PauseMenuState extends State {
         g2d.drawString(title, panelX + (panelWidth - titleWidth)/2, panelY + 60);
 
         // Butoane
-        int mx = refLink.getMouseInput().getMouseX();
-        int my = refLink.getMouseInput().getMouseY();
+        int mx = reflink.getMouseInput().getMouseX();
+        int my = reflink.getMouseInput().getMouseY();
         drawModernButton(g2d, continueButton, "CONTINUE", mx, my);
         drawModernButton(g2d, exitToMenuButton, "MAIN MENU", mx, my);
         drawModernButton(g2d, exitButton, "QUIT GAME", mx, my);
@@ -102,6 +101,11 @@ public class PauseMenuState extends State {
 
     @Override
     public void restoreState() {
+
+    }
+
+    @Override
+    public void loadState(boolean access) {
 
     }
 

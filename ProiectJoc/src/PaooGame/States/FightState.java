@@ -1,7 +1,6 @@
 package PaooGame.States;
 
 import PaooGame.Entities.Enemy;
-import PaooGame.Entities.Entity;
 import PaooGame.Animations.Animation;
 import PaooGame.Animations.EffectsAnimations.EffectAnimation;
 import PaooGame.Config.Constants;
@@ -91,7 +90,7 @@ public class FightState extends State {
         this.blockingBar.setPosition(935,250);
 
 
-        this.fleeButton = new ImageButton(this.refLink.getHero(),90,550,this.refLink.getTileCache().getSpecial(Constants.BOOT_ITEM_SHEET_PATH,Constants.BOOT_TILE_WIDTH,Constants.BOOT_TILE_HEIGHT,1));
+        this.fleeButton = new ImageButton(this.reflink.getHero(),90,550,this.reflink.getTileCache().getSpecial(Constants.BOOT_ITEM_SHEET_PATH,Constants.BOOT_TILE_WIDTH,Constants.BOOT_TILE_HEIGHT,1));
 
 
 
@@ -106,7 +105,7 @@ public class FightState extends State {
             this.didEnemyAttackAlready = false;
             this.enemyTurnProgress = 0;
             this.blockingBar.updateValue(this.enemyTurnProgress);
-            this.refLink.getHero().reduceHealth(this.enemy.getDamage()* (  (100.0-this.progressOnSpace*1.5f)/100.0) );
+            this.reflink.getHero().reduceHealth(this.enemy.getDamage()* (  (100.0-this.progressOnSpace*1.5f)/100.0) );
             this.latestDamageReceived = this.enemy.getDamage()* (  (100.0-this.progressOnSpace*1.5f)/100.0);
             System.out.println("Reduced damage: " + this.enemy.getDamage()* (  (100.0-this.progressOnSpace*1.5f)/100.0) );
             System.out.println("Original damage: " + this.enemy.getDamage());
@@ -129,7 +128,7 @@ public class FightState extends State {
             transitioningToVictory = true;
         });
         this.fleeTimer = new Timer(this.timeoutInMillisWaitForFlee,e->{
-           this.refLink.getHero().setCanEngage(true);
+           this.reflink.getHero().setCanEngage(true);
         });
 
         this.timer.setRepeats(false);
@@ -143,7 +142,7 @@ public class FightState extends State {
 
         this.isPlayerTurn = true;
 
-        this.attackAnimation = new EffectAnimation(this.refLink,Constants.EFFECTS.ATTACK_EXPLOSION,8,5);
+        this.attackAnimation = new EffectAnimation(this.reflink,Constants.EFFECTS.ATTACK_EXPLOSION,8,5);
         this.attackAnimation.loadAnimation();
     }
 
@@ -164,7 +163,7 @@ public class FightState extends State {
                             .healthBarHeight(this.enemy.getHealthBarHeight())
                                 .backgroundImgPath(Constants.TIGER_FIGHT_BG_PATH)
                                 .defence(Constants.TIGER_DEFENCE)
-                                .ownerState(refLink.getGame().getLevel1State()).
+                                .ownerState(reflink.getGame().getLevel1State()).
                                 build();
                         break;
                     case Constants.BASIC_SKELETON_NAME:
@@ -179,7 +178,7 @@ public class FightState extends State {
                                 .healthBarHeight(this.enemy.getHealthBarHeight())
                                 .backgroundImgPath(Constants.BASIC_SKELETON_FIGHT_BG_PATH)
                                 .defence(Constants.BASIC_SKELETON_DEFENCE)
-                                .ownerState(refLink.getGame().getLevel2State())
+                                .ownerState(reflink.getGame().getLevel2State())
                                 .build();
                         break;
                     case Constants.WIZARD_NAME:
@@ -194,7 +193,7 @@ public class FightState extends State {
                                 .healthBarHeight(Constants.WIZARD_HEALTH_BAR_HEIGHT )
                                 .backgroundImgPath(Constants.WIZARD_FIGHT_BG_PATH)
                                 .defence(Constants.WIZARD_DEFENCE)
-                                .ownerState(refLink.getGame().getLevel3State())
+                                .ownerState(reflink.getGame().getLevel3State())
                                 .build();
                         break;
                     case Constants.MINOTAUR_NAME:
@@ -209,7 +208,7 @@ public class FightState extends State {
                                 .healthBarHeight(Constants.MINOTAUR_HEALTH_BAR_HEIGHT)
                                 .backgroundImgPath(Constants.MINOTAUR_FIGHT_BG_PATH)
                                 .defence(Constants.MINOTAUR_DEFENCE)
-                                .ownerState(refLink.getGame().getLevel3State())
+                                .ownerState(reflink.getGame().getLevel3State())
                                 .build();
                         break;
                     case Constants.GHOST_NAME:
@@ -224,7 +223,7 @@ public class FightState extends State {
                                 .healthBarHeight(Constants.GHOST_HEALTH_BAR_HEIGHT)
                                 .backgroundImgPath(Constants.GHOST_FIGHT_BG_PATH)
                                 .defence(Constants.GHOST_DEFENCE)
-                                .ownerState(refLink.getGame().getLevel3State())
+                                .ownerState(reflink.getGame().getLevel3State())
                                 .build();
                         break;
                     case Constants.STRONG_SKELETON_NAME:
@@ -239,7 +238,7 @@ public class FightState extends State {
                                 .healthBarHeight(Constants.STRONG_SKELETON_HEALTH_BAR_HEIGHT)
                                 .backgroundImgPath(Constants.STRONG_SKELETON_BG_PATH)
                                 .defence(Constants.STRONG_SKELETON_DEFENCE)
-                                .ownerState(refLink.getGame().getLevel2State())
+                                .ownerState(reflink.getGame().getLevel2State())
                                 .build();
                         break;
                 }
@@ -271,15 +270,15 @@ public class FightState extends State {
             this.enemy.update();
 
 
-            this.refLink.getHero().setHealthBarX(20);
-            this.refLink.getHero().setHealthBarY(650);
-            this.refLink.getHero().setHealthBarWidth(200);
-            this.refLink.getHero().setHealthBarHeight(40);
+            this.reflink.getHero().setHealthBarX(20);
+            this.reflink.getHero().setHealthBarY(650);
+            this.reflink.getHero().setHealthBarWidth(200);
+            this.reflink.getHero().setHealthBarHeight(40);
         }
         this.attackAnimation.updateAnimation();
 
 
-        MouseInput mouse = refLink.getMouseInput();
+        MouseInput mouse = reflink.getMouseInput();
         int mx = mouse.getMouseX();
         int my = mouse.getMouseY();
 
@@ -295,17 +294,17 @@ public class FightState extends State {
                 if(this.fleeButton.isClicked(mx,my,true) && !this.isFleeButtonPressed){
                     this.waitForEnemyDeathTimer.start();
                     this.fleeTimer.start();
-                    this.refLink.getHero().setCanEngage(false);
-                    this.refLink.getHero().setNrOfEscapes(this.refLink.getHero().getNrOfEscapes()-1);
+                    this.reflink.getHero().setCanEngage(false);
+                    this.reflink.getHero().setNrOfEscapes(this.reflink.getHero().getNrOfEscapes()-1);
                     this.isFleeButtonPressed = true;
                 }
                 else if(this.attackButton.isClicked(mx,my,true) && !this.isFleeButtonPressed){
                     System.out.println("???");
 
                     this.attackAnimation.triggerOnce();
-                    this.fightStrategy.takeDamage((float)this.refLink.getHero().getDamage());
+                    this.fightStrategy.takeDamage((float)this.reflink.getHero().getDamage());
                     this.printingDamageDealtPopup = true;
-                    this.latestDamageDealt = (double)this.fightStrategy.calculateDamage((float)this.refLink.getHero().getDamage());
+                    this.latestDamageDealt = (double)this.fightStrategy.calculateDamage((float)this.reflink.getHero().getDamage());
                     this.attackButton.setIsHovered(false);
                     if(this.fightStrategy.getEnemy().getHealth()>0){
                         this.isPlayerTurn = false;
@@ -335,7 +334,7 @@ public class FightState extends State {
 
         }
         else{
-            if(this.refLink.getKeyManager().isKeyPressed(KeyEvent.VK_SPACE) && this.enemyTurnProgress<=50){
+            if(this.reflink.getKeyManager().isKeyPressed(KeyEvent.VK_SPACE) && this.enemyTurnProgress<=50){
                 this.progressOnSpace = this.enemyTurnProgress;
                 this.enemyTurnProgress = 51;
             }
@@ -368,15 +367,15 @@ public class FightState extends State {
             this.waitForEnemyDeathTimer.start();
 
         }
-        if(this.refLink.getHero().getHealth()==0){
+        if(this.reflink.getHero().getHealth()==0){
             this.timer3.start();
         }
         if(this.transitioningToDeath && this.fadeToBlackProgress==1){
             this.transitioningToDeath = false;
             this.fadeToBlackProgress = 0.0;
             this.attackAnimation.setIsFinished(true);
-            refLink.getGame().getDeathState().restoreState();
-            State.setState(refLink.getGame().getDeathState());
+            reflink.getGame().getDeathState().restoreState();
+            State.setState(reflink.getGame().getDeathState());
         }
 
 
@@ -390,7 +389,7 @@ public class FightState extends State {
             this.fadeToBlackProgress = 0.0;
             this.attackAnimation.setIsFinished(true);
             State.setState(this.fightStrategy.getOwnerState());
-            this.refLink.getHero().resetHealthBarDefaultValues();
+            this.reflink.getHero().resetHealthBarDefaultValues();
             this.restoreState();
 
         }
@@ -402,7 +401,7 @@ public class FightState extends State {
     public void draw(Graphics g) {
         if(this.fightStrategy!=null){
             if(this.fightStrategy.getBackgroundImgPath()!=null){
-                BufferedImage backgroundImg = this.refLink.getTileCache().getBackground(this.fightStrategy.getBackgroundImgPath());
+                BufferedImage backgroundImg = this.reflink.getTileCache().getBackground(this.fightStrategy.getBackgroundImgPath());
                 g.drawImage(backgroundImg,scrollX,0,Constants.WINDOW_WIDTH,Constants.WINDOW_HEIGHT,null);
                 //scrollX ca offsett si acum ramane o gaura in background, trebuie acoperita cu o a doua img
                 g.drawImage(backgroundImg,scrollX+ Constants.WINDOW_WIDTH,0,Constants.WINDOW_WIDTH,Constants.WINDOW_HEIGHT,null);
@@ -442,7 +441,7 @@ public class FightState extends State {
             g2d.setColor(Color.WHITE);
             g2d.drawString("Run Away",70,500);
             g2d.setFont(new Font("Arial",Font.BOLD,10));
-            g2d.drawString("(You can run away " + this.refLink.getHero().getNrOfEscapes() + " more times)",36,530);
+            g2d.drawString("(You can run away " + this.reflink.getHero().getNrOfEscapes() + " more times)",36,530);
             g2d.setFont(new Font("Arial",Font.BOLD,20));
             if(this.isPlayerTurn){
                 g2d.drawString("Current Turn: Player",20,30);
@@ -464,18 +463,18 @@ public class FightState extends State {
 
 
             this.fightStrategy.getEnemy().DrawHealthBar(g);
-            refLink.getHero().DrawHealthBar(g);
+            reflink.getHero().DrawHealthBar(g);
 
             this.attackButton.draw(g2d);
             this.fleeButton.draw(g2d);
             this.attackAnimation.paintAnimation(g,380,200,false,1);
 
             if(this.printingDamageReceivedPopup){
-                g2d.setFont(new Font("Arial",Font.BOLD,30));
+                g2d.setFont(new Font("Arial",Font.BOLD,25));
                 originalColor = g2d.getColor();
                 g2d.setColor(Color.RED);
                 String damageToPrint = String.format("-%.2f",this.latestDamageReceived);
-                g2d.drawString(damageToPrint,80,600);
+                g2d.drawString(damageToPrint,225,677);
 
                 g2d.setColor(originalColor);
             }
@@ -545,6 +544,11 @@ public class FightState extends State {
         if (timer3 != null) timer3.stop();
         if (popupTimer != null) popupTimer.stop();
         if (waitForEnemyDeathTimer != null) waitForEnemyDeathTimer.stop();
+    }
+
+    @Override
+    public void loadState(boolean access) {
+
     }
 
     @Override

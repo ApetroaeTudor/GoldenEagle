@@ -2,7 +2,6 @@ package PaooGame.States;
 import PaooGame.Camera.Camera;
 import PaooGame.Config.Constants;
 import PaooGame.Entities.Enemy;
-import PaooGame.Entities.Entity;
 import PaooGame.HUD.PauseButton;
 import PaooGame.Input.MouseInput;
 import PaooGame.Items.SaveItem;
@@ -57,7 +56,7 @@ public class Level3State extends State{
 
     public Level3State(RefLinks reflink, Level3 level3){
         super(reflink);
-        this.whip = new WhipItem(this.refLink,Constants.WHIP_POSITION_X,Constants.WHIP_POSITION_Y);
+        this.whip = new WhipItem(this.reflink,Constants.WHIP_POSITION_X,Constants.WHIP_POSITION_Y);
         this.saves = new SaveItem[this.nrOfSaves];
 
         this.level3 = level3;
@@ -72,17 +71,17 @@ public class Level3State extends State{
 
         this.enemies = new Enemy[this.nrOfEnemies];
 
-        this.enemies[0] = new Enemy(this.refLink,5150,1200,Constants.WIZARD_NAME);
-        this.enemies[1] = new Enemy(this.refLink,710,1000,Constants.MINOTAUR_NAME);
-        this.enemies[2] = new Enemy(this.refLink,2968,610,Constants.MINOTAUR_NAME);
-        this.enemies[3] = new Enemy(this.refLink,3312,1970,Constants.GHOST_NAME);
-        this.enemies[4] = new Enemy(this.refLink,3852,1890,Constants.GHOST_NAME);
+        this.enemies[0] = new Enemy(this.reflink,5150,1200,Constants.WIZARD_NAME); //wizard
+        this.enemies[1] = new Enemy(this.reflink,710,1000,Constants.MINOTAUR_NAME); //minotaur0
+        this.enemies[2] = new Enemy(this.reflink,2968,610,Constants.MINOTAUR_NAME); //minotaur1
+        this.enemies[3] = new Enemy(this.reflink,3312,1970,Constants.GHOST_NAME); //ghost0
+        this.enemies[4] = new Enemy(this.reflink,3852,1890,Constants.GHOST_NAME); //ghost1
 
 
-        this.saves[0] = new SaveItem(this.refLink,Constants.LEVEL3_SAVE1_X,Constants.LEVEL3_SAVE1_Y);
-        this.saves[1] = new SaveItem(this.refLink,Constants.LEVEL3_SAVE2_X,Constants.LEVEL3_SAVE2_Y);
-        this.saves[2] = new SaveItem(this.refLink,Constants.LEVEL3_SAVE3_X,Constants.LEVEL3_SAVE3_Y);
-        this.saves[3] = new SaveItem(this.refLink,Constants.LEVEL3_SAVE4_X,Constants.LEVEL3_SAVE4_Y);
+        this.saves[0] = new SaveItem(this.reflink,Constants.LEVEL3_SAVE1_X,Constants.LEVEL3_SAVE1_Y);
+        this.saves[1] = new SaveItem(this.reflink,Constants.LEVEL3_SAVE2_X,Constants.LEVEL3_SAVE2_Y);
+        this.saves[2] = new SaveItem(this.reflink,Constants.LEVEL3_SAVE3_X,Constants.LEVEL3_SAVE3_Y);
+        this.saves[3] = new SaveItem(this.reflink,Constants.LEVEL3_SAVE4_X,Constants.LEVEL3_SAVE4_Y);
 
 
     }
@@ -105,17 +104,18 @@ public class Level3State extends State{
     @Override
     public void update(){
 
-        System.out.println("x: " + this.refLink.getHero().getX() + " y: "+this.refLink.getHero().getY());
+       // System.out.println("x: " + this.reflink.getHero().getX() + " y: "+this.reflink.getHero().getY());
 
-        this.refLink.getHero().update();
-        if(refLink.getKeyManager().isKeyPressed(KeyEvent.VK_ESCAPE)){
-            State.setState(refLink.getGame().getMenuState());
+
+        this.reflink.getHero().update();
+        if(reflink.getKeyManager().isKeyPressed(KeyEvent.VK_ESCAPE)){
+            State.setState(reflink.getGame().getMenuState());
         }
 
         for(int i =0;i<this.nrOfSaves;++i){
             this.saves[i].updateItem();
         }
-        if(this.refLink.getHero().getHitbox().intersects(this.saves[0].getHitbox())){
+        if(this.reflink.getHero().getHitbox().intersects(this.saves[0].getHitbox())){
 //            System.out.println("Interaction");
         }
 
@@ -126,11 +126,11 @@ public class Level3State extends State{
                     enemy.nullifyHitbox();
                 }
                 else{
-                    if(refLink.getHero().getHitbox().intersects(enemy.getHitbox()) && refLink.getHero().getCanEngage()){
+                    if(reflink.getHero().getHitbox().intersects(enemy.getHitbox()) && reflink.getHero().getCanEngage()){
                         enemy.setIsEngaged(true);
                         this.transitioning = true;
                         this.transition_to_fight = true;
-                        refLink.getGame().getFightState().setEnemy(enemy);
+                        reflink.getGame().getFightState().setEnemy(enemy);
 
                     }
                 }
@@ -144,28 +144,28 @@ public class Level3State extends State{
             this.transition_to_fight = false;
 //            refLink.getGame().getFightState().restoreState();
 
-            State.setState(refLink.getGame().getFightState());
+            State.setState(reflink.getGame().getFightState());
         }
 
 
 
 
-        MouseInput mouse = refLink.getMouseInput();
+        MouseInput mouse = reflink.getMouseInput();
         Point mousePos = new Point(mouse.getMouseX(),mouse.getMouseY());
         pauseButton.updateHover(mousePos.x,mousePos.y);
 
-        float heroCenterX = this.refLink.getHero().getX() + this.refLink.getHero().getWidth() / 2;
-        float heroCenterY = this.refLink.getHero().getY() + this.refLink.getHero().getHeight() / 2;
+        float heroCenterX = this.reflink.getHero().getX() + this.reflink.getHero().getWidth() / 2;
+        float heroCenterY = this.reflink.getHero().getY() + this.reflink.getHero().getHeight() / 2;
 
         int heroTileX = (int)(heroCenterX / Constants.TILE_SIZE);
         int heroTileY = (int)(heroCenterY / Constants.TILE_SIZE);
-        boolean isHeroFlipped = this.refLink.getHero().getFlipped();
+        boolean isHeroFlipped = this.reflink.getHero().getFlipped();
 
-        if(this.refLink.getHero().getHitbox().intersects(this.whip.getHitbox())){
-            this.refLink.getHero().setHasWhip(true);
+        if(this.reflink.getHero().getHitbox().intersects(this.whip.getHitbox())){
+            this.reflink.getHero().setHasWhip(true);
         }
 
-        if(this.refLink.getHero().getHasWhip()){
+        if(this.reflink.getHero().getHasWhip()){
             int closestX = -1;
             int closestY = -1;
             double closestDistance = 100;
@@ -205,18 +205,18 @@ public class Level3State extends State{
                 // You can return or use these coordinates here
                 if(!this.MarkedHooks.contains(pt)){
                     if(closestDistance> 3){
-                        this.refLink.getHero().setGrapplePoint(closestX,closestY);
+                        this.reflink.getHero().setGrapplePoint(closestX,closestY);
                         this.MarkedHooks.add(pt);
                         startUnmarkHookTimerWithParameters(pt);
-                        this.refLink.getHero().setGrappleInterrupt(false);
+                        this.reflink.getHero().setGrappleInterrupt(false);
                     }
                     else{
-                        this.refLink.getHero().setGrappleInterrupt(true);
+                        this.reflink.getHero().setGrappleInterrupt(true);
                     }
 
                 }
             } else {
-                this.refLink.getHero().setGrapplePoint(0,0); //punctele sunt relative la heroCenter point
+                this.reflink.getHero().setGrapplePoint(0,0); //punctele sunt relative la heroCenter point
             }
         }
         else{
@@ -233,7 +233,7 @@ public class Level3State extends State{
 
 
         if (mouse.getNumberOfMousePresses() > 0 && pauseButton.isClicked(mousePos.x, mousePos.y)) {
-            State.setState(refLink.getGame().getPauseMenuState()); // Acum trimite către meniul de pauză
+            State.setState(reflink.getGame().getPauseMenuState()); // Acum trimite către meniul de pauză
             mouse.mouseReleased(null);
             return;
         }
@@ -253,7 +253,7 @@ public class Level3State extends State{
             this.cameraIsSet = true;
         }
 
-        if(!adjustingCameraForDepth && this.refLink.getHero().getY()>1500){
+        if(!adjustingCameraForDepth && this.reflink.getHero().getY()>1500){
             cameraY+=500;
             cameraX+=200;
             camera.setPosition(cameraX,cameraY);
@@ -261,7 +261,7 @@ public class Level3State extends State{
         }
 
 
-        if(adjustingCameraForDepth && this.refLink.getHero().getY()<1500 && this.refLink.getHero().getX()>4100 && !this.adjustingCameraForArena){
+        if(adjustingCameraForDepth && this.reflink.getHero().getY()<1500 && this.reflink.getHero().getX()>4100 && !this.adjustingCameraForArena){
             cameraY+=200;
             cameraX+=200;
             camera.setPosition(cameraX,cameraY);
@@ -269,10 +269,10 @@ public class Level3State extends State{
         }
 
 
-        if(this.refLink.getHero().getX()<4820)
-            camera.updatePosition(this.refLink.getHero().getVelocityX(),this.refLink.getHero().getVelocityY()*2);
+        if(this.reflink.getHero().getX()<4820)
+            camera.updatePosition(this.reflink.getHero().getVelocityX(),this.reflink.getHero().getVelocityY()*2);
 
-        int currentCameraXProblem = (int)(this.refLink.getHero().getX() - camera.getxOffset());
+        int currentCameraXProblem = (int)(this.reflink.getHero().getX() - camera.getxOffset());
         if(currentCameraXProblem<94){
             camera.updatePosition(-1,0);
         }
@@ -283,11 +283,11 @@ public class Level3State extends State{
 
 
 
-        if(this.refLink.getHero().getHealth() == 0 && this.targetBlackIntensity == 1){
+        if(this.reflink.getHero().getHealth() == 0 && this.targetBlackIntensity == 1){
             this.targetBlackIntensity = 0;
 
-            this.refLink.getGame().getDeathState().restoreState();
-            State.setState(this.refLink.getGame().getDeathState());
+            this.reflink.getGame().getDeathState().restoreState();
+            State.setState(this.reflink.getGame().getDeathState());
         }
 
 
@@ -305,18 +305,18 @@ public class Level3State extends State{
         camera.apply(g2d);
 
 
-        if(this.refLink.getHero().getY()>1300){
+        if(this.reflink.getHero().getY()>1300){
             g2d.setTransform(originalTransform);
             originalTransform = g2d.getTransform();
             camera.apply(g2d);
         }
 
-        BufferedImage backgroundImage = this.refLink.getTileCache().getBackground(Constants.LEVEL3_BG_PATH);
+        BufferedImage backgroundImage = this.reflink.getTileCache().getBackground(Constants.LEVEL3_BG_PATH);
         g.drawImage(backgroundImage,0,0,this.levelWidth,this.levelHeight,null);
         for (int i = 0; i < Constants.LEVEL3_TILE_NR; ++i) {
             int currentID = this.level3.getVisualIDs()[i];
             if (currentID != -1) {
-                this.refLink.getTileCache()
+                this.reflink.getTileCache()
                         .getTile(Constants.LEVEL3_TEXTURES_PATH, currentID)
                         .Draw(g, (i % Constants.LEVEL3_WIDTH) * Constants.TILE_SIZE,
                                 (i / Constants.LEVEL3_WIDTH) * Constants.TILE_SIZE);
@@ -327,7 +327,7 @@ public class Level3State extends State{
             this.saves[i].drawItem(g);
         }
 
-        if(refLink.getHero().getHealth() == 0 || this.transitioning || this.transition_to_fight){
+        if(reflink.getHero().getHealth() == 0 || this.transitioning || this.transition_to_fight){
             this.targetBlackIntensity+=this.blackFadeStep;
             Color originalColor = g2d.getColor();
             if(this.targetBlackIntensity>=1.0){
@@ -342,17 +342,17 @@ public class Level3State extends State{
 
 
 
-        if(refLink.getHero().getHasWhip()){
+        if(reflink.getHero().getHasWhip()){
             Color originalColor1 = g2d.getColor();
             g2d.setColor(new Color(255,0,0,(int)(255*0.2)));
-            g2d.fillRect(this.refLink.getHero().getCurrentGrappleX()*16,this.refLink.getHero().getCurrentGrappleY()*16,16,16);
+            g2d.fillRect(this.reflink.getHero().getCurrentGrappleX()*16,this.reflink.getHero().getCurrentGrappleY()*16,16,16);
             g2d.setColor(originalColor1);
         }
         else{
             this.whip.drawItem(g);
         }
 
-        if(!refLink.getHero().getHasWhip()){
+        if(!reflink.getHero().getHasWhip()){
 
         }
 
@@ -365,9 +365,9 @@ public class Level3State extends State{
 
 
 
-        this.refLink.getHero().draw(g);
+        this.reflink.getHero().draw(g);
         g2d.setTransform(originalTransform);
-        this.refLink.getHero().DrawHealthBar(g);
+        this.reflink.getHero().DrawHealthBar(g);
         pauseButton.draw(g2d);
 
 
@@ -383,6 +383,14 @@ public class Level3State extends State{
     @Override
     public void setEnemy(Enemy enemy){
 
+    }
+
+    @Override
+    public void loadState(boolean access){
+        if(this.reflink.getLevel3RefreshDoneSignal()) {
+            return;
+        }
+        this.reflink.setLevel3RefreshDoneSignal(true);
     }
 
 

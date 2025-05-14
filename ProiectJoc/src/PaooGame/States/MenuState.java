@@ -3,15 +3,15 @@ package PaooGame.States;
 
 import PaooGame.Animations.ItemsAnimations.StaticItemAnimation;
 import PaooGame.Entities.Enemy;
-import PaooGame.Entities.Entity;
 import PaooGame.Config.Constants;
 import PaooGame.Input.MouseInput;
 import PaooGame.RefLinks;
-import java.awt.image.BufferedImage;
+
 import java.awt.*;
+import java.nio.file.AccessDeniedException;
 
 public class MenuState extends State  {
-    private Rectangle startButton, settingsButton, quitButton;
+    private Rectangle startButton, continueButton,settingsButton, quitButton;
     private StaticItemAnimation bgAnimation;
 
     private int buttonHeight = 70;
@@ -29,10 +29,11 @@ public class MenuState extends State  {
         // Definim zonele butoanelor
         int centerX = refLink.getWidth() / 2 -100 ;
         startButton = new Rectangle(centerX, topOffset, 200, 50);
-        settingsButton = new Rectangle(centerX, topOffset+buttonHeight, 200, 50);
-        quitButton = new Rectangle(centerX, topOffset+buttonHeight*2, 200, 50);
+        continueButton = new Rectangle(centerX,topOffset+buttonHeight,200,50);
+        settingsButton = new Rectangle(centerX, topOffset+buttonHeight*2, 200, 50);
+        quitButton = new Rectangle(centerX, topOffset+buttonHeight*3, 200, 50);
 
-        this.bgAnimation = new StaticItemAnimation(this.refLink,Constants.MAIN_MENU_BG_PATH,Constants.MAIN_MENU_BG_FRAME_NR,5,Constants.MAIN_MENU_BG_IMG_WIDTH,Constants.MAIN_MENU_BG_IMG_HEIGHT);
+        this.bgAnimation = new StaticItemAnimation(this.reflink,Constants.MAIN_MENU_BG_PATH,Constants.MAIN_MENU_BG_FRAME_NR,5,Constants.MAIN_MENU_BG_IMG_WIDTH,Constants.MAIN_MENU_BG_IMG_HEIGHT);
         this.bgAnimation.loadAnimation();
     }
 
@@ -48,19 +49,40 @@ public class MenuState extends State  {
 
     @Override
     public void update() {
-        MouseInput mouse = refLink.getMouseInput();
+        MouseInput mouse = reflink.getMouseInput();
         int mx = mouse.getMouseX();
         int my = mouse.getMouseY();
         this.bgAnimation.updateAnimation();
 
         if (mouse.getNumberOfMousePresses() > 0) {
             if (startButton.contains(mx, my)) {
-                State.setState(refLink.getGame().getLevel2State());
+                System.out.println("Se salveaza un STARTING SAVE in baza de date");
+                try{
+                    this.reflink.getDataProxy().resetBuffer(true);
+                    this.reflink.setDataRefreshSignal(true);
+                    switch (this.reflink.getDataProxy().load(Constants.CURRENT_STATE,true)){
+                        case 1:
+                            State.setState(this.reflink.getGame().getLevel1State());
+                            break;
+                        case 2:
+                            State.setState(this.reflink.getGame().getLevel2State());
+                            break;
+                        case 3:
+                            State.setState(this.reflink.getGame().getLevel3State());
+                            break;
+                    }
+                } catch (AccessDeniedException e) {
+                    System.err.println(e.getMessage());
+                }
             }
             else if (settingsButton.contains(mx, my)) {
             }
             else if (quitButton.contains(mx, my)) {
                 System.exit(0);
+            }
+            else if(continueButton.contains(mx,my)) {
+                System.out.println("Loading data// adica continui normal");
+                State.setState(reflink.getGame().getLevel1State());
             }
             // Resetăm mouse-ul după ce a fost tratat
             mouse.mouseReleased(null);
@@ -75,7 +97,7 @@ public class MenuState extends State  {
 
 
         // Coordonate mouse
-        MouseInput mouse = refLink.getMouseInput();
+        MouseInput mouse = reflink.getMouseInput();
         int mx = mouse.getMouseX();
         int my = mouse.getMouseY();
 
@@ -86,13 +108,19 @@ public class MenuState extends State  {
         g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 
         // Funcție lambda pt. butoane
-        drawButton(g2d, startButton, "Start Game", mx, my);
+        drawButton(g2d, startButton, "New Game", mx, my);
+        drawButton(g2d,continueButton,"Continue",mx,my);
         drawButton(g2d, settingsButton, "Settings", mx, my);
         drawButton(g2d, quitButton, "Quit", mx, my);
     }
 
     @Override
     public void restoreState() {
+
+    }
+
+    @Override
+    public void loadState(boolean access) {
 
     }
 

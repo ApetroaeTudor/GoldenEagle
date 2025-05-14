@@ -14,15 +14,21 @@ public class Constants {
     public static final int LEVEL1_WIDTH = 70;
     public static final int LEVEL1_HEIGHT = 45;
     public static final int LEVEL1_TILE_NR = LEVEL1_WIDTH*LEVEL1_HEIGHT;
+    public static final int LEVEL1_PIXEL_WIDTH = Constants.LEVEL1_WIDTH*Constants.TILE_SIZE;
+    public static final int LEVEL1_PIXEL_HEIGHT = Constants.LEVEL1_HEIGHT*Constants.TILE_SIZE;
 
 
     public static final int LEVEL2_WIDTH = 120;
     public static final int LEVEL2_HEIGHT = 30;
     public static final int LEVEL2_TILE_NR = LEVEL2_WIDTH*LEVEL2_HEIGHT;
+    public static final int LEVEL2_PIXEL_WIDTH = Constants.LEVEL2_WIDTH*Constants.TILE_SIZE;
+    public static final int LEVEL2_PIXEL_HEIGHT = Constants.LEVEL2_HEIGHT*Constants.TILE_SIZE;
 
     public static final int LEVEL3_WIDTH = 350;
     public static final int LEVEL3_HEIGHT = 170;
     public static final int LEVEL3_TILE_NR = LEVEL3_WIDTH*LEVEL3_HEIGHT;
+    public static final int LEVEL3_PIXEL_WIDTH = Constants.LEVEL3_WIDTH*Constants.TILE_SIZE;
+    public static final int LEVEL3_PIXEL_HEIGHT = Constants.LEVEL3_HEIGHT*Constants.TILE_SIZE;
 
 
     public static final double MAGIC_NUMBER = 2.27;
@@ -84,6 +90,7 @@ public class Constants {
     public static final String BOOT_ITEM_SHEET_PATH = "res/Items/EscapeItem.png";
     public static final String WHIP_FRAMED_SHEET_PATH = "res/Items/WhipFramed.png";
     public static final String BONFIRE_SHEET_PATH = "res/Items/save_bonfire.png";
+    public static final String SHADOW_PATH = "res/Items/shadow.png";
 
     public static final String LEVEL1_STATE = "LEVEL1_STATE";
     public static final String LEVEL2_STATE = "LEVEL2_STATE";
@@ -110,7 +117,7 @@ public class Constants {
     public static final float DYING_ENTITY_GRAVITY = 0.001f;
 
     public static final double HERO_BASE_HEALTH = 100.0;
-    public static final double HERO_BASE_DAMAGE = 100.0;
+    public static final double HERO_BASE_DAMAGE = 90.0;
     public static final float HERO_BASE_SPEED = 2.0f;
     public static final float HERO_BASE_JUMP_STRENGTH = -5f;//-3.5f;
     public static final float HERO_LEVEL2_JUMP_STRENGTH = -6.0f;
@@ -243,4 +250,32 @@ public class Constants {
         FALLING,WALKING,IN_FIGHT_IDLE,IN_FIGHT_ATTACKING
     }
 
+    public static final String CURRENT_STATE = "CURRENT_STATE";
+
+    public static final String HERO_HEALTH = "HERO_HEALTH";
+    public static final String HERO_X = "HERO_X";
+    public static final String HERO_Y = "HERO_Y";
+    public static final String HERO_HAS_WHIP = "HERO_HAS_WHIP";
+    public static final String HERO_NR_OF_FLEES = "HERO_NR_OF_FLEES";
+
+    public static final String TIGER0_HEALTH = "TIGER0_HEALTH";
+    public static final String TIGER1_HEALTH = "TIGER1_HEALTH";
+
+    public static final String BASIC_SKELETON0_HEALTH = "BASIC_SKELETON0_HEALTH";
+    public static final String BASIC_SKELETON1_HEALTH = "BASIC_SKELETON1_HEALTH";
+    public static final String STRONG_SKELETON0_HEALTH = "STRONG_SKELETON0_HEALTH";
+
+    public static final String BOSS_HEALTH = "BOSS_HEALTH";
+    public static final String MINOTAUR0_HEALTH = "MINOTAUR0_HEALTH";
+    public static final String MINOTAUR1_HEALTH = "MINOTAUR1_HEALTH";
+    public static final String GHOST0_HEALTH = "GHOST0_HEALTH";
+    public static final String GHOST1_HEALTH = "GHOST1_HEALTH";
+
+    public static final String TIMESTAMP = "TIMESTAMP";
+
+    public static String[] ALL_DATA_MANAGEMENT_CONSTANTS = {
+        CURRENT_STATE,HERO_HEALTH,HERO_X,HERO_Y,HERO_HAS_WHIP,HERO_NR_OF_FLEES,TIGER0_HEALTH,TIGER1_HEALTH,
+        BASIC_SKELETON0_HEALTH,BASIC_SKELETON1_HEALTH,STRONG_SKELETON0_HEALTH,BOSS_HEALTH,MINOTAUR0_HEALTH,
+        MINOTAUR1_HEALTH,GHOST0_HEALTH,GHOST1_HEALTH,TIMESTAMP
+    };
 }

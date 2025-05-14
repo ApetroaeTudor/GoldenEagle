@@ -11,6 +11,7 @@ import PaooGame.States.State;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.nio.file.AccessDeniedException;
 
 public class Hero extends Entity {
     private float jumpStrength;
@@ -120,7 +121,8 @@ public class Hero extends Entity {
 
     @Override
     public void update() {
-//        System.out.println(this.isGrappling);
+
+
 
 
 
@@ -492,4 +494,27 @@ public class Hero extends Entity {
 
     public boolean getCanEngage(){return this.canEngage;}
     public void setCanEngage(boolean canEngage) { this.canEngage = canEngage;}
+
+
+    public void loadHeroState(boolean access){
+        if(this.reflink.getHeroRefreshDoneSignal()){
+           return;
+        }
+
+        try{
+            this.health = this.reflink.getDataProxy().load(Constants.HERO_HEALTH,access);
+            this.x = this.reflink.getDataProxy().load(Constants.HERO_X,access);
+            this.getHitbox().setX(this.x);
+            this.y = this.reflink.getDataProxy().load(Constants.HERO_Y,access);
+            this.getHitbox().setY(this.y);
+            this.hasWhip = this.reflink.getDataProxy().load(Constants.HERO_HAS_WHIP, access) == 1;
+            this.nrOfEscapes = this.reflink.getDataProxy().load(Constants.HERO_NR_OF_FLEES,access);
+            this.reflink.setHeroRefreshDoneSignal(true);
+        } catch (AccessDeniedException | IllegalArgumentException e) {
+            System.err.println(e.getMessage());
+        }
+
+
+
+    }
 }

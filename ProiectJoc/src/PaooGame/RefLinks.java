@@ -1,5 +1,6 @@
 package PaooGame;
 
+import PaooGame.DatabaseManaging.DataManager;
 import PaooGame.Entities.Hero;
 import PaooGame.Input.MouseInput;
 
@@ -7,6 +8,8 @@ import PaooGame.Input.KeyManager;
 import PaooGame.Strategies.EnemyStrategies.EnemyStrategy;
 import PaooGame.Strategies.EnemyStrategies.TigerEnemyStrategy;
 import PaooGame.Tiles.TileCache;
+
+import javax.xml.crypto.Data;
 
 public class RefLinks
 {
@@ -20,6 +23,59 @@ public class RefLinks
     private EnemyStrategy minotaurEnemyStrategy;
     private EnemyStrategy ghostEnemyStrategy;
     private EnemyStrategy strongSkeletonEnemyStategy;
+    private DataManager dataProxy;
+
+    private boolean dataRefreshSignal;
+    private boolean level1RefreshDoneSignal;
+    private boolean level2RefreshDoneSignal;
+    private boolean level3RefreshDoneSignal;
+    private boolean heroRefreshDoneSignal;
+
+
+
+    public boolean getHeroRefreshDoneSignal(){
+        return heroRefreshDoneSignal;
+    }
+
+    public boolean getLevel1RefreshDoneSignal() {
+        return level1RefreshDoneSignal;
+    }
+
+    public boolean getLevel2RefreshDoneSignal() {
+        return level2RefreshDoneSignal;
+    }
+
+    public boolean getLevel3RefreshDoneSignal() {
+        return level3RefreshDoneSignal;
+    }
+
+    public boolean getDataRefreshSignal() {
+        return dataRefreshSignal;
+    }
+
+    public void setHeroRefreshDoneSignal(boolean heroRefreshDoneSignal){
+        this.heroRefreshDoneSignal = heroRefreshDoneSignal;
+    }
+
+    public void setLevel3RefreshDoneSignal(boolean level3RefreshDoneSignal) {
+        this.level3RefreshDoneSignal = level3RefreshDoneSignal;
+    }
+
+    public void setLevel2RefreshDoneSignal(boolean level2RefreshDoneSignal) {
+        this.level2RefreshDoneSignal = level2RefreshDoneSignal;
+    }
+
+    public void setLevel1RefreshDoneSignal(boolean level1RefreshDoneSignal) {
+        this.level1RefreshDoneSignal = level1RefreshDoneSignal;
+    }
+
+    public void setDataRefreshSignal(boolean dataRefreshSignal) {
+        this.dataRefreshSignal = dataRefreshSignal;
+    }
+
+
+
+
 
 
     private Hero hero;
@@ -31,6 +87,10 @@ public class RefLinks
         this.game = game;
 //        this.tileCache=new TileCache();
     }
+
+
+    public void setDataProxy(DataManager dataProxy) { this.dataProxy = dataProxy; }
+    public DataManager getDataProxy() { return this.dataProxy; }
 
     public void setStrongSkeletonEnemyStrategy(EnemyStrategy strongSkeletonEnemyStategy){
         this.strongSkeletonEnemyStategy = strongSkeletonEnemyStategy;
