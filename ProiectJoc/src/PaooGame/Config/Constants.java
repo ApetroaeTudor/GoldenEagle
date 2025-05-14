@@ -32,6 +32,9 @@ public class Constants {
 
     public static final int ATTACK_EXPLOSION_TILE_SIZE = 112;
 
+
+    public static final int BOOT_TILE_WIDTH = 34;
+    public static final int BOOT_TILE_HEIGHT = 28;
     public static final int ITEM_FLOATING_TILE_SIZE = 48;
     public static final int BONFIRE_TILE_SIZE = 32;
     public static final int WHIP_POSITION_X = 495;
@@ -78,7 +81,7 @@ public class Constants {
     public static final String DEATH_SCREEN_BG_PATH = "res/Effects/YouDied.jpg";
     public static final String HERO_SPRITE_SHEET_PATH = "res/Characters/Hero/Hero_SpriteSheet1.png";
     public static final String ATTACK_EXPLOSION_SHEET_PATH = "res/Effects/HitExplosion.png";
-
+    public static final String BOOT_ITEM_SHEET_PATH = "res/Items/EscapeItem.png";
     public static final String WHIP_FRAMED_SHEET_PATH = "res/Items/WhipFramed.png";
     public static final String BONFIRE_SHEET_PATH = "res/Items/save_bonfire.png";
 
@@ -109,7 +112,7 @@ public class Constants {
     public static final double HERO_BASE_HEALTH = 100.0;
     public static final double HERO_BASE_DAMAGE = 100.0;
     public static final float HERO_BASE_SPEED = 2.0f;
-    public static final float HERO_BASE_JUMP_STRENGTH = -3.5f;
+    public static final float HERO_BASE_JUMP_STRENGTH = -5f;//-3.5f;
     public static final float HERO_LEVEL2_JUMP_STRENGTH = -6.0f;
     public static final int HERO_LEVEL1_STARTING_X = 100;
     public static final int HERO_LEVEL1_STARTING_Y = 420;
@@ -202,10 +205,23 @@ public class Constants {
     public static final String GHOST_FIGHT_BG_PATH = "res/Backgrounds/GhostBG.png";
     public static final String GHOST_NAME = "Ghost";
 
-    public static final int STRONG_SKELETON_FIGHTING_PASSIVE_TILE_WIDTH = 64;
-    public static final int STRONG_SKELETON_FIGHTING_PASSIVE_TILE_HEIGHT = 48;
+    public static final int STRONG_SKELETON_HEALTH_BAR_WIDTH = 300;
+    public static final int STRONG_SKELETON_HEALTH_BAR_HEIGHT = 30;
+    public static final int STRONG_SKELETON_PASSIVE_TILE_NR = 12;
     public static final int STRONG_SKELETON_PASSIVE_TILE_WIDTH = 48;
     public static final int STRONG_SKELETON_PASSIVE_TILE_HEIGHT = 32;
+    public static final int STRONG_SKELETON_FIGHTING_TILE_WIDTH = 64;
+    public static final int STRONG_SKELETON_FIGHTING_TILE_HEIGHT = 48;
+    public static final int STRONG_SKELETON_ATTACKING_TILE_NR = 13;
+    public static final int STRONG_SKELETON_IN_FIGHT_IDLE_TILE_NR = 4;
+    public static final double STRONG_SKELETON_HEALTH = 100f;
+    public static final double STRONG_SKELETON_DAMAGE = 25f;
+    public static final float STRONG_SKELETON_SPEED = -0.5f;
+    public static final float STRONG_SKELETON_DEFENCE = 0.4f;
+    public static final String STRONG_SKELETON_SPRITE_SHEET_PATH = "res/Enemies/StrongSkeleton.png";
+    public static final String STRONG_SKELETON_BG_PATH = "res/Backgrounds/StrongSkeletonBG.png";
+
+    public static final String STRONG_SKELETON_NAME = "Skullcrusher";
 
 
 
@@ -213,11 +229,6 @@ public class Constants {
     public static final String LEVEL_1 = "LEVEL_1";
     public static final String LEVEL_2 = "LEVEL_2";
     public static final String LEVEL_3 = "LEVEL_3";
-
-
-
-    //exit level1 x<= (735,930); y<=aprox 650
-    //exit level2 x<= (1855,1890);  MAX_X = 1870
 
 
     public static enum EFFECTS{

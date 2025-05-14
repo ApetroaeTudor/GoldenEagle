@@ -121,6 +121,26 @@ public class enemyActionAnimation extends Animation {
                     break;
             }
         }
+        else if(entityName == Constants.STRONG_SKELETON_NAME){
+            this.imageSheet = reflink.getTileCache().getEnemySheetByState(purpose,Constants.STRONG_SKELETON_NAME);
+            switch (purpose){
+                case FALLING:
+                case WALKING:
+                    this.imgWidth = Constants.STRONG_SKELETON_PASSIVE_TILE_WIDTH;
+                    this.imgHeight = Constants.STRONG_SKELETON_PASSIVE_TILE_HEIGHT;
+                    break;
+                case IN_FIGHT_IDLE:
+                    this.imgWidth = Constants.STRONG_SKELETON_FIGHTING_TILE_WIDTH;
+                    this.imgHeight = Constants.STRONG_SKELETON_FIGHTING_TILE_HEIGHT;
+                    this.playOnce = false;
+                    break;
+                case IN_FIGHT_ATTACKING:
+                    this.imgWidth = Constants.STRONG_SKELETON_FIGHTING_TILE_WIDTH;
+                    this.imgHeight = Constants.STRONG_SKELETON_FIGHTING_TILE_HEIGHT;
+                    this.playOnce = true;
+                    break;
+            }
+        }
 
 
         this.animationArray = new BufferedImage[this.nrOfFrames];
@@ -183,7 +203,7 @@ public class enemyActionAnimation extends Animation {
                 if(this.entityName == Constants.GHOST_NAME){
                     scale = 15;
                 }
-                if(this.entityName == Constants.BASIC_SKELETON_NAME){
+                if(this.entityName == Constants.BASIC_SKELETON_NAME || this.entityName == Constants.STRONG_SKELETON_NAME){
                     scale = 10;
                 }
             }

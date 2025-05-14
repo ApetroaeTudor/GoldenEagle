@@ -38,6 +38,9 @@ public class Enemy extends Entity {
             case Constants.GHOST_NAME:
                 this.enemyStrategy = this.reflink.getGhostEnemyStrategy();
                 break;
+            case Constants.STRONG_SKELETON_NAME:
+                this.enemyStrategy = this.reflink.getStrongSkeletonEnemyStrategy();
+                break;
         }
 
         this.speed = this.enemyStrategy.getSpeed();

@@ -6,6 +6,7 @@ import PaooGame.Animations.Animation;
 import PaooGame.Animations.EffectsAnimations.EffectAnimation;
 import PaooGame.Config.Constants;
 import PaooGame.HUD.AttackButton;
+import PaooGame.HUD.ImageButton;
 import PaooGame.HUD.VerticalGradientBar;
 import PaooGame.Input.MouseInput;
 import PaooGame.RefLinks;
@@ -31,6 +32,7 @@ public class FightState extends State {
     private Timer timer3;
     private Timer popupTimer;
     private Timer waitForEnemyDeathTimer;
+    private Timer fleeTimer;
 
     private FightStrategy fightStrategy = null;
     private FightStrategy tigerStrategy = null;
@@ -38,11 +40,13 @@ public class FightState extends State {
     private FightStrategy minotaurStrategy = null;
     private FightStrategy basicSkeletonStrategy = null;
     private FightStrategy ghostStrategy = null;
+    private FightStrategy strongSkeletonStrategy = null;
 
     private int popupTimeInMillis = 700;
     private int timeoutInMillis = 1000;
     private int timeoutInMillisForDelayingPlayerTurn = 1500;
     private int timeoutInMillisWaitForEnemyDeath = 1300;
+    private int timeoutInMillisWaitForFlee = 3000;
     private boolean isTimerStarted;
     private boolean isTimerFinished;
     private boolean isWaitingForPlayerTurn;
@@ -69,6 +73,8 @@ public class FightState extends State {
     private Animation attackAnimation;
 
     private AttackButton attackButton;
+    private ImageButton fleeButton;
+    private boolean isFleeButtonPressed = false;
 
     private int scrollX = 0;
     private int scrollSpeed = 1;
@@ -83,6 +89,9 @@ public class FightState extends State {
 
         this.blockingBar = new VerticalGradientBar(50,50);
         this.blockingBar.setPosition(935,250);
+
+
+        this.fleeButton = new ImageButton(this.refLink.getHero(),90,550,this.refLink.getTileCache().getSpecial(Constants.BOOT_ITEM_SHEET_PATH,Constants.BOOT_TILE_WIDTH,Constants.BOOT_TILE_HEIGHT,1));
 
 
 
@@ -118,11 +127,15 @@ public class FightState extends State {
         });
         this.waitForEnemyDeathTimer = new Timer(this.timeoutInMillisWaitForEnemyDeath,e->{
             transitioningToVictory = true;
-
         });
+        this.fleeTimer = new Timer(this.timeoutInMillisWaitForFlee,e->{
+           this.refLink.getHero().setCanEngage(true);
+        });
+
         this.timer.setRepeats(false);
         this.timer2.setRepeats(false);
         this.timer3.setRepeats(false);
+        this.fleeTimer.setRepeats(false);
         this.popupTimer.setRepeats(false);
         this.waitForEnemyDeathTimer.setRepeats(false);
 
@@ -214,6 +227,21 @@ public class FightState extends State {
                                 .ownerState(refLink.getGame().getLevel3State())
                                 .build();
                         break;
+                    case Constants.STRONG_SKELETON_NAME:
+                        this.strongSkeletonStrategy = new FightStrategy.FightStrategyBuilder(this.enemy)
+                                .x(260)
+                                .y(30)
+                                .width(this.enemy.getWidth())
+                                .height(this.enemy.getHeight())
+                                .healthBarX(405)
+                                .healthBarY(80)
+                                .healthBarWidth(Constants.STRONG_SKELETON_HEALTH_BAR_WIDTH)
+                                .healthBarHeight(Constants.STRONG_SKELETON_HEALTH_BAR_HEIGHT)
+                                .backgroundImgPath(Constants.STRONG_SKELETON_BG_PATH)
+                                .defence(Constants.STRONG_SKELETON_DEFENCE)
+                                .ownerState(refLink.getGame().getLevel2State())
+                                .build();
+                        break;
                 }
             }
         }
@@ -235,6 +263,9 @@ public class FightState extends State {
                 case Constants.GHOST_NAME:
                     this.fightStrategy = ghostStrategy;
                     break;
+                case Constants.STRONG_SKELETON_NAME:
+                    this.fightStrategy = strongSkeletonStrategy;
+                    break;
             }
             this.fightStrategy.update();
             this.enemy.update();
@@ -253,20 +284,55 @@ public class FightState extends State {
         int my = mouse.getMouseY();
 
 
+
         if(this.isPlayerTurn){
+            if(!this.isFleeButtonPressed){
+                this.fleeButton.updateHover(mx,my);
+                this.attackButton.updateHover(mx,my);
+            }
 
-            this.attackButton.updateHover(mx,my);
-            if(this.attackButton.isClicked(mx,my,mouse.isOneClick())){
-                this.attackAnimation.triggerOnce();
-                this.fightStrategy.takeDamage((float)this.refLink.getHero().getDamage());
-                this.printingDamageDealtPopup = true;
-                this.latestDamageDealt = (double)this.fightStrategy.calculateDamage((float)this.refLink.getHero().getDamage());
-                this.attackButton.setIsHovered(false);
-                if(this.fightStrategy.getEnemy().getHealth()>0){
-                    this.isPlayerTurn = false;
+            if(mouse.isOneClick()){
+                if(this.fleeButton.isClicked(mx,my,true) && !this.isFleeButtonPressed){
+                    this.waitForEnemyDeathTimer.start();
+                    this.fleeTimer.start();
+                    this.refLink.getHero().setCanEngage(false);
+                    this.refLink.getHero().setNrOfEscapes(this.refLink.getHero().getNrOfEscapes()-1);
+                    this.isFleeButtonPressed = true;
+                }
+                else if(this.attackButton.isClicked(mx,my,true) && !this.isFleeButtonPressed){
+                    System.out.println("???");
 
+                    this.attackAnimation.triggerOnce();
+                    this.fightStrategy.takeDamage((float)this.refLink.getHero().getDamage());
+                    this.printingDamageDealtPopup = true;
+                    this.latestDamageDealt = (double)this.fightStrategy.calculateDamage((float)this.refLink.getHero().getDamage());
+                    this.attackButton.setIsHovered(false);
+                    if(this.fightStrategy.getEnemy().getHealth()>0){
+                        this.isPlayerTurn = false;
+
+                    }
                 }
             }
+
+//            if(this.fleeButton.isClicked(mx,my,mouse.isOneClick())){
+//                this.waitForEnemyDeathTimer.start();
+//                this.fleeTimer.start();
+//                this.refLink.getHero().setCanEngage(false);
+//            }
+//            if(this.attackButton.isClicked(mx,my,mouse.isOneClick())){
+//                System.out.println("???");
+//
+//                this.attackAnimation.triggerOnce();
+//                this.fightStrategy.takeDamage((float)this.refLink.getHero().getDamage());
+//                this.printingDamageDealtPopup = true;
+//                this.latestDamageDealt = (double)this.fightStrategy.calculateDamage((float)this.refLink.getHero().getDamage());
+//                this.attackButton.setIsHovered(false);
+//                if(this.fightStrategy.getEnemy().getHealth()>0){
+//                    this.isPlayerTurn = false;
+//
+//                }
+//            }
+
         }
         else{
             if(this.refLink.getKeyManager().isKeyPressed(KeyEvent.VK_SPACE) && this.enemyTurnProgress<=50){
@@ -374,6 +440,10 @@ public class FightState extends State {
 
             g2d.setFont(new Font("Arial",Font.BOLD,20));
             g2d.setColor(Color.WHITE);
+            g2d.drawString("Run Away",70,500);
+            g2d.setFont(new Font("Arial",Font.BOLD,10));
+            g2d.drawString("(You can run away " + this.refLink.getHero().getNrOfEscapes() + " more times)",36,530);
+            g2d.setFont(new Font("Arial",Font.BOLD,20));
             if(this.isPlayerTurn){
                 g2d.drawString("Current Turn: Player",20,30);
             }
@@ -383,10 +453,12 @@ public class FightState extends State {
                 g2d.drawString(printString,20,30);
                 g2d.setColor(Color.WHITE);
             }
-            g2d.drawString("Your health:",20,630);
+            g2d.drawString("Your health",60,640);
             g2d.drawString("Press space",900,687);
             g2d.setFont(new Font("Arial",Font.BOLD,10));
             g2d.drawString("(When the bar is fuller you block more damage)",840,710);
+
+
 
 
 
@@ -395,6 +467,7 @@ public class FightState extends State {
             refLink.getHero().DrawHealthBar(g);
 
             this.attackButton.draw(g2d);
+            this.fleeButton.draw(g2d);
             this.attackAnimation.paintAnimation(g,380,200,false,1);
 
             if(this.printingDamageReceivedPopup){
@@ -438,6 +511,7 @@ public class FightState extends State {
     public void restoreState() {
         blackIntensity = 1.0;
         fadeToBlackProgress = 0.0;
+        this.enemy.setCurrentState(Constants.ENEMY_STATES.FALLING);
 
 
         this.transitioningToDeath = false;
@@ -446,6 +520,7 @@ public class FightState extends State {
 
         this.printingDamageDealtPopup = false;
         this.printingDamageReceivedPopup = false;
+        this.isFleeButtonPressed = false;
 
         this.latestDamageDealt = 0.0;
         this.latestDamageReceived = 0.0;

@@ -29,6 +29,10 @@ public class Hero extends Entity {
     private boolean isGrapplingTimerExpired = false;
     private boolean grappleInterrupt = false;
     private boolean didJumpAfterGrapple = false;
+    private boolean canEngage = true;
+
+    private int nrOfEscapes = 2;
+    private int maxNrOfEscapes = 2;
 
 
 
@@ -482,4 +486,10 @@ public class Hero extends Entity {
     public boolean getHasWhip(){return this.hasWhip;}
     public void setHasWhip(boolean hasWhip){this.hasWhip = hasWhip;}
 
+    public int getNrOfEscapes(){return this.nrOfEscapes;}
+    public int getMaxNrOfEscapes(){return this.maxNrOfEscapes;}
+    public void setNrOfEscapes(int nrOfEscapes) { this.nrOfEscapes = nrOfEscapes; if(this.nrOfEscapes>this.getMaxNrOfEscapes()){this.nrOfEscapes = 3; } else if(this.nrOfEscapes<0){this.nrOfEscapes = 0;}}
+
+    public boolean getCanEngage(){return this.canEngage;}
+    public void setCanEngage(boolean canEngage) { this.canEngage = canEngage;}
 }

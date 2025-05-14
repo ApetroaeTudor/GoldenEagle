@@ -126,7 +126,7 @@ public class Level3State extends State{
                     enemy.nullifyHitbox();
                 }
                 else{
-                    if(refLink.getHero().getHitbox().intersects(enemy.getHitbox())){
+                    if(refLink.getHero().getHitbox().intersects(enemy.getHitbox()) && refLink.getHero().getCanEngage()){
                         enemy.setIsEngaged(true);
                         this.transitioning = true;
                         this.transition_to_fight = true;

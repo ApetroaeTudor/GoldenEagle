@@ -229,6 +229,20 @@ public class TileCache {
                 inFightIdleMessage = "GHOST_IN_FIGHT_IDLE";
                 inFightAttackingMessage = "GHOST_IN_FIGHT_ATTACKING";
                 break;
+            case Constants.STRONG_SKELETON_NAME:
+                sheetPath = Constants.STRONG_SKELETON_SPRITE_SHEET_PATH;
+                passiveTileHeight = Constants.STRONG_SKELETON_PASSIVE_TILE_HEIGHT;
+                passiveTileWidth = Constants.STRONG_SKELETON_PASSIVE_TILE_WIDTH;
+                inFightTileWidth = Constants.STRONG_SKELETON_FIGHTING_TILE_WIDTH;
+                inFightTileHeight = Constants.STRONG_SKELETON_FIGHTING_TILE_HEIGHT;
+                walkingAnimationNrOfTiles = Constants.STRONG_SKELETON_PASSIVE_TILE_NR;
+                inFightIdleNrOfTiles = Constants.STRONG_SKELETON_IN_FIGHT_IDLE_TILE_NR;
+                inFightAttackingNrOfTiles = Constants.STRONG_SKELETON_ATTACKING_TILE_NR;
+                walkingMessage = "STRONG_SKELETON_WALKING";
+                fallingMessage = "STRONG_SKELETON_FALLING";
+                inFightIdleMessage = "STRONG_SKELETON_IN_FIGHT_IDLE";
+                inFightAttackingMessage = "STRONG_SKELETON_IN_FIGHT_ATTACKING";
+                break;
         }
         try{
             enemyFileSheet = new File(sheetPath);

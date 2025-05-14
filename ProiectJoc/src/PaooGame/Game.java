@@ -31,6 +31,7 @@ public class Game implements Runnable {
     private EnemyStrategy wizardStrategy;
     private EnemyStrategy minotaurStrategy;
     private EnemyStrategy ghostStrategy;
+    private EnemyStrategy strongSkeletonStrategy;
 
     private State level1State;
     private Level1 level1;
@@ -94,9 +95,12 @@ public class Game implements Runnable {
         level2 = new Level2();
         level3 = new Level3();
 
+
+        strongSkeletonStrategy = StrongSkeletonEnemyStrategy.getInstance(refLink);
+        this.refLink.setStrongSkeletonEnemyStrategy(this.strongSkeletonStrategy);
+
         ghostStrategy = GhostEnemyStrategy.getInstance(refLink);
         this.refLink.setGhostEnemyStrategy(this.ghostStrategy);
-
 
         minotaurStrategy = MinotaurEnemyStrategy.getInstance(refLink);
         this.refLink.setMinotaurEnemyStrategy(this.minotaurStrategy);

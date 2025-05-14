@@ -32,7 +32,7 @@ public class Level2State extends State{
 
 
 
-    private int nrOfEnemies = 1;
+    private int nrOfEnemies = 3;
     private Enemy[] enemies;
     private SaveItem[] saves;
     private int nrOfSaves = 1;
@@ -56,9 +56,10 @@ public class Level2State extends State{
         levelHeight = Constants.LEVEL2_WIDTH*Constants.TILE_SIZE;
         camera = new Camera(0,0);
 
-        //TODO enemies
         this.saves[0] = new SaveItem(this.refLink,Constants.LEVEL2_SAVE1_X,Constants.LEVEL2_SAVE1_Y);
         this.enemies[0] = new Enemy(this.refLink,Constants.HERO_LEVEL2_STARTING_X+300,Constants.HERO_LEVEL2_STARTING_Y,Constants.BASIC_SKELETON_NAME);
+        this.enemies[1] = new Enemy(this.refLink,1020,320,Constants.STRONG_SKELETON_NAME);
+        this.enemies[2] = new Enemy(this.refLink,1700,240,Constants.BASIC_SKELETON_NAME);
 
         pauseButton = new PauseButton(reflink.getHero(),80,50);
 
@@ -108,6 +109,7 @@ public class Level2State extends State{
 
     @Override
     public void update(){
+        System.out.println("X = " + this.refLink.getHero().getX() + "Y = " + this.refLink.getHero().getY());
         this.refLink.getHero().update();
         for(int i =0;i<this.nrOfSaves;++i){
             this.saves[i].updateItem();
@@ -123,7 +125,7 @@ public class Level2State extends State{
                     enemy.nullifyHitbox();
                 }
                 else{
-                    if(refLink.getHero().getHitbox().intersects(enemy.getHitbox())){
+                    if(refLink.getHero().getHitbox().intersects(enemy.getHitbox())&& refLink.getHero().getCanEngage()){
                         enemy.setIsEngaged(true);
                         this.transitioning = true;
                         this.transition_to_fight = true;

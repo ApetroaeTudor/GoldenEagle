@@ -19,6 +19,7 @@ public class RefLinks
     private EnemyStrategy wizardEnemyStrategy;
     private EnemyStrategy minotaurEnemyStrategy;
     private EnemyStrategy ghostEnemyStrategy;
+    private EnemyStrategy strongSkeletonEnemyStategy;
 
 
     private Hero hero;
@@ -31,6 +32,10 @@ public class RefLinks
 //        this.tileCache=new TileCache();
     }
 
+    public void setStrongSkeletonEnemyStrategy(EnemyStrategy strongSkeletonEnemyStategy){
+        this.strongSkeletonEnemyStategy = strongSkeletonEnemyStategy;
+    }
+    public EnemyStrategy getStrongSkeletonEnemyStrategy(){return this.strongSkeletonEnemyStategy;}
 
     public void setGhostEnemyStrategy(EnemyStrategy ghostEnemyStrategy){
         this.ghostEnemyStrategy = ghostEnemyStrategy;
