@@ -228,8 +228,8 @@ public class Enemy extends Entity {
         return this.enemyStrategy.getSource();
     } //
 
-    public void setX(int x){this.x = x;}
-    public void setY(int y){this.y = y;}
+    public void setX(int x){this.x = x; this.getHitbox().setX(this.x);}
+    public void setY(int y){this.y = y; this.getHitbox().setY(this.y);}
 
     public EnemyStrategy getEnemyStrategy() {
         return enemyStrategy;

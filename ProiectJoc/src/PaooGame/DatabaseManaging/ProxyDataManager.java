@@ -116,6 +116,9 @@ public class ProxyDataManager implements DataManager {
         if (this.concreteDataManager == null){
             this.concreteDataManager = ConcreteDataManager.getInstance(this.reflink);
         }
+        this.reflink.getGame().getLevel1State().restoreState();
+        this.reflink.getGame().getLevel2State().restoreState();
+        this.reflink.getGame().getLevel3State().restoreState();
         this.concreteDataManager.resetBuffer(true);
     }
 

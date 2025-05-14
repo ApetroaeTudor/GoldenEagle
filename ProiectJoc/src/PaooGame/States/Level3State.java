@@ -76,11 +76,11 @@ public class Level3State extends State{
 
         this.enemies = new Enemy[this.nrOfEnemies];
 
-        this.enemies[0] = new Enemy(this.reflink,5150,1200,Constants.WIZARD_NAME); //wizard
-        this.enemies[1] = new Enemy(this.reflink,710,1000,Constants.MINOTAUR_NAME); //minotaur0
-        this.enemies[2] = new Enemy(this.reflink,2968,610,Constants.MINOTAUR_NAME); //minotaur1
-        this.enemies[3] = new Enemy(this.reflink,3312,1970,Constants.GHOST_NAME); //ghost0
-        this.enemies[4] = new Enemy(this.reflink,3852,1890,Constants.GHOST_NAME); //ghost1
+        this.enemies[0] = new Enemy(this.reflink,Constants.WIZARD_X,Constants.WIZARD_Y,Constants.WIZARD_NAME); //wizard
+        this.enemies[1] = new Enemy(this.reflink,Constants.MINOTAUR1_X,Constants.MINOTAUR1_Y,Constants.MINOTAUR_NAME); //minotaur0
+        this.enemies[2] = new Enemy(this.reflink,Constants.MINOTAUR2_X,Constants.MINOTAUR2_Y,Constants.MINOTAUR_NAME); //minotaur1
+        this.enemies[3] = new Enemy(this.reflink,Constants.GHOST1_X,Constants.GHOST1_Y,Constants.GHOST_NAME); //ghost0
+        this.enemies[4] = new Enemy(this.reflink,Constants.GHOST1_X,Constants.GHOST2_Y,Constants.GHOST_NAME); //ghost1
 
 
         this.saves[0] = new SaveItem(this.reflink,Constants.LEVEL3_SAVE1_X,Constants.LEVEL3_SAVE1_Y);
@@ -107,6 +107,21 @@ public class Level3State extends State{
 
     @Override
     public void restoreState(){
+        this.enemies[0].setX(Constants.WIZARD_X);
+        this.enemies[0].setY(Constants.WIZARD_Y);
+
+        this.enemies[1].setX(Constants.MINOTAUR1_X);
+        this.enemies[1].setY(Constants.MINOTAUR1_Y);
+
+        this.enemies[2].setX(Constants.MINOTAUR2_X);
+        this.enemies[2].setY(Constants.MINOTAUR2_Y);
+
+        this.enemies[3].setX(Constants.GHOST1_X);
+        this.enemies[3].setY(Constants.GHOST1_Y);
+
+        this.enemies[4].setX(Constants.GHOST2_X);
+        this.enemies[4].setY(Constants.GHOST2_Y);
+
     }
 
     @Override

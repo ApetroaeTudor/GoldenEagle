@@ -147,6 +147,10 @@ public class Constants {
     public static final float TIGER_SPEED =-0.4f;
     public static final float TIGER_DEFENCE = 0f;
     public static final String TIGER_NAME = "Tiger";
+    public static final int TIGER1_X = 400;
+    public static final int TIGER1_Y = 450;
+    public static final int TIGER2_X = 720;
+    public static final int TIGER2_Y = 460;
 
 
     public static final int BASIC_SKELETON_PASSIVE_TILE_WIDTH = 32;
@@ -160,6 +164,10 @@ public class Constants {
     public static final float BASIC_SKELETON_SPEED = 0.6f;
     public static final float BASIC_SKELETON_DEFENCE = 0.4f;
     public static final String BASIC_SKELETON_NAME = "Skeleton";
+    public static final int BASIC_SKELETON1_X = Constants.HERO_LEVEL2_STARTING_X+300;
+    public static final int BASIC_SKELETON1_Y = Constants.HERO_LEVEL2_STARTING_Y;
+    public static final int BASIC_SKELETON2_X =1700 ;
+    public static final int BASIC_SKELETON2_Y =240 ;
 
 
 
@@ -179,6 +187,8 @@ public class Constants {
     public static final String WIZARD_SPRITE_SHEET_PATH = "res/Enemies/wizard.png";
     public static final String WIZARD_FIGHT_BG_PATH = "res/Backgrounds/WizardBg.jpg";
     public static final String WIZARD_NAME = "EVIL WIZARD";
+    public static final int WIZARD_X = 5150;
+    public static final int WIZARD_Y = 1200;
 
 
     public static final int MINOTAUR_HEALTH_BAR_WIDTH = 300;
@@ -197,6 +207,10 @@ public class Constants {
     public static final String MINOTAUR_SPRITE_SHEET_PATH = "res/Enemies/minotaur.png";
     public static final String MINOTAUR_FIGHT_BG_PATH = "res/Backgrounds/MinotaurBG.png";
     public static final String MINOTAUR_NAME = "MINOTAUR";
+    public static final int MINOTAUR1_X = 710;
+    public static final int MINOTAUR1_Y = 1000;
+    public static final int MINOTAUR2_X = 2968;
+    public static final int MINOTAUR2_Y = 610;
 
     public static final int GHOST_HEALTH_BAR_WIDTH = 200;
     public static final int GHOST_HEALTH_BAR_HEIGHT = 20;
@@ -214,6 +228,10 @@ public class Constants {
     public static final String GHOST_SPRITE_SHEET_PATH = "res/Enemies/ghost2.png";
     public static final String GHOST_FIGHT_BG_PATH = "res/Backgrounds/GhostBG.png";
     public static final String GHOST_NAME = "Ghost";
+    public static final int GHOST1_X = 3312;
+    public static final int GHOST1_Y = 1970;
+    public static final int GHOST2_X = 3852;
+    public static final int GHOST2_Y = 1890;
 
     public static final int STRONG_SKELETON_HEALTH_BAR_WIDTH = 300;
     public static final int STRONG_SKELETON_HEALTH_BAR_HEIGHT = 30;
@@ -230,8 +248,9 @@ public class Constants {
     public static final float STRONG_SKELETON_DEFENCE = 0.4f;
     public static final String STRONG_SKELETON_SPRITE_SHEET_PATH = "res/Enemies/StrongSkeleton.png";
     public static final String STRONG_SKELETON_BG_PATH = "res/Backgrounds/StrongSkeletonBG.png";
-
     public static final String STRONG_SKELETON_NAME = "Skullcrusher";
+    public static final int STRONG_SKELETON1_X = 1020;
+    public static final int STRONG_SKELETON1_Y = 320;
 
 
 

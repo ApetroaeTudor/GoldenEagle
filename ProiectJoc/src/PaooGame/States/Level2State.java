@@ -64,9 +64,11 @@ public class Level2State extends State{
         camera = new Camera(0,0);
 
         this.saves[0] = new SaveItem(this.reflink,Constants.LEVEL2_SAVE1_X,Constants.LEVEL2_SAVE1_Y);
-        this.enemies[0] = new Enemy(this.reflink,Constants.HERO_LEVEL2_STARTING_X+300,Constants.HERO_LEVEL2_STARTING_Y,Constants.BASIC_SKELETON_NAME); //basicSkeleton0
-        this.enemies[1] = new Enemy(this.reflink,1020,320,Constants.STRONG_SKELETON_NAME); //strongSkeleton0
-        this.enemies[2] = new Enemy(this.reflink,1700,240,Constants.BASIC_SKELETON_NAME); //basicSkeleton1
+
+        this.enemies[0] = new Enemy(this.reflink,Constants.BASIC_SKELETON1_X,Constants.BASIC_SKELETON1_Y,Constants.BASIC_SKELETON_NAME); //basicSkeleton0
+        this.enemies[1] = new Enemy(this.reflink,Constants.STRONG_SKELETON1_X,Constants.STRONG_SKELETON1_Y,Constants.STRONG_SKELETON_NAME); //strongSkeleton0
+        this.enemies[2] = new Enemy(this.reflink,Constants.BASIC_SKELETON2_X,Constants.BASIC_SKELETON2_Y,Constants.BASIC_SKELETON_NAME); //basicSkeleton1
+
         this.floppyDisks[0] = new FloppyItem(this.reflink,Constants.LEVEL2_SAVE1_X+10,Constants.LEVEL2_SAVE1_Y-30);
 
         pauseButton = new PauseButton(reflink.getHero(),80,50);
@@ -112,6 +114,14 @@ public class Level2State extends State{
 
     @Override
     public void restoreState(){
+            this.enemies[0].setX(Constants.BASIC_SKELETON1_X);
+            this.enemies[0].setY(Constants.BASIC_SKELETON1_Y);
+
+            this.enemies[1].setX(Constants.STRONG_SKELETON1_X);
+            this.enemies[1].setY(Constants.STRONG_SKELETON1_Y);
+
+            this.enemies[2].setX(Constants.BASIC_SKELETON2_X);
+            this.enemies[2].setY(Constants.BASIC_SKELETON2_Y);
 
     }
 

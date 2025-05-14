@@ -91,4 +91,5 @@ public abstract class EnemyStrategy {
     public abstract String getSource();
 
     public abstract void drawName(Graphics2D g2d);
+
 }

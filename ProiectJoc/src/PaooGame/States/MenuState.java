@@ -59,15 +59,17 @@ public class MenuState extends State  {
                 System.out.println("Se salveaza un STARTING SAVE in baza de date");
                 try{
                     this.reflink.getDataProxy().resetBuffer(true);
-                    this.reflink.setDataRefreshSignal(true);
                     switch (this.reflink.getDataProxy().load(Constants.CURRENT_STATE,true)){
                         case 1:
+                            this.reflink.setDataRefreshSignal(true);
                             State.setState(this.reflink.getGame().getLevel1State());
                             break;
                         case 2:
+                            this.reflink.setDataRefreshSignal(true);
                             State.setState(this.reflink.getGame().getLevel2State());
                             break;
                         case 3:
+                            this.reflink.setDataRefreshSignal(true);
                             State.setState(this.reflink.getGame().getLevel3State());
                             break;
                     }

@@ -30,10 +30,10 @@ public class Level1State extends State {
     private int levelWidth;  // Lățimea totală a nivelului în pixeli
     private int levelHeight; // Înălțimea totală a nivelului în pixeli
 
-    private int tiger1X =400;
-    private int tiger1Y =450;
-    private int tiger2X =720;
-    private int tiger2Y =460;
+    private int tiger1X =Constants.TIGER1_X;
+    private int tiger1Y =Constants.TIGER1_Y;
+    private int tiger2X =Constants.TIGER2_X;
+    private int tiger2Y =Constants.TIGER2_Y;
 
     private SaveItem[] saves;
     private int nrOfSaves = 1;
@@ -71,8 +71,10 @@ public class Level1State extends State {
 
         enemies = new Enemy[2];
         floppyDisks = new FloppyItem[this.nrOfSaves];
+
         enemies[0] = new Enemy(this.reflink,this.tiger1X,this.tiger1Y,Constants.TIGER_NAME); //tiger0
         enemies[1] = new Enemy(this.reflink,this.tiger2X,this.tiger2Y,Constants.TIGER_NAME); //tiger1
+
         this.saves[0] = new SaveItem(this.reflink,Constants.LEVEL1_SAVE1_X,Constants.LEVEL1_SAVE1_Y);
         this.floppyDisks[0] = new FloppyItem(this.reflink,Constants.LEVEL1_SAVE1_X+10,Constants.LEVEL1_SAVE1_Y-30);
 
@@ -107,6 +109,11 @@ public class Level1State extends State {
 
     @Override
     public void restoreState() {
+        this.enemies[0].setX(Constants.TIGER1_X);
+        this.enemies[0].setY(Constants.TIGER1_Y);
+
+        this.enemies[1].setX(Constants.TIGER2_X);
+        this.enemies[1].setY(Constants.TIGER2_Y);
     }
 
 
