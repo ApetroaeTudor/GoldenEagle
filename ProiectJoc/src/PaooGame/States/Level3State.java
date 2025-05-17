@@ -33,6 +33,8 @@ public class Level3State extends State{
     private Timer unmarkHookTimer;
     private int hookTimeoutMillis = 100;
 
+    private boolean bossDefeated = false;
+
 
     private WhipItem whip;
 
@@ -129,6 +131,26 @@ public class Level3State extends State{
 
         for(FloppyItem disk : this.floppyDisks){
             disk.updateItem();
+        }
+
+        if(this.enemies[0].getHealth() == 0 && !bossDefeated){
+            try{
+                this.reflink.getDataProxy().storeScore(true,123,653,0);
+            }
+            catch (AccessDeniedException e){
+                System.out.println(e.getMessage());
+            }
+            this.bossDefeated = true;
+            int[] storedSaves = new int[3];
+            try {
+                storedSaves = this.reflink.getDataProxy().loadScore(true);
+
+            } catch (AccessDeniedException e){
+                System.out.println(e.getMessage());
+            }
+            for(int i = 0;i<3;i++){
+                System.out.println(storedSaves[i]);
+            }
         }
 
        // System.out.println("x: " + this.reflink.getHero().getX() + " y: "+this.reflink.getHero().getY());

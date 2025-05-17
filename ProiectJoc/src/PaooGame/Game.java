@@ -17,6 +17,7 @@ import PaooGame.Maps.Level3;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
+import java.nio.file.AccessDeniedException;
 
 public class Game implements Runnable {
     private GameWindow wnd;
@@ -198,6 +199,8 @@ public class Game implements Runnable {
     }
 
     private void Update() {
+
+        
 
         if(this.refLink.getDataRefreshSignal()){
             this.refLink.setHeroRefreshDoneSignal(false);

@@ -58,6 +58,40 @@ public class ConcreteDataManager implements DataManager{
 
         this.buffer.put(Constants.TIMESTAMP,-1);
 
+//        try {
+//            DriverManager.registerDriver(new JDBC());
+//            this.c = DriverManager.getConnection("jdbc:sqlite:src/PaooGame/DatabaseManaging/myDB.db");
+//            c.setAutoCommit(false);
+//            this.stmt = c.createStatement();
+//            stmt.executeUpdate(Constants.CREATE_TABLE_CMD);
+//
+//            this.buffer.put(Constants.TIMESTAMP, -2); //best score
+//            this.buffer.put(Constants.CURRENT_STATE, 0); //actual score
+//            storeBuffer(true);
+//            this.buffer.put(Constants.TIMESTAMP,-3); //second best
+//            storeBuffer(true);
+//            this.buffer.put(Constants.TIMESTAMP,-4); //third best
+//            storeBuffer(true);
+//
+//            this.buffer.put(Constants.TIMESTAMP,-1);
+//            this.buffer.put(Constants.CURRENT_STATE,-1);
+//
+//
+//        }catch (SQLIntegrityConstraintViolationException e) {
+//            System.out.println("E OK");
+//        }
+//         catch (Exception e) {
+//            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+//        } finally {
+//            try {
+//                if (pstmt != null) pstmt.close();
+//                if (c != null) c.close();
+//            } catch (SQLException ex) {
+//                System.err.println("Resource cleanup failed: " + ex.getMessage());
+//            }
+//        }
+
+
 
 
 
@@ -124,6 +158,8 @@ public class ConcreteDataManager implements DataManager{
 
             }
 
+        }catch (SQLIntegrityConstraintViolationException e) {
+            System.out.println("E OK");
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
         } finally {
@@ -191,6 +227,106 @@ public class ConcreteDataManager implements DataManager{
         }
 
 
+
+    }
+
+    @Override
+    public int[] loadScore(boolean access) {
+        int nr=1000000000;
+        try {
+            DriverManager.registerDriver(new JDBC());
+            this.c = DriverManager.getConnection("jdbc:sqlite:src/PaooGame/DatabaseManaging/myDB.db");
+            c.setAutoCommit(false);
+            this.stmt = c.createStatement();
+            stmt.executeUpdate(Constants.CREATE_TABLE_CMD);
+
+            this.pstmt = c.prepareStatement(Constants.GET_SCORE_LINE_CMD);
+            ResultSet rs = pstmt.executeQuery();
+
+            if(rs.next()){
+                nr = rs.getInt(Constants.CURRENT_STATE);
+            }
+
+        }catch (SQLIntegrityConstraintViolationException e) {
+            System.out.println("E OK");
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+        } finally {
+            try {
+                if (pstmt != null) pstmt.close();
+                if (c != null) c.close();
+            } catch (SQLException ex) {
+                System.err.println("Resource cleanup failed: " + ex.getMessage());
+            }
+        }
+        int score1 = nr%1000;
+        System.out.println("Score1: " +score1);
+        int score2 = (nr%1000000)/(1000);
+        System.out.println("Score2: " +score2);
+        int score3 = (nr%1000000000)/(1000000) ;
+        System.out.println("Score3: " +score3);
+        int[] scores = new int[3]; scores[0] = score1; scores[1] = score2; scores[2] = score3;
+        return scores;
+    }
+
+    @Override
+    public void storeScore(boolean access, int score1, int score2, int score3) {
+        int nr = 1000000000 + score1 + score2*1000 + score3 * 1000000;
+        int oldTimestamp = this.load(Constants.TIMESTAMP,access);
+        int oldState = this.load(Constants.CURRENT_STATE,access);
+        this.store(Constants.TIMESTAMP,-2,access);
+        this.store(Constants.CURRENT_STATE,nr,access);
+
+        try {
+            DriverManager.registerDriver(new JDBC());
+            this.c = DriverManager.getConnection("jdbc:sqlite:src/PaooGame/DatabaseManaging/myDB.db");
+            c.setAutoCommit(false);
+            this.stmt = c.createStatement();
+            stmt.executeUpdate(Constants.CREATE_TABLE_CMD);
+
+            this.pstmt = c.prepareStatement(Constants.GET_SCORE_LINE_CMD);
+            ResultSet rs = pstmt.executeQuery();
+
+            if(rs.next()){ //exista deja
+                try{
+                    System.out.println(nr);
+                    this.pstmt = c.prepareStatement(Constants.UPDATE_SCORE_LINE_CMD);
+                    this.pstmt.setInt(1, nr);  // value to set
+                    this.pstmt.executeUpdate();
+                    c.commit();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            else{
+                pstmt = c.prepareStatement(Constants.INSERT_CMD);
+
+                for(int i = 0;i<Constants.NR_OF_DB_CONSTANTS;++i){
+                    pstmt.setInt(i+1,load(Constants.ALL_DATA_MANAGEMENT_CONSTANTS[i],access));
+                }
+                pstmt.setInt(1,-2);
+                pstmt.setInt(2,nr);
+                System.out.println(nr);
+
+                pstmt.executeUpdate();
+                c.commit();
+            }
+
+        }catch (SQLIntegrityConstraintViolationException e) {
+            System.out.println("E OK");
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+        } finally {
+            try {
+                if (pstmt != null) pstmt.close();
+                if (c != null) c.close();
+            } catch (SQLException ex) {
+                System.err.println("Resource cleanup failed: " + ex.getMessage());
+            }
+        }
+
+        this.store(Constants.TIMESTAMP,oldTimestamp,access);
+        this.store(Constants.CURRENT_STATE,oldState,access);
 
     }
 }

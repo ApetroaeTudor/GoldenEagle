@@ -120,7 +120,7 @@ public class Constants {
     public static final float DYING_ENTITY_GRAVITY = 0.001f;
 
     public static final double HERO_BASE_HEALTH = 100.0;
-    public static final double HERO_BASE_DAMAGE = 100.0;
+    public static final double HERO_BASE_DAMAGE = 500.0;
     public static final float HERO_BASE_SPEED = 2.0f;
     public static final float HERO_BASE_JUMP_STRENGTH = -5f;//-3.5f;
     public static final float HERO_LEVEL2_JUMP_STRENGTH = -6.0f;
@@ -322,7 +322,7 @@ public class Constants {
             GHOST1_HEALTH
     };
 
-    public static final int DB_MAX_ENTRIES = 5;
+    public static final int DB_MAX_ENTRIES = 8; //5 data + 3 save
 
     public static final String CREATE_TABLE_CMD = "CREATE TABLE IF NOT EXISTS GameData("+
                                                     Constants.TIMESTAMP + " PRIMARY KEY, "+
@@ -372,8 +372,13 @@ public class Constants {
                                                         "LIMIT 1;";
 
     public static final String DELETE_OLDEST_ENTRY_CMD = "DELETE FROM GameData WHERE rowid = " +
-                                                        "(SELECT rowid FROM GameData ORDER BY TIMESTAMP ASC LIMIT 1)";
+            "(SELECT rowid FROM GameData WHERE TIMESTAMP > 0 ORDER BY TIMESTAMP ASC LIMIT 1)";
+
 
 
     public static final String QUERY_NR_OF_ENTRIES_CMD = "SELECT COUNT(*) FROM GameData;";
+
+    public static final String GET_SCORE_LINE_CMD = "SELECT * FROM GameData WHERE TIMESTAMP = -2;";
+
+    public static final String UPDATE_SCORE_LINE_CMD = "UPDATE GameData SET CURRENT_STATE = ? WHERE TIMESTAMP = -2;";
 }

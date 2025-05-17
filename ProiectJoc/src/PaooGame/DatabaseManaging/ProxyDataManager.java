@@ -159,4 +159,35 @@ public class ProxyDataManager implements DataManager {
         this.concreteDataManager.storeBuffer(access);
     }
 
+    @Override
+    public int[] loadScore(boolean access) throws AccessDeniedException {
+            if(!access){
+                throw new AccessDeniedException("Sorry, you don't have permision to load scores from the database..\n");
+            }
+
+            if(this.concreteDataManager == null){
+                this.concreteDataManager = ConcreteDataManager.getInstance(this.reflink);
+            }
+
+            return this.concreteDataManager.loadScore(access);
+
+    }
+
+    @Override
+    public void storeScore(boolean access, int score1, int score2, int score3) throws AccessDeniedException, IllegalArgumentException {
+        if(!access){
+            throw new AccessDeniedException("Sorry, you don't have permision to store scores into the database..\n");
+        }
+
+        if(score1<0 || score1>999 || score2<0 || score2>999 || score3<0 || score3>999){
+            throw new IllegalArgumentException("Please insert scores between 0 and 999..\n");
+        }
+
+        if(this.concreteDataManager == null){
+            this.concreteDataManager = ConcreteDataManager.getInstance(this.reflink);
+        }
+
+       this.concreteDataManager.storeScore(access,score1,score2,score3);
+    }
+
 }
