@@ -1,0 +1,5 @@
+<map id="PaooGame.Entities.Entity" name="PaooGame.Entities.Entity">
+<area shape="rect" id="node1" title=" " alt="" coords="101,95,288,121"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1Hitbox_1_1Hitbox.html" title=" " alt="" coords="5,5,192,32"/>
+<area shape="rect" id="node3" href="$classPaooGame_1_1RefLinks.html" title=" " alt="" coords="216,5,368,32"/>
+</map>

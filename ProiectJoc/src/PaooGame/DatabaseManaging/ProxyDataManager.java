@@ -20,7 +20,6 @@ public class ProxyDataManager implements DataManager {
         if(!access){
             throw new AccessDeniedException("Sorry, you don't have the permission to load..\n");
         }
-        System.out.println(key);
 
         boolean keyFound = false;
         for(String token : Constants.ALL_DATA_MANAGEMENT_CONSTANTS){

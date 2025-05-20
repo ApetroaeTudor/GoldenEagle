@@ -1,0 +1,74 @@
+\hypertarget{classPaooGame_1_1Maps_1_1Level}{}\doxysection{Paoo\+Game.\+Maps.\+Level Class Reference}
+\label{classPaooGame_1_1Maps_1_1Level}\index{PaooGame.Maps.Level@{PaooGame.Maps.Level}}
+
+
+Inheritance diagram for Paoo\+Game.\+Maps.\+Level\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPaooGame_1_1Maps_1_1Level__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_aa64fff0bdc1b0bd8e24ab8d101153060}\label{classPaooGame_1_1Maps_1_1Level_aa64fff0bdc1b0bd8e24ab8d101153060}} 
+int\mbox{[}$\,$\mbox{]} {\bfseries get\+Visual\+IDs} ()
+\item 
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_a3ec77f80dfd448554d0b073c1329483a}\label{classPaooGame_1_1Maps_1_1Level_a3ec77f80dfd448554d0b073c1329483a}} 
+int\mbox{[}$\,$\mbox{]} {\bfseries get\+Behavior\+IDs} ()
+\item 
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_ae6a1e3a107fc84eb14f07b877b902937}\label{classPaooGame_1_1Maps_1_1Level_ae6a1e3a107fc84eb14f07b877b902937}} 
+int\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} {\bfseries get\+Visual\+Tiles} ()
+\item 
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_aab5ecdaa1b98ed0c518715cf4bbeaeb7}\label{classPaooGame_1_1Maps_1_1Level_aab5ecdaa1b98ed0c518715cf4bbeaeb7}} 
+int\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} {\bfseries get\+Behavior\+Tiles} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_a780c1cf3fed4426f509bcd30cc45c48f}\label{classPaooGame_1_1Maps_1_1Level_a780c1cf3fed4426f509bcd30cc45c48f}} 
+static int {\bfseries check\+Falling} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} hitbox, int LEVEL\+\_\+\+WIDTH, int LEVEL\+\_\+\+HEIGHT, int\mbox{[}$\,$\mbox{]} behavior\+IDs)
+\item 
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_a41799ace07312f05c7c6b4f2134a606a}\label{classPaooGame_1_1Maps_1_1Level_a41799ace07312f05c7c6b4f2134a606a}} 
+static boolean {\bfseries is\+Tile\+Under\+Character\+Lethal} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} hitbox, int LEVEL\+\_\+\+WIDTH, int LEVEL\+\_\+\+HEIGHT, int\mbox{[}$\,$\mbox{]} behavior\+IDs)
+\item 
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_a3ca0e5ee8b83f83afbf1e41bcd28e733}\label{classPaooGame_1_1Maps_1_1Level_a3ca0e5ee8b83f83afbf1e41bcd28e733}} 
+static void {\bfseries snap\+To\+Ground} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} hitbox)
+\item 
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_ada22cd0068b42c8a3d8e4945c7c217f1}\label{classPaooGame_1_1Maps_1_1Level_ada22cd0068b42c8a3d8e4945c7c217f1}} 
+static boolean {\bfseries check\+Wall\+Collision} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} hitbox, boolean check\+Right, int LEVEL\+\_\+\+WIDTH, int LEVEL\+\_\+\+HEIGHT, int\mbox{[}$\,$\mbox{]} behavior\+IDs)
+\item 
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_aea7e52dd8f6acc0e4a218be5f6ee35ac}\label{classPaooGame_1_1Maps_1_1Level_aea7e52dd8f6acc0e4a218be5f6ee35ac}} 
+static boolean {\bfseries check\+Ceiling\+Collision} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} hitbox, int LEVEL\+\_\+\+WIDTH, int LEVEL\+\_\+\+HEIGHT, int\mbox{[}$\,$\mbox{]} behavior\+IDs)
+\item 
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_acdde18a406525db7946aa5291e77021c}\label{classPaooGame_1_1Maps_1_1Level_acdde18a406525db7946aa5291e77021c}} 
+static boolean {\bfseries is\+Tile\+Solid} (int tileX, int tileY, int LEVEL\+\_\+\+WIDTH\+\_\+\+IN\+\_\+\+NR\+\_\+\+TILES, int LEVEL\+\_\+\+HEIGHT\+\_\+\+IN\+\_\+\+NR\+\_\+\+TILES, int\mbox{[}$\,$\mbox{]} behavior\+IDs)
+\item 
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_ae4edc494ce121a44ea8d162f2c383790}\label{classPaooGame_1_1Maps_1_1Level_ae4edc494ce121a44ea8d162f2c383790}} 
+static int {\bfseries get\+Tile\+Behavior} (int tileX, int tileY, int LEVEL\+\_\+\+WIDTH\+\_\+\+IN\+\_\+\+NR\+\_\+\+TILES, int LEVEL\+\_\+\+HEIGHT\+\_\+\+IN\+\_\+\+NR\+\_\+\+TILES, int\mbox{[}$\,$\mbox{]} behavior\+IDs)
+\item 
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_a7985f25394226ebee213f7812cd94a4f}\label{classPaooGame_1_1Maps_1_1Level_a7985f25394226ebee213f7812cd94a4f}} 
+static boolean {\bfseries is\+Ground\+Ahead} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} hitbox, boolean heading\+Left, int LEVEL\+\_\+\+WIDTH, int LEVEL\+\_\+\+HEIGHT, int\mbox{[}$\,$\mbox{]} behavior\+IDs)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_a25fbdbad5f1da38ee3c8270b9a8a56be}\label{classPaooGame_1_1Maps_1_1Level_a25fbdbad5f1da38ee3c8270b9a8a56be}} 
+void {\bfseries set\+IDs} (String Textures\+Csv, String Behavior\+Csv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_a796c61c872a6210cd6d8f8a828ad41ab}\label{classPaooGame_1_1Maps_1_1Level_a796c61c872a6210cd6d8f8a828ad41ab}} 
+int\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} {\bfseries visual\+Tiles}
+\item 
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_a383b241692509528c9d8aeb62b4c5c62}\label{classPaooGame_1_1Maps_1_1Level_a383b241692509528c9d8aeb62b4c5c62}} 
+int\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} {\bfseries behavior\+Tiles}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Paoo\+Game/\+Maps/Level.\+java\end{DoxyCompactItemize}

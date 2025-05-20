@@ -231,9 +231,6 @@ public class Level1State extends State {
             }
 
 
-//            this.reflink.setDataStoreSignal(true);
-
-
             this.reflink.getHero().setX(Constants.HERO_LEVEL2_STARTING_X);
             this.reflink.getHero().setY(Constants.HERO_LEVEL2_STARTING_Y);
             this.reflink.getHero().getHitbox().setX(Constants.HERO_LEVEL2_STARTING_X);
@@ -242,8 +239,6 @@ public class Level1State extends State {
             this.reflink.getHero().setNrOfCollectedSaves(1);
 
             State.setState(reflink.getGame().getLevel2State());
-//            this.saveTimer.start();
-
 
         }
 
@@ -251,7 +246,6 @@ public class Level1State extends State {
             this.targetBlackIntensity = 0;
             this.transitioning = false;
             this.transition_to_fight = false;
-//            refLink.getGame().getFightState().restoreState();
 
             State.setState(reflink.getGame().getFightState());
 
@@ -262,7 +256,6 @@ public class Level1State extends State {
 
             this.reflink.getGame().getDeathState().restoreState();
             State.setState(this.reflink.getGame().getDeathState());
-//            this.transitioning = false;
         }
 
         contextHUD.update();

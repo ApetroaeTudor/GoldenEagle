@@ -1,0 +1,8 @@
+<map id="PaooGame.HUD.HUD" name="PaooGame.HUD.HUD">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,165,133"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1HUD_1_1AttackButton.html" title=" " alt="" coords="213,5,428,32"/>
+<area shape="rect" id="node3" href="$classPaooGame_1_1HUD_1_1ContextHUD.html" title=" " alt="" coords="215,56,426,83"/>
+<area shape="rect" id="node4" href="$classPaooGame_1_1HUD_1_1HealthBar.html" title=" " alt="" coords="223,107,418,133"/>
+<area shape="rect" id="node5" href="$classPaooGame_1_1HUD_1_1ImageButton.html" title=" " alt="" coords="213,157,428,184"/>
+<area shape="rect" id="node6" href="$classPaooGame_1_1HUD_1_1PauseButton.html" title=" " alt="" coords="215,208,426,235"/>
+</map>

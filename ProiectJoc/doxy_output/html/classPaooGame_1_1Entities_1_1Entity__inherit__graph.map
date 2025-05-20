@@ -1,0 +1,6 @@
+<map id="PaooGame.Entities.Entity" name="PaooGame.Entities.Entity">
+<area shape="rect" id="node1" title=" " alt="" coords="221,5,408,32"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1Entities_1_1Enemy.html" title=" " alt="" coords="5,80,200,107"/>
+<area shape="rect" id="node3" href="$classPaooGame_1_1Entities_1_1Hero.html" title=" " alt="" coords="225,80,405,107"/>
+<area shape="rect" id="node4" href="$classPaooGame_1_1Entities_1_1NPC.html" title=" " alt="" coords="429,80,605,107"/>
+</map>

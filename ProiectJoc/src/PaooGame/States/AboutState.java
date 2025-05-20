@@ -43,11 +43,7 @@ public class AboutState extends State
 
     }
 
-    /*! \fn public void Draw(Graphics g)
-        \brief Deseneaza (randeaza) pe ecran starea curenta a meniu about.
 
-        \param g Contextul grafic in care trebuie sa deseneze starea jocului pe ecran.
-     */
     @Override
     public void draw(Graphics g)
     {

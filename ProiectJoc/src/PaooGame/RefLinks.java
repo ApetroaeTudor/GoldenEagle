@@ -22,10 +22,6 @@ public class RefLinks
     private int score2=0;
     private int score3=0;
 
-    //TODO: in level3 state verific scorul eroului in momentul de fata, actualizez cele 3 scoruri de aici si dupa dau store.
-    //in winstate doar printez cele 3 scoruri de aici
-
-
     private State currentRunningLevel;
 
     private EnemyStrategy tigerEnemyStrategy;
@@ -160,7 +156,6 @@ public class RefLinks
     public RefLinks(Game game)
     {
         this.game = game;
-//        this.tileCache=new TileCache();
     }
 
 

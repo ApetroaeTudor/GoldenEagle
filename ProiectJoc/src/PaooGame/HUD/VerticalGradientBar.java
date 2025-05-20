@@ -123,7 +123,6 @@ public class VerticalGradientBar {
     public double getCurrentValue() { return currentValue; } // Getter for the target value
 
 
-    /** Resets position and dimensions to default values. */
     public void resetPositionToDefault() {
         this.width = 40;
         this.height = 300;

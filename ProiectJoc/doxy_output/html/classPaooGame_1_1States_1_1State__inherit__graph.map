@@ -1,0 +1,14 @@
+<map id="PaooGame.States.State" name="PaooGame.States.State">
+<area shape="rect" id="node1" title=" " alt="" coords="5,259,180,285"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1States_1_1AboutState.html" title=" " alt="" coords="231,5,444,32"/>
+<area shape="rect" id="node3" href="$classPaooGame_1_1States_1_1DeathState.html" title=" " alt="" coords="230,56,445,83"/>
+<area shape="rect" id="node4" href="$classPaooGame_1_1States_1_1FightState.html" title=" " alt="" coords="234,107,441,133"/>
+<area shape="rect" id="node5" href="$classPaooGame_1_1States_1_1Level1State.html" title=" " alt="" coords="228,157,447,184"/>
+<area shape="rect" id="node6" href="$classPaooGame_1_1States_1_1Level2State.html" title=" " alt="" coords="228,208,447,235"/>
+<area shape="rect" id="node7" href="$classPaooGame_1_1States_1_1Level3State.html" title=" " alt="" coords="228,259,447,285"/>
+<area shape="rect" id="node8" href="$classPaooGame_1_1States_1_1MenuState.html" title=" " alt="" coords="232,309,443,336"/>
+<area shape="rect" id="node9" href="$classPaooGame_1_1States_1_1PauseMenuState.html" title=" " alt="" coords="230,361,445,402"/>
+<area shape="rect" id="node10" href="$classPaooGame_1_1States_1_1SettingsState.html" title=" " alt="" coords="240,426,435,467"/>
+<area shape="rect" id="node11" href="$classPaooGame_1_1States_1_1ShopState.html" title=" " alt="" coords="234,492,441,519"/>
+<area shape="rect" id="node12" href="$classPaooGame_1_1States_1_1WinState.html" title=" " alt="" coords="237,543,437,569"/>
+</map>

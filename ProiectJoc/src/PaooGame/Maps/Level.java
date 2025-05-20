@@ -76,7 +76,6 @@ public abstract class Level {
 
         for (int tileX = startX; tileX <= endX; tileX++) {
             if (tileX < 0 || tileX >= LEVEL_WIDTH) {
-                // Treat out-of-bounds as air, but continue checking other tiles
                 continue;
             }
 
@@ -200,7 +199,6 @@ public abstract class Level {
             int index = tileY * LEVEL_WIDTH + checkTileX;
 
             if (index < 0 || index >= behaviorIDs.length) {
-                System.err.println("Warning: checkWallCollision calculated invalid map index: " + index + " for tile (" + checkTileX + ", " + tileY + ")");
                 continue; // Skip this invalid index
             }
 

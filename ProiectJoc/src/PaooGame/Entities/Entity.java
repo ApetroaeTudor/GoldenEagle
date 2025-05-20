@@ -175,7 +175,7 @@ public abstract class Entity {
 
     public void draw(Graphics g){
 
-        this.hitbox.printHitbox(g);
+//        this.hitbox.printHitbox(g);
         this.getAnimationByState().paintAnimation(g,(int)this.x,(int)this.y,this.flipped,1);
     }
 

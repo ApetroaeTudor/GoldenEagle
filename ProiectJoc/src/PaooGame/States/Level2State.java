@@ -66,11 +66,11 @@ public class Level2State extends State{
         this.boosters = new BoosterItem[this.nrOfBoosters];
         this.npcs = new Entity[this.nrOfNpcs];
 
-        this.boosters[0] = new BoosterItem(this.reflink,1280,390);
-        this.boosters[1] = new BoosterItem(this.reflink,1360,345);
-        this.boosters[2] = new BoosterItem(this.reflink,1487,313);
+        this.boosters[0] = new BoosterItem(this.reflink,Constants.BOOSTER1_X,Constants.BOOSTER1_Y);
+        this.boosters[1] = new BoosterItem(this.reflink,Constants.BOOSTER2_X,Constants.BOOSTER2_Y);
+        this.boosters[2] = new BoosterItem(this.reflink,Constants.BOOSTER3_X,Constants.BOOSTER3_Y);
 
-        this.npcs[0] = new NPC(this.reflink,1030,336);
+        this.npcs[0] = new NPC(this.reflink,Constants.GOBLIN_POS_X,Constants.GOBLIN_POS_Y);
 
         this.contextHUD = new ContextHUD(this.reflink.getHero());
 
@@ -138,12 +138,10 @@ public class Level2State extends State{
 
             this.enemies[2].setX(Constants.BASIC_SKELETON2_X);
             this.enemies[2].setY(Constants.BASIC_SKELETON2_Y);
-
     }
 
     @Override
     public void update(){
-        System.out.println(this.reflink.getHero().getX() + " -- " +this.reflink.getHero().getY());
 
         for (Entity npc : npcs) {
             if (npc != null) {
@@ -189,7 +187,6 @@ public class Level2State extends State{
 
 
 
-        //System.out.println("X = " + this.reflink.getHero().getX() + "Y = " + this.reflink.getHero().getY());
         this.reflink.getHero().update();
         this.floppyDisks[0].updateItem();
 
@@ -314,11 +311,6 @@ public class Level2State extends State{
                 }
             }
 
-//            try{
-//                this.reflink.getDataProxy().store(Constants.CURRENT_STATE,3,true);
-//            } catch (AccessDeniedException | IllegalArgumentException exc){
-//                System.err.println(exc.getMessage());
-//            }
             this.reflink.getHero().setX(Constants.HERO_LEVEL3_STARTING_X);
             this.reflink.getHero().getHitbox().setX(Constants.HERO_LEVEL3_STARTING_X);
             this.reflink.getHero().setY(Constants.HERO_LEVEL3_STARTING_Y);
@@ -328,11 +320,6 @@ public class Level2State extends State{
             State.setState(this.reflink.getGame().getLevel3State());
 
 
-
-
-
-
-//            this.saveTimer.start();
 
 
 

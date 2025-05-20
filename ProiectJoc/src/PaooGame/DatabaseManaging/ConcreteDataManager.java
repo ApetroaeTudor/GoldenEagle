@@ -127,7 +127,7 @@ public class ConcreteDataManager implements DataManager{
             }
 
         }catch (SQLIntegrityConstraintViolationException e) {
-            System.out.println("E OK");
+            System.out.println();
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
         } finally {
@@ -216,7 +216,7 @@ public class ConcreteDataManager implements DataManager{
             }
 
         }catch (SQLIntegrityConstraintViolationException e) {
-            System.out.println("E OK");
+            System.out.println();
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
         } finally {
@@ -228,11 +228,8 @@ public class ConcreteDataManager implements DataManager{
             }
         }
         int score1 = nr%1000;
-        System.out.println("Score1: " +score1);
         int score2 = (nr%1000000)/(1000);
-        System.out.println("Score2: " +score2);
         int score3 = (nr%1000000000)/(1000000) ;
-        System.out.println("Score3: " +score3);
         int[] scores = new int[3]; scores[0] = score1; scores[1] = score2; scores[2] = score3;
         return scores;
     }
@@ -261,7 +258,6 @@ public class ConcreteDataManager implements DataManager{
 
             if(rs.next()){ //exista deja
                 try{
-                    System.out.println(nr);
                     this.pstmt = c.prepareStatement(Constants.UPDATE_SCORE_LINE_CMD);
                     this.pstmt.setInt(1, nr);  // value to set
                     this.pstmt.executeUpdate();
@@ -278,14 +274,13 @@ public class ConcreteDataManager implements DataManager{
                 }
                 pstmt.setInt(1,-2);
                 pstmt.setInt(2,nr);
-                System.out.println(nr);
 
                 pstmt.executeUpdate();
                 c.commit();
             }
 
         }catch (SQLIntegrityConstraintViolationException e) {
-            System.out.println("E OK");
+            System.out.println();
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
         } finally {

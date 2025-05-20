@@ -47,20 +47,17 @@ public class Enemy extends Entity {
         this.hitbox = new Hitbox(this.x,this.y,this.enemyStrategy.getHitboxWidth(),this.enemyStrategy.getHitboxHeight()); //
         this.currentState = Constants.ENEMY_STATES.FALLING;
 
-        this.setHealthBarColor1(this.enemyStrategy.getHealthBarColor1()); //
-        this.setHealthBarColor2(this.enemyStrategy.getHealthBarColor2()); //
+        this.setHealthBarColor1(this.enemyStrategy.getHealthBarColor1());
+        this.setHealthBarColor2(this.enemyStrategy.getHealthBarColor2());
 
-        this.walkingAnimation = this.enemyStrategy.getWalkingAnimation();// new enemyActionAnimation(this.reflink,Constants.ENEMY_STATES.WALKING,4,10,this.getName()); //
-//        this.walkingAnimation.loadAnimation();
-        this.inFightAttackingAnimation = this.enemyStrategy.getInFightAttackingAnimation();//new enemyActionAnimation(this.reflink,Constants.ENEMY_STATES.IN_FIGHT_ATTACKING,4,15,this.getName()); //
-//        this.inFightAttackingAnimation.loadAnimation();
-        this.inFightIdleAnimation = this.enemyStrategy.getInFightIdleAnimation();//new enemyActionAnimation(this.reflink,Constants.ENEMY_STATES.IN_FIGHT_IDLE,1,10,this.getName()); //
-//        this.inFightIdleAnimation.loadAnimation();
+        this.walkingAnimation = this.enemyStrategy.getWalkingAnimation();
+        this.inFightAttackingAnimation = this.enemyStrategy.getInFightAttackingAnimation();
+        this.inFightIdleAnimation = this.enemyStrategy.getInFightIdleAnimation();
 
-        this.damage = this.enemyStrategy.getDamage();//Constants.TIGER_DAMAGE; //
-        this.health = this.enemyStrategy.getHealth();//Constants.TIGER_HEALTH; //
+        this.damage = this.enemyStrategy.getDamage();
+        this.health = this.enemyStrategy.getHealth();
 
-        this.behaviorIDsToRespect = this.enemyStrategy.getBehaviorIDsToRespect();//reflink.getGame().getLevel1().getBehaviorIDs(); //
+        this.behaviorIDsToRespect = this.enemyStrategy.getBehaviorIDsToRespect();
 
 
     }
@@ -68,15 +65,8 @@ public class Enemy extends Entity {
 
 
     @Override
-    public void restoreEntity() { //
-//        this.health = 100.0;
-//        this.speed = this.enemyStrategy.getSpeed();//Constants.TIGER_SPEED;
-//        this.hitbox.setX(this.x);
-//        this.hitbox.setY(this.y);
-//        this.hitbox.setWidth(this.enemyStrategy.getHitboxWidth());
-//        this.hitbox.setHeight(this.enemyStrategy.getHitboxHeight());
-//        this.currentState = Constants.ENEMY_STATES.FALLING;
-//        this.isEngaged = false;
+    public void restoreEntity() {
+
     }
 
     @Override
@@ -150,7 +140,6 @@ public class Enemy extends Entity {
         boolean changingDirection = !Level.isGroundAhead(this.hitbox,!this.flipped,this.enemyStrategy.getLevelWidthInTiles(),this.enemyStrategy.getLevelHeightInTiles(),this.behaviorIDsToRespect); //
         if(directionSwitchCounter == 5){
             if(changingDirection){
-//            this.flipped = !this.flipped;
                 speed=-speed;
                 this.directionSwitchCounter=0;
             }

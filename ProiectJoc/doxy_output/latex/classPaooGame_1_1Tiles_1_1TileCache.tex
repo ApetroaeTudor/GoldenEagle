@@ -1,0 +1,148 @@
+\hypertarget{classPaooGame_1_1Tiles_1_1TileCache}{}\doxysection{Paoo\+Game.\+Tiles.\+Tile\+Cache Class Reference}
+\label{classPaooGame_1_1Tiles_1_1TileCache}\index{PaooGame.Tiles.TileCache@{PaooGame.Tiles.TileCache}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile}{Tile}} \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1TileCache_a3e59e059422b3b05ee355d63ee612105}{get\+Tile}} (String path, int id)
+\item 
+Buffered\+Image \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1TileCache_ab36f6d6970865545b1aebe6eeddb70ef}{get\+Background}} (String path)
+\item 
+Buffered\+Image \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1TileCache_a3caa49827449f2c70d84a3ca29595691}{get\+Effect}} (Constants.\+EFFECTS select\+Effect)
+\item 
+Buffered\+Image \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1TileCache_acfd2bd08354af01c0b6be97d2ae38e29}{get\+Special}} (String special\+Path, int tile\+Width, int tile\+Height, int nr\+Of\+Frames)
+\item 
+Buffered\+Image \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1TileCache_a48f90ec9f310e9bb23e444ee796d7343}{get\+Enemy\+Sheet\+By\+State}} (Constants.\+ENEMY\+\_\+\+STATES state, String enemy\+Type)
+\item 
+Buffered\+Image \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1TileCache_aa04b714246ca5c73b565b0619b1cb922}{get\+Hero\+State}} (Constants.\+HERO\+\_\+\+STATES state)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1TileCache}{Tile\+Cache}} \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1TileCache_ac0d438475e7cf161842be3b5c49cd9b3}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages caching of game tiles, spritesheets, and background images to optimize loading and memory usage. Implements the Singleton pattern to ensure a single instance of the cache. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1TileCache_ab36f6d6970865545b1aebe6eeddb70ef}\label{classPaooGame_1_1Tiles_1_1TileCache_ab36f6d6970865545b1aebe6eeddb70ef}} 
+\index{PaooGame.Tiles.TileCache@{PaooGame.Tiles.TileCache}!getBackground@{getBackground}}
+\index{getBackground@{getBackground}!PaooGame.Tiles.TileCache@{PaooGame.Tiles.TileCache}}
+\doxysubsubsection{\texorpdfstring{getBackground()}{getBackground()}}
+{\footnotesize\ttfamily Buffered\+Image Paoo\+Game.\+Tiles.\+Tile\+Cache.\+get\+Background (\begin{DoxyParamCaption}\item[{String}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves a background image. If the background image is already cached, it returns the cached version. Otherwise, it loads the image, caches it, and then returns it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The file path to the background image. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The requested Buffered\+Image for the background, or null if loading fails. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1TileCache_a3caa49827449f2c70d84a3ca29595691}\label{classPaooGame_1_1Tiles_1_1TileCache_a3caa49827449f2c70d84a3ca29595691}} 
+\index{PaooGame.Tiles.TileCache@{PaooGame.Tiles.TileCache}!getEffect@{getEffect}}
+\index{getEffect@{getEffect}!PaooGame.Tiles.TileCache@{PaooGame.Tiles.TileCache}}
+\doxysubsubsection{\texorpdfstring{getEffect()}{getEffect()}}
+{\footnotesize\ttfamily Buffered\+Image Paoo\+Game.\+Tiles.\+Tile\+Cache.\+get\+Effect (\begin{DoxyParamCaption}\item[{Constants.\+EFFECTS}]{select\+Effect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves an effect animation spritesheet. Currently supports ATTACK\+\_\+\+EXPLOSION. If the effect spritesheet is already cached, it returns the cached version. Otherwise, it loads the spritesheet, extracts the relevant subimage, caches it, and then returns it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em select\+Effect} & The type of effect to retrieve, as defined in \mbox{\hyperlink{}{Paoo\+Game.\+Config.\+Constants.\+EFFECTS}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Buffered\+Image for the effect animation, or null if loading fails or the effect type is not supported. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1TileCache_a48f90ec9f310e9bb23e444ee796d7343}\label{classPaooGame_1_1Tiles_1_1TileCache_a48f90ec9f310e9bb23e444ee796d7343}} 
+\index{PaooGame.Tiles.TileCache@{PaooGame.Tiles.TileCache}!getEnemySheetByState@{getEnemySheetByState}}
+\index{getEnemySheetByState@{getEnemySheetByState}!PaooGame.Tiles.TileCache@{PaooGame.Tiles.TileCache}}
+\doxysubsubsection{\texorpdfstring{getEnemySheetByState()}{getEnemySheetByState()}}
+{\footnotesize\ttfamily Buffered\+Image Paoo\+Game.\+Tiles.\+Tile\+Cache.\+get\+Enemy\+Sheet\+By\+State (\begin{DoxyParamCaption}\item[{Constants.\+ENEMY\+\_\+\+STATES}]{state,  }\item[{String}]{enemy\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves an enemy animation spritesheet based on the enemy\textquotesingle{}s type and current state. If the spritesheet for the given type and state is already cached, it returns the cached version. Otherwise, it loads the main enemy spritesheet, extracts the relevant subimage for the state, caches it, and then returns it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The current state of the enemy (e.\+g., WALKING, ATTACKING), as defined in \mbox{\hyperlink{}{Paoo\+Game.\+Config.\+Constants.\+ENEMY\+\_\+\+STATES}}. \\
+\hline
+{\em enemy\+Type} & The type of the enemy (e.\+g., TIGER\+\_\+\+NAME, BASIC\+\_\+\+SKELETON\+\_\+\+NAME), as defined in \mbox{\hyperlink{classPaooGame_1_1Config_1_1Constants}{Paoo\+Game.\+Config.\+Constants}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Buffered\+Image for the enemy\textquotesingle{}s current animation state, or null if loading fails or parameters are invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1TileCache_aa04b714246ca5c73b565b0619b1cb922}\label{classPaooGame_1_1Tiles_1_1TileCache_aa04b714246ca5c73b565b0619b1cb922}} 
+\index{PaooGame.Tiles.TileCache@{PaooGame.Tiles.TileCache}!getHeroState@{getHeroState}}
+\index{getHeroState@{getHeroState}!PaooGame.Tiles.TileCache@{PaooGame.Tiles.TileCache}}
+\doxysubsubsection{\texorpdfstring{getHeroState()}{getHeroState()}}
+{\footnotesize\ttfamily Buffered\+Image Paoo\+Game.\+Tiles.\+Tile\+Cache.\+get\+Hero\+State (\begin{DoxyParamCaption}\item[{Constants.\+HERO\+\_\+\+STATES}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves a hero animation spritesheet based on the hero\textquotesingle{}s current state. If the spritesheet for the given state is already cached, it returns the cached version. Otherwise, it loads the main hero spritesheet, extracts the relevant subimage for the state, caches it, and then returns it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The current state of the hero (e.\+g., IDLE, RUNNING), as defined in \mbox{\hyperlink{}{Paoo\+Game.\+Config.\+Constants.\+HERO\+\_\+\+STATES}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Buffered\+Image for the hero\textquotesingle{}s current animation state, or null if loading fails or the state is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1TileCache_ac0d438475e7cf161842be3b5c49cd9b3}\label{classPaooGame_1_1Tiles_1_1TileCache_ac0d438475e7cf161842be3b5c49cd9b3}} 
+\index{PaooGame.Tiles.TileCache@{PaooGame.Tiles.TileCache}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!PaooGame.Tiles.TileCache@{PaooGame.Tiles.TileCache}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1TileCache}{Tile\+Cache}} Paoo\+Game.\+Tiles.\+Tile\+Cache.\+get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Provides access to the single instance of the \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1TileCache}{Tile\+Cache}}. If an instance does not exist, it creates one. \begin{DoxyReturn}{Returns}
+The singleton instance of \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1TileCache}{Tile\+Cache}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1TileCache_acfd2bd08354af01c0b6be97d2ae38e29}\label{classPaooGame_1_1Tiles_1_1TileCache_acfd2bd08354af01c0b6be97d2ae38e29}} 
+\index{PaooGame.Tiles.TileCache@{PaooGame.Tiles.TileCache}!getSpecial@{getSpecial}}
+\index{getSpecial@{getSpecial}!PaooGame.Tiles.TileCache@{PaooGame.Tiles.TileCache}}
+\doxysubsubsection{\texorpdfstring{getSpecial()}{getSpecial()}}
+{\footnotesize\ttfamily Buffered\+Image Paoo\+Game.\+Tiles.\+Tile\+Cache.\+get\+Special (\begin{DoxyParamCaption}\item[{String}]{special\+Path,  }\item[{int}]{tile\+Width,  }\item[{int}]{tile\+Height,  }\item[{int}]{nr\+Of\+Frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves a special ability animation spritesheet. If the spritesheet is already cached, it returns the cached version. Otherwise, it loads the spritesheet, extracts the relevant subimage based on tile dimensions and frame count, caches it, and then returns it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em special\+Path} & The file path to the special ability spritesheet. \\
+\hline
+{\em tile\+Width} & The width of a single frame/tile in the spritesheet. \\
+\hline
+{\em tile\+Height} & The height of a single frame/tile in the spritesheet. \\
+\hline
+{\em nr\+Of\+Frames} & The number of frames in the animation strip. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Buffered\+Image for the special ability animation, or null if loading fails. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1TileCache_a3e59e059422b3b05ee355d63ee612105}\label{classPaooGame_1_1Tiles_1_1TileCache_a3e59e059422b3b05ee355d63ee612105}} 
+\index{PaooGame.Tiles.TileCache@{PaooGame.Tiles.TileCache}!getTile@{getTile}}
+\index{getTile@{getTile}!PaooGame.Tiles.TileCache@{PaooGame.Tiles.TileCache}}
+\doxysubsubsection{\texorpdfstring{getTile()}{getTile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile}{Tile}} Paoo\+Game.\+Tiles.\+Tile\+Cache.\+get\+Tile (\begin{DoxyParamCaption}\item[{String}]{path,  }\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves a specific \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile}{Tile}} from a tilesheet. If the \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile}{Tile}} or the tilesheet is already cached, it returns the cached version. Otherwise, it loads the tilesheet, extracts the \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile}{Tile}}, caches both, and then returns the \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile}{Tile}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The file path to the tilesheet. \\
+\hline
+{\em id} & The ID of the tile within the tilesheet. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The requested \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile}{Tile}} object, or null if loading fails or the tile ID is invalid. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Paoo\+Game/\+Tiles/Tile\+Cache.\+java\end{DoxyCompactItemize}

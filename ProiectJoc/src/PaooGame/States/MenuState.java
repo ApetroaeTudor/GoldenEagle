@@ -11,7 +11,7 @@ import java.awt.*;
 import java.nio.file.AccessDeniedException;
 
 public class MenuState extends State  {
-    private Rectangle startButton, continueButton,settingsButton, quitButton;
+    private Rectangle startButton, continueButton, quitButton;
     private StaticItemAnimation bgAnimation;
 
     private int buttonHeight = 70;
@@ -24,14 +24,13 @@ public class MenuState extends State  {
         // Încarcă imaginea de fundal
         int screenWidth = refLink.getWidth();
         int screenHeight = refLink.getHeight();
-        System.out.println( screenHeight + " /// " + screenWidth);
 
         // Definim zonele butoanelor
         int centerX = refLink.getWidth() / 2 -100 ;
         startButton = new Rectangle(centerX, topOffset, 200, 50);
         continueButton = new Rectangle(centerX,topOffset+buttonHeight,200,50);
-        settingsButton = new Rectangle(centerX, topOffset+buttonHeight*2, 200, 50);
-        quitButton = new Rectangle(centerX, topOffset+buttonHeight*3, 200, 50);
+//        settingsButton = new Rectangle(centerX, topOffset+buttonHeight*2, 200, 50);
+        quitButton = new Rectangle(centerX, topOffset+buttonHeight*2, 200, 50);
 
         this.bgAnimation = new StaticItemAnimation(this.reflink,Constants.MAIN_MENU_BG_PATH,Constants.MAIN_MENU_BG_FRAME_NR,5,Constants.MAIN_MENU_BG_IMG_WIDTH,Constants.MAIN_MENU_BG_IMG_HEIGHT);
         this.bgAnimation.loadAnimation();
@@ -56,7 +55,6 @@ public class MenuState extends State  {
 
         if (mouse.getNumberOfMousePresses() > 0) {
             if (startButton.contains(mx, my)) {
-                System.out.println("Se salveaza un STARTING SAVE in baza de date");
                 try{
                     this.reflink.getDataProxy().resetBuffer(true);
                     switch (this.reflink.getDataProxy().load(Constants.CURRENT_STATE,true)){
@@ -77,13 +75,10 @@ public class MenuState extends State  {
                     System.err.println(e.getMessage());
                 }
             }
-            else if (settingsButton.contains(mx, my)) {
-            }
             else if (quitButton.contains(mx, my)) {
                 System.exit(0);
             }
             else if(continueButton.contains(mx,my)) {
-                System.out.println("Loading data// adica continui normal");
                 try{
                     this.reflink.getDataProxy().resetBuffer(true);
                     this.reflink.getDataProxy().loadBuffer(true);
@@ -131,7 +126,6 @@ public class MenuState extends State  {
         // Funcție lambda pt. butoane
         drawButton(g2d, startButton, "New Game", mx, my);
         drawButton(g2d,continueButton,"Continue",mx,my);
-        drawButton(g2d, settingsButton, "Settings", mx, my);
         drawButton(g2d, quitButton, "Quit", mx, my);
     }
 

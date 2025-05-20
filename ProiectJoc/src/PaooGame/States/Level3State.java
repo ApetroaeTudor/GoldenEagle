@@ -96,10 +96,10 @@ public class Level3State extends State{
         this.saves[1] = new SaveItem(this.reflink,Constants.LEVEL3_SAVE2_X,Constants.LEVEL3_SAVE2_Y);
         this.saves[2] = new SaveItem(this.reflink,Constants.LEVEL3_SAVE3_X,Constants.LEVEL3_SAVE3_Y);
         this.saves[3] = new SaveItem(this.reflink,Constants.LEVEL3_SAVE4_X,Constants.LEVEL3_SAVE4_Y);
-        this.floppyDisks[0] = new FloppyItem(this.reflink,Constants.LEVEL3_SAVE1_X+10,Constants.LEVEL3_SAVE1_Y-20);
-        this.floppyDisks[1] = new FloppyItem(this.reflink,Constants.LEVEL3_SAVE2_X+10,Constants.LEVEL3_SAVE2_Y-20);
-        this.floppyDisks[2] = new FloppyItem(this.reflink,Constants.LEVEL3_SAVE3_X+10,Constants.LEVEL3_SAVE3_Y-20);
-        this.floppyDisks[3] = new FloppyItem(this.reflink,Constants.LEVEL3_SAVE4_X+10,Constants.LEVEL3_SAVE4_Y-20);
+        this.floppyDisks[0] = new FloppyItem(this.reflink,Constants.LEVEL3_SAVE1_X+10,Constants.LEVEL3_SAVE1_Y-10);
+        this.floppyDisks[1] = new FloppyItem(this.reflink,Constants.LEVEL3_SAVE2_X+10,Constants.LEVEL3_SAVE2_Y-10);
+        this.floppyDisks[2] = new FloppyItem(this.reflink,Constants.LEVEL3_SAVE3_X+10,Constants.LEVEL3_SAVE3_Y-10);
+        this.floppyDisks[3] = new FloppyItem(this.reflink,Constants.LEVEL3_SAVE4_X+10,Constants.LEVEL3_SAVE4_Y-10);
 
 
     }
@@ -174,9 +174,6 @@ public class Level3State extends State{
                 }
             }
         }
-//        if(this.reflink.getHero().getHitbox().intersects(this.saves[0].getHitbox())){
-////            System.out.println("Interaction");
-//        }
 
 
         for(Enemy enemy : enemies){
@@ -201,7 +198,6 @@ public class Level3State extends State{
             this.targetBlackIntensity = 0;
             this.transitioning = false;
             this.transition_to_fight = false;
-//            refLink.getGame().getFightState().restoreState();
 
             State.setState(reflink.getGame().getFightState());
         }
@@ -264,8 +260,6 @@ public class Level3State extends State{
             }
 
             if (closestX != -1) {
-//            System.out.printf("Closest grapple tile at (%d,%d), distance: %.1f tiles%n",
-//                    closestX, closestY, closestDistance);
                 Point pt = new Point(closestX,closestY);
                 // You can return or use these coordinates here
                 if(!this.MarkedHooks.contains(pt)){
@@ -287,14 +281,6 @@ public class Level3State extends State{
         else{
             this.whip.updateItem();
         }
-
-
-
-
-
-
-
-
 
 
 
@@ -419,17 +405,11 @@ public class Level3State extends State{
             this.whip.drawItem(g);
         }
 
-//        if(!reflink.getHero().getHasWhip()){
-//
-//        }
-
         for(Enemy enemy : enemies){
             if(enemy!=null && enemy.getHealth()>0){
                 enemy.draw(g);
             }
         }
-
-
 
 
         this.reflink.getHero().draw(g);
@@ -458,7 +438,6 @@ public class Level3State extends State{
             return;
         }
         try{
-            System.out.println("Loading level3");
             this.enemies[0].setHealth(this.reflink.getDataProxy().load(Constants.BOSS_HEALTH,access));
             this.enemies[1].setHealth(this.reflink.getDataProxy().load(Constants.MINOTAUR0_HEALTH,access));
             this.enemies[2].setHealth(this.reflink.getDataProxy().load(Constants.MINOTAUR1_HEALTH,access));
@@ -507,7 +486,7 @@ public class Level3State extends State{
                 storedScores = this.reflink.getDataProxy().loadScore(true);
 
             } catch (AccessDeniedException e){
-                System.out.println(e.getMessage());
+                System.err.println(e.getMessage());
             }
             storedScores = calculateTopThreeScores(currentScore,storedScores[0],storedScores[1],storedScores[2]);
             this.reflink.setScore1(storedScores[0]);
@@ -518,7 +497,7 @@ public class Level3State extends State{
                 this.reflink.getDataProxy().storeScore(true,storedScores[0],storedScores[1],storedScores[2]);
             }
             catch (AccessDeniedException e){
-                System.out.println(e.getMessage());
+                System.err.println(e.getMessage());
             }
             this.bossDefeatedDelayTimer.start();
 

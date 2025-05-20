@@ -5,7 +5,6 @@ import java.awt.event.KeyListener;
 
 public class KeyboardInput implements KeyListener {
 
-//    private boolean[] keyboardState=new boolean[256];
     private int[] keyPressedCount=new int[256]; //numar de cate ori apas o tasta, daca o tin apasata numaratoarea creste
     //daca ii dau release, numaratoarea se pune pe 0, daca ajunge la maxim_int atunci numaratoarea stagneaza
 
@@ -31,9 +30,6 @@ public class KeyboardInput implements KeyListener {
 
     }
 
-//    public boolean[] getKeyboardState(){
-//        return this.keyboardState;
-//    }
     public int[] getKeyPressedCount(){
         return this.keyPressedCount;
     }

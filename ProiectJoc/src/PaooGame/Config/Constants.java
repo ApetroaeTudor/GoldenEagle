@@ -140,20 +140,32 @@ public class Constants {
     public static final int GOBLIN_PASSIVE_TILE_HEIGHT = 48;
     public static final int GOBLIN_BOUND_TILE_WIDTH = 32;
     public static final int GOBLIN_BOUND_TILE_HEIGHT = 48;
+    public static final int GOBLIN_POS_X = 1030;
+    public static final int GOBLIN_POS_Y = 336;
     public static final String GOBLIN_NAME = "Goblin";
     public static final int GOLD_REWARD = 30;
 //    public static final String GOBLIN_SPRITE_SHEET_PATH = "res/NPC/npc_goblin.png";
 
     public static final double HERO_BASE_HEALTH = 100.0;
-    public static final double HERO_BASE_DAMAGE = 500.0;
+    public static final double HERO_BASE_DAMAGE = 50.0;
     public static final float HERO_BASE_SPEED = 2.0f;
     public static final float HERO_BASE_JUMP_STRENGTH = -3.5f;
     public static final float HERO_BOOSTED_JUMP_STRENGTH = -5.0f;
     public static final float HERO_LEVEL2_JUMP_STRENGTH = -6.0f;
+
     public static final int HERO_LEVEL1_STARTING_X = 100;
     public static final int HERO_LEVEL1_STARTING_Y = 420;
+
     public static final int HERO_LEVEL2_STARTING_X = 415;
     public static final int HERO_LEVEL2_STARTING_Y = 100;
+    public static final int BOOSTER1_X = 1280;
+    public static final int BOOSTER1_Y = 390;
+    public static final int BOOSTER2_X = 1360;
+    public static final int BOOSTER2_Y = 345;
+    public static final int BOOSTER3_X = 1487;
+    public static final int BOOSTER3_Y = 313;
+
+
     public static final int HERO_LEVEL3_STARTING_X = 110;
     public static final int HERO_LEVEL3_STARTING_Y = 900;
     public static final int HERO_GRAPPLE_RANGE = 6;

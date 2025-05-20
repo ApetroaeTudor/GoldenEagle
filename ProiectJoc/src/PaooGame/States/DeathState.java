@@ -75,11 +75,6 @@ public class DeathState extends State {
             Color originalColor = g2d.getColor();
             if(this.blackIntensity>1){
                 this.reflink.setDataRefreshSignal(true);
-//                this.restoreState();
-//                this.blackIntensity = 1.0;
-//                this.reflink.getHero().restoreEntity();
-//                this.reflink.getGame().getLevel1State().restoreState();
-//                this.reflink.getGame().getFightState().restoreState();
                 State.setState(this.reflink.getGame().getMenuState());
 
             }

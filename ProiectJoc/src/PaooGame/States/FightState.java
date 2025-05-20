@@ -50,6 +50,7 @@ public class FightState extends State {
     private boolean isTimerFinished;
     private boolean isWaitingForPlayerTurn;
     private boolean didEnemyAttackAlready;
+    private boolean isTimer3Started = false;
 
     private boolean printingDamageReceivedPopup = false;
     private boolean printingDamageDealtPopup = false;
@@ -107,8 +108,6 @@ public class FightState extends State {
             this.blockingBar.updateValue(this.enemyTurnProgress);
             this.reflink.getHero().reduceHealth(this.enemy.getDamage()* (  (100.0-this.progressOnSpace*1.5f)/100.0) );
             this.latestDamageReceived = this.enemy.getDamage()* (  (100.0-this.progressOnSpace*1.5f)/100.0);
-            System.out.println("Reduced damage: " + this.enemy.getDamage()* (  (100.0-this.progressOnSpace*1.5f)/100.0) );
-            System.out.println("Original damage: " + this.enemy.getDamage());
             this.progressOnSpace = 0;
             this.printingDamageReceivedPopup = true;
             this.popupTimer.start();
@@ -116,6 +115,8 @@ public class FightState extends State {
         });
         this.timer3 = new Timer(1000,e->{
             this.transitioningToDeath = true;
+
+
         });
 
         this.popupTimer = new Timer(this.popupTimeInMillis,e->{
@@ -313,25 +314,6 @@ public class FightState extends State {
                 }
             }
 
-//            if(this.fleeButton.isClicked(mx,my,mouse.isOneClick())){
-//                this.waitForEnemyDeathTimer.start();
-//                this.fleeTimer.start();
-//                this.refLink.getHero().setCanEngage(false);
-//            }
-//            if(this.attackButton.isClicked(mx,my,mouse.isOneClick())){
-//                System.out.println("???");
-//
-//                this.attackAnimation.triggerOnce();
-//                this.fightStrategy.takeDamage((float)this.refLink.getHero().getDamage());
-//                this.printingDamageDealtPopup = true;
-//                this.latestDamageDealt = (double)this.fightStrategy.calculateDamage((float)this.refLink.getHero().getDamage());
-//                this.attackButton.setIsHovered(false);
-//                if(this.fightStrategy.getEnemy().getHealth()>0){
-//                    this.isPlayerTurn = false;
-//
-//                }
-//            }
-
         }
         else{
             if(this.reflink.getKeyManager().isKeyPressed(KeyEvent.VK_SPACE) && this.enemyTurnProgress<=50){
@@ -347,12 +329,10 @@ public class FightState extends State {
             }
 
             if(!this.isTimerStarted && !isTimerFinished && !didEnemyAttackAlready){
-                System.out.println("timer started");
                 this.timer.start();
                 this.isTimerStarted = true;
             }
             if(this.isTimerFinished && !this.isTimerStarted && !this.didEnemyAttackAlready){
-                System.out.println("tiger attacks now");
                 this.enemy.attack();
                 this.isTimerFinished = false;
                 this.isWaitingForPlayerTurn = true;
@@ -363,17 +343,24 @@ public class FightState extends State {
             }
         }
 
-        if(this.enemy.getHealth() == 0){
+        if(this.enemy.getHealth() == 0 ){
             this.waitForEnemyDeathTimer.start();
 
         }
-        if(this.reflink.getHero().getHealth()==0){
+        if(this.reflink.getHero().getHealth()==0 && !isTimer3Started){
+            System.out.println("poftim");
+            this.isTimer3Started = true;
+
             this.timer3.start();
         }
         if(this.transitioningToDeath && this.fadeToBlackProgress==1){
             this.transitioningToDeath = false;
             this.fadeToBlackProgress = 0.0;
             this.attackAnimation.setIsFinished(true);
+            this.reflink.getHero().resetHealthBarDefaultValues();
+            this.restoreState();
+            this.progressOnSpace = 0;
+            this.isTimer3Started = false;
             reflink.getGame().getDeathState().restoreState();
             State.setState(reflink.getGame().getDeathState());
         }
@@ -534,6 +521,11 @@ public class FightState extends State {
         this.enemy = null;
         this.fightStrategy = null;
         this.tigerStrategy = null;
+        this.basicSkeletonStrategy = null;
+        this.strongSkeletonStrategy = null;
+        this.minotaurStrategy = null;
+        this.ghostStrategy = null;
+        this.wizardStrategy = null;
 
         this.isTimerStarted = false;
         this.isTimerFinished = false;

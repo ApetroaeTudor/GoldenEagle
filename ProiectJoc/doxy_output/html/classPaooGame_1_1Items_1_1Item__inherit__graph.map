@@ -1,0 +1,7 @@
+<map id="PaooGame.Items.Item" name="PaooGame.Items.Item">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,172,108"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1Items_1_1BoosterItem.html" title=" " alt="" coords="220,5,437,32"/>
+<area shape="rect" id="node3" href="$classPaooGame_1_1Items_1_1FloppyItem.html" title=" " alt="" coords="223,56,434,83"/>
+<area shape="rect" id="node4" href="$classPaooGame_1_1Items_1_1SaveItem.html" title=" " alt="" coords="229,107,428,133"/>
+<area shape="rect" id="node5" href="$classPaooGame_1_1Items_1_1WhipItem.html" title=" " alt="" coords="229,157,429,184"/>
+</map>

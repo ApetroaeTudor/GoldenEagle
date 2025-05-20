@@ -131,11 +131,6 @@ public class Hero extends Entity {
     public void update() {
 
 
-        System.out.println(this.gold);
-
-
-
-
         switch (State.getState().getStateName()){
             case Constants.LEVEL1_STATE:
                 this.LEVEL_WIDTH = Constants.LEVEL1_WIDTH;
@@ -165,15 +160,11 @@ public class Hero extends Entity {
         }
 
         if(this.isDying){
-//            this.gravity = Constants.DYING_ENTITY_GRAVITY;
-//            this.maxFallSpeed = Constants.DYING_MAX_ENTITY_FALL_SPEED;
             this.velocityX = 0;
             this.velocityY = 1;
         }
         else{
             if(this.health>0){
-//                this.gravity = Constants.BASE_ENTITY_GRAVITY;
-//                this.maxFallSpeed = Constants.BASE_MAX_ENTITY_FALL_SPEED;
                 handleInput();
 
             }
@@ -186,12 +177,6 @@ public class Hero extends Entity {
         updateAnimationState();
 
         getContext();
-
-
-
-
-
-
 
 
 
@@ -248,9 +233,7 @@ public class Hero extends Entity {
             }
         }
 
-//        if (crouchPressed && isGrounded) {
-//            // Placeholder: Set state if needed, but full implementation is complex
-//        }
+
     }
 
 
@@ -377,18 +360,11 @@ public class Hero extends Entity {
             case ATTACKING:
                 return this.attackingAnimation;
             case FALLING:
-//                if(reflink.getKeyManager().isKeyPressed(KeyEvent.VK_SPACE)){
-//                    return this.jumpingAnimation;
-//
-//                }
-//                else{
-//                    return this.fallingAnimation;
-//                }
             case JUMPING:
                 return this.jumpingAnimation;
             case CROUCHING:
-//                return this.crounchingAnimation;
         }
+
 
         return this.idleAnimation;
     }
@@ -472,7 +448,6 @@ public class Hero extends Entity {
     @Override
     public void draw(Graphics g){
 
-        this.hitbox.printHitbox(g);
         this.getAnimationByState().paintAnimation(g,(int)this.x,(int)this.y,this.flipped,1);
 
         if(this.isDying){
@@ -512,7 +487,6 @@ public class Hero extends Entity {
         }
 
         try{
-            System.out.println("Loading Character");
             this.health = this.reflink.getDataProxy().load(Constants.HERO_HEALTH,access);
             this.x = this.reflink.getDataProxy().load(Constants.HERO_X,access);
             this.getHitbox().setX(this.x);

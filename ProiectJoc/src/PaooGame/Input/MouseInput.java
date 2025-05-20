@@ -6,10 +6,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 
 
-/**
-* TODO Timer pentru mouse, daca un click dureaza peste 100ms(nu stiu exact) atunci se iese din event
- * daca am mai multe click-uri succesive sa pot sa numar asta cu timer
- */
 public class MouseInput implements MouseInputListener, MouseMotionListener {
 
     private int numberOfMousePresses=0;

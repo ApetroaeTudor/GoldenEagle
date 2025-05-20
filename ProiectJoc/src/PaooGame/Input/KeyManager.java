@@ -14,12 +14,6 @@ public class KeyManager implements KeyListener {
         prevKeyState = new boolean[NUM_KEYS]; // Initialize previous state array
     }
 
-    /**
-     * Updates the previous key state array.
-     * MUST be called exactly ONCE per game loop update cycle,
-     * ideally at the VERY END of your main update method, after
-     * all game logic for the current frame has processed input.
-     */
     public void updatePreviousState() {
         // Copy the current state to the previous state array
         System.arraycopy(keyState, 0, prevKeyState, 0, NUM_KEYS);
@@ -29,13 +23,6 @@ public class KeyManager implements KeyListener {
         // }
     }
 
-    /**
-     * Checks if a specific key is currently pressed down.
-     * Use this for continuous actions (like moving).
-     *
-     * @param keyCode The KeyEvent.VK_ code of the key to check.
-     * @return true if the key is currently held down, false otherwise.
-     */
     public boolean isKeyPressed(int keyCode) {
         if (keyCode >= 0 && keyCode < NUM_KEYS) {
             return keyState[keyCode];
@@ -43,15 +30,6 @@ public class KeyManager implements KeyListener {
         return false; // Invalid key code
     }
 
-    /**
-     * Checks if a specific key was just pressed down in this frame.
-     * Returns true only on the single frame the key transitions from UP to DOWN.
-     * Use this for single-trigger actions (like jumping, shooting, menu select).
-     * Requires updatePreviousState() to be called correctly each frame.
-     *
-     * @param keyCode The KeyEvent.VK_ code of the key to check.
-     * @return true if the key was pressed in this frame but not the previous one, false otherwise.
-     */
     public boolean isKeyPressedOnce(int keyCode) {
         if (keyCode >= 0 && keyCode < NUM_KEYS) {
             // Check if the key is currently pressed AND was NOT pressed previously
@@ -84,11 +62,6 @@ public class KeyManager implements KeyListener {
         }
     }
 
-    /**
-     * Gets the raw current key state array.
-     * Generally prefer using isKeyPressed() or isKeyPressedOnce().
-     * @return The boolean array representing the current state of all keys.
-     */
     public boolean[] getKeyState() {
         return keyState;
     }

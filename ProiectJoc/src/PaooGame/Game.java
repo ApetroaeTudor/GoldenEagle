@@ -37,11 +37,6 @@ public class Game implements Runnable {
     private EnemyStrategy strongSkeletonStrategy;
 
     private DataManager dataProxy;
-//    private boolean dataRefreshSignal;
-//    private boolean level1RefreshDoneSignal;
-//    private boolean level2RefreshDoneSignal;
-//    private boolean level3RefreshDoneSignal;
-//    private boolean heroRefreshDoneSignal;
 
     private State level1State;
     private Level1 level1;
@@ -219,7 +214,6 @@ public class Game implements Runnable {
             this.level2State.loadState(true);
             this.level3State.loadState(true);
             this.refLink.getHero().loadHeroState(true);
-            System.out.println("refreshing");
 
         }
         if(this.refLink.getHeroRefreshDoneSignal() && this.refLink.getLevel1RefreshDoneSignal() && this.refLink.getLevel2RefreshDoneSignal() && this.refLink.getLevel3RefreshDoneSignal()){
@@ -237,7 +231,6 @@ public class Game implements Runnable {
             this.level2State.storeState(true);
             this.level3State.storeState(true);
             this.refLink.getHero().storeHeroState(true);
-            System.out.println("storing");
 
 
         }

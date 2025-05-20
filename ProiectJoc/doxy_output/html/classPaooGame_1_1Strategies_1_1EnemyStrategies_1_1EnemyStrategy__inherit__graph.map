@@ -1,0 +1,9 @@
+<map id="PaooGame.Strategies.EnemyStrategies.EnemyStrategy" name="PaooGame.Strategies.EnemyStrategies.EnemyStrategy">
+<area shape="rect" id="node1" title=" " alt="" coords="5,173,216,215"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1BasicSkeletonEnemyStrategy.html" title=" " alt="" coords="264,5,547,47"/>
+<area shape="rect" id="node3" href="$classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1GhostEnemyStrategy.html" title=" " alt="" coords="290,71,521,112"/>
+<area shape="rect" id="node4" href="$classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1MinotaurEnemyStrategy.html" title=" " alt="" coords="280,136,531,177"/>
+<area shape="rect" id="node5" href="$classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1StrongSkeletonEnemyStrategy.html" title=" " alt="" coords="288,202,523,258"/>
+<area shape="rect" id="node6" href="$classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1TigerEnemyStrategy.html" title=" " alt="" coords="293,283,518,324"/>
+<area shape="rect" id="node7" href="$classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1WizardEnemyStrategy.html" title=" " alt="" coords="287,348,524,389"/>
+</map>
