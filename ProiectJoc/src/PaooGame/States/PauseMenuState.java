@@ -58,10 +58,7 @@ public class PauseMenuState extends State {
 
     @Override
     public void draw(Graphics g) {
-        // Fundalul nivelului
-//        if (reflink.getGame().getLevel1State() != null) {
-//            reflink.getGame().getLevel1State().draw(g);
-//        }
+
         reflink.getCurrentRunningLevel().draw(g);
 
         Graphics2D g2d = (Graphics2D) g;

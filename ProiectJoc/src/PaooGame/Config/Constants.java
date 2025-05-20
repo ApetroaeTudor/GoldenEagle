@@ -3,6 +3,28 @@ package PaooGame.Config;
 
 import java.awt.*;
 
+/**
+ * @file Constants.java
+ * @brief Defines a collection of static final constants used throughout the application.
+ *
+ * This class centralizes all global constant values, such as window dimensions,
+ * tile sizes, level configurations, asset paths, entity properties, database keys,
+ * and SQL commands. This approach helps in maintaining consistency and makes it
+ * easier to adjust game parameters from a single location.
+ *
+ * The constants cover various aspects including:
+ * - Game window and rendering parameters.
+ * - Level dimensions and tile information for multiple game levels.
+ * - Paths to game assets (textures, spritesheets, backgrounds).
+ * - Entity (hero, enemies, NPC) properties like health, damage, speed, and sprite dimensions.
+ * - Item properties and locations.
+ * - State identifiers for game states (e.g., menu, levels, fight).
+ * - Health bar colors.
+ * - Physics constants like gravity.
+ * - Database related constants including table name, column names, SQL queries for saving/loading game data and scores.
+ * - Enumerations for distinct game element states (EFFECTS, HERO_STATES, ENEMY_STATES).
+ */
+
 public class Constants {
     public static final float EPSILON = 0.01f;
 
@@ -181,7 +203,7 @@ public class Constants {
     public static final String TIGER_SPRITE_SHEET_PATH = "res/Enemies/Tiger.png";
     public static final String TIGER_FIGHT_BG_PATH = "res/Backgrounds/TigerFightBg.jpg";
     public static final double TIGER_HEALTH = 100.0;
-    public static final double TIGER_DAMAGE = 10.0;
+    public static final double TIGER_DAMAGE = 100.0;
     public static final float TIGER_SPEED =-0.4f;
     public static final float TIGER_DEFENCE = 0f;
     public static final String TIGER_NAME = "Tiger";

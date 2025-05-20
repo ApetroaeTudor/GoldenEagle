@@ -18,10 +18,6 @@ public class RefLinks
     private KeyManager keyManager;
     private MouseInput mouseInput;
 
-    private int score1=0;
-    private int score2=0;
-    private int score3=0;
-
     private State currentRunningLevel;
 
     private EnemyStrategy tigerEnemyStrategy;
@@ -45,13 +41,13 @@ public class RefLinks
     private boolean level3StoreDoneSignal;
     private boolean heroStoreDoneSignal;
 
-    public int getScore1(){return this.score1;}
-    public int getScore2(){return this.score2;}
-    public int getScore3(){return this.score3;}
+    public int getScore1(){return this.game.getScore1();}
+    public int getScore2(){return this.game.getScore2();}
+    public int getScore3(){return this.game.getScore3();}
 
-    public void setScore1(int score1){this.score1 = score1;}
-    public void setScore2(int score2){this.score2 = score2;}
-    public void setScore3(int score3){this.score3 = score3;}
+    public void setScore1(int score1){this.game.setScore1(score1);}
+    public void setScore2(int score2){this.game.setScore2(score2);}
+    public void setScore3(int score3){this.game.setScore3(score3);}
 
     public void setCurrentRunningLevel(State currentRunningLevel) { this.currentRunningLevel = currentRunningLevel;}
     public State getCurrentRunningLevel() { return this.currentRunningLevel;}

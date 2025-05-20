@@ -3,6 +3,9 @@ package PaooGame.Entities;
 import PaooGame.Animations.Animation;
 import PaooGame.Animations.PlayerAnimations.PlayerActionAnimation;
 import PaooGame.Config.Constants;
+import PaooGame.CustomExceptions.AccessNotPermittedException;
+import PaooGame.CustomExceptions.DataBufferNotReadyException;
+import PaooGame.CustomExceptions.ValueStoreException;
 import PaooGame.Hitbox.Hitbox;
 import PaooGame.Maps.Level;
 import PaooGame.RefLinks;
@@ -11,7 +14,6 @@ import PaooGame.States.State;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.nio.file.AccessDeniedException;
 
 public class Hero extends Entity {
     private float jumpStrength;
@@ -129,30 +131,7 @@ public class Hero extends Entity {
 
     @Override
     public void update() {
-
-
-        switch (State.getState().getStateName()){
-            case Constants.LEVEL1_STATE:
-                this.LEVEL_WIDTH = Constants.LEVEL1_WIDTH;
-                this.LEVEL_HEIGHT = Constants.LEVEL1_HEIGHT;
-                this.behaviorIDsToRespect = reflink.getGame().getLevel1().getBehaviorIDs();
-                break;
-            case Constants.LEVEL2_STATE:
-                this.LEVEL_WIDTH = Constants.LEVEL2_WIDTH;
-                this.LEVEL_HEIGHT = Constants.LEVEL2_HEIGHT;
-                this.behaviorIDsToRespect = reflink.getGame().getLevel2().getBehaviorIDs();
-                break;
-            case Constants.LEVEL3_STATE:
-                this.LEVEL_WIDTH = Constants.LEVEL3_WIDTH;
-                this.LEVEL_HEIGHT = Constants.LEVEL3_HEIGHT;
-                this.behaviorIDsToRespect = reflink.getGame().getLevel3().getBehaviorIDs();
-                if(this.x > 3500){
-                    this.jumpStrength= Constants.HERO_BASE_JUMP_STRENGTH*1.2f;
-                }
-                else{
-                    this.jumpStrength = Constants.HERO_BASE_JUMP_STRENGTH;
-                }
-        }
+        handleBehaviorIDs();
 
         if( Level.checkFalling(this.getHitbox(),this.LEVEL_WIDTH,this.LEVEL_HEIGHT,this.behaviorIDsToRespect) ==1){
             this.deathAnimationTimer.start();
@@ -166,27 +145,38 @@ public class Hero extends Entity {
         else{
             if(this.health>0){
                 handleInput();
-
             }
-
         }
+
         applyGravity();
         moveAndCollide(); // Updates hitbox position, handles collisions, sets isGrounded
         updateVisualPosition();
-
         updateAnimationState();
+        getInfoAboutCurrentLevel();
 
-        getContext();
+    }
 
+    @Override
+    public void draw(Graphics g){
 
+        this.getAnimationByState().paintAnimation(g,(int)this.x,(int)this.y,this.flipped,1);
 
+        if(this.isDying){
+            Graphics2D g2d = (Graphics2D) g;
+            Composite originalComposite = g2d.getComposite();
+            g2d.setComposite(AlphaComposite.SrcOver.derive(0.1f));
+            Color originalColor = g2d.getColor();
+            g2d.setColor(Color.RED);
+            g2d.fillRect((int)this.x-Constants.WINDOW_WIDTH/2,0,Constants.WINDOW_WIDTH*2,Constants.WINDOW_HEIGHT*2);
+            g2d.setColor(originalColor);
+            g2d.setComposite(originalComposite);
+        }
     }
 
     private void handleInput() {
         boolean jumpPressed = reflink.getKeyManager().isKeyPressedOnce(KeyEvent.VK_SPACE);
         boolean rightPressed = reflink.getKeyManager().getKeyState()[KeyEvent.VK_D];
         boolean leftPressed = reflink.getKeyManager().getKeyState()[KeyEvent.VK_A];
-        boolean crouchPressed = reflink.getKeyManager().getKeyState()[KeyEvent.VK_C];
         boolean grapplePressed = reflink.getKeyManager().getKeyState()[KeyEvent.VK_G];
 
         if(this.currentGrappleX!=0 && this.currentGrappleY!=0 && grapplePressed && !this.isGrapplingTimerExpired && this.hasWhip){
@@ -402,7 +392,7 @@ public class Hero extends Entity {
     }
 
 
-    private void getContext(){
+    private void getInfoAboutCurrentLevel(){
         switch (State.getState().getStateName()){
             case Constants.LEVEL1_STATE:
                 this.LEVEL_HEIGHT = Constants.LEVEL1_HEIGHT;
@@ -445,40 +435,35 @@ public class Hero extends Entity {
     }
 
 
-    @Override
-    public void draw(Graphics g){
 
-        this.getAnimationByState().paintAnimation(g,(int)this.x,(int)this.y,this.flipped,1);
 
-        if(this.isDying){
-            Graphics2D g2d = (Graphics2D) g;
-            Composite originalComposite = g2d.getComposite();
-            g2d.setComposite(AlphaComposite.SrcOver.derive(0.1f));
-            Color originalColor = g2d.getColor();
-            g2d.setColor(Color.RED);
-            g2d.fillRect((int)this.x-Constants.WINDOW_WIDTH/2,0,Constants.WINDOW_WIDTH*2,Constants.WINDOW_HEIGHT*2);
-            g2d.setColor(originalColor);
-            g2d.setComposite(originalComposite);
-
+    private void handleBehaviorIDs(){
+        switch (State.getState().getStateName()){
+            case Constants.LEVEL1_STATE:
+                this.LEVEL_WIDTH = Constants.LEVEL1_WIDTH;
+                this.LEVEL_HEIGHT = Constants.LEVEL1_HEIGHT;
+                this.behaviorIDsToRespect = reflink.getGame().getLevel1().getBehaviorIDs();
+                break;
+            case Constants.LEVEL2_STATE:
+                this.LEVEL_WIDTH = Constants.LEVEL2_WIDTH;
+                this.LEVEL_HEIGHT = Constants.LEVEL2_HEIGHT;
+                this.behaviorIDsToRespect = reflink.getGame().getLevel2().getBehaviorIDs();
+                break;
+            case Constants.LEVEL3_STATE:
+                this.LEVEL_WIDTH = Constants.LEVEL3_WIDTH;
+                this.LEVEL_HEIGHT = Constants.LEVEL3_HEIGHT;
+                this.behaviorIDsToRespect = reflink.getGame().getLevel3().getBehaviorIDs();
+                if(this.x > 3500){
+                    this.jumpStrength= Constants.HERO_BASE_JUMP_STRENGTH*1.2f;
+                }
+                else{
+                    this.jumpStrength = Constants.HERO_BASE_JUMP_STRENGTH;
+                }
         }
 
     }
 
-    public boolean getFlipped() {return this.flipped;}
-    public void setGrappleInterrupt(boolean isInterrupted) { this .grappleInterrupt = isInterrupted;}
 
-    public int getCurrentGrappleX() {return this.currentGrappleX;}
-    public int getCurrentGrappleY() {return this.currentGrappleY;}
-
-    public boolean getHasWhip(){return this.hasWhip;}
-    public void setHasWhip(boolean hasWhip){this.hasWhip = hasWhip;}
-
-    public int getNrOfEscapes(){return this.nrOfEscapes;}
-    public int getMaxNrOfEscapes(){return this.maxNrOfEscapes;}
-    public void setNrOfEscapes(int nrOfEscapes) { this.nrOfEscapes = nrOfEscapes; if(this.nrOfEscapes>this.getMaxNrOfEscapes()){this.nrOfEscapes = 3; } else if(this.nrOfEscapes<0){this.nrOfEscapes = 0;}}
-
-    public boolean getCanEngage(){return this.canEngage;}
-    public void setCanEngage(boolean canEngage) { this.canEngage = canEngage;}
 
 
     public void loadHeroState(boolean access){
@@ -498,7 +483,7 @@ public class Hero extends Entity {
             this.nrOfCompletedLevels = this.reflink.getDataProxy().load(Constants.HERO_NR_OF_FINISHED_LEVELS,access);
             this.gold = this.reflink.getDataProxy().load(Constants.HERO_GOLD,access);
             this.reflink.setHeroRefreshDoneSignal(true);
-        } catch (AccessDeniedException | IllegalArgumentException e) {
+        } catch (AccessNotPermittedException | ValueStoreException | DataBufferNotReadyException e) {
             System.err.println(e.getMessage());
         }
     }
@@ -519,7 +504,7 @@ public class Hero extends Entity {
             this.reflink.getDataProxy().store(Constants.HERO_NR_OF_FINISHED_LEVELS,this.nrOfCompletedLevels,access);
             this.reflink.getDataProxy().store(Constants.HERO_GOLD,this.gold,access);
             this.reflink.setHeroStoreDoneSignal(true);
-        } catch (AccessDeniedException | IllegalArgumentException e) {
+        } catch (AccessNotPermittedException | ValueStoreException e) {
             System.err.println(e.getMessage());
         }
 
@@ -539,4 +524,20 @@ public class Hero extends Entity {
 
     public int getGold(){return this.gold;}
     public void setGold(int gold){this.gold = gold;}
+
+    public boolean getFlipped() {return this.flipped;}
+    public void setGrappleInterrupt(boolean isInterrupted) { this .grappleInterrupt = isInterrupted;}
+
+    public int getCurrentGrappleX() {return this.currentGrappleX;}
+    public int getCurrentGrappleY() {return this.currentGrappleY;}
+
+    public boolean getHasWhip(){return this.hasWhip;}
+    public void setHasWhip(boolean hasWhip){this.hasWhip = hasWhip;}
+
+    public int getNrOfEscapes(){return this.nrOfEscapes;}
+    public int getMaxNrOfEscapes(){return this.maxNrOfEscapes;}
+    public void setNrOfEscapes(int nrOfEscapes) { this.nrOfEscapes = nrOfEscapes; if(this.nrOfEscapes>this.getMaxNrOfEscapes()){this.nrOfEscapes = 3; } else if(this.nrOfEscapes<0){this.nrOfEscapes = 0;}}
+
+    public boolean getCanEngage(){return this.canEngage;}
+    public void setCanEngage(boolean canEngage) { this.canEngage = canEngage;}
 }

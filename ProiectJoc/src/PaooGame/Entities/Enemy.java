@@ -161,9 +161,6 @@ public class Enemy extends Entity {
         }
 
 
-
-
-
         float originalY = this.hitbox.getY();
         float deltaY = this.velocityY;
         this.hitbox.setY(originalY + deltaY);

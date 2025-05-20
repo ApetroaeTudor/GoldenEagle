@@ -54,6 +54,12 @@ public class DeathState extends State {
         BufferedImage backgroundImg = this.reflink.getTileCache().getBackground(Constants.DEATH_SCREEN_BG_PATH);
         g.drawImage(backgroundImg,0,0,Constants.WINDOW_WIDTH,Constants.WINDOW_HEIGHT,null);
 
+        drawBlackFade(g);
+
+    }
+
+    private void drawBlackFade(Graphics g){
+
         if(Objects.equals(State.getState().getStateName(), this.stateName) && !this.isFadedIn){
             Graphics2D g2d = (Graphics2D) g;
             Color originalColor = g2d.getColor();
@@ -69,6 +75,7 @@ public class DeathState extends State {
             this.blackIntensity-=this.fadeSpeed;
             g2d.setColor(originalColor);
         }
+
 
         if(Objects.equals(State.getState().getStateName(), this.stateName) && this.isFadingOut){
             Graphics2D g2d = (Graphics2D) g;
@@ -87,7 +94,6 @@ public class DeathState extends State {
             this.blackIntensity+=this.fadeSpeed;
             g2d.setColor(originalColor);
         }
-
     }
 
     @Override

@@ -2,6 +2,9 @@
 package PaooGame.States;
 
 import PaooGame.Animations.ItemsAnimations.StaticItemAnimation;
+import PaooGame.CustomExceptions.AccessNotPermittedException;
+import PaooGame.CustomExceptions.DataBufferNotReadyException;
+import PaooGame.CustomExceptions.ValueStoreException;
 import PaooGame.Entities.Enemy;
 import PaooGame.Config.Constants;
 import PaooGame.Input.MouseInput;
@@ -71,7 +74,7 @@ public class MenuState extends State  {
                             State.setState(this.reflink.getGame().getLevel3State());
                             break;
                     }
-                } catch (AccessDeniedException e) {
+                } catch (AccessNotPermittedException | ValueStoreException | DataBufferNotReadyException e) {
                     System.err.println(e.getMessage());
                 }
             }
@@ -96,7 +99,7 @@ public class MenuState extends State  {
                             State.setState(this.reflink.getGame().getLevel3State());
                             break;
                     }
-                } catch (AccessDeniedException e) {
+                } catch (AccessNotPermittedException | ValueStoreException | DataBufferNotReadyException e) {
                     System.err.println(e.getMessage());
                 }
             }
