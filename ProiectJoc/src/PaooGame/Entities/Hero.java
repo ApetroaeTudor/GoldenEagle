@@ -23,6 +23,8 @@ public class Hero extends Entity {
     private int currentGrappleY = 0;
     private boolean isGrappling = false;
 
+    int gold = 0;
+
     private boolean hasWhip = false;
 
     private Timer grappleExpiredTimer;
@@ -129,7 +131,7 @@ public class Hero extends Entity {
     public void update() {
 
 
-
+        System.out.println(this.gold);
 
 
 
@@ -180,6 +182,7 @@ public class Hero extends Entity {
         applyGravity();
         moveAndCollide(); // Updates hitbox position, handles collisions, sets isGrounded
         updateVisualPosition();
+
         updateAnimationState();
 
         getContext();
@@ -519,6 +522,7 @@ public class Hero extends Entity {
             this.nrOfEscapes = this.reflink.getDataProxy().load(Constants.HERO_NR_OF_FLEES,access);
             this.nrOfCollectedSaves = this.reflink.getDataProxy().load(Constants.HERO_NR_OF_COLLECTED_SAVES,access);
             this.nrOfCompletedLevels = this.reflink.getDataProxy().load(Constants.HERO_NR_OF_FINISHED_LEVELS,access);
+            this.gold = this.reflink.getDataProxy().load(Constants.HERO_GOLD,access);
             this.reflink.setHeroRefreshDoneSignal(true);
         } catch (AccessDeniedException | IllegalArgumentException e) {
             System.err.println(e.getMessage());
@@ -539,6 +543,7 @@ public class Hero extends Entity {
             this.reflink.getDataProxy().store(Constants.HERO_NR_OF_FLEES,this.nrOfEscapes,access);
             this.reflink.getDataProxy().store(Constants.HERO_NR_OF_COLLECTED_SAVES,this.nrOfCollectedSaves,access);
             this.reflink.getDataProxy().store(Constants.HERO_NR_OF_FINISHED_LEVELS,this.nrOfCompletedLevels,access);
+            this.reflink.getDataProxy().store(Constants.HERO_GOLD,this.gold,access);
             this.reflink.setHeroStoreDoneSignal(true);
         } catch (AccessDeniedException | IllegalArgumentException e) {
             System.err.println(e.getMessage());
@@ -557,4 +562,7 @@ public class Hero extends Entity {
 
     public int getNrOfCompletedLevels() { return this.nrOfCompletedLevels;}
     public void setNrOfCompletedLevels(int nrOfCompletedLevels) { this.nrOfCompletedLevels = nrOfCompletedLevels;}
+
+    public int getGold(){return this.gold;}
+    public void setGold(int gold){this.gold = gold;}
 }

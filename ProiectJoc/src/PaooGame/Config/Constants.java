@@ -135,6 +135,15 @@ public class Constants {
     public static final float DYING_MAX_ENTITY_FALL_SPEED = 2.0f;
     public static final float DYING_ENTITY_GRAVITY = 0.001f;
 
+    public static final String GOBLIN_SPRITE_SHEET_PATH = "res/Characters/npc_goblin.png";
+    public static final int GOBLIN_PASSIVE_TILE_WIDTH = 32;
+    public static final int GOBLIN_PASSIVE_TILE_HEIGHT = 48;
+    public static final int GOBLIN_BOUND_TILE_WIDTH = 32;
+    public static final int GOBLIN_BOUND_TILE_HEIGHT = 48;
+    public static final String GOBLIN_NAME = "Goblin";
+    public static final int GOLD_REWARD = 30;
+//    public static final String GOBLIN_SPRITE_SHEET_PATH = "res/NPC/npc_goblin.png";
+
     public static final double HERO_BASE_HEALTH = 100.0;
     public static final double HERO_BASE_DAMAGE = 500.0;
     public static final float HERO_BASE_SPEED = 2.0f;
@@ -298,6 +307,8 @@ public class Constants {
     public static final String HERO_NR_OF_FLEES = "HERO_NR_OF_FLEES";
     public static final String HERO_NR_OF_COLLECTED_SAVES = "HERO_NR_OF_COLLECTED_SAVES";
     public static final String HERO_NR_OF_FINISHED_LEVELS = "HERO_NR_OF_FINISHED_LEVELS";
+    public static final String HERO_GOLD = "HERO_GOLD";
+
 
     public static final String TIGER0_HEALTH = "TIGER0_HEALTH";
     public static final String TIGER1_HEALTH = "TIGER1_HEALTH";
@@ -327,6 +338,7 @@ public class Constants {
             HERO_NR_OF_FLEES,
             HERO_NR_OF_COLLECTED_SAVES,
             HERO_NR_OF_FINISHED_LEVELS,
+            HERO_GOLD,
             TIGER0_HEALTH,
             TIGER1_HEALTH,
             BASIC_SKELETON0_HEALTH,
@@ -355,6 +367,7 @@ public class Constants {
                                                     Constants.HERO_NR_OF_FLEES + " INTEGER, "+
                                                     Constants.HERO_NR_OF_COLLECTED_SAVES + " INTEGER, "+
                                                     Constants.HERO_NR_OF_FINISHED_LEVELS + " INTEGER, "+
+                                                    Constants.HERO_GOLD + " INTEGER, "+
                                                     Constants.TIGER0_HEALTH + " INTEGER, "+
                                                     Constants.TIGER1_HEALTH + " INTEGER, "+
                                                     Constants.BASIC_SKELETON0_HEALTH + " INTEGER, "+
@@ -376,6 +389,7 @@ public class Constants {
                                                     Constants.HERO_NR_OF_FLEES + ", "+
                                                     Constants.HERO_NR_OF_COLLECTED_SAVES + ", "+
                                                     Constants.HERO_NR_OF_FINISHED_LEVELS + ", "+
+                                                    Constants.HERO_GOLD + ", "+
                                                     Constants.TIGER0_HEALTH + ", "+
                                                     Constants.TIGER1_HEALTH + ", "+
                                                     Constants.BASIC_SKELETON0_HEALTH + ", "+
@@ -386,7 +400,7 @@ public class Constants {
                                                     Constants.MINOTAUR1_HEALTH + ", "+
                                                     Constants.GHOST0_HEALTH + ", "+
                                                     Constants.GHOST1_HEALTH + ") VALUES ("+
-                                                    "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                                                    "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
     public static final String QUERY_SELECT_LATEST_SAVE_CMD = "SELECT * FROM GameData "+
                                                         "ORDER BY " + Constants.TIMESTAMP + " DESC "+

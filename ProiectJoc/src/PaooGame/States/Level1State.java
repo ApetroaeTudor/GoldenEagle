@@ -66,18 +66,20 @@ public class Level1State extends State {
         this.level1 = level1;
         camera = new Camera(0, 0);
         this.saves = new SaveItem[this.nrOfSaves];
+        this.saves[0] = new SaveItem(this.reflink,Constants.LEVEL1_SAVE1_X,Constants.LEVEL1_SAVE1_Y);
+
 
         this.contextHUD = new ContextHUD(refLink.getHero());
 
 
         enemies = new Enemy[2];
         floppyDisks = new FloppyItem[this.nrOfSaves];
+        this.floppyDisks[0] = new FloppyItem(this.reflink,Constants.LEVEL1_SAVE1_X+10,Constants.LEVEL1_SAVE1_Y-10);
+
 
         enemies[0] = new Enemy(this.reflink,this.tiger1X,this.tiger1Y,Constants.TIGER_NAME); //tiger0
         enemies[1] = new Enemy(this.reflink,this.tiger2X,this.tiger2Y,Constants.TIGER_NAME); //tiger1
 
-        this.saves[0] = new SaveItem(this.reflink,Constants.LEVEL1_SAVE1_X,Constants.LEVEL1_SAVE1_Y);
-        this.floppyDisks[0] = new FloppyItem(this.reflink,Constants.LEVEL1_SAVE1_X+10,Constants.LEVEL1_SAVE1_Y-30);
 
         pauseButton = new PauseButton(refLink.getHero(), 80, 50);
         // Calculează dimensiunile totale ale nivelului

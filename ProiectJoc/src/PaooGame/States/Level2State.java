@@ -3,6 +3,8 @@ package PaooGame.States;
 import PaooGame.Camera.Camera;
 import PaooGame.Config.Constants;
 import PaooGame.Entities.Enemy;
+import PaooGame.Entities.Entity;
+import PaooGame.Entities.NPC;
 import PaooGame.HUD.ContextHUD;
 import PaooGame.HUD.MessageTriggerZone;
 import PaooGame.HUD.PauseButton;
@@ -32,6 +34,9 @@ public class Level2State extends State{
     protected boolean transition_to_fight = false;
     private boolean isCameraSet = false;
 
+    private Entity[] npcs;
+    private int nrOfNpcs = 1;
+
     private ContextHUD contextHUD;
 
 
@@ -46,6 +51,7 @@ public class Level2State extends State{
     private int nrOfSaves = 1;
     private FloppyItem[] floppyDisks;
 
+
     protected String stateName = Constants.LEVEL2_STATE;
 
     protected double targetBlackIntensity = 0.0;
@@ -58,10 +64,13 @@ public class Level2State extends State{
         this.enemies = new Enemy[this.nrOfEnemies];
         this.floppyDisks = new FloppyItem[this.nrOfSaves];
         this.boosters = new BoosterItem[this.nrOfBoosters];
+        this.npcs = new Entity[this.nrOfNpcs];
 
         this.boosters[0] = new BoosterItem(this.reflink,1280,390);
         this.boosters[1] = new BoosterItem(this.reflink,1360,345);
         this.boosters[2] = new BoosterItem(this.reflink,1487,313);
+
+        this.npcs[0] = new NPC(this.reflink,1030,336);
 
         this.contextHUD = new ContextHUD(this.reflink.getHero());
 
@@ -135,6 +144,25 @@ public class Level2State extends State{
     @Override
     public void update(){
         System.out.println(this.reflink.getHero().getX() + " -- " +this.reflink.getHero().getY());
+
+        for (Entity npc : npcs) {
+            if (npc != null) {
+                npc.update();
+            }
+        }
+
+
+        for (Entity npc : npcs) {
+            if (npc != null && npc instanceof NPC) {
+                NPC currentNPC = (NPC) npc;
+                if (!currentNPC.isActive() &&
+                        reflink.getHero().getHitbox().intersects(currentNPC.getHitbox()) &&
+                        reflink.getKeyManager().isKeyPressedOnce(KeyEvent.VK_T)) {
+                    State.setState(reflink.getGame().getShopState());
+                }
+            }
+        }
+
 
         for(BoosterItem item : this.boosters){
             item.updateItem();
@@ -366,6 +394,12 @@ public class Level2State extends State{
 
         if(this.reflink.getHero().getNrOfCollectedSaves()==1 /* && this.floppyDisks[0].getDrawable()*/){
             this.floppyDisks[0].drawItem(g);
+        }
+
+        for (Entity npc : npcs) {
+            if (npc != null) {
+                npc.draw(g);
+            }
         }
 
 

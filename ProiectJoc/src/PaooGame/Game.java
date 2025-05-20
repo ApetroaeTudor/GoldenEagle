@@ -50,6 +50,9 @@ public class Game implements Runnable {
     private State level3State;
     private Level3 level3;
 
+
+    private State shopState;
+
     private State winState;
     private State pauseMenuState;
     private State aboutState;
@@ -151,6 +154,7 @@ public class Game implements Runnable {
         level3State = new Level3State(refLink,level3);
         deathState = new DeathState(refLink);
         pauseMenuState = new PauseMenuState(refLink);
+        shopState = new ShopState(refLink);
         State.setState(menuState);
 
 
@@ -302,6 +306,8 @@ public class Game implements Runnable {
     public State getPauseMenuState() {
         return pauseMenuState;
     }
+
+    public State getShopState(){return shopState;}
 
     public State getMenuState() {
         return menuState;

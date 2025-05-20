@@ -43,6 +43,7 @@ public class ConcreteDataManager implements DataManager{
         this.buffer.put(Constants.HERO_NR_OF_FLEES,-1);
         this.buffer.put(Constants.HERO_NR_OF_COLLECTED_SAVES,-1);
         this.buffer.put(Constants.HERO_NR_OF_FINISHED_LEVELS,-1);
+        this.buffer.put(Constants.HERO_GOLD,-1);
 
         this.buffer.put(Constants.TIGER0_HEALTH,-1);
         this.buffer.put(Constants.TIGER1_HEALTH,-1);
@@ -58,41 +59,6 @@ public class ConcreteDataManager implements DataManager{
         this.buffer.put(Constants.GHOST1_HEALTH,-1);
 
         this.buffer.put(Constants.TIMESTAMP,-1);
-
-//        try {
-//            DriverManager.registerDriver(new JDBC());
-//            this.c = DriverManager.getConnection("jdbc:sqlite:src/PaooGame/DatabaseManaging/myDB.db");
-//            c.setAutoCommit(false);
-//            this.stmt = c.createStatement();
-//            stmt.executeUpdate(Constants.CREATE_TABLE_CMD);
-//
-//            this.buffer.put(Constants.TIMESTAMP, -2); //best score
-//            this.buffer.put(Constants.CURRENT_STATE, 0); //actual score
-//            storeBuffer(true);
-//            this.buffer.put(Constants.TIMESTAMP,-3); //second best
-//            storeBuffer(true);
-//            this.buffer.put(Constants.TIMESTAMP,-4); //third best
-//            storeBuffer(true);
-//
-//            this.buffer.put(Constants.TIMESTAMP,-1);
-//            this.buffer.put(Constants.CURRENT_STATE,-1);
-//
-//
-//        }catch (SQLIntegrityConstraintViolationException e) {
-//            System.out.println("E OK");
-//        }
-//         catch (Exception e) {
-//            System.err.println(e.getClass().getName() + ": " + e.getMessage());
-//        } finally {
-//            try {
-//                if (pstmt != null) pstmt.close();
-//                if (c != null) c.close();
-//            } catch (SQLException ex) {
-//                System.err.println("Resource cleanup failed: " + ex.getMessage());
-//            }
-//        }
-
-
 
 
     }
@@ -118,6 +84,7 @@ public class ConcreteDataManager implements DataManager{
         this.buffer.put(Constants.HERO_NR_OF_FLEES,2);
         this.buffer.put(Constants.HERO_NR_OF_COLLECTED_SAVES,0);
         this.buffer.put(Constants.HERO_NR_OF_FINISHED_LEVELS,0);
+        this.buffer.put(Constants.HERO_GOLD,0);
 
         this.buffer.put(Constants.TIGER0_HEALTH,100);
         this.buffer.put(Constants.TIGER1_HEALTH,100);

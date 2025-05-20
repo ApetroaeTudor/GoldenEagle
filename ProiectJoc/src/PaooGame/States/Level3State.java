@@ -559,11 +559,14 @@ public class Level3State extends State{
     }
 
     private int calculateScore(){
-        float healthProportion = 0.6f;
-        float remainingSavesProportion = 0.4f;
-//        float remainingCoinsProportion =
+        float healthProportion = 0.5f;
+        float remainingSavesProportion = 0.2f;
+        float goldProportion = 0.3f;
+        int health = (int)this.reflink.getHero().getHealth();
+        int nrOfEscapes = this.reflink.getHero().getNrOfEscapes();
+        int gold = this.reflink.getHero().getGold();
 
-        return (int)(this.reflink.getHero().getHealth()*healthProportion + this.reflink.getHero().getNrOfEscapes()*remainingSavesProportion);
+        return (int)(health*healthProportion + nrOfEscapes*remainingSavesProportion + gold*goldProportion);
     }
 
 

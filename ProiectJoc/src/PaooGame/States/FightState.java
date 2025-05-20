@@ -388,6 +388,7 @@ public class FightState extends State {
             this.transitioningToVictory = false;
             this.fadeToBlackProgress = 0.0;
             this.attackAnimation.setIsFinished(true);
+            this.reflink.getHero().setGold(this.reflink.getHero().getGold()+Constants.GOLD_REWARD);
             State.setState(this.fightStrategy.getOwnerState());
             this.reflink.getHero().resetHealthBarDefaultValues();
             this.restoreState();

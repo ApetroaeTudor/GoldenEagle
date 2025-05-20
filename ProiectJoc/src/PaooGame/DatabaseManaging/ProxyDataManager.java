@@ -91,6 +91,11 @@ public class ProxyDataManager implements DataManager {
                     throw new IllegalArgumentException("Invalid argument given.\nThe value has to be between 0 and  3.\nSave failed..");
                 }
                 break;
+            case Constants.HERO_GOLD:
+                if(value<0){
+                    throw new IllegalArgumentException("Invalid amount of gold!\nIt has to be positive!\nSave failed..");
+                }
+                break;
             case Constants.HERO_X:
             case Constants.HERO_Y:
             case Constants.TIMESTAMP:
