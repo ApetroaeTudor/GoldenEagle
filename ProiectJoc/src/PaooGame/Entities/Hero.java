@@ -38,6 +38,8 @@ public class Hero extends Entity {
 
     private int nrOfCollectedSaves = 0;
 
+    private int score = 0;
+
 
 
 
@@ -545,6 +547,10 @@ public class Hero extends Entity {
 
 
     }
+
+    public int getScore(){return this.score;}
+    public void setScore(int score){this.score = score;}
+
 
     public int getNrOfCollectedSaves() { return this.nrOfCollectedSaves;}
     public void setNrOfCollectedSaves(int nr) { this.nrOfCollectedSaves = nr;}

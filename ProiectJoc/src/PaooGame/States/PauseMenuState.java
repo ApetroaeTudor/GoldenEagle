@@ -43,11 +43,11 @@ public class PauseMenuState extends State {
 
         if (mouse.getNumberOfMousePresses() > 0) {
             if (continueButton.contains(mx, my)) {
-                State.setState(reflink.getGame().getLevel1State());
+                State.setState(this.reflink.getCurrentRunningLevel());
                 mouse.mouseReleased(null);
             } else if (exitToMenuButton.contains(mx, my)) {
                 // Resetează Level1State și revino la meniul principal
-                reflink.getGame().resetLevel1State(); // Aici se apelează resetarea
+//                reflink.getGame().resetLevel1State(); // Aici se apelează resetarea
                 State.setState(reflink.getGame().getMenuState());
                 mouse.mouseReleased(null);
             } else if (exitButton.contains(mx, my)) {
@@ -59,9 +59,10 @@ public class PauseMenuState extends State {
     @Override
     public void draw(Graphics g) {
         // Fundalul nivelului
-        if (reflink.getGame().getLevel1State() != null) {
-            reflink.getGame().getLevel1State().draw(g);
-        }
+//        if (reflink.getGame().getLevel1State() != null) {
+//            reflink.getGame().getLevel1State().draw(g);
+//        }
+        reflink.getCurrentRunningLevel().draw(g);
 
         Graphics2D g2d = (Graphics2D) g;
 

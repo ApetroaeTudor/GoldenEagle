@@ -47,6 +47,10 @@ public class Constants {
     public static final int WHIP_POSITION_X = 495;
     public static final int WHIP_POSITION_Y = 1308;
 
+    public static final String BOOSTER_PATH = "res/Items/booster.png";
+    public static final int BOOSTER_IMG_WIDTH  = 48;
+    public static final int BOOSTER_IMG_HEIGHT = 16;
+
     public static final int LEVEL1_SAVE1_X = 565;
     public static final int LEVEL1_SAVE1_Y = 450;
 
@@ -62,17 +66,28 @@ public class Constants {
     public static final int LEVEL3_SAVE4_X = 4260;
     public static final int LEVEL3_SAVE4_Y = 1298;
 
+    public static final String YOU_WIN_PATH = "res/Effects/YouWin.png";
+    public static final int YOU_WIN_IMG_HEIGHT = 1080;
+    public static final int YOU_WIN_IMG_WIDTH = 1920;
+    public static final int YOU_WIN_FRAME_NR = 5;
 
+    public static final String MAIN_MENU_BG_PATH = "res/Backgrounds/bgCropped_tilemapMainMenu.png";
+    public static final int MAIN_MENU_BG_IMG_WIDTH = 778;
+    public static final int MAIN_MENU_BG_IMG_HEIGHT = 500 ;
+    public static final int MAIN_MENU_BG_FRAME_NR = 66;
+
+    public static final String WINNING_BG_PATH = "res/Backgrounds/WinningStateBg.png";
+    public static final int WINNING_BG_WIDTH = 1300;
+    public static final int WINNING_BG_HEIGHT = 800;
+    public static final int WINNING_BG_FRAME_NR = 8;
 
     public static final String LEVEL1_TEXTURES_PATH = "res/Level1/Level1Textures.png";
     public static final String LEVEL1_TEXTURES_CSV = "res/Level1/Level1Textures.csv";
     public static final String LEVEL1_BEHAVIOR_CSV = "res/Level1/Level1Behavior.csv";
     public static final String LEVEL1_BG_PATH = "res/Level1/Level1Background.png";
 
-    public static final String MAIN_MENU_BG_PATH = "res/Backgrounds/bgCropped_tilemapMainMenu.png";
-    public static final int MAIN_MENU_BG_IMG_WIDTH = 778;
-    public static final int MAIN_MENU_BG_IMG_HEIGHT = 500 ;
-    public static final int MAIN_MENU_BG_FRAME_NR = 66;
+
+
 
 
     public static final String LEVEL2_TEXTURES_PATH = "res/Level2/Level2Textures.png";
@@ -106,6 +121,7 @@ public class Constants {
     public static final String WHIP_NAME = "WHIP";
     public static final String BONFIRE_NAME = "BONFIRE";
     public static final String SAVE_ITEM_NAME = "SAVE";
+    public static final String BOOSTER_ITEM_NAME = "BOOSTER";
 
     public static final Color GREEN_HEALTH_BAR_COLOR_1 = new Color(0, 255, 0);
     public static final Color GREEN_HEALTH_BAR_COLOR_2 = new Color(0, 150, 0);
@@ -122,7 +138,8 @@ public class Constants {
     public static final double HERO_BASE_HEALTH = 100.0;
     public static final double HERO_BASE_DAMAGE = 500.0;
     public static final float HERO_BASE_SPEED = 2.0f;
-    public static final float HERO_BASE_JUMP_STRENGTH = -5f;//-3.5f;
+    public static final float HERO_BASE_JUMP_STRENGTH = -3.5f;
+    public static final float HERO_BOOSTED_JUMP_STRENGTH = -5.0f;
     public static final float HERO_LEVEL2_JUMP_STRENGTH = -6.0f;
     public static final int HERO_LEVEL1_STARTING_X = 100;
     public static final int HERO_LEVEL1_STARTING_Y = 420;
@@ -322,7 +339,11 @@ public class Constants {
             GHOST1_HEALTH
     };
 
-    public static final int DB_MAX_ENTRIES = 8; //5 data + 3 save
+
+    public static final String DB_PATH = "src/PaooGame/DatabaseManaging/myDB.db";
+    public static final String DB_URL = "jdbc:sqlite:src/PaooGame/DatabaseManaging/myDB.db";
+
+    public static final int DB_MAX_ENTRIES = 5;
 
     public static final String CREATE_TABLE_CMD = "CREATE TABLE IF NOT EXISTS GameData("+
                                                     Constants.TIMESTAMP + " PRIMARY KEY, "+

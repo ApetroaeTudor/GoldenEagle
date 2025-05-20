@@ -50,6 +50,7 @@ public class Game implements Runnable {
     private State level3State;
     private Level3 level3;
 
+    private State winState;
     private State pauseMenuState;
     private State aboutState;
     private State fightState;
@@ -140,6 +141,7 @@ public class Game implements Runnable {
         basicSkeletonStrategy = BasicSkeletonEnemyStrategy.getInstance(refLink);
         this.refLink.setBasicSkeletonStrategy(this.basicSkeletonStrategy);
 
+        winState = new WinState(refLink);
         menuState = new MenuState(refLink);
         settingsState = new SettingsState(refLink);
         aboutState = new AboutState(refLink);
@@ -293,6 +295,8 @@ public class Game implements Runnable {
     }
 
     public State getFightState(){ return fightState; }
+
+    public State getWinState() {return winState;}
 
 
     public State getPauseMenuState() {

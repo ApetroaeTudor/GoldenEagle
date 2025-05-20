@@ -20,6 +20,7 @@ import java.awt.image.BufferedImage;
 import java.nio.file.AccessDeniedException;
 import java.time.Instant;
 import java.util.LinkedList;
+import java.util.Objects;
 
 
 public class Level3State extends State{
@@ -31,7 +32,9 @@ public class Level3State extends State{
 
     private LinkedList<Point> MarkedHooks;
     private Timer unmarkHookTimer;
+    private Timer bossDefeatedDelayTimer;
     private int hookTimeoutMillis = 100;
+    private int bossDefeatedTimeoutMillis = 300;
 
     private boolean bossDefeated = false;
 
@@ -71,6 +74,10 @@ public class Level3State extends State{
         levelWidth = Constants.LEVEL3_WIDTH*Constants.TILE_SIZE;
         levelHeight = Constants.LEVEL3_HEIGHT*Constants.TILE_SIZE;
         camera = new Camera(0,0);
+        this.bossDefeatedDelayTimer = new Timer(this.bossDefeatedTimeoutMillis, e->{
+            this.bossDefeated = true;
+        });
+        this.bossDefeatedDelayTimer.setRepeats(false);
         this.unmarkHookTimer = new Timer(hookTimeoutMillis,null);
         this.unmarkHookTimer.setRepeats(false);
 
@@ -129,29 +136,17 @@ public class Level3State extends State{
     @Override
     public void update(){
 
+        if(Objects.equals(State.getState().getStateName(), this.getStateName())){
+            this.reflink.setCurrentRunningLevel(this.reflink.getGame().getLevel3State());
+        }
+
         for(FloppyItem disk : this.floppyDisks){
             disk.updateItem();
         }
 
-        if(this.enemies[0].getHealth() == 0 && !bossDefeated){
-            try{
-                this.reflink.getDataProxy().storeScore(true,123,653,0);
-            }
-            catch (AccessDeniedException e){
-                System.out.println(e.getMessage());
-            }
-            this.bossDefeated = true;
-            int[] storedSaves = new int[3];
-            try {
-                storedSaves = this.reflink.getDataProxy().loadScore(true);
+        onEnemyDefeat();
 
-            } catch (AccessDeniedException e){
-                System.out.println(e.getMessage());
-            }
-            for(int i = 0;i<3;i++){
-                System.out.println(storedSaves[i]);
-            }
-        }
+
 
        // System.out.println("x: " + this.reflink.getHero().getX() + " y: "+this.reflink.getHero().getY());
 
@@ -217,6 +212,12 @@ public class Level3State extends State{
         MouseInput mouse = reflink.getMouseInput();
         Point mousePos = new Point(mouse.getMouseX(),mouse.getMouseY());
         pauseButton.updateHover(mousePos.x,mousePos.y);
+        if (mouse.getNumberOfMousePresses() > 0 && pauseButton.isClicked(mousePos.x, mousePos.y)) {
+            State.setState(reflink.getGame().getPauseMenuState()); // Acum trimite către meniul de pauză
+            mouse.mouseReleased(null);
+            return;
+        }
+
 
         float heroCenterX = this.reflink.getHero().getX() + this.reflink.getHero().getWidth() / 2;
         float heroCenterY = this.reflink.getHero().getY() + this.reflink.getHero().getHeight() / 2;
@@ -296,11 +297,7 @@ public class Level3State extends State{
 
 
 
-        if (mouse.getNumberOfMousePresses() > 0 && pauseButton.isClicked(mousePos.x, mousePos.y)) {
-            State.setState(reflink.getGame().getPauseMenuState()); // Acum trimite către meniul de pauză
-            mouse.mouseReleased(null);
-            return;
-        }
+
 
         double cameraX = heroCenterX - (Constants.WINDOW_WIDTH / 2) / camera.getScale();
         double cameraY = heroCenterY*1.6; //- (Constants.WINDOW_HEIGHT / 2) / camera.getScale();
@@ -397,7 +394,7 @@ public class Level3State extends State{
             }
         }
 
-        if(reflink.getHero().getHealth() == 0 || this.transitioning || this.transition_to_fight){
+        if(reflink.getHero().getHealth() == 0 || this.transitioning || this.transition_to_fight || bossDefeated){
             this.targetBlackIntensity+=this.blackFadeStep;
             Color originalColor = g2d.getColor();
             if(this.targetBlackIntensity>=1.0){
@@ -422,9 +419,9 @@ public class Level3State extends State{
             this.whip.drawItem(g);
         }
 
-        if(!reflink.getHero().getHasWhip()){
-
-        }
+//        if(!reflink.getHero().getHasWhip()){
+//
+//        }
 
         for(Enemy enemy : enemies){
             if(enemy!=null && enemy.getHealth()>0){
@@ -496,6 +493,77 @@ public class Level3State extends State{
         }catch (AccessDeniedException | IllegalArgumentException e) {
             System.err.println(e.getMessage());
         }
+    }
+
+
+
+    private void onEnemyDefeat(){
+        if(this.enemies[0].getHealth() == 0 && !bossDefeated){
+            this.reflink.getHero().setScore(this.calculateScore());
+            int currentScore = this.reflink.getHero().getScore();
+
+            int[] storedScores = new int[3]; storedScores[0]=0; storedScores[1]=0; storedScores[2]=0;
+            try {
+                storedScores = this.reflink.getDataProxy().loadScore(true);
+
+            } catch (AccessDeniedException e){
+                System.out.println(e.getMessage());
+            }
+            storedScores = calculateTopThreeScores(currentScore,storedScores[0],storedScores[1],storedScores[2]);
+            this.reflink.setScore1(storedScores[0]);
+            this.reflink.setScore2(storedScores[1]);
+            this.reflink.setScore3(storedScores[2]);
+
+            try{
+                this.reflink.getDataProxy().storeScore(true,storedScores[0],storedScores[1],storedScores[2]);
+            }
+            catch (AccessDeniedException e){
+                System.out.println(e.getMessage());
+            }
+            this.bossDefeatedDelayTimer.start();
+
+            this.bossDefeated = true;
+
+        }
+        else if(bossDefeated && this.targetBlackIntensity==1){
+            State.setState(this.reflink.getGame().getWinState());
+            this.targetBlackIntensity = 0;
+            this.bossDefeated = false;
+        }
+    }
+
+    private int[] calculateTopThreeScores(int currentScore,int score1,int score2,int score3){
+        //score1 e cel mai mare, score2 e mai mic si score3 e al3lea
+        int newScore1,newScore2,newScore3;
+        newScore1=score1;
+        newScore2 =score2;
+        newScore3=score3;
+        if(currentScore>score3){
+            newScore3=currentScore;
+        }
+        if(currentScore>score2){
+            newScore3=score2;
+            newScore2 = currentScore;
+        }
+        if(currentScore>score1){
+            newScore3=score2;
+            newScore2=score1;
+            newScore1=currentScore;
+        }
+        int[] returnScoreArr = new int[3];
+        returnScoreArr[0]=newScore1;
+        returnScoreArr[1]=newScore2;
+        returnScoreArr[2]=newScore3;
+
+        return returnScoreArr;
+    }
+
+    private int calculateScore(){
+        float healthProportion = 0.6f;
+        float remainingSavesProportion = 0.4f;
+//        float remainingCoinsProportion =
+
+        return (int)(this.reflink.getHero().getHealth()*healthProportion + this.reflink.getHero().getNrOfEscapes()*remainingSavesProportion);
     }
 
 

@@ -7,18 +7,19 @@ import PaooGame.HUD.ContextHUD;
 import PaooGame.HUD.MessageTriggerZone;
 import PaooGame.HUD.PauseButton;
 import PaooGame.Input.MouseInput;
+import PaooGame.Items.BoosterItem;
 import PaooGame.Items.FloppyItem;
 import PaooGame.Items.SaveItem;
 import PaooGame.Maps.Level2;
 import PaooGame.RefLinks;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.nio.file.AccessDeniedException;
 import java.time.Instant;
+import java.util.Objects;
 
 public class Level2State extends State{
     private Level2 level2;
@@ -40,6 +41,8 @@ public class Level2State extends State{
     private int nrOfEnemies = 3;
     private Enemy[] enemies;
     private SaveItem[] saves;
+    private BoosterItem[] boosters;
+    private int nrOfBoosters = 3;
     private int nrOfSaves = 1;
     private FloppyItem[] floppyDisks;
 
@@ -54,7 +57,11 @@ public class Level2State extends State{
         this.saves = new SaveItem[this.nrOfSaves];
         this.enemies = new Enemy[this.nrOfEnemies];
         this.floppyDisks = new FloppyItem[this.nrOfSaves];
+        this.boosters = new BoosterItem[this.nrOfBoosters];
 
+        this.boosters[0] = new BoosterItem(this.reflink,1280,390);
+        this.boosters[1] = new BoosterItem(this.reflink,1360,345);
+        this.boosters[2] = new BoosterItem(this.reflink,1487,313);
 
         this.contextHUD = new ContextHUD(this.reflink.getHero());
 
@@ -127,6 +134,33 @@ public class Level2State extends State{
 
     @Override
     public void update(){
+        System.out.println(this.reflink.getHero().getX() + " -- " +this.reflink.getHero().getY());
+
+        for(BoosterItem item : this.boosters){
+            item.updateItem();
+        }
+
+        if(Objects.equals(State.getState().getStateName(), this.getStateName())){
+            this.reflink.setCurrentRunningLevel(this.reflink.getGame().getLevel2State());
+        }
+
+        int nrOfTouchedBoosters = 0;
+        for(BoosterItem item : this.boosters){
+            if(item.getHitbox().intersects(this.reflink.getHero().getHitbox())){
+                nrOfTouchedBoosters++;
+                this.reflink.getHero().setJumpStrength(Constants.HERO_BOOSTED_JUMP_STRENGTH);
+            }
+        }
+        if(nrOfTouchedBoosters>0){
+            this.reflink.getHero().setJumpStrength(Constants.HERO_BOOSTED_JUMP_STRENGTH);
+        }
+        else{
+            this.reflink.getHero().setJumpStrength(Constants.HERO_BASE_JUMP_STRENGTH);
+        }
+        nrOfTouchedBoosters = 0;
+
+
+
         //System.out.println("X = " + this.reflink.getHero().getX() + "Y = " + this.reflink.getHero().getY());
         this.reflink.getHero().update();
         this.floppyDisks[0].updateItem();
@@ -312,6 +346,10 @@ public class Level2State extends State{
             }
         }
 
+        for(BoosterItem item : this.boosters){
+            item.updateItem();
+            item.drawItem(g);
+        }
 
         if(reflink.getHero().getHealth() == 0 || (this.transitioning&&this.reflink.getHero().getX()>1850) || this.transition_to_fight){
             this.targetBlackIntensity+=this.blackFadeStep;

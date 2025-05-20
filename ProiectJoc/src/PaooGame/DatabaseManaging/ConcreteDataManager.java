@@ -3,6 +3,7 @@ package PaooGame.DatabaseManaging;
 import PaooGame.Config.Constants;
 import PaooGame.RefLinks;
 
+import java.io.File;
 import java.nio.file.AccessDeniedException;
 import java.time.Instant;
 import java.util.HashMap;
@@ -94,8 +95,6 @@ public class ConcreteDataManager implements DataManager{
 
 
 
-
-
     }
 
     @Override
@@ -137,13 +136,15 @@ public class ConcreteDataManager implements DataManager{
 
         this.reflink.setDataRefreshSignal(true);
 
+
+
     }
 
     @Override
     public void loadBuffer(boolean access) {
         try {
             DriverManager.registerDriver(new JDBC());
-            this.c = DriverManager.getConnection("jdbc:sqlite:src/PaooGame/DatabaseManaging/myDB.db");
+            this.c = DriverManager.getConnection(Constants.DB_URL);
             c.setAutoCommit(false);
             this.stmt = c.createStatement();
             stmt.executeUpdate(Constants.CREATE_TABLE_CMD);
@@ -178,7 +179,7 @@ public class ConcreteDataManager implements DataManager{
     public void storeBuffer(boolean access) {
         try {
             DriverManager.registerDriver(new JDBC());
-            this.c = DriverManager.getConnection("jdbc:sqlite:src/PaooGame/DatabaseManaging/myDB.db");
+            this.c = DriverManager.getConnection(Constants.DB_URL);
             c.setAutoCommit(false);
             this.stmt = c.createStatement();
             stmt.executeUpdate(Constants.CREATE_TABLE_CMD);
@@ -235,7 +236,7 @@ public class ConcreteDataManager implements DataManager{
         int nr=1000000000;
         try {
             DriverManager.registerDriver(new JDBC());
-            this.c = DriverManager.getConnection("jdbc:sqlite:src/PaooGame/DatabaseManaging/myDB.db");
+            this.c = DriverManager.getConnection(Constants.DB_URL);
             c.setAutoCommit(false);
             this.stmt = c.createStatement();
             stmt.executeUpdate(Constants.CREATE_TABLE_CMD);
@@ -271,7 +272,11 @@ public class ConcreteDataManager implements DataManager{
 
     @Override
     public void storeScore(boolean access, int score1, int score2, int score3) {
-        int nr = 1000000000 + score1 + score2*1000 + score3 * 1000000;
+        int nr=1000000000;
+        if((new File(Constants.DB_PATH)).exists()){
+            nr = 1000000000 + score1 + score2*1000 + score3 * 1000000;
+
+        }
         int oldTimestamp = this.load(Constants.TIMESTAMP,access);
         int oldState = this.load(Constants.CURRENT_STATE,access);
         this.store(Constants.TIMESTAMP,-2,access);
@@ -279,7 +284,7 @@ public class ConcreteDataManager implements DataManager{
 
         try {
             DriverManager.registerDriver(new JDBC());
-            this.c = DriverManager.getConnection("jdbc:sqlite:src/PaooGame/DatabaseManaging/myDB.db");
+            this.c = DriverManager.getConnection(Constants.DB_URL);
             c.setAutoCommit(false);
             this.stmt = c.createStatement();
             stmt.executeUpdate(Constants.CREATE_TABLE_CMD);

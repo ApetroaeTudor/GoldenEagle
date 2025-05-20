@@ -17,6 +17,7 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.nio.file.AccessDeniedException;
 import java.time.Instant;
+import java.util.Objects;
 
 import PaooGame.HUD.PauseButton;
 
@@ -119,6 +120,11 @@ public class Level1State extends State {
 
     @Override
     public void update() {
+
+
+        if(Objects.equals(State.getState().getStateName(), this.getStateName())){
+            this.reflink.setCurrentRunningLevel(this.reflink.getGame().getLevel1State());
+        }
         this.reflink.getHero().update();
 
         this.floppyDisks[0].updateItem();
