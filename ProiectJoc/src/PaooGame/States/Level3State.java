@@ -8,7 +8,7 @@ import PaooGame.Entities.Enemy;
 import PaooGame.HUD.PauseButton;
 import PaooGame.Input.MouseInput;
 import PaooGame.Items.FloppyItem;
-import PaooGame.Items.SaveItem;
+import PaooGame.Items.BonfireItem;
 import PaooGame.Items.WhipItem;
 import PaooGame.Maps.Level;
 import PaooGame.Maps.Level3;
@@ -20,7 +20,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
-import java.nio.file.AccessDeniedException;
 import java.time.Instant;
 import java.util.LinkedList;
 import java.util.Objects;
@@ -57,7 +56,7 @@ public class Level3State extends State{
     private int nrOfEnemies = 5;
 
 
-    private SaveItem[] saves;
+    private BonfireItem[] saves;
     private int nrOfSaves = 4;
     private FloppyItem[] floppyDisks;
 
@@ -69,7 +68,7 @@ public class Level3State extends State{
     public Level3State(RefLinks reflink, Level3 level3){
         super(reflink);
         this.whip = new WhipItem(this.reflink,Constants.WHIP_POSITION_X,Constants.WHIP_POSITION_Y);
-        this.saves = new SaveItem[this.nrOfSaves];
+        this.saves = new BonfireItem[this.nrOfSaves];
         this.floppyDisks = new FloppyItem[this.nrOfSaves];
 
         this.level3 = level3;
@@ -95,10 +94,10 @@ public class Level3State extends State{
         this.enemies[4] = new Enemy(this.reflink,Constants.GHOST1_X,Constants.GHOST2_Y,Constants.GHOST_NAME); //ghost1
 
 
-        this.saves[0] = new SaveItem(this.reflink,Constants.LEVEL3_SAVE1_X,Constants.LEVEL3_SAVE1_Y);
-        this.saves[1] = new SaveItem(this.reflink,Constants.LEVEL3_SAVE2_X,Constants.LEVEL3_SAVE2_Y);
-        this.saves[2] = new SaveItem(this.reflink,Constants.LEVEL3_SAVE3_X,Constants.LEVEL3_SAVE3_Y);
-        this.saves[3] = new SaveItem(this.reflink,Constants.LEVEL3_SAVE4_X,Constants.LEVEL3_SAVE4_Y);
+        this.saves[0] = new BonfireItem(this.reflink,Constants.LEVEL3_SAVE1_X,Constants.LEVEL3_SAVE1_Y);
+        this.saves[1] = new BonfireItem(this.reflink,Constants.LEVEL3_SAVE2_X,Constants.LEVEL3_SAVE2_Y);
+        this.saves[2] = new BonfireItem(this.reflink,Constants.LEVEL3_SAVE3_X,Constants.LEVEL3_SAVE3_Y);
+        this.saves[3] = new BonfireItem(this.reflink,Constants.LEVEL3_SAVE4_X,Constants.LEVEL3_SAVE4_Y);
         this.floppyDisks[0] = new FloppyItem(this.reflink,Constants.LEVEL3_SAVE1_X+10,Constants.LEVEL3_SAVE1_Y-10);
         this.floppyDisks[1] = new FloppyItem(this.reflink,Constants.LEVEL3_SAVE2_X+10,Constants.LEVEL3_SAVE2_Y-10);
         this.floppyDisks[2] = new FloppyItem(this.reflink,Constants.LEVEL3_SAVE3_X+10,Constants.LEVEL3_SAVE3_Y-10);
@@ -365,7 +364,7 @@ public class Level3State extends State{
                     enemy.nullifyHitbox();
                 }
                 else{
-                    if(reflink.getHero().getHitbox().intersects(enemy.getHitbox()) && reflink.getHero().getCanEngage()){
+                    if(reflink.getHero().getHitbox().intersects(enemy.getHitbox()) && reflink.getHero().getEngageReady()){
                         enemy.setIsEngaged(true);
                         this.transitioning = true;
                         this.transition_to_fight = true;
@@ -460,10 +459,10 @@ public class Level3State extends State{
                         this.reflink.getHero().setGrapplePoint(closestX,closestY);
                         this.MarkedHooks.add(pt);
                         startUnmarkHookTimerWithParameters(pt);
-                        this.reflink.getHero().setGrappleInterrupt(false);
+                        this.reflink.getHero().setGrappleInterrupted(false);
                     }
                     else{
-                        this.reflink.getHero().setGrappleInterrupt(true);
+                        this.reflink.getHero().setGrappleInterrupted(true);
                     }
 
                 }

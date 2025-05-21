@@ -207,7 +207,7 @@ public class ConcreteDataManager implements DataManager{
                 nrOfEntries = rs.getInt(1);
             }
 
-            if (rs != null && !rs.isClosed()) rs.close();
+            if (rs != null) rs.close();
 
 
             if(nrOfEntries>=Constants.DB_MAX_ENTRIES){
@@ -238,10 +238,10 @@ public class ConcreteDataManager implements DataManager{
             // Clean up database resources.
             try {
                 // rs might have been closed already, or not opened in case of early exception
-                if (rs != null && !rs.isClosed()) rs.close();
-                if (pstmt != null && !pstmt.isClosed()) pstmt.close();
-                if (stmt != null && !stmt.isClosed()) stmt.close();
-                if (c != null && !c.isClosed()) c.close();
+                if (rs != null) rs.close();
+                if (pstmt != null) pstmt.close();
+                if (stmt != null) stmt.close();
+                if (c != null) c.close();
             } catch (SQLException ex) {
                 System.err.println("Resource cleanup failed: " + ex.getMessage());
             }
@@ -277,10 +277,10 @@ public class ConcreteDataManager implements DataManager{
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
         } finally {
             try {
-                if (rs != null && !rs.isClosed()) rs.close();
-                if (pstmt != null && !pstmt.isClosed()) pstmt.close();
-                if (stmt != null && !stmt.isClosed()) stmt.close();
-                if (c != null && !c.isClosed()) c.close();
+                if (rs != null) rs.close();
+                if (pstmt != null) pstmt.close();
+                if (stmt != null) stmt.close();
+                if (c != null) c.close();
             } catch (SQLException ex) {
                 System.err.println("Resource cleanup failed: " + ex.getMessage());
             }
@@ -327,7 +327,7 @@ public class ConcreteDataManager implements DataManager{
 
             if(rs.next()){ //exista deja - If score row already exists, update it.
                 // Close the current ResultSet before creating a new PreparedStatement for update
-                if(rs != null && !rs.isClosed()) rs.close();
+                if(rs != null) rs.close();
                 try{
                     this.pstmt = c.prepareStatement(Constants.UPDATE_SCORE_LINE_CMD);
                     this.pstmt.setInt(1, nr);  // value to set for CURRENT_STATE (packed scores)
@@ -339,7 +339,7 @@ public class ConcreteDataManager implements DataManager{
             }
             else{ // If score row does not exist, insert it.
                 // Close the current ResultSet before creating a new PreparedStatement for insert
-                if(rs != null && !rs.isClosed()) rs.close();
+                if(rs != null) rs.close();
                 pstmt = c.prepareStatement(Constants.INSERT_CMD);
                 // Populate most fields with current buffer values (some will be irrelevant for score row).
                 // Loop should go up to ALL_DATA_MANAGEMENT_CONSTANTS.length
@@ -360,10 +360,10 @@ public class ConcreteDataManager implements DataManager{
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
         } finally {
             try {
-                if (rs != null && !rs.isClosed()) rs.close();
-                if (pstmt != null && !pstmt.isClosed()) pstmt.close();
-                if (stmt != null && !stmt.isClosed()) stmt.close();
-                if (c != null && !c.isClosed()) c.close();
+                if (rs != null) rs.close();
+                if (pstmt != null ) pstmt.close();
+                if (stmt != null) stmt.close();
+                if (c != null ) c.close();
             } catch (SQLException ex) {
                 System.err.println("Resource cleanup failed: " + ex.getMessage());
             }

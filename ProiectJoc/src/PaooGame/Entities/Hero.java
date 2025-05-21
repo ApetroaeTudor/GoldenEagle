@@ -15,64 +15,76 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
+/**
+ * @class Hero
+ * @brief Represents the main player character in the game.
+ *
+ * The Hero class extends Entity and implements specific behaviors for the player,
+ * including input handling, movement (running, jumping, grappling), animations,
+ * health management, and interactions with the game world and data management systems.
+ */
 public class Hero extends Entity {
-    private float jumpStrength;
+    private float jumpStrength; ///< The initial upward velocity applied when the hero jumps.
 
-    private Timer deathAnimationTimer;
-    private int timeoutInMillisForDeathAnimation = 600;
-    private boolean isDying = false;
-    private int currentGrappleX = 0;
-    private int currentGrappleY = 0;
-    private boolean isGrappling = false;
+    private Timer deathAnimationTimer; ///< Timer to manage the duration of the death animation/state.
+    private int timeoutInMillisForDeathAnimation = 600; ///< Duration of the death animation state in milliseconds.
+    private boolean isDying = false; ///< Flag indicating if the hero is currently in the dying state.
+    private int currentGrappleX = 0; ///< The X-coordinate (tile index) of the current grapple point.
+    private int currentGrappleY = 0; ///< The Y-coordinate (tile index) of the current grapple point.
+    private boolean isGrappling = false; ///< Flag indicating if the hero is currently grappling.
 
-    int gold = 0;
+    int gold = 0; ///< The amount of gold collected by the hero.
 
-    private boolean hasWhip = false;
+    private boolean hasWhip = false; ///< Flag indicating if the hero has acquired the whip.
 
-    private Timer grappleExpiredTimer;
-    private int grappleTimeoutMillis = 120;
-    private boolean isGrapplingTimerExpired = false;
-    private boolean grappleInterrupt = false;
-    private boolean didJumpAfterGrapple = false;
-    private boolean canEngage = true;
+    private Timer grappleExpiredTimer; ///< Timer to manage the duration of a grapple attempt.
+    private int grappleTimeoutMillis = 120; ///< Timeout for a grapple attempt in milliseconds.
+    private boolean isGrapplingTimerExpired = false; ///< Flag indicating if the grapple timer has expired.
+    private boolean isGrappleInterrupted = false; ///< Flag indicating if the grapple action was interrupted (e.g., by jumping).
+    private boolean didJumpAfterGrapple = false; ///< Flag indicating if the hero jumped immediately after a grapple.
+    private boolean isEngageReady = true; ///< Flag indicating if the hero can engage in combat or other interactions.
 
-    private int nrOfEscapes = 2;
-    private int maxNrOfEscapes = 2;
-    private int nrOfCompletedLevels = 0;
+    private int nrOfEscapes = 2; ///< The current number of escapes (from fights) the hero has.
+    private int maxNrOfEscapes = 2; ///< The maximum number of escapes the hero can have.
+    private int nrOfCompletedLevels = 0; ///< The number of levels the hero has successfully completed.
 
-    private int nrOfCollectedSaves = 0;
+    private int nrOfCollectedSaves = 0; ///< The number of save points or collectibles the hero has gathered.
 
-    private int score = 0;
+    private int score = 0; ///< The hero's current score.
 
+    private int jumpCap; ///< A resource that limits jumping.
 
-
-
-
-    private int jumpCap;
-
-    private Constants.HERO_STATES currentState;
+    private Constants.HERO_STATES currentState; ///< The current state of the hero (e.g., idle, running, jumping).
 
 
-    private float hitboxOffsetX = 16;
-    private float hitboxOffsetY = 9;
+    private float hitboxOffsetX = 16; ///< Offset for the hero's hitbox X-position relative to the hero's X-position.
+    private float hitboxOffsetY = 9; ///< Offset for the hero's hitbox Y-position relative to the hero's Y-position.
 
-    private int LEVEL_WIDTH;
-    private int LEVEL_HEIGHT;
+    private int LEVEL_WIDTH; ///< The width of the current level in tiles.
+    private int LEVEL_HEIGHT; ///< The height of the current level in tiles.
 
 
-    private Animation idleAnimation;
-    private Animation fallingAnimation;
-    private Animation runningAnimation;
-    private Animation jumpingAnimation;
-    private Animation attackingAnimation;
-    private Animation crounchingAnimation;
+    private Animation idleAnimation; ///< Animation for when the hero is idle.
+    private Animation fallingAnimation; ///< Animation for when the hero is falling.
+    private Animation runningAnimation; ///< Animation for when the hero is running.
+    private Animation jumpingAnimation; ///< Animation for when the hero is jumping.
+    private Animation attackingAnimation; ///< Animation for when the hero is attacking.
+    private Animation crounchingAnimation; ///< Animation for when the hero is crouching.
 
+    /**
+     * @brief Constructs a Hero object.
+     *
+     * Initializes the hero's properties, timers, animations, hitbox, and default values.
+     * @param refLink A reference to shared game resources.
+     * @param startX The initial X-coordinate of the hero.
+     * @param startY The initial Y-coordinate of the hero.
+     */
     public Hero(RefLinks refLink, int startX, int startY) {
         super(refLink,startX,startY);
 
         this.deathAnimationTimer = new Timer(this.timeoutInMillisForDeathAnimation,e->{
-           this.health = 0;
-           this.isDying = false;
+            this.health = 0;
+            this.isDying = false;
         });
         this.deathAnimationTimer.setRepeats(false);
 
@@ -90,7 +102,7 @@ public class Hero extends Entity {
         this.grappleExpiredTimer.setRepeats(false);
 
 
-        this.jumpStrength = Constants.HERO_BASE_JUMP_STRENGTH;//-3.2f;   // Initial upward velocity (negative Y). Adjust! Needs to be > gravity per frame initially.
+        this.jumpStrength = Constants.HERO_BASE_JUMP_STRENGTH;  // Initial upward velocity (negative Y).
 
         this.speed = Constants.HERO_BASE_SPEED;             // Base horizontal speed
         this.jumpCap = 10;          // Stamina/resource for jumps
@@ -118,6 +130,11 @@ public class Hero extends Entity {
 
     }
 
+    /**
+     * @brief Restores the hero to a default state.
+     *
+     * Resets position, speed, hitbox, health bar, and health.
+     */
     @Override
     public void restoreEntity() {
         this.x = 100;
@@ -129,8 +146,16 @@ public class Hero extends Entity {
         this.setHealth(100);
     }
 
+    /**
+     * @brief Updates the hero's state and behavior.
+     *
+     * Handles behavior IDs, checks for falling, processes input (if alive),
+     * applies gravity, handles movement and collisions, updates visual position,
+     * updates animation state, and gets information about the current level.
+     */
     @Override
     public void update() {
+        System.out.println(this.isEngageReady);
         handleBehaviorIDs();
 
         if( Level.checkFalling(this.getHitbox(),this.LEVEL_WIDTH,this.LEVEL_HEIGHT,this.behaviorIDsToRespect) ==1){
@@ -152,10 +177,17 @@ public class Hero extends Entity {
         moveAndCollide(); // Updates hitbox position, handles collisions, sets isGrounded
         updateVisualPosition();
         updateAnimationState();
-        getInfoAboutCurrentLevel();
+//        getInfoAboutCurrentLevel();
 
     }
 
+    /**
+     * @brief Draws the hero on the screen.
+     *
+     * Renders the hero's current animation. If the hero is dying,
+     * it also draws a red overlay to indicate this state.
+     * @param g The Graphics context to draw on.
+     */
     @Override
     public void draw(Graphics g){
 
@@ -173,6 +205,12 @@ public class Hero extends Entity {
         }
     }
 
+    /**
+     * @brief Handles player input for movement and actions.
+     *
+     * Reads key presses for jumping, moving left/right, and grappling.
+     * Updates hero's velocity and state based on input.
+     */
     private void handleInput() {
         boolean jumpPressed = reflink.getKeyManager().isKeyPressedOnce(KeyEvent.VK_SPACE);
         boolean rightPressed = reflink.getKeyManager().getKeyState()[KeyEvent.VK_D];
@@ -187,9 +225,8 @@ public class Hero extends Entity {
             this.isGrappling = false;
             this.isGrapplingTimerExpired = false;
             this.didJumpAfterGrapple = false;
-
         }
-        if(this.isGrappling && this.grappleInterrupt && this.hasWhip){
+        if(this.isGrappling && this.isGrappleInterrupted && this.hasWhip){
             this.velocityY = this.jumpStrength*1.2f;
             this.isGrounded = false;
             this.jumpCap -= 4;
@@ -200,25 +237,28 @@ public class Hero extends Entity {
 
         if(this.isGrappling && this.hasWhip){
             if(this.currentGrappleX*Constants.TILE_SIZE>this.getHitbox().getX()){
-                this.velocityX = this.speed*2;
+                this.velocityX = this.speed*2; // if the detected hook is in front of the hero, the velocity applied pulls the hero forward
             }
             else{
-                this.velocityX = -this.speed*2;
+                this.velocityX = -this.speed*2; // the same but backwards
             }
             if(this.currentGrappleY*Constants.TILE_SIZE>this.getHitbox().getY()){
-                this.velocityY = this.speed*2;
+                this.velocityY = this.speed*2; // the same but for vertical velocity
             }
             else{
                 this.velocityY = -this.speed*2;
             }
         }
         else{
-            if (rightPressed && !leftPressed) {
+            if (rightPressed && !leftPressed) { // here the regular velocity on the X axis is set
                 this.velocityX = this.speed;
             } else if (leftPressed && !rightPressed) {
                 this.velocityX = -this.speed;
             }
-            if (jumpPressed && this.isGrounded && this.jumpCap > 0) {
+
+
+            if (jumpPressed && this.isGrounded && this.jumpCap > 0) { // here the jump starts.
+                // The hero has to be grounded, needs enough stamina and the space key needs to be pressed
                 jump();
             }
         }
@@ -226,55 +266,59 @@ public class Hero extends Entity {
 
     }
 
-
+    /**
+     * @brief Initiates a jump if the hero is grounded.
+     *
+     * Sets the vertical velocity for an upward jump and consumes jump capability.
+     */
     private void jump() {
-        if (this.isGrounded) { //incep jump o singura data doar daca sunt grounded
+        if (this.isGrounded) { // jump starts only if grounded
             this.velocityY = this.jumpStrength;
             this.isGrounded = false;
             this.jumpCap -= 4;
         }
     }
 
+    /**
+     * @brief Handles hero movement and collision detection with the level.
+     *
+     * Updates the hero's hitbox position based on velocity, checks for collisions
+     * with walls and ceilings, and handles ground detection and snapping.
+     */
     @Override
     protected void moveAndCollide() {
-        float originalX = this.hitbox.getX(); //partea stanga a hitbox-ului
-        float deltaX = this.velocityX; //cat ar trebui sa se deplaseze
+        float originalX = this.hitbox.getX(); // the left side of the hitbox
+        float deltaX = this.velocityX; // how much the hero should move on the X axis
 
+        this.hitbox.setX(originalX + deltaX);
 
-        //presupun ca miscarea e valida si actualizez hitbox-ul
-        this.hitbox.setX(originalX + deltaX); //incercare de movement
-
-        //verific daca miscarea chiar e valida
         boolean horizontalCollision = false;
-        //pentru pereti
-
 
         if(Level.checkCeilingCollision(hitbox,this.LEVEL_WIDTH,this.LEVEL_HEIGHT,this.behaviorIDsToRespect)){
             this.velocityY=1;
+            // if the hero touches the ceiling, it is sent back down
         }
 
-
-
-        if (this.velocityX > 0) { //coliziune perete dreapta
+        if (this.velocityX > 0) { // right side collision
             if (Level.checkWallCollision(hitbox, true,this.LEVEL_WIDTH,this.LEVEL_HEIGHT,this.behaviorIDsToRespect)) {
                 horizontalCollision = true;
 
-                //trebuie sa verific daca aceasta coliziune se intampla IN hitbox sau nu
-                //cu acel epsilon mic vad daca sunt inauntru sau doar la margine
+                // this check is made in order to make sure the collision happens INSIDE the hitbox
+                // the epsilon is used in order to make sure the inside is checked, not just the edge
                 float checkCoordInsideRight = hitbox.getX() + hitbox.getWidth() - Constants.EPSILON;
-                //asta e doar coordonata, acum trebuie calculat tile-ul corespunzator
-
+                // this is just the coordinate, now the corresponding tile must be found
 
                 int wallTileX = (int)Math.floor(checkCoordInsideRight / Constants.TILE_SIZE);
-                //index de coloana pentru coliziune
+                // divided by tile size in order to find the index of the tile
 
                 float wallLeftEdgeX = wallTileX * Constants.TILE_SIZE;
-                //coordonata x pentru coloana respectiva
+                // multiplied again in order to "snap" to a certain tile
 
                 this.hitbox.setX(wallLeftEdgeX - hitbox.getWidth());
+                // the hero is moved to the left of this edge
 
             }
-        } else if (this.velocityX < 0) { // Moving Left
+        } else if (this.velocityX < 0) { // left side collision
             if (Level.checkWallCollision(hitbox, false,this.LEVEL_WIDTH,this.LEVEL_HEIGHT,this.behaviorIDsToRespect)) {
                 horizontalCollision = true;
 
@@ -288,58 +332,65 @@ public class Hero extends Entity {
             }
         }
 
-        if(this.velocityX<0){
-            this.flipped=true;
+        if(this.velocityX<0){ // used for animations and drawing
+            this.flipped=true; // a flip boolean is required because the hero in the sprite sheet faces right
+            // so if the hero is facing left, the sprite must also be flipped
         }
         else if(velocityX>0){
             this.flipped=false;
         }
 
-        if (horizontalCollision) {
+        if (horizontalCollision) { // if the character is colliding, the velocity is nullified
             this.velocityX = 0;
         }
 
-        float originalY = this.hitbox.getY();
-        float deltaY = this.velocityY;
+        float originalY = this.hitbox.getY(); // now the check for the Y axis is performed
+        float deltaY = this.velocityY; // the movement is first attempted
         this.hitbox.setY(originalY + deltaY);
 
         int fallCheckResult = Level.checkFalling(hitbox,this.LEVEL_WIDTH,this.LEVEL_HEIGHT,this.behaviorIDsToRespect);
 
 
-            if (this.velocityY > 0) { // Moving Down
-                if (fallCheckResult == 0) { // Hit ground
-                    this.isGrounded = true;
-                    this.velocityY = 0;
-                    Level.snapToGround(this.hitbox);
-                    this.jumpCap = 10; //resetare jump
-                } else {
-                    this.isGrounded = false;
-                }
-            } else if (this.velocityY < 0) { // Moving Up
+        if (this.velocityY > 0) { // moving Down
+            if (fallCheckResult == 0) { // if the ground is hit
+                this.isGrounded = true;
+                this.velocityY = 0;
+                Level.snapToGround(this.hitbox);
+                this.jumpCap = 10; // jump reset
+            } else {
                 this.isGrounded = false;
+            }
+        } else if (this.velocityY < 0) { // moving Up
+            this.isGrounded = false;
 
-            } else { // velocityY == 0
-                if (fallCheckResult == 0) { // Standing still on ground
-                    if (!this.isGrounded) { // Just landed precisely
-                        Level.snapToGround(this.hitbox);
-                        //functia tine de clasa parinte abstracta Level deci nu conteaza ca depinde de Level1, va merge si pt Level2,3
-                        this.jumpCap = 10;
-                    }
-                    this.isGrounded = true;
-                        this.velocityY = 0; // Ensure velocity is 0 when grounded
-                } else { // Standing still in air
-                    this.isGrounded = false;
+        } else { // velocityY == 0
+            if (fallCheckResult == 0) { // standing still on ground
+                if (!this.isGrounded) { // sust landed precisely
+                    Level.snapToGround(this.hitbox);
+                    this.jumpCap = 10;
                 }
+                this.isGrounded = true;
+                this.velocityY = 0;
+            } else { // standing still in air
+                this.isGrounded = false;
+            }
         }
 
     }
 
+    /**
+     * @brief Updates the hero's visual position based on its hitbox and offsets.
+     */
     @Override
     protected void updateVisualPosition() {
         this.x = this.hitbox.getX() - hitboxOffsetX;
         this.y = this.hitbox.getY() - hitboxOffsetY;
     }
 
+    /**
+     * @brief Retrieves the appropriate animation based on the hero's current state.
+     * @return The Animation object corresponding to the current hero state.
+     */
     @Override
     protected Animation getAnimationByState(){
         switch (this.currentState){
@@ -359,84 +410,98 @@ public class Hero extends Entity {
         return this.idleAnimation;
     }
 
+    /**
+     * @brief Updates the hero's animation state based on current actions and conditions.
+     *
+     * Transitions between states like idle, running, jumping, falling
+     */
     @Override
     protected void updateAnimationState() {
-
-        boolean rightPressed = reflink.getKeyManager().getKeyState()[KeyEvent.VK_D];
-        boolean leftPressed = reflink.getKeyManager().getKeyState()[KeyEvent.VK_A];
-        boolean crouchPressed = reflink.getKeyManager().getKeyState()[KeyEvent.VK_C];
-
-        if (this.isGrounded) {
-            if (crouchPressed) {
-                this.currentState = Constants.HERO_STATES.CROUCHING;
-            } else if (this.velocityX != 0) { // Use actual velocity, not just key press
+        if (this.isGrounded) { // only apply running and idle when on ground
+            if (this.velocityX != 0) {
                 this.currentState = Constants.HERO_STATES.RUNNING;
             } else {
                 this.currentState = Constants.HERO_STATES.IDLE;
             }
-        } else { // In the air
+        } else { // in the air
             if (this.velocityY < 0) {
                 this.currentState = Constants.HERO_STATES.JUMPING;
-            } else { // velocityY >= 0 (falling or at peak)
+            } else { // velocityY > 0
                 this.currentState = Constants.HERO_STATES.FALLING;
             }
         }
-
-
+        // the function sets the state, and then the corresponding animation is updated here
         this.getAnimationByState().updateAnimation();
-
     }
 
+    /**
+     * @brief Checks if the hero is currently in the dying state.
+     * @return True if dying, false otherwise.
+     */
     public boolean getIsDying(){
         return this.isDying;
     }
 
-
-    private void getInfoAboutCurrentLevel(){
-        switch (State.getState().getStateName()){
-            case Constants.LEVEL1_STATE:
-                this.LEVEL_HEIGHT = Constants.LEVEL1_HEIGHT;
-                this.LEVEL_WIDTH = Constants.LEVEL1_WIDTH;
-                break;
-            default:
-                this.LEVEL_HEIGHT = Constants.LEVEL1_HEIGHT;
-                this.LEVEL_WIDTH = Constants.LEVEL1_WIDTH; //placeholder, se va modifica la introducerea niv2 si niv3
-        }
-    }
-
-
+    /**
+     * @brief Gets the name of the hero.
+     * @return The string "Player".
+     */
     @Override
     public String getName(){
         return "Player";
     }
 
-
-
+    /**
+     * @brief Defines the hero's attack action.
+     *
+     * Currently, this method is empty and does not implement any attack logic.
+     */
     @Override
     public void attack() {
 
     }
 
+    /**
+     * @brief Gets the hero's jump strength.
+     * @return The jump strength value.
+     */
     public float getJumpStrength(){
         return this.jumpStrength;
     }
+    /**
+     * @brief Sets the hero's jump strength.
+     * @param jumpStrength The new jump strength value.
+     */
     public void setJumpStrength(float jumpStrength){
         this.jumpStrength = jumpStrength;
     }
 
+    /**
+     * @brief Gets the source identifier for hero-related assets or data.
+     * @return The string "GAME".
+     */
     @Override
     public String getSource() {
         return "GAME";
     }
 
+    /**
+     * @brief Sets the current grapple point coordinates.
+     * @param x The X-coordinate (tile index) of the grapple point.
+     * @param y The Y-coordinate (tile index) of the grapple point.
+     */
     public void setGrapplePoint(int x,int y){
         this.currentGrappleX = x;
         this.currentGrappleY = y;
     }
 
 
-
-
+    /**
+     * @brief Handles setting level-specific properties based on the current game state.
+     *
+     * Updates level dimensions, behavior IDs to respect, and potentially hero attributes
+     * (like jump strength) based on the active level.
+     */
     private void handleBehaviorIDs(){
         switch (State.getState().getStateName()){
             case Constants.LEVEL1_STATE:
@@ -453,7 +518,7 @@ public class Hero extends Entity {
                 this.LEVEL_WIDTH = Constants.LEVEL3_WIDTH;
                 this.LEVEL_HEIGHT = Constants.LEVEL3_HEIGHT;
                 this.behaviorIDsToRespect = reflink.getGame().getLevel3().getBehaviorIDs();
-                if(this.x > 3500){
+                if(this.x > 3500){ // increased jump in order to make the final grapple platforming easier
                     this.jumpStrength= Constants.HERO_BASE_JUMP_STRENGTH*1.2f;
                 }
                 else{
@@ -464,11 +529,16 @@ public class Hero extends Entity {
     }
 
 
-
-
+    /**
+     * @brief Loads the hero's state from the data management system.
+     *
+     * Retrieves health, position, whip status, escapes, collected saves,
+     * completed levels, and gold. Uses an access flag and a signal to prevent redundant loading.
+     * @param access Boolean flag indicating if access to load data is permitted.
+     */
     public void loadHeroState(boolean access){
-        if(this.reflink.getHeroRefreshDoneSignal()){
-           return;
+        if(this.reflink.getHeroRefreshDoneSignal()){ // acts like a lock on the loading process. it only happens if the signal is set on false
+            return;
         }
 
         try{
@@ -488,6 +558,13 @@ public class Hero extends Entity {
         }
     }
 
+    /**
+     * @brief Stores the hero's current state to the data management system.
+     *
+     * Saves health, position, whip status, escapes, collected saves,
+     * completed levels, and gold. Uses an access flag and a signal to prevent redundant storing.
+     * @param access Boolean flag indicating if access to store data is permitted.
+     */
     public void storeHeroState(boolean access){
         if(this.reflink.getHeroStoreDoneSignal()){
             return;
@@ -512,32 +589,109 @@ public class Hero extends Entity {
 
     }
 
+    /**
+     * @brief Gets the hero's current score.
+     * @return The score value.
+     */
     public int getScore(){return this.score;}
+    /**
+     * @brief Sets the hero's score.
+     * @param score The new score value.
+     */
     public void setScore(int score){this.score = score;}
 
-
+    /**
+     * @brief Gets the number of collected save items.
+     * @return The number of collected saves.
+     */
     public int getNrOfCollectedSaves() { return this.nrOfCollectedSaves;}
+    /**
+     * @brief Sets the number of collected save items.
+     * @param nr The new number of collected saves.
+     */
     public void setNrOfCollectedSaves(int nr) { this.nrOfCollectedSaves = nr;}
 
+    /**
+     * @brief Gets the number of completed levels.
+     * @return The number of completed levels.
+     */
     public int getNrOfCompletedLevels() { return this.nrOfCompletedLevels;}
+    /**
+     * @brief Sets the number of completed levels.
+     * @param nrOfCompletedLevels The new number of completed levels.
+     */
     public void setNrOfCompletedLevels(int nrOfCompletedLevels) { this.nrOfCompletedLevels = nrOfCompletedLevels;}
 
+    /**
+     * @brief Gets the amount of gold the hero has.
+     * @return The amount of gold.
+     */
     public int getGold(){return this.gold;}
+    /**
+     * @brief Sets the amount of gold the hero has.
+     * @param gold The new amount of gold.
+     */
     public void setGold(int gold){this.gold = gold;}
 
+    /**
+     * @brief Checks if the hero's sprite is flipped.
+     * @return True if flipped, false otherwise.
+     */
     public boolean getFlipped() {return this.flipped;}
-    public void setGrappleInterrupt(boolean isInterrupted) { this .grappleInterrupt = isInterrupted;}
+    /**
+     * @brief Sets the grapple interrupt flag.
+     * @param isInterrupted True if grapple is interrupted, false otherwise.
+     */
+    public void setGrappleInterrupted(boolean isInterrupted) { this .isGrappleInterrupted = isInterrupted;}
 
+    /**
+     * @brief Gets the X-coordinate of the current grapple point.
+     * @return The current grapple X-coordinate.
+     */
     public int getCurrentGrappleX() {return this.currentGrappleX;}
+    /**
+     * @brief Gets the Y-coordinate of the current grapple point.
+     * @return The current grapple Y-coordinate.
+     */
     public int getCurrentGrappleY() {return this.currentGrappleY;}
 
+    /**
+     * @brief Checks if the hero has the whip.
+     * @return True if the hero has the whip, false otherwise.
+     */
     public boolean getHasWhip(){return this.hasWhip;}
+    /**
+     * @brief Sets whether the hero has the whip.
+     * @param hasWhip True if the hero has the whip, false otherwise.
+     */
     public void setHasWhip(boolean hasWhip){this.hasWhip = hasWhip;}
 
+    /**
+     * @brief Gets the current number of escapes the hero has.
+     * @return The number of escapes.
+     */
     public int getNrOfEscapes(){return this.nrOfEscapes;}
+    /**
+     * @brief Gets the maximum number of escapes the hero can have.
+     * @return The maximum number of escapes.
+     */
     public int getMaxNrOfEscapes(){return this.maxNrOfEscapes;}
-    public void setNrOfEscapes(int nrOfEscapes) { this.nrOfEscapes = nrOfEscapes; if(this.nrOfEscapes>this.getMaxNrOfEscapes()){this.nrOfEscapes = 3; } else if(this.nrOfEscapes<0){this.nrOfEscapes = 0;}}
+    /**
+     * @brief Sets the number of escapes the hero has.
+     *
+     * Ensures the number of escapes stays within the valid range [0, maxNrOfEscapes].
+     * @param nrOfEscapes The new number of escapes.
+     */
+    public void setNrOfEscapes(int nrOfEscapes) { this.nrOfEscapes = nrOfEscapes; if(this.nrOfEscapes>this.getMaxNrOfEscapes()){this.nrOfEscapes = 3; } else if(this.nrOfEscapes<0){this.nrOfEscapes = 0;}} // Assumes max is 3 if it goes over.
 
-    public boolean getCanEngage(){return this.canEngage;}
-    public void setCanEngage(boolean canEngage) { this.canEngage = canEngage;}
+    /**
+     * @brief Checks if the hero can currently engage in interactions.
+     * @return True if can engage, false otherwise.
+     */
+    public boolean getEngageReady(){return this.isEngageReady;}
+    /**
+     * @brief Sets whether the hero can engage in interactions.
+     * @param engageReady True if can engage, false otherwise.
+     */
+    public void setEngageReady(boolean engageReady) { this.isEngageReady = engageReady;}
 }

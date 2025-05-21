@@ -203,7 +203,7 @@ public class Constants {
     public static final String TIGER_SPRITE_SHEET_PATH = "res/Enemies/Tiger.png";
     public static final String TIGER_FIGHT_BG_PATH = "res/Backgrounds/TigerFightBg.jpg";
     public static final double TIGER_HEALTH = 100.0;
-    public static final double TIGER_DAMAGE = 100.0;
+    public static final double TIGER_DAMAGE = 10.0;
     public static final float TIGER_SPEED =-0.4f;
     public static final float TIGER_DEFENCE = 0f;
     public static final String TIGER_NAME = "Tiger";
