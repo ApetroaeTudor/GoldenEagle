@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1HUD_1_1PauseButton}\index{PaooGame.HUD.PauseButton@{PaooGame.HUD.PauseButton}}
 
 
-Inheritance diagram for Paoo\+Game.\+HUD.\+Pause\+Button\+:
-\nopagebreak
+Represents a clickable button used to pause the game.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+HUD.\+Pause\+Button\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+HUD.\+Pause\+Button\+:
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+HUD.\+Pause\+Button\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+HUD.\+Pause\+Button\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,19 +26,101 @@ Collaboration diagram for Paoo\+Game.\+HUD.\+Pause\+Button\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1PauseButton_ab185c209c159357494648ef1001f1d62}\label{classPaooGame_1_1HUD_1_1PauseButton_ab185c209c159357494648ef1001f1d62}} 
-{\bfseries Pause\+Button} (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Hero}{Hero}} hero, int x, int y)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1PauseButton_acdb0ee8d2200d646776767d06c0f6602}\label{classPaooGame_1_1HUD_1_1PauseButton_acdb0ee8d2200d646776767d06c0f6602}} 
-void {\bfseries draw} (Graphics2D g2d)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1PauseButton_a3dc7174e3197159953b19cb72d3151c5}\label{classPaooGame_1_1HUD_1_1PauseButton_a3dc7174e3197159953b19cb72d3151c5}} 
-void {\bfseries update\+Hover} (int mouseX, int mouseY)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1PauseButton_aebaf59641aa2894817eaf7c0a79271bc}\label{classPaooGame_1_1HUD_1_1PauseButton_aebaf59641aa2894817eaf7c0a79271bc}} 
-boolean {\bfseries is\+Clicked} (int mouseX, int mouseY)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPaooGame_1_1HUD_1_1PauseButton_ab185c209c159357494648ef1001f1d62}{Pause\+Button}} (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Hero}{Hero}} hero, int x, int y)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPaooGame_1_1HUD_1_1PauseButton}{Pause\+Button}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1HUD_1_1PauseButton_acdb0ee8d2200d646776767d06c0f6602}{draw}} (Graphics2D g2d)
+\begin{DoxyCompactList}\small\item\em Draws the pause button on the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1HUD_1_1PauseButton_a3dc7174e3197159953b19cb72d3151c5}{update\+Hover}} (int mouseX, int mouseY)
+\begin{DoxyCompactList}\small\item\em Updates the hover state of the button based on the mouse cursor\textquotesingle{}s position. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classPaooGame_1_1HUD_1_1PauseButton_aebaf59641aa2894817eaf7c0a79271bc}{is\+Clicked}} (int mouseX, int mouseY)
+\begin{DoxyCompactList}\small\item\em Checks if the button was clicked given the mouse position. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a clickable button used to pause the game. 
+
+This class extends \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}} and provides functionality for drawing a pause button, detecting mouse hover, and handling click events. The button displays \char`\"{}\+Pause\+:\char`\"{} text next to a visual pause symbol (two vertical bars). Its appearance changes when hovered over. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1PauseButton_ab185c209c159357494648ef1001f1d62}\label{classPaooGame_1_1HUD_1_1PauseButton_ab185c209c159357494648ef1001f1d62}} 
+\index{PaooGame.HUD.PauseButton@{PaooGame.HUD.PauseButton}!PauseButton@{PauseButton}}
+\index{PauseButton@{PauseButton}!PaooGame.HUD.PauseButton@{PaooGame.HUD.PauseButton}}
+\doxysubsubsection{\texorpdfstring{PauseButton()}{PauseButton()}}
+{\footnotesize\ttfamily Paoo\+Game.\+HUD.\+Pause\+Button.\+Pause\+Button (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Hero}{Hero}}}]{hero,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPaooGame_1_1HUD_1_1PauseButton}{Pause\+Button}} object. 
+
+Initializes the button\textquotesingle{}s position and associates it with a hero (inherited from \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}}). It also creates its bounding box for interaction detection. 
+\begin{DoxyParams}{Parameters}
+{\em hero} & The \mbox{\hyperlink{}{Hero}} entity this \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}} element is associated with (inherited from \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}}). \\
+\hline
+{\em x} & The x-\/coordinate for the button\textquotesingle{}s top-\/left corner. \\
+\hline
+{\em y} & The y-\/coordinate for the button\textquotesingle{}s top-\/left corner. \\
+\hline
+\end{DoxyParams}
+$<$ The size (width and height) of the pause button.
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1PauseButton_acdb0ee8d2200d646776767d06c0f6602}\label{classPaooGame_1_1HUD_1_1PauseButton_acdb0ee8d2200d646776767d06c0f6602}} 
+\index{PaooGame.HUD.PauseButton@{PaooGame.HUD.PauseButton}!draw@{draw}}
+\index{draw@{draw}!PaooGame.HUD.PauseButton@{PaooGame.HUD.PauseButton}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+HUD.\+Pause\+Button.\+draw (\begin{DoxyParamCaption}\item[{Graphics2D}]{g2d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Draws the pause button on the screen. 
+
+Renders the \char`\"{}\+Pause\+:\char`\"{} label, a rounded background, and the pause symbol (two vertical bars). The background color changes if the button is hovered. 
+\begin{DoxyParams}{Parameters}
+{\em g2d} & The Graphics2D context to draw on. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD_a00eeedbee6ff71345f6e38b21f17d1e6}{Paoo\+Game.\+HUD.\+HUD}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1PauseButton_aebaf59641aa2894817eaf7c0a79271bc}\label{classPaooGame_1_1HUD_1_1PauseButton_aebaf59641aa2894817eaf7c0a79271bc}} 
+\index{PaooGame.HUD.PauseButton@{PaooGame.HUD.PauseButton}!isClicked@{isClicked}}
+\index{isClicked@{isClicked}!PaooGame.HUD.PauseButton@{PaooGame.HUD.PauseButton}}
+\doxysubsubsection{\texorpdfstring{isClicked()}{isClicked()}}
+{\footnotesize\ttfamily boolean Paoo\+Game.\+HUD.\+Pause\+Button.\+is\+Clicked (\begin{DoxyParamCaption}\item[{int}]{mouseX,  }\item[{int}]{mouseY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the button was clicked given the mouse position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mouseX} & The x-\/coordinate of the mouse event. \\
+\hline
+{\em mouseY} & The y-\/coordinate of the mouse event. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the mouse coordinates are within the button\textquotesingle{}s bounds, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1PauseButton_a3dc7174e3197159953b19cb72d3151c5}\label{classPaooGame_1_1HUD_1_1PauseButton_a3dc7174e3197159953b19cb72d3151c5}} 
+\index{PaooGame.HUD.PauseButton@{PaooGame.HUD.PauseButton}!updateHover@{updateHover}}
+\index{updateHover@{updateHover}!PaooGame.HUD.PauseButton@{PaooGame.HUD.PauseButton}}
+\doxysubsubsection{\texorpdfstring{updateHover()}{updateHover()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+HUD.\+Pause\+Button.\+update\+Hover (\begin{DoxyParamCaption}\item[{int}]{mouseX,  }\item[{int}]{mouseY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the hover state of the button based on the mouse cursor\textquotesingle{}s position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mouseX} & The current x-\/coordinate of the mouse cursor. \\
+\hline
+{\em mouseY} & The current y-\/coordinate of the mouse cursor. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -1,32 +1,162 @@
 \hypertarget{classPaooGame_1_1Camera_1_1Camera}{}\doxysection{Paoo\+Game.\+Camera.\+Camera Class Reference}
 \label{classPaooGame_1_1Camera_1_1Camera}\index{PaooGame.Camera.Camera@{PaooGame.Camera.Camera}}
+
+
+Manages the game\textquotesingle{}s viewport, including its position (offset) and zoom level (scale).  
+
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{classPaooGame_1_1Camera_1_1Camera_a7355c48f8f288ef6cd6994fc307cfec7}{Camera}} (double x\+Offset, double y\+Offset)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPaooGame_1_1Camera_1_1Camera}{Camera}} object with an initial position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Camera_1_1Camera_a0ec3832ceaf98e5dde94fc89a6b34b9f}{apply}} (Graphics2D g2d)
+\begin{DoxyCompactList}\small\item\em Applies the camera\textquotesingle{}s transformation to a Graphics2D context. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPaooGame_1_1Camera_1_1Camera_a680e1631350e64c1b8f38fc19d8928d5}{get\+Scale}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current scale (zoom level) of the camera. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Camera_1_1Camera_ab12e540dc940ffb4652b58cfda543aae}{set\+Scale}} (double scale)
+\begin{DoxyCompactList}\small\item\em Sets the scale (zoom level) of the camera. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPaooGame_1_1Camera_1_1Camera_ad8053220f29f40679300da07ef527522}{getx\+Offset}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current x-\/offset of the camera. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPaooGame_1_1Camera_1_1Camera_af1981b4503ba8ac8efa35d65c4663b25}{gety\+Offset}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current y-\/offset of the camera. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Camera_1_1Camera_aa5f211ac8211290f3c300e509225f016}{set\+Position}} (double x, double y)
+\begin{DoxyCompactList}\small\item\em Sets the absolute position (x and y offsets) of the camera. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Camera_1_1Camera_a2203e7e910ee0883c85fb725992d6483}{update\+Position}} (double x, double y)
+\begin{DoxyCompactList}\small\item\em Updates the camera\textquotesingle{}s position by adding delta values to its current offsets. This is used for smooth camera movement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the game\textquotesingle{}s viewport, including its position (offset) and zoom level (scale). 
+
+The \mbox{\hyperlink{classPaooGame_1_1Camera_1_1Camera}{Camera}} class is responsible for transforming the game world coordinates into screen coordinates, allowing the player to see different parts of the level and providing zoom effects. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classPaooGame_1_1Camera_1_1Camera_a7355c48f8f288ef6cd6994fc307cfec7}\label{classPaooGame_1_1Camera_1_1Camera_a7355c48f8f288ef6cd6994fc307cfec7}} 
-{\bfseries Camera} (double x\+Offset, double y\+Offset)
-\item 
+\index{PaooGame.Camera.Camera@{PaooGame.Camera.Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!PaooGame.Camera.Camera@{PaooGame.Camera.Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}}
+{\footnotesize\ttfamily Paoo\+Game.\+Camera.\+Camera.\+Camera (\begin{DoxyParamCaption}\item[{double}]{x\+Offset,  }\item[{double}]{y\+Offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPaooGame_1_1Camera_1_1Camera}{Camera}} object with an initial position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Offset} & The initial x-\/offset of the camera in the game world. \\
+\hline
+{\em y\+Offset} & The initial y-\/offset of the camera in the game world. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classPaooGame_1_1Camera_1_1Camera_a0ec3832ceaf98e5dde94fc89a6b34b9f}\label{classPaooGame_1_1Camera_1_1Camera_a0ec3832ceaf98e5dde94fc89a6b34b9f}} 
-void {\bfseries apply} (Graphics2D g2d)
-\item 
+\index{PaooGame.Camera.Camera@{PaooGame.Camera.Camera}!apply@{apply}}
+\index{apply@{apply}!PaooGame.Camera.Camera@{PaooGame.Camera.Camera}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Camera.\+Camera.\+apply (\begin{DoxyParamCaption}\item[{Graphics2D}]{g2d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Applies the camera\textquotesingle{}s transformation to a Graphics2D context. 
+
+This method sets up the transformation matrix for the graphics context, effectively moving and scaling the \char`\"{}view\char`\"{} into the game world. All subsequent drawing operations on the g2d object will be affected by this transformation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g2d} & The Graphics2D context to which the camera transformation will be applied. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classPaooGame_1_1Camera_1_1Camera_a680e1631350e64c1b8f38fc19d8928d5}\label{classPaooGame_1_1Camera_1_1Camera_a680e1631350e64c1b8f38fc19d8928d5}} 
-double {\bfseries get\+Scale} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Camera_1_1Camera_ab12e540dc940ffb4652b58cfda543aae}\label{classPaooGame_1_1Camera_1_1Camera_ab12e540dc940ffb4652b58cfda543aae}} 
-void {\bfseries set\+Scale} (double scale)
-\item 
+\index{PaooGame.Camera.Camera@{PaooGame.Camera.Camera}!getScale@{getScale}}
+\index{getScale@{getScale}!PaooGame.Camera.Camera@{PaooGame.Camera.Camera}}
+\doxysubsubsection{\texorpdfstring{getScale()}{getScale()}}
+{\footnotesize\ttfamily double Paoo\+Game.\+Camera.\+Camera.\+get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current scale (zoom level) of the camera. 
+
+\begin{DoxyReturn}{Returns}
+The current scale value. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classPaooGame_1_1Camera_1_1Camera_ad8053220f29f40679300da07ef527522}\label{classPaooGame_1_1Camera_1_1Camera_ad8053220f29f40679300da07ef527522}} 
-double {\bfseries getx\+Offset} ()
-\item 
+\index{PaooGame.Camera.Camera@{PaooGame.Camera.Camera}!getxOffset@{getxOffset}}
+\index{getxOffset@{getxOffset}!PaooGame.Camera.Camera@{PaooGame.Camera.Camera}}
+\doxysubsubsection{\texorpdfstring{getxOffset()}{getxOffset()}}
+{\footnotesize\ttfamily double Paoo\+Game.\+Camera.\+Camera.\+getx\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current x-\/offset of the camera. 
+
+\begin{DoxyReturn}{Returns}
+The current x-\/offset value. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classPaooGame_1_1Camera_1_1Camera_af1981b4503ba8ac8efa35d65c4663b25}\label{classPaooGame_1_1Camera_1_1Camera_af1981b4503ba8ac8efa35d65c4663b25}} 
-double {\bfseries gety\+Offset} ()
-\item 
+\index{PaooGame.Camera.Camera@{PaooGame.Camera.Camera}!getyOffset@{getyOffset}}
+\index{getyOffset@{getyOffset}!PaooGame.Camera.Camera@{PaooGame.Camera.Camera}}
+\doxysubsubsection{\texorpdfstring{getyOffset()}{getyOffset()}}
+{\footnotesize\ttfamily double Paoo\+Game.\+Camera.\+Camera.\+gety\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current y-\/offset of the camera. 
+
+\begin{DoxyReturn}{Returns}
+The current y-\/offset value. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classPaooGame_1_1Camera_1_1Camera_aa5f211ac8211290f3c300e509225f016}\label{classPaooGame_1_1Camera_1_1Camera_aa5f211ac8211290f3c300e509225f016}} 
-void {\bfseries set\+Position} (double x, double y)
-\item 
+\index{PaooGame.Camera.Camera@{PaooGame.Camera.Camera}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!PaooGame.Camera.Camera@{PaooGame.Camera.Camera}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Camera.\+Camera.\+set\+Position (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the absolute position (x and y offsets) of the camera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The new x-\/offset for the camera. \\
+\hline
+{\em y} & The new y-\/offset for the camera. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Camera_1_1Camera_ab12e540dc940ffb4652b58cfda543aae}\label{classPaooGame_1_1Camera_1_1Camera_ab12e540dc940ffb4652b58cfda543aae}} 
+\index{PaooGame.Camera.Camera@{PaooGame.Camera.Camera}!setScale@{setScale}}
+\index{setScale@{setScale}!PaooGame.Camera.Camera@{PaooGame.Camera.Camera}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Camera.\+Camera.\+set\+Scale (\begin{DoxyParamCaption}\item[{double}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the scale (zoom level) of the camera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & The new scale value. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classPaooGame_1_1Camera_1_1Camera_a2203e7e910ee0883c85fb725992d6483}\label{classPaooGame_1_1Camera_1_1Camera_a2203e7e910ee0883c85fb725992d6483}} 
-void {\bfseries update\+Position} (double x, double y)
-\end{DoxyCompactItemize}
+\index{PaooGame.Camera.Camera@{PaooGame.Camera.Camera}!updatePosition@{updatePosition}}
+\index{updatePosition@{updatePosition}!PaooGame.Camera.Camera@{PaooGame.Camera.Camera}}
+\doxysubsubsection{\texorpdfstring{updatePosition()}{updatePosition()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Camera.\+Camera.\+update\+Position (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the camera\textquotesingle{}s position by adding delta values to its current offsets. This is used for smooth camera movement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The amount to add to the current x-\/offset. \\
+\hline
+{\em y} & The amount to add to the current y-\/offset. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

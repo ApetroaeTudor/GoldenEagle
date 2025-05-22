@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1Entities_1_1NPC}\index{PaooGame.Entities.NPC@{PaooGame.Entities.NPC}}
 
 
-Inheritance diagram for Paoo\+Game.\+Entities.\+NPC\+:
-\nopagebreak
+Represents a Non-\/\+Player Character (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}) in the game, specifically a Goblin.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+Entities.\+NPC\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+Entities.\+NPC\+:
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+Entities.\+NPC\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+Entities.\+NPC\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,46 +26,231 @@ Collaboration diagram for Paoo\+Game.\+Entities.\+NPC\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_a5eda9f20589f8fd95181b4ca08301977}\label{classPaooGame_1_1Entities_1_1NPC_a5eda9f20589f8fd95181b4ca08301977}} 
-{\bfseries NPC} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} ref\+Links, int x, int y)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_aa505d396a39c40d52c9de2fe4179a7c2}\label{classPaooGame_1_1Entities_1_1NPC_aa505d396a39c40d52c9de2fe4179a7c2}} 
-void {\bfseries update} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_aaf1320c87fceda8896510cd8b5d62fbf}\label{classPaooGame_1_1Entities_1_1NPC_aaf1320c87fceda8896510cd8b5d62fbf}} 
-String {\bfseries get\+Name} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_a7ec1cf13ced4acf32d887d113bd0797e}\label{classPaooGame_1_1Entities_1_1NPC_a7ec1cf13ced4acf32d887d113bd0797e}} 
-void {\bfseries restore\+Entity} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_a5608637bd088c2cdecb52e6866f246ea}\label{classPaooGame_1_1Entities_1_1NPC_a5608637bd088c2cdecb52e6866f246ea}} 
-void {\bfseries attack} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_a470be7dd379d5030303f3ec12dffaa80}\label{classPaooGame_1_1Entities_1_1NPC_a470be7dd379d5030303f3ec12dffaa80}} 
-String {\bfseries get\+Source} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_aac3e62840d2904b6bf76fc70992619ce}\label{classPaooGame_1_1Entities_1_1NPC_aac3e62840d2904b6bf76fc70992619ce}} 
-void {\bfseries draw} (Graphics g)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_a4fe41a8354b5e9bae4877dcb9393866e}\label{classPaooGame_1_1Entities_1_1NPC_a4fe41a8354b5e9bae4877dcb9393866e}} 
-boolean {\bfseries is\+Active} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC_a5eda9f20589f8fd95181b4ca08301977}{NPC}} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} ref\+Links, int \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a5a7f4280a2e1f43d5e55940dfb8a00ad}{x}}, int \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a754d9006adabe2bb959780f2f6ae0a00}{y}})
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC_aa505d396a39c40d52c9de2fe4179a7c2}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}\textquotesingle{}s state. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC_aaf1320c87fceda8896510cd8b5d62fbf}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC_a7ec1cf13ced4acf32d887d113bd0797e}{restore\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Restores the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}} to a specific state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC_a5608637bd088c2cdecb52e6866f246ea}{attack}} ()
+\begin{DoxyCompactList}\small\item\em Defines the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}\textquotesingle{}s attack behavior. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC_a470be7dd379d5030303f3ec12dffaa80}{get\+Source}} ()
+\begin{DoxyCompactList}\small\item\em Gets the source path for the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}\textquotesingle{}s sprite sheet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC_aac3e62840d2904b6bf76fc70992619ce}{draw}} (Graphics g)
+\begin{DoxyCompactList}\small\item\em Draws the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}} on the screen. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC_a4fe41a8354b5e9bae4877dcb9393866e}{is\+Active}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}} is currently in its active state. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_a688aeebfa87f4647841cdd2655128047}\label{classPaooGame_1_1Entities_1_1NPC_a688aeebfa87f4647841cdd2655128047}} 
-void {\bfseries move\+And\+Collide} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_a62b9ab0a9457d17efb2d9d3344d6baac}\label{classPaooGame_1_1Entities_1_1NPC_a62b9ab0a9457d17efb2d9d3344d6baac}} 
-void {\bfseries update\+Visual\+Position} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_a8c7720f9e1e4926149c3fa5082d9cbfd}\label{classPaooGame_1_1Entities_1_1NPC_a8c7720f9e1e4926149c3fa5082d9cbfd}} 
-\mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation}{Animation}} {\bfseries get\+Animation\+By\+State} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_ae3c46d36794e760ebfac73bf867c820b}\label{classPaooGame_1_1Entities_1_1NPC_ae3c46d36794e760ebfac73bf867c820b}} 
-void {\bfseries update\+Animation\+State} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC_a688aeebfa87f4647841cdd2655128047}{move\+And\+Collide}} ()
+\begin{DoxyCompactList}\small\item\em Handles movement and collision for the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC_a62b9ab0a9457d17efb2d9d3344d6baac}{update\+Visual\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Updates the visual position of the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation}{Animation}} \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC_a8c7720f9e1e4926149c3fa5082d9cbfd}{get\+Animation\+By\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current animation based on the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}\textquotesingle{}s state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC_ae3c46d36794e760ebfac73bf867c820b}{update\+Animation\+State}} ()
+\begin{DoxyCompactList}\small\item\em Updates the animation state of the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a Non-\/\+Player Character (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}) in the game, specifically a Goblin. 
+
+This \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}} has two states\+: active (bound) and passive (freed). The player can interact with the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}} to change its state. It uses static animations for its visual representation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_a5eda9f20589f8fd95181b4ca08301977}\label{classPaooGame_1_1Entities_1_1NPC_a5eda9f20589f8fd95181b4ca08301977}} 
+\index{PaooGame.Entities.NPC@{PaooGame.Entities.NPC}!NPC@{NPC}}
+\index{NPC@{NPC}!PaooGame.Entities.NPC@{PaooGame.Entities.NPC}}
+\doxysubsubsection{\texorpdfstring{NPC()}{NPC()}}
+{\footnotesize\ttfamily Paoo\+Game.\+Entities.\+NPC.\+NPC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}}}]{ref\+Links,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs an \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}} object. 
+
+Initializes the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}} at a given position, loads its sprites for active and passive states, creates static animations, and sets up its initial hitbox. 
+\begin{DoxyParams}{Parameters}
+{\em ref\+Links} & A reference to shared game resources. \\
+\hline
+{\em x} & The initial x-\/coordinate of the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}. \\
+\hline
+{\em y} & The initial y-\/coordinate of the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_a5608637bd088c2cdecb52e6866f246ea}\label{classPaooGame_1_1Entities_1_1NPC_a5608637bd088c2cdecb52e6866f246ea}} 
+\index{PaooGame.Entities.NPC@{PaooGame.Entities.NPC}!attack@{attack}}
+\index{attack@{attack}!PaooGame.Entities.NPC@{PaooGame.Entities.NPC}}
+\doxysubsubsection{\texorpdfstring{attack()}{attack()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+NPC.\+attack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Defines the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}\textquotesingle{}s attack behavior. 
+
+This \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}} does not attack, so this method is empty. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a314eb8c8706a24588a456175912b980a}{Paoo\+Game.\+Entities.\+Entity}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_aac3e62840d2904b6bf76fc70992619ce}\label{classPaooGame_1_1Entities_1_1NPC_aac3e62840d2904b6bf76fc70992619ce}} 
+\index{PaooGame.Entities.NPC@{PaooGame.Entities.NPC}!draw@{draw}}
+\index{draw@{draw}!PaooGame.Entities.NPC@{PaooGame.Entities.NPC}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+NPC.\+draw (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Draws the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}} on the screen. 
+
+Renders the current animation (active or passive) at the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}\textquotesingle{}s position, applying the defined scaling factor. 
+\begin{DoxyParams}{Parameters}
+{\em g} & The Graphics context to draw on. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a04f3ee24c766e00bc86239363a11bc8d}{Paoo\+Game.\+Entities.\+Entity}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_a8c7720f9e1e4926149c3fa5082d9cbfd}\label{classPaooGame_1_1Entities_1_1NPC_a8c7720f9e1e4926149c3fa5082d9cbfd}} 
+\index{PaooGame.Entities.NPC@{PaooGame.Entities.NPC}!getAnimationByState@{getAnimationByState}}
+\index{getAnimationByState@{getAnimationByState}!PaooGame.Entities.NPC@{PaooGame.Entities.NPC}}
+\doxysubsubsection{\texorpdfstring{getAnimationByState()}{getAnimationByState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation}{Animation}} Paoo\+Game.\+Entities.\+NPC.\+get\+Animation\+By\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Gets the current animation based on the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}\textquotesingle{}s state. 
+
+\begin{DoxyReturn}{Returns}
+The Static\+Animation corresponding to the active or passive state. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a720a90333cbf2d29327b9e60ef669672}{Paoo\+Game.\+Entities.\+Entity}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_aaf1320c87fceda8896510cd8b5d62fbf}\label{classPaooGame_1_1Entities_1_1NPC_aaf1320c87fceda8896510cd8b5d62fbf}} 
+\index{PaooGame.Entities.NPC@{PaooGame.Entities.NPC}!getName@{getName}}
+\index{getName@{getName}!PaooGame.Entities.NPC@{PaooGame.Entities.NPC}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily String Paoo\+Game.\+Entities.\+NPC.\+get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the name of the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}. 
+
+\begin{DoxyReturn}{Returns}
+The name of the Goblin \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}} as defined in Constants. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a9799c0ae8d84476e423066f29e74048c}{Paoo\+Game.\+Entities.\+Entity}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_a470be7dd379d5030303f3ec12dffaa80}\label{classPaooGame_1_1Entities_1_1NPC_a470be7dd379d5030303f3ec12dffaa80}} 
+\index{PaooGame.Entities.NPC@{PaooGame.Entities.NPC}!getSource@{getSource}}
+\index{getSource@{getSource}!PaooGame.Entities.NPC@{PaooGame.Entities.NPC}}
+\doxysubsubsection{\texorpdfstring{getSource()}{getSource()}}
+{\footnotesize\ttfamily String Paoo\+Game.\+Entities.\+NPC.\+get\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the source path for the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}\textquotesingle{}s sprite sheet. 
+
+\begin{DoxyReturn}{Returns}
+The file path to the Goblin sprite sheet. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_ac1fa5f16c7311eaf764db9f8d37a63f1}{Paoo\+Game.\+Entities.\+Entity}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_a4fe41a8354b5e9bae4877dcb9393866e}\label{classPaooGame_1_1Entities_1_1NPC_a4fe41a8354b5e9bae4877dcb9393866e}} 
+\index{PaooGame.Entities.NPC@{PaooGame.Entities.NPC}!isActive@{isActive}}
+\index{isActive@{isActive}!PaooGame.Entities.NPC@{PaooGame.Entities.NPC}}
+\doxysubsubsection{\texorpdfstring{isActive()}{isActive()}}
+{\footnotesize\ttfamily boolean Paoo\+Game.\+Entities.\+NPC.\+is\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}} is currently in its active state. 
+
+\begin{DoxyReturn}{Returns}
+True if the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}} is active (bound), false otherwise (passive/freed). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_a688aeebfa87f4647841cdd2655128047}\label{classPaooGame_1_1Entities_1_1NPC_a688aeebfa87f4647841cdd2655128047}} 
+\index{PaooGame.Entities.NPC@{PaooGame.Entities.NPC}!moveAndCollide@{moveAndCollide}}
+\index{moveAndCollide@{moveAndCollide}!PaooGame.Entities.NPC@{PaooGame.Entities.NPC}}
+\doxysubsubsection{\texorpdfstring{moveAndCollide()}{moveAndCollide()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+NPC.\+move\+And\+Collide (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Handles movement and collision for the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}. 
+
+This \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}} is static, so this method is empty. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_acd3a7f2558ed324785228ba7d6c21303}{Paoo\+Game.\+Entities.\+Entity}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_a7ec1cf13ced4acf32d887d113bd0797e}\label{classPaooGame_1_1Entities_1_1NPC_a7ec1cf13ced4acf32d887d113bd0797e}} 
+\index{PaooGame.Entities.NPC@{PaooGame.Entities.NPC}!restoreEntity@{restoreEntity}}
+\index{restoreEntity@{restoreEntity}!PaooGame.Entities.NPC@{PaooGame.Entities.NPC}}
+\doxysubsubsection{\texorpdfstring{restoreEntity()}{restoreEntity()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+NPC.\+restore\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Restores the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}} to a specific state. 
+
+Sets the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}} to its passive (inactive) state. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a4312adff6ad5174f9f8c86da55a154c6}{Paoo\+Game.\+Entities.\+Entity}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_aa505d396a39c40d52c9de2fe4179a7c2}\label{classPaooGame_1_1Entities_1_1NPC_aa505d396a39c40d52c9de2fe4179a7c2}} 
+\index{PaooGame.Entities.NPC@{PaooGame.Entities.NPC}!update@{update}}
+\index{update@{update}!PaooGame.Entities.NPC@{PaooGame.Entities.NPC}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+NPC.\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}\textquotesingle{}s state. 
+
+Checks for player interaction (pressing \textquotesingle{}E\textquotesingle{} key) when the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}} is active and the hero is intersecting with the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}\textquotesingle{}s hitbox. If conditions are met, the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}} transitions to the passive state and its hitbox is updated. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a609ed68e1ccbe4909eaa72c893d54e0c}{Paoo\+Game.\+Entities.\+Entity}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_ae3c46d36794e760ebfac73bf867c820b}\label{classPaooGame_1_1Entities_1_1NPC_ae3c46d36794e760ebfac73bf867c820b}} 
+\index{PaooGame.Entities.NPC@{PaooGame.Entities.NPC}!updateAnimationState@{updateAnimationState}}
+\index{updateAnimationState@{updateAnimationState}!PaooGame.Entities.NPC@{PaooGame.Entities.NPC}}
+\doxysubsubsection{\texorpdfstring{updateAnimationState()}{updateAnimationState()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+NPC.\+update\+Animation\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Updates the animation state of the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}. 
+
+This \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}} uses static animations, so this method is empty. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a979b0cb8ca9e01a36c5e9683b900eefe}{Paoo\+Game.\+Entities.\+Entity}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1NPC_a62b9ab0a9457d17efb2d9d3344d6baac}\label{classPaooGame_1_1Entities_1_1NPC_a62b9ab0a9457d17efb2d9d3344d6baac}} 
+\index{PaooGame.Entities.NPC@{PaooGame.Entities.NPC}!updateVisualPosition@{updateVisualPosition}}
+\index{updateVisualPosition@{updateVisualPosition}!PaooGame.Entities.NPC@{PaooGame.Entities.NPC}}
+\doxysubsubsection{\texorpdfstring{updateVisualPosition()}{updateVisualPosition()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+NPC.\+update\+Visual\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Updates the visual position of the \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}}. 
+
+This \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC}{NPC}} is static, so this method is empty as its visual position doesn\textquotesingle{}t change dynamically based on a hitbox. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a1ee8496dd57eb06716d84b49a4e9362a}{Paoo\+Game.\+Entities.\+Entity}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

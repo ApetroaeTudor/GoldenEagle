@@ -2,8 +2,7 @@
 \label{classPaooGame_1_1Items_1_1WhipItem}\index{PaooGame.Items.WhipItem@{PaooGame.Items.WhipItem}}
 
 
-Inheritance diagram for Paoo\+Game.\+Items.\+Whip\+Item\+:
-\nopagebreak
+Inheritance diagram for Paoo\+Game.\+Items.\+Whip\+Item\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +11,7 @@ Inheritance diagram for Paoo\+Game.\+Items.\+Whip\+Item\+:
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+Items.\+Whip\+Item\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+Items.\+Whip\+Item\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -24,14 +22,12 @@ Collaboration diagram for Paoo\+Game.\+Items.\+Whip\+Item\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classPaooGame_1_1Items_1_1WhipItem_aedb2f38fab077e4d28587a5db55c79e5}\label{classPaooGame_1_1Items_1_1WhipItem_aedb2f38fab077e4d28587a5db55c79e5}} 
-{\bfseries Whip\+Item} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} reflink, int x, int y)
+{\bfseries Whip\+Item} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} reflink, int \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_ae7a5f7d40d631eb4a91978b09a8468dd}{x}}, int \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_a0f7a182a96e794a61203b08e197a0e4f}{y}})
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1Items_1_1WhipItem_a263d79babebb5a8836bfc188edb971ec}\label{classPaooGame_1_1Items_1_1WhipItem_a263d79babebb5a8836bfc188edb971ec}} 
-void {\bfseries update\+Item} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Items_1_1WhipItem_aa9765e74a124d29807d88840e71f7bbe}\label{classPaooGame_1_1Items_1_1WhipItem_aa9765e74a124d29807d88840e71f7bbe}} 
-void {\bfseries draw\+Item} (Graphics g)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classPaooGame_1_1Items_1_1WhipItem_a263d79babebb5a8836bfc188edb971ec}{update\+Item}} ()
+\begin{DoxyCompactList}\small\item\em Abstract method to update the item\textquotesingle{}s state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Items_1_1WhipItem_aa9765e74a124d29807d88840e71f7bbe}{draw\+Item}} (Graphics g)
+\begin{DoxyCompactList}\small\item\em Abstract method to draw the item on the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,6 +37,42 @@ int {\bfseries floating\+Tick}
 \mbox{\Hypertarget{classPaooGame_1_1Items_1_1WhipItem_a4087c27ae04244746e3337efd8a127f1}\label{classPaooGame_1_1Items_1_1WhipItem_a4087c27ae04244746e3337efd8a127f1}} 
 int {\bfseries floating\+Tick\+Cap}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Items_1_1WhipItem_aa9765e74a124d29807d88840e71f7bbe}\label{classPaooGame_1_1Items_1_1WhipItem_aa9765e74a124d29807d88840e71f7bbe}} 
+\index{PaooGame.Items.WhipItem@{PaooGame.Items.WhipItem}!drawItem@{drawItem}}
+\index{drawItem@{drawItem}!PaooGame.Items.WhipItem@{PaooGame.Items.WhipItem}}
+\doxysubsubsection{\texorpdfstring{drawItem()}{drawItem()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Items.\+Whip\+Item.\+draw\+Item (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Abstract method to draw the item on the screen. 
+
+Concrete subclasses must implement this method to define how the item is rendered, typically using its animation. 
+\begin{DoxyParams}{Parameters}
+{\em g} & The \mbox{\hyperlink{}{Graphics}} context to draw on. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_afd85f5beb3846c53838fba92a9670455}{Paoo\+Game.\+Items.\+Item}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Items_1_1WhipItem_a263d79babebb5a8836bfc188edb971ec}\label{classPaooGame_1_1Items_1_1WhipItem_a263d79babebb5a8836bfc188edb971ec}} 
+\index{PaooGame.Items.WhipItem@{PaooGame.Items.WhipItem}!updateItem@{updateItem}}
+\index{updateItem@{updateItem}!PaooGame.Items.WhipItem@{PaooGame.Items.WhipItem}}
+\doxysubsubsection{\texorpdfstring{updateItem()}{updateItem()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Items.\+Whip\+Item.\+update\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Abstract method to update the item\textquotesingle{}s state. 
+
+Concrete subclasses must implement this method to define any logic that needs to be executed per game update cycle, such as updating its animation or position. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_a1a2a13af135036ac8ef84026195d33e3}{Paoo\+Game.\+Items.\+Item}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -74,148 +74,1010 @@ $(function() {
 <div class="title">PaooGame.Strategies.Fight.FightStrategy Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents the configuration and state for an enemy during a fight sequence.  
+ <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#details">More...</a></p>
 <div class="dynheader">
 Collaboration diagram for PaooGame.Strategies.Fight.FightStrategy:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy__coll__graph.png" border="0" usemap="#aPaooGame_8Strategies_8Fight_8FightStrategy_coll__map" alt="Collaboration graph"/></div>
 <map name="aPaooGame_8Strategies_8Fight_8FightStrategy_coll__map" id="aPaooGame_8Strategies_8Fight_8FightStrategy_coll__map">
-<area shape="rect" title=" " alt="" coords="119,285,321,327"/>
-<area shape="rect" href="classPaooGame_1_1Entities_1_1Enemy.html" title=" " alt="" coords="49,196,244,223"/>
-<area shape="rect" href="classPaooGame_1_1Entities_1_1Entity.html" title=" " alt="" coords="53,95,240,121"/>
-<area shape="rect" href="classPaooGame_1_1Hitbox_1_1Hitbox.html" title=" " alt="" coords="5,5,192,32"/>
-<area shape="rect" href="classPaooGame_1_1RefLinks.html" title=" " alt="" coords="216,5,368,32"/>
-<area shape="rect" href="classPaooGame_1_1States_1_1State.html" title=" " alt="" coords="205,145,379,172"/>
+<area shape="rect" title="Represents the configuration and state for an enemy during a fight sequence." alt="" coords="119,285,321,327"/>
+<area shape="rect" href="classPaooGame_1_1Entities_1_1Enemy.html" title="Represents an enemy entity in the game." alt="" coords="49,196,244,223"/>
+<area shape="rect" href="classPaooGame_1_1Entities_1_1Entity.html" title="An abstract base class for all game entities (e.g., Player, Enemy)." alt="" coords="53,95,240,121"/>
+<area shape="rect" href="classPaooGame_1_1Hitbox_1_1Hitbox.html" title="Represents a rectangular area used for collision detection." alt="" coords="5,5,192,32"/>
+<area shape="rect" href="classPaooGame_1_1RefLinks.html" title="Provides a centralized way to access shared game objects and utilities." alt="" coords="216,5,368,32"/>
+<area shape="rect" href="classPaooGame_1_1States_1_1State.html" title="Defines an abstract base class for all game states." alt="" coords="205,145,379,172"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><b>FightStrategyBuilder</b></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builder class for fluently constructing <a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html">FightStrategy</a> objects. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a84fb10518e5263636e7d6690ec6c9b34"><td class="memItemLeft" align="right" valign="top"><a id="a84fb10518e5263636e7d6690ec6c9b34"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>FightStrategy</b> (FightStrategyBuilder builder)</td></tr>
+<tr class="memitem:a84fb10518e5263636e7d6690ec6c9b34"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a84fb10518e5263636e7d6690ec6c9b34">FightStrategy</a> (FightStrategyBuilder builder)</td></tr>
+<tr class="memdesc:a84fb10518e5263636e7d6690ec6c9b34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html" title="Represents the configuration and state for an enemy during a fight sequence.">FightStrategy</a> object using a <a class="el" href="">FightStrategyBuilder</a>.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a84fb10518e5263636e7d6690ec6c9b34">More...</a><br /></td></tr>
 <tr class="separator:a84fb10518e5263636e7d6690ec6c9b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fcb0b222e13e5a139cc03f73dbb6766"><td class="memItemLeft" align="right" valign="top"><a id="a1fcb0b222e13e5a139cc03f73dbb6766"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()</td></tr>
+<tr class="memitem:a1fcb0b222e13e5a139cc03f73dbb6766"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a1fcb0b222e13e5a139cc03f73dbb6766">update</a> ()</td></tr>
+<tr class="memdesc:a1fcb0b222e13e5a139cc03f73dbb6766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the associated enemy's properties based on this strategy.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a1fcb0b222e13e5a139cc03f73dbb6766">More...</a><br /></td></tr>
 <tr class="separator:a1fcb0b222e13e5a139cc03f73dbb6766"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92685b434a7e8e4561ce2b4eeb08271b"><td class="memItemLeft" align="right" valign="top"><a id="a92685b434a7e8e4561ce2b4eeb08271b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>takeDamage</b> (float damage)</td></tr>
+<tr class="memitem:a92685b434a7e8e4561ce2b4eeb08271b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a92685b434a7e8e4561ce2b4eeb08271b">takeDamage</a> (float damage)</td></tr>
+<tr class="memdesc:a92685b434a7e8e4561ce2b4eeb08271b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies damage to the enemy, considering its defense.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a92685b434a7e8e4561ce2b4eeb08271b">More...</a><br /></td></tr>
 <tr class="separator:a92685b434a7e8e4561ce2b4eeb08271b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a670a2dedace908e1b67d35d0876009e3"><td class="memItemLeft" align="right" valign="top"><a id="a670a2dedace908e1b67d35d0876009e3"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>calculateDamage</b> (float damage)</td></tr>
+<tr class="memitem:a670a2dedace908e1b67d35d0876009e3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a670a2dedace908e1b67d35d0876009e3">calculateDamage</a> (float damage)</td></tr>
+<tr class="memdesc:a670a2dedace908e1b67d35d0876009e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the actual damage taken by the enemy after considering its defense.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a670a2dedace908e1b67d35d0876009e3">More...</a><br /></td></tr>
 <tr class="separator:a670a2dedace908e1b67d35d0876009e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81aaba1d6cb9967c6e7c646e1133a3a3"><td class="memItemLeft" align="right" valign="top"><a id="a81aaba1d6cb9967c6e7c646e1133a3a3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setEnemy</b> (<a class="el" href="classPaooGame_1_1Entities_1_1Enemy.html">Enemy</a> enemy)</td></tr>
+<tr class="memitem:a81aaba1d6cb9967c6e7c646e1133a3a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a81aaba1d6cb9967c6e7c646e1133a3a3">setEnemy</a> (<a class="el" href="classPaooGame_1_1Entities_1_1Enemy.html">Enemy</a> <a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a51c7912e451521c186b02286a4e09b8a">enemy</a>)</td></tr>
+<tr class="memdesc:a81aaba1d6cb9967c6e7c646e1133a3a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the enemy entity for this fight strategy.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a81aaba1d6cb9967c6e7c646e1133a3a3">More...</a><br /></td></tr>
 <tr class="separator:a81aaba1d6cb9967c6e7c646e1133a3a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa481ec985bbdbf81be9ee8752ead06f0"><td class="memItemLeft" align="right" valign="top"><a id="aa481ec985bbdbf81be9ee8752ead06f0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setDefence</b> (float defence)</td></tr>
+<tr class="memitem:aa481ec985bbdbf81be9ee8752ead06f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#aa481ec985bbdbf81be9ee8752ead06f0">setDefence</a> (float <a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a0e70cdd8f1ae3bc504cf07ad5c3b6736">defence</a>)</td></tr>
+<tr class="memdesc:aa481ec985bbdbf81be9ee8752ead06f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the defense value for the enemy.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#aa481ec985bbdbf81be9ee8752ead06f0">More...</a><br /></td></tr>
 <tr class="separator:aa481ec985bbdbf81be9ee8752ead06f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe9caf21d90cba2b27e1a55a1ad6b478"><td class="memItemLeft" align="right" valign="top"><a id="afe9caf21d90cba2b27e1a55a1ad6b478"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setX</b> (float x)</td></tr>
+<tr class="memitem:afe9caf21d90cba2b27e1a55a1ad6b478"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#afe9caf21d90cba2b27e1a55a1ad6b478">setX</a> (float <a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a7cea58f7879b7d3787ef3784b8db5e0f">x</a>)</td></tr>
+<tr class="memdesc:afe9caf21d90cba2b27e1a55a1ad6b478"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the x-coordinate of the enemy in the fight scene.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#afe9caf21d90cba2b27e1a55a1ad6b478">More...</a><br /></td></tr>
 <tr class="separator:afe9caf21d90cba2b27e1a55a1ad6b478"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f442c1e401af91c16f1b6b76e474f7b"><td class="memItemLeft" align="right" valign="top"><a id="a5f442c1e401af91c16f1b6b76e474f7b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setY</b> (float y)</td></tr>
+<tr class="memitem:a5f442c1e401af91c16f1b6b76e474f7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a5f442c1e401af91c16f1b6b76e474f7b">setY</a> (float <a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a37a4de6720c2e2a2188e423a1b62ba05">y</a>)</td></tr>
+<tr class="memdesc:a5f442c1e401af91c16f1b6b76e474f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the y-coordinate of the enemy in the fight scene.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a5f442c1e401af91c16f1b6b76e474f7b">More...</a><br /></td></tr>
 <tr class="separator:a5f442c1e401af91c16f1b6b76e474f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a429335c567ac7239993ea5cc305b49f4"><td class="memItemLeft" align="right" valign="top"><a id="a429335c567ac7239993ea5cc305b49f4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setWidth</b> (float width)</td></tr>
+<tr class="memitem:a429335c567ac7239993ea5cc305b49f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a429335c567ac7239993ea5cc305b49f4">setWidth</a> (float <a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a95af383e0320a93ab4d7be0878736a75">width</a>)</td></tr>
+<tr class="memdesc:a429335c567ac7239993ea5cc305b49f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the width of the enemy in the fight scene.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a429335c567ac7239993ea5cc305b49f4">More...</a><br /></td></tr>
 <tr class="separator:a429335c567ac7239993ea5cc305b49f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac14dc2fb53427c4123065e8431576673"><td class="memItemLeft" align="right" valign="top"><a id="ac14dc2fb53427c4123065e8431576673"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setHeight</b> (float height)</td></tr>
+<tr class="memitem:ac14dc2fb53427c4123065e8431576673"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#ac14dc2fb53427c4123065e8431576673">setHeight</a> (float <a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#aaf324e1f76217ae7a1627f995505c59a">height</a>)</td></tr>
+<tr class="memdesc:ac14dc2fb53427c4123065e8431576673"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the height of the enemy in the fight scene.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#ac14dc2fb53427c4123065e8431576673">More...</a><br /></td></tr>
 <tr class="separator:ac14dc2fb53427c4123065e8431576673"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3759687371d6430876101309ca39a488"><td class="memItemLeft" align="right" valign="top"><a id="a3759687371d6430876101309ca39a488"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setHealthBarX</b> (int healthBarX)</td></tr>
+<tr class="memitem:a3759687371d6430876101309ca39a488"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a3759687371d6430876101309ca39a488">setHealthBarX</a> (int <a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a580f9c2ed297ea46c9bf88efba037ecd">healthBarX</a>)</td></tr>
+<tr class="memdesc:a3759687371d6430876101309ca39a488"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the x-coordinate of the enemy's health bar.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a3759687371d6430876101309ca39a488">More...</a><br /></td></tr>
 <tr class="separator:a3759687371d6430876101309ca39a488"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37f3752e0daf06115a7a331899281352"><td class="memItemLeft" align="right" valign="top"><a id="a37f3752e0daf06115a7a331899281352"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setHealthBarY</b> (int healthBarY)</td></tr>
+<tr class="memitem:a37f3752e0daf06115a7a331899281352"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a37f3752e0daf06115a7a331899281352">setHealthBarY</a> (int <a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a3a6cf2d569c459ae0b70a7cb1273da53">healthBarY</a>)</td></tr>
+<tr class="memdesc:a37f3752e0daf06115a7a331899281352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the y-coordinate of the enemy's health bar.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a37f3752e0daf06115a7a331899281352">More...</a><br /></td></tr>
 <tr class="separator:a37f3752e0daf06115a7a331899281352"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f2c9ffedaff6dae6d3f9c97bcfa6ee4"><td class="memItemLeft" align="right" valign="top"><a id="a5f2c9ffedaff6dae6d3f9c97bcfa6ee4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setHealthBarWidth</b> (int healthBarWidth)</td></tr>
+<tr class="memitem:a5f2c9ffedaff6dae6d3f9c97bcfa6ee4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a5f2c9ffedaff6dae6d3f9c97bcfa6ee4">setHealthBarWidth</a> (int <a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#ac74d797079f3c54f0dbf055d78650a10">healthBarWidth</a>)</td></tr>
+<tr class="memdesc:a5f2c9ffedaff6dae6d3f9c97bcfa6ee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the width of the enemy's health bar.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a5f2c9ffedaff6dae6d3f9c97bcfa6ee4">More...</a><br /></td></tr>
 <tr class="separator:a5f2c9ffedaff6dae6d3f9c97bcfa6ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a269d851935f1ac60797745f9ded396a3"><td class="memItemLeft" align="right" valign="top"><a id="a269d851935f1ac60797745f9ded396a3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setHealthBarHeight</b> (int healthBarHeight)</td></tr>
+<tr class="memitem:a269d851935f1ac60797745f9ded396a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a269d851935f1ac60797745f9ded396a3">setHealthBarHeight</a> (int <a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#af822c9d8534e7e53b11ae10edc65925c">healthBarHeight</a>)</td></tr>
+<tr class="memdesc:a269d851935f1ac60797745f9ded396a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the height of the enemy's health bar.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a269d851935f1ac60797745f9ded396a3">More...</a><br /></td></tr>
 <tr class="separator:a269d851935f1ac60797745f9ded396a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a122764e808729d3f0856730477866cde"><td class="memItemLeft" align="right" valign="top"><a id="a122764e808729d3f0856730477866cde"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setBackgroundImgPath</b> (String backgroundImgPath)</td></tr>
+<tr class="memitem:a122764e808729d3f0856730477866cde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a122764e808729d3f0856730477866cde">setBackgroundImgPath</a> (String <a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#af54c0ca49c9438b2b6733b71376f3d21">backgroundImgPath</a>)</td></tr>
+<tr class="memdesc:a122764e808729d3f0856730477866cde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the path to the background image for the fight scene.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a122764e808729d3f0856730477866cde">More...</a><br /></td></tr>
 <tr class="separator:a122764e808729d3f0856730477866cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a834801c2d13fa988fbf3f013a77eb3ce"><td class="memItemLeft" align="right" valign="top"><a id="a834801c2d13fa988fbf3f013a77eb3ce"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getDefence</b> ()</td></tr>
+<tr class="memitem:a834801c2d13fa988fbf3f013a77eb3ce"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a834801c2d13fa988fbf3f013a77eb3ce">getDefence</a> ()</td></tr>
+<tr class="memdesc:a834801c2d13fa988fbf3f013a77eb3ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the defense value of the enemy.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a834801c2d13fa988fbf3f013a77eb3ce">More...</a><br /></td></tr>
 <tr class="separator:a834801c2d13fa988fbf3f013a77eb3ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1aa49ffd482b256afbbc29e9d2ac2728"><td class="memItemLeft" align="right" valign="top"><a id="a1aa49ffd482b256afbbc29e9d2ac2728"></a>
-<a class="el" href="classPaooGame_1_1Entities_1_1Enemy.html">Enemy</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getEnemy</b> ()</td></tr>
+<tr class="memitem:a1aa49ffd482b256afbbc29e9d2ac2728"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPaooGame_1_1Entities_1_1Enemy.html">Enemy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a1aa49ffd482b256afbbc29e9d2ac2728">getEnemy</a> ()</td></tr>
+<tr class="memdesc:a1aa49ffd482b256afbbc29e9d2ac2728"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the enemy entity associated with this strategy.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a1aa49ffd482b256afbbc29e9d2ac2728">More...</a><br /></td></tr>
 <tr class="separator:a1aa49ffd482b256afbbc29e9d2ac2728"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac1aab74401e724921279f44d8198def"><td class="memItemLeft" align="right" valign="top"><a id="aac1aab74401e724921279f44d8198def"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getX</b> ()</td></tr>
+<tr class="memitem:aac1aab74401e724921279f44d8198def"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#aac1aab74401e724921279f44d8198def">getX</a> ()</td></tr>
+<tr class="memdesc:aac1aab74401e724921279f44d8198def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the x-coordinate of the enemy in the fight scene.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#aac1aab74401e724921279f44d8198def">More...</a><br /></td></tr>
 <tr class="separator:aac1aab74401e724921279f44d8198def"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc7687cc759f98409d0f33fe50938575"><td class="memItemLeft" align="right" valign="top"><a id="adc7687cc759f98409d0f33fe50938575"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getY</b> ()</td></tr>
+<tr class="memitem:adc7687cc759f98409d0f33fe50938575"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#adc7687cc759f98409d0f33fe50938575">getY</a> ()</td></tr>
+<tr class="memdesc:adc7687cc759f98409d0f33fe50938575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the y-coordinate of the enemy in the fight scene.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#adc7687cc759f98409d0f33fe50938575">More...</a><br /></td></tr>
 <tr class="separator:adc7687cc759f98409d0f33fe50938575"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af80f1d34938edffccf17b89770c4a962"><td class="memItemLeft" align="right" valign="top"><a id="af80f1d34938edffccf17b89770c4a962"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getWidth</b> ()</td></tr>
+<tr class="memitem:af80f1d34938edffccf17b89770c4a962"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#af80f1d34938edffccf17b89770c4a962">getWidth</a> ()</td></tr>
+<tr class="memdesc:af80f1d34938edffccf17b89770c4a962"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the width of the enemy in the fight scene.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#af80f1d34938edffccf17b89770c4a962">More...</a><br /></td></tr>
 <tr class="separator:af80f1d34938edffccf17b89770c4a962"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20ee42ad52f928d324767541c6914219"><td class="memItemLeft" align="right" valign="top"><a id="a20ee42ad52f928d324767541c6914219"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getHeight</b> ()</td></tr>
+<tr class="memitem:a20ee42ad52f928d324767541c6914219"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a20ee42ad52f928d324767541c6914219">getHeight</a> ()</td></tr>
+<tr class="memdesc:a20ee42ad52f928d324767541c6914219"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the height of the enemy in the fight scene.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a20ee42ad52f928d324767541c6914219">More...</a><br /></td></tr>
 <tr class="separator:a20ee42ad52f928d324767541c6914219"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44c776b7bb2a545d74ad2a139d760369"><td class="memItemLeft" align="right" valign="top"><a id="a44c776b7bb2a545d74ad2a139d760369"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getHealthBarX</b> ()</td></tr>
+<tr class="memitem:a44c776b7bb2a545d74ad2a139d760369"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a44c776b7bb2a545d74ad2a139d760369">getHealthBarX</a> ()</td></tr>
+<tr class="memdesc:a44c776b7bb2a545d74ad2a139d760369"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the x-coordinate of the enemy's health bar.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a44c776b7bb2a545d74ad2a139d760369">More...</a><br /></td></tr>
 <tr class="separator:a44c776b7bb2a545d74ad2a139d760369"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2f40c8ae052a078e4bd42f5f26bd68a"><td class="memItemLeft" align="right" valign="top"><a id="ac2f40c8ae052a078e4bd42f5f26bd68a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getHealthBarY</b> ()</td></tr>
+<tr class="memitem:ac2f40c8ae052a078e4bd42f5f26bd68a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#ac2f40c8ae052a078e4bd42f5f26bd68a">getHealthBarY</a> ()</td></tr>
+<tr class="memdesc:ac2f40c8ae052a078e4bd42f5f26bd68a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the y-coordinate of the enemy's health bar.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#ac2f40c8ae052a078e4bd42f5f26bd68a">More...</a><br /></td></tr>
 <tr class="separator:ac2f40c8ae052a078e4bd42f5f26bd68a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbe8e9aed4ab3a40e835b32ff23ab7d9"><td class="memItemLeft" align="right" valign="top"><a id="afbe8e9aed4ab3a40e835b32ff23ab7d9"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getHealthBarWidth</b> ()</td></tr>
+<tr class="memitem:afbe8e9aed4ab3a40e835b32ff23ab7d9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#afbe8e9aed4ab3a40e835b32ff23ab7d9">getHealthBarWidth</a> ()</td></tr>
+<tr class="memdesc:afbe8e9aed4ab3a40e835b32ff23ab7d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the width of the enemy's health bar.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#afbe8e9aed4ab3a40e835b32ff23ab7d9">More...</a><br /></td></tr>
 <tr class="separator:afbe8e9aed4ab3a40e835b32ff23ab7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa30132177630d4316eb8c47ee645600a"><td class="memItemLeft" align="right" valign="top"><a id="aa30132177630d4316eb8c47ee645600a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getHealthBarHeight</b> ()</td></tr>
+<tr class="memitem:aa30132177630d4316eb8c47ee645600a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#aa30132177630d4316eb8c47ee645600a">getHealthBarHeight</a> ()</td></tr>
+<tr class="memdesc:aa30132177630d4316eb8c47ee645600a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the height of the enemy's health bar.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#aa30132177630d4316eb8c47ee645600a">More...</a><br /></td></tr>
 <tr class="separator:aa30132177630d4316eb8c47ee645600a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dadf5ea7ea5d2df483da1acbf9cd277"><td class="memItemLeft" align="right" valign="top"><a id="a3dadf5ea7ea5d2df483da1acbf9cd277"></a>
-String&#160;</td><td class="memItemRight" valign="bottom"><b>getBackgroundImgPath</b> ()</td></tr>
+<tr class="memitem:a3dadf5ea7ea5d2df483da1acbf9cd277"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a3dadf5ea7ea5d2df483da1acbf9cd277">getBackgroundImgPath</a> ()</td></tr>
+<tr class="memdesc:a3dadf5ea7ea5d2df483da1acbf9cd277"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the path to the background image for the fight scene.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a3dadf5ea7ea5d2df483da1acbf9cd277">More...</a><br /></td></tr>
 <tr class="separator:a3dadf5ea7ea5d2df483da1acbf9cd277"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7e544a1a6a1aedb9a9250068d3e2f12"><td class="memItemLeft" align="right" valign="top"><a id="ae7e544a1a6a1aedb9a9250068d3e2f12"></a>
-<a class="el" href="classPaooGame_1_1States_1_1State.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getOwnerState</b> ()</td></tr>
+<tr class="memitem:ae7e544a1a6a1aedb9a9250068d3e2f12"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPaooGame_1_1States_1_1State.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#ae7e544a1a6a1aedb9a9250068d3e2f12">getOwnerState</a> ()</td></tr>
+<tr class="memdesc:ae7e544a1a6a1aedb9a9250068d3e2f12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the owner state of this fight strategy.  <a href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#ae7e544a1a6a1aedb9a9250068d3e2f12">More...</a><br /></td></tr>
 <tr class="separator:ae7e544a1a6a1aedb9a9250068d3e2f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a7cea58f7879b7d3787ef3784b8db5e0f"><td class="memItemLeft" align="right" valign="top"><a id="a7cea58f7879b7d3787ef3784b8db5e0f"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>x</b></td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a7cea58f7879b7d3787ef3784b8db5e0f">x</a></td></tr>
+<tr class="memdesc:a7cea58f7879b7d3787ef3784b8db5e0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The x-coordinate of the enemy in the fight scene. <br /></td></tr>
 <tr class="separator:a7cea58f7879b7d3787ef3784b8db5e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37a4de6720c2e2a2188e423a1b62ba05"><td class="memItemLeft" align="right" valign="top"><a id="a37a4de6720c2e2a2188e423a1b62ba05"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>y</b></td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a37a4de6720c2e2a2188e423a1b62ba05">y</a></td></tr>
+<tr class="memdesc:a37a4de6720c2e2a2188e423a1b62ba05"><td class="mdescLeft">&#160;</td><td class="mdescRight">The y-coordinate of the enemy in the fight scene. <br /></td></tr>
 <tr class="separator:a37a4de6720c2e2a2188e423a1b62ba05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95af383e0320a93ab4d7be0878736a75"><td class="memItemLeft" align="right" valign="top"><a id="a95af383e0320a93ab4d7be0878736a75"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>width</b></td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a95af383e0320a93ab4d7be0878736a75">width</a></td></tr>
+<tr class="memdesc:a95af383e0320a93ab4d7be0878736a75"><td class="mdescLeft">&#160;</td><td class="mdescRight">The width of the enemy in the fight scene. <br /></td></tr>
 <tr class="separator:a95af383e0320a93ab4d7be0878736a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf324e1f76217ae7a1627f995505c59a"><td class="memItemLeft" align="right" valign="top"><a id="aaf324e1f76217ae7a1627f995505c59a"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>height</b></td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#aaf324e1f76217ae7a1627f995505c59a">height</a></td></tr>
+<tr class="memdesc:aaf324e1f76217ae7a1627f995505c59a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The height of the enemy in the fight scene. <br /></td></tr>
 <tr class="separator:aaf324e1f76217ae7a1627f995505c59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a580f9c2ed297ea46c9bf88efba037ecd"><td class="memItemLeft" align="right" valign="top"><a id="a580f9c2ed297ea46c9bf88efba037ecd"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>healthBarX</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a580f9c2ed297ea46c9bf88efba037ecd">healthBarX</a></td></tr>
+<tr class="memdesc:a580f9c2ed297ea46c9bf88efba037ecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The x-coordinate of the enemy's health bar. <br /></td></tr>
 <tr class="separator:a580f9c2ed297ea46c9bf88efba037ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a6cf2d569c459ae0b70a7cb1273da53"><td class="memItemLeft" align="right" valign="top"><a id="a3a6cf2d569c459ae0b70a7cb1273da53"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>healthBarY</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a3a6cf2d569c459ae0b70a7cb1273da53">healthBarY</a></td></tr>
+<tr class="memdesc:a3a6cf2d569c459ae0b70a7cb1273da53"><td class="mdescLeft">&#160;</td><td class="mdescRight">The y-coordinate of the enemy's health bar. <br /></td></tr>
 <tr class="separator:a3a6cf2d569c459ae0b70a7cb1273da53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac74d797079f3c54f0dbf055d78650a10"><td class="memItemLeft" align="right" valign="top"><a id="ac74d797079f3c54f0dbf055d78650a10"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>healthBarWidth</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#ac74d797079f3c54f0dbf055d78650a10">healthBarWidth</a></td></tr>
+<tr class="memdesc:ac74d797079f3c54f0dbf055d78650a10"><td class="mdescLeft">&#160;</td><td class="mdescRight">The width of the enemy's health bar. <br /></td></tr>
 <tr class="separator:ac74d797079f3c54f0dbf055d78650a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af822c9d8534e7e53b11ae10edc65925c"><td class="memItemLeft" align="right" valign="top"><a id="af822c9d8534e7e53b11ae10edc65925c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>healthBarHeight</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#af822c9d8534e7e53b11ae10edc65925c">healthBarHeight</a></td></tr>
+<tr class="memdesc:af822c9d8534e7e53b11ae10edc65925c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The height of the enemy's health bar. <br /></td></tr>
 <tr class="separator:af822c9d8534e7e53b11ae10edc65925c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af54c0ca49c9438b2b6733b71376f3d21"><td class="memItemLeft" align="right" valign="top"><a id="af54c0ca49c9438b2b6733b71376f3d21"></a>
-String&#160;</td><td class="memItemRight" valign="bottom"><b>backgroundImgPath</b></td></tr>
+String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#af54c0ca49c9438b2b6733b71376f3d21">backgroundImgPath</a></td></tr>
+<tr class="memdesc:af54c0ca49c9438b2b6733b71376f3d21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path to the background image for the fight scene. <br /></td></tr>
 <tr class="separator:af54c0ca49c9438b2b6733b71376f3d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51c7912e451521c186b02286a4e09b8a"><td class="memItemLeft" align="right" valign="top"><a id="a51c7912e451521c186b02286a4e09b8a"></a>
-<a class="el" href="classPaooGame_1_1Entities_1_1Enemy.html">Enemy</a>&#160;</td><td class="memItemRight" valign="bottom"><b>enemy</b></td></tr>
+<a class="el" href="classPaooGame_1_1Entities_1_1Enemy.html">Enemy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a51c7912e451521c186b02286a4e09b8a">enemy</a></td></tr>
+<tr class="memdesc:a51c7912e451521c186b02286a4e09b8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The enemy entity associated with this fight strategy. <br /></td></tr>
 <tr class="separator:a51c7912e451521c186b02286a4e09b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e70cdd8f1ae3bc504cf07ad5c3b6736"><td class="memItemLeft" align="right" valign="top"><a id="a0e70cdd8f1ae3bc504cf07ad5c3b6736"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>defence</b></td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a0e70cdd8f1ae3bc504cf07ad5c3b6736">defence</a></td></tr>
+<tr class="memdesc:a0e70cdd8f1ae3bc504cf07ad5c3b6736"><td class="mdescLeft">&#160;</td><td class="mdescRight">The defense value of the enemy, reducing incoming damage. <br /></td></tr>
 <tr class="separator:a0e70cdd8f1ae3bc504cf07ad5c3b6736"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72ea772661c936a839301b9e607b11a5"><td class="memItemLeft" align="right" valign="top"><a id="a72ea772661c936a839301b9e607b11a5"></a>
-<a class="el" href="classPaooGame_1_1States_1_1State.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ownerState</b></td></tr>
+<a class="el" href="classPaooGame_1_1States_1_1State.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#a72ea772661c936a839301b9e607b11a5">ownerState</a></td></tr>
+<tr class="memdesc:a72ea772661c936a839301b9e607b11a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The state that owns or initiated this fight (e.g., a specific level state). <br /></td></tr>
 <tr class="separator:a72ea772661c936a839301b9e607b11a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents the configuration and state for an enemy during a fight sequence. </p>
+<p>This class encapsulates properties related to an enemy's appearance and behavior within the fight state, such as its position, size, health bar details, background image, and defense. It uses a Builder pattern for construction. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a84fb10518e5263636e7d6690ec6c9b34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84fb10518e5263636e7d6690ec6c9b34">&#9670;&nbsp;</a></span>FightStrategy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PaooGame.Strategies.Fight.FightStrategy.FightStrategy </td>
+          <td>(</td>
+          <td class="paramtype">FightStrategyBuilder&#160;</td>
+          <td class="paramname"><em>builder</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html" title="Represents the configuration and state for an enemy during a fight sequence.">FightStrategy</a> object using a <a class="el" href="">FightStrategyBuilder</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">builder</td><td>The builder object containing the configuration for the fight strategy. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a670a2dedace908e1b67d35d0876009e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a670a2dedace908e1b67d35d0876009e3">&#9670;&nbsp;</a></span>calculateDamage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PaooGame.Strategies.Fight.FightStrategy.calculateDamage </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>damage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates the actual damage taken by the enemy after considering its defense. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">damage</td><td>The raw damage amount. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The calculated damage after applying the defense reduction. </dd></dl>
+
+</div>
+</div>
+<a id="a3dadf5ea7ea5d2df483da1acbf9cd277"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dadf5ea7ea5d2df483da1acbf9cd277">&#9670;&nbsp;</a></span>getBackgroundImgPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String PaooGame.Strategies.Fight.FightStrategy.getBackgroundImgPath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the path to the background image for the fight scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>The file path of the background image. </dd></dl>
+
+</div>
+</div>
+<a id="a834801c2d13fa988fbf3f013a77eb3ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a834801c2d13fa988fbf3f013a77eb3ce">&#9670;&nbsp;</a></span>getDefence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PaooGame.Strategies.Fight.FightStrategy.getDefence </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the defense value of the enemy. </p>
+<dl class="section return"><dt>Returns</dt><dd>The defense value. </dd></dl>
+
+</div>
+</div>
+<a id="a1aa49ffd482b256afbbc29e9d2ac2728"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aa49ffd482b256afbbc29e9d2ac2728">&#9670;&nbsp;</a></span>getEnemy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPaooGame_1_1Entities_1_1Enemy.html">Enemy</a> PaooGame.Strategies.Fight.FightStrategy.getEnemy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the enemy entity associated with this strategy. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="">Enemy</a> object. </dd></dl>
+
+</div>
+</div>
+<a id="aa30132177630d4316eb8c47ee645600a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa30132177630d4316eb8c47ee645600a">&#9670;&nbsp;</a></span>getHealthBarHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PaooGame.Strategies.Fight.FightStrategy.getHealthBarHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the height of the enemy's health bar. </p>
+<dl class="section return"><dt>Returns</dt><dd>The health bar height. </dd></dl>
+
+</div>
+</div>
+<a id="afbe8e9aed4ab3a40e835b32ff23ab7d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbe8e9aed4ab3a40e835b32ff23ab7d9">&#9670;&nbsp;</a></span>getHealthBarWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PaooGame.Strategies.Fight.FightStrategy.getHealthBarWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the width of the enemy's health bar. </p>
+<dl class="section return"><dt>Returns</dt><dd>The health bar width. </dd></dl>
+
+</div>
+</div>
+<a id="a44c776b7bb2a545d74ad2a139d760369"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44c776b7bb2a545d74ad2a139d760369">&#9670;&nbsp;</a></span>getHealthBarX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PaooGame.Strategies.Fight.FightStrategy.getHealthBarX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the x-coordinate of the enemy's health bar. </p>
+<dl class="section return"><dt>Returns</dt><dd>The health bar x-coordinate. </dd></dl>
+
+</div>
+</div>
+<a id="ac2f40c8ae052a078e4bd42f5f26bd68a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2f40c8ae052a078e4bd42f5f26bd68a">&#9670;&nbsp;</a></span>getHealthBarY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PaooGame.Strategies.Fight.FightStrategy.getHealthBarY </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the y-coordinate of the enemy's health bar. </p>
+<dl class="section return"><dt>Returns</dt><dd>The health bar y-coordinate. </dd></dl>
+
+</div>
+</div>
+<a id="a20ee42ad52f928d324767541c6914219"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20ee42ad52f928d324767541c6914219">&#9670;&nbsp;</a></span>getHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PaooGame.Strategies.Fight.FightStrategy.getHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the height of the enemy in the fight scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>The height. </dd></dl>
+
+</div>
+</div>
+<a id="ae7e544a1a6a1aedb9a9250068d3e2f12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7e544a1a6a1aedb9a9250068d3e2f12">&#9670;&nbsp;</a></span>getOwnerState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPaooGame_1_1States_1_1State.html">State</a> PaooGame.Strategies.Fight.FightStrategy.getOwnerState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the owner state of this fight strategy. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="">State</a> that owns or initiated this fight. </dd></dl>
+
+</div>
+</div>
+<a id="af80f1d34938edffccf17b89770c4a962"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af80f1d34938edffccf17b89770c4a962">&#9670;&nbsp;</a></span>getWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PaooGame.Strategies.Fight.FightStrategy.getWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the width of the enemy in the fight scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>The width. </dd></dl>
+
+</div>
+</div>
+<a id="aac1aab74401e724921279f44d8198def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac1aab74401e724921279f44d8198def">&#9670;&nbsp;</a></span>getX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PaooGame.Strategies.Fight.FightStrategy.getX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the x-coordinate of the enemy in the fight scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>The x-coordinate. </dd></dl>
+
+</div>
+</div>
+<a id="adc7687cc759f98409d0f33fe50938575"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc7687cc759f98409d0f33fe50938575">&#9670;&nbsp;</a></span>getY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PaooGame.Strategies.Fight.FightStrategy.getY </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the y-coordinate of the enemy in the fight scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>The y-coordinate. </dd></dl>
+
+</div>
+</div>
+<a id="a122764e808729d3f0856730477866cde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a122764e808729d3f0856730477866cde">&#9670;&nbsp;</a></span>setBackgroundImgPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Strategies.Fight.FightStrategy.setBackgroundImgPath </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>backgroundImgPath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the path to the background image for the fight scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">backgroundImgPath</td><td>The new file path for the background image. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa481ec985bbdbf81be9ee8752ead06f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa481ec985bbdbf81be9ee8752ead06f0">&#9670;&nbsp;</a></span>setDefence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Strategies.Fight.FightStrategy.setDefence </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>defence</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the defense value for the enemy. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">defence</td><td>The new defense value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a81aaba1d6cb9967c6e7c646e1133a3a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81aaba1d6cb9967c6e7c646e1133a3a3">&#9670;&nbsp;</a></span>setEnemy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Strategies.Fight.FightStrategy.setEnemy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPaooGame_1_1Entities_1_1Enemy.html">Enemy</a>&#160;</td>
+          <td class="paramname"><em>enemy</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the enemy entity for this fight strategy. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enemy</td><td>The <a class="el" href="">Enemy</a> to associate with this strategy. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a269d851935f1ac60797745f9ded396a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a269d851935f1ac60797745f9ded396a3">&#9670;&nbsp;</a></span>setHealthBarHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Strategies.Fight.FightStrategy.setHealthBarHeight </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>healthBarHeight</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the height of the enemy's health bar. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">healthBarHeight</td><td>The new health bar height. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5f2c9ffedaff6dae6d3f9c97bcfa6ee4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f2c9ffedaff6dae6d3f9c97bcfa6ee4">&#9670;&nbsp;</a></span>setHealthBarWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Strategies.Fight.FightStrategy.setHealthBarWidth </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>healthBarWidth</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the width of the enemy's health bar. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">healthBarWidth</td><td>The new health bar width. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3759687371d6430876101309ca39a488"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3759687371d6430876101309ca39a488">&#9670;&nbsp;</a></span>setHealthBarX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Strategies.Fight.FightStrategy.setHealthBarX </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>healthBarX</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the x-coordinate of the enemy's health bar. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">healthBarX</td><td>The new health bar x-coordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a37f3752e0daf06115a7a331899281352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37f3752e0daf06115a7a331899281352">&#9670;&nbsp;</a></span>setHealthBarY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Strategies.Fight.FightStrategy.setHealthBarY </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>healthBarY</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the y-coordinate of the enemy's health bar. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">healthBarY</td><td>The new health bar y-coordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac14dc2fb53427c4123065e8431576673"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac14dc2fb53427c4123065e8431576673">&#9670;&nbsp;</a></span>setHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Strategies.Fight.FightStrategy.setHeight </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>height</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the height of the enemy in the fight scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">height</td><td>The new height. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a429335c567ac7239993ea5cc305b49f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a429335c567ac7239993ea5cc305b49f4">&#9670;&nbsp;</a></span>setWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Strategies.Fight.FightStrategy.setWidth </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>width</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the width of the enemy in the fight scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>The new width. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afe9caf21d90cba2b27e1a55a1ad6b478"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe9caf21d90cba2b27e1a55a1ad6b478">&#9670;&nbsp;</a></span>setX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Strategies.Fight.FightStrategy.setX </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the x-coordinate of the enemy in the fight scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The new x-coordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5f442c1e401af91c16f1b6b76e474f7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f442c1e401af91c16f1b6b76e474f7b">&#9670;&nbsp;</a></span>setY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Strategies.Fight.FightStrategy.setY </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the y-coordinate of the enemy in the fight scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y</td><td>The new y-coordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a92685b434a7e8e4561ce2b4eeb08271b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92685b434a7e8e4561ce2b4eeb08271b">&#9670;&nbsp;</a></span>takeDamage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Strategies.Fight.FightStrategy.takeDamage </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>damage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Applies damage to the enemy, considering its defense. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">damage</td><td>The raw damage amount to be applied. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1fcb0b222e13e5a139cc03f73dbb6766"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fcb0b222e13e5a139cc03f73dbb6766">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Strategies.Fight.FightStrategy.update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates the associated enemy's properties based on this strategy. </p>
+<p>Sets the enemy's position and health bar dimensions according to the values stored in this fight strategy. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/PaooGame/Strategies/Fight/FightStrategy.java</li>
 </ul>

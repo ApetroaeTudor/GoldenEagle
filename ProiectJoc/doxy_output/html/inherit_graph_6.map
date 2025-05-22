@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classPaooGame_1_1GameWindow_1_1GameWindow.html" title=" " alt="" coords="5,5,235,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,88,32"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1Game.html" title="Main class for the game, responsible for initialization, game loop, and state management." alt="" coords="136,5,271,32"/>
 </map>

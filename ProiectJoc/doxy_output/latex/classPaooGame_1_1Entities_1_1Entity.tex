@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1Entities_1_1Entity}\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
 
 
-Inheritance diagram for Paoo\+Game.\+Entities.\+Entity\+:
-\nopagebreak
+An abstract base class for all game entities (e.\+g., Player, \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy}{Enemy}}).  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+Entities.\+Entity\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+Entities.\+Entity\+:
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+Entities.\+Entity\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+Entities.\+Entity\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,207 +26,797 @@ Collaboration diagram for Paoo\+Game.\+Entities.\+Entity\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ac9ee430d9bfbcdbf90dd327224f64688}\label{classPaooGame_1_1Entities_1_1Entity_ac9ee430d9bfbcdbf90dd327224f64688}} 
-{\bfseries Entity} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} reflink, int startX, int startY)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a609ed68e1ccbe4909eaa72c893d54e0c}\label{classPaooGame_1_1Entities_1_1Entity_a609ed68e1ccbe4909eaa72c893d54e0c}} 
-abstract void {\bfseries update} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_aca135637541e81579a66b0312e7185dc}\label{classPaooGame_1_1Entities_1_1Entity_aca135637541e81579a66b0312e7185dc}} 
-float {\bfseries getX} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a1fef6592c1538338be910a21d03ad342}\label{classPaooGame_1_1Entities_1_1Entity_a1fef6592c1538338be910a21d03ad342}} 
-void {\bfseries setX} (float x)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a86ebd2ff06da83bc638ddff41b3ab6f9}\label{classPaooGame_1_1Entities_1_1Entity_a86ebd2ff06da83bc638ddff41b3ab6f9}} 
-float {\bfseries getY} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_aad6d0a3d96378218d9a53dd57887b4fd}\label{classPaooGame_1_1Entities_1_1Entity_aad6d0a3d96378218d9a53dd57887b4fd}} 
-void {\bfseries setY} (float y)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a24e6fd99de2f54be543ef38439f23631}\label{classPaooGame_1_1Entities_1_1Entity_a24e6fd99de2f54be543ef38439f23631}} 
-float {\bfseries get\+Width} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ad65597fcd4a970f144d4b1b231971a13}\label{classPaooGame_1_1Entities_1_1Entity_ad65597fcd4a970f144d4b1b231971a13}} 
-float {\bfseries get\+Height} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a5883aecae984cff302dc1db89a93d241}\label{classPaooGame_1_1Entities_1_1Entity_a5883aecae984cff302dc1db89a93d241}} 
-double {\bfseries get\+Health} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_afc980546f47d3c5e75cc5fb6022586b9}\label{classPaooGame_1_1Entities_1_1Entity_afc980546f47d3c5e75cc5fb6022586b9}} 
-void {\bfseries set\+Health} (double health)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a7e8246dc9f7aa92b57c17adff714a995}\label{classPaooGame_1_1Entities_1_1Entity_a7e8246dc9f7aa92b57c17adff714a995}} 
-\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} {\bfseries get\+Hitbox} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ae017eda742896804402c0babf55b3a61}\label{classPaooGame_1_1Entities_1_1Entity_ae017eda742896804402c0babf55b3a61}} 
-void {\bfseries set\+Hitbox} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} hitbox)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ad20f82d7ea3449d60cdb9811ce5cce8c}\label{classPaooGame_1_1Entities_1_1Entity_ad20f82d7ea3449d60cdb9811ce5cce8c}} 
-\mbox{\hyperlink{classPaooGame_1_1HUD_1_1HealthBar}{Health\+Bar}} {\bfseries get\+Health\+Bar} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_abfaf1c8f846c7d57d547b5f1b2b16baa}\label{classPaooGame_1_1Entities_1_1Entity_abfaf1c8f846c7d57d547b5f1b2b16baa}} 
-boolean {\bfseries get\+Is\+Engaged} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a385a8922e8cfd820fa945bf242212332}\label{classPaooGame_1_1Entities_1_1Entity_a385a8922e8cfd820fa945bf242212332}} 
-void {\bfseries set\+Is\+Engaged} (boolean is\+Engaged)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a9799c0ae8d84476e423066f29e74048c}\label{classPaooGame_1_1Entities_1_1Entity_a9799c0ae8d84476e423066f29e74048c}} 
-abstract String {\bfseries get\+Name} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_af35e9ed0f19e6be0e0e305cb109c0c33}\label{classPaooGame_1_1Entities_1_1Entity_af35e9ed0f19e6be0e0e305cb109c0c33}} 
-void {\bfseries Draw\+Health\+Bar} (Graphics g)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a42fcee2d3c5efa59e59025b783148d45}\label{classPaooGame_1_1Entities_1_1Entity_a42fcee2d3c5efa59e59025b783148d45}} 
-void {\bfseries set\+Health\+BarX} (int x)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a7c81f1b0748349fabb7e9a6d435f8f2a}\label{classPaooGame_1_1Entities_1_1Entity_a7c81f1b0748349fabb7e9a6d435f8f2a}} 
-void {\bfseries set\+Health\+BarY} (int y)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_aabbb741ad7196c95de5f9d98c8206211}\label{classPaooGame_1_1Entities_1_1Entity_aabbb741ad7196c95de5f9d98c8206211}} 
-void {\bfseries set\+Health\+Bar\+Width} (int width)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_adbbf832891a7ed89935283faa1728ebf}\label{classPaooGame_1_1Entities_1_1Entity_adbbf832891a7ed89935283faa1728ebf}} 
-void {\bfseries set\+Health\+Bar\+Height} (int height)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_aa716b3d315c6befe5614a00de221db45}\label{classPaooGame_1_1Entities_1_1Entity_aa716b3d315c6befe5614a00de221db45}} 
-int {\bfseries get\+Health\+BarX} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_aa3444bcb533dabfb3ba11fc5d5936ebc}\label{classPaooGame_1_1Entities_1_1Entity_aa3444bcb533dabfb3ba11fc5d5936ebc}} 
-int {\bfseries get\+Health\+BarY} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ad549b5fa0269b45317c25b89cb0e214b}\label{classPaooGame_1_1Entities_1_1Entity_ad549b5fa0269b45317c25b89cb0e214b}} 
-int {\bfseries get\+Health\+Bar\+Width} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a3a7b69d47db905f691e2a36318a75a67}\label{classPaooGame_1_1Entities_1_1Entity_a3a7b69d47db905f691e2a36318a75a67}} 
-int {\bfseries get\+Health\+Bar\+Height} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a9e2eb0574cccae1cca2f796ce88b90ec}\label{classPaooGame_1_1Entities_1_1Entity_a9e2eb0574cccae1cca2f796ce88b90ec}} 
-Color {\bfseries get\+Health\+Bar\+Color1} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a54602d0b1b70210b6677643c6a1b75d5}\label{classPaooGame_1_1Entities_1_1Entity_a54602d0b1b70210b6677643c6a1b75d5}} 
-Color {\bfseries get\+Health\+Bar\+Color2} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ac87cc8914c90d30d7f3c498b0b52309e}\label{classPaooGame_1_1Entities_1_1Entity_ac87cc8914c90d30d7f3c498b0b52309e}} 
-void {\bfseries set\+Health\+Bar\+Color1} (Color color1)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a0a07a8d4f07bc16bac999a9a0c48f125}\label{classPaooGame_1_1Entities_1_1Entity_a0a07a8d4f07bc16bac999a9a0c48f125}} 
-void {\bfseries set\+Health\+Bar\+Color2} (Color color2)
-\item 
+\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_ac9ee430d9bfbcdbf90dd327224f64688}{Entity}} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a39134c8191ec2a293415d65d621f4e3e}{reflink}}, int startX, int startY)
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity}{Entity}} object. \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a609ed68e1ccbe4909eaa72c893d54e0c}{update}} ()
+\begin{DoxyCompactList}\small\item\em Abstract method for updating the entity\textquotesingle{}s state. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_aca135637541e81579a66b0312e7185dc}{getX}} ()
+\begin{DoxyCompactList}\small\item\em Gets the x-\/coordinate of the entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a1fef6592c1538338be910a21d03ad342}{setX}} (float \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a5a7f4280a2e1f43d5e55940dfb8a00ad}{x}})
+\begin{DoxyCompactList}\small\item\em Sets the x-\/coordinate of the entity. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a86ebd2ff06da83bc638ddff41b3ab6f9}{getY}} ()
+\begin{DoxyCompactList}\small\item\em Gets the y-\/coordinate of the entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_aad6d0a3d96378218d9a53dd57887b4fd}{setY}} (float \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a754d9006adabe2bb959780f2f6ae0a00}{y}})
+\begin{DoxyCompactList}\small\item\em Sets the y-\/coordinate of the entity. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a24e6fd99de2f54be543ef38439f23631}{get\+Width}} ()
+\begin{DoxyCompactList}\small\item\em Gets the width of the entity\textquotesingle{}s hitbox. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_ad65597fcd4a970f144d4b1b231971a13}{get\+Height}} ()
+\begin{DoxyCompactList}\small\item\em Gets the height of the entity\textquotesingle{}s hitbox. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a5883aecae984cff302dc1db89a93d241}{get\+Health}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current health of the entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_afc980546f47d3c5e75cc5fb6022586b9}{set\+Health}} (double \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a82f065a949448571f52fd4cd2699e7ac}{health}})
+\begin{DoxyCompactList}\small\item\em Sets the health of the entity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a7e8246dc9f7aa92b57c17adff714a995}{get\+Hitbox}} ()
+\begin{DoxyCompactList}\small\item\em Gets the hitbox of the entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_ae017eda742896804402c0babf55b3a61}{set\+Hitbox}} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_aa69542bc8275bf0e4a7e983a85353059}{hitbox}})
+\begin{DoxyCompactList}\small\item\em Sets the hitbox for the entity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1HUD_1_1HealthBar}{Health\+Bar}} \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_ad20f82d7ea3449d60cdb9811ce5cce8c}{get\+Health\+Bar}} ()
+\begin{DoxyCompactList}\small\item\em Gets the health bar associated with this entity. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_abfaf1c8f846c7d57d547b5f1b2b16baa}{get\+Is\+Engaged}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the entity is currently engaged. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a385a8922e8cfd820fa945bf242212332}{set\+Is\+Engaged}} (boolean \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a6173afe9a80119b98e55253a9dce6711}{is\+Engaged}})
+\begin{DoxyCompactList}\small\item\em Sets the engagement status of the entity. \end{DoxyCompactList}\item 
+abstract String \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a9799c0ae8d84476e423066f29e74048c}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Abstract method to get the name of the entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_af35e9ed0f19e6be0e0e305cb109c0c33}{Draw\+Health\+Bar}} (Graphics g)
+\begin{DoxyCompactList}\small\item\em Draws the entity\textquotesingle{}s health bar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a42fcee2d3c5efa59e59025b783148d45}{set\+Health\+BarX}} (int \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a5a7f4280a2e1f43d5e55940dfb8a00ad}{x}})
+\begin{DoxyCompactList}\small\item\em Sets the x-\/coordinate of the health bar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a7c81f1b0748349fabb7e9a6d435f8f2a}{set\+Health\+BarY}} (int \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a754d9006adabe2bb959780f2f6ae0a00}{y}})
+\begin{DoxyCompactList}\small\item\em Sets the y-\/coordinate of the health bar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_aabbb741ad7196c95de5f9d98c8206211}{set\+Health\+Bar\+Width}} (int width)
+\begin{DoxyCompactList}\small\item\em Sets the width of the health bar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_adbbf832891a7ed89935283faa1728ebf}{set\+Health\+Bar\+Height}} (int height)
+\begin{DoxyCompactList}\small\item\em Sets the height of the health bar. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_aa716b3d315c6befe5614a00de221db45}{get\+Health\+BarX}} ()
+\begin{DoxyCompactList}\small\item\em Gets the x-\/coordinate of the health bar. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_aa3444bcb533dabfb3ba11fc5d5936ebc}{get\+Health\+BarY}} ()
+\begin{DoxyCompactList}\small\item\em Gets the y-\/coordinate of the health bar. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_ad549b5fa0269b45317c25b89cb0e214b}{get\+Health\+Bar\+Width}} ()
+\begin{DoxyCompactList}\small\item\em Gets the width of the health bar. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a3a7b69d47db905f691e2a36318a75a67}{get\+Health\+Bar\+Height}} ()
+\begin{DoxyCompactList}\small\item\em Gets the height of the health bar. \end{DoxyCompactList}\item 
+Color \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a9e2eb0574cccae1cca2f796ce88b90ec}{get\+Health\+Bar\+Color1}} ()
+\begin{DoxyCompactList}\small\item\em Gets the primary color of the health bar. \end{DoxyCompactList}\item 
+Color \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a54602d0b1b70210b6677643c6a1b75d5}{get\+Health\+Bar\+Color2}} ()
+\begin{DoxyCompactList}\small\item\em Gets the secondary color of the health bar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_ac87cc8914c90d30d7f3c498b0b52309e}{set\+Health\+Bar\+Color1}} (Color color1)
+\begin{DoxyCompactList}\small\item\em Sets the primary color of the health bar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a0a07a8d4f07bc16bac999a9a0c48f125}{set\+Health\+Bar\+Color2}} (Color color2)
+\begin{DoxyCompactList}\small\item\em Sets the secondary color of the health bar. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a6b86a24fd65dfe18d9b48d9dcbcc54b9}\label{classPaooGame_1_1Entities_1_1Entity_a6b86a24fd65dfe18d9b48d9dcbcc54b9}} 
-void {\bfseries reset\+Health\+Bar\+Default\+Values} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a6f4b3c97b647c249dedbe507ebf7656a}\label{classPaooGame_1_1Entities_1_1Entity_a6f4b3c97b647c249dedbe507ebf7656a}} 
-void {\bfseries reduce\+Health} (double health)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_add537c8bab2c3c9bf4725888ce8f0f10}\label{classPaooGame_1_1Entities_1_1Entity_add537c8bab2c3c9bf4725888ce8f0f10}} 
-void {\bfseries restore\+Health} (double health)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a550a87f558004ebf49887e38af2c2f6e}\label{classPaooGame_1_1Entities_1_1Entity_a550a87f558004ebf49887e38af2c2f6e}} 
-double {\bfseries get\+Damage} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ae29a5d88a8b9d70a0a36015d74e0c255}\label{classPaooGame_1_1Entities_1_1Entity_ae29a5d88a8b9d70a0a36015d74e0c255}} 
-void {\bfseries set\+Damage} (double damage)
-\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a6b86a24fd65dfe18d9b48d9dcbcc54b9}{reset\+Health\+Bar\+Default\+Values}} ()
+\begin{DoxyCompactList}\small\item\em Resets the health bar\textquotesingle{}s position to its default values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a6f4b3c97b647c249dedbe507ebf7656a}{reduce\+Health}} (double \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a82f065a949448571f52fd4cd2699e7ac}{health}})
+\begin{DoxyCompactList}\small\item\em Reduces the entity\textquotesingle{}s health by a specified amount. Health will not go below 0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_add537c8bab2c3c9bf4725888ce8f0f10}{restore\+Health}} (double \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a82f065a949448571f52fd4cd2699e7ac}{health}})
+\begin{DoxyCompactList}\small\item\em Restores the entity\textquotesingle{}s health by a specified amount. Health will not exceed 100 (or a predefined maximum). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a550a87f558004ebf49887e38af2c2f6e}{get\+Damage}} ()
+\begin{DoxyCompactList}\small\item\em Gets the damage value of the entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_ae29a5d88a8b9d70a0a36015d74e0c255}{set\+Damage}} (double \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_ad1b4a6dcd093a4a2bca444708c0a1319}{damage}})
+\begin{DoxyCompactList}\small\item\em Sets the damage value for the entity. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_aa124f650cbaf3f7a41233f949a4077f4}\label{classPaooGame_1_1Entities_1_1Entity_aa124f650cbaf3f7a41233f949a4077f4}} 
-void {\bfseries nullify\+Hitbox} ()
-\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_aa124f650cbaf3f7a41233f949a4077f4}{nullify\+Hitbox}} ()
+\begin{DoxyCompactList}\small\item\em Nullifies the entity\textquotesingle{}s hitbox by setting its position and dimensions to zero. This effectively makes the entity non-\/collidable. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a4312adff6ad5174f9f8c86da55a154c6}\label{classPaooGame_1_1Entities_1_1Entity_a4312adff6ad5174f9f8c86da55a154c6}} 
-abstract void {\bfseries restore\+Entity} ()
-\item 
+abstract void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a4312adff6ad5174f9f8c86da55a154c6}{restore\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Abstract method to restore the entity to its initial or a saved state. Subclasses must implement this to define how the entity is reset. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a314eb8c8706a24588a456175912b980a}\label{classPaooGame_1_1Entities_1_1Entity_a314eb8c8706a24588a456175912b980a}} 
-abstract void {\bfseries attack} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a9e5cb2edcb76acfc95af1d9c97ca7b1d}\label{classPaooGame_1_1Entities_1_1Entity_a9e5cb2edcb76acfc95af1d9c97ca7b1d}} 
-float {\bfseries get\+VelocityX} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_aba3b2e9dcfa2b686dc7a9b4091ea7654}\label{classPaooGame_1_1Entities_1_1Entity_aba3b2e9dcfa2b686dc7a9b4091ea7654}} 
-float {\bfseries get\+VelocityY} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ac1fa5f16c7311eaf764db9f8d37a63f1}\label{classPaooGame_1_1Entities_1_1Entity_ac1fa5f16c7311eaf764db9f8d37a63f1}} 
-abstract String {\bfseries get\+Source} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a04f3ee24c766e00bc86239363a11bc8d}\label{classPaooGame_1_1Entities_1_1Entity_a04f3ee24c766e00bc86239363a11bc8d}} 
-void {\bfseries draw} (Graphics g)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a04e16db596d0e02ff5b4bb044540b55d}\label{classPaooGame_1_1Entities_1_1Entity_a04e16db596d0e02ff5b4bb044540b55d}} 
-void {\bfseries set\+Is\+Flipped} (boolean flipped)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_aca92255f686d5a823a870832052d4568}\label{classPaooGame_1_1Entities_1_1Entity_aca92255f686d5a823a870832052d4568}} 
-boolean {\bfseries get\+Is\+Flipped} ()
-\end{DoxyCompactItemize}
+abstract void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a314eb8c8706a24588a456175912b980a}{attack}} ()
+\begin{DoxyCompactList}\small\item\em Abstract method for the entity to perform an attack. Subclasses must implement this to define attack behavior. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a9e5cb2edcb76acfc95af1d9c97ca7b1d}{get\+VelocityX}} ()
+\begin{DoxyCompactList}\small\item\em Gets the entity\textquotesingle{}s current velocity on the x-\/axis. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_aba3b2e9dcfa2b686dc7a9b4091ea7654}{get\+VelocityY}} ()
+\begin{DoxyCompactList}\small\item\em Gets the entity\textquotesingle{}s current velocity on the y-\/axis. \end{DoxyCompactList}\item 
+abstract String \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_ac1fa5f16c7311eaf764db9f8d37a63f1}{get\+Source}} ()
+\begin{DoxyCompactList}\small\item\em Abstract method to get the source path for the entity\textquotesingle{}s sprites or assets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a04f3ee24c766e00bc86239363a11bc8d}{draw}} (Graphics g)
+\begin{DoxyCompactList}\small\item\em Draws the entity on the screen using its current animation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a04e16db596d0e02ff5b4bb044540b55d}{set\+Is\+Flipped}} (boolean \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_ae5f46a35584387af29ac49da5a43c5ea}{flipped}})
+\begin{DoxyCompactList}\small\item\em Sets whether the entity\textquotesingle{}s sprite should be flipped horizontally. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_aca92255f686d5a823a870832052d4568}{get\+Is\+Flipped}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the entity\textquotesingle{}s sprite is currently flipped. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ab3bba8b3192c08c332871b7faa44ddcd}\label{classPaooGame_1_1Entities_1_1Entity_ab3bba8b3192c08c332871b7faa44ddcd}} 
-void {\bfseries apply\+Gravity} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_acd3a7f2558ed324785228ba7d6c21303}\label{classPaooGame_1_1Entities_1_1Entity_acd3a7f2558ed324785228ba7d6c21303}} 
-abstract void {\bfseries move\+And\+Collide} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a1ee8496dd57eb06716d84b49a4e9362a}\label{classPaooGame_1_1Entities_1_1Entity_a1ee8496dd57eb06716d84b49a4e9362a}} 
-abstract void {\bfseries update\+Visual\+Position} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a720a90333cbf2d29327b9e60ef669672}\label{classPaooGame_1_1Entities_1_1Entity_a720a90333cbf2d29327b9e60ef669672}} 
-abstract \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation}{Animation}} {\bfseries get\+Animation\+By\+State} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a979b0cb8ca9e01a36c5e9683b900eefe}\label{classPaooGame_1_1Entities_1_1Entity_a979b0cb8ca9e01a36c5e9683b900eefe}} 
-abstract void {\bfseries update\+Animation\+State} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_ab3bba8b3192c08c332871b7faa44ddcd}{apply\+Gravity}} ()
+\begin{DoxyCompactList}\small\item\em Applies gravitational force to the entity if it is not grounded. \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_acd3a7f2558ed324785228ba7d6c21303}{move\+And\+Collide}} ()
+\begin{DoxyCompactList}\small\item\em Abstract method for handling entity movement and collision detection. \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a1ee8496dd57eb06716d84b49a4e9362a}{update\+Visual\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Abstract method for updating the entity\textquotesingle{}s visual position. \end{DoxyCompactList}\item 
+abstract \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation}{Animation}} \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a720a90333cbf2d29327b9e60ef669672}{get\+Animation\+By\+State}} ()
+\begin{DoxyCompactList}\small\item\em Abstract method for retrieving the current animation based on the entity\textquotesingle{}s state. \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a979b0cb8ca9e01a36c5e9683b900eefe}{update\+Animation\+State}} ()
+\begin{DoxyCompactList}\small\item\em Abstract method for updating the entity\textquotesingle{}s animation state. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a5a7f4280a2e1f43d5e55940dfb8a00ad}\label{classPaooGame_1_1Entities_1_1Entity_a5a7f4280a2e1f43d5e55940dfb8a00ad}} 
-float {\bfseries x}
-\item 
+float \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a5a7f4280a2e1f43d5e55940dfb8a00ad}{x}}
+\begin{DoxyCompactList}\small\item\em The x-\/coordinate of the entity\textquotesingle{}s position. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a754d9006adabe2bb959780f2f6ae0a00}\label{classPaooGame_1_1Entities_1_1Entity_a754d9006adabe2bb959780f2f6ae0a00}} 
-float {\bfseries y}
-\item 
+float \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a754d9006adabe2bb959780f2f6ae0a00}{y}}
+\begin{DoxyCompactList}\small\item\em The y-\/coordinate of the entity\textquotesingle{}s position. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a09c3e5217deb2f4b43a84bf64dc1beb7}\label{classPaooGame_1_1Entities_1_1Entity_a09c3e5217deb2f4b43a84bf64dc1beb7}} 
-int\mbox{[}$\,$\mbox{]} {\bfseries behavior\+IDs\+To\+Respect}
-\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a09c3e5217deb2f4b43a84bf64dc1beb7}{behavior\+IDs\+To\+Respect}}
+\begin{DoxyCompactList}\small\item\em Array of tile behavior IDs that this entity should respect or interact with. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a6173afe9a80119b98e55253a9dce6711}\label{classPaooGame_1_1Entities_1_1Entity_a6173afe9a80119b98e55253a9dce6711}} 
-boolean {\bfseries is\+Engaged}
-\item 
+boolean \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a6173afe9a80119b98e55253a9dce6711}{is\+Engaged}}
+\begin{DoxyCompactList}\small\item\em Flag indicating if the entity is currently engaged in combat or a specific interaction. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ac73c2597057b818609e856f813115d69}\label{classPaooGame_1_1Entities_1_1Entity_ac73c2597057b818609e856f813115d69}} 
-float {\bfseries gravity}
-\item 
+float \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_ac73c2597057b818609e856f813115d69}{gravity}}
+\begin{DoxyCompactList}\small\item\em The gravitational force applied to the entity. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ac0a6b0e49271594c6b2a12fa457c8216}\label{classPaooGame_1_1Entities_1_1Entity_ac0a6b0e49271594c6b2a12fa457c8216}} 
-float {\bfseries max\+Fall\+Speed}
-\item 
+float \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_ac0a6b0e49271594c6b2a12fa457c8216}{max\+Fall\+Speed}}
+\begin{DoxyCompactList}\small\item\em The maximum speed at which the entity can fall. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_af5db9a18fd080ac339d598cea6b23826}\label{classPaooGame_1_1Entities_1_1Entity_af5db9a18fd080ac339d598cea6b23826}} 
-float {\bfseries speed}
-\item 
+float \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_af5db9a18fd080ac339d598cea6b23826}{speed}}
+\begin{DoxyCompactList}\small\item\em The movement speed of the entity. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a82f065a949448571f52fd4cd2699e7ac}\label{classPaooGame_1_1Entities_1_1Entity_a82f065a949448571f52fd4cd2699e7ac}} 
-double {\bfseries health}
-\item 
+double \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a82f065a949448571f52fd4cd2699e7ac}{health}}
+\begin{DoxyCompactList}\small\item\em The current health of the entity. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ad1b4a6dcd093a4a2bca444708c0a1319}\label{classPaooGame_1_1Entities_1_1Entity_ad1b4a6dcd093a4a2bca444708c0a1319}} 
-double {\bfseries damage}
-\item 
+double \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_ad1b4a6dcd093a4a2bca444708c0a1319}{damage}}
+\begin{DoxyCompactList}\small\item\em The amount of damage this entity can inflict. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_af67d200b51dcdf3669009d3322f829f5}\label{classPaooGame_1_1Entities_1_1Entity_af67d200b51dcdf3669009d3322f829f5}} 
-boolean {\bfseries is\+Grounded}
-\item 
+boolean \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_af67d200b51dcdf3669009d3322f829f5}{is\+Grounded}}
+\begin{DoxyCompactList}\small\item\em Flag indicating if the entity is currently on the ground. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ae5f46a35584387af29ac49da5a43c5ea}\label{classPaooGame_1_1Entities_1_1Entity_ae5f46a35584387af29ac49da5a43c5ea}} 
-boolean {\bfseries flipped}
-\item 
+boolean \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_ae5f46a35584387af29ac49da5a43c5ea}{flipped}}
+\begin{DoxyCompactList}\small\item\em Flag indicating if the entity\textquotesingle{}s sprite should be flipped horizontally. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_aa69542bc8275bf0e4a7e983a85353059}\label{classPaooGame_1_1Entities_1_1Entity_aa69542bc8275bf0e4a7e983a85353059}} 
-\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} {\bfseries hitbox}
-\item 
+\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_aa69542bc8275bf0e4a7e983a85353059}{hitbox}}
+\begin{DoxyCompactList}\small\item\em The hitbox used for collision detection. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a39134c8191ec2a293415d65d621f4e3e}\label{classPaooGame_1_1Entities_1_1Entity_a39134c8191ec2a293415d65d621f4e3e}} 
-\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} {\bfseries reflink}
-\item 
+\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a39134c8191ec2a293415d65d621f4e3e}{reflink}}
+\begin{DoxyCompactList}\small\item\em A reference to shared game resources and utilities. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ac7a5cab7d370e9cf3983827eef35d264}\label{classPaooGame_1_1Entities_1_1Entity_ac7a5cab7d370e9cf3983827eef35d264}} 
-float {\bfseries velocityX}
-\item 
+float \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_ac7a5cab7d370e9cf3983827eef35d264}{velocityX}}
+\begin{DoxyCompactList}\small\item\em The entity\textquotesingle{}s current velocity on the x-\/axis. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_afbbb7e0d7668467ce3b2dfc637a44a28}\label{classPaooGame_1_1Entities_1_1Entity_afbbb7e0d7668467ce3b2dfc637a44a28}} 
-float {\bfseries velocityY}
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a841683ffac31262479e454dbe43712b1}\label{classPaooGame_1_1Entities_1_1Entity_a841683ffac31262479e454dbe43712b1}} 
-float {\bfseries hitbox\+OffsetX} = 0
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a0f3477aef1039a1a9462b0ad6fbe952c}\label{classPaooGame_1_1Entities_1_1Entity_a0f3477aef1039a1a9462b0ad6fbe952c}} 
-float {\bfseries hitbox\+OffsetY} = 0
-\end{DoxyCompactItemize}
+float \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_afbbb7e0d7668467ce3b2dfc637a44a28}{velocityY}}
+\begin{DoxyCompactList}\small\item\em The entity\textquotesingle{}s current velocity on the y-\/axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An abstract base class for all game entities (e.\+g., Player, \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy}{Enemy}}). 
+
+This class provides common properties and functionalities for game entities, such as position, health, hitbox, and rendering. It defines abstract methods that subclasses must implement to define specific behaviors and appearances. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ac9ee430d9bfbcdbf90dd327224f64688}\label{classPaooGame_1_1Entities_1_1Entity_ac9ee430d9bfbcdbf90dd327224f64688}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}}
+{\footnotesize\ttfamily Paoo\+Game.\+Entities.\+Entity.\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}}}]{reflink,  }\item[{int}]{startX,  }\item[{int}]{startY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs an \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity}{Entity}} object. 
+
+Initializes the entity\textquotesingle{}s position, health bar, references, and default physics properties. 
+\begin{DoxyParams}{Parameters}
+{\em reflink} & A reference to shared game resources. \\
+\hline
+{\em startX} & The initial x-\/coordinate of the entity. \\
+\hline
+{\em startY} & The initial y-\/coordinate of the entity. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ab3bba8b3192c08c332871b7faa44ddcd}\label{classPaooGame_1_1Entities_1_1Entity_ab3bba8b3192c08c332871b7faa44ddcd}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!applyGravity@{applyGravity}}
+\index{applyGravity@{applyGravity}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{applyGravity()}{applyGravity()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Entity.\+apply\+Gravity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Applies gravitational force to the entity if it is not grounded. 
+
+Increases the vertical velocity (velocityY) by the gravity amount, up to the maximum fall speed. \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a04f3ee24c766e00bc86239363a11bc8d}\label{classPaooGame_1_1Entities_1_1Entity_a04f3ee24c766e00bc86239363a11bc8d}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!draw@{draw}}
+\index{draw@{draw}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Entity.\+draw (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Draws the entity on the screen using its current animation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The Graphics context to draw on. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC_aac3e62840d2904b6bf76fc70992619ce}{Paoo\+Game.\+Entities.\+NPC}}, and \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Hero_acd7908e0c603876d2486845be56017a8}{Paoo\+Game.\+Entities.\+Hero}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_af35e9ed0f19e6be0e0e305cb109c0c33}\label{classPaooGame_1_1Entities_1_1Entity_af35e9ed0f19e6be0e0e305cb109c0c33}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!DrawHealthBar@{DrawHealthBar}}
+\index{DrawHealthBar@{DrawHealthBar}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{DrawHealthBar()}{DrawHealthBar()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Entity.\+Draw\+Health\+Bar (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Draws the entity\textquotesingle{}s health bar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The Graphics context to draw on. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a720a90333cbf2d29327b9e60ef669672}\label{classPaooGame_1_1Entities_1_1Entity_a720a90333cbf2d29327b9e60ef669672}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getAnimationByState@{getAnimationByState}}
+\index{getAnimationByState@{getAnimationByState}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getAnimationByState()}{getAnimationByState()}}
+{\footnotesize\ttfamily abstract \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation}{Animation}} Paoo\+Game.\+Entities.\+Entity.\+get\+Animation\+By\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}, {\ttfamily [protected]}}
+
+
+
+Abstract method for retrieving the current animation based on the entity\textquotesingle{}s state. 
+
+\begin{DoxyReturn}{Returns}
+The Animation object corresponding to the current state. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC_a8c7720f9e1e4926149c3fa5082d9cbfd}{Paoo\+Game.\+Entities.\+NPC}}, \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Hero_ac88a3c111419533753f48dd88769eae0}{Paoo\+Game.\+Entities.\+Hero}}, and \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_a54110eaac96d4485782d5bed5767cd49}{Paoo\+Game.\+Entities.\+Enemy}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a550a87f558004ebf49887e38af2c2f6e}\label{classPaooGame_1_1Entities_1_1Entity_a550a87f558004ebf49887e38af2c2f6e}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getDamage@{getDamage}}
+\index{getDamage@{getDamage}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getDamage()}{getDamage()}}
+{\footnotesize\ttfamily double Paoo\+Game.\+Entities.\+Entity.\+get\+Damage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the damage value of the entity. 
+
+\begin{DoxyReturn}{Returns}
+The amount of damage the entity inflicts. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a5883aecae984cff302dc1db89a93d241}\label{classPaooGame_1_1Entities_1_1Entity_a5883aecae984cff302dc1db89a93d241}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getHealth@{getHealth}}
+\index{getHealth@{getHealth}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getHealth()}{getHealth()}}
+{\footnotesize\ttfamily double Paoo\+Game.\+Entities.\+Entity.\+get\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current health of the entity. 
+
+\begin{DoxyReturn}{Returns}
+The current health value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ad20f82d7ea3449d60cdb9811ce5cce8c}\label{classPaooGame_1_1Entities_1_1Entity_ad20f82d7ea3449d60cdb9811ce5cce8c}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getHealthBar@{getHealthBar}}
+\index{getHealthBar@{getHealthBar}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getHealthBar()}{getHealthBar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HealthBar}{Health\+Bar}} Paoo\+Game.\+Entities.\+Entity.\+get\+Health\+Bar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the health bar associated with this entity. 
+
+\begin{DoxyReturn}{Returns}
+The Health\+Bar object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a9e2eb0574cccae1cca2f796ce88b90ec}\label{classPaooGame_1_1Entities_1_1Entity_a9e2eb0574cccae1cca2f796ce88b90ec}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getHealthBarColor1@{getHealthBarColor1}}
+\index{getHealthBarColor1@{getHealthBarColor1}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getHealthBarColor1()}{getHealthBarColor1()}}
+{\footnotesize\ttfamily Color Paoo\+Game.\+Entities.\+Entity.\+get\+Health\+Bar\+Color1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the primary color of the health bar. 
+
+\begin{DoxyReturn}{Returns}
+The primary Color object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a54602d0b1b70210b6677643c6a1b75d5}\label{classPaooGame_1_1Entities_1_1Entity_a54602d0b1b70210b6677643c6a1b75d5}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getHealthBarColor2@{getHealthBarColor2}}
+\index{getHealthBarColor2@{getHealthBarColor2}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getHealthBarColor2()}{getHealthBarColor2()}}
+{\footnotesize\ttfamily Color Paoo\+Game.\+Entities.\+Entity.\+get\+Health\+Bar\+Color2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the secondary color of the health bar. 
+
+\begin{DoxyReturn}{Returns}
+The secondary Color object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a3a7b69d47db905f691e2a36318a75a67}\label{classPaooGame_1_1Entities_1_1Entity_a3a7b69d47db905f691e2a36318a75a67}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getHealthBarHeight@{getHealthBarHeight}}
+\index{getHealthBarHeight@{getHealthBarHeight}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getHealthBarHeight()}{getHealthBarHeight()}}
+{\footnotesize\ttfamily int Paoo\+Game.\+Entities.\+Entity.\+get\+Health\+Bar\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the height of the health bar. 
+
+\begin{DoxyReturn}{Returns}
+The height of the health bar. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ad549b5fa0269b45317c25b89cb0e214b}\label{classPaooGame_1_1Entities_1_1Entity_ad549b5fa0269b45317c25b89cb0e214b}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getHealthBarWidth@{getHealthBarWidth}}
+\index{getHealthBarWidth@{getHealthBarWidth}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getHealthBarWidth()}{getHealthBarWidth()}}
+{\footnotesize\ttfamily int Paoo\+Game.\+Entities.\+Entity.\+get\+Health\+Bar\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the width of the health bar. 
+
+\begin{DoxyReturn}{Returns}
+The width of the health bar. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_aa716b3d315c6befe5614a00de221db45}\label{classPaooGame_1_1Entities_1_1Entity_aa716b3d315c6befe5614a00de221db45}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getHealthBarX@{getHealthBarX}}
+\index{getHealthBarX@{getHealthBarX}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getHealthBarX()}{getHealthBarX()}}
+{\footnotesize\ttfamily int Paoo\+Game.\+Entities.\+Entity.\+get\+Health\+BarX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the x-\/coordinate of the health bar. 
+
+\begin{DoxyReturn}{Returns}
+The x-\/coordinate of the health bar. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_aa3444bcb533dabfb3ba11fc5d5936ebc}\label{classPaooGame_1_1Entities_1_1Entity_aa3444bcb533dabfb3ba11fc5d5936ebc}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getHealthBarY@{getHealthBarY}}
+\index{getHealthBarY@{getHealthBarY}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getHealthBarY()}{getHealthBarY()}}
+{\footnotesize\ttfamily int Paoo\+Game.\+Entities.\+Entity.\+get\+Health\+BarY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the y-\/coordinate of the health bar. 
+
+\begin{DoxyReturn}{Returns}
+The y-\/coordinate of the health bar. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ad65597fcd4a970f144d4b1b231971a13}\label{classPaooGame_1_1Entities_1_1Entity_ad65597fcd4a970f144d4b1b231971a13}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily float Paoo\+Game.\+Entities.\+Entity.\+get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the height of the entity\textquotesingle{}s hitbox. 
+
+\begin{DoxyReturn}{Returns}
+The height of the hitbox. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a7e8246dc9f7aa92b57c17adff714a995}\label{classPaooGame_1_1Entities_1_1Entity_a7e8246dc9f7aa92b57c17adff714a995}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getHitbox@{getHitbox}}
+\index{getHitbox@{getHitbox}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getHitbox()}{getHitbox()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} Paoo\+Game.\+Entities.\+Entity.\+get\+Hitbox (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the hitbox of the entity. 
+
+\begin{DoxyReturn}{Returns}
+The Hitbox object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_abfaf1c8f846c7d57d547b5f1b2b16baa}\label{classPaooGame_1_1Entities_1_1Entity_abfaf1c8f846c7d57d547b5f1b2b16baa}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getIsEngaged@{getIsEngaged}}
+\index{getIsEngaged@{getIsEngaged}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getIsEngaged()}{getIsEngaged()}}
+{\footnotesize\ttfamily boolean Paoo\+Game.\+Entities.\+Entity.\+get\+Is\+Engaged (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the entity is currently engaged. 
+
+\begin{DoxyReturn}{Returns}
+True if engaged, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_aca92255f686d5a823a870832052d4568}\label{classPaooGame_1_1Entities_1_1Entity_aca92255f686d5a823a870832052d4568}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getIsFlipped@{getIsFlipped}}
+\index{getIsFlipped@{getIsFlipped}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getIsFlipped()}{getIsFlipped()}}
+{\footnotesize\ttfamily boolean Paoo\+Game.\+Entities.\+Entity.\+get\+Is\+Flipped (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the entity\textquotesingle{}s sprite is currently flipped. 
+
+\begin{DoxyReturn}{Returns}
+True if flipped, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a9799c0ae8d84476e423066f29e74048c}\label{classPaooGame_1_1Entities_1_1Entity_a9799c0ae8d84476e423066f29e74048c}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getName@{getName}}
+\index{getName@{getName}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily abstract String Paoo\+Game.\+Entities.\+Entity.\+get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Abstract method to get the name of the entity. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the entity\textquotesingle{}s name. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC_aaf1320c87fceda8896510cd8b5d62fbf}{Paoo\+Game.\+Entities.\+NPC}}, \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Hero_aac5b6469c151f5e42083684d38b26646}{Paoo\+Game.\+Entities.\+Hero}}, and \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_ab84284e71152f1bd347348f5962c88ad}{Paoo\+Game.\+Entities.\+Enemy}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ac1fa5f16c7311eaf764db9f8d37a63f1}\label{classPaooGame_1_1Entities_1_1Entity_ac1fa5f16c7311eaf764db9f8d37a63f1}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getSource@{getSource}}
+\index{getSource@{getSource}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getSource()}{getSource()}}
+{\footnotesize\ttfamily abstract String Paoo\+Game.\+Entities.\+Entity.\+get\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Abstract method to get the source path for the entity\textquotesingle{}s sprites or assets. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the asset source path. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC_a470be7dd379d5030303f3ec12dffaa80}{Paoo\+Game.\+Entities.\+NPC}}, \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Hero_a2f63e54157cfb714c6ffbf5ad6c7401d}{Paoo\+Game.\+Entities.\+Hero}}, and \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_a38a7cfcb88435dbe374486435ce5c3e2}{Paoo\+Game.\+Entities.\+Enemy}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a9e5cb2edcb76acfc95af1d9c97ca7b1d}\label{classPaooGame_1_1Entities_1_1Entity_a9e5cb2edcb76acfc95af1d9c97ca7b1d}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getVelocityX@{getVelocityX}}
+\index{getVelocityX@{getVelocityX}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getVelocityX()}{getVelocityX()}}
+{\footnotesize\ttfamily float Paoo\+Game.\+Entities.\+Entity.\+get\+VelocityX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the entity\textquotesingle{}s current velocity on the x-\/axis. 
+
+\begin{DoxyReturn}{Returns}
+The x-\/axis velocity. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_aba3b2e9dcfa2b686dc7a9b4091ea7654}\label{classPaooGame_1_1Entities_1_1Entity_aba3b2e9dcfa2b686dc7a9b4091ea7654}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getVelocityY@{getVelocityY}}
+\index{getVelocityY@{getVelocityY}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getVelocityY()}{getVelocityY()}}
+{\footnotesize\ttfamily float Paoo\+Game.\+Entities.\+Entity.\+get\+VelocityY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the entity\textquotesingle{}s current velocity on the y-\/axis. 
+
+\begin{DoxyReturn}{Returns}
+The y-\/axis velocity. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a24e6fd99de2f54be543ef38439f23631}\label{classPaooGame_1_1Entities_1_1Entity_a24e6fd99de2f54be543ef38439f23631}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily float Paoo\+Game.\+Entities.\+Entity.\+get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the width of the entity\textquotesingle{}s hitbox. 
+
+\begin{DoxyReturn}{Returns}
+The width of the hitbox. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_aca135637541e81579a66b0312e7185dc}\label{classPaooGame_1_1Entities_1_1Entity_aca135637541e81579a66b0312e7185dc}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getX@{getX}}
+\index{getX@{getX}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily float Paoo\+Game.\+Entities.\+Entity.\+getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the x-\/coordinate of the entity. 
+
+\begin{DoxyReturn}{Returns}
+The current x-\/coordinate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a86ebd2ff06da83bc638ddff41b3ab6f9}\label{classPaooGame_1_1Entities_1_1Entity_a86ebd2ff06da83bc638ddff41b3ab6f9}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!getY@{getY}}
+\index{getY@{getY}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily float Paoo\+Game.\+Entities.\+Entity.\+getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the y-\/coordinate of the entity. 
+
+\begin{DoxyReturn}{Returns}
+The current y-\/coordinate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_acd3a7f2558ed324785228ba7d6c21303}\label{classPaooGame_1_1Entities_1_1Entity_acd3a7f2558ed324785228ba7d6c21303}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!moveAndCollide@{moveAndCollide}}
+\index{moveAndCollide@{moveAndCollide}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{moveAndCollide()}{moveAndCollide()}}
+{\footnotesize\ttfamily abstract void Paoo\+Game.\+Entities.\+Entity.\+move\+And\+Collide (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}, {\ttfamily [protected]}}
+
+
+
+Abstract method for handling entity movement and collision detection. 
+
+Subclasses must implement this to define how the entity moves and interacts with its environment. 
+
+Reimplemented in \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC_a688aeebfa87f4647841cdd2655128047}{Paoo\+Game.\+Entities.\+NPC}}, \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Hero_a71f2abcf94fdfc861fade688bb407f6e}{Paoo\+Game.\+Entities.\+Hero}}, and \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_a70fe84331f8d4cc74721488afad3fafe}{Paoo\+Game.\+Entities.\+Enemy}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a6f4b3c97b647c249dedbe507ebf7656a}\label{classPaooGame_1_1Entities_1_1Entity_a6f4b3c97b647c249dedbe507ebf7656a}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!reduceHealth@{reduceHealth}}
+\index{reduceHealth@{reduceHealth}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{reduceHealth()}{reduceHealth()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Entity.\+reduce\+Health (\begin{DoxyParamCaption}\item[{double}]{health }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reduces the entity\textquotesingle{}s health by a specified amount. Health will not go below 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em health} & The amount of health to reduce. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_add537c8bab2c3c9bf4725888ce8f0f10}\label{classPaooGame_1_1Entities_1_1Entity_add537c8bab2c3c9bf4725888ce8f0f10}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!restoreHealth@{restoreHealth}}
+\index{restoreHealth@{restoreHealth}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{restoreHealth()}{restoreHealth()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Entity.\+restore\+Health (\begin{DoxyParamCaption}\item[{double}]{health }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Restores the entity\textquotesingle{}s health by a specified amount. Health will not exceed 100 (or a predefined maximum). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em health} & The amount of health to restore. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ae29a5d88a8b9d70a0a36015d74e0c255}\label{classPaooGame_1_1Entities_1_1Entity_ae29a5d88a8b9d70a0a36015d74e0c255}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!setDamage@{setDamage}}
+\index{setDamage@{setDamage}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{setDamage()}{setDamage()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Entity.\+set\+Damage (\begin{DoxyParamCaption}\item[{double}]{damage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the damage value for the entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em damage} & The new damage value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_afc980546f47d3c5e75cc5fb6022586b9}\label{classPaooGame_1_1Entities_1_1Entity_afc980546f47d3c5e75cc5fb6022586b9}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!setHealth@{setHealth}}
+\index{setHealth@{setHealth}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{setHealth()}{setHealth()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Entity.\+set\+Health (\begin{DoxyParamCaption}\item[{double}]{health }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the health of the entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em health} & The new health value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ac87cc8914c90d30d7f3c498b0b52309e}\label{classPaooGame_1_1Entities_1_1Entity_ac87cc8914c90d30d7f3c498b0b52309e}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!setHealthBarColor1@{setHealthBarColor1}}
+\index{setHealthBarColor1@{setHealthBarColor1}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{setHealthBarColor1()}{setHealthBarColor1()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Entity.\+set\+Health\+Bar\+Color1 (\begin{DoxyParamCaption}\item[{Color}]{color1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the primary color of the health bar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color1} & The new primary Color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a0a07a8d4f07bc16bac999a9a0c48f125}\label{classPaooGame_1_1Entities_1_1Entity_a0a07a8d4f07bc16bac999a9a0c48f125}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!setHealthBarColor2@{setHealthBarColor2}}
+\index{setHealthBarColor2@{setHealthBarColor2}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{setHealthBarColor2()}{setHealthBarColor2()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Entity.\+set\+Health\+Bar\+Color2 (\begin{DoxyParamCaption}\item[{Color}]{color2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the secondary color of the health bar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color2} & The new secondary Color. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_adbbf832891a7ed89935283faa1728ebf}\label{classPaooGame_1_1Entities_1_1Entity_adbbf832891a7ed89935283faa1728ebf}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!setHealthBarHeight@{setHealthBarHeight}}
+\index{setHealthBarHeight@{setHealthBarHeight}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{setHealthBarHeight()}{setHealthBarHeight()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Entity.\+set\+Health\+Bar\+Height (\begin{DoxyParamCaption}\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the height of the health bar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The new height for the health bar. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_aabbb741ad7196c95de5f9d98c8206211}\label{classPaooGame_1_1Entities_1_1Entity_aabbb741ad7196c95de5f9d98c8206211}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!setHealthBarWidth@{setHealthBarWidth}}
+\index{setHealthBarWidth@{setHealthBarWidth}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{setHealthBarWidth()}{setHealthBarWidth()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Entity.\+set\+Health\+Bar\+Width (\begin{DoxyParamCaption}\item[{int}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the width of the health bar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The new width for the health bar. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a42fcee2d3c5efa59e59025b783148d45}\label{classPaooGame_1_1Entities_1_1Entity_a42fcee2d3c5efa59e59025b783148d45}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!setHealthBarX@{setHealthBarX}}
+\index{setHealthBarX@{setHealthBarX}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{setHealthBarX()}{setHealthBarX()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Entity.\+set\+Health\+BarX (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the x-\/coordinate of the health bar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The new x-\/coordinate for the health bar. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a7c81f1b0748349fabb7e9a6d435f8f2a}\label{classPaooGame_1_1Entities_1_1Entity_a7c81f1b0748349fabb7e9a6d435f8f2a}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!setHealthBarY@{setHealthBarY}}
+\index{setHealthBarY@{setHealthBarY}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{setHealthBarY()}{setHealthBarY()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Entity.\+set\+Health\+BarY (\begin{DoxyParamCaption}\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the y-\/coordinate of the health bar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & The new y-\/coordinate for the health bar. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_ae017eda742896804402c0babf55b3a61}\label{classPaooGame_1_1Entities_1_1Entity_ae017eda742896804402c0babf55b3a61}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!setHitbox@{setHitbox}}
+\index{setHitbox@{setHitbox}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{setHitbox()}{setHitbox()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Entity.\+set\+Hitbox (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}}}]{hitbox }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the hitbox for the entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hitbox} & The new Hitbox object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a385a8922e8cfd820fa945bf242212332}\label{classPaooGame_1_1Entities_1_1Entity_a385a8922e8cfd820fa945bf242212332}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!setIsEngaged@{setIsEngaged}}
+\index{setIsEngaged@{setIsEngaged}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{setIsEngaged()}{setIsEngaged()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Entity.\+set\+Is\+Engaged (\begin{DoxyParamCaption}\item[{boolean}]{is\+Engaged }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the engagement status of the entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Engaged} & True to set as engaged, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a04e16db596d0e02ff5b4bb044540b55d}\label{classPaooGame_1_1Entities_1_1Entity_a04e16db596d0e02ff5b4bb044540b55d}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!setIsFlipped@{setIsFlipped}}
+\index{setIsFlipped@{setIsFlipped}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{setIsFlipped()}{setIsFlipped()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Entity.\+set\+Is\+Flipped (\begin{DoxyParamCaption}\item[{boolean}]{flipped }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets whether the entity\textquotesingle{}s sprite should be flipped horizontally. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flipped} & True to flip, false otherwise. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a1fef6592c1538338be910a21d03ad342}\label{classPaooGame_1_1Entities_1_1Entity_a1fef6592c1538338be910a21d03ad342}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!setX@{setX}}
+\index{setX@{setX}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{setX()}{setX()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Entity.\+setX (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the x-\/coordinate of the entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The new x-\/coordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_aad6d0a3d96378218d9a53dd57887b4fd}\label{classPaooGame_1_1Entities_1_1Entity_aad6d0a3d96378218d9a53dd57887b4fd}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!setY@{setY}}
+\index{setY@{setY}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{setY()}{setY()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Entity.\+setY (\begin{DoxyParamCaption}\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the y-\/coordinate of the entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & The new y-\/coordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a609ed68e1ccbe4909eaa72c893d54e0c}\label{classPaooGame_1_1Entities_1_1Entity_a609ed68e1ccbe4909eaa72c893d54e0c}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!update@{update}}
+\index{update@{update}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily abstract void Paoo\+Game.\+Entities.\+Entity.\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Abstract method for updating the entity\textquotesingle{}s state. 
+
+Subclasses must implement this to define the entity\textquotesingle{}s logic per game tick. 
+
+Reimplemented in \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC_aa505d396a39c40d52c9de2fe4179a7c2}{Paoo\+Game.\+Entities.\+NPC}}, \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Hero_a1fb145d3497cebdf0cb95ef7f370746c}{Paoo\+Game.\+Entities.\+Hero}}, and \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_a3932c03bad343bbd076499ed9151b172}{Paoo\+Game.\+Entities.\+Enemy}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a979b0cb8ca9e01a36c5e9683b900eefe}\label{classPaooGame_1_1Entities_1_1Entity_a979b0cb8ca9e01a36c5e9683b900eefe}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!updateAnimationState@{updateAnimationState}}
+\index{updateAnimationState@{updateAnimationState}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{updateAnimationState()}{updateAnimationState()}}
+{\footnotesize\ttfamily abstract void Paoo\+Game.\+Entities.\+Entity.\+update\+Animation\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}, {\ttfamily [protected]}}
+
+
+
+Abstract method for updating the entity\textquotesingle{}s animation state. 
+
+Subclasses must implement this to manage transitions between different animations. 
+
+Reimplemented in \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC_ae3c46d36794e760ebfac73bf867c820b}{Paoo\+Game.\+Entities.\+NPC}}, \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Hero_abb23269305463b29befa0b1ccdb4329e}{Paoo\+Game.\+Entities.\+Hero}}, and \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_a23b261d65babd8b65e9efc28e7302ada}{Paoo\+Game.\+Entities.\+Enemy}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Entity_a1ee8496dd57eb06716d84b49a4e9362a}\label{classPaooGame_1_1Entities_1_1Entity_a1ee8496dd57eb06716d84b49a4e9362a}} 
+\index{PaooGame.Entities.Entity@{PaooGame.Entities.Entity}!updateVisualPosition@{updateVisualPosition}}
+\index{updateVisualPosition@{updateVisualPosition}!PaooGame.Entities.Entity@{PaooGame.Entities.Entity}}
+\doxysubsubsection{\texorpdfstring{updateVisualPosition()}{updateVisualPosition()}}
+{\footnotesize\ttfamily abstract void Paoo\+Game.\+Entities.\+Entity.\+update\+Visual\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}, {\ttfamily [protected]}}
+
+
+
+Abstract method for updating the entity\textquotesingle{}s visual position. 
+
+Typically used to synchronize the drawing position with the hitbox or logical position. 
+
+Reimplemented in \mbox{\hyperlink{classPaooGame_1_1Entities_1_1NPC_a62b9ab0a9457d17efb2d9d3344d6baac}{Paoo\+Game.\+Entities.\+NPC}}, \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Hero_a40b261c366d4874f66d6d315a7630181}{Paoo\+Game.\+Entities.\+Hero}}, and \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_af8169ba9a2a446ce2ecf20c8d1449b69}{Paoo\+Game.\+Entities.\+Enemy}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

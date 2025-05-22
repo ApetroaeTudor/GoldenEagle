@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation}\index{PaooGame.Animations.NpcAnimations.StaticAnimation@{PaooGame.Animations.NpcAnimations.StaticAnimation}}
 
 
-Inheritance diagram for Paoo\+Game.\+Animations.\+Npc\+Animations.\+Static\+Animation\+:
-\nopagebreak
+Represents a static, non-\/animated image.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+Animations.\+Npc\+Animations.\+Static\+Animation\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+Animations.\+Npc\+Animations.\+Static\+Anim
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+Animations.\+Npc\+Animations.\+Static\+Animation\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+Animations.\+Npc\+Animations.\+Static\+Animation\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,22 +26,75 @@ Collaboration diagram for Paoo\+Game.\+Animations.\+Npc\+Animations.\+Static\+An
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation_ae6c684c277886da20727db4f00a94f17}\label{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation_ae6c684c277886da20727db4f00a94f17}} 
-{\bfseries Static\+Animation} (Buffered\+Image frame)
-\item 
+\mbox{\hyperlink{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation_ae6c684c277886da20727db4f00a94f17}{Static\+Animation}} (Buffered\+Image frame)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation}{Static\+Animation}} object with a single image frame. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation_af6d40f9543d7aeaa8dd9dd43cd583839}\label{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation_af6d40f9543d7aeaa8dd9dd43cd583839}} 
-void {\bfseries load\+Animation} ()
-\item 
+void \mbox{\hyperlink{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation_af6d40f9543d7aeaa8dd9dd43cd583839}{load\+Animation}} ()
+\begin{DoxyCompactList}\small\item\em No operation for static animation. Since it\textquotesingle{}s a single static frame, no loading of an animation sequence is needed. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation_ad42c761439799c4f11d87bb19add67cf}\label{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation_ad42c761439799c4f11d87bb19add67cf}} 
-void {\bfseries update\+Animation} ()
-\item 
+void \mbox{\hyperlink{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation_ad42c761439799c4f11d87bb19add67cf}{update\+Animation}} ()
+\begin{DoxyCompactList}\small\item\em No operation for static animation. A static image does not change over time, so no update logic is required. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation_ab09e2fdfd86bdd2ab5e9044a6fc425c1}\label{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation_ab09e2fdfd86bdd2ab5e9044a6fc425c1}} 
-void {\bfseries trigger\+Once} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation_ab4a99aed756d380fd18f10a3ae2d466b}\label{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation_ab4a99aed756d380fd18f10a3ae2d466b}} 
-void {\bfseries paint\+Animation} (Graphics g, int x, int y, boolean flipped, double scale)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation_ab09e2fdfd86bdd2ab5e9044a6fc425c1}{trigger\+Once}} ()
+\begin{DoxyCompactList}\small\item\em No operation for static animation. The concept of \char`\"{}triggering once\char`\"{} does not apply to a static image. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation_ab4a99aed756d380fd18f10a3ae2d466b}{paint\+Animation}} (Graphics g, int x, int y, boolean flipped, double scale)
+\begin{DoxyCompactList}\small\item\em Renders the static image at the specified position and scale. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a static, non-\/animated image. 
+
+This class extends the base \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation}{Animation}} class but is designed to display a single, unchanging image. It does not perform any animation updates or loading of multiple frames. It\textquotesingle{}s suitable for entities or elements that have a fixed visual representation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation_ae6c684c277886da20727db4f00a94f17}\label{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation_ae6c684c277886da20727db4f00a94f17}} 
+\index{PaooGame.Animations.NpcAnimations.StaticAnimation@{PaooGame.Animations.NpcAnimations.StaticAnimation}!StaticAnimation@{StaticAnimation}}
+\index{StaticAnimation@{StaticAnimation}!PaooGame.Animations.NpcAnimations.StaticAnimation@{PaooGame.Animations.NpcAnimations.StaticAnimation}}
+\doxysubsubsection{\texorpdfstring{StaticAnimation()}{StaticAnimation()}}
+{\footnotesize\ttfamily Paoo\+Game.\+Animations.\+Npc\+Animations.\+Static\+Animation.\+Static\+Animation (\begin{DoxyParamCaption}\item[{Buffered\+Image}]{frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation}{Static\+Animation}} object with a single image frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & The Buffered\+Image that represents the static image. \\
+\hline
+\end{DoxyParams}
+$<$ The width of the static image.
+
+$<$ The height of the static image.
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation_ab4a99aed756d380fd18f10a3ae2d466b}\label{classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation_ab4a99aed756d380fd18f10a3ae2d466b}} 
+\index{PaooGame.Animations.NpcAnimations.StaticAnimation@{PaooGame.Animations.NpcAnimations.StaticAnimation}!paintAnimation@{paintAnimation}}
+\index{paintAnimation@{paintAnimation}!PaooGame.Animations.NpcAnimations.StaticAnimation@{PaooGame.Animations.NpcAnimations.StaticAnimation}}
+\doxysubsubsection{\texorpdfstring{paintAnimation()}{paintAnimation()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Animations.\+Npc\+Animations.\+Static\+Animation.\+paint\+Animation (\begin{DoxyParamCaption}\item[{Graphics}]{g,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{boolean}]{flipped,  }\item[{double}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renders the static image at the specified position and scale. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The Graphics context to draw on. \\
+\hline
+{\em x} & The x-\/coordinate where the image should be drawn. \\
+\hline
+{\em y} & The y-\/coordinate where the image should be drawn. \\
+\hline
+{\em flipped} & A boolean indicating whether the image should be flipped horizontally. \\
+\hline
+{\em scale} & The scaling factor for the image. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_a4bbb89fb5709e550719394035b551e8c}{Paoo\+Game.\+Animations.\+Animation}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

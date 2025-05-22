@@ -72,13 +72,16 @@ $(function() {
 <div class="title">PaooGame.HUD.ContextHUD Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages and displays contextual messages to the player based on their proximity to predefined trigger zones.  
+ <a href="classPaooGame_1_1HUD_1_1ContextHUD.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for PaooGame.HUD.ContextHUD:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPaooGame_1_1HUD_1_1ContextHUD__inherit__graph.png" border="0" usemap="#aPaooGame_8HUD_8ContextHUD_inherit__map" alt="Inheritance graph"/></div>
 <map name="aPaooGame_8HUD_8ContextHUD_inherit__map" id="aPaooGame_8HUD_8ContextHUD_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,80,216,107"/>
-<area shape="rect" href="classPaooGame_1_1HUD_1_1HUD.html" title=" " alt="" coords="31,5,191,32"/>
+<area shape="rect" title="Manages and displays contextual messages to the player based on their proximity to predefined trigger..." alt="" coords="5,80,216,107"/>
+<area shape="rect" href="classPaooGame_1_1HUD_1_1HUD.html" title="An abstract base class for Heads&#45;Up Display (HUD) elements." alt="" coords="31,5,191,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -86,40 +89,183 @@ Collaboration diagram for PaooGame.HUD.ContextHUD:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPaooGame_1_1HUD_1_1ContextHUD__coll__graph.png" border="0" usemap="#aPaooGame_8HUD_8ContextHUD_coll__map" alt="Collaboration graph"/></div>
 <map name="aPaooGame_8HUD_8ContextHUD_coll__map" id="aPaooGame_8HUD_8ContextHUD_coll__map">
-<area shape="rect" title=" " alt="" coords="89,260,300,287"/>
-<area shape="rect" href="classPaooGame_1_1HUD_1_1HUD.html" title=" " alt="" coords="115,184,275,211"/>
-<area shape="rect" href="classPaooGame_1_1Entities_1_1Entity.html" title=" " alt="" coords="101,95,288,121"/>
-<area shape="rect" href="classPaooGame_1_1Hitbox_1_1Hitbox.html" title=" " alt="" coords="5,5,192,32"/>
-<area shape="rect" href="classPaooGame_1_1RefLinks.html" title=" " alt="" coords="216,5,368,32"/>
+<area shape="rect" title="Manages and displays contextual messages to the player based on their proximity to predefined trigger..." alt="" coords="89,260,300,287"/>
+<area shape="rect" href="classPaooGame_1_1HUD_1_1HUD.html" title="An abstract base class for Heads&#45;Up Display (HUD) elements." alt="" coords="115,184,275,211"/>
+<area shape="rect" href="classPaooGame_1_1Entities_1_1Entity.html" title="An abstract base class for all game entities (e.g., Player, Enemy)." alt="" coords="101,95,288,121"/>
+<area shape="rect" href="classPaooGame_1_1Hitbox_1_1Hitbox.html" title="Represents a rectangular area used for collision detection." alt="" coords="5,5,192,32"/>
+<area shape="rect" href="classPaooGame_1_1RefLinks.html" title="Provides a centralized way to access shared game objects and utilities." alt="" coords="216,5,368,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a85282d1430627ce0ee43a9c6f0123dca"><td class="memItemLeft" align="right" valign="top"><a id="a85282d1430627ce0ee43a9c6f0123dca"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ContextHUD</b> (<a class="el" href="classPaooGame_1_1Entities_1_1Hero.html">Hero</a> hero)</td></tr>
+<tr class="memitem:a85282d1430627ce0ee43a9c6f0123dca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1HUD_1_1ContextHUD.html#a85282d1430627ce0ee43a9c6f0123dca">ContextHUD</a> (<a class="el" href="classPaooGame_1_1Entities_1_1Hero.html">Hero</a> hero)</td></tr>
+<tr class="memdesc:a85282d1430627ce0ee43a9c6f0123dca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classPaooGame_1_1HUD_1_1ContextHUD.html" title="Manages and displays contextual messages to the player based on their proximity to predefined trigger...">ContextHUD</a> object associated with a specific hero.  <a href="classPaooGame_1_1HUD_1_1ContextHUD.html#a85282d1430627ce0ee43a9c6f0123dca">More...</a><br /></td></tr>
 <tr class="separator:a85282d1430627ce0ee43a9c6f0123dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a079b8619edb84f1a950de80618661c79"><td class="memItemLeft" align="right" valign="top"><a id="a079b8619edb84f1a950de80618661c79"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addTrigger</b> (<a class="el" href="classPaooGame_1_1HUD_1_1MessageTriggerZone.html">MessageTriggerZone</a> trigger)</td></tr>
+<tr class="memitem:a079b8619edb84f1a950de80618661c79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1HUD_1_1ContextHUD.html#a079b8619edb84f1a950de80618661c79">addTrigger</a> (<a class="el" href="classPaooGame_1_1HUD_1_1MessageTriggerZone.html">MessageTriggerZone</a> trigger)</td></tr>
+<tr class="memdesc:a079b8619edb84f1a950de80618661c79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new message trigger zone to this <a class="el" href="classPaooGame_1_1HUD_1_1ContextHUD.html" title="Manages and displays contextual messages to the player based on their proximity to predefined trigger...">ContextHUD</a>.  <a href="classPaooGame_1_1HUD_1_1ContextHUD.html#a079b8619edb84f1a950de80618661c79">More...</a><br /></td></tr>
 <tr class="separator:a079b8619edb84f1a950de80618661c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f2f83d16b9238c2d9b7cdf36ce35a2f"><td class="memItemLeft" align="right" valign="top"><a id="a6f2f83d16b9238c2d9b7cdf36ce35a2f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()</td></tr>
+<tr class="memitem:a6f2f83d16b9238c2d9b7cdf36ce35a2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1HUD_1_1ContextHUD.html#a6f2f83d16b9238c2d9b7cdf36ce35a2f">update</a> ()</td></tr>
+<tr class="memdesc:a6f2f83d16b9238c2d9b7cdf36ce35a2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the state of the <a class="el" href="classPaooGame_1_1HUD_1_1ContextHUD.html" title="Manages and displays contextual messages to the player based on their proximity to predefined trigger...">ContextHUD</a>.  <a href="classPaooGame_1_1HUD_1_1ContextHUD.html#a6f2f83d16b9238c2d9b7cdf36ce35a2f">More...</a><br /></td></tr>
 <tr class="separator:a6f2f83d16b9238c2d9b7cdf36ce35a2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53ed030f9e2f2bd2dd24f54ccbf4449c"><td class="memItemLeft" align="right" valign="top"><a id="a53ed030f9e2f2bd2dd24f54ccbf4449c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> (Graphics2D g2d)</td></tr>
+<tr class="memitem:a53ed030f9e2f2bd2dd24f54ccbf4449c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1HUD_1_1ContextHUD.html#a53ed030f9e2f2bd2dd24f54ccbf4449c">draw</a> (Graphics2D g2d)</td></tr>
+<tr class="memdesc:a53ed030f9e2f2bd2dd24f54ccbf4449c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the current contextual message on the screen if one is active.  <a href="classPaooGame_1_1HUD_1_1ContextHUD.html#a53ed030f9e2f2bd2dd24f54ccbf4449c">More...</a><br /></td></tr>
 <tr class="separator:a53ed030f9e2f2bd2dd24f54ccbf4449c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classPaooGame_1_1HUD_1_1HUD"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classPaooGame_1_1HUD_1_1HUD')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classPaooGame_1_1HUD_1_1HUD.html">PaooGame.HUD.HUD</a></td></tr>
-<tr class="memitem:a50e7cb758e6cb6b68b1eced141386e9b inherit pub_methods_classPaooGame_1_1HUD_1_1HUD"><td class="memItemLeft" align="right" valign="top"><a id="a50e7cb758e6cb6b68b1eced141386e9b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>HUD</b> (<a class="el" href="classPaooGame_1_1Entities_1_1Entity.html">Entity</a> entity)</td></tr>
+<tr class="memitem:a50e7cb758e6cb6b68b1eced141386e9b inherit pub_methods_classPaooGame_1_1HUD_1_1HUD"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1HUD_1_1HUD.html#a50e7cb758e6cb6b68b1eced141386e9b">HUD</a> (<a class="el" href="classPaooGame_1_1Entities_1_1Entity.html">Entity</a> <a class="el" href="classPaooGame_1_1HUD_1_1HUD.html#accc1cb241c0c34e56d63de683203119f">entity</a>)</td></tr>
+<tr class="memdesc:a50e7cb758e6cb6b68b1eced141386e9b inherit pub_methods_classPaooGame_1_1HUD_1_1HUD"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classPaooGame_1_1HUD_1_1HUD.html" title="An abstract base class for Heads-Up Display (HUD) elements.">HUD</a> object.  <a href="classPaooGame_1_1HUD_1_1HUD.html#a50e7cb758e6cb6b68b1eced141386e9b">More...</a><br /></td></tr>
 <tr class="separator:a50e7cb758e6cb6b68b1eced141386e9b inherit pub_methods_classPaooGame_1_1HUD_1_1HUD"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classPaooGame_1_1HUD_1_1HUD"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classPaooGame_1_1HUD_1_1HUD')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classPaooGame_1_1HUD_1_1HUD.html">PaooGame.HUD.HUD</a></td></tr>
 <tr class="memitem:accc1cb241c0c34e56d63de683203119f inherit pro_attribs_classPaooGame_1_1HUD_1_1HUD"><td class="memItemLeft" align="right" valign="top"><a id="accc1cb241c0c34e56d63de683203119f"></a>
-<a class="el" href="classPaooGame_1_1Entities_1_1Entity.html">Entity</a>&#160;</td><td class="memItemRight" valign="bottom"><b>entity</b></td></tr>
+<a class="el" href="classPaooGame_1_1Entities_1_1Entity.html">Entity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1HUD_1_1HUD.html#accc1cb241c0c34e56d63de683203119f">entity</a></td></tr>
+<tr class="memdesc:accc1cb241c0c34e56d63de683203119f inherit pro_attribs_classPaooGame_1_1HUD_1_1HUD"><td class="mdescLeft">&#160;</td><td class="mdescRight">The game entity this <a class="el" href="classPaooGame_1_1HUD_1_1HUD.html" title="An abstract base class for Heads-Up Display (HUD) elements.">HUD</a> element is associated with or relates to. <br /></td></tr>
 <tr class="separator:accc1cb241c0c34e56d63de683203119f inherit pro_attribs_classPaooGame_1_1HUD_1_1HUD"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages and displays contextual messages to the player based on their proximity to predefined trigger zones. </p>
+<p>This <a class="el" href="classPaooGame_1_1HUD_1_1HUD.html" title="An abstract base class for Heads-Up Display (HUD) elements.">HUD</a> element is associated with a <a class="el" href="">Hero</a> and contains a list of <a class="el" href="classPaooGame_1_1HUD_1_1MessageTriggerZone.html">MessageTriggerZone</a> objects. When the hero enters a trigger zone, a corresponding message is displayed on the screen for a set duration. The message is typically shown at a fixed position near the top of the game window. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a85282d1430627ce0ee43a9c6f0123dca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85282d1430627ce0ee43a9c6f0123dca">&#9670;&nbsp;</a></span>ContextHUD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PaooGame.HUD.ContextHUD.ContextHUD </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPaooGame_1_1Entities_1_1Hero.html">Hero</a>&#160;</td>
+          <td class="paramname"><em>hero</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="classPaooGame_1_1HUD_1_1ContextHUD.html" title="Manages and displays contextual messages to the player based on their proximity to predefined trigger...">ContextHUD</a> object associated with a specific hero. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hero</td><td>The hero entity whose interactions will trigger contextual messages. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a079b8619edb84f1a950de80618661c79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a079b8619edb84f1a950de80618661c79">&#9670;&nbsp;</a></span>addTrigger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.HUD.ContextHUD.addTrigger </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPaooGame_1_1HUD_1_1MessageTriggerZone.html">MessageTriggerZone</a>&#160;</td>
+          <td class="paramname"><em>trigger</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a new message trigger zone to this <a class="el" href="classPaooGame_1_1HUD_1_1ContextHUD.html" title="Manages and displays contextual messages to the player based on their proximity to predefined trigger...">ContextHUD</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">trigger</td><td>The <a class="el" href="classPaooGame_1_1HUD_1_1MessageTriggerZone.html">MessageTriggerZone</a> to be added. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a53ed030f9e2f2bd2dd24f54ccbf4449c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53ed030f9e2f2bd2dd24f54ccbf4449c">&#9670;&nbsp;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.HUD.ContextHUD.draw </td>
+          <td>(</td>
+          <td class="paramtype">Graphics2D&#160;</td>
+          <td class="paramname"><em>g2d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Draws the current contextual message on the screen if one is active. </p>
+<p>The message is displayed in a rounded rectangle with a semi-transparent background, centered horizontally near the top of the game window. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g2d</td><td>The Graphics2D context to draw on. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classPaooGame_1_1HUD_1_1HUD.html#a00eeedbee6ff71345f6e38b21f17d1e6">PaooGame.HUD.HUD</a>.</p>
+
+</div>
+</div>
+<a id="a6f2f83d16b9238c2d9b7cdf36ce35a2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f2f83d16b9238c2d9b7cdf36ce35a2f">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.HUD.ContextHUD.update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates the state of the <a class="el" href="classPaooGame_1_1HUD_1_1ContextHUD.html" title="Manages and displays contextual messages to the player based on their proximity to predefined trigger...">ContextHUD</a>. </p>
+<p>This method performs the following actions:</p><ol type="1">
+<li>Updates the bounding boxes of all associated trigger zones, especially if they are linked to moving entities.</li>
+<li>Checks if the hero's hitbox intersects with any of the trigger zones.</li>
+<li>If an intersection occurs, it sets the "currentMessage" to the message from the triggered zone, calculates a conceptual message position (though the drawing uses a fixed screen position), and resets the "messageTimer".</li>
+<li>If no trigger is active or the timer for the current message has expired (implicitly, as timer reset happens on new trigger), the "currentMessage" might be cleared (or remain from the last trigger until a new one is found). The current implementation prioritizes the first active trigger found. </li>
+</ol>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/PaooGame/HUD/ContextHUD.java</li>
 </ul>

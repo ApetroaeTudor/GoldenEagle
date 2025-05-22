@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1Tiles_1_1Tile}\index{PaooGame.Tiles.Tile@{PaooGame.Tiles.Tile}}
 
 
-Collaboration diagram for Paoo\+Game.\+Tiles.\+Tile\+:
-\nopagebreak
+Represents a single tile in the game world.  
+
+
+
+
+Collaboration diagram for Paoo\+Game.\+Tiles.\+Tile\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,43 +17,132 @@ Collaboration diagram for Paoo\+Game.\+Tiles.\+Tile\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1Tile_a5cdfa1111db9068dd8f4cb74f8b59e9b}\label{classPaooGame_1_1Tiles_1_1Tile_a5cdfa1111db9068dd8f4cb74f8b59e9b}} 
-{\bfseries Tile} (Buffered\+Image image, int id)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1Tile_ab5fac960020e4ef0d917d7a6a16dea96}\label{classPaooGame_1_1Tiles_1_1Tile_ab5fac960020e4ef0d917d7a6a16dea96}} 
-void {\bfseries Update} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1Tile_a9fec3d5c43e3aee96781128bd8ee24b1}\label{classPaooGame_1_1Tiles_1_1Tile_a9fec3d5c43e3aee96781128bd8ee24b1}} 
-void {\bfseries Draw} (Graphics g, int x, int y)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1Tile_aad7b41d3a6180f1b7c833092107874f1}\label{classPaooGame_1_1Tiles_1_1Tile_aad7b41d3a6180f1b7c833092107874f1}} 
-int {\bfseries Get\+Id} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile_a5cdfa1111db9068dd8f4cb74f8b59e9b}{Tile}} (Buffered\+Image image, int \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile_a511d6f89665f0df009de4705004eef4a}{id}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile}{Tile}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile_ab5fac960020e4ef0d917d7a6a16dea96}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the tile\textquotesingle{}s state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile_a9fec3d5c43e3aee96781128bd8ee24b1}{Draw}} (Graphics g, int x, int y)
+\begin{DoxyCompactList}\small\item\em Draws the tile at the specified screen coordinates. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile_aad7b41d3a6180f1b7c833092107874f1}{Get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Gets the unique identifier of this tile. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1Tile_a0c1f5a6106be341af24523755cfd9b5a}\label{classPaooGame_1_1Tiles_1_1Tile_a0c1f5a6106be341af24523755cfd9b5a}} 
-static \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile}{Tile}} {\bfseries load\+Tile} (Buffered\+Image sheet, int id)
-\end{DoxyCompactItemize}
+static \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile}{Tile}} \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile_a0c1f5a6106be341af24523755cfd9b5a}{load\+Tile}} (Buffered\+Image sheet, int \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile_a511d6f89665f0df009de4705004eef4a}{id}})
+\begin{DoxyCompactList}\small\item\em Loads a single tile image from a larger spritesheet. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1Tile_a3a97c400b60d12e82f0b8acb3b0f719c}\label{classPaooGame_1_1Tiles_1_1Tile_a3a97c400b60d12e82f0b8acb3b0f719c}} 
-static final int {\bfseries TILE\+\_\+\+WIDTH} = 48
-\item 
+static final int \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile_a3a97c400b60d12e82f0b8acb3b0f719c}{TILE\+\_\+\+WIDTH}} = 48
+\begin{DoxyCompactList}\small\item\em Default width of a tile in pixels. Note\+: This might conflict with Constants.\+TILE\+\_\+\+SIZE if they are different. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1Tile_a3cd5fb65254649f466a2c9f76cad5ecb}\label{classPaooGame_1_1Tiles_1_1Tile_a3cd5fb65254649f466a2c9f76cad5ecb}} 
-static final int {\bfseries TILE\+\_\+\+HEIGHT} = 48
-\end{DoxyCompactItemize}
+static final int \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile_a3cd5fb65254649f466a2c9f76cad5ecb}{TILE\+\_\+\+HEIGHT}} = 48
+\begin{DoxyCompactList}\small\item\em Default height of a tile in pixels. Note\+: This might conflict with Constants.\+TILE\+\_\+\+SIZE if they are different. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1Tile_aafa5ca1883d367c2dd57aee0e19ec10d}\label{classPaooGame_1_1Tiles_1_1Tile_aafa5ca1883d367c2dd57aee0e19ec10d}} 
-Buffered\+Image {\bfseries img}
-\item 
+Buffered\+Image \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile_aafa5ca1883d367c2dd57aee0e19ec10d}{img}}
+\begin{DoxyCompactList}\small\item\em The image representing this tile. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1Tile_a511d6f89665f0df009de4705004eef4a}\label{classPaooGame_1_1Tiles_1_1Tile_a511d6f89665f0df009de4705004eef4a}} 
-final int {\bfseries id}
-\end{DoxyCompactItemize}
+final int \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile_a511d6f89665f0df009de4705004eef4a}{id}}
+\begin{DoxyCompactList}\small\item\em The unique identifier for this tile type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Represents a single tile in the game world. 
+
+This class encapsulates the image and identifier for a game tile. It provides methods for loading tiles from a spritesheet and drawing them onto the screen. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1Tile_a5cdfa1111db9068dd8f4cb74f8b59e9b}\label{classPaooGame_1_1Tiles_1_1Tile_a5cdfa1111db9068dd8f4cb74f8b59e9b}} 
+\index{PaooGame.Tiles.Tile@{PaooGame.Tiles.Tile}!Tile@{Tile}}
+\index{Tile@{Tile}!PaooGame.Tiles.Tile@{PaooGame.Tiles.Tile}}
+\doxysubsubsection{\texorpdfstring{Tile()}{Tile()}}
+{\footnotesize\ttfamily Paoo\+Game.\+Tiles.\+Tile.\+Tile (\begin{DoxyParamCaption}\item[{Buffered\+Image}]{image,  }\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile}{Tile}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & The \mbox{\hyperlink{}{Buffered\+Image}} for this tile. \\
+\hline
+{\em id} & The unique identifier for this tile type. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1Tile_a9fec3d5c43e3aee96781128bd8ee24b1}\label{classPaooGame_1_1Tiles_1_1Tile_a9fec3d5c43e3aee96781128bd8ee24b1}} 
+\index{PaooGame.Tiles.Tile@{PaooGame.Tiles.Tile}!Draw@{Draw}}
+\index{Draw@{Draw}!PaooGame.Tiles.Tile@{PaooGame.Tiles.Tile}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Tiles.\+Tile.\+Draw (\begin{DoxyParamCaption}\item[{Graphics}]{g,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Draws the tile at the specified screen coordinates. 
+
+The tile is drawn using the dimensions specified in \mbox{\hyperlink{}{Paoo\+Game.\+Config.\+Constants\#\+TILE\+\_\+\+SIZE}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The \mbox{\hyperlink{}{Graphics}} context used for drawing. \\
+\hline
+{\em x} & The x-\/coordinate on the screen where the tile should be drawn. \\
+\hline
+{\em y} & The y-\/coordinate on the screen where the tile should be drawn. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1Tile_aad7b41d3a6180f1b7c833092107874f1}\label{classPaooGame_1_1Tiles_1_1Tile_aad7b41d3a6180f1b7c833092107874f1}} 
+\index{PaooGame.Tiles.Tile@{PaooGame.Tiles.Tile}!GetId@{GetId}}
+\index{GetId@{GetId}!PaooGame.Tiles.Tile@{PaooGame.Tiles.Tile}}
+\doxysubsubsection{\texorpdfstring{GetId()}{GetId()}}
+{\footnotesize\ttfamily int Paoo\+Game.\+Tiles.\+Tile.\+Get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the unique identifier of this tile. 
+
+\begin{DoxyReturn}{Returns}
+The integer ID of the tile. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1Tile_a0c1f5a6106be341af24523755cfd9b5a}\label{classPaooGame_1_1Tiles_1_1Tile_a0c1f5a6106be341af24523755cfd9b5a}} 
+\index{PaooGame.Tiles.Tile@{PaooGame.Tiles.Tile}!loadTile@{loadTile}}
+\index{loadTile@{loadTile}!PaooGame.Tiles.Tile@{PaooGame.Tiles.Tile}}
+\doxysubsubsection{\texorpdfstring{loadTile()}{loadTile()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile}{Tile}} Paoo\+Game.\+Tiles.\+Tile.\+load\+Tile (\begin{DoxyParamCaption}\item[{Buffered\+Image}]{sheet,  }\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Loads a single tile image from a larger spritesheet. 
+
+Calculates the row and column of the tile within the spritesheet based on its ID and the assumption that the spritesheet is 32 tiles wide. It then extracts the sub-\/image corresponding to the tile.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sheet} & The \mbox{\hyperlink{}{Buffered\+Image}} representing the entire spritesheet. \\
+\hline
+{\em id} & The unique identifier of the tile to load. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \mbox{\hyperlink{classPaooGame_1_1Tiles_1_1Tile}{Tile}} object containing the loaded image and ID. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Tiles_1_1Tile_ab5fac960020e4ef0d917d7a6a16dea96}\label{classPaooGame_1_1Tiles_1_1Tile_ab5fac960020e4ef0d917d7a6a16dea96}} 
+\index{PaooGame.Tiles.Tile@{PaooGame.Tiles.Tile}!Update@{Update}}
+\index{Update@{Update}!PaooGame.Tiles.Tile@{PaooGame.Tiles.Tile}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Tiles.\+Tile.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the tile\textquotesingle{}s state. 
+
+Currently, this method is empty as static tiles typically do not require per-\/frame updates. It can be overridden by subclasses for animated tiles. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

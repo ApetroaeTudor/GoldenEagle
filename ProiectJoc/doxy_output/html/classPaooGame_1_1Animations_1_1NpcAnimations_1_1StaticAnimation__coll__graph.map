@@ -1,6 +1,6 @@
 <map id="PaooGame.Animations.NpcAnimations.StaticAnimation" name="PaooGame.Animations.NpcAnimations.StaticAnimation">
-<area shape="rect" id="node1" title=" " alt="" coords="23,185,300,227"/>
-<area shape="rect" id="node2" href="$classPaooGame_1_1Animations_1_1Animation.html" title=" " alt="" coords="41,109,282,136"/>
-<area shape="rect" id="node3" href="$classPaooGame_1_1RefLinks.html" title=" " alt="" coords="5,5,157,32"/>
+<area shape="rect" id="node1" title="Represents a static, non&#45;animated image." alt="" coords="23,185,300,227"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1Animations_1_1Animation.html" title="Abstract base class for managing and rendering sprite animations." alt="" coords="41,109,282,136"/>
+<area shape="rect" id="node3" href="$classPaooGame_1_1RefLinks.html" title="Provides a centralized way to access shared game objects and utilities." alt="" coords="5,5,157,32"/>
 <area shape="rect" id="node4" title=" " alt="" coords="182,5,301,32"/>
 </map>

@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1HUD_1_1HUD}\index{PaooGame.HUD.HUD@{PaooGame.HUD.HUD}}
 
 
-Inheritance diagram for Paoo\+Game.\+HUD.\+HUD\+:
-\nopagebreak
+An abstract base class for Heads-\/\+Up Display (\mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}}) elements.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+HUD.\+HUD\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+HUD.\+HUD\+:
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+HUD.\+HUD\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+HUD.\+HUD\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,18 +26,61 @@ Collaboration diagram for Paoo\+Game.\+HUD.\+HUD\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1HUD_a50e7cb758e6cb6b68b1eced141386e9b}\label{classPaooGame_1_1HUD_1_1HUD_a50e7cb758e6cb6b68b1eced141386e9b}} 
-{\bfseries HUD} (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity}{Entity}} entity)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1HUD_a00eeedbee6ff71345f6e38b21f17d1e6}\label{classPaooGame_1_1HUD_1_1HUD_a00eeedbee6ff71345f6e38b21f17d1e6}} 
-abstract void {\bfseries draw} (Graphics2D g2d)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD_a50e7cb758e6cb6b68b1eced141386e9b}{HUD}} (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity}{Entity}} \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD_accc1cb241c0c34e56d63de683203119f}{entity}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}} object. \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD_a00eeedbee6ff71345f6e38b21f17d1e6}{draw}} (Graphics2D g2d)
+\begin{DoxyCompactList}\small\item\em Abstract method for drawing the \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}} element. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classPaooGame_1_1HUD_1_1HUD_accc1cb241c0c34e56d63de683203119f}\label{classPaooGame_1_1HUD_1_1HUD_accc1cb241c0c34e56d63de683203119f}} 
-\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity}{Entity}} {\bfseries entity}
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity}{Entity}} \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD_accc1cb241c0c34e56d63de683203119f}{entity}}
+\begin{DoxyCompactList}\small\item\em The game entity this \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}} element is associated with or relates to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An abstract base class for Heads-\/\+Up Display (\mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}}) elements. 
+
+This class provides a common structure for various \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}} components that might be associated with a game \mbox{\hyperlink{}{Entity}}. Subclasses must implement the \char`\"{}draw\char`\"{} method to define how they are rendered on the screen. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1HUD_a50e7cb758e6cb6b68b1eced141386e9b}\label{classPaooGame_1_1HUD_1_1HUD_a50e7cb758e6cb6b68b1eced141386e9b}} 
+\index{PaooGame.HUD.HUD@{PaooGame.HUD.HUD}!HUD@{HUD}}
+\index{HUD@{HUD}!PaooGame.HUD.HUD@{PaooGame.HUD.HUD}}
+\doxysubsubsection{\texorpdfstring{HUD()}{HUD()}}
+{\footnotesize\ttfamily Paoo\+Game.\+HUD.\+HUD.\+HUD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity}{Entity}}}]{entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}} object. 
+
+Initializes the \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}} element with a reference to an entity. This entity can be used by subclasses to display information relevant to it 
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity this \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}} element is associated with. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1HUD_a00eeedbee6ff71345f6e38b21f17d1e6}\label{classPaooGame_1_1HUD_1_1HUD_a00eeedbee6ff71345f6e38b21f17d1e6}} 
+\index{PaooGame.HUD.HUD@{PaooGame.HUD.HUD}!draw@{draw}}
+\index{draw@{draw}!PaooGame.HUD.HUD@{PaooGame.HUD.HUD}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily abstract void Paoo\+Game.\+HUD.\+HUD.\+draw (\begin{DoxyParamCaption}\item[{Graphics2D}]{g2d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Abstract method for drawing the \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}} element. 
+
+Subclasses must implement this method to define how the \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}} element is rendered on the screen. 
+\begin{DoxyParams}{Parameters}
+{\em g2d} & The Graphics2D context to draw on. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classPaooGame_1_1HUD_1_1PauseButton_acdb0ee8d2200d646776767d06c0f6602}{Paoo\+Game.\+HUD.\+Pause\+Button}}, \mbox{\hyperlink{classPaooGame_1_1HUD_1_1ImageButton_a4fb4e2cc2972b996119430d718d86d06}{Paoo\+Game.\+HUD.\+Image\+Button}}, \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HealthBar_a393c0810dcc70168b9a84ebb09bcacfa}{Paoo\+Game.\+HUD.\+Health\+Bar}}, \mbox{\hyperlink{classPaooGame_1_1HUD_1_1ContextHUD_a53ed030f9e2f2bd2dd24f54ccbf4449c}{Paoo\+Game.\+HUD.\+Context\+HUD}}, and \mbox{\hyperlink{classPaooGame_1_1HUD_1_1AttackButton_aecddbf33ee794f49553190311e2bc338}{Paoo\+Game.\+HUD.\+Attack\+Button}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

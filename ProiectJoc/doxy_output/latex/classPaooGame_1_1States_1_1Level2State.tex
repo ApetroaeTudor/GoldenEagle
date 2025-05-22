@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1States_1_1Level2State}\index{PaooGame.States.Level2State@{PaooGame.States.Level2State}}
 
 
-Inheritance diagram for Paoo\+Game.\+States.\+Level2\+State\+:
-\nopagebreak
+Represents the game state for Level 2.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+States.\+Level2\+State\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+States.\+Level2\+State\+:
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+States.\+Level2\+State\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+States.\+Level2\+State\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,52 +26,205 @@ Collaboration diagram for Paoo\+Game.\+States.\+Level2\+State\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_a07c0f075b56f82e9965539c59f87015f}\label{classPaooGame_1_1States_1_1Level2State_a07c0f075b56f82e9965539c59f87015f}} 
-{\bfseries Level2\+State} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} reflink, \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level2}{Level2}} level2)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_a41279b8c36ad5d02de11b77d22f191f3}\label{classPaooGame_1_1States_1_1Level2State_a41279b8c36ad5d02de11b77d22f191f3}} 
-void {\bfseries restore\+State} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_a08f61b4a166391d03b066e20ad454474}\label{classPaooGame_1_1States_1_1Level2State_a08f61b4a166391d03b066e20ad454474}} 
-void {\bfseries update} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_ad5dbb546239f54c06ba48069d9868ef4}\label{classPaooGame_1_1States_1_1Level2State_ad5dbb546239f54c06ba48069d9868ef4}} 
-void {\bfseries draw} (Graphics g)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_aa42f59ce87d34b4bd913f985ffb29a4a}\label{classPaooGame_1_1States_1_1Level2State_aa42f59ce87d34b4bd913f985ffb29a4a}} 
-\mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level2}{Level2}} {\bfseries get\+Level2} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_a226ea77f0f0db2f222f1ef11d1bc4a3d}\label{classPaooGame_1_1States_1_1Level2State_a226ea77f0f0db2f222f1ef11d1bc4a3d}} 
-String {\bfseries get\+State\+Name} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_afcb64aa767e3c5e13bb0a6a1e1e867ba}\label{classPaooGame_1_1States_1_1Level2State_afcb64aa767e3c5e13bb0a6a1e1e867ba}} 
-void {\bfseries set\+Enemy} (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy}{Enemy}} enemy)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_a7ac4085551867f7d08e80e9302a4e135}\label{classPaooGame_1_1States_1_1Level2State_a7ac4085551867f7d08e80e9302a4e135}} 
-void {\bfseries load\+State} (boolean access)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_a48dae78fc1f5f9fb37450cb5294596ce}\label{classPaooGame_1_1States_1_1Level2State_a48dae78fc1f5f9fb37450cb5294596ce}} 
-void {\bfseries store\+State} (boolean access)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_a07c0f075b56f82e9965539c59f87015f}{Level2\+State}} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a621ece5c0cfdd772b0aeaba2e399a61d}{reflink}}, \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level2}{Level2}} level2)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State}{Level2\+State}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_a41279b8c36ad5d02de11b77d22f191f3}{restore\+State}} ()
+\begin{DoxyCompactList}\small\item\em Restores the state of Level 2, primarily resetting enemy positions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_a08f61b4a166391d03b066e20ad454474}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the logic of the \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State}{Level2\+State}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_ad5dbb546239f54c06ba48069d9868ef4}{draw}} (Graphics g)
+\begin{DoxyCompactList}\small\item\em Draws the content of the \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State}{Level2\+State}} on the screen. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level2}{Level2}} \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_aa42f59ce87d34b4bd913f985ffb29a4a}{get\+Level2}} ()
+\begin{DoxyCompactList}\small\item\em Gets the \mbox{\hyperlink{}{Level2}} map data object associated with this state. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_a226ea77f0f0db2f222f1ef11d1bc4a3d}{get\+State\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of this state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_afcb64aa767e3c5e13bb0a6a1e1e867ba}{set\+Enemy}} (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy}{Enemy}} enemy)
+\begin{DoxyCompactList}\small\item\em Sets an enemy for this state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_a7ac4085551867f7d08e80e9302a4e135}{load\+State}} (boolean access)
+\begin{DoxyCompactList}\small\item\em Loads level-\/specific state data, primarily enemy health, for Level 2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_a48dae78fc1f5f9fb37450cb5294596ce}{store\+State}} (boolean access)
+\begin{DoxyCompactList}\small\item\em Stores level-\/specific state data, primarily enemy health and current state identifier, for Level 2. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_a2125b42818b1c7a899a46604177617d7}\label{classPaooGame_1_1States_1_1Level2State_a2125b42818b1c7a899a46604177617d7}} 
-boolean {\bfseries transitioning} = false
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_addb8960bd51675fb2bd3dc06ea55be21}\label{classPaooGame_1_1States_1_1Level2State_addb8960bd51675fb2bd3dc06ea55be21}} 
-boolean {\bfseries transition\+\_\+to\+\_\+fight} = false
-\item 
 \mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_a20ca96c771e45d26032836584f9fe751}\label{classPaooGame_1_1States_1_1Level2State_a20ca96c771e45d26032836584f9fe751}} 
-String {\bfseries state\+Name} = Constants.\+LEVEL2\+\_\+\+STATE
-\item 
+String \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_a20ca96c771e45d26032836584f9fe751}{state\+Name}} = Constants.\+LEVEL2\+\_\+\+STATE
+\begin{DoxyCompactList}\small\item\em The name identifier for this state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_a2125b42818b1c7a899a46604177617d7}\label{classPaooGame_1_1States_1_1Level2State_a2125b42818b1c7a899a46604177617d7}} 
+boolean \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_a2125b42818b1c7a899a46604177617d7}{transitioning}} = false
+\begin{DoxyCompactList}\small\item\em General flag indicating if a transition (fade) to another level or state is in progress. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_addb8960bd51675fb2bd3dc06ea55be21}\label{classPaooGame_1_1States_1_1Level2State_addb8960bd51675fb2bd3dc06ea55be21}} 
+boolean \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_addb8960bd51675fb2bd3dc06ea55be21}{transition\+\_\+to\+\_\+fight}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating a transition to \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState}{Fight\+State}}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_a51b824e7871b94f4f9ad35d01e49ce29}\label{classPaooGame_1_1States_1_1Level2State_a51b824e7871b94f4f9ad35d01e49ce29}} 
-double {\bfseries target\+Black\+Intensity} = 0.\+0
-\item 
+double \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_a51b824e7871b94f4f9ad35d01e49ce29}{target\+Black\+Intensity}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Current intensity of the black overlay for fade transitions (0.\+0 to 1.\+0). \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_a2cd624d4f9771705a100c83f7df961d6}\label{classPaooGame_1_1States_1_1Level2State_a2cd624d4f9771705a100c83f7df961d6}} 
-double {\bfseries black\+Fade\+Step} = 0.\+05
-\end{DoxyCompactItemize}
+double \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_a2cd624d4f9771705a100c83f7df961d6}{black\+Fade\+Step}} = 0.\+05
+\begin{DoxyCompactList}\small\item\em Increment step for \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_a51b824e7871b94f4f9ad35d01e49ce29}{target\+Black\+Intensity}} during fades. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents the game state for Level 2. 
+
+This class manages all aspects of Level 2, building upon the \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} class. It includes the level map, hero interactions, enemies, NPCs, items (save points, boosters, floppy disks), camera control, UI elements (pause button, context HUD), and handles transitions to other states (\mbox{\hyperlink{classPaooGame_1_1States_1_1FightState}{Fight\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State}{Level3\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1DeathState}{Death\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1PauseMenuState}{Pause\+Menu\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1ShopState}{Shop\+State}}). It also implements saving and loading of level-\/specific progress. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_a07c0f075b56f82e9965539c59f87015f}\label{classPaooGame_1_1States_1_1Level2State_a07c0f075b56f82e9965539c59f87015f}} 
+\index{PaooGame.States.Level2State@{PaooGame.States.Level2State}!Level2State@{Level2State}}
+\index{Level2State@{Level2State}!PaooGame.States.Level2State@{PaooGame.States.Level2State}}
+\doxysubsubsection{\texorpdfstring{Level2State()}{Level2State()}}
+{\footnotesize\ttfamily Paoo\+Game.\+States.\+Level2\+State.\+Level2\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}}}]{reflink,  }\item[{\mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level2}{Level2}}}]{level2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State}{Level2\+State}} object. 
+
+Initializes the level map, camera, items (save points, boosters, floppy disks), NPCs, enemies, HUD elements, and calculates level dimensions. Sets up message trigger zones for the context HUD. 
+\begin{DoxyParams}{Parameters}
+{\em reflink} & A \mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} object providing access to game-\/wide resources and utilities. \\
+\hline
+{\em level2} & The \mbox{\hyperlink{}{Level2}} map data for this state. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_ad5dbb546239f54c06ba48069d9868ef4}\label{classPaooGame_1_1States_1_1Level2State_ad5dbb546239f54c06ba48069d9868ef4}} 
+\index{PaooGame.States.Level2State@{PaooGame.States.Level2State}!draw@{draw}}
+\index{draw@{draw}!PaooGame.States.Level2State@{PaooGame.States.Level2State}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+States.\+Level2\+State.\+draw (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Draws the content of the \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State}{Level2\+State}} on the screen. 
+
+This method is called every frame to render all visual elements of Level 2. It applies camera transformations and draws the background, tiles, items, enemies, NPCs, hero, and UI elements like health bars and pause button. 
+\begin{DoxyParams}{Parameters}
+{\em g} & The \mbox{\hyperlink{}{Graphics}} context to draw on. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a61512d655ea178fd283fe57624b47250}{Paoo\+Game.\+States.\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_aa42f59ce87d34b4bd913f985ffb29a4a}\label{classPaooGame_1_1States_1_1Level2State_aa42f59ce87d34b4bd913f985ffb29a4a}} 
+\index{PaooGame.States.Level2State@{PaooGame.States.Level2State}!getLevel2@{getLevel2}}
+\index{getLevel2@{getLevel2}!PaooGame.States.Level2State@{PaooGame.States.Level2State}}
+\doxysubsubsection{\texorpdfstring{getLevel2()}{getLevel2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level2}{Level2}} Paoo\+Game.\+States.\+Level2\+State.\+get\+Level2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the \mbox{\hyperlink{}{Level2}} map data object associated with this state. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{}{Level2}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_a226ea77f0f0db2f222f1ef11d1bc4a3d}\label{classPaooGame_1_1States_1_1Level2State_a226ea77f0f0db2f222f1ef11d1bc4a3d}} 
+\index{PaooGame.States.Level2State@{PaooGame.States.Level2State}!getStateName@{getStateName}}
+\index{getStateName@{getStateName}!PaooGame.States.Level2State@{PaooGame.States.Level2State}}
+\doxysubsubsection{\texorpdfstring{getStateName()}{getStateName()}}
+{\footnotesize\ttfamily String Paoo\+Game.\+States.\+Level2\+State.\+get\+State\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the name of this state. 
+
+\begin{DoxyReturn}{Returns}
+The string identifier for this state. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a256ead7c628d278ecda50a402465dab8}{Paoo\+Game.\+States.\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_a7ac4085551867f7d08e80e9302a4e135}\label{classPaooGame_1_1States_1_1Level2State_a7ac4085551867f7d08e80e9302a4e135}} 
+\index{PaooGame.States.Level2State@{PaooGame.States.Level2State}!loadState@{loadState}}
+\index{loadState@{loadState}!PaooGame.States.Level2State@{PaooGame.States.Level2State}}
+\doxysubsubsection{\texorpdfstring{loadState()}{loadState()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+States.\+Level2\+State.\+load\+State (\begin{DoxyParamCaption}\item[{boolean}]{access }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Loads level-\/specific state data, primarily enemy health, for Level 2. 
+
+Attempts to load health values for all enemies in Level 2 from the data proxy. Uses a flag (\mbox{\hyperlink{classPaooGame_1_1RefLinks_a99a770a98a58c2d1e3c47b50d7a9e430}{Ref\+Links\#get\+Level2\+Refresh\+Done\+Signal()}}) to prevent redundant loading. 
+\begin{DoxyParams}{Parameters}
+{\em access} & A boolean flag, typically true, indicating permission to access stored data. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a90f74b9205e6fcb6232e264fd53bf14a}{Paoo\+Game.\+States.\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_a41279b8c36ad5d02de11b77d22f191f3}\label{classPaooGame_1_1States_1_1Level2State_a41279b8c36ad5d02de11b77d22f191f3}} 
+\index{PaooGame.States.Level2State@{PaooGame.States.Level2State}!restoreState@{restoreState}}
+\index{restoreState@{restoreState}!PaooGame.States.Level2State@{PaooGame.States.Level2State}}
+\doxysubsubsection{\texorpdfstring{restoreState()}{restoreState()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+States.\+Level2\+State.\+restore\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Restores the state of Level 2, primarily resetting enemy positions. 
+
+This method is called when returning to this state. It places enemies at their initial coordinates. Other elements like hero position or item states might be handled by loading or specific game logic. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_aec1c3e402381da4d4986c4eb957de55b}{Paoo\+Game.\+States.\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_afcb64aa767e3c5e13bb0a6a1e1e867ba}\label{classPaooGame_1_1States_1_1Level2State_afcb64aa767e3c5e13bb0a6a1e1e867ba}} 
+\index{PaooGame.States.Level2State@{PaooGame.States.Level2State}!setEnemy@{setEnemy}}
+\index{setEnemy@{setEnemy}!PaooGame.States.Level2State@{PaooGame.States.Level2State}}
+\doxysubsubsection{\texorpdfstring{setEnemy()}{setEnemy()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+States.\+Level2\+State.\+set\+Enemy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy}{Enemy}}}]{enemy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets an enemy for this state. 
+
+This method is part of the \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} interface. For a Play\+State like \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State}{Level2\+State}}, enemies are managed as a collection within the state. This method has no implementation here. 
+\begin{DoxyParams}{Parameters}
+{\em enemy} & The \mbox{\hyperlink{}{Enemy}} \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a1afa04fafde48966a2cbb66c053afe9f}{Paoo\+Game.\+States.\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_a48dae78fc1f5f9fb37450cb5294596ce}\label{classPaooGame_1_1States_1_1Level2State_a48dae78fc1f5f9fb37450cb5294596ce}} 
+\index{PaooGame.States.Level2State@{PaooGame.States.Level2State}!storeState@{storeState}}
+\index{storeState@{storeState}!PaooGame.States.Level2State@{PaooGame.States.Level2State}}
+\doxysubsubsection{\texorpdfstring{storeState()}{storeState()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+States.\+Level2\+State.\+store\+State (\begin{DoxyParamCaption}\item[{boolean}]{access }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stores level-\/specific state data, primarily enemy health and current state identifier, for Level 2. 
+
+Saves the current health of all enemies in Level 2 and identifies this level as the current state (with ID 2) to the data proxy. Uses a flag (\mbox{\hyperlink{classPaooGame_1_1RefLinks_a6f9e6e95ea54df32541157786898dc4c}{Ref\+Links\#get\+Level2\+Store\+Done\+Signal()}}) to prevent redundant saving. 
+\begin{DoxyParams}{Parameters}
+{\em access} & A boolean flag, typically true, indicating permission to store data. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_af91f335ebaff413a782926e17cd80276}{Paoo\+Game.\+States.\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level2State_a08f61b4a166391d03b066e20ad454474}\label{classPaooGame_1_1States_1_1Level2State_a08f61b4a166391d03b066e20ad454474}} 
+\index{PaooGame.States.Level2State@{PaooGame.States.Level2State}!update@{update}}
+\index{update@{update}!PaooGame.States.Level2State@{PaooGame.States.Level2State}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+States.\+Level2\+State.\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the logic of the \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State}{Level2\+State}}. 
+
+This method is called every game tick. It orchestrates updates for all game elements within Level 2\+: NPCs, items, hero, enemies. It handles interactions, transitions, pausing, camera, and the context HUD. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_afafd048638af99f0f0b115ddec2fac1f}{Paoo\+Game.\+States.\+State}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

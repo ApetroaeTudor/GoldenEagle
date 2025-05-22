@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1Maps_1_1Level3}\index{PaooGame.Maps.Level3@{PaooGame.Maps.Level3}}
 
 
-Inheritance diagram for Paoo\+Game.\+Maps.\+Level3\+:
-\nopagebreak
+Represents the third level of the game.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+Maps.\+Level3\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,16 +16,38 @@ Inheritance diagram for Paoo\+Game.\+Maps.\+Level3\+:
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+Maps.\+Level3\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+Maps.\+Level3\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=214pt]{classPaooGame_1_1Maps_1_1Level3__coll__graph}
 \end{center}
 \end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level3_a7103bb60fafc24675bfbd3c20ba21a3c}{Level3}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level3}{Level3}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
+
+\doxysubsection{Detailed Description}
+Represents the third level of the game. 
+
+This class extends the abstract \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level}{Level}} class and specifically defines the properties and data for \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level}{Level}} 3. It initializes its tile data (both visual and behavioral) by loading from CSV files specified in \mbox{\hyperlink{classPaooGame_1_1Config_1_1Constants}{Paoo\+Game.\+Config.\+Constants}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level3_a7103bb60fafc24675bfbd3c20ba21a3c}\label{classPaooGame_1_1Maps_1_1Level3_a7103bb60fafc24675bfbd3c20ba21a3c}} 
+\index{PaooGame.Maps.Level3@{PaooGame.Maps.Level3}!Level3@{Level3}}
+\index{Level3@{Level3}!PaooGame.Maps.Level3@{PaooGame.Maps.Level3}}
+\doxysubsubsection{\texorpdfstring{Level3()}{Level3()}}
+{\footnotesize\ttfamily Paoo\+Game.\+Maps.\+Level3.\+Level3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level3}{Level3}} object. 
+
+Initializes the dimensions for the visual tile array based on constants defined for \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level}{Level}} 3 in \mbox{\hyperlink{classPaooGame_1_1Config_1_1Constants}{Paoo\+Game.\+Config.\+Constants}}. It then calls the \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level_a25fbdbad5f1da38ee3c8270b9a8a56be}{set\+IDs(\+String, String)}} method (inherited from \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level}{Level}}) to populate the \mbox{\hyperlink{}{visual\+IDs}} and \mbox{\hyperlink{}{behavior\+IDs}} arrays by reading data from the CSV files specified by \mbox{\hyperlink{}{Constants\#\+LEVEL3\+\_\+\+TEXTURES\+\_\+\+CSV}} and \mbox{\hyperlink{}{Constants\#\+LEVEL3\+\_\+\+BEHAVIOR\+\_\+\+CSV}}. The {\ttfamily behavior\+Tiles} 2D array is not initialized in this constructor. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

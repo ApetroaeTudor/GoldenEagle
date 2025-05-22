@@ -1,4 +1,4 @@
 <map id="PaooGame.Items.BoosterItem" name="PaooGame.Items.BoosterItem">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,223,107"/>
-<area shape="rect" id="node2" href="$classPaooGame_1_1Items_1_1Item.html" title=" " alt="" coords="31,5,197,32"/>
+<area shape="rect" id="node1" title="Represents a specific type of item in the game that acts as a &quot;booster&quot;." alt="" coords="5,80,223,107"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1Items_1_1Item.html" title="Represents an abstract base class for all items in the game." alt="" coords="31,5,197,32"/>
 </map>

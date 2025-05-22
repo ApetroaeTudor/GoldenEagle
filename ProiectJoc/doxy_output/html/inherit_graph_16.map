@@ -1,3 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classPaooGame_1_1RefLinks.html" title=" " alt="" coords="5,5,157,32"/>
+<area shape="rect" id="node1" href="$classPaooGame_1_1Maps_1_1Level.html" title="Abstract base class for game levels, managing tile data and providing collision detection utilities." alt="" coords="5,56,176,83"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1Maps_1_1Level1.html" title="Represents the first level of the game." alt="" coords="224,5,403,32"/>
+<area shape="rect" id="node3" href="$classPaooGame_1_1Maps_1_1Level2.html" title="Represents the second level of the game." alt="" coords="224,56,403,83"/>
+<area shape="rect" id="node4" href="$classPaooGame_1_1Maps_1_1Level3.html" title="Represents the third level of the game." alt="" coords="224,107,403,133"/>
 </map>

@@ -106,6 +106,7 @@ public class Enemy extends Entity {
         }
         updateAnimationState();
         this.getAnimationByState().updateAnimation();
+
     }
 
     /**

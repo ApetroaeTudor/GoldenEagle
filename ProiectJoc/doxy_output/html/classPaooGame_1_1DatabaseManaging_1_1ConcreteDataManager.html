@@ -73,13 +73,16 @@ $(function() {
 <div class="title">PaooGame.DatabaseManaging.ConcreteDataManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implements the <a class="el" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html" title="Defines the contract for managing game data, including loading, storing, and resetting data.">DataManager</a> interface to manage game data using an in-memory buffer and an SQLite database.  
+ <a href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for PaooGame.DatabaseManaging.ConcreteDataManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager__inherit__graph.png" border="0" usemap="#aPaooGame_8DatabaseManaging_8ConcreteDataManager_inherit__map" alt="Inheritance graph"/></div>
 <map name="aPaooGame_8DatabaseManaging_8ConcreteDataManager_inherit__map" id="aPaooGame_8DatabaseManaging_8ConcreteDataManager_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,95,232,136"/>
-<area shape="rect" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html" title=" " alt="" coords="5,5,232,47"/>
+<area shape="rect" title="Implements the DataManager interface to manage game data using an in&#45;memory buffer and an SQLite data..." alt="" coords="5,95,232,136"/>
+<area shape="rect" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html" title="Defines the contract for managing game data, including loading, storing, and resetting data." alt="" coords="5,5,232,47"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -87,41 +90,389 @@ Collaboration diagram for PaooGame.DatabaseManaging.ConcreteDataManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager__coll__graph.png" border="0" usemap="#aPaooGame_8DatabaseManaging_8ConcreteDataManager_coll__map" alt="Collaboration graph"/></div>
 <map name="aPaooGame_8DatabaseManaging_8ConcreteDataManager_coll__map" id="aPaooGame_8DatabaseManaging_8ConcreteDataManager_coll__map">
-<area shape="rect" title=" " alt="" coords="5,95,232,136"/>
-<area shape="rect" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html" title=" " alt="" coords="5,5,232,47"/>
+<area shape="rect" title="Implements the DataManager interface to manage game data using an in&#45;memory buffer and an SQLite data..." alt="" coords="5,95,232,136"/>
+<area shape="rect" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html" title="Defines the contract for managing game data, including loading, storing, and resetting data." alt="" coords="5,5,232,47"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab72e9ff97e0d99450db30325ddc4171a"><td class="memItemLeft" align="right" valign="top"><a id="ab72e9ff97e0d99450db30325ddc4171a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>load</b> (String key, boolean access)</td></tr>
+<tr class="memitem:ab72e9ff97e0d99450db30325ddc4171a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html#ab72e9ff97e0d99450db30325ddc4171a">load</a> (String key, boolean access)</td></tr>
+<tr class="memdesc:ab72e9ff97e0d99450db30325ddc4171a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a value from the in-memory buffer.  <a href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html#ab72e9ff97e0d99450db30325ddc4171a">More...</a><br /></td></tr>
 <tr class="separator:ab72e9ff97e0d99450db30325ddc4171a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accbf31c2dec6c594b74e1338021ef219"><td class="memItemLeft" align="right" valign="top"><a id="accbf31c2dec6c594b74e1338021ef219"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>store</b> (String key, int value, boolean access)</td></tr>
+<tr class="memitem:accbf31c2dec6c594b74e1338021ef219"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html#accbf31c2dec6c594b74e1338021ef219">store</a> (String key, int value, boolean access)</td></tr>
+<tr class="memdesc:accbf31c2dec6c594b74e1338021ef219"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores a value into the in-memory buffer.  <a href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html#accbf31c2dec6c594b74e1338021ef219">More...</a><br /></td></tr>
 <tr class="separator:accbf31c2dec6c594b74e1338021ef219"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4446e6fa0963da132a0f9db1d7e0ae48"><td class="memItemLeft" align="right" valign="top"><a id="a4446e6fa0963da132a0f9db1d7e0ae48"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resetBuffer</b> (boolean access)</td></tr>
+<tr class="memitem:a4446e6fa0963da132a0f9db1d7e0ae48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html#a4446e6fa0963da132a0f9db1d7e0ae48">resetBuffer</a> (boolean access)</td></tr>
+<tr class="memdesc:a4446e6fa0963da132a0f9db1d7e0ae48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the in-memory buffer to default starting game state values. This is typically used when starting a new game.  <a href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html#a4446e6fa0963da132a0f9db1d7e0ae48">More...</a><br /></td></tr>
 <tr class="separator:a4446e6fa0963da132a0f9db1d7e0ae48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab12e3d987d55bcec6432196f0d0a1f1f"><td class="memItemLeft" align="right" valign="top"><a id="ab12e3d987d55bcec6432196f0d0a1f1f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>loadBuffer</b> (boolean access)</td></tr>
+<tr class="memitem:ab12e3d987d55bcec6432196f0d0a1f1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html#ab12e3d987d55bcec6432196f0d0a1f1f">loadBuffer</a> (boolean access)</td></tr>
+<tr class="memdesc:ab12e3d987d55bcec6432196f0d0a1f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the latest game save from the SQLite database into the in-memory buffer. If the database or table doesn't exist, it attempts to create them.  <a href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html#ab12e3d987d55bcec6432196f0d0a1f1f">More...</a><br /></td></tr>
 <tr class="separator:ab12e3d987d55bcec6432196f0d0a1f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e1587bab5537db2790ddf0494bfef9b"><td class="memItemLeft" align="right" valign="top"><a id="a5e1587bab5537db2790ddf0494bfef9b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>storeBuffer</b> (boolean access)</td></tr>
+<tr class="memitem:a5e1587bab5537db2790ddf0494bfef9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html#a5e1587bab5537db2790ddf0494bfef9b">storeBuffer</a> (boolean access)</td></tr>
+<tr class="memdesc:a5e1587bab5537db2790ddf0494bfef9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the current state of the in-memory buffer into the SQLite database as a new game save. Manages the maximum number of save entries, deleting the oldest if the limit is reached.  <a href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html#a5e1587bab5537db2790ddf0494bfef9b">More...</a><br /></td></tr>
 <tr class="separator:a5e1587bab5537db2790ddf0494bfef9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8de2be36b8cf5dd63104245833a8bec2"><td class="memItemLeft" align="right" valign="top"><a id="a8de2be36b8cf5dd63104245833a8bec2"></a>
-int[]&#160;</td><td class="memItemRight" valign="bottom"><b>loadScore</b> (boolean access)</td></tr>
+<tr class="memitem:a8de2be36b8cf5dd63104245833a8bec2"><td class="memItemLeft" align="right" valign="top">int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html#a8de2be36b8cf5dd63104245833a8bec2">loadScore</a> (boolean access)</td></tr>
+<tr class="memdesc:a8de2be36b8cf5dd63104245833a8bec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads high scores from the database. Scores are packed into a single integer in a special database row.  <a href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html#a8de2be36b8cf5dd63104245833a8bec2">More...</a><br /></td></tr>
 <tr class="separator:a8de2be36b8cf5dd63104245833a8bec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42ab7be226a59ff2239c4eb2382f0e66"><td class="memItemLeft" align="right" valign="top"><a id="a42ab7be226a59ff2239c4eb2382f0e66"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>storeScore</b> (boolean access, int score1, int score2, int score3)</td></tr>
+<tr class="memitem:a42ab7be226a59ff2239c4eb2382f0e66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html#a42ab7be226a59ff2239c4eb2382f0e66">storeScore</a> (boolean access, int score1, int score2, int score3)</td></tr>
+<tr class="memdesc:a42ab7be226a59ff2239c4eb2382f0e66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores high scores into the database. Scores are packed into a single integer and stored in a special row (identified by TIMESTAMP = -2). If the score row doesn't exist, it's inserted; otherwise, it's updated.  <a href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html#a42ab7be226a59ff2239c4eb2382f0e66">More...</a><br /></td></tr>
 <tr class="separator:a42ab7be226a59ff2239c4eb2382f0e66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aeb31cc5b01993e3e5172e3ae509a768e"><td class="memItemLeft" align="right" valign="top"><a id="aeb31cc5b01993e3e5172e3ae509a768e"></a>
-static <a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html">ConcreteDataManager</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b> (<a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a> reflink)</td></tr>
+<tr class="memitem:aeb31cc5b01993e3e5172e3ae509a768e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html">ConcreteDataManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html#aeb31cc5b01993e3e5172e3ae509a768e">getInstance</a> (<a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a> reflink)</td></tr>
+<tr class="memdesc:aeb31cc5b01993e3e5172e3ae509a768e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the singleton instance of <a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html" title="Implements the DataManager interface to manage game data using an in-memory buffer and an SQLite data...">ConcreteDataManager</a>.  <a href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html#aeb31cc5b01993e3e5172e3ae509a768e">More...</a><br /></td></tr>
 <tr class="separator:aeb31cc5b01993e3e5172e3ae509a768e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implements the <a class="el" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html" title="Defines the contract for managing game data, including loading, storing, and resetting data.">DataManager</a> interface to manage game data using an in-memory buffer and an SQLite database. </p>
+<p>This class provides a concrete way to save and load game state. It uses a HashMap as an in-memory buffer for quick access to game variables and interacts with an SQLite database for persistent storage of game saves and high scores. It follows a Singleton pattern for instantiation. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aeb31cc5b01993e3e5172e3ae509a768e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb31cc5b01993e3e5172e3ae509a768e">&#9670;&nbsp;</a></span>getInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html">ConcreteDataManager</a> PaooGame.DatabaseManaging.ConcreteDataManager.getInstance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a>&#160;</td>
+          <td class="paramname"><em>reflink</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the singleton instance of <a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html" title="Implements the DataManager interface to manage game data using an in-memory buffer and an SQLite data...">ConcreteDataManager</a>. </p>
+<p>If an instance does not exist, it creates one. This ensures that only one <a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html" title="Implements the DataManager interface to manage game data using an in-memory buffer and an SQLite data...">ConcreteDataManager</a> object is used throughout the application.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reflink</td><td>A reference to shared game resources, needed for initialization. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The singleton instance of <a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html" title="Implements the DataManager interface to manage game data using an in-memory buffer and an SQLite data...">ConcreteDataManager</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ab72e9ff97e0d99450db30325ddc4171a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab72e9ff97e0d99450db30325ddc4171a">&#9670;&nbsp;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PaooGame.DatabaseManaging.ConcreteDataManager.load </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>access</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads a value from the in-memory buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key identifying the value to load (defined in Constants). </td></tr>
+    <tr><td class="paramname">access</td><td>A boolean flag (currently unused in this implementation, potentially for future permission checks). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The integer value associated with the key from the buffer. </dd></dl>
+
+<p>Implements <a class="el" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html#ae5b8d2e1e69fdfae152c5bf8252ca491">PaooGame.DatabaseManaging.DataManager</a>.</p>
+
+</div>
+</div>
+<a id="ab12e3d987d55bcec6432196f0d0a1f1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab12e3d987d55bcec6432196f0d0a1f1f">&#9670;&nbsp;</a></span>loadBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.DatabaseManaging.ConcreteDataManager.loadBuffer </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>access</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads the latest game save from the SQLite database into the in-memory buffer. If the database or table doesn't exist, it attempts to create them. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">access</td><td>A boolean flag (currently unused, potentially for future permission checks). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html#af6fafa39d91b42ba431dc44a85037c59">PaooGame.DatabaseManaging.DataManager</a>.</p>
+
+</div>
+</div>
+<a id="a8de2be36b8cf5dd63104245833a8bec2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8de2be36b8cf5dd63104245833a8bec2">&#9670;&nbsp;</a></span>loadScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int [] PaooGame.DatabaseManaging.ConcreteDataManager.loadScore </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>access</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads high scores from the database. Scores are packed into a single integer in a special database row. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">access</td><td>A boolean flag (currently unused). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An array of 3 integers representing the top three scores. Returns default values if no scores found. </dd></dl>
+
+<p>Implements <a class="el" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html#a10322128a593d95096b14ecc60d97456">PaooGame.DatabaseManaging.DataManager</a>.</p>
+
+</div>
+</div>
+<a id="a4446e6fa0963da132a0f9db1d7e0ae48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4446e6fa0963da132a0f9db1d7e0ae48">&#9670;&nbsp;</a></span>resetBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.DatabaseManaging.ConcreteDataManager.resetBuffer </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>access</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resets the in-memory buffer to default starting game state values. This is typically used when starting a new game. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">access</td><td>A boolean flag (currently unused, potentially for future permission checks). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html#a49d2830860ed2310e864c861ab57595f">PaooGame.DatabaseManaging.DataManager</a>.</p>
+
+</div>
+</div>
+<a id="accbf31c2dec6c594b74e1338021ef219"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accbf31c2dec6c594b74e1338021ef219">&#9670;&nbsp;</a></span>store()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.DatabaseManaging.ConcreteDataManager.store </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>access</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stores a value into the in-memory buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key identifying the value to store (defined in Constants). </td></tr>
+    <tr><td class="paramname">value</td><td>The integer value to store. </td></tr>
+    <tr><td class="paramname">access</td><td>A boolean flag (currently unused in this implementation, potentially for future permission checks). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html#a44487bfd10bbe98cb8130aa8d1cf0443">PaooGame.DatabaseManaging.DataManager</a>.</p>
+
+</div>
+</div>
+<a id="a5e1587bab5537db2790ddf0494bfef9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e1587bab5537db2790ddf0494bfef9b">&#9670;&nbsp;</a></span>storeBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.DatabaseManaging.ConcreteDataManager.storeBuffer </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>access</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stores the current state of the in-memory buffer into the SQLite database as a new game save. Manages the maximum number of save entries, deleting the oldest if the limit is reached. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">access</td><td>A boolean flag (currently unused, potentially for future permission checks). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html#a34f28f3aad93e84b36c760fcbe7eb490">PaooGame.DatabaseManaging.DataManager</a>.</p>
+
+</div>
+</div>
+<a id="a42ab7be226a59ff2239c4eb2382f0e66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42ab7be226a59ff2239c4eb2382f0e66">&#9670;&nbsp;</a></span>storeScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.DatabaseManaging.ConcreteDataManager.storeScore </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>access</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>score1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>score2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>score3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stores high scores into the database. Scores are packed into a single integer and stored in a special row (identified by TIMESTAMP = -2). If the score row doesn't exist, it's inserted; otherwise, it's updated. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">access</td><td>A boolean flag (currently unused). </td></tr>
+    <tr><td class="paramname">score1</td><td>The first high score. </td></tr>
+    <tr><td class="paramname">score2</td><td>The second high score. </td></tr>
+    <tr><td class="paramname">score3</td><td>The third high score. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html#a2c486fce52bb74f1441186048dc6e0c4">PaooGame.DatabaseManaging.DataManager</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/PaooGame/DatabaseManaging/ConcreteDataManager.java</li>
 </ul>

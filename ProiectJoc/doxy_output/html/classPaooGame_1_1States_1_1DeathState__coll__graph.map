@@ -1,5 +1,5 @@
 <map id="PaooGame.States.DeathState" name="PaooGame.States.DeathState">
-<area shape="rect" id="node1" title=" " alt="" coords="5,171,220,197"/>
-<area shape="rect" id="node2" href="$classPaooGame_1_1States_1_1State.html" title=" " alt="" coords="25,95,200,121"/>
-<area shape="rect" id="node3" href="$classPaooGame_1_1RefLinks.html" title=" " alt="" coords="37,5,189,32"/>
+<area shape="rect" id="node1" title="Represents the game state displayed when the player dies." alt="" coords="5,171,220,197"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1States_1_1State.html" title="Defines an abstract base class for all game states." alt="" coords="25,95,200,121"/>
+<area shape="rect" id="node3" href="$classPaooGame_1_1RefLinks.html" title="Provides a centralized way to access shared game objects and utilities." alt="" coords="37,5,189,32"/>
 </map>

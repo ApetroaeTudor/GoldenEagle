@@ -1,4 +1,4 @@
 <map id="PaooGame.DatabaseManaging.ProxyDataManager" name="PaooGame.DatabaseManaging.ProxyDataManager">
-<area shape="rect" id="node1" title=" " alt="" coords="5,95,232,136"/>
-<area shape="rect" id="node2" href="$interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html" title=" " alt="" coords="5,5,232,47"/>
+<area shape="rect" id="node1" title="Implements the DataManager interface using a Proxy pattern to control access and add validation to a ..." alt="" coords="5,95,232,136"/>
+<area shape="rect" id="node2" href="$interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html" title="Defines the contract for managing game data, including loading, storing, and resetting data." alt="" coords="5,5,232,47"/>
 </map>

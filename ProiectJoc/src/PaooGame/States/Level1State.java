@@ -83,6 +83,7 @@ public class Level1State extends State {
         // Initialize enemies
         enemies = new Enemy[2];
         enemies[0] = new Enemy(this.reflink,this.tiger1X,this.tiger1Y,Constants.TIGER_NAME); //tiger0
+
         enemies[1] = new Enemy(this.reflink,this.tiger2X,this.tiger2Y,Constants.TIGER_NAME); //tiger1
 
         // Initialize floppy disks associated with save points
@@ -146,6 +147,7 @@ public class Level1State extends State {
             this.reflink.setCurrentRunningLevel(this.reflink.getGame().getLevel1State()); // Set current running level reference
         }
         this.floppyDisks[0].updateItem(); // Update floppy disk item
+
 
         for(int i =0;i<this.nrOfSaves;++i){
             this.saves[i].updateItem(); // Update save point items

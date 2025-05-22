@@ -155,7 +155,6 @@ public class Hero extends Entity {
      */
     @Override
     public void update() {
-        System.out.println(this.isEngageReady);
         handleBehaviorIDs();
 
         if( Level.checkFalling(this.getHitbox(),this.LEVEL_WIDTH,this.LEVEL_HEIGHT,this.behaviorIDsToRespect) ==1){

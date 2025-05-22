@@ -1,0 +1,80 @@
+\hypertarget{classPaooGame_1_1Items_1_1BonfireItem}{}\doxysection{Paoo\+Game.\+Items.\+Bonfire\+Item Class Reference}
+\label{classPaooGame_1_1Items_1_1BonfireItem}\index{PaooGame.Items.BonfireItem@{PaooGame.Items.BonfireItem}}
+
+
+Inheritance diagram for Paoo\+Game.\+Items.\+Bonfire\+Item\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classPaooGame_1_1Items_1_1BonfireItem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Paoo\+Game.\+Items.\+Bonfire\+Item\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPaooGame_1_1Items_1_1BonfireItem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPaooGame_1_1Items_1_1BonfireItem_a43d40b0c6349d82b20493349d5f90df5}{Bonfire\+Item}} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} reflink, int \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_ae7a5f7d40d631eb4a91978b09a8468dd}{x}}, int \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_a0f7a182a96e794a61203b08e197a0e4f}{y}})
+\begin{DoxyCompactList}\small\item\em Constructs a Save\+Item object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Items_1_1BonfireItem_a918c6613fb11f64baec1788a83d9635e}{draw\+Item}} (Graphics g)
+\begin{DoxyCompactList}\small\item\em Draws the bonfire on the screen. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPaooGame_1_1Items_1_1BonfireItem_a8101a213f21363c5bef84f4fd78fc853}\label{classPaooGame_1_1Items_1_1BonfireItem_a8101a213f21363c5bef84f4fd78fc853}} 
+void \mbox{\hyperlink{classPaooGame_1_1Items_1_1BonfireItem_a8101a213f21363c5bef84f4fd78fc853}{update\+Item}} ()
+\begin{DoxyCompactList}\small\item\em Updates the state of the save item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Items_1_1BonfireItem_a43d40b0c6349d82b20493349d5f90df5}\label{classPaooGame_1_1Items_1_1BonfireItem_a43d40b0c6349d82b20493349d5f90df5}} 
+\index{PaooGame.Items.BonfireItem@{PaooGame.Items.BonfireItem}!BonfireItem@{BonfireItem}}
+\index{BonfireItem@{BonfireItem}!PaooGame.Items.BonfireItem@{PaooGame.Items.BonfireItem}}
+\doxysubsubsection{\texorpdfstring{BonfireItem()}{BonfireItem()}}
+{\footnotesize\ttfamily Paoo\+Game.\+Items.\+Bonfire\+Item.\+Bonfire\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}}}]{reflink,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a Save\+Item object. 
+
+Initializes the bonfire at a specified position. It sets the item\textquotesingle{}s name, sprite sheet path, creates its hitbox, and loads its animation. The properties are derived from \mbox{\hyperlink{classPaooGame_1_1Config_1_1Constants}{Paoo\+Game.\+Config.\+Constants}}. 
+\begin{DoxyParams}{Parameters}
+{\em reflink} & A \mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} object providing access to game-\/wide resources and utilities. \\
+\hline
+{\em x} & The initial x-\/coordinate of the save item in the game world. \\
+\hline
+{\em y} & The initial y-\/coordinate of the save item in the game world. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Items_1_1BonfireItem_a918c6613fb11f64baec1788a83d9635e}\label{classPaooGame_1_1Items_1_1BonfireItem_a918c6613fb11f64baec1788a83d9635e}} 
+\index{PaooGame.Items.BonfireItem@{PaooGame.Items.BonfireItem}!drawItem@{drawItem}}
+\index{drawItem@{drawItem}!PaooGame.Items.BonfireItem@{PaooGame.Items.BonfireItem}}
+\doxysubsubsection{\texorpdfstring{drawItem()}{drawItem()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Items.\+Bonfire\+Item.\+draw\+Item (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Draws the bonfire on the screen. 
+
+This method uses the item\textquotesingle{}s animation (managed by \mbox{\hyperlink{}{Static\+Item\+Animation}}) to render its current frame at the item\textquotesingle{}s position. 
+\begin{DoxyParams}{Parameters}
+{\em g} & The \mbox{\hyperlink{}{Graphics}} context to draw on. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_afd85f5beb3846c53838fba92a9670455}{Paoo\+Game.\+Items.\+Item}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Paoo\+Game/\+Items/Bonfire\+Item.\+java\end{DoxyCompactItemize}

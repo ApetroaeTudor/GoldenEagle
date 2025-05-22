@@ -73,18 +73,21 @@ $(function() {
 <div class="title">PaooGame.Strategies.EnemyStrategies.EnemyStrategy Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Defines an abstract base class for different enemy AI and property strategies.  
+ <a href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for PaooGame.Strategies.EnemyStrategies.EnemyStrategy:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy__inherit__graph.png" border="0" usemap="#aPaooGame_8Strategies_8EnemyStrategies_8EnemyStrategy_inherit__map" alt="Inheritance graph"/></div>
 <map name="aPaooGame_8Strategies_8EnemyStrategies_8EnemyStrategy_inherit__map" id="aPaooGame_8Strategies_8EnemyStrategies_8EnemyStrategy_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,173,216,215"/>
-<area shape="rect" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1BasicSkeletonEnemyStrategy.html" title=" " alt="" coords="264,5,547,47"/>
-<area shape="rect" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1GhostEnemyStrategy.html" title=" " alt="" coords="290,71,521,112"/>
-<area shape="rect" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1MinotaurEnemyStrategy.html" title=" " alt="" coords="280,136,531,177"/>
-<area shape="rect" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1StrongSkeletonEnemyStrategy.html" title=" " alt="" coords="288,202,523,258"/>
-<area shape="rect" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1TigerEnemyStrategy.html" title=" " alt="" coords="293,283,518,324"/>
-<area shape="rect" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1WizardEnemyStrategy.html" title=" " alt="" coords="287,348,524,389"/>
+<area shape="rect" title="Defines an abstract base class for different enemy AI and property strategies." alt="" coords="5,173,216,215"/>
+<area shape="rect" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1BasicSkeletonEnemyStrategy.html" title="Implements the specific strategy for a basic skeleton enemy." alt="" coords="264,5,547,47"/>
+<area shape="rect" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1GhostEnemyStrategy.html" title="Implements the specific strategy for the Ghost enemy type." alt="" coords="290,71,521,112"/>
+<area shape="rect" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1MinotaurEnemyStrategy.html" title="Implements the specific strategy for the Minotaur enemy type." alt="" coords="280,136,531,177"/>
+<area shape="rect" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1StrongSkeletonEnemyStrategy.html" title="Implements the specific strategy for the Strong Skeleton enemy type." alt="" coords="288,202,523,258"/>
+<area shape="rect" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1TigerEnemyStrategy.html" title="Implements the specific strategy for the Tiger enemy type." alt="" coords="293,283,518,324"/>
+<area shape="rect" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1WizardEnemyStrategy.html" title="Implements the specific strategy for the Wizard enemy type." alt="" coords="287,348,524,389"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -92,116 +95,657 @@ Collaboration diagram for PaooGame.Strategies.EnemyStrategies.EnemyStrategy:</di
 <div class="dyncontent">
 <div class="center"><img src="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy__coll__graph.png" border="0" usemap="#aPaooGame_8Strategies_8EnemyStrategies_8EnemyStrategy_coll__map" alt="Collaboration graph"/></div>
 <map name="aPaooGame_8Strategies_8EnemyStrategies_8EnemyStrategy_coll__map" id="aPaooGame_8Strategies_8EnemyStrategies_8EnemyStrategy_coll__map">
-<area shape="rect" title=" " alt="" coords="57,228,268,269"/>
+<area shape="rect" title="Defines an abstract base class for different enemy AI and property strategies." alt="" coords="57,228,268,269"/>
 <area shape="rect" title=" " alt="" coords="5,109,61,136"/>
-<area shape="rect" href="classPaooGame_1_1Animations_1_1Animation.html" title=" " alt="" coords="233,109,474,136"/>
-<area shape="rect" href="classPaooGame_1_1RefLinks.html" title=" " alt="" coords="103,5,255,32"/>
+<area shape="rect" href="classPaooGame_1_1Animations_1_1Animation.html" title="Abstract base class for managing and rendering sprite animations." alt="" coords="233,109,474,136"/>
+<area shape="rect" href="classPaooGame_1_1RefLinks.html" title="Provides a centralized way to access shared game objects and utilities." alt="" coords="103,5,255,32"/>
 <area shape="rect" title=" " alt="" coords="294,5,413,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aecf3fe2da7d0bbc7b75cd12a45faee07"><td class="memItemLeft" align="right" valign="top"><a id="aecf3fe2da7d0bbc7b75cd12a45faee07"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getHitboxWidth</b> ()</td></tr>
+<tr class="memitem:aecf3fe2da7d0bbc7b75cd12a45faee07"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#aecf3fe2da7d0bbc7b75cd12a45faee07">getHitboxWidth</a> ()</td></tr>
+<tr class="memdesc:aecf3fe2da7d0bbc7b75cd12a45faee07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the width of the enemy's hitbox.  <a href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#aecf3fe2da7d0bbc7b75cd12a45faee07">More...</a><br /></td></tr>
 <tr class="separator:aecf3fe2da7d0bbc7b75cd12a45faee07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb4cb5f42326eebdff6fd72d257a85be"><td class="memItemLeft" align="right" valign="top"><a id="afb4cb5f42326eebdff6fd72d257a85be"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getSpeed</b> ()</td></tr>
+<tr class="memitem:afb4cb5f42326eebdff6fd72d257a85be"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#afb4cb5f42326eebdff6fd72d257a85be">getSpeed</a> ()</td></tr>
+<tr class="memdesc:afb4cb5f42326eebdff6fd72d257a85be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the movement speed of the enemy.  <a href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#afb4cb5f42326eebdff6fd72d257a85be">More...</a><br /></td></tr>
 <tr class="separator:afb4cb5f42326eebdff6fd72d257a85be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b70b996006d5c27648f0cc80ae1f374"><td class="memItemLeft" align="right" valign="top"><a id="a3b70b996006d5c27648f0cc80ae1f374"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getHitboxHeight</b> ()</td></tr>
+<tr class="memitem:a3b70b996006d5c27648f0cc80ae1f374"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a3b70b996006d5c27648f0cc80ae1f374">getHitboxHeight</a> ()</td></tr>
+<tr class="memdesc:a3b70b996006d5c27648f0cc80ae1f374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the height of the enemy's hitbox.  <a href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a3b70b996006d5c27648f0cc80ae1f374">More...</a><br /></td></tr>
 <tr class="separator:a3b70b996006d5c27648f0cc80ae1f374"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f1cdd093750feaa10ae0667b5d977e4"><td class="memItemLeft" align="right" valign="top"><a id="a0f1cdd093750feaa10ae0667b5d977e4"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getLevelWidthInTiles</b> ()</td></tr>
+<tr class="memitem:a0f1cdd093750feaa10ae0667b5d977e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a0f1cdd093750feaa10ae0667b5d977e4">getLevelWidthInTiles</a> ()</td></tr>
+<tr class="memdesc:a0f1cdd093750feaa10ae0667b5d977e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the width of the level (in tiles) this enemy operates in.  <a href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a0f1cdd093750feaa10ae0667b5d977e4">More...</a><br /></td></tr>
 <tr class="separator:a0f1cdd093750feaa10ae0667b5d977e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad41c64acebaf4a3ad8e48150e0f8276f"><td class="memItemLeft" align="right" valign="top"><a id="ad41c64acebaf4a3ad8e48150e0f8276f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getLevelHeightInTiles</b> ()</td></tr>
+<tr class="memitem:ad41c64acebaf4a3ad8e48150e0f8276f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#ad41c64acebaf4a3ad8e48150e0f8276f">getLevelHeightInTiles</a> ()</td></tr>
+<tr class="memdesc:ad41c64acebaf4a3ad8e48150e0f8276f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the height of the level (in tiles) this enemy operates in.  <a href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#ad41c64acebaf4a3ad8e48150e0f8276f">More...</a><br /></td></tr>
 <tr class="separator:ad41c64acebaf4a3ad8e48150e0f8276f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add42832a2e9de8f3cdb568c6cd45cb3c"><td class="memItemLeft" align="right" valign="top"><a id="add42832a2e9de8f3cdb568c6cd45cb3c"></a>
-Color&#160;</td><td class="memItemRight" valign="bottom"><b>getHealthBarColor1</b> ()</td></tr>
+<tr class="memitem:add42832a2e9de8f3cdb568c6cd45cb3c"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#add42832a2e9de8f3cdb568c6cd45cb3c">getHealthBarColor1</a> ()</td></tr>
+<tr class="memdesc:add42832a2e9de8f3cdb568c6cd45cb3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the primary color for the enemy's health bar.  <a href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#add42832a2e9de8f3cdb568c6cd45cb3c">More...</a><br /></td></tr>
 <tr class="separator:add42832a2e9de8f3cdb568c6cd45cb3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8c8892fa48a9d48dcc36a281cdccf7f"><td class="memItemLeft" align="right" valign="top"><a id="ad8c8892fa48a9d48dcc36a281cdccf7f"></a>
-Color&#160;</td><td class="memItemRight" valign="bottom"><b>getHealthBarColor2</b> ()</td></tr>
+<tr class="memitem:ad8c8892fa48a9d48dcc36a281cdccf7f"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#ad8c8892fa48a9d48dcc36a281cdccf7f">getHealthBarColor2</a> ()</td></tr>
+<tr class="memdesc:ad8c8892fa48a9d48dcc36a281cdccf7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the secondary color (e.g., background or depleted part) for the enemy's health bar.  <a href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#ad8c8892fa48a9d48dcc36a281cdccf7f">More...</a><br /></td></tr>
 <tr class="separator:ad8c8892fa48a9d48dcc36a281cdccf7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a500ea1c30db0db01630db17ddb61e2d9"><td class="memItemLeft" align="right" valign="top"><a id="a500ea1c30db0db01630db17ddb61e2d9"></a>
-<a class="el" href="classPaooGame_1_1Animations_1_1Animation.html">Animation</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getWalkingAnimation</b> ()</td></tr>
+<tr class="memitem:a500ea1c30db0db01630db17ddb61e2d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPaooGame_1_1Animations_1_1Animation.html">Animation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a500ea1c30db0db01630db17ddb61e2d9">getWalkingAnimation</a> ()</td></tr>
+<tr class="memdesc:a500ea1c30db0db01630db17ddb61e2d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the walking animation for the enemy.  <a href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a500ea1c30db0db01630db17ddb61e2d9">More...</a><br /></td></tr>
 <tr class="separator:a500ea1c30db0db01630db17ddb61e2d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a521424b81e62153eae4164bb2536eb59"><td class="memItemLeft" align="right" valign="top"><a id="a521424b81e62153eae4164bb2536eb59"></a>
-<a class="el" href="classPaooGame_1_1Animations_1_1Animation.html">Animation</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getInFightAttackingAnimation</b> ()</td></tr>
+<tr class="memitem:a521424b81e62153eae4164bb2536eb59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPaooGame_1_1Animations_1_1Animation.html">Animation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a521424b81e62153eae4164bb2536eb59">getInFightAttackingAnimation</a> ()</td></tr>
+<tr class="memdesc:a521424b81e62153eae4164bb2536eb59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the attacking animation for the enemy when in a fight.  <a href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a521424b81e62153eae4164bb2536eb59">More...</a><br /></td></tr>
 <tr class="separator:a521424b81e62153eae4164bb2536eb59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f91964558274b13725c9ffe1ef1e42d"><td class="memItemLeft" align="right" valign="top"><a id="a7f91964558274b13725c9ffe1ef1e42d"></a>
-<a class="el" href="classPaooGame_1_1Animations_1_1Animation.html">Animation</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getInFightIdleAnimation</b> ()</td></tr>
+<tr class="memitem:a7f91964558274b13725c9ffe1ef1e42d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPaooGame_1_1Animations_1_1Animation.html">Animation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a7f91964558274b13725c9ffe1ef1e42d">getInFightIdleAnimation</a> ()</td></tr>
+<tr class="memdesc:a7f91964558274b13725c9ffe1ef1e42d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the idle animation for the enemy when in a fight.  <a href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a7f91964558274b13725c9ffe1ef1e42d">More...</a><br /></td></tr>
 <tr class="separator:a7f91964558274b13725c9ffe1ef1e42d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaff13589adccbf281adaf482a74ef4ff"><td class="memItemLeft" align="right" valign="top"><a id="aaff13589adccbf281adaf482a74ef4ff"></a>
-<a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getReflink</b> ()</td></tr>
+<tr class="memitem:aaff13589adccbf281adaf482a74ef4ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#aaff13589adccbf281adaf482a74ef4ff">getReflink</a> ()</td></tr>
+<tr class="memdesc:aaff13589adccbf281adaf482a74ef4ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the reference links object.  <a href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#aaff13589adccbf281adaf482a74ef4ff">More...</a><br /></td></tr>
 <tr class="separator:aaff13589adccbf281adaf482a74ef4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06b3a3c3474dbc825b0687ac309726b1"><td class="memItemLeft" align="right" valign="top"><a id="a06b3a3c3474dbc825b0687ac309726b1"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getDamage</b> ()</td></tr>
+<tr class="memitem:a06b3a3c3474dbc825b0687ac309726b1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a06b3a3c3474dbc825b0687ac309726b1">getDamage</a> ()</td></tr>
+<tr class="memdesc:a06b3a3c3474dbc825b0687ac309726b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the damage value dealt by the enemy.  <a href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a06b3a3c3474dbc825b0687ac309726b1">More...</a><br /></td></tr>
 <tr class="separator:a06b3a3c3474dbc825b0687ac309726b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1ce8ee0f5eb4f418cbf7cdee21d97fd"><td class="memItemLeft" align="right" valign="top"><a id="ac1ce8ee0f5eb4f418cbf7cdee21d97fd"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getHealth</b> ()</td></tr>
+<tr class="memitem:ac1ce8ee0f5eb4f418cbf7cdee21d97fd"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#ac1ce8ee0f5eb4f418cbf7cdee21d97fd">getHealth</a> ()</td></tr>
+<tr class="memdesc:ac1ce8ee0f5eb4f418cbf7cdee21d97fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total health points of the enemy.  <a href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#ac1ce8ee0f5eb4f418cbf7cdee21d97fd">More...</a><br /></td></tr>
 <tr class="separator:ac1ce8ee0f5eb4f418cbf7cdee21d97fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f449e148e4ed4d4f5e0cbc7b9313f97"><td class="memItemLeft" align="right" valign="top"><a id="a6f449e148e4ed4d4f5e0cbc7b9313f97"></a>
-int[]&#160;</td><td class="memItemRight" valign="bottom"><b>getBehaviorIDsToRespect</b> ()</td></tr>
+<tr class="memitem:a6f449e148e4ed4d4f5e0cbc7b9313f97"><td class="memItemLeft" align="right" valign="top">int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a6f449e148e4ed4d4f5e0cbc7b9313f97">getBehaviorIDsToRespect</a> ()</td></tr>
+<tr class="memdesc:a6f449e148e4ed4d4f5e0cbc7b9313f97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an array of behavior tile IDs that this enemy should respect or interact with. These IDs typically define collision or special interaction tiles in the level.  <a href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a6f449e148e4ed4d4f5e0cbc7b9313f97">More...</a><br /></td></tr>
 <tr class="separator:a6f449e148e4ed4d4f5e0cbc7b9313f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7a6a2088546501abdf02c6a4e95112e"><td class="memItemLeft" align="right" valign="top"><a id="ab7a6a2088546501abdf02c6a4e95112e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>EnemyStrategy</b> (<a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a> reflink)</td></tr>
+<tr class="memitem:ab7a6a2088546501abdf02c6a4e95112e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#ab7a6a2088546501abdf02c6a4e95112e">EnemyStrategy</a> (<a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a> <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#aca26e697f877b6fa0f3f3d8e41750b4f">reflink</a>)</td></tr>
+<tr class="memdesc:ab7a6a2088546501abdf02c6a4e95112e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html" title="Defines an abstract base class for different enemy AI and property strategies.">EnemyStrategy</a> object.  <a href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#ab7a6a2088546501abdf02c6a4e95112e">More...</a><br /></td></tr>
 <tr class="separator:ab7a6a2088546501abdf02c6a4e95112e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a411cb15e389b282750532b492edc8520"><td class="memItemLeft" align="right" valign="top"><a id="a411cb15e389b282750532b492edc8520"></a>
-abstract String&#160;</td><td class="memItemRight" valign="bottom"><b>getName</b> ()</td></tr>
+<tr class="memitem:a411cb15e389b282750532b492edc8520"><td class="memItemLeft" align="right" valign="top">abstract String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a411cb15e389b282750532b492edc8520">getName</a> ()</td></tr>
+<tr class="memdesc:a411cb15e389b282750532b492edc8520"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the enemy type this strategy represents.  <a href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a411cb15e389b282750532b492edc8520">More...</a><br /></td></tr>
 <tr class="separator:a411cb15e389b282750532b492edc8520"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af843031ca3b2db7fb0e731d0626e1d12"><td class="memItemLeft" align="right" valign="top"><a id="af843031ca3b2db7fb0e731d0626e1d12"></a>
-abstract String&#160;</td><td class="memItemRight" valign="bottom"><b>getSource</b> ()</td></tr>
+<tr class="memitem:af843031ca3b2db7fb0e731d0626e1d12"><td class="memItemLeft" align="right" valign="top">abstract String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#af843031ca3b2db7fb0e731d0626e1d12">getSource</a> ()</td></tr>
+<tr class="memdesc:af843031ca3b2db7fb0e731d0626e1d12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the source or primary level where this enemy type is typically found.  <a href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#af843031ca3b2db7fb0e731d0626e1d12">More...</a><br /></td></tr>
 <tr class="separator:af843031ca3b2db7fb0e731d0626e1d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3b5dc07467e942c8ac13e46edbb649e"><td class="memItemLeft" align="right" valign="top"><a id="af3b5dc07467e942c8ac13e46edbb649e"></a>
-abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>drawName</b> (Graphics2D g2d)</td></tr>
+<tr class="memitem:af3b5dc07467e942c8ac13e46edbb649e"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#af3b5dc07467e942c8ac13e46edbb649e">drawName</a> (Graphics2D g2d)</td></tr>
+<tr class="memdesc:af3b5dc07467e942c8ac13e46edbb649e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the name of the enemy on the screen.  <a href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#af3b5dc07467e942c8ac13e46edbb649e">More...</a><br /></td></tr>
 <tr class="separator:af3b5dc07467e942c8ac13e46edbb649e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a776ea71e33f7e14e8b48c71b2c72bc37"><td class="memItemLeft" align="right" valign="top"><a id="a776ea71e33f7e14e8b48c71b2c72bc37"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>speed</b></td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a776ea71e33f7e14e8b48c71b2c72bc37">speed</a></td></tr>
+<tr class="memdesc:a776ea71e33f7e14e8b48c71b2c72bc37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Movement speed of the enemy. <br /></td></tr>
 <tr class="separator:a776ea71e33f7e14e8b48c71b2c72bc37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad61e273f7732ee041da179e5a5f7bfa8"><td class="memItemLeft" align="right" valign="top"><a id="ad61e273f7732ee041da179e5a5f7bfa8"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>hitboxWidth</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#ad61e273f7732ee041da179e5a5f7bfa8">hitboxWidth</a></td></tr>
+<tr class="memdesc:ad61e273f7732ee041da179e5a5f7bfa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Width of the enemy's hitbox in pixels. <br /></td></tr>
 <tr class="separator:ad61e273f7732ee041da179e5a5f7bfa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fe550b7111c353b9a57d0325c5300e7"><td class="memItemLeft" align="right" valign="top"><a id="a5fe550b7111c353b9a57d0325c5300e7"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>hitboxHeight</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a5fe550b7111c353b9a57d0325c5300e7">hitboxHeight</a></td></tr>
+<tr class="memdesc:a5fe550b7111c353b9a57d0325c5300e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of the enemy's hitbox in pixels. <br /></td></tr>
 <tr class="separator:a5fe550b7111c353b9a57d0325c5300e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42977c0d6d3af4a38a67dcad3b779348"><td class="memItemLeft" align="right" valign="top"><a id="a42977c0d6d3af4a38a67dcad3b779348"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>levelWidthInTiles</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a42977c0d6d3af4a38a67dcad3b779348">levelWidthInTiles</a></td></tr>
+<tr class="memdesc:a42977c0d6d3af4a38a67dcad3b779348"><td class="mdescLeft">&#160;</td><td class="mdescRight">Width of the current level in tiles, relevant for enemy navigation. <br /></td></tr>
 <tr class="separator:a42977c0d6d3af4a38a67dcad3b779348"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51b6cde44d30119c054df79b1d72dde7"><td class="memItemLeft" align="right" valign="top"><a id="a51b6cde44d30119c054df79b1d72dde7"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>levelHeightInTiles</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a51b6cde44d30119c054df79b1d72dde7">levelHeightInTiles</a></td></tr>
+<tr class="memdesc:a51b6cde44d30119c054df79b1d72dde7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of the current level in tiles, relevant for enemy navigation. <br /></td></tr>
 <tr class="separator:a51b6cde44d30119c054df79b1d72dde7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ad14cbb3cfb200d84ce16ae0074c9bc"><td class="memItemLeft" align="right" valign="top"><a id="a6ad14cbb3cfb200d84ce16ae0074c9bc"></a>
-Color&#160;</td><td class="memItemRight" valign="bottom"><b>healthBarColor1</b></td></tr>
+Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a6ad14cbb3cfb200d84ce16ae0074c9bc">healthBarColor1</a></td></tr>
+<tr class="memdesc:a6ad14cbb3cfb200d84ce16ae0074c9bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Primary color for the enemy's health bar. <br /></td></tr>
 <tr class="separator:a6ad14cbb3cfb200d84ce16ae0074c9bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa02bb046a0dbcd81c641e3d2d7a4f457"><td class="memItemLeft" align="right" valign="top"><a id="aa02bb046a0dbcd81c641e3d2d7a4f457"></a>
-Color&#160;</td><td class="memItemRight" valign="bottom"><b>healthBarColor2</b></td></tr>
+Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#aa02bb046a0dbcd81c641e3d2d7a4f457">healthBarColor2</a></td></tr>
+<tr class="memdesc:aa02bb046a0dbcd81c641e3d2d7a4f457"><td class="mdescLeft">&#160;</td><td class="mdescRight">Secondary color for the enemy's health bar. <br /></td></tr>
 <tr class="separator:aa02bb046a0dbcd81c641e3d2d7a4f457"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af117a588e5be8ccdd289879cdf30bfd9"><td class="memItemLeft" align="right" valign="top"><a id="af117a588e5be8ccdd289879cdf30bfd9"></a>
-<a class="el" href="classPaooGame_1_1Animations_1_1Animation.html">Animation</a>&#160;</td><td class="memItemRight" valign="bottom"><b>walkingAnimation</b></td></tr>
+<a class="el" href="classPaooGame_1_1Animations_1_1Animation.html">Animation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#af117a588e5be8ccdd289879cdf30bfd9">walkingAnimation</a></td></tr>
+<tr class="memdesc:af117a588e5be8ccdd289879cdf30bfd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Animation for when the enemy is walking. <br /></td></tr>
 <tr class="separator:af117a588e5be8ccdd289879cdf30bfd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16617b98ee41eb67270bc87197edb13b"><td class="memItemLeft" align="right" valign="top"><a id="a16617b98ee41eb67270bc87197edb13b"></a>
-<a class="el" href="classPaooGame_1_1Animations_1_1Animation.html">Animation</a>&#160;</td><td class="memItemRight" valign="bottom"><b>inFightAttackingAnimation</b></td></tr>
+<a class="el" href="classPaooGame_1_1Animations_1_1Animation.html">Animation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a16617b98ee41eb67270bc87197edb13b">inFightAttackingAnimation</a></td></tr>
+<tr class="memdesc:a16617b98ee41eb67270bc87197edb13b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Animation for when the enemy is attacking during a fight. <br /></td></tr>
 <tr class="separator:a16617b98ee41eb67270bc87197edb13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5dcfed049477e5ba3f603a4a68a127ab"><td class="memItemLeft" align="right" valign="top"><a id="a5dcfed049477e5ba3f603a4a68a127ab"></a>
-<a class="el" href="classPaooGame_1_1Animations_1_1Animation.html">Animation</a>&#160;</td><td class="memItemRight" valign="bottom"><b>inFightIdleAnimation</b></td></tr>
+<a class="el" href="classPaooGame_1_1Animations_1_1Animation.html">Animation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a5dcfed049477e5ba3f603a4a68a127ab">inFightIdleAnimation</a></td></tr>
+<tr class="memdesc:a5dcfed049477e5ba3f603a4a68a127ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Animation for when the enemy is idle during a fight. <br /></td></tr>
 <tr class="separator:a5dcfed049477e5ba3f603a4a68a127ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca26e697f877b6fa0f3f3d8e41750b4f"><td class="memItemLeft" align="right" valign="top"><a id="aca26e697f877b6fa0f3f3d8e41750b4f"></a>
-<a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a>&#160;</td><td class="memItemRight" valign="bottom"><b>reflink</b></td></tr>
+<a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#aca26e697f877b6fa0f3f3d8e41750b4f">reflink</a></td></tr>
+<tr class="memdesc:aca26e697f877b6fa0f3f3d8e41750b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to shared game objects and utilities. <br /></td></tr>
 <tr class="separator:aca26e697f877b6fa0f3f3d8e41750b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c5f78707cf955c170de3fcac46e953b"><td class="memItemLeft" align="right" valign="top"><a id="a1c5f78707cf955c170de3fcac46e953b"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>damage</b></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a1c5f78707cf955c170de3fcac46e953b">damage</a></td></tr>
+<tr class="memdesc:a1c5f78707cf955c170de3fcac46e953b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Amount of damage the enemy inflicts. <br /></td></tr>
 <tr class="separator:a1c5f78707cf955c170de3fcac46e953b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a7326f60a8ba09bf648d281e60f8bc6"><td class="memItemLeft" align="right" valign="top"><a id="a2a7326f60a8ba09bf648d281e60f8bc6"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>health</b></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a2a7326f60a8ba09bf648d281e60f8bc6">health</a></td></tr>
+<tr class="memdesc:a2a7326f60a8ba09bf648d281e60f8bc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total health points of the enemy. <br /></td></tr>
 <tr class="separator:a2a7326f60a8ba09bf648d281e60f8bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a708163d1ce714319a6beda2ecf252c50"><td class="memItemLeft" align="right" valign="top"><a id="a708163d1ce714319a6beda2ecf252c50"></a>
-int[]&#160;</td><td class="memItemRight" valign="bottom"><b>behaviorIDsToRespect</b></td></tr>
+int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a708163d1ce714319a6beda2ecf252c50">behaviorIDsToRespect</a></td></tr>
+<tr class="memdesc:a708163d1ce714319a6beda2ecf252c50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of tile behavior IDs the enemy interacts with (e.g., collision). <br /></td></tr>
 <tr class="separator:a708163d1ce714319a6beda2ecf252c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Defines an abstract base class for different enemy AI and property strategies. </p>
+<p>This class provides a common structure for defining the characteristics and behaviors of various enemy types in the game. Concrete enemy strategies (e.g., <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1BasicSkeletonEnemyStrategy.html" title="Implements the specific strategy for a basic skeleton enemy.">BasicSkeletonEnemyStrategy</a>) will extend this class to implement specific attributes like speed, health, damage, animations, and how they interact with the game world. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ab7a6a2088546501abdf02c6a4e95112e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7a6a2088546501abdf02c6a4e95112e">&#9670;&nbsp;</a></span>EnemyStrategy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PaooGame.Strategies.EnemyStrategies.EnemyStrategy.EnemyStrategy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a>&#160;</td>
+          <td class="paramname"><em>reflink</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs an <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html" title="Defines an abstract base class for different enemy AI and property strategies.">EnemyStrategy</a> object. </p>
+<p>Initializes the strategy with a reference to the game's shared <a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a> object. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reflink</td><td>A <a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a> object providing access to game-wide objects and utilities. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="af3b5dc07467e942c8ac13e46edbb649e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3b5dc07467e942c8ac13e46edbb649e">&#9670;&nbsp;</a></span>drawName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void PaooGame.Strategies.EnemyStrategies.EnemyStrategy.drawName </td>
+          <td>(</td>
+          <td class="paramtype">Graphics2D&#160;</td>
+          <td class="paramname"><em>g2d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Draws the name of the enemy on the screen. </p>
+<p>This method is typically used during fight sequences to display the enemy's name. Concrete subclasses must implement how the name is drawn. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g2d</td><td>The <a class="el" href="">Graphics2D</a> context used for drawing. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1WizardEnemyStrategy.html#acb986e18b95c0016b721d79565a30ee4">PaooGame.Strategies.EnemyStrategies.WizardEnemyStrategy</a>, <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1TigerEnemyStrategy.html#ac082f5aac0f687f44ae6079cb0831a34">PaooGame.Strategies.EnemyStrategies.TigerEnemyStrategy</a>, <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1StrongSkeletonEnemyStrategy.html#ab67c43cd080a7ea4eb1ba910cd399957">PaooGame.Strategies.EnemyStrategies.StrongSkeletonEnemyStrategy</a>, <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1MinotaurEnemyStrategy.html#aa82c5170601aa28384b9b6b72dc9b70c">PaooGame.Strategies.EnemyStrategies.MinotaurEnemyStrategy</a>, <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1GhostEnemyStrategy.html#a4af1c821920cf71f3ba1a8fad02b4519">PaooGame.Strategies.EnemyStrategies.GhostEnemyStrategy</a>, and <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1BasicSkeletonEnemyStrategy.html#a6d2c006600f9d02e7786cd9bc93d7cfd">PaooGame.Strategies.EnemyStrategies.BasicSkeletonEnemyStrategy</a>.</p>
+
+</div>
+</div>
+<a id="a6f449e148e4ed4d4f5e0cbc7b9313f97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f449e148e4ed4d4f5e0cbc7b9313f97">&#9670;&nbsp;</a></span>getBehaviorIDsToRespect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int [] PaooGame.Strategies.EnemyStrategies.EnemyStrategy.getBehaviorIDsToRespect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets an array of behavior tile IDs that this enemy should respect or interact with. These IDs typically define collision or special interaction tiles in the level. </p>
+<dl class="section return"><dt>Returns</dt><dd>An array of integer IDs representing behavior tiles. </dd></dl>
+
+</div>
+</div>
+<a id="a06b3a3c3474dbc825b0687ac309726b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06b3a3c3474dbc825b0687ac309726b1">&#9670;&nbsp;</a></span>getDamage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PaooGame.Strategies.EnemyStrategies.EnemyStrategy.getDamage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the damage value dealt by the enemy. </p>
+<dl class="section return"><dt>Returns</dt><dd>The amount of damage the enemy inflicts. </dd></dl>
+
+</div>
+</div>
+<a id="ac1ce8ee0f5eb4f418cbf7cdee21d97fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1ce8ee0f5eb4f418cbf7cdee21d97fd">&#9670;&nbsp;</a></span>getHealth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PaooGame.Strategies.EnemyStrategies.EnemyStrategy.getHealth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the total health points of the enemy. </p>
+<dl class="section return"><dt>Returns</dt><dd>The maximum health of the enemy. </dd></dl>
+
+</div>
+</div>
+<a id="add42832a2e9de8f3cdb568c6cd45cb3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add42832a2e9de8f3cdb568c6cd45cb3c">&#9670;&nbsp;</a></span>getHealthBarColor1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color PaooGame.Strategies.EnemyStrategies.EnemyStrategy.getHealthBarColor1 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the primary color for the enemy's health bar. </p>
+<dl class="section return"><dt>Returns</dt><dd>The primary <a class="el" href="">Color</a> of the health bar. </dd></dl>
+
+</div>
+</div>
+<a id="ad8c8892fa48a9d48dcc36a281cdccf7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8c8892fa48a9d48dcc36a281cdccf7f">&#9670;&nbsp;</a></span>getHealthBarColor2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color PaooGame.Strategies.EnemyStrategies.EnemyStrategy.getHealthBarColor2 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the secondary color (e.g., background or depleted part) for the enemy's health bar. </p>
+<dl class="section return"><dt>Returns</dt><dd>The secondary <a class="el" href="">Color</a> of the health bar. </dd></dl>
+
+</div>
+</div>
+<a id="a3b70b996006d5c27648f0cc80ae1f374"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b70b996006d5c27648f0cc80ae1f374">&#9670;&nbsp;</a></span>getHitboxHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PaooGame.Strategies.EnemyStrategies.EnemyStrategy.getHitboxHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the height of the enemy's hitbox. </p>
+<dl class="section return"><dt>Returns</dt><dd>The hitbox height in pixels. </dd></dl>
+
+</div>
+</div>
+<a id="aecf3fe2da7d0bbc7b75cd12a45faee07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecf3fe2da7d0bbc7b75cd12a45faee07">&#9670;&nbsp;</a></span>getHitboxWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PaooGame.Strategies.EnemyStrategies.EnemyStrategy.getHitboxWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the width of the enemy's hitbox. </p>
+<dl class="section return"><dt>Returns</dt><dd>The hitbox width in pixels. </dd></dl>
+
+</div>
+</div>
+<a id="a521424b81e62153eae4164bb2536eb59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a521424b81e62153eae4164bb2536eb59">&#9670;&nbsp;</a></span>getInFightAttackingAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPaooGame_1_1Animations_1_1Animation.html">Animation</a> PaooGame.Strategies.EnemyStrategies.EnemyStrategy.getInFightAttackingAnimation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the attacking animation for the enemy when in a fight. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="">Animation</a> used when the enemy is attacking during a fight. </dd></dl>
+
+</div>
+</div>
+<a id="a7f91964558274b13725c9ffe1ef1e42d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f91964558274b13725c9ffe1ef1e42d">&#9670;&nbsp;</a></span>getInFightIdleAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPaooGame_1_1Animations_1_1Animation.html">Animation</a> PaooGame.Strategies.EnemyStrategies.EnemyStrategy.getInFightIdleAnimation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the idle animation for the enemy when in a fight. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="">Animation</a> used when the enemy is idle during a fight. </dd></dl>
+
+</div>
+</div>
+<a id="ad41c64acebaf4a3ad8e48150e0f8276f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad41c64acebaf4a3ad8e48150e0f8276f">&#9670;&nbsp;</a></span>getLevelHeightInTiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PaooGame.Strategies.EnemyStrategies.EnemyStrategy.getLevelHeightInTiles </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the height of the level (in tiles) this enemy operates in. </p>
+<dl class="section return"><dt>Returns</dt><dd>The level height in number of tiles. </dd></dl>
+
+</div>
+</div>
+<a id="a0f1cdd093750feaa10ae0667b5d977e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f1cdd093750feaa10ae0667b5d977e4">&#9670;&nbsp;</a></span>getLevelWidthInTiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PaooGame.Strategies.EnemyStrategies.EnemyStrategy.getLevelWidthInTiles </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the width of the level (in tiles) this enemy operates in. </p>
+<dl class="section return"><dt>Returns</dt><dd>The level width in number of tiles. </dd></dl>
+
+</div>
+</div>
+<a id="a411cb15e389b282750532b492edc8520"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a411cb15e389b282750532b492edc8520">&#9670;&nbsp;</a></span>getName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract String PaooGame.Strategies.EnemyStrategies.EnemyStrategy.getName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the name of the enemy type this strategy represents. </p>
+<p>This method must be implemented by concrete subclasses to return the specific name of the enemy (e.g., "Skeleton", "Goblin"). </p><dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="">String</a> representing the name of the enemy. </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1WizardEnemyStrategy.html#a58fd1fdb2d74dafe2057de4299181c8f">PaooGame.Strategies.EnemyStrategies.WizardEnemyStrategy</a>, <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1TigerEnemyStrategy.html#a20bf86afb6aff7dbcb8e763e1c61031d">PaooGame.Strategies.EnemyStrategies.TigerEnemyStrategy</a>, <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1StrongSkeletonEnemyStrategy.html#a5c11e9305c3c3e91a3d5faf40f0b71cb">PaooGame.Strategies.EnemyStrategies.StrongSkeletonEnemyStrategy</a>, <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1MinotaurEnemyStrategy.html#af15ad85f16f2e219ece80c0c243f70b0">PaooGame.Strategies.EnemyStrategies.MinotaurEnemyStrategy</a>, <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1GhostEnemyStrategy.html#a232d404698b8a2c4b1bc7a706d2f1f16">PaooGame.Strategies.EnemyStrategies.GhostEnemyStrategy</a>, and <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1BasicSkeletonEnemyStrategy.html#a56f1e3df0d4150077c881fee17161696">PaooGame.Strategies.EnemyStrategies.BasicSkeletonEnemyStrategy</a>.</p>
+
+</div>
+</div>
+<a id="aaff13589adccbf281adaf482a74ef4ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaff13589adccbf281adaf482a74ef4ff">&#9670;&nbsp;</a></span>getReflink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a> PaooGame.Strategies.EnemyStrategies.EnemyStrategy.getReflink </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the reference links object. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a> object providing access to game-wide utilities. </dd></dl>
+
+</div>
+</div>
+<a id="af843031ca3b2db7fb0e731d0626e1d12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af843031ca3b2db7fb0e731d0626e1d12">&#9670;&nbsp;</a></span>getSource()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract String PaooGame.Strategies.EnemyStrategies.EnemyStrategy.getSource </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the source or primary level where this enemy type is typically found. </p>
+<p>This method must be implemented by concrete subclasses. </p><dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="">String</a> representing the source level (e.g., "Level1") </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1WizardEnemyStrategy.html#afa7e480c27c68d6459dfdcc06c0812b5">PaooGame.Strategies.EnemyStrategies.WizardEnemyStrategy</a>, <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1TigerEnemyStrategy.html#a318314fe5818383b3eec5b30edc938f2">PaooGame.Strategies.EnemyStrategies.TigerEnemyStrategy</a>, <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1StrongSkeletonEnemyStrategy.html#aaca3972d41f921597373ad1d1ed98665">PaooGame.Strategies.EnemyStrategies.StrongSkeletonEnemyStrategy</a>, <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1MinotaurEnemyStrategy.html#a386d481458c3c9b34397bb4f63d67a4a">PaooGame.Strategies.EnemyStrategies.MinotaurEnemyStrategy</a>, <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1GhostEnemyStrategy.html#aa07cd9f8fba6999be39761e34c5b945f">PaooGame.Strategies.EnemyStrategies.GhostEnemyStrategy</a>, and <a class="el" href="classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1BasicSkeletonEnemyStrategy.html#ac9fefce695f3f33c0d47d591604ab3cb">PaooGame.Strategies.EnemyStrategies.BasicSkeletonEnemyStrategy</a>.</p>
+
+</div>
+</div>
+<a id="afb4cb5f42326eebdff6fd72d257a85be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb4cb5f42326eebdff6fd72d257a85be">&#9670;&nbsp;</a></span>getSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PaooGame.Strategies.EnemyStrategies.EnemyStrategy.getSpeed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the movement speed of the enemy. </p>
+<dl class="section return"><dt>Returns</dt><dd>The enemy's speed. </dd></dl>
+
+</div>
+</div>
+<a id="a500ea1c30db0db01630db17ddb61e2d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a500ea1c30db0db01630db17ddb61e2d9">&#9670;&nbsp;</a></span>getWalkingAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPaooGame_1_1Animations_1_1Animation.html">Animation</a> PaooGame.Strategies.EnemyStrategies.EnemyStrategy.getWalkingAnimation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the walking animation for the enemy. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="">Animation</a> used when the enemy is walking. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/PaooGame/Strategies/EnemyStrategies/EnemyStrategy.java</li>
 </ul>

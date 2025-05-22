@@ -127,8 +127,8 @@ public class FightState extends State {
             this.enemyTurnProgress = 0; // Reset progress bar
             this.blockingBar.updateValue(this.enemyTurnProgress);
             // Apply damage to hero, considering block
-            this.reflink.getHero().reduceHealth(this.enemy.getDamage()* (  (100.0-this.progressOnSpace*1.5f)/100.0) *4 );
-            this.latestDamageReceived = this.enemy.getDamage()* (  (100.0-this.progressOnSpace*1.5f)/100.0) *4;
+            this.reflink.getHero().reduceHealth(this.enemy.getEnemyStrategy().getDamage()* (  (100.0-this.progressOnSpace*1.5f)/100.0));
+            this.latestDamageReceived = this.enemy.getEnemyStrategy().getDamage()* (  (100.0-this.progressOnSpace*1.5f)/100.0);
             this.progressOnSpace = 0; // Reset block value
             this.printingDamageReceivedPopup = true;
             this.popupTimer.start(); // Show damage received popup
@@ -182,6 +182,7 @@ public class FightState extends State {
         updateStrategy(); // Determine and update the correct fight strategy based on the enemy.
         this.attackAnimation.updateAnimation(); // Update player attack animation.
         handleTurnLogic(); // Manage player and enemy turns, input, and actions.
+
 
         // Check for enemy defeat
         if(this.enemy.getHealth() == 0 ){
@@ -303,7 +304,6 @@ public class FightState extends State {
      */
     private void updateStrategy(){
         // Initialize strategies if they are null (first time encountering enemy type)
-        if(this.tigerStrategy ==null){ // Check one strategy; if null, others likely are too.
             if(this.enemy!=null){
                 switch (this.enemy.getName()){
                     case Constants.TIGER_NAME:
@@ -398,7 +398,6 @@ public class FightState extends State {
                         break;
                 }
             }
-        }
 
         // Set the active fightStrategy based on the current enemy's name
         if(this.enemy!=null){

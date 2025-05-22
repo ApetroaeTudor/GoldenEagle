@@ -74,23 +74,24 @@ $(function() {
 <div class="title">PaooGame.States.State Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Defines an abstract base class for all game states.  
+ <a href="classPaooGame_1_1States_1_1State.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for PaooGame.States.State:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPaooGame_1_1States_1_1State__inherit__graph.png" border="0" usemap="#aPaooGame_8States_8State_inherit__map" alt="Inheritance graph"/></div>
 <map name="aPaooGame_8States_8State_inherit__map" id="aPaooGame_8States_8State_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,259,180,285"/>
-<area shape="rect" href="classPaooGame_1_1States_1_1AboutState.html" title=" " alt="" coords="231,5,444,32"/>
-<area shape="rect" href="classPaooGame_1_1States_1_1DeathState.html" title=" " alt="" coords="230,56,445,83"/>
-<area shape="rect" href="classPaooGame_1_1States_1_1FightState.html" title=" " alt="" coords="234,107,441,133"/>
-<area shape="rect" href="classPaooGame_1_1States_1_1Level1State.html" title=" " alt="" coords="228,157,447,184"/>
-<area shape="rect" href="classPaooGame_1_1States_1_1Level2State.html" title=" " alt="" coords="228,208,447,235"/>
-<area shape="rect" href="classPaooGame_1_1States_1_1Level3State.html" title=" " alt="" coords="228,259,447,285"/>
-<area shape="rect" href="classPaooGame_1_1States_1_1MenuState.html" title=" " alt="" coords="232,309,443,336"/>
-<area shape="rect" href="classPaooGame_1_1States_1_1PauseMenuState.html" title=" " alt="" coords="230,361,445,402"/>
-<area shape="rect" href="classPaooGame_1_1States_1_1SettingsState.html" title=" " alt="" coords="240,426,435,467"/>
-<area shape="rect" href="classPaooGame_1_1States_1_1ShopState.html" title=" " alt="" coords="234,492,441,519"/>
-<area shape="rect" href="classPaooGame_1_1States_1_1WinState.html" title=" " alt="" coords="237,543,437,569"/>
+<area shape="rect" title="Defines an abstract base class for all game states." alt="" coords="5,208,180,235"/>
+<area shape="rect" href="classPaooGame_1_1States_1_1DeathState.html" title="Represents the game state displayed when the player dies." alt="" coords="230,5,445,32"/>
+<area shape="rect" href="classPaooGame_1_1States_1_1FightState.html" title="Represents the turn&#45;based combat state of the game." alt="" coords="234,56,441,83"/>
+<area shape="rect" href="classPaooGame_1_1States_1_1Level1State.html" title="Represents the game state for Level 1." alt="" coords="228,107,447,133"/>
+<area shape="rect" href="classPaooGame_1_1States_1_1Level2State.html" title="Represents the game state for Level 2." alt="" coords="228,157,447,184"/>
+<area shape="rect" href="classPaooGame_1_1States_1_1Level3State.html" title="Represents the game state for Level 3." alt="" coords="228,208,447,235"/>
+<area shape="rect" href="classPaooGame_1_1States_1_1MenuState.html" title="Represents the main menu state of the game." alt="" coords="232,259,443,285"/>
+<area shape="rect" href="classPaooGame_1_1States_1_1PauseMenuState.html" title="Represents the pause menu state of the game." alt="" coords="230,310,445,351"/>
+<area shape="rect" href="classPaooGame_1_1States_1_1ShopState.html" title="Represents the in&#45;game shop state." alt="" coords="234,376,441,403"/>
+<area shape="rect" href="classPaooGame_1_1States_1_1WinState.html" title="Represents the game state displayed when the player wins the game." alt="" coords="237,427,437,453"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -98,56 +99,393 @@ Collaboration diagram for PaooGame.States.State:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPaooGame_1_1States_1_1State__coll__graph.png" border="0" usemap="#aPaooGame_8States_8State_coll__map" alt="Collaboration graph"/></div>
 <map name="aPaooGame_8States_8State_coll__map" id="aPaooGame_8States_8State_coll__map">
-<area shape="rect" title=" " alt="" coords="5,95,180,121"/>
-<area shape="rect" href="classPaooGame_1_1RefLinks.html" title=" " alt="" coords="17,5,169,32"/>
+<area shape="rect" title="Defines an abstract base class for all game states." alt="" coords="5,95,180,121"/>
+<area shape="rect" href="classPaooGame_1_1RefLinks.html" title="Provides a centralized way to access shared game objects and utilities." alt="" coords="17,5,169,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2c1ee84b95db72827c994b1ad99fa6d5"><td class="memItemLeft" align="right" valign="top"><a id="a2c1ee84b95db72827c994b1ad99fa6d5"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>State</b> (<a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a> refLink)</td></tr>
+<tr class="memitem:a2c1ee84b95db72827c994b1ad99fa6d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1States_1_1State.html#a2c1ee84b95db72827c994b1ad99fa6d5">State</a> (<a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a> refLink)</td></tr>
+<tr class="memdesc:a2c1ee84b95db72827c994b1ad99fa6d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classPaooGame_1_1States_1_1State.html" title="Defines an abstract base class for all game states.">State</a> object.  <a href="classPaooGame_1_1States_1_1State.html#a2c1ee84b95db72827c994b1ad99fa6d5">More...</a><br /></td></tr>
 <tr class="separator:a2c1ee84b95db72827c994b1ad99fa6d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a256ead7c628d278ecda50a402465dab8"><td class="memItemLeft" align="right" valign="top"><a id="a256ead7c628d278ecda50a402465dab8"></a>
-abstract String&#160;</td><td class="memItemRight" valign="bottom"><b>getStateName</b> ()</td></tr>
+<tr class="memitem:a256ead7c628d278ecda50a402465dab8"><td class="memItemLeft" align="right" valign="top">abstract String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1States_1_1State.html#a256ead7c628d278ecda50a402465dab8">getStateName</a> ()</td></tr>
+<tr class="memdesc:a256ead7c628d278ecda50a402465dab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the current state.  <a href="classPaooGame_1_1States_1_1State.html#a256ead7c628d278ecda50a402465dab8">More...</a><br /></td></tr>
 <tr class="separator:a256ead7c628d278ecda50a402465dab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1afa04fafde48966a2cbb66c053afe9f"><td class="memItemLeft" align="right" valign="top"><a id="a1afa04fafde48966a2cbb66c053afe9f"></a>
-abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>setEnemy</b> (<a class="el" href="classPaooGame_1_1Entities_1_1Enemy.html">Enemy</a> enemy)</td></tr>
+<tr class="memitem:a1afa04fafde48966a2cbb66c053afe9f"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1States_1_1State.html#a1afa04fafde48966a2cbb66c053afe9f">setEnemy</a> (<a class="el" href="classPaooGame_1_1Entities_1_1Enemy.html">Enemy</a> enemy)</td></tr>
+<tr class="memdesc:a1afa04fafde48966a2cbb66c053afe9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an enemy for the current state.  <a href="classPaooGame_1_1States_1_1State.html#a1afa04fafde48966a2cbb66c053afe9f">More...</a><br /></td></tr>
 <tr class="separator:a1afa04fafde48966a2cbb66c053afe9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afafd048638af99f0f0b115ddec2fac1f"><td class="memItemLeft" align="right" valign="top"><a id="afafd048638af99f0f0b115ddec2fac1f"></a>
-abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()</td></tr>
+<tr class="memitem:afafd048638af99f0f0b115ddec2fac1f"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1States_1_1State.html#afafd048638af99f0f0b115ddec2fac1f">update</a> ()</td></tr>
+<tr class="memdesc:afafd048638af99f0f0b115ddec2fac1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the logic of the current state.  <a href="classPaooGame_1_1States_1_1State.html#afafd048638af99f0f0b115ddec2fac1f">More...</a><br /></td></tr>
 <tr class="separator:afafd048638af99f0f0b115ddec2fac1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61512d655ea178fd283fe57624b47250"><td class="memItemLeft" align="right" valign="top"><a id="a61512d655ea178fd283fe57624b47250"></a>
-abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> (Graphics g)</td></tr>
+<tr class="memitem:a61512d655ea178fd283fe57624b47250"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1States_1_1State.html#a61512d655ea178fd283fe57624b47250">draw</a> (Graphics g)</td></tr>
+<tr class="memdesc:a61512d655ea178fd283fe57624b47250"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the current state to the screen.  <a href="classPaooGame_1_1States_1_1State.html#a61512d655ea178fd283fe57624b47250">More...</a><br /></td></tr>
 <tr class="separator:a61512d655ea178fd283fe57624b47250"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec1c3e402381da4d4986c4eb957de55b"><td class="memItemLeft" align="right" valign="top"><a id="aec1c3e402381da4d4986c4eb957de55b"></a>
-abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>restoreState</b> ()</td></tr>
+<tr class="memitem:aec1c3e402381da4d4986c4eb957de55b"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1States_1_1State.html#aec1c3e402381da4d4986c4eb957de55b">restoreState</a> ()</td></tr>
+<tr class="memdesc:aec1c3e402381da4d4986c4eb957de55b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restores the state to its initial or a default configuration.  <a href="classPaooGame_1_1States_1_1State.html#aec1c3e402381da4d4986c4eb957de55b">More...</a><br /></td></tr>
 <tr class="separator:aec1c3e402381da4d4986c4eb957de55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90f74b9205e6fcb6232e264fd53bf14a"><td class="memItemLeft" align="right" valign="top"><a id="a90f74b9205e6fcb6232e264fd53bf14a"></a>
-abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>loadState</b> (boolean access)</td></tr>
+<tr class="memitem:a90f74b9205e6fcb6232e264fd53bf14a"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1States_1_1State.html#a90f74b9205e6fcb6232e264fd53bf14a">loadState</a> (boolean access)</td></tr>
+<tr class="memdesc:a90f74b9205e6fcb6232e264fd53bf14a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the state's data from a persistent source.  <a href="classPaooGame_1_1States_1_1State.html#a90f74b9205e6fcb6232e264fd53bf14a">More...</a><br /></td></tr>
 <tr class="separator:a90f74b9205e6fcb6232e264fd53bf14a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af91f335ebaff413a782926e17cd80276"><td class="memItemLeft" align="right" valign="top"><a id="af91f335ebaff413a782926e17cd80276"></a>
-abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>storeState</b> (boolean access)</td></tr>
+<tr class="memitem:af91f335ebaff413a782926e17cd80276"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1States_1_1State.html#af91f335ebaff413a782926e17cd80276">storeState</a> (boolean access)</td></tr>
+<tr class="memdesc:af91f335ebaff413a782926e17cd80276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the state's current data to a persistent source.  <a href="classPaooGame_1_1States_1_1State.html#af91f335ebaff413a782926e17cd80276">More...</a><br /></td></tr>
 <tr class="separator:af91f335ebaff413a782926e17cd80276"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a4e1aa05b9b853f66df0c8a112b35e8d5"><td class="memItemLeft" align="right" valign="top"><a id="a4e1aa05b9b853f66df0c8a112b35e8d5"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setState</b> (<a class="el" href="classPaooGame_1_1States_1_1State.html">State</a> state)</td></tr>
+<tr class="memitem:a4e1aa05b9b853f66df0c8a112b35e8d5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1States_1_1State.html#a4e1aa05b9b853f66df0c8a112b35e8d5">setState</a> (<a class="el" href="classPaooGame_1_1States_1_1State.html">State</a> state)</td></tr>
+<tr class="memdesc:a4e1aa05b9b853f66df0c8a112b35e8d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current game state.  <a href="classPaooGame_1_1States_1_1State.html#a4e1aa05b9b853f66df0c8a112b35e8d5">More...</a><br /></td></tr>
 <tr class="separator:a4e1aa05b9b853f66df0c8a112b35e8d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c505c9ca598a8813c3621beb56e53de"><td class="memItemLeft" align="right" valign="top"><a id="a3c505c9ca598a8813c3621beb56e53de"></a>
-static <a class="el" href="classPaooGame_1_1States_1_1State.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getState</b> ()</td></tr>
+<tr class="memitem:a3c505c9ca598a8813c3621beb56e53de"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classPaooGame_1_1States_1_1State.html">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1States_1_1State.html#a3c505c9ca598a8813c3621beb56e53de">getState</a> ()</td></tr>
+<tr class="memdesc:a3c505c9ca598a8813c3621beb56e53de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current game state.  <a href="classPaooGame_1_1States_1_1State.html#a3c505c9ca598a8813c3621beb56e53de">More...</a><br /></td></tr>
 <tr class="separator:a3c505c9ca598a8813c3621beb56e53de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:ae71656d9d34cf1e2dac7943c7b09f6bd"><td class="memItemLeft" align="right" valign="top"><a id="ae71656d9d34cf1e2dac7943c7b09f6bd"></a>
-String&#160;</td><td class="memItemRight" valign="bottom"><b>stateName</b> = &quot;&quot;</td></tr>
+String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1States_1_1State.html#ae71656d9d34cf1e2dac7943c7b09f6bd">stateName</a> = &quot;&quot;</td></tr>
+<tr class="memdesc:ae71656d9d34cf1e2dac7943c7b09f6bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name identifier for the specific state instance. <br /></td></tr>
 <tr class="separator:ae71656d9d34cf1e2dac7943c7b09f6bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a621ece5c0cfdd772b0aeaba2e399a61d"><td class="memItemLeft" align="right" valign="top"><a id="a621ece5c0cfdd772b0aeaba2e399a61d"></a>
-<a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a>&#160;</td><td class="memItemRight" valign="bottom"><b>reflink</b></td></tr>
+<a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1States_1_1State.html#a621ece5c0cfdd772b0aeaba2e399a61d">reflink</a></td></tr>
+<tr class="memdesc:a621ece5c0cfdd772b0aeaba2e399a61d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A reference to shared game objects and utilities. <br /></td></tr>
 <tr class="separator:a621ece5c0cfdd772b0aeaba2e399a61d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Defines an abstract base class for all game states. </p>
+<p>This class provides a common interface and static methods for managing different states within the game, such as the main menu, gameplay levels, settings, etc. Each specific state (e.g., <a class="el" href="classPaooGame_1_1States_1_1MenuState.html" title="Represents the main menu state of the game.">MenuState</a>, <a class="el" href="classPaooGame_1_1States_1_1Level1State.html" title="Represents the game state for Level 1.">Level1State</a>) must extend this class and implement its abstract methods. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2c1ee84b95db72827c994b1ad99fa6d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c1ee84b95db72827c994b1ad99fa6d5">&#9670;&nbsp;</a></span>State()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PaooGame.States.State.State </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a>&#160;</td>
+          <td class="paramname"><em>refLink</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="classPaooGame_1_1States_1_1State.html" title="Defines an abstract base class for all game states.">State</a> object. </p>
+<p>Initializes the state with a reference to the game's shared <a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a> object. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">refLink</td><td>A <a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a> object providing access to game-wide objects and utilities. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a61512d655ea178fd283fe57624b47250"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61512d655ea178fd283fe57624b47250">&#9670;&nbsp;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void PaooGame.States.State.draw </td>
+          <td>(</td>
+          <td class="paramtype">Graphics&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Draws the current state to the screen. </p>
+<p>This method is called repeatedly in the game loop and should handle all rendering specific to the state. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>The <a class="el" href="">Graphics</a> context used for drawing. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classPaooGame_1_1States_1_1WinState.html#ad750bd2a116a1145735f5bc22f4f7163">PaooGame.States.WinState</a>, <a class="el" href="classPaooGame_1_1States_1_1ShopState.html#a2bed6af75a4005e5be140ff7ebde300c">PaooGame.States.ShopState</a>, <a class="el" href="classPaooGame_1_1States_1_1PauseMenuState.html#a9370687334b589037b6f625c8ef4c2c6">PaooGame.States.PauseMenuState</a>, <a class="el" href="classPaooGame_1_1States_1_1MenuState.html#a9c1c968b648cb18dea0dc7321cd46159">PaooGame.States.MenuState</a>, <a class="el" href="classPaooGame_1_1States_1_1Level3State.html#aac0fcc83c45060d3df748771a590faf9">PaooGame.States.Level3State</a>, <a class="el" href="classPaooGame_1_1States_1_1Level2State.html#ad5dbb546239f54c06ba48069d9868ef4">PaooGame.States.Level2State</a>, <a class="el" href="classPaooGame_1_1States_1_1Level1State.html#a849ce5e107d8a16c30e0a4a12dd7ce88">PaooGame.States.Level1State</a>, <a class="el" href="classPaooGame_1_1States_1_1FightState.html#aa4dc8ecb3aa33d0d76ab4e17d15b609e">PaooGame.States.FightState</a>, and <a class="el" href="classPaooGame_1_1States_1_1DeathState.html#adf4a0fc94a8c486b6df4f65c4b5a0086">PaooGame.States.DeathState</a>.</p>
+
+</div>
+</div>
+<a id="a3c505c9ca598a8813c3621beb56e53de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c505c9ca598a8813c3621beb56e53de">&#9670;&nbsp;</a></span>getState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classPaooGame_1_1States_1_1State.html">State</a> PaooGame.States.State.getState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the current game state. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current active <a class="el" href="classPaooGame_1_1States_1_1State.html">State</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a256ead7c628d278ecda50a402465dab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a256ead7c628d278ecda50a402465dab8">&#9670;&nbsp;</a></span>getStateName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract String PaooGame.States.State.getStateName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the name of the current state. </p>
+<p>This method must be implemented by concrete subclasses to return their specific state name. </p><dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="">String</a> representing the name of the state. </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classPaooGame_1_1States_1_1WinState.html#a3eeca27e4e2f4a6f419132e9f2c1ddcc">PaooGame.States.WinState</a>, <a class="el" href="classPaooGame_1_1States_1_1ShopState.html#a30466914f4e88bd52d68d6209ed8f35e">PaooGame.States.ShopState</a>, <a class="el" href="classPaooGame_1_1States_1_1PauseMenuState.html#a43ace1c5ef3e7f5280fc748ab3c5cca3">PaooGame.States.PauseMenuState</a>, <a class="el" href="classPaooGame_1_1States_1_1MenuState.html#aa78c0801c555d42b4a9c89f14600fd4c">PaooGame.States.MenuState</a>, <a class="el" href="classPaooGame_1_1States_1_1Level3State.html#a35dae42d97d14f96ff8fb460cc17eed7">PaooGame.States.Level3State</a>, <a class="el" href="classPaooGame_1_1States_1_1Level2State.html#a226ea77f0f0db2f222f1ef11d1bc4a3d">PaooGame.States.Level2State</a>, <a class="el" href="classPaooGame_1_1States_1_1Level1State.html#a05de4aeaaaa194233ce439bea8e1b435">PaooGame.States.Level1State</a>, <a class="el" href="classPaooGame_1_1States_1_1FightState.html#ae7b1efc05c0114398de7569f1fbf5bee">PaooGame.States.FightState</a>, and <a class="el" href="classPaooGame_1_1States_1_1DeathState.html#a474af8943905d42afed4d98cd265dd66">PaooGame.States.DeathState</a>.</p>
+
+</div>
+</div>
+<a id="a90f74b9205e6fcb6232e264fd53bf14a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90f74b9205e6fcb6232e264fd53bf14a">&#9670;&nbsp;</a></span>loadState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void PaooGame.States.State.loadState </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>access</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads the state's data from a persistent source. </p>
+<p>This method is used to retrieve saved game progress or configuration specific to this state. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">access</td><td>A boolean flag, potentially for controlling access permissions during loading. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classPaooGame_1_1States_1_1WinState.html#ab80d5b3ecbd0550816bb8bd9446e1a6b">PaooGame.States.WinState</a>, <a class="el" href="classPaooGame_1_1States_1_1ShopState.html#a7fc8e777748147b56cf026a7b8d23eb0">PaooGame.States.ShopState</a>, <a class="el" href="classPaooGame_1_1States_1_1PauseMenuState.html#a5ed8705e046bb15596d5a02afe0a1ab9">PaooGame.States.PauseMenuState</a>, <a class="el" href="classPaooGame_1_1States_1_1MenuState.html#aa4363922ad65186f9a82eb7ed67ee306">PaooGame.States.MenuState</a>, <a class="el" href="classPaooGame_1_1States_1_1Level3State.html#a4f5b3997d81e7732bc3d15273cb68253">PaooGame.States.Level3State</a>, <a class="el" href="classPaooGame_1_1States_1_1Level2State.html#a7ac4085551867f7d08e80e9302a4e135">PaooGame.States.Level2State</a>, <a class="el" href="classPaooGame_1_1States_1_1Level1State.html#a07330c8cb164d60c463a179c9f9c03d7">PaooGame.States.Level1State</a>, <a class="el" href="classPaooGame_1_1States_1_1FightState.html#ac8ec34aba5a7699c1720baa2c7f46a93">PaooGame.States.FightState</a>, and <a class="el" href="classPaooGame_1_1States_1_1DeathState.html#af700c10957758487e98c4b97613504af">PaooGame.States.DeathState</a>.</p>
+
+</div>
+</div>
+<a id="aec1c3e402381da4d4986c4eb957de55b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec1c3e402381da4d4986c4eb957de55b">&#9670;&nbsp;</a></span>restoreState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void PaooGame.States.State.restoreState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Restores the state to its initial or a default configuration. </p>
+<p>This method is typically used when re-entering a state after a reset (e.g., after player death, starting a new game in a level). </p>
+
+<p>Reimplemented in <a class="el" href="classPaooGame_1_1States_1_1WinState.html#ab1db14b604c97f31a365e120c13308d5">PaooGame.States.WinState</a>, <a class="el" href="classPaooGame_1_1States_1_1ShopState.html#ace71770d0a031c248bd431cfa9ec83a5">PaooGame.States.ShopState</a>, <a class="el" href="classPaooGame_1_1States_1_1PauseMenuState.html#a11c9d78858b8d91a9ad2cd65fb8d0105">PaooGame.States.PauseMenuState</a>, <a class="el" href="classPaooGame_1_1States_1_1MenuState.html#a83e2b129fcbc76ca0ab348f777970da1">PaooGame.States.MenuState</a>, <a class="el" href="classPaooGame_1_1States_1_1Level3State.html#a775d3d84128c3ae49dfa4df68f64edf7">PaooGame.States.Level3State</a>, <a class="el" href="classPaooGame_1_1States_1_1Level2State.html#a41279b8c36ad5d02de11b77d22f191f3">PaooGame.States.Level2State</a>, <a class="el" href="classPaooGame_1_1States_1_1Level1State.html#a886e5d66b39b9bcd0047a8b324665562">PaooGame.States.Level1State</a>, <a class="el" href="classPaooGame_1_1States_1_1FightState.html#a0f825a4daf75bd6f69a8a8e3b6dfe756">PaooGame.States.FightState</a>, and <a class="el" href="classPaooGame_1_1States_1_1DeathState.html#ad698b65d18c09d3c37d4f75e8de9a10f">PaooGame.States.DeathState</a>.</p>
+
+</div>
+</div>
+<a id="a1afa04fafde48966a2cbb66c053afe9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1afa04fafde48966a2cbb66c053afe9f">&#9670;&nbsp;</a></span>setEnemy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void PaooGame.States.State.setEnemy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPaooGame_1_1Entities_1_1Enemy.html">Enemy</a>&#160;</td>
+          <td class="paramname"><em>enemy</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets an enemy for the current state. </p>
+<p>This method is intended for states that involve direct interaction with a specific enemy, such as a fight state. Concrete subclasses must implement this if applicable. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enemy</td><td>The <a class="el" href="">Enemy</a> to be set for the state. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classPaooGame_1_1States_1_1WinState.html#a11035ea9a90b546d5afc6f33f44cb083">PaooGame.States.WinState</a>, <a class="el" href="classPaooGame_1_1States_1_1ShopState.html#ac7e1805579ba29953fcc2848b5cbcb0d">PaooGame.States.ShopState</a>, <a class="el" href="classPaooGame_1_1States_1_1PauseMenuState.html#af10f043004547c531906205486398078">PaooGame.States.PauseMenuState</a>, <a class="el" href="classPaooGame_1_1States_1_1MenuState.html#a0eb6a2bb46433452f96bfd844b2fab66">PaooGame.States.MenuState</a>, <a class="el" href="classPaooGame_1_1States_1_1Level3State.html#afbdd92c6ed618c086ccae3dc797d6a25">PaooGame.States.Level3State</a>, <a class="el" href="classPaooGame_1_1States_1_1Level2State.html#afcb64aa767e3c5e13bb0a6a1e1e867ba">PaooGame.States.Level2State</a>, <a class="el" href="classPaooGame_1_1States_1_1Level1State.html#a4ba28fc1aadbc8238d504f53bce24b4e">PaooGame.States.Level1State</a>, <a class="el" href="classPaooGame_1_1States_1_1FightState.html#a0d156d34892c2eb24cfbda6562b7b78e">PaooGame.States.FightState</a>, and <a class="el" href="classPaooGame_1_1States_1_1DeathState.html#ad2d9de5a4483343f27a49cc631e8132c">PaooGame.States.DeathState</a>.</p>
+
+</div>
+</div>
+<a id="a4e1aa05b9b853f66df0c8a112b35e8d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e1aa05b9b853f66df0c8a112b35e8d5">&#9670;&nbsp;</a></span>setState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void PaooGame.States.State.setState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPaooGame_1_1States_1_1State.html">State</a>&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the current game state. </p>
+<p>Updates the <a class="el" href="">currentState</a> to the new state and stores the previous current state in <a class="el" href="">previousState</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>The new <a class="el" href="classPaooGame_1_1States_1_1State.html">State</a> to be set as current. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af91f335ebaff413a782926e17cd80276"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af91f335ebaff413a782926e17cd80276">&#9670;&nbsp;</a></span>storeState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void PaooGame.States.State.storeState </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>access</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stores the state's current data to a persistent source. </p>
+<p>This method is used to save game progress or configuration specific to this state. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">access</td><td>A boolean flag, potentially for controlling access permissions during storing. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classPaooGame_1_1States_1_1WinState.html#a3595ca643df1e920c53842537c3a56fe">PaooGame.States.WinState</a>, <a class="el" href="classPaooGame_1_1States_1_1ShopState.html#a00954a1e5cd09164eb51c8c9dbe34805">PaooGame.States.ShopState</a>, <a class="el" href="classPaooGame_1_1States_1_1PauseMenuState.html#a8e5de1516d28bdf45505a811ef5f96b4">PaooGame.States.PauseMenuState</a>, <a class="el" href="classPaooGame_1_1States_1_1MenuState.html#a3745a9ef14ab33cd6bc6e8f6de190bc8">PaooGame.States.MenuState</a>, <a class="el" href="classPaooGame_1_1States_1_1Level3State.html#ad7564e36d8816b73dc51543d83eaf56f">PaooGame.States.Level3State</a>, <a class="el" href="classPaooGame_1_1States_1_1Level2State.html#a48dae78fc1f5f9fb37450cb5294596ce">PaooGame.States.Level2State</a>, <a class="el" href="classPaooGame_1_1States_1_1Level1State.html#a30d398b73187019f66e7b8c3a00f40b7">PaooGame.States.Level1State</a>, <a class="el" href="classPaooGame_1_1States_1_1FightState.html#ac2591de8afd6722e607c21d6e1b3e963">PaooGame.States.FightState</a>, and <a class="el" href="classPaooGame_1_1States_1_1DeathState.html#a54fa452b32ade032e4a7f431f01bb0f4">PaooGame.States.DeathState</a>.</p>
+
+</div>
+</div>
+<a id="afafd048638af99f0f0b115ddec2fac1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afafd048638af99f0f0b115ddec2fac1f">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void PaooGame.States.State.update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates the logic of the current state. </p>
+<p>This method is called repeatedly in the game loop and should contain all game logic updates specific to the state. </p>
+
+<p>Reimplemented in <a class="el" href="classPaooGame_1_1States_1_1WinState.html#a24270656354cf1fb2f03060d657d2548">PaooGame.States.WinState</a>, <a class="el" href="classPaooGame_1_1States_1_1ShopState.html#a685cc0ae5be7fc99eddc0386ca362ed8">PaooGame.States.ShopState</a>, <a class="el" href="classPaooGame_1_1States_1_1PauseMenuState.html#a3ad9b87dcda165953657b5c94a580df0">PaooGame.States.PauseMenuState</a>, <a class="el" href="classPaooGame_1_1States_1_1MenuState.html#a4cd5c4f36a29b167e6b5402df779be4b">PaooGame.States.MenuState</a>, <a class="el" href="classPaooGame_1_1States_1_1Level3State.html#a21605670317271b52f4790998c51b636">PaooGame.States.Level3State</a>, <a class="el" href="classPaooGame_1_1States_1_1Level2State.html#a08f61b4a166391d03b066e20ad454474">PaooGame.States.Level2State</a>, <a class="el" href="classPaooGame_1_1States_1_1Level1State.html#aeaee42399d367d606d1f7d0dc6345e6f">PaooGame.States.Level1State</a>, <a class="el" href="classPaooGame_1_1States_1_1FightState.html#aa7f0d84673283e31d231673680954995">PaooGame.States.FightState</a>, and <a class="el" href="classPaooGame_1_1States_1_1DeathState.html#a600fd781968970b480f57ff2a51fbcbc">PaooGame.States.DeathState</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/PaooGame/States/State.java</li>
 </ul>

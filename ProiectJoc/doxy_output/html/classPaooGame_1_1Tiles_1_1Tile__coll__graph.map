@@ -1,4 +1,4 @@
 <map id="PaooGame.Tiles.Tile" name="PaooGame.Tiles.Tile">
-<area shape="rect" id="node1" title=" " alt="" coords="5,95,160,121"/>
+<area shape="rect" id="node1" title="Represents a single tile in the game world." alt="" coords="5,95,160,121"/>
 <area shape="rect" id="node2" title=" " alt="" coords="23,5,142,32"/>
 </map>

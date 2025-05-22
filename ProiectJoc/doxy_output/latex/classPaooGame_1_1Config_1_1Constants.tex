@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1Config_1_1Constants}\index{PaooGame.Config.Constants@{PaooGame.Config.Constants}}
 
 
-Collaboration diagram for Paoo\+Game.\+Config.\+Constants\+:
-\nopagebreak
+Defines a collection of static final constants used throughout the application.  
+
+
+
+
+Collaboration diagram for Paoo\+Game.\+Config.\+Constants\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -819,6 +823,25 @@ static final String {\bfseries GET\+\_\+\+SCORE\+\_\+\+LINE\+\_\+\+CMD} = \char`
 static final String {\bfseries UPDATE\+\_\+\+SCORE\+\_\+\+LINE\+\_\+\+CMD} = \char`\"{}UPDATE Game\+Data SET CURRENT\+\_\+\+STATE = ? WHERE TIMESTAMP = -\/2;\char`\"{}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Defines a collection of static final constants used throughout the application. 
+
+This class centralizes all global constant values, such as window dimensions, tile sizes, level configurations, asset paths, entity properties, database keys, and SQL commands. This approach helps in maintaining consistency and makes it easier to adjust game parameters from a single location.
+
+The constants cover various aspects including\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classPaooGame_1_1Game}{Game}} window and rendering parameters.
+\item Level dimensions and tile information for multiple game levels.
+\item Paths to game assets (textures, spritesheets, backgrounds).
+\item Entity (hero, enemies, NPC) properties like health, damage, speed, and sprite dimensions.
+\item Item properties and locations.
+\item State identifiers for game states (e.\+g., menu, levels, fight).
+\item Health bar colors.
+\item Physics constants like gravity.
+\item Database related constants including table name, column names, SQL queries for saving/loading game data and scores.
+\item Enumerations for distinct game element states (EFFECTS, HERO\+\_\+\+STATES, ENEMY\+\_\+\+STATES). 
+\end{DoxyItemize}
 
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classPaooGame_1_1Config_1_1Constants_afbaedc9fbfe89b96fd068d5a32f2b9ee}\label{classPaooGame_1_1Config_1_1Constants_afbaedc9fbfe89b96fd068d5a32f2b9ee}} 

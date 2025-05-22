@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation}\index{PaooGame.Animations.ItemsAnimations.FloatingItemAnimation@{PaooGame.Animations.ItemsAnimations.FloatingItemAnimation}}
 
 
-Inheritance diagram for Paoo\+Game.\+Animations.\+Items\+Animations.\+Floating\+Item\+Animation\+:
-\nopagebreak
+Manages and renders animations for floating items in the game.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+Animations.\+Items\+Animations.\+Floating\+Item\+Animation\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+Animations.\+Items\+Animations.\+Floating\+
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+Animations.\+Items\+Animations.\+Floating\+Item\+Animation\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+Animations.\+Items\+Animations.\+Floating\+Item\+Animation\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,22 +26,124 @@ Collaboration diagram for Paoo\+Game.\+Animations.\+Items\+Animations.\+Floating
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_a82529e333c40e08fbcf70faf76fdcbf9}\label{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_a82529e333c40e08fbcf70faf76fdcbf9}} 
-{\bfseries Floating\+Item\+Animation} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} reflink, String item\+Sheet\+Path, int nr\+Of\+Frames, int animation\+Speed, int img\+Width, int img\+Height)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_a8d7acd9e6359211f49575b3ba721798d}\label{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_a8d7acd9e6359211f49575b3ba721798d}} 
-void {\bfseries load\+Animation} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_a5f4394d9572574fc37545a87c2e38b9a}\label{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_a5f4394d9572574fc37545a87c2e38b9a}} 
-void {\bfseries update\+Animation} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_a7393c76ce3aaf7c432df6e253d0cce19}\label{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_a7393c76ce3aaf7c432df6e253d0cce19}} 
-void {\bfseries trigger\+Once} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_ad295b1fbbfe60da527b20d8534f9f099}\label{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_ad295b1fbbfe60da527b20d8534f9f099}} 
-void {\bfseries paint\+Animation} (Graphics g, int x, int y, boolean flipped, double scale)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_a82529e333c40e08fbcf70faf76fdcbf9}{Floating\+Item\+Animation}} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_af34e94650b5da895f0efb9b0a69d57cf}{reflink}}, String item\+Sheet\+Path, int \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_ad5a63fa7aee0aa588e5076e5f916b837}{nr\+Of\+Frames}}, int \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_a427a2339571eae2f9fbf8903934fa507}{animation\+Speed}}, int \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_a97dfdd6f5b83f61ff447121715c5e690}{img\+Width}}, int \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_a926d96bbdcf1e33a01f50a388c95b21e}{img\+Height}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation}{Floating\+Item\+Animation}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_a8d7acd9e6359211f49575b3ba721798d}{load\+Animation}} ()
+\begin{DoxyCompactList}\small\item\em Loads the animation frames from the spritesheet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_a5f4394d9572574fc37545a87c2e38b9a}{update\+Animation}} ()
+\begin{DoxyCompactList}\small\item\em Updates the current state of the animation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_a7393c76ce3aaf7c432df6e253d0cce19}{trigger\+Once}} ()
+\begin{DoxyCompactList}\small\item\em Resets the animation to its starting state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_ad295b1fbbfe60da527b20d8534f9f099}{paint\+Animation}} (Graphics g, int x, int y, boolean flipped, double scale)
+\begin{DoxyCompactList}\small\item\em Renders the current frame of the item animation at the specified position. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Manages and renders animations for floating items in the game. 
+
+This class extends the base \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation}{Animation}} class to handle animations for items that typically float or have a continuous animation loop (for example pickups). It loads animation frames from a specified spritesheet. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_a82529e333c40e08fbcf70faf76fdcbf9}\label{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_a82529e333c40e08fbcf70faf76fdcbf9}} 
+\index{PaooGame.Animations.ItemsAnimations.FloatingItemAnimation@{PaooGame.Animations.ItemsAnimations.FloatingItemAnimation}!FloatingItemAnimation@{FloatingItemAnimation}}
+\index{FloatingItemAnimation@{FloatingItemAnimation}!PaooGame.Animations.ItemsAnimations.FloatingItemAnimation@{PaooGame.Animations.ItemsAnimations.FloatingItemAnimation}}
+\doxysubsubsection{\texorpdfstring{FloatingItemAnimation()}{FloatingItemAnimation()}}
+{\footnotesize\ttfamily Paoo\+Game.\+Animations.\+Items\+Animations.\+Floating\+Item\+Animation.\+Floating\+Item\+Animation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}}}]{reflink,  }\item[{String}]{item\+Sheet\+Path,  }\item[{int}]{nr\+Of\+Frames,  }\item[{int}]{animation\+Speed,  }\item[{int}]{img\+Width,  }\item[{int}]{img\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation}{Floating\+Item\+Animation}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reflink} & A reference to the game\textquotesingle{}s shared resources and utilities. \\
+\hline
+{\em item\+Sheet\+Path} & The path to the image file containing the animation frames for the item. \\
+\hline
+{\em nr\+Of\+Frames} & The total number of frames in the animation sequence. \\
+\hline
+{\em animation\+Speed} & The speed at which the animation plays (ticks per frame). \\
+\hline
+{\em img\+Width} & The width of a single animation frame in the spritesheet. \\
+\hline
+{\em img\+Height} & The height of a single animation frame in the spritesheet. \\
+\hline
+\end{DoxyParams}
+$<$ Indicates that the animation should loop continuously.
+
+$<$ Array to store individual animation frames.
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_a8d7acd9e6359211f49575b3ba721798d}\label{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_a8d7acd9e6359211f49575b3ba721798d}} 
+\index{PaooGame.Animations.ItemsAnimations.FloatingItemAnimation@{PaooGame.Animations.ItemsAnimations.FloatingItemAnimation}!loadAnimation@{loadAnimation}}
+\index{loadAnimation@{loadAnimation}!PaooGame.Animations.ItemsAnimations.FloatingItemAnimation@{PaooGame.Animations.ItemsAnimations.FloatingItemAnimation}}
+\doxysubsubsection{\texorpdfstring{loadAnimation()}{loadAnimation()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Animations.\+Items\+Animations.\+Floating\+Item\+Animation.\+load\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Loads the animation frames from the spritesheet. 
+
+This method iterates through the spritesheet (image\+Sheet), extracting each frame based on the configured image width (img\+Width) and height (img\+Height), and stores them in the animation\+Array. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_a1f183fa0d920251be9b55a21d2562626}{Paoo\+Game.\+Animations.\+Animation}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_ad295b1fbbfe60da527b20d8534f9f099}\label{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_ad295b1fbbfe60da527b20d8534f9f099}} 
+\index{PaooGame.Animations.ItemsAnimations.FloatingItemAnimation@{PaooGame.Animations.ItemsAnimations.FloatingItemAnimation}!paintAnimation@{paintAnimation}}
+\index{paintAnimation@{paintAnimation}!PaooGame.Animations.ItemsAnimations.FloatingItemAnimation@{PaooGame.Animations.ItemsAnimations.FloatingItemAnimation}}
+\doxysubsubsection{\texorpdfstring{paintAnimation()}{paintAnimation()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Animations.\+Items\+Animations.\+Floating\+Item\+Animation.\+paint\+Animation (\begin{DoxyParamCaption}\item[{Graphics}]{g,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{boolean}]{flipped,  }\item[{double}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renders the current frame of the item animation at the specified position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The Graphics context to draw on. \\
+\hline
+{\em x} & The x-\/coordinate where the animation should be drawn. \\
+\hline
+{\em y} & The y-\/coordinate where the animation should be drawn. \\
+\hline
+{\em flipped} & A boolean indicating whether the animation should be flipped horizontally (rarely used for items). \\
+\hline
+{\em scale} & The scaling factor for the animation. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_a4bbb89fb5709e550719394035b551e8c}{Paoo\+Game.\+Animations.\+Animation}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_a7393c76ce3aaf7c432df6e253d0cce19}\label{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_a7393c76ce3aaf7c432df6e253d0cce19}} 
+\index{PaooGame.Animations.ItemsAnimations.FloatingItemAnimation@{PaooGame.Animations.ItemsAnimations.FloatingItemAnimation}!triggerOnce@{triggerOnce}}
+\index{triggerOnce@{triggerOnce}!PaooGame.Animations.ItemsAnimations.FloatingItemAnimation@{PaooGame.Animations.ItemsAnimations.FloatingItemAnimation}}
+\doxysubsubsection{\texorpdfstring{triggerOnce()}{triggerOnce()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Animations.\+Items\+Animations.\+Floating\+Item\+Animation.\+trigger\+Once (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resets the animation to its starting state. 
+
+While floating items usually loop, this method allows the animation to be explicitly reset to play from the beginning if needed. It resets the finished flag, animation state (current frame), and tick counter. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_a2a96a20130e3f3aa15237a4e8081372c}{Paoo\+Game.\+Animations.\+Animation}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_a5f4394d9572574fc37545a87c2e38b9a}\label{classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation_a5f4394d9572574fc37545a87c2e38b9a}} 
+\index{PaooGame.Animations.ItemsAnimations.FloatingItemAnimation@{PaooGame.Animations.ItemsAnimations.FloatingItemAnimation}!updateAnimation@{updateAnimation}}
+\index{updateAnimation@{updateAnimation}!PaooGame.Animations.ItemsAnimations.FloatingItemAnimation@{PaooGame.Animations.ItemsAnimations.FloatingItemAnimation}}
+\doxysubsubsection{\texorpdfstring{updateAnimation()}{updateAnimation()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Animations.\+Items\+Animations.\+Floating\+Item\+Animation.\+update\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the current state of the animation. 
+
+This method progresses the animation to the next frame based on the animation\+Speed. Since {\ttfamily play\+Once} is typically false for floating items, the animation will loop back to the first frame after reaching the last one. If {\ttfamily play\+Once} were true and the animation finished, it would stop updating. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_a4475f6857bdf31b2ca7da423da8701ba}{Paoo\+Game.\+Animations.\+Animation}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

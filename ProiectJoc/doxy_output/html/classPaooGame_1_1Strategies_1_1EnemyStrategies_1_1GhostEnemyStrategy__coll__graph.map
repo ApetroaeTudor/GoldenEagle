@@ -1,8 +1,8 @@
 <map id="PaooGame.Strategies.EnemyStrategies.GhostEnemyStrategy" name="PaooGame.Strategies.EnemyStrategies.GhostEnemyStrategy">
-<area shape="rect" id="node1" title=" " alt="" coords="47,319,278,360"/>
-<area shape="rect" id="node2" href="$classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html" title=" " alt="" coords="57,228,268,269"/>
+<area shape="rect" id="node1" title="Implements the specific strategy for the Ghost enemy type." alt="" coords="47,319,278,360"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html" title="Defines an abstract base class for different enemy AI and property strategies." alt="" coords="57,228,268,269"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,109,61,136"/>
-<area shape="rect" id="node4" href="$classPaooGame_1_1Animations_1_1Animation.html" title=" " alt="" coords="233,109,474,136"/>
-<area shape="rect" id="node5" href="$classPaooGame_1_1RefLinks.html" title=" " alt="" coords="103,5,255,32"/>
+<area shape="rect" id="node4" href="$classPaooGame_1_1Animations_1_1Animation.html" title="Abstract base class for managing and rendering sprite animations." alt="" coords="233,109,474,136"/>
+<area shape="rect" id="node5" href="$classPaooGame_1_1RefLinks.html" title="Provides a centralized way to access shared game objects and utilities." alt="" coords="103,5,255,32"/>
 <area shape="rect" id="node6" title=" " alt="" coords="294,5,413,32"/>
 </map>

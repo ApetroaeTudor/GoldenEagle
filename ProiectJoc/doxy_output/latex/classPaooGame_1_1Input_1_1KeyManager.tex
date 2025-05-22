@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1Input_1_1KeyManager}\index{PaooGame.Input.KeyManager@{PaooGame.Input.KeyManager}}
 
 
-Inheritance diagram for Paoo\+Game.\+Input.\+Key\+Manager\+:
-\nopagebreak
+Manages keyboard input by tracking the current and previous state of keys.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+Input.\+Key\+Manager\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+Input.\+Key\+Manager\+:
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+Input.\+Key\+Manager\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+Input.\+Key\+Manager\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,27 +26,135 @@ Collaboration diagram for Paoo\+Game.\+Input.\+Key\+Manager\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1Input_1_1KeyManager_a9da91da1e00f8ee98a95bc97664cafa5}\label{classPaooGame_1_1Input_1_1KeyManager_a9da91da1e00f8ee98a95bc97664cafa5}} 
-void {\bfseries update\+Previous\+State} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Input_1_1KeyManager_aec2997ca4cb9e3715d48b09b1652304e}\label{classPaooGame_1_1Input_1_1KeyManager_aec2997ca4cb9e3715d48b09b1652304e}} 
-boolean {\bfseries is\+Key\+Pressed} (int key\+Code)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Input_1_1KeyManager_a2c3badfd060725bab1fd014bb4664e4a}\label{classPaooGame_1_1Input_1_1KeyManager_a2c3badfd060725bab1fd014bb4664e4a}} 
-boolean {\bfseries is\+Key\+Pressed\+Once} (int key\+Code)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Input_1_1KeyManager_a4e34d573d664c71b9a0c9ae7b540a52e}\label{classPaooGame_1_1Input_1_1KeyManager_a4e34d573d664c71b9a0c9ae7b540a52e}} 
-void {\bfseries key\+Typed} (Key\+Event e)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Input_1_1KeyManager_a1ea210c7a3a1311d4e05ff9639b32226}\label{classPaooGame_1_1Input_1_1KeyManager_a1ea210c7a3a1311d4e05ff9639b32226}} 
-void {\bfseries key\+Pressed} (Key\+Event e)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Input_1_1KeyManager_a2bb81aec782b54d1bfe15a2576158e5f}\label{classPaooGame_1_1Input_1_1KeyManager_a2bb81aec782b54d1bfe15a2576158e5f}} 
-void {\bfseries key\+Released} (Key\+Event e)
-\item 
+\mbox{\hyperlink{classPaooGame_1_1Input_1_1KeyManager_af2d7454db8e4ee47d11dea8ac73f0b53}{Key\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPaooGame_1_1Input_1_1KeyManager}{Key\+Manager}} object. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classPaooGame_1_1Input_1_1KeyManager_aec2997ca4cb9e3715d48b09b1652304e}{is\+Key\+Pressed}} (int key\+Code)
+\begin{DoxyCompactList}\small\item\em Checks if a specific key is currently pressed. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classPaooGame_1_1Input_1_1KeyManager_a2c3badfd060725bab1fd014bb4664e4a}{is\+Key\+Pressed\+Once}} (int key\+Code)
+\begin{DoxyCompactList}\small\item\em Checks if a specific key was just pressed in the current update cycle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Input_1_1KeyManager_a4e34d573d664c71b9a0c9ae7b540a52e}{key\+Typed}} (Key\+Event e)
+\begin{DoxyCompactList}\small\item\em Invoked when a key has been typed (pressed and released). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Input_1_1KeyManager_a1ea210c7a3a1311d4e05ff9639b32226}{key\+Pressed}} (Key\+Event e)
+\begin{DoxyCompactList}\small\item\em Invoked when a key has been pressed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Input_1_1KeyManager_a2bb81aec782b54d1bfe15a2576158e5f}{key\+Released}} (Key\+Event e)
+\begin{DoxyCompactList}\small\item\em Invoked when a key has been released. \end{DoxyCompactList}\item 
+boolean\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classPaooGame_1_1Input_1_1KeyManager_a6b58ee73825a1ede57e3b93adbcef67a}{get\+Key\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the array representing the current state of all keys. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages keyboard input by tracking the current and previous state of keys. 
+
+This class implements \mbox{\hyperlink{}{Key\+Listener}} to receive keyboard events. It stores the current state (pressed or not pressed) of all keys and the state from the previous update cycle. This allows for checking if a key is currently held down or if it has just been pressed in the current cycle. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Input_1_1KeyManager_af2d7454db8e4ee47d11dea8ac73f0b53}\label{classPaooGame_1_1Input_1_1KeyManager_af2d7454db8e4ee47d11dea8ac73f0b53}} 
+\index{PaooGame.Input.KeyManager@{PaooGame.Input.KeyManager}!KeyManager@{KeyManager}}
+\index{KeyManager@{KeyManager}!PaooGame.Input.KeyManager@{PaooGame.Input.KeyManager}}
+\doxysubsubsection{\texorpdfstring{KeyManager()}{KeyManager()}}
+{\footnotesize\ttfamily Paoo\+Game.\+Input.\+Key\+Manager.\+Key\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPaooGame_1_1Input_1_1KeyManager}{Key\+Manager}} object. 
+
+Initializes the \mbox{\hyperlink{}{key\+State}} and \mbox{\hyperlink{}{prev\+Key\+State}} arrays. All keys are initially marked as not pressed. 
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classPaooGame_1_1Input_1_1KeyManager_a6b58ee73825a1ede57e3b93adbcef67a}\label{classPaooGame_1_1Input_1_1KeyManager_a6b58ee73825a1ede57e3b93adbcef67a}} 
-boolean\mbox{[}$\,$\mbox{]} {\bfseries get\+Key\+State} ()
-\end{DoxyCompactItemize}
+\index{PaooGame.Input.KeyManager@{PaooGame.Input.KeyManager}!getKeyState@{getKeyState}}
+\index{getKeyState@{getKeyState}!PaooGame.Input.KeyManager@{PaooGame.Input.KeyManager}}
+\doxysubsubsection{\texorpdfstring{getKeyState()}{getKeyState()}}
+{\footnotesize\ttfamily boolean \mbox{[}$\,$\mbox{]} Paoo\+Game.\+Input.\+Key\+Manager.\+get\+Key\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the array representing the current state of all keys. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{}{key\+State}} array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Input_1_1KeyManager_aec2997ca4cb9e3715d48b09b1652304e}\label{classPaooGame_1_1Input_1_1KeyManager_aec2997ca4cb9e3715d48b09b1652304e}} 
+\index{PaooGame.Input.KeyManager@{PaooGame.Input.KeyManager}!isKeyPressed@{isKeyPressed}}
+\index{isKeyPressed@{isKeyPressed}!PaooGame.Input.KeyManager@{PaooGame.Input.KeyManager}}
+\doxysubsubsection{\texorpdfstring{isKeyPressed()}{isKeyPressed()}}
+{\footnotesize\ttfamily boolean Paoo\+Game.\+Input.\+Key\+Manager.\+is\+Key\+Pressed (\begin{DoxyParamCaption}\item[{int}]{key\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if a specific key is currently pressed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+Code} & The \mbox{\hyperlink{}{Key\+Event\#get\+Key\+Code()}} of the key to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the key is currently pressed, false otherwise or if the key\+Code is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Input_1_1KeyManager_a2c3badfd060725bab1fd014bb4664e4a}\label{classPaooGame_1_1Input_1_1KeyManager_a2c3badfd060725bab1fd014bb4664e4a}} 
+\index{PaooGame.Input.KeyManager@{PaooGame.Input.KeyManager}!isKeyPressedOnce@{isKeyPressedOnce}}
+\index{isKeyPressedOnce@{isKeyPressedOnce}!PaooGame.Input.KeyManager@{PaooGame.Input.KeyManager}}
+\doxysubsubsection{\texorpdfstring{isKeyPressedOnce()}{isKeyPressedOnce()}}
+{\footnotesize\ttfamily boolean Paoo\+Game.\+Input.\+Key\+Manager.\+is\+Key\+Pressed\+Once (\begin{DoxyParamCaption}\item[{int}]{key\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if a specific key was just pressed in the current update cycle. 
+
+This method determines if the key is currently pressed and was not pressed in the previous update cycle. 
+\begin{DoxyParams}{Parameters}
+{\em key\+Code} & The \mbox{\hyperlink{}{Key\+Event\#get\+Key\+Code()}} of the key to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the key is currently pressed and was not pressed in the previous state, false otherwise or if the key\+Code is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Input_1_1KeyManager_a1ea210c7a3a1311d4e05ff9639b32226}\label{classPaooGame_1_1Input_1_1KeyManager_a1ea210c7a3a1311d4e05ff9639b32226}} 
+\index{PaooGame.Input.KeyManager@{PaooGame.Input.KeyManager}!keyPressed@{keyPressed}}
+\index{keyPressed@{keyPressed}!PaooGame.Input.KeyManager@{PaooGame.Input.KeyManager}}
+\doxysubsubsection{\texorpdfstring{keyPressed()}{keyPressed()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Input.\+Key\+Manager.\+key\+Pressed (\begin{DoxyParamCaption}\item[{Key\+Event}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Invoked when a key has been pressed. 
+
+Sets the state of the pressed key to true in the \mbox{\hyperlink{}{key\+State}} array. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The \mbox{\hyperlink{}{Key\+Event}} associated with the key press. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Input_1_1KeyManager_a2bb81aec782b54d1bfe15a2576158e5f}\label{classPaooGame_1_1Input_1_1KeyManager_a2bb81aec782b54d1bfe15a2576158e5f}} 
+\index{PaooGame.Input.KeyManager@{PaooGame.Input.KeyManager}!keyReleased@{keyReleased}}
+\index{keyReleased@{keyReleased}!PaooGame.Input.KeyManager@{PaooGame.Input.KeyManager}}
+\doxysubsubsection{\texorpdfstring{keyReleased()}{keyReleased()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Input.\+Key\+Manager.\+key\+Released (\begin{DoxyParamCaption}\item[{Key\+Event}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Invoked when a key has been released. 
+
+Sets the state of the released key to false in the \mbox{\hyperlink{}{key\+State}} array. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The \mbox{\hyperlink{}{Key\+Event}} associated with the key release. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Input_1_1KeyManager_a4e34d573d664c71b9a0c9ae7b540a52e}\label{classPaooGame_1_1Input_1_1KeyManager_a4e34d573d664c71b9a0c9ae7b540a52e}} 
+\index{PaooGame.Input.KeyManager@{PaooGame.Input.KeyManager}!keyTyped@{keyTyped}}
+\index{keyTyped@{keyTyped}!PaooGame.Input.KeyManager@{PaooGame.Input.KeyManager}}
+\doxysubsubsection{\texorpdfstring{keyTyped()}{keyTyped()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Input.\+Key\+Manager.\+key\+Typed (\begin{DoxyParamCaption}\item[{Key\+Event}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Invoked when a key has been typed (pressed and released). 
+
+This method is part of the \mbox{\hyperlink{}{Key\+Listener}} interface but is not used in this implementation for game input logic. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The \mbox{\hyperlink{}{Key\+Event}} associated with the key type event. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

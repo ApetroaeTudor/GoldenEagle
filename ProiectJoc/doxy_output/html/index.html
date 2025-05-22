@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Golden Eagle: Main Page</title>
+<title>Golden Eagle: PROIECT PAOO</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -60,11 +60,63 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Golden Eagle Documentation</div>  </div>
+<div class="title">PROIECT PAOO </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__home_tudor_AN2_PAOO_Proiect_paoo_proiect_apetroae_macovei_README"></a> </p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Golden Eagle</h1>
+<h3><a class="anchor" id="autotoc_md2"></a>
+Apetroae Tudor - Macovei Paul</h3>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Notable features</h2>
+<h3><a class="anchor" id="autotoc_md4"></a>
+3 Levels</h3>
+<p><b>Level 1</b> - Forest, with tigers as enemies<br  />
+ <b>Level 2</b> - Cave, with different types of skeletons as enemies. Here the player can find a goblin NPC that sells potions.<br  />
+ <b>Level 3</b> - Ancient city. Here the player must face different enemies such as a wizard, minotaurs and ghosts. The player must progress using a grappling hook.<br  />
+</p>
+<h3><a class="anchor" id="autotoc_md5"></a>
+Map loading</h3>
+<p><b>The levels</b> are tile-based, loaded using the Flyweight design pattern to prevent loading the same resources into memory multiple times.<br  />
+ <b>The level data</b> is taken from CSV files.<br  />
+</p>
+<h3><a class="anchor" id="autotoc_md6"></a>
+A main menu</h3>
+<p><b>From the main menu</b> the player can select to start a new game, continue from the last save point or quit the game. While in the game the player can also go back to this menu.<br  />
+</p>
+<h3><a class="anchor" id="autotoc_md7"></a>
+Player movement</h3>
+<p><b>The player movement</b> is implemented using key listeners. Some key input safety measures are also implemented.<br  />
+ The player can also <b>jump</b> by pressing SPACE.<br  />
+</p>
+<h3><a class="anchor" id="autotoc_md8"></a>
+Camera</h3>
+<p><b>The Camera</b> is implemented in order to only draw a portion of the screen, that follows the player.<br  />
+</p>
+<h3><a class="anchor" id="autotoc_md9"></a>
+Turn Based Combat</h3>
+<p><b>The combat</b> is implemented in a turn based fashion. When the player encounters an enemy, a different state starts, and the player must attack. After dealing damage, the enemy takes its turn, and the player can press <b>SPACE</b> in order to block a part of this damage. The player can also <b>ESCAPE</b> from the fight.<br  />
+</p>
+<h3><a class="anchor" id="autotoc_md10"></a>
+Collisions</h3>
+<p><b>Collisions</b> are implemented using a special <b>Behavior CSV</b>, from which the current tile behavior is deduced. For example, tile ID 0 means death.<br  />
+</p>
+<h3><a class="anchor" id="autotoc_md11"></a>
+Saving and Loading</h3>
+<p><b>Saving and Loadind</b> is realized through the use of an sqlite database, using a JDBC driver. The data management system is implemented using a Proxy Design Pattern. Between the database and the actual game lies a data buffer, into which data is first loaded.<br  />
+</p>
+<h3><a class="anchor" id="autotoc_md12"></a>
+Exception handling</h3>
+<p>Some data validation <b>exceptions</b> are managed with custom classes derived from the java Exception clas.<br  />
+</p>
+<h3><a class="anchor" id="autotoc_md13"></a>
+Score management</h3>
+<p>The <b>top 3 scores</b> are kept in the database. The logic to deduce which score is the highest is implemented in the game code. The current score and top 3 scores are displayed after defeating the Wizard in the third level.<br  />
+ </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

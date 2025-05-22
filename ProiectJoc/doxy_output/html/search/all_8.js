@@ -1,5 +1,28 @@
 var searchData=
 [
-  ['imagebutton_34',['ImageButton',['../classPaooGame_1_1HUD_1_1ImageButton.html',1,'PaooGame::HUD']]],
-  ['item_35',['Item',['../classPaooGame_1_1Items_1_1Item.html',1,'PaooGame::Items']]]
+  ['id_208',['id',['../classPaooGame_1_1Tiles_1_1Tile.html#a511d6f89665f0df009de4705004eef4a',1,'PaooGame::Tiles::Tile']]],
+  ['imagebutton_209',['ImageButton',['../classPaooGame_1_1HUD_1_1ImageButton.html#a85356d85c84914b474d10a6cc5ba86ab',1,'PaooGame.HUD.ImageButton.ImageButton()'],['../classPaooGame_1_1HUD_1_1ImageButton.html',1,'PaooGame.HUD.ImageButton']]],
+  ['imagesheet_210',['imageSheet',['../classPaooGame_1_1Animations_1_1Animation.html#a66cf7ba675927ca895af24413dc8adc8',1,'PaooGame::Animations::Animation']]],
+  ['img_211',['img',['../classPaooGame_1_1Tiles_1_1Tile.html#aafa5ca1883d367c2dd57aee0e19ec10d',1,'PaooGame::Tiles::Tile']]],
+  ['imgheight_212',['imgHeight',['../classPaooGame_1_1Animations_1_1Animation.html#a926d96bbdcf1e33a01f50a388c95b21e',1,'PaooGame::Animations::Animation']]],
+  ['imgwidth_213',['imgWidth',['../classPaooGame_1_1Animations_1_1Animation.html#a97dfdd6f5b83f61ff447121715c5e690',1,'PaooGame::Animations::Animation']]],
+  ['infightattackinganimation_214',['inFightAttackingAnimation',['../classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a16617b98ee41eb67270bc87197edb13b',1,'PaooGame::Strategies::EnemyStrategies::EnemyStrategy']]],
+  ['infightidleanimation_215',['inFightIdleAnimation',['../classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a5dcfed049477e5ba3f603a4a68a127ab',1,'PaooGame::Strategies::EnemyStrategies::EnemyStrategy']]],
+  ['intersects_216',['intersects',['../classPaooGame_1_1Hitbox_1_1Hitbox.html#a3c3d097fdebe24877a4e51d5b9e9504c',1,'PaooGame::Hitbox::Hitbox']]],
+  ['isactive_217',['isActive',['../classPaooGame_1_1Entities_1_1NPC.html#a4fe41a8354b5e9bae4877dcb9393866e',1,'PaooGame.Entities.NPC.isActive()'],['../classPaooGame_1_1HUD_1_1MessageTriggerZone.html#aba83305c57e526c052e0fc8026c97a7f',1,'PaooGame.HUD.MessageTriggerZone.isActive()']]],
+  ['isclicked_218',['isClicked',['../classPaooGame_1_1HUD_1_1ImageButton.html#a4ce83355818491df686ca0434300b317',1,'PaooGame.HUD.ImageButton.isClicked()'],['../classPaooGame_1_1HUD_1_1PauseButton.html#aebaf59641aa2894817eaf7c0a79271bc',1,'PaooGame.HUD.PauseButton.isClicked()'],['../classPaooGame_1_1HUD_1_1AttackButton.html#a38bffebc486c41105ed1e011b6d2cd72',1,'PaooGame.HUD.AttackButton.isClicked()']]],
+  ['isengaged_219',['isEngaged',['../classPaooGame_1_1Entities_1_1Entity.html#a6173afe9a80119b98e55253a9dce6711',1,'PaooGame::Entities::Entity']]],
+  ['isfinished_220',['isFinished',['../classPaooGame_1_1Animations_1_1Animation.html#ace5c41534cca412e2700fd65ecf150bc',1,'PaooGame::Animations::Animation']]],
+  ['isgroundahead_221',['isGroundAhead',['../classPaooGame_1_1Maps_1_1Level.html#a7985f25394226ebee213f7812cd94a4f',1,'PaooGame::Maps::Level']]],
+  ['isgrounded_222',['isGrounded',['../classPaooGame_1_1Entities_1_1Entity.html#af67d200b51dcdf3669009d3322f829f5',1,'PaooGame::Entities::Entity']]],
+  ['ishovered_223',['isHovered',['../classPaooGame_1_1HUD_1_1AttackButton.html#a73088652cb05f6b112d7b9f7ed38ce55',1,'PaooGame.HUD.AttackButton.isHovered()'],['../classPaooGame_1_1HUD_1_1ImageButton.html#a0fba7952e8699ede7ad97c9f76f54a7a',1,'PaooGame.HUD.ImageButton.isHovered()']]],
+  ['iskeypressed_224',['isKeyPressed',['../classPaooGame_1_1Input_1_1KeyManager.html#aec2997ca4cb9e3715d48b09b1652304e',1,'PaooGame::Input::KeyManager']]],
+  ['iskeypressedonce_225',['isKeyPressedOnce',['../classPaooGame_1_1Input_1_1KeyManager.html#a2c3badfd060725bab1fd014bb4664e4a',1,'PaooGame::Input::KeyManager']]],
+  ['isoneclick_226',['isOneClick',['../classPaooGame_1_1Input_1_1MouseInput.html#adaa4ededede7bea0079f074a2332d809',1,'PaooGame::Input::MouseInput']]],
+  ['istilesolid_227',['isTileSolid',['../classPaooGame_1_1Maps_1_1Level.html#acdde18a406525db7946aa5291e77021c',1,'PaooGame::Maps::Level']]],
+  ['istransitioning_228',['isTransitioning',['../classPaooGame_1_1States_1_1Level1State.html#ac1745d13f00e3bd25f4e3a7fe6357c42',1,'PaooGame::States::Level1State']]],
+  ['istransitioning_5fto_5ffight_229',['isTransitioning_to_fight',['../classPaooGame_1_1States_1_1Level1State.html#ac1bf703a69327d30e0f317b96d0796cc',1,'PaooGame::States::Level1State']]],
+  ['item_230',['Item',['../classPaooGame_1_1Items_1_1Item.html#a11508734150c8d83791aac862819e68d',1,'PaooGame.Items.Item.Item()'],['../classPaooGame_1_1Items_1_1Item.html',1,'PaooGame.Items.Item']]],
+  ['itemname_231',['itemName',['../classPaooGame_1_1Items_1_1Item.html#aef999c9876ade29ed0c53b0103dd8583',1,'PaooGame::Items::Item']]],
+  ['itemsheetpath_232',['itemSheetPath',['../classPaooGame_1_1Items_1_1Item.html#a5624470c01f4b6888593a952d404efbb',1,'PaooGame::Items::Item']]]
 ];

@@ -1,4 +1,4 @@
 <map id="PaooGame.Items.WhipItem" name="PaooGame.Items.WhipItem">
 <area shape="rect" id="node1" title=" " alt="" coords="5,80,205,107"/>
-<area shape="rect" id="node2" href="$classPaooGame_1_1Items_1_1Item.html" title=" " alt="" coords="22,5,189,32"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1Items_1_1Item.html" title="Represents an abstract base class for all items in the game." alt="" coords="22,5,189,32"/>
 </map>

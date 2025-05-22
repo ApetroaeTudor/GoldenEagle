@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager}\index{PaooGame.DatabaseManaging.ProxyDataManager@{PaooGame.DatabaseManaging.ProxyDataManager}}
 
 
-Inheritance diagram for Paoo\+Game.\+Database\+Managing.\+Proxy\+Data\+Manager\+:
-\nopagebreak
+Implements the \mbox{\hyperlink{interfacePaooGame_1_1DatabaseManaging_1_1DataManager}{Data\+Manager}} interface using a Proxy pattern to control access and add validation to a \mbox{\hyperlink{classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager}{Concrete\+Data\+Manager}}.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+Database\+Managing.\+Proxy\+Data\+Manager\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+Database\+Managing.\+Proxy\+Data\+Manager\+
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+Database\+Managing.\+Proxy\+Data\+Manager\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+Database\+Managing.\+Proxy\+Data\+Manager\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,30 +26,244 @@ Collaboration diagram for Paoo\+Game.\+Database\+Managing.\+Proxy\+Data\+Manager
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a1ee6e06340754e119d76efeaae1792ea}{Proxy\+Data\+Manager}} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} reflink)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager}{Proxy\+Data\+Manager}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a2a8a72a65d11dcbec85f855f72fd64d1}{load}} (String key, boolean access)  throws Access\+Not\+Permitted\+Exception, Value\+Store\+Exception, Data\+Buffer\+Not\+Ready\+Exception 
+\begin{DoxyCompactList}\small\item\em Loads an integer value associated with a given key, with access control and validation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a5f48574435a79c3a383f456cda5f145c}{store}} (String key, int value, boolean access)  throws Access\+Not\+Permitted\+Exception, Value\+Store\+Exception 
+\begin{DoxyCompactList}\small\item\em Stores an integer value associated with a given key, with access control and input validation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_add8de04f08c53b76c65abdf79744e530}{reset\+Buffer}} (boolean access)  throws Access\+Not\+Permitted\+Exception
+\begin{DoxyCompactList}\small\item\em Resets the internal data buffer to a default state, with access control. Also restores the state of game levels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a0da475959dfef1de6831b8a455d02f1a}{load\+Buffer}} (boolean access)  throws Access\+Not\+Permitted\+Exception 
+\begin{DoxyCompactList}\small\item\em Loads data from a persistent source into the buffer, with access control. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a180b9999f017391c9994f368bc162c4e}{store\+Buffer}} (boolean access)  throws Access\+Not\+Permitted\+Exception, Value\+Store\+Exception 
+\begin{DoxyCompactList}\small\item\em Stores the current buffer state to a persistent source, with access control and data validation. \end{DoxyCompactList}\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a44b8e1a29ee2ab0853a093c6c71207d5}{load\+Score}} (boolean access)  throws Access\+Not\+Permitted\+Exception 
+\begin{DoxyCompactList}\small\item\em Loads game scores, with access control. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_aa0e840acda825bc258cc87141e98c4e3}{store\+Score}} (boolean access, int score1, int score2, int score3)  throws Access\+Not\+Permitted\+Exception, Value\+Store\+Exception 
+\begin{DoxyCompactList}\small\item\em Stores game scores, with access control and score validation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the \mbox{\hyperlink{interfacePaooGame_1_1DatabaseManaging_1_1DataManager}{Data\+Manager}} interface using a Proxy pattern to control access and add validation to a \mbox{\hyperlink{classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager}{Concrete\+Data\+Manager}}. 
+
+This class acts as an intermediary (proxy) for a \mbox{\hyperlink{classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager}{Concrete\+Data\+Manager}} instance. It enforces access control (via the {\ttfamily access} boolean parameter), validates input keys and values before delegating operations to the concrete manager, and ensures the concrete manager is instantiated. This separation allows for additional logic (like security checks or validation) without modifying the core data management implementation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a1ee6e06340754e119d76efeaae1792ea}\label{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a1ee6e06340754e119d76efeaae1792ea}} 
-{\bfseries Proxy\+Data\+Manager} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} reflink)
-\item 
+\index{PaooGame.DatabaseManaging.ProxyDataManager@{PaooGame.DatabaseManaging.ProxyDataManager}!ProxyDataManager@{ProxyDataManager}}
+\index{ProxyDataManager@{ProxyDataManager}!PaooGame.DatabaseManaging.ProxyDataManager@{PaooGame.DatabaseManaging.ProxyDataManager}}
+\doxysubsubsection{\texorpdfstring{ProxyDataManager()}{ProxyDataManager()}}
+{\footnotesize\ttfamily Paoo\+Game.\+Database\+Managing.\+Proxy\+Data\+Manager.\+Proxy\+Data\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}}}]{reflink }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager}{Proxy\+Data\+Manager}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reflink} & A reference to shared game resources, used for instantiating the \mbox{\hyperlink{classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager}{Concrete\+Data\+Manager}} if needed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a2a8a72a65d11dcbec85f855f72fd64d1}\label{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a2a8a72a65d11dcbec85f855f72fd64d1}} 
-int {\bfseries load} (String key, boolean access)  throws Access\+Denied\+Exception,\+Illegal\+Argument\+Exception 
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a5f48574435a79c3a383f456cda5f145c}\label{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a5f48574435a79c3a383f456cda5f145c}} 
-void {\bfseries store} (String key, int value, boolean access)  throws Access\+Denied\+Exception,\+Illegal\+Argument\+Exception 
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_add8de04f08c53b76c65abdf79744e530}\label{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_add8de04f08c53b76c65abdf79744e530}} 
-void {\bfseries reset\+Buffer} (boolean access)  throws Access\+Denied\+Exception 
-\item 
+\index{PaooGame.DatabaseManaging.ProxyDataManager@{PaooGame.DatabaseManaging.ProxyDataManager}!load@{load}}
+\index{load@{load}!PaooGame.DatabaseManaging.ProxyDataManager@{PaooGame.DatabaseManaging.ProxyDataManager}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily int Paoo\+Game.\+Database\+Managing.\+Proxy\+Data\+Manager.\+load (\begin{DoxyParamCaption}\item[{String}]{key,  }\item[{boolean}]{access }\end{DoxyParamCaption}) throws \mbox{\hyperlink{classPaooGame_1_1CustomExceptions_1_1AccessNotPermittedException}{Access\+Not\+Permitted\+Exception}}, \mbox{\hyperlink{classPaooGame_1_1CustomExceptions_1_1ValueStoreException}{Value\+Store\+Exception}}, \mbox{\hyperlink{classPaooGame_1_1CustomExceptions_1_1DataBufferNotReadyException}{Data\+Buffer\+Not\+Ready\+Exception}}\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Loads an integer value associated with a given key, with access control and validation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The unique identifier for the data to be loaded. \\
+\hline
+{\em access} & A boolean flag; if false, an Access\+Not\+Permitted\+Exception is thrown. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The integer value associated with the key. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Access\+Not\+Permitted\+Exception} & If {\ttfamily access} is false. \\
+\hline
+{\em Value\+Store\+Exception} & If the provided {\ttfamily key} is not a valid known constant. \\
+\hline
+{\em Data\+Buffer\+Not\+Ready\+Exception} & If the loaded value from the concrete manager is -\/1 (indicating data not ready). \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacePaooGame_1_1DatabaseManaging_1_1DataManager_ae5b8d2e1e69fdfae152c5bf8252ca491}{Paoo\+Game.\+Database\+Managing.\+Data\+Manager}}.
+
 \mbox{\Hypertarget{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a0da475959dfef1de6831b8a455d02f1a}\label{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a0da475959dfef1de6831b8a455d02f1a}} 
-void {\bfseries load\+Buffer} (boolean access)  throws Access\+Denied\+Exception 
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a180b9999f017391c9994f368bc162c4e}\label{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a180b9999f017391c9994f368bc162c4e}} 
-void {\bfseries store\+Buffer} (boolean access)  throws Access\+Denied\+Exception, Illegal\+Argument\+Exception 
-\item 
+\index{PaooGame.DatabaseManaging.ProxyDataManager@{PaooGame.DatabaseManaging.ProxyDataManager}!loadBuffer@{loadBuffer}}
+\index{loadBuffer@{loadBuffer}!PaooGame.DatabaseManaging.ProxyDataManager@{PaooGame.DatabaseManaging.ProxyDataManager}}
+\doxysubsubsection{\texorpdfstring{loadBuffer()}{loadBuffer()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Database\+Managing.\+Proxy\+Data\+Manager.\+load\+Buffer (\begin{DoxyParamCaption}\item[{boolean}]{access }\end{DoxyParamCaption}) throws \mbox{\hyperlink{classPaooGame_1_1CustomExceptions_1_1AccessNotPermittedException}{Access\+Not\+Permitted\+Exception}}\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Loads data from a persistent source into the buffer, with access control. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em access} & A boolean flag; if false, an Access\+Not\+Permitted\+Exception is thrown. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Access\+Not\+Permitted\+Exception} & If {\ttfamily access} is false. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacePaooGame_1_1DatabaseManaging_1_1DataManager_af6fafa39d91b42ba431dc44a85037c59}{Paoo\+Game.\+Database\+Managing.\+Data\+Manager}}.
+
 \mbox{\Hypertarget{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a44b8e1a29ee2ab0853a093c6c71207d5}\label{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a44b8e1a29ee2ab0853a093c6c71207d5}} 
-int\mbox{[}$\,$\mbox{]} {\bfseries load\+Score} (boolean access)  throws Access\+Denied\+Exception 
-\item 
+\index{PaooGame.DatabaseManaging.ProxyDataManager@{PaooGame.DatabaseManaging.ProxyDataManager}!loadScore@{loadScore}}
+\index{loadScore@{loadScore}!PaooGame.DatabaseManaging.ProxyDataManager@{PaooGame.DatabaseManaging.ProxyDataManager}}
+\doxysubsubsection{\texorpdfstring{loadScore()}{loadScore()}}
+{\footnotesize\ttfamily int \mbox{[}$\,$\mbox{]} Paoo\+Game.\+Database\+Managing.\+Proxy\+Data\+Manager.\+load\+Score (\begin{DoxyParamCaption}\item[{boolean}]{access }\end{DoxyParamCaption}) throws \mbox{\hyperlink{classPaooGame_1_1CustomExceptions_1_1AccessNotPermittedException}{Access\+Not\+Permitted\+Exception}}\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Loads game scores, with access control. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em access} & A boolean flag; if false, an Access\+Not\+Permitted\+Exception is thrown. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An array of integers representing the loaded scores. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Access\+Not\+Permitted\+Exception} & If {\ttfamily access} is false. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacePaooGame_1_1DatabaseManaging_1_1DataManager_a10322128a593d95096b14ecc60d97456}{Paoo\+Game.\+Database\+Managing.\+Data\+Manager}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_add8de04f08c53b76c65abdf79744e530}\label{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_add8de04f08c53b76c65abdf79744e530}} 
+\index{PaooGame.DatabaseManaging.ProxyDataManager@{PaooGame.DatabaseManaging.ProxyDataManager}!resetBuffer@{resetBuffer}}
+\index{resetBuffer@{resetBuffer}!PaooGame.DatabaseManaging.ProxyDataManager@{PaooGame.DatabaseManaging.ProxyDataManager}}
+\doxysubsubsection{\texorpdfstring{resetBuffer()}{resetBuffer()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Database\+Managing.\+Proxy\+Data\+Manager.\+reset\+Buffer (\begin{DoxyParamCaption}\item[{boolean}]{access }\end{DoxyParamCaption}) throws \mbox{\hyperlink{classPaooGame_1_1CustomExceptions_1_1AccessNotPermittedException}{Access\+Not\+Permitted\+Exception}}\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resets the internal data buffer to a default state, with access control. Also restores the state of game levels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em access} & A boolean flag; if false, an Access\+Not\+Permitted\+Exception is thrown. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Access\+Not\+Permitted\+Exception} & If {\ttfamily access} is false. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacePaooGame_1_1DatabaseManaging_1_1DataManager_a49d2830860ed2310e864c861ab57595f}{Paoo\+Game.\+Database\+Managing.\+Data\+Manager}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a5f48574435a79c3a383f456cda5f145c}\label{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a5f48574435a79c3a383f456cda5f145c}} 
+\index{PaooGame.DatabaseManaging.ProxyDataManager@{PaooGame.DatabaseManaging.ProxyDataManager}!store@{store}}
+\index{store@{store}!PaooGame.DatabaseManaging.ProxyDataManager@{PaooGame.DatabaseManaging.ProxyDataManager}}
+\doxysubsubsection{\texorpdfstring{store()}{store()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Database\+Managing.\+Proxy\+Data\+Manager.\+store (\begin{DoxyParamCaption}\item[{String}]{key,  }\item[{int}]{value,  }\item[{boolean}]{access }\end{DoxyParamCaption}) throws \mbox{\hyperlink{classPaooGame_1_1CustomExceptions_1_1AccessNotPermittedException}{Access\+Not\+Permitted\+Exception}}, \mbox{\hyperlink{classPaooGame_1_1CustomExceptions_1_1ValueStoreException}{Value\+Store\+Exception}}\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stores an integer value associated with a given key, with access control and input validation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The unique identifier for the data to be stored. \\
+\hline
+{\em value} & The integer value to store. \\
+\hline
+{\em access} & A boolean flag; if false, an Access\+Not\+Permitted\+Exception is thrown. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Access\+Not\+Permitted\+Exception} & If {\ttfamily access} is false. \\
+\hline
+{\em Value\+Store\+Exception} & If the {\ttfamily key} is invalid or the {\ttfamily value} is out of expected range for the given key. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacePaooGame_1_1DatabaseManaging_1_1DataManager_a44487bfd10bbe98cb8130aa8d1cf0443}{Paoo\+Game.\+Database\+Managing.\+Data\+Manager}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a180b9999f017391c9994f368bc162c4e}\label{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_a180b9999f017391c9994f368bc162c4e}} 
+\index{PaooGame.DatabaseManaging.ProxyDataManager@{PaooGame.DatabaseManaging.ProxyDataManager}!storeBuffer@{storeBuffer}}
+\index{storeBuffer@{storeBuffer}!PaooGame.DatabaseManaging.ProxyDataManager@{PaooGame.DatabaseManaging.ProxyDataManager}}
+\doxysubsubsection{\texorpdfstring{storeBuffer()}{storeBuffer()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Database\+Managing.\+Proxy\+Data\+Manager.\+store\+Buffer (\begin{DoxyParamCaption}\item[{boolean}]{access }\end{DoxyParamCaption}) throws \mbox{\hyperlink{classPaooGame_1_1CustomExceptions_1_1AccessNotPermittedException}{Access\+Not\+Permitted\+Exception}}, \mbox{\hyperlink{classPaooGame_1_1CustomExceptions_1_1ValueStoreException}{Value\+Store\+Exception}}\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stores the current buffer state to a persistent source, with access control and data validation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em access} & A boolean flag; if false, an Access\+Not\+Permitted\+Exception is thrown. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Access\+Not\+Permitted\+Exception} & If {\ttfamily access} is false. \\
+\hline
+{\em Value\+Store\+Exception} & If any data in the buffer is found to be invalid (-\/1) before storing. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacePaooGame_1_1DatabaseManaging_1_1DataManager_a34f28f3aad93e84b36c760fcbe7eb490}{Paoo\+Game.\+Database\+Managing.\+Data\+Manager}}.
+
 \mbox{\Hypertarget{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_aa0e840acda825bc258cc87141e98c4e3}\label{classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager_aa0e840acda825bc258cc87141e98c4e3}} 
-void {\bfseries store\+Score} (boolean access, int score1, int score2, int score3)  throws Access\+Denied\+Exception, Illegal\+Argument\+Exception 
-\end{DoxyCompactItemize}
+\index{PaooGame.DatabaseManaging.ProxyDataManager@{PaooGame.DatabaseManaging.ProxyDataManager}!storeScore@{storeScore}}
+\index{storeScore@{storeScore}!PaooGame.DatabaseManaging.ProxyDataManager@{PaooGame.DatabaseManaging.ProxyDataManager}}
+\doxysubsubsection{\texorpdfstring{storeScore()}{storeScore()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Database\+Managing.\+Proxy\+Data\+Manager.\+store\+Score (\begin{DoxyParamCaption}\item[{boolean}]{access,  }\item[{int}]{score1,  }\item[{int}]{score2,  }\item[{int}]{score3 }\end{DoxyParamCaption}) throws \mbox{\hyperlink{classPaooGame_1_1CustomExceptions_1_1AccessNotPermittedException}{Access\+Not\+Permitted\+Exception}}, \mbox{\hyperlink{classPaooGame_1_1CustomExceptions_1_1ValueStoreException}{Value\+Store\+Exception}}\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stores game scores, with access control and score validation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em access} & A boolean flag; if false, an Access\+Not\+Permitted\+Exception is thrown. \\
+\hline
+{\em score1} & The first score to store. \\
+\hline
+{\em score2} & The second score to store. \\
+\hline
+{\em score3} & The third score to store. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Access\+Not\+Permitted\+Exception} & If {\ttfamily access} is false. \\
+\hline
+{\em Value\+Store\+Exception} & If any score is outside the valid range (0-\/999). \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacePaooGame_1_1DatabaseManaging_1_1DataManager_a2c486fce52bb74f1441186048dc6e0c4}{Paoo\+Game.\+Database\+Managing.\+Data\+Manager}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation}\index{PaooGame.Animations.EffectsAnimations.EffectAnimation@{PaooGame.Animations.EffectsAnimations.EffectAnimation}}
 
 
-Inheritance diagram for Paoo\+Game.\+Animations.\+Effects\+Animations.\+Effect\+Animation\+:
-\nopagebreak
+Manages and renders animations for visual effects in the game.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+Animations.\+Effects\+Animations.\+Effect\+Animation\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+Animations.\+Effects\+Animations.\+Effect\+
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+Animations.\+Effects\+Animations.\+Effect\+Animation\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+Animations.\+Effects\+Animations.\+Effect\+Animation\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,22 +26,122 @@ Collaboration diagram for Paoo\+Game.\+Animations.\+Effects\+Animations.\+Effect
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_ac6a6024137dc4edece92c80aea7a4eb1}\label{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_ac6a6024137dc4edece92c80aea7a4eb1}} 
-{\bfseries Effect\+Animation} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} ref\+Link, Constants.\+EFFECTS selected\+Effect, int nr\+Of\+Frames, int animation\+Speed)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_a0d9244bb985e913efffb5787a45098b3}\label{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_a0d9244bb985e913efffb5787a45098b3}} 
-void {\bfseries load\+Animation} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_a52be9f96b45c34d62c3679f276de84c4}\label{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_a52be9f96b45c34d62c3679f276de84c4}} 
-void {\bfseries update\+Animation} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_ab8c2c8c909d7b30b369a7fe0a4653854}\label{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_ab8c2c8c909d7b30b369a7fe0a4653854}} 
-void {\bfseries trigger\+Once} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_a2952b528f3e7ab2ae2f18719d2f1dcc3}\label{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_a2952b528f3e7ab2ae2f18719d2f1dcc3}} 
-void {\bfseries paint\+Animation} (Graphics g, int x, int y, boolean flipped, double scale)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_ac6a6024137dc4edece92c80aea7a4eb1}{Effect\+Animation}} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} ref\+Link, Constants.\+EFFECTS selected\+Effect, int \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_ad5a63fa7aee0aa588e5076e5f916b837}{nr\+Of\+Frames}}, int \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_a427a2339571eae2f9fbf8903934fa507}{animation\+Speed}})
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation}{Effect\+Animation}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_a0d9244bb985e913efffb5787a45098b3}{load\+Animation}} ()
+\begin{DoxyCompactList}\small\item\em Loads the animation frames from the spritesheet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_a52be9f96b45c34d62c3679f276de84c4}{update\+Animation}} ()
+\begin{DoxyCompactList}\small\item\em Updates the current state of the animation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_ab8c2c8c909d7b30b369a7fe0a4653854}{trigger\+Once}} ()
+\begin{DoxyCompactList}\small\item\em Resets the animation to its starting state to play once. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_a2952b528f3e7ab2ae2f18719d2f1dcc3}{paint\+Animation}} (Graphics g, int x, int y, boolean flipped, double scale)
+\begin{DoxyCompactList}\small\item\em Renders the current frame of the animation at the specified position. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Manages and renders animations for visual effects in the game. 
+
+This class extends the base \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation}{Animation}} class to handle specific types of effects, such as attack explosions. It loads animation frames from a spritesheet and controls their playback. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_ac6a6024137dc4edece92c80aea7a4eb1}\label{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_ac6a6024137dc4edece92c80aea7a4eb1}} 
+\index{PaooGame.Animations.EffectsAnimations.EffectAnimation@{PaooGame.Animations.EffectsAnimations.EffectAnimation}!EffectAnimation@{EffectAnimation}}
+\index{EffectAnimation@{EffectAnimation}!PaooGame.Animations.EffectsAnimations.EffectAnimation@{PaooGame.Animations.EffectsAnimations.EffectAnimation}}
+\doxysubsubsection{\texorpdfstring{EffectAnimation()}{EffectAnimation()}}
+{\footnotesize\ttfamily Paoo\+Game.\+Animations.\+Effects\+Animations.\+Effect\+Animation.\+Effect\+Animation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}}}]{ref\+Link,  }\item[{Constants.\+EFFECTS}]{selected\+Effect,  }\item[{int}]{nr\+Of\+Frames,  }\item[{int}]{animation\+Speed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs an \mbox{\hyperlink{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation}{Effect\+Animation}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ref\+Link} & A reference to the game\textquotesingle{}s shared resources and utilities. \\
+\hline
+{\em selected\+Effect} & The specific effect to animate (for example ATTACK\+\_\+\+EXPLOSION). \\
+\hline
+{\em nr\+Of\+Frames} & The total number of frames in the animation sequence. \\
+\hline
+{\em animation\+Speed} & The speed at which the animation plays (ticks per frame). \\
+\hline
+\end{DoxyParams}
+$<$ Indicates that the animation should play once and then stop.
+
+$<$ The spritesheet containing the animation frames.
+
+$<$ Array to store individual animation frames.
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_a0d9244bb985e913efffb5787a45098b3}\label{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_a0d9244bb985e913efffb5787a45098b3}} 
+\index{PaooGame.Animations.EffectsAnimations.EffectAnimation@{PaooGame.Animations.EffectsAnimations.EffectAnimation}!loadAnimation@{loadAnimation}}
+\index{loadAnimation@{loadAnimation}!PaooGame.Animations.EffectsAnimations.EffectAnimation@{PaooGame.Animations.EffectsAnimations.EffectAnimation}}
+\doxysubsubsection{\texorpdfstring{loadAnimation()}{loadAnimation()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Animations.\+Effects\+Animations.\+Effect\+Animation.\+load\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Loads the animation frames from the spritesheet. 
+
+This method iterates through the spritesheet, extracting each frame based on the configured image width and height, and stores them in the animation\+Array. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_a1f183fa0d920251be9b55a21d2562626}{Paoo\+Game.\+Animations.\+Animation}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_a2952b528f3e7ab2ae2f18719d2f1dcc3}\label{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_a2952b528f3e7ab2ae2f18719d2f1dcc3}} 
+\index{PaooGame.Animations.EffectsAnimations.EffectAnimation@{PaooGame.Animations.EffectsAnimations.EffectAnimation}!paintAnimation@{paintAnimation}}
+\index{paintAnimation@{paintAnimation}!PaooGame.Animations.EffectsAnimations.EffectAnimation@{PaooGame.Animations.EffectsAnimations.EffectAnimation}}
+\doxysubsubsection{\texorpdfstring{paintAnimation()}{paintAnimation()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Animations.\+Effects\+Animations.\+Effect\+Animation.\+paint\+Animation (\begin{DoxyParamCaption}\item[{Graphics}]{g,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{boolean}]{flipped,  }\item[{double}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renders the current frame of the animation at the specified position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The Graphics context to draw on. \\
+\hline
+{\em x} & The x-\/coordinate where the animation should be drawn. \\
+\hline
+{\em y} & The y-\/coordinate where the animation should be drawn. \\
+\hline
+{\em flipped} & A boolean indicating whether the animation should be flipped horizontally. \\
+\hline
+{\em scale} & The scaling factor for the animation. This parameter can be overridden by effect-\/specific scaling. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_a4bbb89fb5709e550719394035b551e8c}{Paoo\+Game.\+Animations.\+Animation}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_ab8c2c8c909d7b30b369a7fe0a4653854}\label{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_ab8c2c8c909d7b30b369a7fe0a4653854}} 
+\index{PaooGame.Animations.EffectsAnimations.EffectAnimation@{PaooGame.Animations.EffectsAnimations.EffectAnimation}!triggerOnce@{triggerOnce}}
+\index{triggerOnce@{triggerOnce}!PaooGame.Animations.EffectsAnimations.EffectAnimation@{PaooGame.Animations.EffectsAnimations.EffectAnimation}}
+\doxysubsubsection{\texorpdfstring{triggerOnce()}{triggerOnce()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Animations.\+Effects\+Animations.\+Effect\+Animation.\+trigger\+Once (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resets the animation to its starting state to play once. 
+
+This method is used to trigger an animation that should play from the beginning. It resets the finished flag, animation state, and tick counter. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_a2a96a20130e3f3aa15237a4e8081372c}{Paoo\+Game.\+Animations.\+Animation}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_a52be9f96b45c34d62c3679f276de84c4}\label{classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation_a52be9f96b45c34d62c3679f276de84c4}} 
+\index{PaooGame.Animations.EffectsAnimations.EffectAnimation@{PaooGame.Animations.EffectsAnimations.EffectAnimation}!updateAnimation@{updateAnimation}}
+\index{updateAnimation@{updateAnimation}!PaooGame.Animations.EffectsAnimations.EffectAnimation@{PaooGame.Animations.EffectsAnimations.EffectAnimation}}
+\doxysubsubsection{\texorpdfstring{updateAnimation()}{updateAnimation()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Animations.\+Effects\+Animations.\+Effect\+Animation.\+update\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the current state of the animation. 
+
+This method progresses the animation to the next frame based on the animation\+Speed. If the animation is set to play once and has finished, it will not update further. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_a4475f6857bdf31b2ca7da423da8701ba}{Paoo\+Game.\+Animations.\+Animation}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

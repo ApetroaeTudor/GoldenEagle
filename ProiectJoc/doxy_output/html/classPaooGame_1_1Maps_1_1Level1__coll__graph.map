@@ -1,4 +1,4 @@
 <map id="PaooGame.Maps.Level1" name="PaooGame.Maps.Level1">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,184,107"/>
-<area shape="rect" id="node2" href="$classPaooGame_1_1Maps_1_1Level.html" title=" " alt="" coords="9,5,180,32"/>
+<area shape="rect" id="node1" title="Represents the first level of the game." alt="" coords="5,80,184,107"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1Maps_1_1Level.html" title="Abstract base class for game levels, managing tile data and providing collision detection utilities." alt="" coords="9,5,180,32"/>
 </map>

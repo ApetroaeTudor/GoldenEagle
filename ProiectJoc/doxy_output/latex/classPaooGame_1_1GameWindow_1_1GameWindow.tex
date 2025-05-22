@@ -1,26 +1,117 @@
 \hypertarget{classPaooGame_1_1GameWindow_1_1GameWindow}{}\doxysection{Paoo\+Game.\+Game\+Window.\+Game\+Window Class Reference}
 \label{classPaooGame_1_1GameWindow_1_1GameWindow}\index{PaooGame.GameWindow.GameWindow@{PaooGame.GameWindow.GameWindow}}
+
+
+Manages the main game window (JFrame) and the drawing surface (Canvas).  
+
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{classPaooGame_1_1GameWindow_1_1GameWindow_ac971f96f44e9dedc294a16bab94e1493}{Game\+Window}} (String title, int width, int height)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPaooGame_1_1GameWindow_1_1GameWindow}{Game\+Window}} object with specified properties. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1GameWindow_1_1GameWindow_a12ba321428d7e95d94b80eb18c81640b}{Build\+Game\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Builds and displays the game window and its canvas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPaooGame_1_1GameWindow_1_1GameWindow_a8d28a5169b27f0933912cb0e1f93173e}{Get\+Wnd\+Width}} ()
+\begin{DoxyCompactList}\small\item\em Gets the width of the game window. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPaooGame_1_1GameWindow_1_1GameWindow_a659d636b541896cceba73d348cbd0dbd}{Get\+Wnd\+Height}} ()
+\begin{DoxyCompactList}\small\item\em Gets the height of the game window. \end{DoxyCompactList}\item 
+Canvas \mbox{\hyperlink{classPaooGame_1_1GameWindow_1_1GameWindow_a908c593b9d39741cdf5f1010e26e43da}{Get\+Canvas}} ()
+\begin{DoxyCompactList}\small\item\em Gets the canvas used for drawing in the game window. \end{DoxyCompactList}\item 
+JFrame \mbox{\hyperlink{classPaooGame_1_1GameWindow_1_1GameWindow_a697d4d5be55803b78618917eb0e08888}{Get\+Wnd\+Frame}} ()
+\begin{DoxyCompactList}\small\item\em Gets the JFrame object representing the game window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the main game window (JFrame) and the drawing surface (Canvas). 
+
+This class is responsible for creating, configuring, and providing access to the game\textquotesingle{}s window and the canvas where graphics are rendered. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classPaooGame_1_1GameWindow_1_1GameWindow_ac971f96f44e9dedc294a16bab94e1493}\label{classPaooGame_1_1GameWindow_1_1GameWindow_ac971f96f44e9dedc294a16bab94e1493}} 
-{\bfseries Game\+Window} (String title, int width, int height)
-\item 
+\index{PaooGame.GameWindow.GameWindow@{PaooGame.GameWindow.GameWindow}!GameWindow@{GameWindow}}
+\index{GameWindow@{GameWindow}!PaooGame.GameWindow.GameWindow@{PaooGame.GameWindow.GameWindow}}
+\doxysubsubsection{\texorpdfstring{GameWindow()}{GameWindow()}}
+{\footnotesize\ttfamily Paoo\+Game.\+Game\+Window.\+Game\+Window.\+Game\+Window (\begin{DoxyParamCaption}\item[{String}]{title,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPaooGame_1_1GameWindow_1_1GameWindow}{Game\+Window}} object with specified properties. 
+
+Initializes the window title, width, and height. The actual window frame is not created until \mbox{\hyperlink{classPaooGame_1_1GameWindow_1_1GameWindow_a12ba321428d7e95d94b80eb18c81640b}{Build\+Game\+Window()}} is called. 
+\begin{DoxyParams}{Parameters}
+{\em title} & The title for the game window. \\
+\hline
+{\em width} & The desired width of the game window. \\
+\hline
+{\em height} & The desired height of the game window. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classPaooGame_1_1GameWindow_1_1GameWindow_a12ba321428d7e95d94b80eb18c81640b}\label{classPaooGame_1_1GameWindow_1_1GameWindow_a12ba321428d7e95d94b80eb18c81640b}} 
-void {\bfseries Build\+Game\+Window} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1GameWindow_1_1GameWindow_a8d28a5169b27f0933912cb0e1f93173e}\label{classPaooGame_1_1GameWindow_1_1GameWindow_a8d28a5169b27f0933912cb0e1f93173e}} 
-int {\bfseries Get\+Wnd\+Width} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1GameWindow_1_1GameWindow_a659d636b541896cceba73d348cbd0dbd}\label{classPaooGame_1_1GameWindow_1_1GameWindow_a659d636b541896cceba73d348cbd0dbd}} 
-int {\bfseries Get\+Wnd\+Height} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1GameWindow_1_1GameWindow_a908c593b9d39741cdf5f1010e26e43da}\label{classPaooGame_1_1GameWindow_1_1GameWindow_a908c593b9d39741cdf5f1010e26e43da}} 
-Canvas {\bfseries Get\+Canvas} ()
-\item 
+\index{PaooGame.GameWindow.GameWindow@{PaooGame.GameWindow.GameWindow}!BuildGameWindow@{BuildGameWindow}}
+\index{BuildGameWindow@{BuildGameWindow}!PaooGame.GameWindow.GameWindow@{PaooGame.GameWindow.GameWindow}}
+\doxysubsubsection{\texorpdfstring{BuildGameWindow()}{BuildGameWindow()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Game\+Window.\+Game\+Window.\+Build\+Game\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Builds and displays the game window and its canvas. 
+
+If the window frame (wnd\+Frame) has not been previously created, this method initializes a new JFrame with the specified title, size, and properties. It also creates and adds a Canvas for drawing. The window is then made visible. If the window already exists, this method does nothing. \mbox{\Hypertarget{classPaooGame_1_1GameWindow_1_1GameWindow_a908c593b9d39741cdf5f1010e26e43da}\label{classPaooGame_1_1GameWindow_1_1GameWindow_a908c593b9d39741cdf5f1010e26e43da}} 
+\index{PaooGame.GameWindow.GameWindow@{PaooGame.GameWindow.GameWindow}!GetCanvas@{GetCanvas}}
+\index{GetCanvas@{GetCanvas}!PaooGame.GameWindow.GameWindow@{PaooGame.GameWindow.GameWindow}}
+\doxysubsubsection{\texorpdfstring{GetCanvas()}{GetCanvas()}}
+{\footnotesize\ttfamily Canvas Paoo\+Game.\+Game\+Window.\+Game\+Window.\+Get\+Canvas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the canvas used for drawing in the game window. 
+
+\begin{DoxyReturn}{Returns}
+The Canvas object associated with this game window. Returns null if \mbox{\hyperlink{classPaooGame_1_1GameWindow_1_1GameWindow_a12ba321428d7e95d94b80eb18c81640b}{Build\+Game\+Window()}} has not been called. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classPaooGame_1_1GameWindow_1_1GameWindow_a697d4d5be55803b78618917eb0e08888}\label{classPaooGame_1_1GameWindow_1_1GameWindow_a697d4d5be55803b78618917eb0e08888}} 
-JFrame {\bfseries Get\+Wnd\+Frame} ()
-\end{DoxyCompactItemize}
+\index{PaooGame.GameWindow.GameWindow@{PaooGame.GameWindow.GameWindow}!GetWndFrame@{GetWndFrame}}
+\index{GetWndFrame@{GetWndFrame}!PaooGame.GameWindow.GameWindow@{PaooGame.GameWindow.GameWindow}}
+\doxysubsubsection{\texorpdfstring{GetWndFrame()}{GetWndFrame()}}
+{\footnotesize\ttfamily JFrame Paoo\+Game.\+Game\+Window.\+Game\+Window.\+Get\+Wnd\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the JFrame object representing the game window. 
+
+\begin{DoxyReturn}{Returns}
+The JFrame object. Returns null if \mbox{\hyperlink{classPaooGame_1_1GameWindow_1_1GameWindow_a12ba321428d7e95d94b80eb18c81640b}{Build\+Game\+Window()}} has not been called. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1GameWindow_1_1GameWindow_a659d636b541896cceba73d348cbd0dbd}\label{classPaooGame_1_1GameWindow_1_1GameWindow_a659d636b541896cceba73d348cbd0dbd}} 
+\index{PaooGame.GameWindow.GameWindow@{PaooGame.GameWindow.GameWindow}!GetWndHeight@{GetWndHeight}}
+\index{GetWndHeight@{GetWndHeight}!PaooGame.GameWindow.GameWindow@{PaooGame.GameWindow.GameWindow}}
+\doxysubsubsection{\texorpdfstring{GetWndHeight()}{GetWndHeight()}}
+{\footnotesize\ttfamily int Paoo\+Game.\+Game\+Window.\+Game\+Window.\+Get\+Wnd\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the height of the game window. 
+
+\begin{DoxyReturn}{Returns}
+The height of the window in pixels. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1GameWindow_1_1GameWindow_a8d28a5169b27f0933912cb0e1f93173e}\label{classPaooGame_1_1GameWindow_1_1GameWindow_a8d28a5169b27f0933912cb0e1f93173e}} 
+\index{PaooGame.GameWindow.GameWindow@{PaooGame.GameWindow.GameWindow}!GetWndWidth@{GetWndWidth}}
+\index{GetWndWidth@{GetWndWidth}!PaooGame.GameWindow.GameWindow@{PaooGame.GameWindow.GameWindow}}
+\doxysubsubsection{\texorpdfstring{GetWndWidth()}{GetWndWidth()}}
+{\footnotesize\ttfamily int Paoo\+Game.\+Game\+Window.\+Game\+Window.\+Get\+Wnd\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the width of the game window. 
+
+\begin{DoxyReturn}{Returns}
+The width of the window in pixels. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

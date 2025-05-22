@@ -6,10 +6,28 @@ import PaooGame.RefLinks;
 
 import java.awt.*;
 
+/**
+ * @class WizardEnemyStrategy
+ * @brief Implements the specific strategy for the Wizard enemy type.
+ *
+ * This class extends {@link EnemyStrategy} and defines the unique properties
+ * and behaviors for Wizard enemies, such as their speed, health, damage,
+ * animations, and the level they primarily appear in. It follows a Singleton
+ * pattern to ensure only one instance of this strategy configuration exists.
+ */
 public class WizardEnemyStrategy extends EnemyStrategy{
 
-    private static WizardEnemyStrategy instance = null;
+    private static WizardEnemyStrategy instance = null; ///< Singleton instance of the WizardEnemyStrategy.
 
+    /**
+     * @brief Gets the singleton instance of the WizardEnemyStrategy.
+     *
+     * If the instance does not exist, it creates a new one.
+     * This method ensures that only one instance of the strategy is used throughout the game.
+     *
+     * @param reflink A {@link RefLinks} object providing access to game-wide objects and utilities.
+     * @return The singleton instance of {@link WizardEnemyStrategy}.
+     */
     public static WizardEnemyStrategy getInstance(RefLinks reflink){
         if(WizardEnemyStrategy.instance == null){
             WizardEnemyStrategy.instance = new WizardEnemyStrategy(reflink);
@@ -18,6 +36,16 @@ public class WizardEnemyStrategy extends EnemyStrategy{
     }
 
 
+    /**
+     * @brief Constructs a WizardEnemyStrategy object.
+     *
+     * Initializes the specific properties for the Wizard enemy, including
+     * speed, hitbox dimensions, health, damage, and animations. It loads the
+     * necessary animations (walking, attacking, idle) and sets up the behavior
+     * tile IDs relevant to its movement and interaction within Level 3.
+     *
+     * @param reflink A {@link RefLinks} object providing access to game-wide objects and utilities.
+     */
     public WizardEnemyStrategy(RefLinks reflink){
         super(reflink);
         this.speed = Constants.WIZARD_SPEED;
@@ -43,16 +71,31 @@ public class WizardEnemyStrategy extends EnemyStrategy{
         this.behaviorIDsToRespect = reflink.getGame().getLevel3().getBehaviorIDs();
     }
 
+    /**
+     * @brief Gets the name of the enemy type this strategy represents.
+     * This method overrides the {@link EnemyStrategy#getName()} method.
+     * @return A {@link String} representing the name of the enemy (e.g., "Wizard").
+     */
     @Override
     public String getName(){
         return Constants.WIZARD_NAME;
     }
 
+    /**
+     * @brief Gets the source or primary level where this enemy type is found.
+     * This method overrides the {@link EnemyStrategy#getSource()} method.
+     * @return A {@link String} representing the source level (e.g., "Level3").
+     */
     @Override
     public String getSource(){
         return Constants.LEVEL_3;
     }
 
+    /**
+     * @brief Draws the name of the enemy on the screen, typically during a fight.
+     * This method overrides the {@link EnemyStrategy#drawName(Graphics2D)} method.
+     * @param g2d The {@link Graphics2D} context used for drawing.
+     */
     @Override
     public void drawName(Graphics2D g2d){
         Color originalColor = g2d.getColor();

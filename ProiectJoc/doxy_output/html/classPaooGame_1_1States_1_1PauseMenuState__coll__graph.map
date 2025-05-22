@@ -1,6 +1,5 @@
 <map id="PaooGame.States.PauseMenuState" name="PaooGame.States.PauseMenuState">
-<area shape="rect" id="node1" title=" " alt="" coords="101,199,316,240"/>
-<area shape="rect" id="node2" href="$classPaooGame_1_1States_1_1State.html" title=" " alt="" coords="5,95,180,121"/>
-<area shape="rect" id="node3" href="$classPaooGame_1_1RefLinks.html" title=" " alt="" coords="17,5,169,32"/>
-<area shape="rect" id="node4" title=" " alt="" coords="204,95,291,121"/>
+<area shape="rect" id="node1" title="Represents the pause menu state of the game." alt="" coords="5,171,220,212"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1States_1_1State.html" title="Defines an abstract base class for all game states." alt="" coords="25,95,200,121"/>
+<area shape="rect" id="node3" href="$classPaooGame_1_1RefLinks.html" title="Provides a centralized way to access shared game objects and utilities." alt="" coords="37,5,189,32"/>
 </map>

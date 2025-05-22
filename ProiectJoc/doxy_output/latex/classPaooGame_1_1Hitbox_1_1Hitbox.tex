@@ -1,62 +1,275 @@
 \hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox}{}\doxysection{Paoo\+Game.\+Hitbox.\+Hitbox Class Reference}
 \label{classPaooGame_1_1Hitbox_1_1Hitbox}\index{PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}}
+
+
+Represents a rectangular area used for collision detection.  
+
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox_a8f5a3bda409e4092a53ded917c8217aa}{Hitbox}} (float x, float y, float width, float height)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} object with specified position and dimensions. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox_a3c3d097fdebe24877a4e51d5b9e9504c}{intersects}} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} other)
+\begin{DoxyCompactList}\small\item\em Checks if this hitbox intersects with another hitbox. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox_ad394aeabfbb401eb18690120b7dd4961}{getX}} ()
+\begin{DoxyCompactList}\small\item\em Gets the x-\/coordinate of the top-\/left corner of the hitbox. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox_aaa8f49a354234f4ff6a51de354ae0e9d}{getY}} ()
+\begin{DoxyCompactList}\small\item\em Gets the y-\/coordinate of the top-\/left corner of the hitbox. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox_a42b62d90144d571f73bb98609a09eece}{get\+Width}} ()
+\begin{DoxyCompactList}\small\item\em Gets the width of the hitbox. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox_a7afa6724a9ee3942d94a6ee22d33ad07}{get\+Height}} ()
+\begin{DoxyCompactList}\small\item\em Gets the height of the hitbox. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox_a227afa17405cb6a2510beee8a4185971}{get\+Right}} ()
+\begin{DoxyCompactList}\small\item\em Gets the x-\/coordinate of the right edge of the hitbox. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox_ab0e026a3f5ddfe4441bf45baa7611cf6}{get\+Bottom}} ()
+\begin{DoxyCompactList}\small\item\em Gets the y-\/coordinate of the bottom edge of the hitbox. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox_a9af80b7ccb8da4229abd63136b812cdd}{get\+CenterX}} ()
+\begin{DoxyCompactList}\small\item\em Gets the x-\/coordinate of the center of the hitbox. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox_af0a8b8adc86c4e4fbe3bec75945c103d}{get\+CenterY}} ()
+\begin{DoxyCompactList}\small\item\em Gets the y-\/coordinate of the center of the hitbox. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox_aadc6f8457a39e8351ca652e440cb5c0c}{setX}} (float x)
+\begin{DoxyCompactList}\small\item\em Sets the x-\/coordinate of the top-\/left corner of the hitbox. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox_a9311c21a66a25f801c9eff8bde5bca3c}{setY}} (float y)
+\begin{DoxyCompactList}\small\item\em Sets the y-\/coordinate of the top-\/left corner of the hitbox. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox_a3dd5c7589c019a0342fc168dda729b7d}{set\+Width}} (float width)
+\begin{DoxyCompactList}\small\item\em Sets the width of the hitbox. If a negative width is provided, a warning is printed to System.\+err, and the width is set to 0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox_a6fa0f3b0a6d25457188a36b90f6119a0}{set\+Height}} (float height)
+\begin{DoxyCompactList}\small\item\em Sets the height of the hitbox. If a negative height is provided, a warning is printed to System.\+err, and the height is set to 0. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox_a5f9de1367d20000d2d16dcf7d8df4db9}{to\+String}} ()
+\begin{DoxyCompactList}\small\item\em Returns a string representation of the \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a rectangular area used for collision detection. 
+
+This class defines a simple box with a position (x, y) and dimensions (width, height). It provides methods for checking intersections with other hitboxes, updating its position and size, and accessing its properties. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_a8f5a3bda409e4092a53ded917c8217aa}\label{classPaooGame_1_1Hitbox_1_1Hitbox_a8f5a3bda409e4092a53ded917c8217aa}} 
-{\bfseries Hitbox} (float x, float y, float width, float height)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_accec973aa45f52169f2654da49e5159f}\label{classPaooGame_1_1Hitbox_1_1Hitbox_accec973aa45f52169f2654da49e5159f}} 
-void {\bfseries update\+Hitbox} (float x\+To\+Add, float y\+To\+Add, float new\+Width, float new\+Height)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_a3c3d097fdebe24877a4e51d5b9e9504c}\label{classPaooGame_1_1Hitbox_1_1Hitbox_a3c3d097fdebe24877a4e51d5b9e9504c}} 
-boolean {\bfseries intersects} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} other)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_ad394aeabfbb401eb18690120b7dd4961}\label{classPaooGame_1_1Hitbox_1_1Hitbox_ad394aeabfbb401eb18690120b7dd4961}} 
-float {\bfseries getX} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_aaa8f49a354234f4ff6a51de354ae0e9d}\label{classPaooGame_1_1Hitbox_1_1Hitbox_aaa8f49a354234f4ff6a51de354ae0e9d}} 
-float {\bfseries getY} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_a42b62d90144d571f73bb98609a09eece}\label{classPaooGame_1_1Hitbox_1_1Hitbox_a42b62d90144d571f73bb98609a09eece}} 
-float {\bfseries get\+Width} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_a7afa6724a9ee3942d94a6ee22d33ad07}\label{classPaooGame_1_1Hitbox_1_1Hitbox_a7afa6724a9ee3942d94a6ee22d33ad07}} 
-float {\bfseries get\+Height} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_a227afa17405cb6a2510beee8a4185971}\label{classPaooGame_1_1Hitbox_1_1Hitbox_a227afa17405cb6a2510beee8a4185971}} 
-float {\bfseries get\+Right} ()
-\item 
+\index{PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}!Hitbox@{Hitbox}}
+\index{Hitbox@{Hitbox}!PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}}
+\doxysubsubsection{\texorpdfstring{Hitbox()}{Hitbox()}}
+{\footnotesize\ttfamily Paoo\+Game.\+Hitbox.\+Hitbox.\+Hitbox (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} object with specified position and dimensions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The initial x-\/coordinate of the hitbox. \\
+\hline
+{\em y} & The initial y-\/coordinate of the hitbox. \\
+\hline
+{\em width} & The initial width of the hitbox. Must be non-\/negative. \\
+\hline
+{\em height} & The initial height of the hitbox. Must be non-\/negative. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Illegal\+Argument\+Exception} & if width or height are negative. \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_ab0e026a3f5ddfe4441bf45baa7611cf6}\label{classPaooGame_1_1Hitbox_1_1Hitbox_ab0e026a3f5ddfe4441bf45baa7611cf6}} 
-float {\bfseries get\+Bottom} ()
-\item 
+\index{PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}!getBottom@{getBottom}}
+\index{getBottom@{getBottom}!PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}}
+\doxysubsubsection{\texorpdfstring{getBottom()}{getBottom()}}
+{\footnotesize\ttfamily float Paoo\+Game.\+Hitbox.\+Hitbox.\+get\+Bottom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the y-\/coordinate of the bottom edge of the hitbox. 
+
+\begin{DoxyReturn}{Returns}
+The y-\/coordinate of the bottom edge (y + height). 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_a9af80b7ccb8da4229abd63136b812cdd}\label{classPaooGame_1_1Hitbox_1_1Hitbox_a9af80b7ccb8da4229abd63136b812cdd}} 
-float {\bfseries get\+CenterX} ()
-\item 
+\index{PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}!getCenterX@{getCenterX}}
+\index{getCenterX@{getCenterX}!PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}}
+\doxysubsubsection{\texorpdfstring{getCenterX()}{getCenterX()}}
+{\footnotesize\ttfamily float Paoo\+Game.\+Hitbox.\+Hitbox.\+get\+CenterX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the x-\/coordinate of the center of the hitbox. 
+
+\begin{DoxyReturn}{Returns}
+The x-\/coordinate of the center (x + width / 2). 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_af0a8b8adc86c4e4fbe3bec75945c103d}\label{classPaooGame_1_1Hitbox_1_1Hitbox_af0a8b8adc86c4e4fbe3bec75945c103d}} 
-float {\bfseries get\+CenterY} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_aadc6f8457a39e8351ca652e440cb5c0c}\label{classPaooGame_1_1Hitbox_1_1Hitbox_aadc6f8457a39e8351ca652e440cb5c0c}} 
-void {\bfseries setX} (float x)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_a9311c21a66a25f801c9eff8bde5bca3c}\label{classPaooGame_1_1Hitbox_1_1Hitbox_a9311c21a66a25f801c9eff8bde5bca3c}} 
-void {\bfseries setY} (float y)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_a3dd5c7589c019a0342fc168dda729b7d}\label{classPaooGame_1_1Hitbox_1_1Hitbox_a3dd5c7589c019a0342fc168dda729b7d}} 
-void {\bfseries set\+Width} (float width)
-\item 
+\index{PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}!getCenterY@{getCenterY}}
+\index{getCenterY@{getCenterY}!PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}}
+\doxysubsubsection{\texorpdfstring{getCenterY()}{getCenterY()}}
+{\footnotesize\ttfamily float Paoo\+Game.\+Hitbox.\+Hitbox.\+get\+CenterY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the y-\/coordinate of the center of the hitbox. 
+
+\begin{DoxyReturn}{Returns}
+The y-\/coordinate of the center (y + height / 2). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_a7afa6724a9ee3942d94a6ee22d33ad07}\label{classPaooGame_1_1Hitbox_1_1Hitbox_a7afa6724a9ee3942d94a6ee22d33ad07}} 
+\index{PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily float Paoo\+Game.\+Hitbox.\+Hitbox.\+get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the height of the hitbox. 
+
+\begin{DoxyReturn}{Returns}
+The current height. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_a227afa17405cb6a2510beee8a4185971}\label{classPaooGame_1_1Hitbox_1_1Hitbox_a227afa17405cb6a2510beee8a4185971}} 
+\index{PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}!getRight@{getRight}}
+\index{getRight@{getRight}!PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}}
+\doxysubsubsection{\texorpdfstring{getRight()}{getRight()}}
+{\footnotesize\ttfamily float Paoo\+Game.\+Hitbox.\+Hitbox.\+get\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the x-\/coordinate of the right edge of the hitbox. 
+
+\begin{DoxyReturn}{Returns}
+The x-\/coordinate of the right edge (x + width). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_a42b62d90144d571f73bb98609a09eece}\label{classPaooGame_1_1Hitbox_1_1Hitbox_a42b62d90144d571f73bb98609a09eece}} 
+\index{PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily float Paoo\+Game.\+Hitbox.\+Hitbox.\+get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the width of the hitbox. 
+
+\begin{DoxyReturn}{Returns}
+The current width. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_ad394aeabfbb401eb18690120b7dd4961}\label{classPaooGame_1_1Hitbox_1_1Hitbox_ad394aeabfbb401eb18690120b7dd4961}} 
+\index{PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}!getX@{getX}}
+\index{getX@{getX}!PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily float Paoo\+Game.\+Hitbox.\+Hitbox.\+getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the x-\/coordinate of the top-\/left corner of the hitbox. 
+
+\begin{DoxyReturn}{Returns}
+The current x-\/coordinate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_aaa8f49a354234f4ff6a51de354ae0e9d}\label{classPaooGame_1_1Hitbox_1_1Hitbox_aaa8f49a354234f4ff6a51de354ae0e9d}} 
+\index{PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}!getY@{getY}}
+\index{getY@{getY}!PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily float Paoo\+Game.\+Hitbox.\+Hitbox.\+getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the y-\/coordinate of the top-\/left corner of the hitbox. 
+
+\begin{DoxyReturn}{Returns}
+The current y-\/coordinate. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_a3c3d097fdebe24877a4e51d5b9e9504c}\label{classPaooGame_1_1Hitbox_1_1Hitbox_a3c3d097fdebe24877a4e51d5b9e9504c}} 
+\index{PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}!intersects@{intersects}}
+\index{intersects@{intersects}!PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}}
+{\footnotesize\ttfamily boolean Paoo\+Game.\+Hitbox.\+Hitbox.\+intersects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}}}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if this hitbox intersects with another hitbox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} object to check for intersection. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the hitboxes intersect, false otherwise. Returns false if \textquotesingle{}other\textquotesingle{} is null. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_a6fa0f3b0a6d25457188a36b90f6119a0}\label{classPaooGame_1_1Hitbox_1_1Hitbox_a6fa0f3b0a6d25457188a36b90f6119a0}} 
-void {\bfseries set\+Height} (float height)
-\item 
+\index{PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}!setHeight@{setHeight}}
+\index{setHeight@{setHeight}!PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}}
+\doxysubsubsection{\texorpdfstring{setHeight()}{setHeight()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Hitbox.\+Hitbox.\+set\+Height (\begin{DoxyParamCaption}\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the height of the hitbox. If a negative height is provided, a warning is printed to System.\+err, and the height is set to 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The new height. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_a3dd5c7589c019a0342fc168dda729b7d}\label{classPaooGame_1_1Hitbox_1_1Hitbox_a3dd5c7589c019a0342fc168dda729b7d}} 
+\index{PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}!setWidth@{setWidth}}
+\index{setWidth@{setWidth}!PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}}
+\doxysubsubsection{\texorpdfstring{setWidth()}{setWidth()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Hitbox.\+Hitbox.\+set\+Width (\begin{DoxyParamCaption}\item[{float}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the width of the hitbox. If a negative width is provided, a warning is printed to System.\+err, and the width is set to 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The new width. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_aadc6f8457a39e8351ca652e440cb5c0c}\label{classPaooGame_1_1Hitbox_1_1Hitbox_aadc6f8457a39e8351ca652e440cb5c0c}} 
+\index{PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}!setX@{setX}}
+\index{setX@{setX}!PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}}
+\doxysubsubsection{\texorpdfstring{setX()}{setX()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Hitbox.\+Hitbox.\+setX (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the x-\/coordinate of the top-\/left corner of the hitbox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The new x-\/coordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_a9311c21a66a25f801c9eff8bde5bca3c}\label{classPaooGame_1_1Hitbox_1_1Hitbox_a9311c21a66a25f801c9eff8bde5bca3c}} 
+\index{PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}!setY@{setY}}
+\index{setY@{setY}!PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}}
+\doxysubsubsection{\texorpdfstring{setY()}{setY()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Hitbox.\+Hitbox.\+setY (\begin{DoxyParamCaption}\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the y-\/coordinate of the top-\/left corner of the hitbox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & The new y-\/coordinate. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_a5f9de1367d20000d2d16dcf7d8df4db9}\label{classPaooGame_1_1Hitbox_1_1Hitbox_a5f9de1367d20000d2d16dcf7d8df4db9}} 
-String {\bfseries to\+String} ()
-\end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Hitbox_1_1Hitbox_a57d34d7a2014bbe2cd1f26d5ca112dbc}\label{classPaooGame_1_1Hitbox_1_1Hitbox_a57d34d7a2014bbe2cd1f26d5ca112dbc}} 
-static boolean {\bfseries check\+Intersection} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} hitbox1, \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} hitbox2)
-\end{DoxyCompactItemize}
+\index{PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}!toString@{toString}}
+\index{toString@{toString}!PaooGame.Hitbox.Hitbox@{PaooGame.Hitbox.Hitbox}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily String Paoo\+Game.\+Hitbox.\+Hitbox.\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a string representation of the \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} object. 
+
+\begin{DoxyReturn}{Returns}
+A string in the format \char`\"{}\+Hitbox\mbox{[}x=value, y=value, width=value, height=value\mbox{]}\char`\"{}. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -1,4 +1,4 @@
 <map id="PaooGame.Strategies.EnemyStrategies.MinotaurEnemyStrategy" name="PaooGame.Strategies.EnemyStrategies.MinotaurEnemyStrategy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,95,256,136"/>
-<area shape="rect" id="node2" href="$classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html" title=" " alt="" coords="25,5,236,47"/>
+<area shape="rect" id="node1" title="Implements the specific strategy for the Minotaur enemy type." alt="" coords="5,95,256,136"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html" title="Defines an abstract base class for different enemy AI and property strategies." alt="" coords="25,5,236,47"/>
 </map>

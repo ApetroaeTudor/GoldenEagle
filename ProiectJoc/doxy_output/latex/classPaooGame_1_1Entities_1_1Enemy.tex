@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1Entities_1_1Enemy}\index{PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}}
 
 
-Inheritance diagram for Paoo\+Game.\+Entities.\+Enemy\+:
-\nopagebreak
+Represents an enemy entity in the game.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+Entities.\+Enemy\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+Entities.\+Enemy\+:
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+Entities.\+Enemy\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+Entities.\+Enemy\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,52 +26,234 @@ Collaboration diagram for Paoo\+Game.\+Entities.\+Enemy\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_af5fe66c3cc31f79d57a6c008cbd66c98}\label{classPaooGame_1_1Entities_1_1Enemy_af5fe66c3cc31f79d57a6c008cbd66c98}} 
-{\bfseries Enemy} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} reflink, int startX, int startY, String enemy\+Type)
-\item 
+\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_af5fe66c3cc31f79d57a6c008cbd66c98}{Enemy}} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a39134c8191ec2a293415d65d621f4e3e}{reflink}}, int startX, int startY, String enemy\+Type)
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy}{Enemy}} object. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_ac24462ba796f7e28f739edb9be4a4393}\label{classPaooGame_1_1Entities_1_1Enemy_ac24462ba796f7e28f739edb9be4a4393}} 
-void {\bfseries restore\+Entity} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_a3932c03bad343bbd076499ed9151b172}\label{classPaooGame_1_1Entities_1_1Enemy_a3932c03bad343bbd076499ed9151b172}} 
-void {\bfseries update} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_a8da86cf79a240eb443892073108782df}\label{classPaooGame_1_1Entities_1_1Enemy_a8da86cf79a240eb443892073108782df}} 
-void {\bfseries set\+Current\+State} (Constants.\+ENEMY\+\_\+\+STATES state)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_ab84284e71152f1bd347348f5962c88ad}\label{classPaooGame_1_1Entities_1_1Enemy_ab84284e71152f1bd347348f5962c88ad}} 
-String {\bfseries get\+Name} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_a4204a23a71ba2722e37a0a5127bc6f8b}\label{classPaooGame_1_1Entities_1_1Enemy_a4204a23a71ba2722e37a0a5127bc6f8b}} 
-void {\bfseries attack} ()
-\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_ac24462ba796f7e28f739edb9be4a4393}{restore\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Restores the entity to its initial state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_a3932c03bad343bbd076499ed9151b172}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the enemy\textquotesingle{}s state and behavior. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_a8da86cf79a240eb443892073108782df}{set\+Current\+State}} (Constants.\+ENEMY\+\_\+\+STATES state)
+\begin{DoxyCompactList}\small\item\em Sets the current state of the enemy. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_ab84284e71152f1bd347348f5962c88ad}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the enemy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_a4204a23a71ba2722e37a0a5127bc6f8b}{attack}} ()
+\begin{DoxyCompactList}\small\item\em Initiates an attack by the enemy. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_a38a7cfcb88435dbe374486435ce5c3e2}\label{classPaooGame_1_1Entities_1_1Enemy_a38a7cfcb88435dbe374486435ce5c3e2}} 
-String {\bfseries get\+Source} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_a83c28e1ee17ff5cf5d2f31a0a65257f8}\label{classPaooGame_1_1Entities_1_1Enemy_a83c28e1ee17ff5cf5d2f31a0a65257f8}} 
-void {\bfseries setX} (int x)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_a5ff9179c2d4e9c541b18d7c232c05ac5}\label{classPaooGame_1_1Entities_1_1Enemy_a5ff9179c2d4e9c541b18d7c232c05ac5}} 
-void {\bfseries setY} (int y)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_a9c53f3e9f00c8d0949a403d711db2aa8}\label{classPaooGame_1_1Entities_1_1Enemy_a9c53f3e9f00c8d0949a403d711db2aa8}} 
-\mbox{\hyperlink{classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy}{Enemy\+Strategy}} {\bfseries get\+Enemy\+Strategy} ()
-\end{DoxyCompactItemize}
+String \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_a38a7cfcb88435dbe374486435ce5c3e2}{get\+Source}} ()
+\begin{DoxyCompactList}\small\item\em Gets the source path for the enemy\textquotesingle{}s owner level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_a83c28e1ee17ff5cf5d2f31a0a65257f8}{setX}} (int \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a5a7f4280a2e1f43d5e55940dfb8a00ad}{x}})
+\begin{DoxyCompactList}\small\item\em Sets the X-\/coordinate of the enemy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_a5ff9179c2d4e9c541b18d7c232c05ac5}{setY}} (int \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a754d9006adabe2bb959780f2f6ae0a00}{y}})
+\begin{DoxyCompactList}\small\item\em Sets the Y-\/coordinate of the enemy. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy}{Enemy\+Strategy}} \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_a9c53f3e9f00c8d0949a403d711db2aa8}{get\+Enemy\+Strategy}} ()
+\begin{DoxyCompactList}\small\item\em Gets the enemy\textquotesingle{}s strategy object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_af8169ba9a2a446ce2ecf20c8d1449b69}\label{classPaooGame_1_1Entities_1_1Enemy_af8169ba9a2a446ce2ecf20c8d1449b69}} 
-void {\bfseries update\+Visual\+Position} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_a54110eaac96d4485782d5bed5767cd49}\label{classPaooGame_1_1Entities_1_1Enemy_a54110eaac96d4485782d5bed5767cd49}} 
-\mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation}{Animation}} {\bfseries get\+Animation\+By\+State} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_a23b261d65babd8b65e9efc28e7302ada}\label{classPaooGame_1_1Entities_1_1Enemy_a23b261d65babd8b65e9efc28e7302ada}} 
-void {\bfseries update\+Animation\+State} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_a70fe84331f8d4cc74721488afad3fafe}\label{classPaooGame_1_1Entities_1_1Enemy_a70fe84331f8d4cc74721488afad3fafe}} 
-void {\bfseries move\+And\+Collide} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_af8169ba9a2a446ce2ecf20c8d1449b69}{update\+Visual\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Updates the enemy\textquotesingle{}s visual position based on its hitbox. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation}{Animation}} \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_a54110eaac96d4485782d5bed5767cd49}{get\+Animation\+By\+State}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the appropriate animation based on the enemy\textquotesingle{}s current state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_a23b261d65babd8b65e9efc28e7302ada}{update\+Animation\+State}} ()
+\begin{DoxyCompactList}\small\item\em Updates the enemy\textquotesingle{}s animation state based on its current conditions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy_a70fe84331f8d4cc74721488afad3fafe}{move\+And\+Collide}} ()
+\begin{DoxyCompactList}\small\item\em Handles the enemy\textquotesingle{}s movement and collision detection. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents an enemy entity in the game. 
+
+They have specific behaviors, animations, and attributes defined by an Enemy\+Strategy. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_af5fe66c3cc31f79d57a6c008cbd66c98}\label{classPaooGame_1_1Entities_1_1Enemy_af5fe66c3cc31f79d57a6c008cbd66c98}} 
+\index{PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}!Enemy@{Enemy}}
+\index{Enemy@{Enemy}!PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}}
+\doxysubsubsection{\texorpdfstring{Enemy()}{Enemy()}}
+{\footnotesize\ttfamily Paoo\+Game.\+Entities.\+Enemy.\+Enemy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}}}]{reflink,  }\item[{int}]{startX,  }\item[{int}]{startY,  }\item[{String}]{enemy\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs an \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy}{Enemy}} object. 
+
+Initializes the enemy based on its type, setting up its strategy, animations, hitbox, and other attributes. 
+\begin{DoxyParams}{Parameters}
+{\em reflink} & A reference to the game\textquotesingle{}s \mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} object for accessing shared resources. \\
+\hline
+{\em startX} & The initial X-\/coordinate of the enemy. \\
+\hline
+{\em startY} & The initial Y-\/coordinate of the enemy. \\
+\hline
+{\em enemy\+Type} & A string representing the type of the enemy (for example \char`\"{}\+Tiger\char`\"{}, \char`\"{}\+Skeleton\char`\"{}). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_a4204a23a71ba2722e37a0a5127bc6f8b}\label{classPaooGame_1_1Entities_1_1Enemy_a4204a23a71ba2722e37a0a5127bc6f8b}} 
+\index{PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}!attack@{attack}}
+\index{attack@{attack}!PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}}
+\doxysubsubsection{\texorpdfstring{attack()}{attack()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Enemy.\+attack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initiates an attack by the enemy. 
+
+Sets the enemy\textquotesingle{}s state to IN\+\_\+\+FIGHT\+\_\+\+ATTACKING and triggers the attack animation. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a314eb8c8706a24588a456175912b980a}{Paoo\+Game.\+Entities.\+Entity}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_a54110eaac96d4485782d5bed5767cd49}\label{classPaooGame_1_1Entities_1_1Enemy_a54110eaac96d4485782d5bed5767cd49}} 
+\index{PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}!getAnimationByState@{getAnimationByState}}
+\index{getAnimationByState@{getAnimationByState}!PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}}
+\doxysubsubsection{\texorpdfstring{getAnimationByState()}{getAnimationByState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation}{Animation}} Paoo\+Game.\+Entities.\+Enemy.\+get\+Animation\+By\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Retrieves the appropriate animation based on the enemy\textquotesingle{}s current state. 
+
+\begin{DoxyReturn}{Returns}
+The Animation object corresponding to the current state. Defaults to walking animation if no specific fight animation is matched. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a720a90333cbf2d29327b9e60ef669672}{Paoo\+Game.\+Entities.\+Entity}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_a9c53f3e9f00c8d0949a403d711db2aa8}\label{classPaooGame_1_1Entities_1_1Enemy_a9c53f3e9f00c8d0949a403d711db2aa8}} 
+\index{PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}!getEnemyStrategy@{getEnemyStrategy}}
+\index{getEnemyStrategy@{getEnemyStrategy}!PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}}
+\doxysubsubsection{\texorpdfstring{getEnemyStrategy()}{getEnemyStrategy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy}{Enemy\+Strategy}} Paoo\+Game.\+Entities.\+Enemy.\+get\+Enemy\+Strategy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the enemy\textquotesingle{}s strategy object. 
+
+\begin{DoxyReturn}{Returns}
+The Enemy\+Strategy associated with this enemy. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_ab84284e71152f1bd347348f5962c88ad}\label{classPaooGame_1_1Entities_1_1Enemy_ab84284e71152f1bd347348f5962c88ad}} 
+\index{PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}!getName@{getName}}
+\index{getName@{getName}!PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily String Paoo\+Game.\+Entities.\+Enemy.\+get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the name of the enemy. 
+
+Retrieves the name from the enemy\textquotesingle{}s strategy. \begin{DoxyReturn}{Returns}
+The name of the enemy. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a9799c0ae8d84476e423066f29e74048c}{Paoo\+Game.\+Entities.\+Entity}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_a70fe84331f8d4cc74721488afad3fafe}\label{classPaooGame_1_1Entities_1_1Enemy_a70fe84331f8d4cc74721488afad3fafe}} 
+\index{PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}!moveAndCollide@{moveAndCollide}}
+\index{moveAndCollide@{moveAndCollide}!PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}}
+\doxysubsubsection{\texorpdfstring{moveAndCollide()}{moveAndCollide()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Enemy.\+move\+And\+Collide (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Handles the enemy\textquotesingle{}s movement and collision detection. 
+
+Applies horizontal movement, checks for ground ahead to change direction, and handles vertical movement (falling) with ground collision. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_acd3a7f2558ed324785228ba7d6c21303}{Paoo\+Game.\+Entities.\+Entity}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_a8da86cf79a240eb443892073108782df}\label{classPaooGame_1_1Entities_1_1Enemy_a8da86cf79a240eb443892073108782df}} 
+\index{PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}!setCurrentState@{setCurrentState}}
+\index{setCurrentState@{setCurrentState}!PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}}
+\doxysubsubsection{\texorpdfstring{setCurrentState()}{setCurrentState()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Enemy.\+set\+Current\+State (\begin{DoxyParamCaption}\item[{Constants.\+ENEMY\+\_\+\+STATES}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the current state of the enemy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The new state for the enemy, from Constants.\+ENEMY\+\_\+\+STATES. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_a83c28e1ee17ff5cf5d2f31a0a65257f8}\label{classPaooGame_1_1Entities_1_1Enemy_a83c28e1ee17ff5cf5d2f31a0a65257f8}} 
+\index{PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}!setX@{setX}}
+\index{setX@{setX}!PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}}
+\doxysubsubsection{\texorpdfstring{setX()}{setX()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Enemy.\+setX (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the X-\/coordinate of the enemy. 
+
+Also updates the X-\/coordinate of the enemy\textquotesingle{}s hitbox. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The new X-\/coordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_a5ff9179c2d4e9c541b18d7c232c05ac5}\label{classPaooGame_1_1Entities_1_1Enemy_a5ff9179c2d4e9c541b18d7c232c05ac5}} 
+\index{PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}!setY@{setY}}
+\index{setY@{setY}!PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}}
+\doxysubsubsection{\texorpdfstring{setY()}{setY()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Enemy.\+setY (\begin{DoxyParamCaption}\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the Y-\/coordinate of the enemy. 
+
+Also updates the Y-\/coordinate of the enemy\textquotesingle{}s hitbox. 
+\begin{DoxyParams}{Parameters}
+{\em y} & The new Y-\/coordinate. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_a3932c03bad343bbd076499ed9151b172}\label{classPaooGame_1_1Entities_1_1Enemy_a3932c03bad343bbd076499ed9151b172}} 
+\index{PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}!update@{update}}
+\index{update@{update}!PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Enemy.\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the enemy\textquotesingle{}s state and behavior. 
+
+Handles gravity, movement, collision detection, and animation updates based on the enemy\textquotesingle{}s current state. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a609ed68e1ccbe4909eaa72c893d54e0c}{Paoo\+Game.\+Entities.\+Entity}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_a23b261d65babd8b65e9efc28e7302ada}\label{classPaooGame_1_1Entities_1_1Enemy_a23b261d65babd8b65e9efc28e7302ada}} 
+\index{PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}!updateAnimationState@{updateAnimationState}}
+\index{updateAnimationState@{updateAnimationState}!PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}}
+\doxysubsubsection{\texorpdfstring{updateAnimationState()}{updateAnimationState()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Enemy.\+update\+Animation\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Updates the enemy\textquotesingle{}s animation state based on its current conditions. 
+
+Transitions between states like attacking, idle, walking, and falling. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a979b0cb8ca9e01a36c5e9683b900eefe}{Paoo\+Game.\+Entities.\+Entity}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Entities_1_1Enemy_af8169ba9a2a446ce2ecf20c8d1449b69}\label{classPaooGame_1_1Entities_1_1Enemy_af8169ba9a2a446ce2ecf20c8d1449b69}} 
+\index{PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}!updateVisualPosition@{updateVisualPosition}}
+\index{updateVisualPosition@{updateVisualPosition}!PaooGame.Entities.Enemy@{PaooGame.Entities.Enemy}}
+\doxysubsubsection{\texorpdfstring{updateVisualPosition()}{updateVisualPosition()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Entities.\+Enemy.\+update\+Visual\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Updates the enemy\textquotesingle{}s visual position based on its hitbox. 
+
+Synchronizes the entity\textquotesingle{}s x and y coordinates with its hitbox\textquotesingle{}s position. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity_a1ee8496dd57eb06716d84b49a4e9362a}{Paoo\+Game.\+Entities.\+Entity}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

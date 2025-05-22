@@ -4,7 +4,6 @@ package PaooGame.Config;
 import java.awt.*;
 
 /**
- * @file Constants.java
  * @brief Defines a collection of static final constants used throughout the application.
  *
  * This class centralizes all global constant values, such as window dimensions,

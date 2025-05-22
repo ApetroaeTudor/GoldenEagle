@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1HUD_1_1AttackButton}\index{PaooGame.HUD.AttackButton@{PaooGame.HUD.AttackButton}}
 
 
-Inheritance diagram for Paoo\+Game.\+HUD.\+Attack\+Button\+:
-\nopagebreak
+Represents a clickable \char`\"{}\+Attack\char`\"{} button.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+HUD.\+Attack\+Button\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+HUD.\+Attack\+Button\+:
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+HUD.\+Attack\+Button\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+HUD.\+Attack\+Button\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,28 +26,150 @@ Collaboration diagram for Paoo\+Game.\+HUD.\+Attack\+Button\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1AttackButton_aeeffcd50a20239ff5806ca04109a9c60}\label{classPaooGame_1_1HUD_1_1AttackButton_aeeffcd50a20239ff5806ca04109a9c60}} 
-{\bfseries Attack\+Button} (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity}{Entity}} entity, int x, int y)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1AttackButton_aecddbf33ee794f49553190311e2bc338}\label{classPaooGame_1_1HUD_1_1AttackButton_aecddbf33ee794f49553190311e2bc338}} 
-void {\bfseries draw} (Graphics2D g2d)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1AttackButton_a1097993148f83fe7a86ff2eebde62612}\label{classPaooGame_1_1HUD_1_1AttackButton_a1097993148f83fe7a86ff2eebde62612}} 
-void {\bfseries update\+Hover} (int mouseX, int mouseY)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1AttackButton_a38bffebc486c41105ed1e011b6d2cd72}\label{classPaooGame_1_1HUD_1_1AttackButton_a38bffebc486c41105ed1e011b6d2cd72}} 
-boolean {\bfseries is\+Clicked} (int mouseX, int mouseY, boolean mouse\+Pressed)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1AttackButton_af465c84dff1cd976a296ee1022c9b1d0}\label{classPaooGame_1_1HUD_1_1AttackButton_af465c84dff1cd976a296ee1022c9b1d0}} 
-Rectangle {\bfseries get\+Bounds} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1AttackButton_a73088652cb05f6b112d7b9f7ed38ce55}\label{classPaooGame_1_1HUD_1_1AttackButton_a73088652cb05f6b112d7b9f7ed38ce55}} 
-boolean {\bfseries is\+Hovered} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1AttackButton_a13da598f894bb682dfb8fa5a4aa0f79f}\label{classPaooGame_1_1HUD_1_1AttackButton_a13da598f894bb682dfb8fa5a4aa0f79f}} 
-void {\bfseries set\+Is\+Hovered} (boolean is\+Hovered)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPaooGame_1_1HUD_1_1AttackButton_aeeffcd50a20239ff5806ca04109a9c60}{Attack\+Button}} (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity}{Entity}} \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD_accc1cb241c0c34e56d63de683203119f}{entity}}, int x, int y)
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classPaooGame_1_1HUD_1_1AttackButton}{Attack\+Button}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1HUD_1_1AttackButton_aecddbf33ee794f49553190311e2bc338}{draw}} (Graphics2D g2d)
+\begin{DoxyCompactList}\small\item\em Draws the attack button on the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1HUD_1_1AttackButton_a1097993148f83fe7a86ff2eebde62612}{update\+Hover}} (int mouseX, int mouseY)
+\begin{DoxyCompactList}\small\item\em Updates the hover state of the button based on the mouse cursor\textquotesingle{}s position. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classPaooGame_1_1HUD_1_1AttackButton_a38bffebc486c41105ed1e011b6d2cd72}{is\+Clicked}} (int mouseX, int mouseY, boolean mouse\+Pressed)
+\begin{DoxyCompactList}\small\item\em Checks if the button was clicked given the mouse position and press state. \end{DoxyCompactList}\item 
+Rectangle \mbox{\hyperlink{classPaooGame_1_1HUD_1_1AttackButton_af465c84dff1cd976a296ee1022c9b1d0}{get\+Bounds}} ()
+\begin{DoxyCompactList}\small\item\em Gets the rectangular bounds of the button. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classPaooGame_1_1HUD_1_1AttackButton_a73088652cb05f6b112d7b9f7ed38ce55}{is\+Hovered}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the mouse cursor is currently hovering over the button. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1HUD_1_1AttackButton_a13da598f894bb682dfb8fa5a4aa0f79f}{set\+Is\+Hovered}} (boolean is\+Hovered)
+\begin{DoxyCompactList}\small\item\em Sets the hover state of the button. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a clickable \char`\"{}\+Attack\char`\"{} button. 
+
+This class extends \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}} and provides functionality for drawing an attack button, detecting mouse hover, and handling click events. The button\textquotesingle{}s appearance changes when hovered over. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1AttackButton_aeeffcd50a20239ff5806ca04109a9c60}\label{classPaooGame_1_1HUD_1_1AttackButton_aeeffcd50a20239ff5806ca04109a9c60}} 
+\index{PaooGame.HUD.AttackButton@{PaooGame.HUD.AttackButton}!AttackButton@{AttackButton}}
+\index{AttackButton@{AttackButton}!PaooGame.HUD.AttackButton@{PaooGame.HUD.AttackButton}}
+\doxysubsubsection{\texorpdfstring{AttackButton()}{AttackButton()}}
+{\footnotesize\ttfamily Paoo\+Game.\+HUD.\+Attack\+Button.\+Attack\+Button (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity}{Entity}}}]{entity,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs an \mbox{\hyperlink{classPaooGame_1_1HUD_1_1AttackButton}{Attack\+Button}} object. 
+
+Initializes the button\textquotesingle{}s position, associated entity, and creates its bounding box for interaction detection. 
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity this \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}} element is associated with (inherited from \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}}). \\
+\hline
+{\em x} & The x-\/coordinate for the button\textquotesingle{}s top-\/left corner. \\
+\hline
+{\em y} & The y-\/coordinate for the button\textquotesingle{}s top-\/left corner. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1AttackButton_aecddbf33ee794f49553190311e2bc338}\label{classPaooGame_1_1HUD_1_1AttackButton_aecddbf33ee794f49553190311e2bc338}} 
+\index{PaooGame.HUD.AttackButton@{PaooGame.HUD.AttackButton}!draw@{draw}}
+\index{draw@{draw}!PaooGame.HUD.AttackButton@{PaooGame.HUD.AttackButton}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+HUD.\+Attack\+Button.\+draw (\begin{DoxyParamCaption}\item[{Graphics2D}]{g2d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Draws the attack button on the screen. 
+
+Renders the button with a background, \char`\"{}\+Attack\char`\"{} text, and a border. The appearance (colors, border thickness) changes if the button is hovered. 
+\begin{DoxyParams}{Parameters}
+{\em g2d} & The Graphics2D context to draw on. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD_a00eeedbee6ff71345f6e38b21f17d1e6}{Paoo\+Game.\+HUD.\+HUD}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1AttackButton_af465c84dff1cd976a296ee1022c9b1d0}\label{classPaooGame_1_1HUD_1_1AttackButton_af465c84dff1cd976a296ee1022c9b1d0}} 
+\index{PaooGame.HUD.AttackButton@{PaooGame.HUD.AttackButton}!getBounds@{getBounds}}
+\index{getBounds@{getBounds}!PaooGame.HUD.AttackButton@{PaooGame.HUD.AttackButton}}
+\doxysubsubsection{\texorpdfstring{getBounds()}{getBounds()}}
+{\footnotesize\ttfamily Rectangle Paoo\+Game.\+HUD.\+Attack\+Button.\+get\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the rectangular bounds of the button. 
+
+\begin{DoxyReturn}{Returns}
+A Rectangle object representing the button\textquotesingle{}s area on the screen. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1AttackButton_a38bffebc486c41105ed1e011b6d2cd72}\label{classPaooGame_1_1HUD_1_1AttackButton_a38bffebc486c41105ed1e011b6d2cd72}} 
+\index{PaooGame.HUD.AttackButton@{PaooGame.HUD.AttackButton}!isClicked@{isClicked}}
+\index{isClicked@{isClicked}!PaooGame.HUD.AttackButton@{PaooGame.HUD.AttackButton}}
+\doxysubsubsection{\texorpdfstring{isClicked()}{isClicked()}}
+{\footnotesize\ttfamily boolean Paoo\+Game.\+HUD.\+Attack\+Button.\+is\+Clicked (\begin{DoxyParamCaption}\item[{int}]{mouseX,  }\item[{int}]{mouseY,  }\item[{boolean}]{mouse\+Pressed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the button was clicked given the mouse position and press state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mouseX} & The x-\/coordinate of the mouse event. \\
+\hline
+{\em mouseY} & The y-\/coordinate of the mouse event. \\
+\hline
+{\em mouse\+Pressed} & True if a mouse button is currently pressed, false otherwise. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the mouse coordinates are within the button\textquotesingle{}s bounds and the mouse button is pressed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1AttackButton_a73088652cb05f6b112d7b9f7ed38ce55}\label{classPaooGame_1_1HUD_1_1AttackButton_a73088652cb05f6b112d7b9f7ed38ce55}} 
+\index{PaooGame.HUD.AttackButton@{PaooGame.HUD.AttackButton}!isHovered@{isHovered}}
+\index{isHovered@{isHovered}!PaooGame.HUD.AttackButton@{PaooGame.HUD.AttackButton}}
+\doxysubsubsection{\texorpdfstring{isHovered()}{isHovered()}}
+{\footnotesize\ttfamily boolean Paoo\+Game.\+HUD.\+Attack\+Button.\+is\+Hovered (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the mouse cursor is currently hovering over the button. 
+
+\begin{DoxyReturn}{Returns}
+True if the button is hovered, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1AttackButton_a13da598f894bb682dfb8fa5a4aa0f79f}\label{classPaooGame_1_1HUD_1_1AttackButton_a13da598f894bb682dfb8fa5a4aa0f79f}} 
+\index{PaooGame.HUD.AttackButton@{PaooGame.HUD.AttackButton}!setIsHovered@{setIsHovered}}
+\index{setIsHovered@{setIsHovered}!PaooGame.HUD.AttackButton@{PaooGame.HUD.AttackButton}}
+\doxysubsubsection{\texorpdfstring{setIsHovered()}{setIsHovered()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+HUD.\+Attack\+Button.\+set\+Is\+Hovered (\begin{DoxyParamCaption}\item[{boolean}]{is\+Hovered }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the hover state of the button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Hovered} & The new hover state to set (true for hovered, false otherwise). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1AttackButton_a1097993148f83fe7a86ff2eebde62612}\label{classPaooGame_1_1HUD_1_1AttackButton_a1097993148f83fe7a86ff2eebde62612}} 
+\index{PaooGame.HUD.AttackButton@{PaooGame.HUD.AttackButton}!updateHover@{updateHover}}
+\index{updateHover@{updateHover}!PaooGame.HUD.AttackButton@{PaooGame.HUD.AttackButton}}
+\doxysubsubsection{\texorpdfstring{updateHover()}{updateHover()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+HUD.\+Attack\+Button.\+update\+Hover (\begin{DoxyParamCaption}\item[{int}]{mouseX,  }\item[{int}]{mouseY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the hover state of the button based on the mouse cursor\textquotesingle{}s position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mouseX} & The current x-\/coordinate of the mouse cursor. \\
+\hline
+{\em mouseY} & The current y-\/coordinate of the mouse cursor. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

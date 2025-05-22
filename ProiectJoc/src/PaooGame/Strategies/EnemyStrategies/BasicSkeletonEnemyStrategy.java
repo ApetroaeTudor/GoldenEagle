@@ -1,16 +1,29 @@
 package PaooGame.Strategies.EnemyStrategies;
 
-import PaooGame.Animations.Animation;
 import PaooGame.Animations.EnemyAnimations.enemyActionAnimation;
 import PaooGame.Config.Constants;
 import PaooGame.RefLinks;
 
 import java.awt.*;
-import java.sql.Ref;
 
+/**
+ * @class BasicSkeletonEnemyStrategy
+ * @brief Implements the specific strategy for a basic skeleton enemy.
+ *
+ * This class defines the attributes and behaviors unique to a basic skeleton enemy,
+ * including its speed, hitbox dimensions, health, damage, and animations.
+ * It follows a singleton pattern to ensure only one instance exists.
+ */
 public class BasicSkeletonEnemyStrategy extends EnemyStrategy {
-    private static BasicSkeletonEnemyStrategy instance = null;
+    private static BasicSkeletonEnemyStrategy instance = null; ///< The singleton instance of BasicSkeletonEnemyStrategy.
 
+    /**
+     * @brief Gets the singleton instance of BasicSkeletonEnemyStrategy.
+     *
+     * If an instance does not already exist, it creates a new one.
+     * @param reflink A {@link RefLinks} object providing access to game-wide objects and utilities.
+     * @return The singleton instance of BasicSkeletonEnemyStrategy.
+     */
     public static BasicSkeletonEnemyStrategy getInstance(RefLinks reflink){
         if(BasicSkeletonEnemyStrategy.instance == null ){
             BasicSkeletonEnemyStrategy.instance = new BasicSkeletonEnemyStrategy(reflink);
@@ -18,17 +31,35 @@ public class BasicSkeletonEnemyStrategy extends EnemyStrategy {
         return instance;
     }
 
-
+    /**
+     * @brief Gets the name of this enemy strategy.
+     * This method overrides the {@link EnemyStrategy#getName()} method.
+     * @return A {@link String} representing the name of the basic skeleton enemy (e.g., "BasicSkeleton").
+     */
     @Override
     public String getName(){
         return Constants.BASIC_SKELETON_NAME;
     }
 
+    /**
+     * @brief Gets the source level associated with this enemy strategy.
+     * This method overrides the {@link EnemyStrategy#getSource()} method.
+     * @return A {@link String} representing the level where this enemy typically appears.
+     */
     @Override
     public String getSource(){
-        return Constants.LEVEL_2;
+        return Constants.LEVEL_2; // Indicates this enemy is primarily found in Level 2.
     }
 
+    /**
+     * @brief Constructs a BasicSkeletonEnemyStrategy object.
+     *
+     * Initializes the specific attributes (speed, hitbox, health, damage, health bar colors)
+     * and loads the animations for the basic skeleton enemy. It also sets the
+     * behavior IDs to respect based on Level 2's tile data.
+     * This constructor is private to enforce the singleton pattern.
+     * @param reflink A {@link RefLinks} object providing access to game-wide objects and utilities.
+     */
     public BasicSkeletonEnemyStrategy(RefLinks reflink){
         super(reflink);
         this.speed = Constants.BASIC_SKELETON_SPEED;
@@ -54,6 +85,14 @@ public class BasicSkeletonEnemyStrategy extends EnemyStrategy {
         this.behaviorIDsToRespect = reflink.getGame().getLevel2().getBehaviorIDs();
     }
 
+    /**
+     * @brief Draws the name of the enemy on the screen.
+     *
+     * This method is typically used within the fight state to display the enemy's name
+     * at a specific position with a particular font and color.
+     * This method overrides the {@link EnemyStrategy#drawName(Graphics2D)} method.
+     * @param g2d The {@link Graphics2D} context used for drawing.
+     */
     @Override
     public void drawName(Graphics2D g2d){
         Color originalColor = g2d.getColor();

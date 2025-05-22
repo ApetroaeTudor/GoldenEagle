@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1HUD_1_1ImageButton}\index{PaooGame.HUD.ImageButton@{PaooGame.HUD.ImageButton}}
 
 
-Inheritance diagram for Paoo\+Game.\+HUD.\+Image\+Button\+:
-\nopagebreak
+Represents a clickable button that displays an image.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+HUD.\+Image\+Button\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+HUD.\+Image\+Button\+:
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+HUD.\+Image\+Button\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+HUD.\+Image\+Button\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,28 +26,152 @@ Collaboration diagram for Paoo\+Game.\+HUD.\+Image\+Button\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ImageButton_a85356d85c84914b474d10a6cc5ba86ab}\label{classPaooGame_1_1HUD_1_1ImageButton_a85356d85c84914b474d10a6cc5ba86ab}} 
-{\bfseries Image\+Button} (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity}{Entity}} entity, int x, int y, Buffered\+Image img\+To\+Draw)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ImageButton_a4fb4e2cc2972b996119430d718d86d06}\label{classPaooGame_1_1HUD_1_1ImageButton_a4fb4e2cc2972b996119430d718d86d06}} 
-void {\bfseries draw} (Graphics2D g2d)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ImageButton_a2ab1a189b4f3232e644b67d25d7f8021}\label{classPaooGame_1_1HUD_1_1ImageButton_a2ab1a189b4f3232e644b67d25d7f8021}} 
-void {\bfseries update\+Hover} (int mouseX, int mouseY)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ImageButton_a4ce83355818491df686ca0434300b317}\label{classPaooGame_1_1HUD_1_1ImageButton_a4ce83355818491df686ca0434300b317}} 
-boolean {\bfseries is\+Clicked} (int mouseX, int mouseY, boolean mouse\+Pressed)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ImageButton_a3df153dfff4b52843d89e0db4eb9062b}\label{classPaooGame_1_1HUD_1_1ImageButton_a3df153dfff4b52843d89e0db4eb9062b}} 
-Rectangle {\bfseries get\+Bounds} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ImageButton_a0fba7952e8699ede7ad97c9f76f54a7a}\label{classPaooGame_1_1HUD_1_1ImageButton_a0fba7952e8699ede7ad97c9f76f54a7a}} 
-boolean {\bfseries is\+Hovered} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ImageButton_a04ba16a3bfe6cc7fa1bb41ad73f17bec}\label{classPaooGame_1_1HUD_1_1ImageButton_a04ba16a3bfe6cc7fa1bb41ad73f17bec}} 
-void {\bfseries set\+Is\+Hovered} (boolean is\+Hovered)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPaooGame_1_1HUD_1_1ImageButton_a85356d85c84914b474d10a6cc5ba86ab}{Image\+Button}} (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity}{Entity}} \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD_accc1cb241c0c34e56d63de683203119f}{entity}}, int x, int y, Buffered\+Image img\+To\+Draw)
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classPaooGame_1_1HUD_1_1ImageButton}{Image\+Button}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1HUD_1_1ImageButton_a4fb4e2cc2972b996119430d718d86d06}{draw}} (Graphics2D g2d)
+\begin{DoxyCompactList}\small\item\em Draws the image button on the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1HUD_1_1ImageButton_a2ab1a189b4f3232e644b67d25d7f8021}{update\+Hover}} (int mouseX, int mouseY)
+\begin{DoxyCompactList}\small\item\em Updates the hover state of the button based on the mouse cursor\textquotesingle{}s position. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classPaooGame_1_1HUD_1_1ImageButton_a4ce83355818491df686ca0434300b317}{is\+Clicked}} (int mouseX, int mouseY, boolean mouse\+Pressed)
+\begin{DoxyCompactList}\small\item\em Checks if the button was clicked given the mouse position and press state. \end{DoxyCompactList}\item 
+Rectangle \mbox{\hyperlink{classPaooGame_1_1HUD_1_1ImageButton_a3df153dfff4b52843d89e0db4eb9062b}{get\+Bounds}} ()
+\begin{DoxyCompactList}\small\item\em Gets the rectangular bounds of the button. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classPaooGame_1_1HUD_1_1ImageButton_a0fba7952e8699ede7ad97c9f76f54a7a}{is\+Hovered}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the mouse cursor is currently hovering over the button. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1HUD_1_1ImageButton_a04ba16a3bfe6cc7fa1bb41ad73f17bec}{set\+Is\+Hovered}} (boolean is\+Hovered)
+\begin{DoxyCompactList}\small\item\em Sets the hover state of the button. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a clickable button that displays an image. 
+
+This class extends \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}} and provides functionality for drawing a button with a specified image, detecting mouse hover, and handling click events. The button\textquotesingle{}s appearance (background color, border) changes when hovered over. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ImageButton_a85356d85c84914b474d10a6cc5ba86ab}\label{classPaooGame_1_1HUD_1_1ImageButton_a85356d85c84914b474d10a6cc5ba86ab}} 
+\index{PaooGame.HUD.ImageButton@{PaooGame.HUD.ImageButton}!ImageButton@{ImageButton}}
+\index{ImageButton@{ImageButton}!PaooGame.HUD.ImageButton@{PaooGame.HUD.ImageButton}}
+\doxysubsubsection{\texorpdfstring{ImageButton()}{ImageButton()}}
+{\footnotesize\ttfamily Paoo\+Game.\+HUD.\+Image\+Button.\+Image\+Button (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity}{Entity}}}]{entity,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{Buffered\+Image}]{img\+To\+Draw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs an \mbox{\hyperlink{classPaooGame_1_1HUD_1_1ImageButton}{Image\+Button}} object. 
+
+Initializes the button\textquotesingle{}s position, associated entity, and the image to display. It also creates its bounding box for interaction detection. 
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity this \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}} element is associated with (inherited from \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}}). \\
+\hline
+{\em x} & The x-\/coordinate for the button\textquotesingle{}s top-\/left corner. \\
+\hline
+{\em y} & The y-\/coordinate for the button\textquotesingle{}s top-\/left corner. \\
+\hline
+{\em img\+To\+Draw} & The \mbox{\hyperlink{}{Buffered\+Image}} to be displayed on the button. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ImageButton_a4fb4e2cc2972b996119430d718d86d06}\label{classPaooGame_1_1HUD_1_1ImageButton_a4fb4e2cc2972b996119430d718d86d06}} 
+\index{PaooGame.HUD.ImageButton@{PaooGame.HUD.ImageButton}!draw@{draw}}
+\index{draw@{draw}!PaooGame.HUD.ImageButton@{PaooGame.HUD.ImageButton}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+HUD.\+Image\+Button.\+draw (\begin{DoxyParamCaption}\item[{Graphics2D}]{g2d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Draws the image button on the screen. 
+
+Renders the button with a rounded background, a border, and the specified image. The background color and border thickness change if the button is hovered. 
+\begin{DoxyParams}{Parameters}
+{\em g2d} & The Graphics2D context to draw on. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD_a00eeedbee6ff71345f6e38b21f17d1e6}{Paoo\+Game.\+HUD.\+HUD}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ImageButton_a3df153dfff4b52843d89e0db4eb9062b}\label{classPaooGame_1_1HUD_1_1ImageButton_a3df153dfff4b52843d89e0db4eb9062b}} 
+\index{PaooGame.HUD.ImageButton@{PaooGame.HUD.ImageButton}!getBounds@{getBounds}}
+\index{getBounds@{getBounds}!PaooGame.HUD.ImageButton@{PaooGame.HUD.ImageButton}}
+\doxysubsubsection{\texorpdfstring{getBounds()}{getBounds()}}
+{\footnotesize\ttfamily Rectangle Paoo\+Game.\+HUD.\+Image\+Button.\+get\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the rectangular bounds of the button. 
+
+\begin{DoxyReturn}{Returns}
+A Rectangle object representing the button\textquotesingle{}s area on the screen. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ImageButton_a4ce83355818491df686ca0434300b317}\label{classPaooGame_1_1HUD_1_1ImageButton_a4ce83355818491df686ca0434300b317}} 
+\index{PaooGame.HUD.ImageButton@{PaooGame.HUD.ImageButton}!isClicked@{isClicked}}
+\index{isClicked@{isClicked}!PaooGame.HUD.ImageButton@{PaooGame.HUD.ImageButton}}
+\doxysubsubsection{\texorpdfstring{isClicked()}{isClicked()}}
+{\footnotesize\ttfamily boolean Paoo\+Game.\+HUD.\+Image\+Button.\+is\+Clicked (\begin{DoxyParamCaption}\item[{int}]{mouseX,  }\item[{int}]{mouseY,  }\item[{boolean}]{mouse\+Pressed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the button was clicked given the mouse position and press state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mouseX} & The x-\/coordinate of the mouse event. \\
+\hline
+{\em mouseY} & The y-\/coordinate of the mouse event. \\
+\hline
+{\em mouse\+Pressed} & True if a mouse button is currently pressed, false otherwise. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the mouse coordinates are within the button\textquotesingle{}s bounds and the mouse button is pressed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ImageButton_a0fba7952e8699ede7ad97c9f76f54a7a}\label{classPaooGame_1_1HUD_1_1ImageButton_a0fba7952e8699ede7ad97c9f76f54a7a}} 
+\index{PaooGame.HUD.ImageButton@{PaooGame.HUD.ImageButton}!isHovered@{isHovered}}
+\index{isHovered@{isHovered}!PaooGame.HUD.ImageButton@{PaooGame.HUD.ImageButton}}
+\doxysubsubsection{\texorpdfstring{isHovered()}{isHovered()}}
+{\footnotesize\ttfamily boolean Paoo\+Game.\+HUD.\+Image\+Button.\+is\+Hovered (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the mouse cursor is currently hovering over the button. 
+
+\begin{DoxyReturn}{Returns}
+True if the button is hovered, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ImageButton_a04ba16a3bfe6cc7fa1bb41ad73f17bec}\label{classPaooGame_1_1HUD_1_1ImageButton_a04ba16a3bfe6cc7fa1bb41ad73f17bec}} 
+\index{PaooGame.HUD.ImageButton@{PaooGame.HUD.ImageButton}!setIsHovered@{setIsHovered}}
+\index{setIsHovered@{setIsHovered}!PaooGame.HUD.ImageButton@{PaooGame.HUD.ImageButton}}
+\doxysubsubsection{\texorpdfstring{setIsHovered()}{setIsHovered()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+HUD.\+Image\+Button.\+set\+Is\+Hovered (\begin{DoxyParamCaption}\item[{boolean}]{is\+Hovered }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the hover state of the button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Hovered} & The new hover state to set (true for hovered, false otherwise). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ImageButton_a2ab1a189b4f3232e644b67d25d7f8021}\label{classPaooGame_1_1HUD_1_1ImageButton_a2ab1a189b4f3232e644b67d25d7f8021}} 
+\index{PaooGame.HUD.ImageButton@{PaooGame.HUD.ImageButton}!updateHover@{updateHover}}
+\index{updateHover@{updateHover}!PaooGame.HUD.ImageButton@{PaooGame.HUD.ImageButton}}
+\doxysubsubsection{\texorpdfstring{updateHover()}{updateHover()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+HUD.\+Image\+Button.\+update\+Hover (\begin{DoxyParamCaption}\item[{int}]{mouseX,  }\item[{int}]{mouseY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the hover state of the button based on the mouse cursor\textquotesingle{}s position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mouseX} & The current x-\/coordinate of the mouse cursor. \\
+\hline
+{\em mouseY} & The current y-\/coordinate of the mouse cursor. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

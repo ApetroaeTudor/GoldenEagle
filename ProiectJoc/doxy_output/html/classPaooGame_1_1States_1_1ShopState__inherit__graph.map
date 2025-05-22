@@ -1,4 +1,4 @@
 <map id="PaooGame.States.ShopState" name="PaooGame.States.ShopState">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,212,107"/>
-<area shape="rect" id="node2" href="$classPaooGame_1_1States_1_1State.html" title=" " alt="" coords="21,5,196,32"/>
+<area shape="rect" id="node1" title="Represents the in&#45;game shop state." alt="" coords="5,80,212,107"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1States_1_1State.html" title="Defines an abstract base class for all game states." alt="" coords="21,5,196,32"/>
 </map>

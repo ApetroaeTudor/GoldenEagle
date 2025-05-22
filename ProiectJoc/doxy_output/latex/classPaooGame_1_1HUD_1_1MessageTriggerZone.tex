@@ -1,33 +1,169 @@
 \hypertarget{classPaooGame_1_1HUD_1_1MessageTriggerZone}{}\doxysection{Paoo\+Game.\+HUD.\+Message\+Trigger\+Zone Class Reference}
 \label{classPaooGame_1_1HUD_1_1MessageTriggerZone}\index{PaooGame.HUD.MessageTriggerZone@{PaooGame.HUD.MessageTriggerZone}}
+
+
+Represents a zone that can trigger a message when an entity or a specified area interacts with it.  
+
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1MessageTriggerZone_a997244bd08b51bcb87e775a883258125}\label{classPaooGame_1_1HUD_1_1MessageTriggerZone_a997244bd08b51bcb87e775a883258125}} 
-{\bfseries Message\+Trigger\+Zone} (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity}{Entity}} entity, int offsetX, int offsetY, int width, int height, String message)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1MessageTriggerZone_aa1bee42457bf51633a5b6792b86de2e7}\label{classPaooGame_1_1HUD_1_1MessageTriggerZone_aa1bee42457bf51633a5b6792b86de2e7}} 
-{\bfseries Message\+Trigger\+Zone} (int x, int y, int width, int height, String message)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1MessageTriggerZone_ad9e3b26b6e72a905fd3f916565d79509}\label{classPaooGame_1_1HUD_1_1MessageTriggerZone_ad9e3b26b6e72a905fd3f916565d79509}} 
-void {\bfseries update\+Bounds} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1MessageTriggerZone_a3a82f3fa9758dfc660719eca0783962e}\label{classPaooGame_1_1HUD_1_1MessageTriggerZone_a3a82f3fa9758dfc660719eca0783962e}} 
-boolean {\bfseries check\+Trigger} (Rectangle target)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1MessageTriggerZone_a77557e1e6a36dcb8abe585a527dcf4c7}\label{classPaooGame_1_1HUD_1_1MessageTriggerZone_a77557e1e6a36dcb8abe585a527dcf4c7}} 
-String {\bfseries get\+Message} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1MessageTriggerZone_aba83305c57e526c052e0fc8026c97a7f}\label{classPaooGame_1_1HUD_1_1MessageTriggerZone_aba83305c57e526c052e0fc8026c97a7f}} 
-boolean {\bfseries is\+Active} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1MessageTriggerZone_aa78ffb20d5bf6d92f27d93aedafe97ba}\label{classPaooGame_1_1HUD_1_1MessageTriggerZone_aa78ffb20d5bf6d92f27d93aedafe97ba}} 
-Rectangle {\bfseries get\+Bounds} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1MessageTriggerZone_a4d4676aa8641f98383b75bd8f133bc7e}\label{classPaooGame_1_1HUD_1_1MessageTriggerZone_a4d4676aa8641f98383b75bd8f133bc7e}} 
-boolean {\bfseries has\+Entity} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPaooGame_1_1HUD_1_1MessageTriggerZone_a997244bd08b51bcb87e775a883258125}{Message\+Trigger\+Zone}} (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity}{Entity}} entity, int offsetX, int offsetY, int width, int height, String message)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPaooGame_1_1HUD_1_1MessageTriggerZone}{Message\+Trigger\+Zone}} associated with a specific entity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1HUD_1_1MessageTriggerZone_aa1bee42457bf51633a5b6792b86de2e7}{Message\+Trigger\+Zone}} (int x, int y, int width, int height, String message)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPaooGame_1_1HUD_1_1MessageTriggerZone}{Message\+Trigger\+Zone}} at a fixed position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1HUD_1_1MessageTriggerZone_ad9e3b26b6e72a905fd3f916565d79509}{update\+Bounds}} ()
+\begin{DoxyCompactList}\small\item\em Updates the bounds of the trigger zone if it is associated with an entity. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classPaooGame_1_1HUD_1_1MessageTriggerZone_a3a82f3fa9758dfc660719eca0783962e}{check\+Trigger}} (Rectangle target)
+\begin{DoxyCompactList}\small\item\em Checks if a given target rectangle intersects with this trigger zone. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classPaooGame_1_1HUD_1_1MessageTriggerZone_a77557e1e6a36dcb8abe585a527dcf4c7}{get\+Message}} ()
+\begin{DoxyCompactList}\small\item\em Gets the message associated with this trigger zone. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classPaooGame_1_1HUD_1_1MessageTriggerZone_aba83305c57e526c052e0fc8026c97a7f}{is\+Active}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the trigger zone is currently active. \end{DoxyCompactList}\item 
+Rectangle \mbox{\hyperlink{classPaooGame_1_1HUD_1_1MessageTriggerZone_aa78ffb20d5bf6d92f27d93aedafe97ba}{get\+Bounds}} ()
+\begin{DoxyCompactList}\small\item\em Gets the rectangular bounds of this trigger zone. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classPaooGame_1_1HUD_1_1MessageTriggerZone_a4d4676aa8641f98383b75bd8f133bc7e}{has\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Checks if this trigger zone is associated with an entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Represents a zone that can trigger a message when an entity or a specified area interacts with it. 
+
+This class defines a rectangular area in the game world. When a target intersects with this zone, it can trigger an associated message. The zone can be static or dynamically linked to an entity\textquotesingle{}s position. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1MessageTriggerZone_a997244bd08b51bcb87e775a883258125}\label{classPaooGame_1_1HUD_1_1MessageTriggerZone_a997244bd08b51bcb87e775a883258125}} 
+\index{PaooGame.HUD.MessageTriggerZone@{PaooGame.HUD.MessageTriggerZone}!MessageTriggerZone@{MessageTriggerZone}}
+\index{MessageTriggerZone@{MessageTriggerZone}!PaooGame.HUD.MessageTriggerZone@{PaooGame.HUD.MessageTriggerZone}}
+\doxysubsubsection{\texorpdfstring{MessageTriggerZone()}{MessageTriggerZone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Paoo\+Game.\+HUD.\+Message\+Trigger\+Zone.\+Message\+Trigger\+Zone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Entity}{Entity}}}]{entity,  }\item[{int}]{offsetX,  }\item[{int}]{offsetY,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{String}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPaooGame_1_1HUD_1_1MessageTriggerZone}{Message\+Trigger\+Zone}} associated with a specific entity. 
+
+The zone\textquotesingle{}s position will be relative to the entity\textquotesingle{}s hitbox, adjusted by the provided offsets. 
+\begin{DoxyParams}{Parameters}
+{\em entity} & The \mbox{\hyperlink{}{Entity}} this zone is attached to. \\
+\hline
+{\em offsetX} & The horizontal offset from the entity\textquotesingle{}s hitbox top-\/left corner. \\
+\hline
+{\em offsetY} & The vertical offset from the entity\textquotesingle{}s hitbox top-\/left corner. \\
+\hline
+{\em width} & The width of the trigger zone. \\
+\hline
+{\em height} & The height of the trigger zone. \\
+\hline
+{\em message} & The message to be triggered. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1MessageTriggerZone_aa1bee42457bf51633a5b6792b86de2e7}\label{classPaooGame_1_1HUD_1_1MessageTriggerZone_aa1bee42457bf51633a5b6792b86de2e7}} 
+\index{PaooGame.HUD.MessageTriggerZone@{PaooGame.HUD.MessageTriggerZone}!MessageTriggerZone@{MessageTriggerZone}}
+\index{MessageTriggerZone@{MessageTriggerZone}!PaooGame.HUD.MessageTriggerZone@{PaooGame.HUD.MessageTriggerZone}}
+\doxysubsubsection{\texorpdfstring{MessageTriggerZone()}{MessageTriggerZone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Paoo\+Game.\+HUD.\+Message\+Trigger\+Zone.\+Message\+Trigger\+Zone (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{String}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPaooGame_1_1HUD_1_1MessageTriggerZone}{Message\+Trigger\+Zone}} at a fixed position. 
+
+This constructor creates a static trigger zone defined by absolute coordinates and dimensions, not associated with any entity. 
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate of the top-\/left corner of the trigger zone. \\
+\hline
+{\em y} & The y-\/coordinate of the top-\/left corner of the trigger zone. \\
+\hline
+{\em width} & The width of the trigger zone. \\
+\hline
+{\em height} & The height of the trigger zone. \\
+\hline
+{\em message} & The message to be triggered. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1MessageTriggerZone_a3a82f3fa9758dfc660719eca0783962e}\label{classPaooGame_1_1HUD_1_1MessageTriggerZone_a3a82f3fa9758dfc660719eca0783962e}} 
+\index{PaooGame.HUD.MessageTriggerZone@{PaooGame.HUD.MessageTriggerZone}!checkTrigger@{checkTrigger}}
+\index{checkTrigger@{checkTrigger}!PaooGame.HUD.MessageTriggerZone@{PaooGame.HUD.MessageTriggerZone}}
+\doxysubsubsection{\texorpdfstring{checkTrigger()}{checkTrigger()}}
+{\footnotesize\ttfamily boolean Paoo\+Game.\+HUD.\+Message\+Trigger\+Zone.\+check\+Trigger (\begin{DoxyParamCaption}\item[{Rectangle}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if a given target rectangle intersects with this trigger zone. 
+
+The zone must be active for a trigger to occur. 
+\begin{DoxyParams}{Parameters}
+{\em target} & The \mbox{\hyperlink{}{Rectangle}} to check for intersection with this zone\textquotesingle{}s bounds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the zone is active and the target intersects with its bounds, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1MessageTriggerZone_aa78ffb20d5bf6d92f27d93aedafe97ba}\label{classPaooGame_1_1HUD_1_1MessageTriggerZone_aa78ffb20d5bf6d92f27d93aedafe97ba}} 
+\index{PaooGame.HUD.MessageTriggerZone@{PaooGame.HUD.MessageTriggerZone}!getBounds@{getBounds}}
+\index{getBounds@{getBounds}!PaooGame.HUD.MessageTriggerZone@{PaooGame.HUD.MessageTriggerZone}}
+\doxysubsubsection{\texorpdfstring{getBounds()}{getBounds()}}
+{\footnotesize\ttfamily Rectangle Paoo\+Game.\+HUD.\+Message\+Trigger\+Zone.\+get\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the rectangular bounds of this trigger zone. 
+
+\begin{DoxyReturn}{Returns}
+A \mbox{\hyperlink{}{Rectangle}} object representing the zone\textquotesingle{}s area. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1MessageTriggerZone_a77557e1e6a36dcb8abe585a527dcf4c7}\label{classPaooGame_1_1HUD_1_1MessageTriggerZone_a77557e1e6a36dcb8abe585a527dcf4c7}} 
+\index{PaooGame.HUD.MessageTriggerZone@{PaooGame.HUD.MessageTriggerZone}!getMessage@{getMessage}}
+\index{getMessage@{getMessage}!PaooGame.HUD.MessageTriggerZone@{PaooGame.HUD.MessageTriggerZone}}
+\doxysubsubsection{\texorpdfstring{getMessage()}{getMessage()}}
+{\footnotesize\ttfamily String Paoo\+Game.\+HUD.\+Message\+Trigger\+Zone.\+get\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the message associated with this trigger zone. 
+
+\begin{DoxyReturn}{Returns}
+The message string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1MessageTriggerZone_a4d4676aa8641f98383b75bd8f133bc7e}\label{classPaooGame_1_1HUD_1_1MessageTriggerZone_a4d4676aa8641f98383b75bd8f133bc7e}} 
+\index{PaooGame.HUD.MessageTriggerZone@{PaooGame.HUD.MessageTriggerZone}!hasEntity@{hasEntity}}
+\index{hasEntity@{hasEntity}!PaooGame.HUD.MessageTriggerZone@{PaooGame.HUD.MessageTriggerZone}}
+\doxysubsubsection{\texorpdfstring{hasEntity()}{hasEntity()}}
+{\footnotesize\ttfamily boolean Paoo\+Game.\+HUD.\+Message\+Trigger\+Zone.\+has\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if this trigger zone is associated with an entity. 
+
+\begin{DoxyReturn}{Returns}
+True if an entity is linked to this zone, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1MessageTriggerZone_aba83305c57e526c052e0fc8026c97a7f}\label{classPaooGame_1_1HUD_1_1MessageTriggerZone_aba83305c57e526c052e0fc8026c97a7f}} 
+\index{PaooGame.HUD.MessageTriggerZone@{PaooGame.HUD.MessageTriggerZone}!isActive@{isActive}}
+\index{isActive@{isActive}!PaooGame.HUD.MessageTriggerZone@{PaooGame.HUD.MessageTriggerZone}}
+\doxysubsubsection{\texorpdfstring{isActive()}{isActive()}}
+{\footnotesize\ttfamily boolean Paoo\+Game.\+HUD.\+Message\+Trigger\+Zone.\+is\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the trigger zone is currently active. 
+
+\begin{DoxyReturn}{Returns}
+True if the zone is active, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1MessageTriggerZone_ad9e3b26b6e72a905fd3f916565d79509}\label{classPaooGame_1_1HUD_1_1MessageTriggerZone_ad9e3b26b6e72a905fd3f916565d79509}} 
+\index{PaooGame.HUD.MessageTriggerZone@{PaooGame.HUD.MessageTriggerZone}!updateBounds@{updateBounds}}
+\index{updateBounds@{updateBounds}!PaooGame.HUD.MessageTriggerZone@{PaooGame.HUD.MessageTriggerZone}}
+\doxysubsubsection{\texorpdfstring{updateBounds()}{updateBounds()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+HUD.\+Message\+Trigger\+Zone.\+update\+Bounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the bounds of the trigger zone if it is associated with an entity. 
+
+If an entity is linked to this zone, its bounds are recalculated based on the entity\textquotesingle{}s current hitbox position and the predefined offsets. If no entity is associated, this method does nothing. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

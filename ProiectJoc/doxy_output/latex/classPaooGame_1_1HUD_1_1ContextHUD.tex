@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1HUD_1_1ContextHUD}\index{PaooGame.HUD.ContextHUD@{PaooGame.HUD.ContextHUD}}
 
 
-Inheritance diagram for Paoo\+Game.\+HUD.\+Context\+HUD\+:
-\nopagebreak
+Manages and displays contextual messages to the player based on their proximity to predefined trigger zones.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+HUD.\+Context\+HUD\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+HUD.\+Context\+HUD\+:
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+HUD.\+Context\+HUD\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+HUD.\+Context\+HUD\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,20 +26,92 @@ Collaboration diagram for Paoo\+Game.\+HUD.\+Context\+HUD\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ContextHUD_a85282d1430627ce0ee43a9c6f0123dca}\label{classPaooGame_1_1HUD_1_1ContextHUD_a85282d1430627ce0ee43a9c6f0123dca}} 
-{\bfseries Context\+HUD} (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Hero}{Hero}} hero)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ContextHUD_a079b8619edb84f1a950de80618661c79}\label{classPaooGame_1_1HUD_1_1ContextHUD_a079b8619edb84f1a950de80618661c79}} 
-void {\bfseries add\+Trigger} (\mbox{\hyperlink{classPaooGame_1_1HUD_1_1MessageTriggerZone}{Message\+Trigger\+Zone}} trigger)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ContextHUD_a6f2f83d16b9238c2d9b7cdf36ce35a2f}\label{classPaooGame_1_1HUD_1_1ContextHUD_a6f2f83d16b9238c2d9b7cdf36ce35a2f}} 
-void {\bfseries update} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ContextHUD_a53ed030f9e2f2bd2dd24f54ccbf4449c}\label{classPaooGame_1_1HUD_1_1ContextHUD_a53ed030f9e2f2bd2dd24f54ccbf4449c}} 
-void {\bfseries draw} (Graphics2D g2d)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPaooGame_1_1HUD_1_1ContextHUD_a85282d1430627ce0ee43a9c6f0123dca}{Context\+HUD}} (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Hero}{Hero}} hero)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPaooGame_1_1HUD_1_1ContextHUD}{Context\+HUD}} object associated with a specific hero. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1HUD_1_1ContextHUD_a079b8619edb84f1a950de80618661c79}{add\+Trigger}} (\mbox{\hyperlink{classPaooGame_1_1HUD_1_1MessageTriggerZone}{Message\+Trigger\+Zone}} trigger)
+\begin{DoxyCompactList}\small\item\em Adds a new message trigger zone to this \mbox{\hyperlink{classPaooGame_1_1HUD_1_1ContextHUD}{Context\+HUD}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1HUD_1_1ContextHUD_a6f2f83d16b9238c2d9b7cdf36ce35a2f}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the state of the \mbox{\hyperlink{classPaooGame_1_1HUD_1_1ContextHUD}{Context\+HUD}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1HUD_1_1ContextHUD_a53ed030f9e2f2bd2dd24f54ccbf4449c}{draw}} (Graphics2D g2d)
+\begin{DoxyCompactList}\small\item\em Draws the current contextual message on the screen if one is active. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
+
+\doxysubsection{Detailed Description}
+Manages and displays contextual messages to the player based on their proximity to predefined trigger zones. 
+
+This \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD}{HUD}} element is associated with a \mbox{\hyperlink{}{Hero}} and contains a list of \mbox{\hyperlink{classPaooGame_1_1HUD_1_1MessageTriggerZone}{Message\+Trigger\+Zone}} objects. When the hero enters a trigger zone, a corresponding message is displayed on the screen for a set duration. The message is typically shown at a fixed position near the top of the game window. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ContextHUD_a85282d1430627ce0ee43a9c6f0123dca}\label{classPaooGame_1_1HUD_1_1ContextHUD_a85282d1430627ce0ee43a9c6f0123dca}} 
+\index{PaooGame.HUD.ContextHUD@{PaooGame.HUD.ContextHUD}!ContextHUD@{ContextHUD}}
+\index{ContextHUD@{ContextHUD}!PaooGame.HUD.ContextHUD@{PaooGame.HUD.ContextHUD}}
+\doxysubsubsection{\texorpdfstring{ContextHUD()}{ContextHUD()}}
+{\footnotesize\ttfamily Paoo\+Game.\+HUD.\+Context\+HUD.\+Context\+HUD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Hero}{Hero}}}]{hero }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPaooGame_1_1HUD_1_1ContextHUD}{Context\+HUD}} object associated with a specific hero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hero} & The hero entity whose interactions will trigger contextual messages. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ContextHUD_a079b8619edb84f1a950de80618661c79}\label{classPaooGame_1_1HUD_1_1ContextHUD_a079b8619edb84f1a950de80618661c79}} 
+\index{PaooGame.HUD.ContextHUD@{PaooGame.HUD.ContextHUD}!addTrigger@{addTrigger}}
+\index{addTrigger@{addTrigger}!PaooGame.HUD.ContextHUD@{PaooGame.HUD.ContextHUD}}
+\doxysubsubsection{\texorpdfstring{addTrigger()}{addTrigger()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+HUD.\+Context\+HUD.\+add\+Trigger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1HUD_1_1MessageTriggerZone}{Message\+Trigger\+Zone}}}]{trigger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a new message trigger zone to this \mbox{\hyperlink{classPaooGame_1_1HUD_1_1ContextHUD}{Context\+HUD}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em trigger} & The \mbox{\hyperlink{classPaooGame_1_1HUD_1_1MessageTriggerZone}{Message\+Trigger\+Zone}} to be added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ContextHUD_a53ed030f9e2f2bd2dd24f54ccbf4449c}\label{classPaooGame_1_1HUD_1_1ContextHUD_a53ed030f9e2f2bd2dd24f54ccbf4449c}} 
+\index{PaooGame.HUD.ContextHUD@{PaooGame.HUD.ContextHUD}!draw@{draw}}
+\index{draw@{draw}!PaooGame.HUD.ContextHUD@{PaooGame.HUD.ContextHUD}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+HUD.\+Context\+HUD.\+draw (\begin{DoxyParamCaption}\item[{Graphics2D}]{g2d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Draws the current contextual message on the screen if one is active. 
+
+The message is displayed in a rounded rectangle with a semi-\/transparent background, centered horizontally near the top of the game window. 
+\begin{DoxyParams}{Parameters}
+{\em g2d} & The Graphics2D context to draw on. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1HUD_1_1HUD_a00eeedbee6ff71345f6e38b21f17d1e6}{Paoo\+Game.\+HUD.\+HUD}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1HUD_1_1ContextHUD_a6f2f83d16b9238c2d9b7cdf36ce35a2f}\label{classPaooGame_1_1HUD_1_1ContextHUD_a6f2f83d16b9238c2d9b7cdf36ce35a2f}} 
+\index{PaooGame.HUD.ContextHUD@{PaooGame.HUD.ContextHUD}!update@{update}}
+\index{update@{update}!PaooGame.HUD.ContextHUD@{PaooGame.HUD.ContextHUD}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+HUD.\+Context\+HUD.\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the state of the \mbox{\hyperlink{classPaooGame_1_1HUD_1_1ContextHUD}{Context\+HUD}}. 
+
+This method performs the following actions\+:
+\begin{DoxyEnumerate}
+\item Updates the bounding boxes of all associated trigger zones, especially if they are linked to moving entities.
+\item Checks if the hero\textquotesingle{}s hitbox intersects with any of the trigger zones.
+\item If an intersection occurs, it sets the \char`\"{}current\+Message\char`\"{} to the message from the triggered zone, calculates a conceptual message position (though the drawing uses a fixed screen position), and resets the \char`\"{}message\+Timer\char`\"{}.
+\item If no trigger is active or the timer for the current message has expired (implicitly, as timer reset happens on new trigger), the \char`\"{}current\+Message\char`\"{} might be cleared (or remain from the last trigger until a new one is found). The current implementation prioritizes the first active trigger found. 
+\end{DoxyEnumerate}
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

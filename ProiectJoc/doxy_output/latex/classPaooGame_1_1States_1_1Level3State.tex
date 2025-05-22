@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1States_1_1Level3State}\index{PaooGame.States.Level3State@{PaooGame.States.Level3State}}
 
 
-Inheritance diagram for Paoo\+Game.\+States.\+Level3\+State\+:
-\nopagebreak
+Represents the game state for Level 3.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+States.\+Level3\+State\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+States.\+Level3\+State\+:
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+States.\+Level3\+State\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+States.\+Level3\+State\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,55 +26,271 @@ Collaboration diagram for Paoo\+Game.\+States.\+Level3\+State\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_a38640ed10bf39ee7fa227de975f4b36d}\label{classPaooGame_1_1States_1_1Level3State_a38640ed10bf39ee7fa227de975f4b36d}} 
-{\bfseries Level3\+State} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} reflink, \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level3}{Level3}} level3)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_a4e953e6937ed8081f277e7b99f959d8b}\label{classPaooGame_1_1States_1_1Level3State_a4e953e6937ed8081f277e7b99f959d8b}} 
-void {\bfseries start\+Unmark\+Hook\+Timer\+With\+Parameters} (Point pt)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_a775d3d84128c3ae49dfa4df68f64edf7}\label{classPaooGame_1_1States_1_1Level3State_a775d3d84128c3ae49dfa4df68f64edf7}} 
-void {\bfseries restore\+State} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_a21605670317271b52f4790998c51b636}\label{classPaooGame_1_1States_1_1Level3State_a21605670317271b52f4790998c51b636}} 
-void {\bfseries update} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_aac0fcc83c45060d3df748771a590faf9}\label{classPaooGame_1_1States_1_1Level3State_aac0fcc83c45060d3df748771a590faf9}} 
-void {\bfseries draw} (Graphics g)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_a52a3a62751df19fbf8d2034f2b15519c}\label{classPaooGame_1_1States_1_1Level3State_a52a3a62751df19fbf8d2034f2b15519c}} 
-\mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level3}{Level3}} {\bfseries get\+Level3} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_a35dae42d97d14f96ff8fb460cc17eed7}\label{classPaooGame_1_1States_1_1Level3State_a35dae42d97d14f96ff8fb460cc17eed7}} 
-String {\bfseries get\+State\+Name} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_afbdd92c6ed618c086ccae3dc797d6a25}\label{classPaooGame_1_1States_1_1Level3State_afbdd92c6ed618c086ccae3dc797d6a25}} 
-void {\bfseries set\+Enemy} (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy}{Enemy}} enemy)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_a4f5b3997d81e7732bc3d15273cb68253}\label{classPaooGame_1_1States_1_1Level3State_a4f5b3997d81e7732bc3d15273cb68253}} 
-void {\bfseries load\+State} (boolean access)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_ad7564e36d8816b73dc51543d83eaf56f}\label{classPaooGame_1_1States_1_1Level3State_ad7564e36d8816b73dc51543d83eaf56f}} 
-void {\bfseries store\+State} (boolean access)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_a38640ed10bf39ee7fa227de975f4b36d}{Level3\+State}} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a621ece5c0cfdd772b0aeaba2e399a61d}{reflink}}, \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level3}{Level3}} level3)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State}{Level3\+State}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_a4e953e6937ed8081f277e7b99f959d8b}{start\+Unmark\+Hook\+Timer\+With\+Parameters}} (Point pt)
+\begin{DoxyCompactList}\small\item\em Starts the timer to unmark a specific grapple hook point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_a775d3d84128c3ae49dfa4df68f64edf7}{restore\+State}} ()
+\begin{DoxyCompactList}\small\item\em Restores the initial state of Level 3. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_a21605670317271b52f4790998c51b636}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the game logic for Level 3 \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_aac0fcc83c45060d3df748771a590faf9}{draw}} (Graphics g)
+\begin{DoxyCompactList}\small\item\em Draws the Level 3 \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} to the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_a4f5b3997d81e7732bc3d15273cb68253}{load\+State}} (boolean access)
+\begin{DoxyCompactList}\small\item\em Loads the state of Level 3 from persistent storage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_ad7564e36d8816b73dc51543d83eaf56f}{store\+State}} (boolean access)
+\begin{DoxyCompactList}\small\item\em Stores the current state of Level 3 to persistent storage. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level3}{Level3}} \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_a52a3a62751df19fbf8d2034f2b15519c}{get\+Level3}} ()
+\begin{DoxyCompactList}\small\item\em Gets the \mbox{\hyperlink{}{Level3}} map data associated with this state. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_a35dae42d97d14f96ff8fb460cc17eed7}{get\+State\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of this state. This method overrides the \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a256ead7c628d278ecda50a402465dab8}{State\#get\+State\+Name()}} method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_afbdd92c6ed618c086ccae3dc797d6a25}{set\+Enemy}} (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy}{Enemy}} enemy)
+\begin{DoxyCompactList}\small\item\em Sets an enemy for this state. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_a21d5da8062c256c81a1f8fd7cb0d87f7}\label{classPaooGame_1_1States_1_1Level3State_a21d5da8062c256c81a1f8fd7cb0d87f7}} 
-boolean {\bfseries transitioning} = false
-\item 
+boolean \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_a21d5da8062c256c81a1f8fd7cb0d87f7}{transitioning}} = false
+\begin{DoxyCompactList}\small\item\em True if a screen transition is active. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_a564bb5c0d29667a78dfd7b6d148d2cc8}\label{classPaooGame_1_1States_1_1Level3State_a564bb5c0d29667a78dfd7b6d148d2cc8}} 
-boolean {\bfseries transition\+\_\+to\+\_\+fight} = false
-\item 
+boolean \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_a564bb5c0d29667a78dfd7b6d148d2cc8}{transition\+\_\+to\+\_\+fight}} = false
+\begin{DoxyCompactList}\small\item\em True if transitioning to the fight state. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_a11e6af8937a2b6ac33065491ae5dabe6}\label{classPaooGame_1_1States_1_1Level3State_a11e6af8937a2b6ac33065491ae5dabe6}} 
-String {\bfseries state\+Name} = Constants.\+LEVEL3\+\_\+\+STATE
-\item 
+String \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_a11e6af8937a2b6ac33065491ae5dabe6}{state\+Name}} = Constants.\+LEVEL3\+\_\+\+STATE
+\begin{DoxyCompactList}\small\item\em The name identifier for this state. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_af8cfa4f8d748fa175a1910c78b9c75ff}\label{classPaooGame_1_1States_1_1Level3State_af8cfa4f8d748fa175a1910c78b9c75ff}} 
-double {\bfseries target\+Black\+Intensity} = 0.\+0
-\item 
+double \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_af8cfa4f8d748fa175a1910c78b9c75ff}{target\+Black\+Intensity}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Target alpha for black fade effect. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_aaca41fa00bd9d272aa95cd5f1f5b2177}\label{classPaooGame_1_1States_1_1Level3State_aaca41fa00bd9d272aa95cd5f1f5b2177}} 
-double {\bfseries black\+Fade\+Step} = 0.\+05
-\end{DoxyCompactItemize}
+double \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_aaca41fa00bd9d272aa95cd5f1f5b2177}{black\+Fade\+Step}} = 0.\+05
+\begin{DoxyCompactList}\small\item\em Step size for black fade intensity change. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents the game state for Level 3. 
+
+This class extends the abstract \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} class and defines the specific behavior, entities, and rendering for the third level of the game. It manages the Level 3 map, camera, enemies, items, UI elements like the pause button, and game logic such as grappling, transitions, and save/load functionality. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_a38640ed10bf39ee7fa227de975f4b36d}\label{classPaooGame_1_1States_1_1Level3State_a38640ed10bf39ee7fa227de975f4b36d}} 
+\index{PaooGame.States.Level3State@{PaooGame.States.Level3State}!Level3State@{Level3State}}
+\index{Level3State@{Level3State}!PaooGame.States.Level3State@{PaooGame.States.Level3State}}
+\doxysubsubsection{\texorpdfstring{Level3State()}{Level3State()}}
+{\footnotesize\ttfamily Paoo\+Game.\+States.\+Level3\+State.\+Level3\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}}}]{reflink,  }\item[{\mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level3}{Level3}}}]{level3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State}{Level3\+State}} object. 
+
+Initializes the Level 3 environment, including the map, camera, enemies, items, UI elements, and timers. It sets up the initial positions and properties for various game elements based on constants defined in \mbox{\hyperlink{classPaooGame_1_1Config_1_1Constants}{Paoo\+Game.\+Config.\+Constants}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em reflink} & A \mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} object providing access to game-\/wide objects and utilities. \\
+\hline
+{\em level3} & The \mbox{\hyperlink{}{Level3}} map data to be used for this state. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_aac0fcc83c45060d3df748771a590faf9}\label{classPaooGame_1_1States_1_1Level3State_aac0fcc83c45060d3df748771a590faf9}} 
+\index{PaooGame.States.Level3State@{PaooGame.States.Level3State}!draw@{draw}}
+\index{draw@{draw}!PaooGame.States.Level3State@{PaooGame.States.Level3State}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+States.\+Level3\+State.\+draw (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Draws the Level 3 \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} to the screen. 
+
+This method is responsible for rendering all visual elements of Level 3, including\+:
+\begin{DoxyItemize}
+\item Applying camera transformations.
+\item Drawing the background image.
+\item Drawing the level tiles.
+\item Drawing save points and floppy disk items.
+\item Drawing fade-\/to-\/black transition effects.
+\item Drawing the whip or grapple indicators.
+\item Drawing enemies.
+\item Drawing the hero character.
+\item Drawing UI elements like the hero\textquotesingle{}s health bar and the pause button. This method overrides the \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a61512d655ea178fd283fe57624b47250}{State\#draw(\+Graphics)}} method.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The \mbox{\hyperlink{}{Graphics}} context used for drawing. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a61512d655ea178fd283fe57624b47250}{Paoo\+Game.\+States.\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_a52a3a62751df19fbf8d2034f2b15519c}\label{classPaooGame_1_1States_1_1Level3State_a52a3a62751df19fbf8d2034f2b15519c}} 
+\index{PaooGame.States.Level3State@{PaooGame.States.Level3State}!getLevel3@{getLevel3}}
+\index{getLevel3@{getLevel3}!PaooGame.States.Level3State@{PaooGame.States.Level3State}}
+\doxysubsubsection{\texorpdfstring{getLevel3()}{getLevel3()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level3}{Level3}} Paoo\+Game.\+States.\+Level3\+State.\+get\+Level3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the \mbox{\hyperlink{}{Level3}} map data associated with this state. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{}{Level3}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_a35dae42d97d14f96ff8fb460cc17eed7}\label{classPaooGame_1_1States_1_1Level3State_a35dae42d97d14f96ff8fb460cc17eed7}} 
+\index{PaooGame.States.Level3State@{PaooGame.States.Level3State}!getStateName@{getStateName}}
+\index{getStateName@{getStateName}!PaooGame.States.Level3State@{PaooGame.States.Level3State}}
+\doxysubsubsection{\texorpdfstring{getStateName()}{getStateName()}}
+{\footnotesize\ttfamily String Paoo\+Game.\+States.\+Level3\+State.\+get\+State\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the name of this state. This method overrides the \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a256ead7c628d278ecda50a402465dab8}{State\#get\+State\+Name()}} method. 
+
+\begin{DoxyReturn}{Returns}
+The string name of the state, typically defined in \mbox{\hyperlink{classPaooGame_1_1Config_1_1Constants}{Paoo\+Game.\+Config.\+Constants}}. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a256ead7c628d278ecda50a402465dab8}{Paoo\+Game.\+States.\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_a4f5b3997d81e7732bc3d15273cb68253}\label{classPaooGame_1_1States_1_1Level3State_a4f5b3997d81e7732bc3d15273cb68253}} 
+\index{PaooGame.States.Level3State@{PaooGame.States.Level3State}!loadState@{loadState}}
+\index{loadState@{loadState}!PaooGame.States.Level3State@{PaooGame.States.Level3State}}
+\doxysubsubsection{\texorpdfstring{loadState()}{loadState()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+States.\+Level3\+State.\+load\+State (\begin{DoxyParamCaption}\item[{boolean}]{access }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Loads the state of Level 3 from persistent storage. 
+
+This method retrieves saved data for Level 3, such as enemy health, using the Data\+Proxy. It ensures that data is loaded only once per session or until a refresh is signaled. This method overrides the \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a90f74b9205e6fcb6232e264fd53bf14a}{State\#load\+State(boolean)}} method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em access} & Boolean indicating access permission for data operations. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Access\+Not\+Permitted\+Exception} & If data access is not permitted. \\
+\hline
+{\em Value\+Store\+Exception} & If there\textquotesingle{}s an issue with storing or retrieving values. \\
+\hline
+{\em Data\+Buffer\+Not\+Ready\+Exception} & If the data buffer is not ready for operations. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a90f74b9205e6fcb6232e264fd53bf14a}{Paoo\+Game.\+States.\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_a775d3d84128c3ae49dfa4df68f64edf7}\label{classPaooGame_1_1States_1_1Level3State_a775d3d84128c3ae49dfa4df68f64edf7}} 
+\index{PaooGame.States.Level3State@{PaooGame.States.Level3State}!restoreState@{restoreState}}
+\index{restoreState@{restoreState}!PaooGame.States.Level3State@{PaooGame.States.Level3State}}
+\doxysubsubsection{\texorpdfstring{restoreState()}{restoreState()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+States.\+Level3\+State.\+restore\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Restores the initial state of Level 3. 
+
+It resets the positions of all enemies in Level 3 to their predefined starting locations specified in \mbox{\hyperlink{classPaooGame_1_1Config_1_1Constants}{Paoo\+Game.\+Config.\+Constants}}. This method overrides the \mbox{\hyperlink{classPaooGame_1_1States_1_1State_aec1c3e402381da4d4986c4eb957de55b}{State\#restore\+State()}} method. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_aec1c3e402381da4d4986c4eb957de55b}{Paoo\+Game.\+States.\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_afbdd92c6ed618c086ccae3dc797d6a25}\label{classPaooGame_1_1States_1_1Level3State_afbdd92c6ed618c086ccae3dc797d6a25}} 
+\index{PaooGame.States.Level3State@{PaooGame.States.Level3State}!setEnemy@{setEnemy}}
+\index{setEnemy@{setEnemy}!PaooGame.States.Level3State@{PaooGame.States.Level3State}}
+\doxysubsubsection{\texorpdfstring{setEnemy()}{setEnemy()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+States.\+Level3\+State.\+set\+Enemy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy}{Enemy}}}]{enemy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets an enemy for this state. 
+
+This method is intended to be overridden by states that need to set a specific enemy, for example, the \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState}{Fight\+State}}. In \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State}{Level3\+State}}, it currently has no implementation. This method overrides the \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a1afa04fafde48966a2cbb66c053afe9f}{State\#set\+Enemy(\+Enemy)}} method. 
+\begin{DoxyParams}{Parameters}
+{\em enemy} & The \mbox{\hyperlink{}{Enemy}} to be set. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a1afa04fafde48966a2cbb66c053afe9f}{Paoo\+Game.\+States.\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_a4e953e6937ed8081f277e7b99f959d8b}\label{classPaooGame_1_1States_1_1Level3State_a4e953e6937ed8081f277e7b99f959d8b}} 
+\index{PaooGame.States.Level3State@{PaooGame.States.Level3State}!startUnmarkHookTimerWithParameters@{startUnmarkHookTimerWithParameters}}
+\index{startUnmarkHookTimerWithParameters@{startUnmarkHookTimerWithParameters}!PaooGame.States.Level3State@{PaooGame.States.Level3State}}
+\doxysubsubsection{\texorpdfstring{startUnmarkHookTimerWithParameters()}{startUnmarkHookTimerWithParameters()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+States.\+Level3\+State.\+start\+Unmark\+Hook\+Timer\+With\+Parameters (\begin{DoxyParamCaption}\item[{Point}]{pt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Starts the timer to unmark a specific grapple hook point. 
+
+This method configures and starts \mbox{\hyperlink{}{unmark\+Hook\+Timer}} with an action that removes the specified \mbox{\hyperlink{}{Point}} from the \mbox{\hyperlink{}{Marked\+Hooks}} list when the timer expires.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & The \mbox{\hyperlink{}{Point}} representing the grapple hook location to be unmarked. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_ad7564e36d8816b73dc51543d83eaf56f}\label{classPaooGame_1_1States_1_1Level3State_ad7564e36d8816b73dc51543d83eaf56f}} 
+\index{PaooGame.States.Level3State@{PaooGame.States.Level3State}!storeState@{storeState}}
+\index{storeState@{storeState}!PaooGame.States.Level3State@{PaooGame.States.Level3State}}
+\doxysubsubsection{\texorpdfstring{storeState()}{storeState()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+States.\+Level3\+State.\+store\+State (\begin{DoxyParamCaption}\item[{boolean}]{access }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stores the current state of Level 3 to persistent storage. 
+
+This method saves data relevant to Level 3, such as the current timestamp and enemy health, using the Data\+Proxy. It ensures that data is stored only once or until a store operation is signaled. This method overrides the \mbox{\hyperlink{classPaooGame_1_1States_1_1State_af91f335ebaff413a782926e17cd80276}{State\#store\+State(boolean)}} method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em access} & Boolean indicating access permission for data operations. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Access\+Not\+Permitted\+Exception} & If data access is not permitted. \\
+\hline
+{\em Value\+Store\+Exception} & If there\textquotesingle{}s an issue with storing values. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_af91f335ebaff413a782926e17cd80276}{Paoo\+Game.\+States.\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1Level3State_a21605670317271b52f4790998c51b636}\label{classPaooGame_1_1States_1_1Level3State_a21605670317271b52f4790998c51b636}} 
+\index{PaooGame.States.Level3State@{PaooGame.States.Level3State}!update@{update}}
+\index{update@{update}!PaooGame.States.Level3State@{PaooGame.States.Level3State}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+States.\+Level3\+State.\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the game logic for Level 3 \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}}. 
+
+This method is called repeatedly in the game loop. It handles\+:
+\begin{DoxyItemize}
+\item Setting the current running level if this state is active.
+\item Updating floppy disk items.
+\item Checking for boss defeat conditions.
+\item Handling interactions with save points and enemies.
+\item Managing screen transitions.
+\item Processing pause button input.
+\item Updating grapple logic.
+\item Updating the hero character.
+\item Checking for the ESC key press to return to the menu.
+\item Updating camera logic. This method overrides the \mbox{\hyperlink{classPaooGame_1_1States_1_1State_afafd048638af99f0f0b115ddec2fac1f}{State\#update()}} method. 
+\end{DoxyItemize}
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_afafd048638af99f0f0b115ddec2fac1f}{Paoo\+Game.\+States.\+State}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

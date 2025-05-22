@@ -74,15 +74,18 @@ $(function() {
 <div class="title">PaooGame.Entities.Entity Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>An abstract base class for all game entities (e.g., Player, <a class="el" href="classPaooGame_1_1Entities_1_1Enemy.html" title="Represents an enemy entity in the game.">Enemy</a>).  
+ <a href="classPaooGame_1_1Entities_1_1Entity.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for PaooGame.Entities.Entity:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPaooGame_1_1Entities_1_1Entity__inherit__graph.png" border="0" usemap="#aPaooGame_8Entities_8Entity_inherit__map" alt="Inheritance graph"/></div>
 <map name="aPaooGame_8Entities_8Entity_inherit__map" id="aPaooGame_8Entities_8Entity_inherit__map">
-<area shape="rect" title=" " alt="" coords="221,5,408,32"/>
-<area shape="rect" href="classPaooGame_1_1Entities_1_1Enemy.html" title=" " alt="" coords="5,80,200,107"/>
-<area shape="rect" href="classPaooGame_1_1Entities_1_1Hero.html" title=" " alt="" coords="225,80,405,107"/>
-<area shape="rect" href="classPaooGame_1_1Entities_1_1NPC.html" title=" " alt="" coords="429,80,605,107"/>
+<area shape="rect" title="An abstract base class for all game entities (e.g., Player, Enemy)." alt="" coords="221,5,408,32"/>
+<area shape="rect" href="classPaooGame_1_1Entities_1_1Enemy.html" title="Represents an enemy entity in the game." alt="" coords="5,80,200,107"/>
+<area shape="rect" href="classPaooGame_1_1Entities_1_1Hero.html" title="Represents the main player character in the game." alt="" coords="225,80,405,107"/>
+<area shape="rect" href="classPaooGame_1_1Entities_1_1NPC.html" title="Represents a Non&#45;Player Character (NPC) in the game, specifically a Goblin." alt="" coords="429,80,605,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -90,216 +93,1608 @@ Collaboration diagram for PaooGame.Entities.Entity:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPaooGame_1_1Entities_1_1Entity__coll__graph.png" border="0" usemap="#aPaooGame_8Entities_8Entity_coll__map" alt="Collaboration graph"/></div>
 <map name="aPaooGame_8Entities_8Entity_coll__map" id="aPaooGame_8Entities_8Entity_coll__map">
-<area shape="rect" title=" " alt="" coords="101,95,288,121"/>
-<area shape="rect" href="classPaooGame_1_1Hitbox_1_1Hitbox.html" title=" " alt="" coords="5,5,192,32"/>
-<area shape="rect" href="classPaooGame_1_1RefLinks.html" title=" " alt="" coords="216,5,368,32"/>
+<area shape="rect" title="An abstract base class for all game entities (e.g., Player, Enemy)." alt="" coords="101,95,288,121"/>
+<area shape="rect" href="classPaooGame_1_1Hitbox_1_1Hitbox.html" title="Represents a rectangular area used for collision detection." alt="" coords="5,5,192,32"/>
+<area shape="rect" href="classPaooGame_1_1RefLinks.html" title="Provides a centralized way to access shared game objects and utilities." alt="" coords="216,5,368,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac9ee430d9bfbcdbf90dd327224f64688"><td class="memItemLeft" align="right" valign="top"><a id="ac9ee430d9bfbcdbf90dd327224f64688"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Entity</b> (<a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a> reflink, int startX, int startY)</td></tr>
+<tr class="memitem:ac9ee430d9bfbcdbf90dd327224f64688"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#ac9ee430d9bfbcdbf90dd327224f64688">Entity</a> (<a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a> <a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a39134c8191ec2a293415d65d621f4e3e">reflink</a>, int startX, int startY)</td></tr>
+<tr class="memdesc:ac9ee430d9bfbcdbf90dd327224f64688"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="classPaooGame_1_1Entities_1_1Entity.html" title="An abstract base class for all game entities (e.g., Player, Enemy).">Entity</a> object.  <a href="classPaooGame_1_1Entities_1_1Entity.html#ac9ee430d9bfbcdbf90dd327224f64688">More...</a><br /></td></tr>
 <tr class="separator:ac9ee430d9bfbcdbf90dd327224f64688"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a609ed68e1ccbe4909eaa72c893d54e0c"><td class="memItemLeft" align="right" valign="top"><a id="a609ed68e1ccbe4909eaa72c893d54e0c"></a>
-abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()</td></tr>
+<tr class="memitem:a609ed68e1ccbe4909eaa72c893d54e0c"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a609ed68e1ccbe4909eaa72c893d54e0c">update</a> ()</td></tr>
+<tr class="memdesc:a609ed68e1ccbe4909eaa72c893d54e0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method for updating the entity's state.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a609ed68e1ccbe4909eaa72c893d54e0c">More...</a><br /></td></tr>
 <tr class="separator:a609ed68e1ccbe4909eaa72c893d54e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca135637541e81579a66b0312e7185dc"><td class="memItemLeft" align="right" valign="top"><a id="aca135637541e81579a66b0312e7185dc"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getX</b> ()</td></tr>
+<tr class="memitem:aca135637541e81579a66b0312e7185dc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#aca135637541e81579a66b0312e7185dc">getX</a> ()</td></tr>
+<tr class="memdesc:aca135637541e81579a66b0312e7185dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the x-coordinate of the entity.  <a href="classPaooGame_1_1Entities_1_1Entity.html#aca135637541e81579a66b0312e7185dc">More...</a><br /></td></tr>
 <tr class="separator:aca135637541e81579a66b0312e7185dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fef6592c1538338be910a21d03ad342"><td class="memItemLeft" align="right" valign="top"><a id="a1fef6592c1538338be910a21d03ad342"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setX</b> (float x)</td></tr>
+<tr class="memitem:a1fef6592c1538338be910a21d03ad342"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a1fef6592c1538338be910a21d03ad342">setX</a> (float <a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a5a7f4280a2e1f43d5e55940dfb8a00ad">x</a>)</td></tr>
+<tr class="memdesc:a1fef6592c1538338be910a21d03ad342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the x-coordinate of the entity.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a1fef6592c1538338be910a21d03ad342">More...</a><br /></td></tr>
 <tr class="separator:a1fef6592c1538338be910a21d03ad342"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86ebd2ff06da83bc638ddff41b3ab6f9"><td class="memItemLeft" align="right" valign="top"><a id="a86ebd2ff06da83bc638ddff41b3ab6f9"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getY</b> ()</td></tr>
+<tr class="memitem:a86ebd2ff06da83bc638ddff41b3ab6f9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a86ebd2ff06da83bc638ddff41b3ab6f9">getY</a> ()</td></tr>
+<tr class="memdesc:a86ebd2ff06da83bc638ddff41b3ab6f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the y-coordinate of the entity.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a86ebd2ff06da83bc638ddff41b3ab6f9">More...</a><br /></td></tr>
 <tr class="separator:a86ebd2ff06da83bc638ddff41b3ab6f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad6d0a3d96378218d9a53dd57887b4fd"><td class="memItemLeft" align="right" valign="top"><a id="aad6d0a3d96378218d9a53dd57887b4fd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setY</b> (float y)</td></tr>
+<tr class="memitem:aad6d0a3d96378218d9a53dd57887b4fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#aad6d0a3d96378218d9a53dd57887b4fd">setY</a> (float <a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a754d9006adabe2bb959780f2f6ae0a00">y</a>)</td></tr>
+<tr class="memdesc:aad6d0a3d96378218d9a53dd57887b4fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the y-coordinate of the entity.  <a href="classPaooGame_1_1Entities_1_1Entity.html#aad6d0a3d96378218d9a53dd57887b4fd">More...</a><br /></td></tr>
 <tr class="separator:aad6d0a3d96378218d9a53dd57887b4fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24e6fd99de2f54be543ef38439f23631"><td class="memItemLeft" align="right" valign="top"><a id="a24e6fd99de2f54be543ef38439f23631"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getWidth</b> ()</td></tr>
+<tr class="memitem:a24e6fd99de2f54be543ef38439f23631"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a24e6fd99de2f54be543ef38439f23631">getWidth</a> ()</td></tr>
+<tr class="memdesc:a24e6fd99de2f54be543ef38439f23631"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the width of the entity's hitbox.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a24e6fd99de2f54be543ef38439f23631">More...</a><br /></td></tr>
 <tr class="separator:a24e6fd99de2f54be543ef38439f23631"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad65597fcd4a970f144d4b1b231971a13"><td class="memItemLeft" align="right" valign="top"><a id="ad65597fcd4a970f144d4b1b231971a13"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getHeight</b> ()</td></tr>
+<tr class="memitem:ad65597fcd4a970f144d4b1b231971a13"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#ad65597fcd4a970f144d4b1b231971a13">getHeight</a> ()</td></tr>
+<tr class="memdesc:ad65597fcd4a970f144d4b1b231971a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the height of the entity's hitbox.  <a href="classPaooGame_1_1Entities_1_1Entity.html#ad65597fcd4a970f144d4b1b231971a13">More...</a><br /></td></tr>
 <tr class="separator:ad65597fcd4a970f144d4b1b231971a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5883aecae984cff302dc1db89a93d241"><td class="memItemLeft" align="right" valign="top"><a id="a5883aecae984cff302dc1db89a93d241"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getHealth</b> ()</td></tr>
+<tr class="memitem:a5883aecae984cff302dc1db89a93d241"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a5883aecae984cff302dc1db89a93d241">getHealth</a> ()</td></tr>
+<tr class="memdesc:a5883aecae984cff302dc1db89a93d241"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current health of the entity.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a5883aecae984cff302dc1db89a93d241">More...</a><br /></td></tr>
 <tr class="separator:a5883aecae984cff302dc1db89a93d241"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc980546f47d3c5e75cc5fb6022586b9"><td class="memItemLeft" align="right" valign="top"><a id="afc980546f47d3c5e75cc5fb6022586b9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setHealth</b> (double health)</td></tr>
+<tr class="memitem:afc980546f47d3c5e75cc5fb6022586b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#afc980546f47d3c5e75cc5fb6022586b9">setHealth</a> (double <a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a82f065a949448571f52fd4cd2699e7ac">health</a>)</td></tr>
+<tr class="memdesc:afc980546f47d3c5e75cc5fb6022586b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the health of the entity.  <a href="classPaooGame_1_1Entities_1_1Entity.html#afc980546f47d3c5e75cc5fb6022586b9">More...</a><br /></td></tr>
 <tr class="separator:afc980546f47d3c5e75cc5fb6022586b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e8246dc9f7aa92b57c17adff714a995"><td class="memItemLeft" align="right" valign="top"><a id="a7e8246dc9f7aa92b57c17adff714a995"></a>
-<a class="el" href="classPaooGame_1_1Hitbox_1_1Hitbox.html">Hitbox</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getHitbox</b> ()</td></tr>
+<tr class="memitem:a7e8246dc9f7aa92b57c17adff714a995"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPaooGame_1_1Hitbox_1_1Hitbox.html">Hitbox</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a7e8246dc9f7aa92b57c17adff714a995">getHitbox</a> ()</td></tr>
+<tr class="memdesc:a7e8246dc9f7aa92b57c17adff714a995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the hitbox of the entity.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a7e8246dc9f7aa92b57c17adff714a995">More...</a><br /></td></tr>
 <tr class="separator:a7e8246dc9f7aa92b57c17adff714a995"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae017eda742896804402c0babf55b3a61"><td class="memItemLeft" align="right" valign="top"><a id="ae017eda742896804402c0babf55b3a61"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setHitbox</b> (<a class="el" href="classPaooGame_1_1Hitbox_1_1Hitbox.html">Hitbox</a> hitbox)</td></tr>
+<tr class="memitem:ae017eda742896804402c0babf55b3a61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#ae017eda742896804402c0babf55b3a61">setHitbox</a> (<a class="el" href="classPaooGame_1_1Hitbox_1_1Hitbox.html">Hitbox</a> <a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#aa69542bc8275bf0e4a7e983a85353059">hitbox</a>)</td></tr>
+<tr class="memdesc:ae017eda742896804402c0babf55b3a61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the hitbox for the entity.  <a href="classPaooGame_1_1Entities_1_1Entity.html#ae017eda742896804402c0babf55b3a61">More...</a><br /></td></tr>
 <tr class="separator:ae017eda742896804402c0babf55b3a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad20f82d7ea3449d60cdb9811ce5cce8c"><td class="memItemLeft" align="right" valign="top"><a id="ad20f82d7ea3449d60cdb9811ce5cce8c"></a>
-<a class="el" href="classPaooGame_1_1HUD_1_1HealthBar.html">HealthBar</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getHealthBar</b> ()</td></tr>
+<tr class="memitem:ad20f82d7ea3449d60cdb9811ce5cce8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPaooGame_1_1HUD_1_1HealthBar.html">HealthBar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#ad20f82d7ea3449d60cdb9811ce5cce8c">getHealthBar</a> ()</td></tr>
+<tr class="memdesc:ad20f82d7ea3449d60cdb9811ce5cce8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the health bar associated with this entity.  <a href="classPaooGame_1_1Entities_1_1Entity.html#ad20f82d7ea3449d60cdb9811ce5cce8c">More...</a><br /></td></tr>
 <tr class="separator:ad20f82d7ea3449d60cdb9811ce5cce8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfaf1c8f846c7d57d547b5f1b2b16baa"><td class="memItemLeft" align="right" valign="top"><a id="abfaf1c8f846c7d57d547b5f1b2b16baa"></a>
-boolean&#160;</td><td class="memItemRight" valign="bottom"><b>getIsEngaged</b> ()</td></tr>
+<tr class="memitem:abfaf1c8f846c7d57d547b5f1b2b16baa"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#abfaf1c8f846c7d57d547b5f1b2b16baa">getIsEngaged</a> ()</td></tr>
+<tr class="memdesc:abfaf1c8f846c7d57d547b5f1b2b16baa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the entity is currently engaged.  <a href="classPaooGame_1_1Entities_1_1Entity.html#abfaf1c8f846c7d57d547b5f1b2b16baa">More...</a><br /></td></tr>
 <tr class="separator:abfaf1c8f846c7d57d547b5f1b2b16baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a385a8922e8cfd820fa945bf242212332"><td class="memItemLeft" align="right" valign="top"><a id="a385a8922e8cfd820fa945bf242212332"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setIsEngaged</b> (boolean isEngaged)</td></tr>
+<tr class="memitem:a385a8922e8cfd820fa945bf242212332"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a385a8922e8cfd820fa945bf242212332">setIsEngaged</a> (boolean <a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a6173afe9a80119b98e55253a9dce6711">isEngaged</a>)</td></tr>
+<tr class="memdesc:a385a8922e8cfd820fa945bf242212332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the engagement status of the entity.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a385a8922e8cfd820fa945bf242212332">More...</a><br /></td></tr>
 <tr class="separator:a385a8922e8cfd820fa945bf242212332"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9799c0ae8d84476e423066f29e74048c"><td class="memItemLeft" align="right" valign="top"><a id="a9799c0ae8d84476e423066f29e74048c"></a>
-abstract String&#160;</td><td class="memItemRight" valign="bottom"><b>getName</b> ()</td></tr>
+<tr class="memitem:a9799c0ae8d84476e423066f29e74048c"><td class="memItemLeft" align="right" valign="top">abstract String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a9799c0ae8d84476e423066f29e74048c">getName</a> ()</td></tr>
+<tr class="memdesc:a9799c0ae8d84476e423066f29e74048c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method to get the name of the entity.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a9799c0ae8d84476e423066f29e74048c">More...</a><br /></td></tr>
 <tr class="separator:a9799c0ae8d84476e423066f29e74048c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af35e9ed0f19e6be0e0e305cb109c0c33"><td class="memItemLeft" align="right" valign="top"><a id="af35e9ed0f19e6be0e0e305cb109c0c33"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DrawHealthBar</b> (Graphics g)</td></tr>
+<tr class="memitem:af35e9ed0f19e6be0e0e305cb109c0c33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#af35e9ed0f19e6be0e0e305cb109c0c33">DrawHealthBar</a> (Graphics g)</td></tr>
+<tr class="memdesc:af35e9ed0f19e6be0e0e305cb109c0c33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the entity's health bar.  <a href="classPaooGame_1_1Entities_1_1Entity.html#af35e9ed0f19e6be0e0e305cb109c0c33">More...</a><br /></td></tr>
 <tr class="separator:af35e9ed0f19e6be0e0e305cb109c0c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42fcee2d3c5efa59e59025b783148d45"><td class="memItemLeft" align="right" valign="top"><a id="a42fcee2d3c5efa59e59025b783148d45"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setHealthBarX</b> (int x)</td></tr>
+<tr class="memitem:a42fcee2d3c5efa59e59025b783148d45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a42fcee2d3c5efa59e59025b783148d45">setHealthBarX</a> (int <a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a5a7f4280a2e1f43d5e55940dfb8a00ad">x</a>)</td></tr>
+<tr class="memdesc:a42fcee2d3c5efa59e59025b783148d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the x-coordinate of the health bar.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a42fcee2d3c5efa59e59025b783148d45">More...</a><br /></td></tr>
 <tr class="separator:a42fcee2d3c5efa59e59025b783148d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c81f1b0748349fabb7e9a6d435f8f2a"><td class="memItemLeft" align="right" valign="top"><a id="a7c81f1b0748349fabb7e9a6d435f8f2a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setHealthBarY</b> (int y)</td></tr>
+<tr class="memitem:a7c81f1b0748349fabb7e9a6d435f8f2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a7c81f1b0748349fabb7e9a6d435f8f2a">setHealthBarY</a> (int <a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a754d9006adabe2bb959780f2f6ae0a00">y</a>)</td></tr>
+<tr class="memdesc:a7c81f1b0748349fabb7e9a6d435f8f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the y-coordinate of the health bar.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a7c81f1b0748349fabb7e9a6d435f8f2a">More...</a><br /></td></tr>
 <tr class="separator:a7c81f1b0748349fabb7e9a6d435f8f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabbb741ad7196c95de5f9d98c8206211"><td class="memItemLeft" align="right" valign="top"><a id="aabbb741ad7196c95de5f9d98c8206211"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setHealthBarWidth</b> (int width)</td></tr>
+<tr class="memitem:aabbb741ad7196c95de5f9d98c8206211"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#aabbb741ad7196c95de5f9d98c8206211">setHealthBarWidth</a> (int width)</td></tr>
+<tr class="memdesc:aabbb741ad7196c95de5f9d98c8206211"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the width of the health bar.  <a href="classPaooGame_1_1Entities_1_1Entity.html#aabbb741ad7196c95de5f9d98c8206211">More...</a><br /></td></tr>
 <tr class="separator:aabbb741ad7196c95de5f9d98c8206211"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbbf832891a7ed89935283faa1728ebf"><td class="memItemLeft" align="right" valign="top"><a id="adbbf832891a7ed89935283faa1728ebf"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setHealthBarHeight</b> (int height)</td></tr>
+<tr class="memitem:adbbf832891a7ed89935283faa1728ebf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#adbbf832891a7ed89935283faa1728ebf">setHealthBarHeight</a> (int height)</td></tr>
+<tr class="memdesc:adbbf832891a7ed89935283faa1728ebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the height of the health bar.  <a href="classPaooGame_1_1Entities_1_1Entity.html#adbbf832891a7ed89935283faa1728ebf">More...</a><br /></td></tr>
 <tr class="separator:adbbf832891a7ed89935283faa1728ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa716b3d315c6befe5614a00de221db45"><td class="memItemLeft" align="right" valign="top"><a id="aa716b3d315c6befe5614a00de221db45"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getHealthBarX</b> ()</td></tr>
+<tr class="memitem:aa716b3d315c6befe5614a00de221db45"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#aa716b3d315c6befe5614a00de221db45">getHealthBarX</a> ()</td></tr>
+<tr class="memdesc:aa716b3d315c6befe5614a00de221db45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the x-coordinate of the health bar.  <a href="classPaooGame_1_1Entities_1_1Entity.html#aa716b3d315c6befe5614a00de221db45">More...</a><br /></td></tr>
 <tr class="separator:aa716b3d315c6befe5614a00de221db45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3444bcb533dabfb3ba11fc5d5936ebc"><td class="memItemLeft" align="right" valign="top"><a id="aa3444bcb533dabfb3ba11fc5d5936ebc"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getHealthBarY</b> ()</td></tr>
+<tr class="memitem:aa3444bcb533dabfb3ba11fc5d5936ebc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#aa3444bcb533dabfb3ba11fc5d5936ebc">getHealthBarY</a> ()</td></tr>
+<tr class="memdesc:aa3444bcb533dabfb3ba11fc5d5936ebc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the y-coordinate of the health bar.  <a href="classPaooGame_1_1Entities_1_1Entity.html#aa3444bcb533dabfb3ba11fc5d5936ebc">More...</a><br /></td></tr>
 <tr class="separator:aa3444bcb533dabfb3ba11fc5d5936ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad549b5fa0269b45317c25b89cb0e214b"><td class="memItemLeft" align="right" valign="top"><a id="ad549b5fa0269b45317c25b89cb0e214b"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getHealthBarWidth</b> ()</td></tr>
+<tr class="memitem:ad549b5fa0269b45317c25b89cb0e214b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#ad549b5fa0269b45317c25b89cb0e214b">getHealthBarWidth</a> ()</td></tr>
+<tr class="memdesc:ad549b5fa0269b45317c25b89cb0e214b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the width of the health bar.  <a href="classPaooGame_1_1Entities_1_1Entity.html#ad549b5fa0269b45317c25b89cb0e214b">More...</a><br /></td></tr>
 <tr class="separator:ad549b5fa0269b45317c25b89cb0e214b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a7b69d47db905f691e2a36318a75a67"><td class="memItemLeft" align="right" valign="top"><a id="a3a7b69d47db905f691e2a36318a75a67"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getHealthBarHeight</b> ()</td></tr>
+<tr class="memitem:a3a7b69d47db905f691e2a36318a75a67"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a3a7b69d47db905f691e2a36318a75a67">getHealthBarHeight</a> ()</td></tr>
+<tr class="memdesc:a3a7b69d47db905f691e2a36318a75a67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the height of the health bar.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a3a7b69d47db905f691e2a36318a75a67">More...</a><br /></td></tr>
 <tr class="separator:a3a7b69d47db905f691e2a36318a75a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e2eb0574cccae1cca2f796ce88b90ec"><td class="memItemLeft" align="right" valign="top"><a id="a9e2eb0574cccae1cca2f796ce88b90ec"></a>
-Color&#160;</td><td class="memItemRight" valign="bottom"><b>getHealthBarColor1</b> ()</td></tr>
+<tr class="memitem:a9e2eb0574cccae1cca2f796ce88b90ec"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a9e2eb0574cccae1cca2f796ce88b90ec">getHealthBarColor1</a> ()</td></tr>
+<tr class="memdesc:a9e2eb0574cccae1cca2f796ce88b90ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the primary color of the health bar.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a9e2eb0574cccae1cca2f796ce88b90ec">More...</a><br /></td></tr>
 <tr class="separator:a9e2eb0574cccae1cca2f796ce88b90ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54602d0b1b70210b6677643c6a1b75d5"><td class="memItemLeft" align="right" valign="top"><a id="a54602d0b1b70210b6677643c6a1b75d5"></a>
-Color&#160;</td><td class="memItemRight" valign="bottom"><b>getHealthBarColor2</b> ()</td></tr>
+<tr class="memitem:a54602d0b1b70210b6677643c6a1b75d5"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a54602d0b1b70210b6677643c6a1b75d5">getHealthBarColor2</a> ()</td></tr>
+<tr class="memdesc:a54602d0b1b70210b6677643c6a1b75d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the secondary color of the health bar.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a54602d0b1b70210b6677643c6a1b75d5">More...</a><br /></td></tr>
 <tr class="separator:a54602d0b1b70210b6677643c6a1b75d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac87cc8914c90d30d7f3c498b0b52309e"><td class="memItemLeft" align="right" valign="top"><a id="ac87cc8914c90d30d7f3c498b0b52309e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setHealthBarColor1</b> (Color color1)</td></tr>
+<tr class="memitem:ac87cc8914c90d30d7f3c498b0b52309e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#ac87cc8914c90d30d7f3c498b0b52309e">setHealthBarColor1</a> (Color color1)</td></tr>
+<tr class="memdesc:ac87cc8914c90d30d7f3c498b0b52309e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the primary color of the health bar.  <a href="classPaooGame_1_1Entities_1_1Entity.html#ac87cc8914c90d30d7f3c498b0b52309e">More...</a><br /></td></tr>
 <tr class="separator:ac87cc8914c90d30d7f3c498b0b52309e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a07a8d4f07bc16bac999a9a0c48f125"><td class="memItemLeft" align="right" valign="top"><a id="a0a07a8d4f07bc16bac999a9a0c48f125"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setHealthBarColor2</b> (Color color2)</td></tr>
+<tr class="memitem:a0a07a8d4f07bc16bac999a9a0c48f125"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a0a07a8d4f07bc16bac999a9a0c48f125">setHealthBarColor2</a> (Color color2)</td></tr>
+<tr class="memdesc:a0a07a8d4f07bc16bac999a9a0c48f125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the secondary color of the health bar.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a0a07a8d4f07bc16bac999a9a0c48f125">More...</a><br /></td></tr>
 <tr class="separator:a0a07a8d4f07bc16bac999a9a0c48f125"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b86a24fd65dfe18d9b48d9dcbcc54b9"><td class="memItemLeft" align="right" valign="top"><a id="a6b86a24fd65dfe18d9b48d9dcbcc54b9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resetHealthBarDefaultValues</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a6b86a24fd65dfe18d9b48d9dcbcc54b9">resetHealthBarDefaultValues</a> ()</td></tr>
+<tr class="memdesc:a6b86a24fd65dfe18d9b48d9dcbcc54b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the health bar's position to its default values. <br /></td></tr>
 <tr class="separator:a6b86a24fd65dfe18d9b48d9dcbcc54b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f4b3c97b647c249dedbe507ebf7656a"><td class="memItemLeft" align="right" valign="top"><a id="a6f4b3c97b647c249dedbe507ebf7656a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>reduceHealth</b> (double health)</td></tr>
+<tr class="memitem:a6f4b3c97b647c249dedbe507ebf7656a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a6f4b3c97b647c249dedbe507ebf7656a">reduceHealth</a> (double <a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a82f065a949448571f52fd4cd2699e7ac">health</a>)</td></tr>
+<tr class="memdesc:a6f4b3c97b647c249dedbe507ebf7656a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduces the entity's health by a specified amount. Health will not go below 0.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a6f4b3c97b647c249dedbe507ebf7656a">More...</a><br /></td></tr>
 <tr class="separator:a6f4b3c97b647c249dedbe507ebf7656a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add537c8bab2c3c9bf4725888ce8f0f10"><td class="memItemLeft" align="right" valign="top"><a id="add537c8bab2c3c9bf4725888ce8f0f10"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>restoreHealth</b> (double health)</td></tr>
+<tr class="memitem:add537c8bab2c3c9bf4725888ce8f0f10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#add537c8bab2c3c9bf4725888ce8f0f10">restoreHealth</a> (double <a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a82f065a949448571f52fd4cd2699e7ac">health</a>)</td></tr>
+<tr class="memdesc:add537c8bab2c3c9bf4725888ce8f0f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restores the entity's health by a specified amount. Health will not exceed 100 (or a predefined maximum).  <a href="classPaooGame_1_1Entities_1_1Entity.html#add537c8bab2c3c9bf4725888ce8f0f10">More...</a><br /></td></tr>
 <tr class="separator:add537c8bab2c3c9bf4725888ce8f0f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a550a87f558004ebf49887e38af2c2f6e"><td class="memItemLeft" align="right" valign="top"><a id="a550a87f558004ebf49887e38af2c2f6e"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getDamage</b> ()</td></tr>
+<tr class="memitem:a550a87f558004ebf49887e38af2c2f6e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a550a87f558004ebf49887e38af2c2f6e">getDamage</a> ()</td></tr>
+<tr class="memdesc:a550a87f558004ebf49887e38af2c2f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the damage value of the entity.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a550a87f558004ebf49887e38af2c2f6e">More...</a><br /></td></tr>
 <tr class="separator:a550a87f558004ebf49887e38af2c2f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae29a5d88a8b9d70a0a36015d74e0c255"><td class="memItemLeft" align="right" valign="top"><a id="ae29a5d88a8b9d70a0a36015d74e0c255"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setDamage</b> (double damage)</td></tr>
+<tr class="memitem:ae29a5d88a8b9d70a0a36015d74e0c255"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#ae29a5d88a8b9d70a0a36015d74e0c255">setDamage</a> (double <a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#ad1b4a6dcd093a4a2bca444708c0a1319">damage</a>)</td></tr>
+<tr class="memdesc:ae29a5d88a8b9d70a0a36015d74e0c255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the damage value for the entity.  <a href="classPaooGame_1_1Entities_1_1Entity.html#ae29a5d88a8b9d70a0a36015d74e0c255">More...</a><br /></td></tr>
 <tr class="separator:ae29a5d88a8b9d70a0a36015d74e0c255"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa124f650cbaf3f7a41233f949a4077f4"><td class="memItemLeft" align="right" valign="top"><a id="aa124f650cbaf3f7a41233f949a4077f4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>nullifyHitbox</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#aa124f650cbaf3f7a41233f949a4077f4">nullifyHitbox</a> ()</td></tr>
+<tr class="memdesc:aa124f650cbaf3f7a41233f949a4077f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nullifies the entity's hitbox by setting its position and dimensions to zero. This effectively makes the entity non-collidable. <br /></td></tr>
 <tr class="separator:aa124f650cbaf3f7a41233f949a4077f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4312adff6ad5174f9f8c86da55a154c6"><td class="memItemLeft" align="right" valign="top"><a id="a4312adff6ad5174f9f8c86da55a154c6"></a>
-abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>restoreEntity</b> ()</td></tr>
+abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a4312adff6ad5174f9f8c86da55a154c6">restoreEntity</a> ()</td></tr>
+<tr class="memdesc:a4312adff6ad5174f9f8c86da55a154c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method to restore the entity to its initial or a saved state. Subclasses must implement this to define how the entity is reset. <br /></td></tr>
 <tr class="separator:a4312adff6ad5174f9f8c86da55a154c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a314eb8c8706a24588a456175912b980a"><td class="memItemLeft" align="right" valign="top"><a id="a314eb8c8706a24588a456175912b980a"></a>
-abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>attack</b> ()</td></tr>
+abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a314eb8c8706a24588a456175912b980a">attack</a> ()</td></tr>
+<tr class="memdesc:a314eb8c8706a24588a456175912b980a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method for the entity to perform an attack. Subclasses must implement this to define attack behavior. <br /></td></tr>
 <tr class="separator:a314eb8c8706a24588a456175912b980a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e5cb2edcb76acfc95af1d9c97ca7b1d"><td class="memItemLeft" align="right" valign="top"><a id="a9e5cb2edcb76acfc95af1d9c97ca7b1d"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getVelocityX</b> ()</td></tr>
+<tr class="memitem:a9e5cb2edcb76acfc95af1d9c97ca7b1d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a9e5cb2edcb76acfc95af1d9c97ca7b1d">getVelocityX</a> ()</td></tr>
+<tr class="memdesc:a9e5cb2edcb76acfc95af1d9c97ca7b1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the entity's current velocity on the x-axis.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a9e5cb2edcb76acfc95af1d9c97ca7b1d">More...</a><br /></td></tr>
 <tr class="separator:a9e5cb2edcb76acfc95af1d9c97ca7b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba3b2e9dcfa2b686dc7a9b4091ea7654"><td class="memItemLeft" align="right" valign="top"><a id="aba3b2e9dcfa2b686dc7a9b4091ea7654"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>getVelocityY</b> ()</td></tr>
+<tr class="memitem:aba3b2e9dcfa2b686dc7a9b4091ea7654"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#aba3b2e9dcfa2b686dc7a9b4091ea7654">getVelocityY</a> ()</td></tr>
+<tr class="memdesc:aba3b2e9dcfa2b686dc7a9b4091ea7654"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the entity's current velocity on the y-axis.  <a href="classPaooGame_1_1Entities_1_1Entity.html#aba3b2e9dcfa2b686dc7a9b4091ea7654">More...</a><br /></td></tr>
 <tr class="separator:aba3b2e9dcfa2b686dc7a9b4091ea7654"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1fa5f16c7311eaf764db9f8d37a63f1"><td class="memItemLeft" align="right" valign="top"><a id="ac1fa5f16c7311eaf764db9f8d37a63f1"></a>
-abstract String&#160;</td><td class="memItemRight" valign="bottom"><b>getSource</b> ()</td></tr>
+<tr class="memitem:ac1fa5f16c7311eaf764db9f8d37a63f1"><td class="memItemLeft" align="right" valign="top">abstract String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#ac1fa5f16c7311eaf764db9f8d37a63f1">getSource</a> ()</td></tr>
+<tr class="memdesc:ac1fa5f16c7311eaf764db9f8d37a63f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method to get the source path for the entity's sprites or assets.  <a href="classPaooGame_1_1Entities_1_1Entity.html#ac1fa5f16c7311eaf764db9f8d37a63f1">More...</a><br /></td></tr>
 <tr class="separator:ac1fa5f16c7311eaf764db9f8d37a63f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04f3ee24c766e00bc86239363a11bc8d"><td class="memItemLeft" align="right" valign="top"><a id="a04f3ee24c766e00bc86239363a11bc8d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> (Graphics g)</td></tr>
+<tr class="memitem:a04f3ee24c766e00bc86239363a11bc8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a04f3ee24c766e00bc86239363a11bc8d">draw</a> (Graphics g)</td></tr>
+<tr class="memdesc:a04f3ee24c766e00bc86239363a11bc8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the entity on the screen using its current animation.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a04f3ee24c766e00bc86239363a11bc8d">More...</a><br /></td></tr>
 <tr class="separator:a04f3ee24c766e00bc86239363a11bc8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04e16db596d0e02ff5b4bb044540b55d"><td class="memItemLeft" align="right" valign="top"><a id="a04e16db596d0e02ff5b4bb044540b55d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setIsFlipped</b> (boolean flipped)</td></tr>
+<tr class="memitem:a04e16db596d0e02ff5b4bb044540b55d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a04e16db596d0e02ff5b4bb044540b55d">setIsFlipped</a> (boolean <a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#ae5f46a35584387af29ac49da5a43c5ea">flipped</a>)</td></tr>
+<tr class="memdesc:a04e16db596d0e02ff5b4bb044540b55d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether the entity's sprite should be flipped horizontally.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a04e16db596d0e02ff5b4bb044540b55d">More...</a><br /></td></tr>
 <tr class="separator:a04e16db596d0e02ff5b4bb044540b55d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca92255f686d5a823a870832052d4568"><td class="memItemLeft" align="right" valign="top"><a id="aca92255f686d5a823a870832052d4568"></a>
-boolean&#160;</td><td class="memItemRight" valign="bottom"><b>getIsFlipped</b> ()</td></tr>
+<tr class="memitem:aca92255f686d5a823a870832052d4568"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#aca92255f686d5a823a870832052d4568">getIsFlipped</a> ()</td></tr>
+<tr class="memdesc:aca92255f686d5a823a870832052d4568"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the entity's sprite is currently flipped.  <a href="classPaooGame_1_1Entities_1_1Entity.html#aca92255f686d5a823a870832052d4568">More...</a><br /></td></tr>
 <tr class="separator:aca92255f686d5a823a870832052d4568"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ab3bba8b3192c08c332871b7faa44ddcd"><td class="memItemLeft" align="right" valign="top"><a id="ab3bba8b3192c08c332871b7faa44ddcd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>applyGravity</b> ()</td></tr>
+<tr class="memitem:ab3bba8b3192c08c332871b7faa44ddcd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#ab3bba8b3192c08c332871b7faa44ddcd">applyGravity</a> ()</td></tr>
+<tr class="memdesc:ab3bba8b3192c08c332871b7faa44ddcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies gravitational force to the entity if it is not grounded.  <a href="classPaooGame_1_1Entities_1_1Entity.html#ab3bba8b3192c08c332871b7faa44ddcd">More...</a><br /></td></tr>
 <tr class="separator:ab3bba8b3192c08c332871b7faa44ddcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd3a7f2558ed324785228ba7d6c21303"><td class="memItemLeft" align="right" valign="top"><a id="acd3a7f2558ed324785228ba7d6c21303"></a>
-abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>moveAndCollide</b> ()</td></tr>
+<tr class="memitem:acd3a7f2558ed324785228ba7d6c21303"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#acd3a7f2558ed324785228ba7d6c21303">moveAndCollide</a> ()</td></tr>
+<tr class="memdesc:acd3a7f2558ed324785228ba7d6c21303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method for handling entity movement and collision detection.  <a href="classPaooGame_1_1Entities_1_1Entity.html#acd3a7f2558ed324785228ba7d6c21303">More...</a><br /></td></tr>
 <tr class="separator:acd3a7f2558ed324785228ba7d6c21303"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ee8496dd57eb06716d84b49a4e9362a"><td class="memItemLeft" align="right" valign="top"><a id="a1ee8496dd57eb06716d84b49a4e9362a"></a>
-abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>updateVisualPosition</b> ()</td></tr>
+<tr class="memitem:a1ee8496dd57eb06716d84b49a4e9362a"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a1ee8496dd57eb06716d84b49a4e9362a">updateVisualPosition</a> ()</td></tr>
+<tr class="memdesc:a1ee8496dd57eb06716d84b49a4e9362a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method for updating the entity's visual position.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a1ee8496dd57eb06716d84b49a4e9362a">More...</a><br /></td></tr>
 <tr class="separator:a1ee8496dd57eb06716d84b49a4e9362a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a720a90333cbf2d29327b9e60ef669672"><td class="memItemLeft" align="right" valign="top"><a id="a720a90333cbf2d29327b9e60ef669672"></a>
-abstract <a class="el" href="classPaooGame_1_1Animations_1_1Animation.html">Animation</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getAnimationByState</b> ()</td></tr>
+<tr class="memitem:a720a90333cbf2d29327b9e60ef669672"><td class="memItemLeft" align="right" valign="top">abstract <a class="el" href="classPaooGame_1_1Animations_1_1Animation.html">Animation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a720a90333cbf2d29327b9e60ef669672">getAnimationByState</a> ()</td></tr>
+<tr class="memdesc:a720a90333cbf2d29327b9e60ef669672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method for retrieving the current animation based on the entity's state.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a720a90333cbf2d29327b9e60ef669672">More...</a><br /></td></tr>
 <tr class="separator:a720a90333cbf2d29327b9e60ef669672"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a979b0cb8ca9e01a36c5e9683b900eefe"><td class="memItemLeft" align="right" valign="top"><a id="a979b0cb8ca9e01a36c5e9683b900eefe"></a>
-abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>updateAnimationState</b> ()</td></tr>
+<tr class="memitem:a979b0cb8ca9e01a36c5e9683b900eefe"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a979b0cb8ca9e01a36c5e9683b900eefe">updateAnimationState</a> ()</td></tr>
+<tr class="memdesc:a979b0cb8ca9e01a36c5e9683b900eefe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method for updating the entity's animation state.  <a href="classPaooGame_1_1Entities_1_1Entity.html#a979b0cb8ca9e01a36c5e9683b900eefe">More...</a><br /></td></tr>
 <tr class="separator:a979b0cb8ca9e01a36c5e9683b900eefe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a5a7f4280a2e1f43d5e55940dfb8a00ad"><td class="memItemLeft" align="right" valign="top"><a id="a5a7f4280a2e1f43d5e55940dfb8a00ad"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>x</b></td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a5a7f4280a2e1f43d5e55940dfb8a00ad">x</a></td></tr>
+<tr class="memdesc:a5a7f4280a2e1f43d5e55940dfb8a00ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">The x-coordinate of the entity's position. <br /></td></tr>
 <tr class="separator:a5a7f4280a2e1f43d5e55940dfb8a00ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a754d9006adabe2bb959780f2f6ae0a00"><td class="memItemLeft" align="right" valign="top"><a id="a754d9006adabe2bb959780f2f6ae0a00"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>y</b></td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a754d9006adabe2bb959780f2f6ae0a00">y</a></td></tr>
+<tr class="memdesc:a754d9006adabe2bb959780f2f6ae0a00"><td class="mdescLeft">&#160;</td><td class="mdescRight">The y-coordinate of the entity's position. <br /></td></tr>
 <tr class="separator:a754d9006adabe2bb959780f2f6ae0a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09c3e5217deb2f4b43a84bf64dc1beb7"><td class="memItemLeft" align="right" valign="top"><a id="a09c3e5217deb2f4b43a84bf64dc1beb7"></a>
-int[]&#160;</td><td class="memItemRight" valign="bottom"><b>behaviorIDsToRespect</b></td></tr>
+int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a09c3e5217deb2f4b43a84bf64dc1beb7">behaviorIDsToRespect</a></td></tr>
+<tr class="memdesc:a09c3e5217deb2f4b43a84bf64dc1beb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of tile behavior IDs that this entity should respect or interact with. <br /></td></tr>
 <tr class="separator:a09c3e5217deb2f4b43a84bf64dc1beb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6173afe9a80119b98e55253a9dce6711"><td class="memItemLeft" align="right" valign="top"><a id="a6173afe9a80119b98e55253a9dce6711"></a>
-boolean&#160;</td><td class="memItemRight" valign="bottom"><b>isEngaged</b></td></tr>
+boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a6173afe9a80119b98e55253a9dce6711">isEngaged</a></td></tr>
+<tr class="memdesc:a6173afe9a80119b98e55253a9dce6711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag indicating if the entity is currently engaged in combat or a specific interaction. <br /></td></tr>
 <tr class="separator:a6173afe9a80119b98e55253a9dce6711"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac73c2597057b818609e856f813115d69"><td class="memItemLeft" align="right" valign="top"><a id="ac73c2597057b818609e856f813115d69"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>gravity</b></td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#ac73c2597057b818609e856f813115d69">gravity</a></td></tr>
+<tr class="memdesc:ac73c2597057b818609e856f813115d69"><td class="mdescLeft">&#160;</td><td class="mdescRight">The gravitational force applied to the entity. <br /></td></tr>
 <tr class="separator:ac73c2597057b818609e856f813115d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0a6b0e49271594c6b2a12fa457c8216"><td class="memItemLeft" align="right" valign="top"><a id="ac0a6b0e49271594c6b2a12fa457c8216"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>maxFallSpeed</b></td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#ac0a6b0e49271594c6b2a12fa457c8216">maxFallSpeed</a></td></tr>
+<tr class="memdesc:ac0a6b0e49271594c6b2a12fa457c8216"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum speed at which the entity can fall. <br /></td></tr>
 <tr class="separator:ac0a6b0e49271594c6b2a12fa457c8216"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5db9a18fd080ac339d598cea6b23826"><td class="memItemLeft" align="right" valign="top"><a id="af5db9a18fd080ac339d598cea6b23826"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>speed</b></td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#af5db9a18fd080ac339d598cea6b23826">speed</a></td></tr>
+<tr class="memdesc:af5db9a18fd080ac339d598cea6b23826"><td class="mdescLeft">&#160;</td><td class="mdescRight">The movement speed of the entity. <br /></td></tr>
 <tr class="separator:af5db9a18fd080ac339d598cea6b23826"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82f065a949448571f52fd4cd2699e7ac"><td class="memItemLeft" align="right" valign="top"><a id="a82f065a949448571f52fd4cd2699e7ac"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>health</b></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a82f065a949448571f52fd4cd2699e7ac">health</a></td></tr>
+<tr class="memdesc:a82f065a949448571f52fd4cd2699e7ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current health of the entity. <br /></td></tr>
 <tr class="separator:a82f065a949448571f52fd4cd2699e7ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1b4a6dcd093a4a2bca444708c0a1319"><td class="memItemLeft" align="right" valign="top"><a id="ad1b4a6dcd093a4a2bca444708c0a1319"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>damage</b></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#ad1b4a6dcd093a4a2bca444708c0a1319">damage</a></td></tr>
+<tr class="memdesc:ad1b4a6dcd093a4a2bca444708c0a1319"><td class="mdescLeft">&#160;</td><td class="mdescRight">The amount of damage this entity can inflict. <br /></td></tr>
 <tr class="separator:ad1b4a6dcd093a4a2bca444708c0a1319"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af67d200b51dcdf3669009d3322f829f5"><td class="memItemLeft" align="right" valign="top"><a id="af67d200b51dcdf3669009d3322f829f5"></a>
-boolean&#160;</td><td class="memItemRight" valign="bottom"><b>isGrounded</b></td></tr>
+boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#af67d200b51dcdf3669009d3322f829f5">isGrounded</a></td></tr>
+<tr class="memdesc:af67d200b51dcdf3669009d3322f829f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag indicating if the entity is currently on the ground. <br /></td></tr>
 <tr class="separator:af67d200b51dcdf3669009d3322f829f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5f46a35584387af29ac49da5a43c5ea"><td class="memItemLeft" align="right" valign="top"><a id="ae5f46a35584387af29ac49da5a43c5ea"></a>
-boolean&#160;</td><td class="memItemRight" valign="bottom"><b>flipped</b></td></tr>
+boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#ae5f46a35584387af29ac49da5a43c5ea">flipped</a></td></tr>
+<tr class="memdesc:ae5f46a35584387af29ac49da5a43c5ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag indicating if the entity's sprite should be flipped horizontally. <br /></td></tr>
 <tr class="separator:ae5f46a35584387af29ac49da5a43c5ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa69542bc8275bf0e4a7e983a85353059"><td class="memItemLeft" align="right" valign="top"><a id="aa69542bc8275bf0e4a7e983a85353059"></a>
-<a class="el" href="classPaooGame_1_1Hitbox_1_1Hitbox.html">Hitbox</a>&#160;</td><td class="memItemRight" valign="bottom"><b>hitbox</b></td></tr>
+<a class="el" href="classPaooGame_1_1Hitbox_1_1Hitbox.html">Hitbox</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#aa69542bc8275bf0e4a7e983a85353059">hitbox</a></td></tr>
+<tr class="memdesc:aa69542bc8275bf0e4a7e983a85353059"><td class="mdescLeft">&#160;</td><td class="mdescRight">The hitbox used for collision detection. <br /></td></tr>
 <tr class="separator:aa69542bc8275bf0e4a7e983a85353059"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39134c8191ec2a293415d65d621f4e3e"><td class="memItemLeft" align="right" valign="top"><a id="a39134c8191ec2a293415d65d621f4e3e"></a>
-<a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a>&#160;</td><td class="memItemRight" valign="bottom"><b>reflink</b></td></tr>
+<a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#a39134c8191ec2a293415d65d621f4e3e">reflink</a></td></tr>
+<tr class="memdesc:a39134c8191ec2a293415d65d621f4e3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A reference to shared game resources and utilities. <br /></td></tr>
 <tr class="separator:a39134c8191ec2a293415d65d621f4e3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7a5cab7d370e9cf3983827eef35d264"><td class="memItemLeft" align="right" valign="top"><a id="ac7a5cab7d370e9cf3983827eef35d264"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>velocityX</b></td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#ac7a5cab7d370e9cf3983827eef35d264">velocityX</a></td></tr>
+<tr class="memdesc:ac7a5cab7d370e9cf3983827eef35d264"><td class="mdescLeft">&#160;</td><td class="mdescRight">The entity's current velocity on the x-axis. <br /></td></tr>
 <tr class="separator:ac7a5cab7d370e9cf3983827eef35d264"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbbb7e0d7668467ce3b2dfc637a44a28"><td class="memItemLeft" align="right" valign="top"><a id="afbbb7e0d7668467ce3b2dfc637a44a28"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>velocityY</b></td></tr>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Entities_1_1Entity.html#afbbb7e0d7668467ce3b2dfc637a44a28">velocityY</a></td></tr>
+<tr class="memdesc:afbbb7e0d7668467ce3b2dfc637a44a28"><td class="mdescLeft">&#160;</td><td class="mdescRight">The entity's current velocity on the y-axis. <br /></td></tr>
 <tr class="separator:afbbb7e0d7668467ce3b2dfc637a44a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a841683ffac31262479e454dbe43712b1"><td class="memItemLeft" align="right" valign="top"><a id="a841683ffac31262479e454dbe43712b1"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>hitboxOffsetX</b> = 0</td></tr>
-<tr class="separator:a841683ffac31262479e454dbe43712b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f3477aef1039a1a9462b0ad6fbe952c"><td class="memItemLeft" align="right" valign="top"><a id="a0f3477aef1039a1a9462b0ad6fbe952c"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>hitboxOffsetY</b> = 0</td></tr>
-<tr class="separator:a0f3477aef1039a1a9462b0ad6fbe952c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>An abstract base class for all game entities (e.g., Player, <a class="el" href="classPaooGame_1_1Entities_1_1Enemy.html" title="Represents an enemy entity in the game.">Enemy</a>). </p>
+<p>This class provides common properties and functionalities for game entities, such as position, health, hitbox, and rendering. It defines abstract methods that subclasses must implement to define specific behaviors and appearances. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac9ee430d9bfbcdbf90dd327224f64688"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9ee430d9bfbcdbf90dd327224f64688">&#9670;&nbsp;</a></span>Entity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PaooGame.Entities.Entity.Entity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a>&#160;</td>
+          <td class="paramname"><em>reflink</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>startX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>startY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs an <a class="el" href="classPaooGame_1_1Entities_1_1Entity.html" title="An abstract base class for all game entities (e.g., Player, Enemy).">Entity</a> object. </p>
+<p>Initializes the entity's position, health bar, references, and default physics properties. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reflink</td><td>A reference to shared game resources. </td></tr>
+    <tr><td class="paramname">startX</td><td>The initial x-coordinate of the entity. </td></tr>
+    <tr><td class="paramname">startY</td><td>The initial y-coordinate of the entity. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab3bba8b3192c08c332871b7faa44ddcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3bba8b3192c08c332871b7faa44ddcd">&#9670;&nbsp;</a></span>applyGravity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Entities.Entity.applyGravity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Applies gravitational force to the entity if it is not grounded. </p>
+<p>Increases the vertical velocity (velocityY) by the gravity amount, up to the maximum fall speed. </p>
+
+</div>
+</div>
+<a id="a04f3ee24c766e00bc86239363a11bc8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04f3ee24c766e00bc86239363a11bc8d">&#9670;&nbsp;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Entities.Entity.draw </td>
+          <td>(</td>
+          <td class="paramtype">Graphics&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Draws the entity on the screen using its current animation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>The Graphics context to draw on. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classPaooGame_1_1Entities_1_1NPC.html#aac3e62840d2904b6bf76fc70992619ce">PaooGame.Entities.NPC</a>, and <a class="el" href="classPaooGame_1_1Entities_1_1Hero.html#acd7908e0c603876d2486845be56017a8">PaooGame.Entities.Hero</a>.</p>
+
+</div>
+</div>
+<a id="af35e9ed0f19e6be0e0e305cb109c0c33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af35e9ed0f19e6be0e0e305cb109c0c33">&#9670;&nbsp;</a></span>DrawHealthBar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Entities.Entity.DrawHealthBar </td>
+          <td>(</td>
+          <td class="paramtype">Graphics&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Draws the entity's health bar. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>The Graphics context to draw on. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a720a90333cbf2d29327b9e60ef669672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a720a90333cbf2d29327b9e60ef669672">&#9670;&nbsp;</a></span>getAnimationByState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract <a class="el" href="classPaooGame_1_1Animations_1_1Animation.html">Animation</a> PaooGame.Entities.Entity.getAnimationByState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Abstract method for retrieving the current animation based on the entity's state. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Animation object corresponding to the current state. </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classPaooGame_1_1Entities_1_1NPC.html#a8c7720f9e1e4926149c3fa5082d9cbfd">PaooGame.Entities.NPC</a>, <a class="el" href="classPaooGame_1_1Entities_1_1Hero.html#ac88a3c111419533753f48dd88769eae0">PaooGame.Entities.Hero</a>, and <a class="el" href="classPaooGame_1_1Entities_1_1Enemy.html#a54110eaac96d4485782d5bed5767cd49">PaooGame.Entities.Enemy</a>.</p>
+
+</div>
+</div>
+<a id="a550a87f558004ebf49887e38af2c2f6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a550a87f558004ebf49887e38af2c2f6e">&#9670;&nbsp;</a></span>getDamage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PaooGame.Entities.Entity.getDamage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the damage value of the entity. </p>
+<dl class="section return"><dt>Returns</dt><dd>The amount of damage the entity inflicts. </dd></dl>
+
+</div>
+</div>
+<a id="a5883aecae984cff302dc1db89a93d241"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5883aecae984cff302dc1db89a93d241">&#9670;&nbsp;</a></span>getHealth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PaooGame.Entities.Entity.getHealth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the current health of the entity. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current health value. </dd></dl>
+
+</div>
+</div>
+<a id="ad20f82d7ea3449d60cdb9811ce5cce8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad20f82d7ea3449d60cdb9811ce5cce8c">&#9670;&nbsp;</a></span>getHealthBar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPaooGame_1_1HUD_1_1HealthBar.html">HealthBar</a> PaooGame.Entities.Entity.getHealthBar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the health bar associated with this entity. </p>
+<dl class="section return"><dt>Returns</dt><dd>The HealthBar object. </dd></dl>
+
+</div>
+</div>
+<a id="a9e2eb0574cccae1cca2f796ce88b90ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e2eb0574cccae1cca2f796ce88b90ec">&#9670;&nbsp;</a></span>getHealthBarColor1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color PaooGame.Entities.Entity.getHealthBarColor1 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the primary color of the health bar. </p>
+<dl class="section return"><dt>Returns</dt><dd>The primary Color object. </dd></dl>
+
+</div>
+</div>
+<a id="a54602d0b1b70210b6677643c6a1b75d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54602d0b1b70210b6677643c6a1b75d5">&#9670;&nbsp;</a></span>getHealthBarColor2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color PaooGame.Entities.Entity.getHealthBarColor2 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the secondary color of the health bar. </p>
+<dl class="section return"><dt>Returns</dt><dd>The secondary Color object. </dd></dl>
+
+</div>
+</div>
+<a id="a3a7b69d47db905f691e2a36318a75a67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a7b69d47db905f691e2a36318a75a67">&#9670;&nbsp;</a></span>getHealthBarHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PaooGame.Entities.Entity.getHealthBarHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the height of the health bar. </p>
+<dl class="section return"><dt>Returns</dt><dd>The height of the health bar. </dd></dl>
+
+</div>
+</div>
+<a id="ad549b5fa0269b45317c25b89cb0e214b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad549b5fa0269b45317c25b89cb0e214b">&#9670;&nbsp;</a></span>getHealthBarWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PaooGame.Entities.Entity.getHealthBarWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the width of the health bar. </p>
+<dl class="section return"><dt>Returns</dt><dd>The width of the health bar. </dd></dl>
+
+</div>
+</div>
+<a id="aa716b3d315c6befe5614a00de221db45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa716b3d315c6befe5614a00de221db45">&#9670;&nbsp;</a></span>getHealthBarX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PaooGame.Entities.Entity.getHealthBarX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the x-coordinate of the health bar. </p>
+<dl class="section return"><dt>Returns</dt><dd>The x-coordinate of the health bar. </dd></dl>
+
+</div>
+</div>
+<a id="aa3444bcb533dabfb3ba11fc5d5936ebc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3444bcb533dabfb3ba11fc5d5936ebc">&#9670;&nbsp;</a></span>getHealthBarY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PaooGame.Entities.Entity.getHealthBarY </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the y-coordinate of the health bar. </p>
+<dl class="section return"><dt>Returns</dt><dd>The y-coordinate of the health bar. </dd></dl>
+
+</div>
+</div>
+<a id="ad65597fcd4a970f144d4b1b231971a13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad65597fcd4a970f144d4b1b231971a13">&#9670;&nbsp;</a></span>getHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PaooGame.Entities.Entity.getHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the height of the entity's hitbox. </p>
+<dl class="section return"><dt>Returns</dt><dd>The height of the hitbox. </dd></dl>
+
+</div>
+</div>
+<a id="a7e8246dc9f7aa92b57c17adff714a995"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e8246dc9f7aa92b57c17adff714a995">&#9670;&nbsp;</a></span>getHitbox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPaooGame_1_1Hitbox_1_1Hitbox.html">Hitbox</a> PaooGame.Entities.Entity.getHitbox </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the hitbox of the entity. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Hitbox object. </dd></dl>
+
+</div>
+</div>
+<a id="abfaf1c8f846c7d57d547b5f1b2b16baa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfaf1c8f846c7d57d547b5f1b2b16baa">&#9670;&nbsp;</a></span>getIsEngaged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean PaooGame.Entities.Entity.getIsEngaged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if the entity is currently engaged. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if engaged, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="aca92255f686d5a823a870832052d4568"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca92255f686d5a823a870832052d4568">&#9670;&nbsp;</a></span>getIsFlipped()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean PaooGame.Entities.Entity.getIsFlipped </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if the entity's sprite is currently flipped. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if flipped, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a9799c0ae8d84476e423066f29e74048c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9799c0ae8d84476e423066f29e74048c">&#9670;&nbsp;</a></span>getName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract String PaooGame.Entities.Entity.getName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Abstract method to get the name of the entity. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string representing the entity's name. </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classPaooGame_1_1Entities_1_1NPC.html#aaf1320c87fceda8896510cd8b5d62fbf">PaooGame.Entities.NPC</a>, <a class="el" href="classPaooGame_1_1Entities_1_1Hero.html#aac5b6469c151f5e42083684d38b26646">PaooGame.Entities.Hero</a>, and <a class="el" href="classPaooGame_1_1Entities_1_1Enemy.html#ab84284e71152f1bd347348f5962c88ad">PaooGame.Entities.Enemy</a>.</p>
+
+</div>
+</div>
+<a id="ac1fa5f16c7311eaf764db9f8d37a63f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1fa5f16c7311eaf764db9f8d37a63f1">&#9670;&nbsp;</a></span>getSource()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract String PaooGame.Entities.Entity.getSource </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Abstract method to get the source path for the entity's sprites or assets. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string representing the asset source path. </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classPaooGame_1_1Entities_1_1NPC.html#a470be7dd379d5030303f3ec12dffaa80">PaooGame.Entities.NPC</a>, <a class="el" href="classPaooGame_1_1Entities_1_1Hero.html#a2f63e54157cfb714c6ffbf5ad6c7401d">PaooGame.Entities.Hero</a>, and <a class="el" href="classPaooGame_1_1Entities_1_1Enemy.html#a38a7cfcb88435dbe374486435ce5c3e2">PaooGame.Entities.Enemy</a>.</p>
+
+</div>
+</div>
+<a id="a9e5cb2edcb76acfc95af1d9c97ca7b1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e5cb2edcb76acfc95af1d9c97ca7b1d">&#9670;&nbsp;</a></span>getVelocityX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PaooGame.Entities.Entity.getVelocityX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the entity's current velocity on the x-axis. </p>
+<dl class="section return"><dt>Returns</dt><dd>The x-axis velocity. </dd></dl>
+
+</div>
+</div>
+<a id="aba3b2e9dcfa2b686dc7a9b4091ea7654"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba3b2e9dcfa2b686dc7a9b4091ea7654">&#9670;&nbsp;</a></span>getVelocityY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PaooGame.Entities.Entity.getVelocityY </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the entity's current velocity on the y-axis. </p>
+<dl class="section return"><dt>Returns</dt><dd>The y-axis velocity. </dd></dl>
+
+</div>
+</div>
+<a id="a24e6fd99de2f54be543ef38439f23631"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24e6fd99de2f54be543ef38439f23631">&#9670;&nbsp;</a></span>getWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PaooGame.Entities.Entity.getWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the width of the entity's hitbox. </p>
+<dl class="section return"><dt>Returns</dt><dd>The width of the hitbox. </dd></dl>
+
+</div>
+</div>
+<a id="aca135637541e81579a66b0312e7185dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca135637541e81579a66b0312e7185dc">&#9670;&nbsp;</a></span>getX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PaooGame.Entities.Entity.getX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the x-coordinate of the entity. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current x-coordinate. </dd></dl>
+
+</div>
+</div>
+<a id="a86ebd2ff06da83bc638ddff41b3ab6f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86ebd2ff06da83bc638ddff41b3ab6f9">&#9670;&nbsp;</a></span>getY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PaooGame.Entities.Entity.getY </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the y-coordinate of the entity. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current y-coordinate. </dd></dl>
+
+</div>
+</div>
+<a id="acd3a7f2558ed324785228ba7d6c21303"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd3a7f2558ed324785228ba7d6c21303">&#9670;&nbsp;</a></span>moveAndCollide()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void PaooGame.Entities.Entity.moveAndCollide </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Abstract method for handling entity movement and collision detection. </p>
+<p>Subclasses must implement this to define how the entity moves and interacts with its environment. </p>
+
+<p>Reimplemented in <a class="el" href="classPaooGame_1_1Entities_1_1NPC.html#a688aeebfa87f4647841cdd2655128047">PaooGame.Entities.NPC</a>, <a class="el" href="classPaooGame_1_1Entities_1_1Hero.html#a71f2abcf94fdfc861fade688bb407f6e">PaooGame.Entities.Hero</a>, and <a class="el" href="classPaooGame_1_1Entities_1_1Enemy.html#a70fe84331f8d4cc74721488afad3fafe">PaooGame.Entities.Enemy</a>.</p>
+
+</div>
+</div>
+<a id="a6f4b3c97b647c249dedbe507ebf7656a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f4b3c97b647c249dedbe507ebf7656a">&#9670;&nbsp;</a></span>reduceHealth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Entities.Entity.reduceHealth </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>health</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reduces the entity's health by a specified amount. Health will not go below 0. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">health</td><td>The amount of health to reduce. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="add537c8bab2c3c9bf4725888ce8f0f10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add537c8bab2c3c9bf4725888ce8f0f10">&#9670;&nbsp;</a></span>restoreHealth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Entities.Entity.restoreHealth </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>health</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Restores the entity's health by a specified amount. Health will not exceed 100 (or a predefined maximum). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">health</td><td>The amount of health to restore. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae29a5d88a8b9d70a0a36015d74e0c255"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae29a5d88a8b9d70a0a36015d74e0c255">&#9670;&nbsp;</a></span>setDamage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Entities.Entity.setDamage </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>damage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the damage value for the entity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">damage</td><td>The new damage value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afc980546f47d3c5e75cc5fb6022586b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc980546f47d3c5e75cc5fb6022586b9">&#9670;&nbsp;</a></span>setHealth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Entities.Entity.setHealth </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>health</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the health of the entity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">health</td><td>The new health value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac87cc8914c90d30d7f3c498b0b52309e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac87cc8914c90d30d7f3c498b0b52309e">&#9670;&nbsp;</a></span>setHealthBarColor1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Entities.Entity.setHealthBarColor1 </td>
+          <td>(</td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>color1</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the primary color of the health bar. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color1</td><td>The new primary Color. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0a07a8d4f07bc16bac999a9a0c48f125"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a07a8d4f07bc16bac999a9a0c48f125">&#9670;&nbsp;</a></span>setHealthBarColor2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Entities.Entity.setHealthBarColor2 </td>
+          <td>(</td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>color2</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the secondary color of the health bar. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color2</td><td>The new secondary Color. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adbbf832891a7ed89935283faa1728ebf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbbf832891a7ed89935283faa1728ebf">&#9670;&nbsp;</a></span>setHealthBarHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Entities.Entity.setHealthBarHeight </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the height of the health bar. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">height</td><td>The new height for the health bar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aabbb741ad7196c95de5f9d98c8206211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabbb741ad7196c95de5f9d98c8206211">&#9670;&nbsp;</a></span>setHealthBarWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Entities.Entity.setHealthBarWidth </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the width of the health bar. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>The new width for the health bar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a42fcee2d3c5efa59e59025b783148d45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42fcee2d3c5efa59e59025b783148d45">&#9670;&nbsp;</a></span>setHealthBarX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Entities.Entity.setHealthBarX </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the x-coordinate of the health bar. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The new x-coordinate for the health bar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7c81f1b0748349fabb7e9a6d435f8f2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c81f1b0748349fabb7e9a6d435f8f2a">&#9670;&nbsp;</a></span>setHealthBarY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Entities.Entity.setHealthBarY </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the y-coordinate of the health bar. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y</td><td>The new y-coordinate for the health bar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae017eda742896804402c0babf55b3a61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae017eda742896804402c0babf55b3a61">&#9670;&nbsp;</a></span>setHitbox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Entities.Entity.setHitbox </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPaooGame_1_1Hitbox_1_1Hitbox.html">Hitbox</a>&#160;</td>
+          <td class="paramname"><em>hitbox</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the hitbox for the entity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hitbox</td><td>The new Hitbox object. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a385a8922e8cfd820fa945bf242212332"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a385a8922e8cfd820fa945bf242212332">&#9670;&nbsp;</a></span>setIsEngaged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Entities.Entity.setIsEngaged </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>isEngaged</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the engagement status of the entity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">isEngaged</td><td>True to set as engaged, false otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a04e16db596d0e02ff5b4bb044540b55d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04e16db596d0e02ff5b4bb044540b55d">&#9670;&nbsp;</a></span>setIsFlipped()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Entities.Entity.setIsFlipped </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>flipped</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets whether the entity's sprite should be flipped horizontally. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flipped</td><td>True to flip, false otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1fef6592c1538338be910a21d03ad342"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fef6592c1538338be910a21d03ad342">&#9670;&nbsp;</a></span>setX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Entities.Entity.setX </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the x-coordinate of the entity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The new x-coordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aad6d0a3d96378218d9a53dd57887b4fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad6d0a3d96378218d9a53dd57887b4fd">&#9670;&nbsp;</a></span>setY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.Entities.Entity.setY </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the y-coordinate of the entity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y</td><td>The new y-coordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a609ed68e1ccbe4909eaa72c893d54e0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a609ed68e1ccbe4909eaa72c893d54e0c">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void PaooGame.Entities.Entity.update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Abstract method for updating the entity's state. </p>
+<p>Subclasses must implement this to define the entity's logic per game tick. </p>
+
+<p>Reimplemented in <a class="el" href="classPaooGame_1_1Entities_1_1NPC.html#aa505d396a39c40d52c9de2fe4179a7c2">PaooGame.Entities.NPC</a>, <a class="el" href="classPaooGame_1_1Entities_1_1Hero.html#a1fb145d3497cebdf0cb95ef7f370746c">PaooGame.Entities.Hero</a>, and <a class="el" href="classPaooGame_1_1Entities_1_1Enemy.html#a3932c03bad343bbd076499ed9151b172">PaooGame.Entities.Enemy</a>.</p>
+
+</div>
+</div>
+<a id="a979b0cb8ca9e01a36c5e9683b900eefe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a979b0cb8ca9e01a36c5e9683b900eefe">&#9670;&nbsp;</a></span>updateAnimationState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void PaooGame.Entities.Entity.updateAnimationState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Abstract method for updating the entity's animation state. </p>
+<p>Subclasses must implement this to manage transitions between different animations. </p>
+
+<p>Reimplemented in <a class="el" href="classPaooGame_1_1Entities_1_1NPC.html#ae3c46d36794e760ebfac73bf867c820b">PaooGame.Entities.NPC</a>, <a class="el" href="classPaooGame_1_1Entities_1_1Hero.html#abb23269305463b29befa0b1ccdb4329e">PaooGame.Entities.Hero</a>, and <a class="el" href="classPaooGame_1_1Entities_1_1Enemy.html#a23b261d65babd8b65e9efc28e7302ada">PaooGame.Entities.Enemy</a>.</p>
+
+</div>
+</div>
+<a id="a1ee8496dd57eb06716d84b49a4e9362a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ee8496dd57eb06716d84b49a4e9362a">&#9670;&nbsp;</a></span>updateVisualPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void PaooGame.Entities.Entity.updateVisualPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Abstract method for updating the entity's visual position. </p>
+<p>Typically used to synchronize the drawing position with the hitbox or logical position. </p>
+
+<p>Reimplemented in <a class="el" href="classPaooGame_1_1Entities_1_1NPC.html#a62b9ab0a9457d17efb2d9d3344d6baac">PaooGame.Entities.NPC</a>, <a class="el" href="classPaooGame_1_1Entities_1_1Hero.html#a40b261c366d4874f66d6d315a7630181">PaooGame.Entities.Hero</a>, and <a class="el" href="classPaooGame_1_1Entities_1_1Enemy.html#af8169ba9a2a446ce2ecf20c8d1449b69">PaooGame.Entities.Enemy</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/PaooGame/Entities/Entity.java</li>
 </ul>

@@ -1,9 +1,9 @@
 <map id="PaooGame.Animations.Animation" name="PaooGame.Animations.Animation">
-<area shape="rect" id="node1" title=" " alt="" coords="5,177,247,203"/>
-<area shape="rect" id="node2" href="$classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation.html" title=" " alt="" coords="324,5,543,47"/>
-<area shape="rect" id="node3" href="$classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation.html" title=" " alt="" coords="307,71,560,112"/>
-<area shape="rect" id="node4" href="$classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation.html" title=" " alt="" coords="308,136,559,177"/>
-<area shape="rect" id="node5" href="$classPaooGame_1_1Animations_1_1ItemsAnimations_1_1StaticItemAnimation.html" title=" " alt="" coords="316,201,551,243"/>
-<area shape="rect" id="node6" href="$classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation.html" title=" " alt="" coords="295,267,572,308"/>
-<area shape="rect" id="node7" href="$classPaooGame_1_1Animations_1_1PlayerAnimations_1_1PlayerActionAnimation.html" title=" " alt="" coords="309,332,558,373"/>
+<area shape="rect" id="node1" title="Abstract base class for managing and rendering sprite animations." alt="" coords="5,177,247,203"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1Animations_1_1EffectsAnimations_1_1EffectAnimation.html" title="Manages and renders animations for visual effects in the game." alt="" coords="324,5,543,47"/>
+<area shape="rect" id="node3" href="$classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation.html" title="Manages and renders animations for various enemy actions." alt="" coords="307,71,560,112"/>
+<area shape="rect" id="node4" href="$classPaooGame_1_1Animations_1_1ItemsAnimations_1_1FloatingItemAnimation.html" title="Manages and renders animations for floating items in the game." alt="" coords="308,136,559,177"/>
+<area shape="rect" id="node5" href="$classPaooGame_1_1Animations_1_1ItemsAnimations_1_1StaticItemAnimation.html" title="Manages and renders animations for static items, potentially with a full&#45;screen display option." alt="" coords="316,201,551,243"/>
+<area shape="rect" id="node6" href="$classPaooGame_1_1Animations_1_1NpcAnimations_1_1StaticAnimation.html" title="Represents a static, non&#45;animated image." alt="" coords="295,267,572,308"/>
+<area shape="rect" id="node7" href="$classPaooGame_1_1Animations_1_1PlayerAnimations_1_1PlayerActionAnimation.html" title="Manages and renders animations for various player actions." alt="" coords="309,332,558,373"/>
 </map>

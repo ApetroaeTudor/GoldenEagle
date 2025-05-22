@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1Maps_1_1Level}\index{PaooGame.Maps.Level@{PaooGame.Maps.Level}}
 
 
-Inheritance diagram for Paoo\+Game.\+Maps.\+Level\+:
-\nopagebreak
+Abstract base class for game levels, managing tile data and providing collision detection utilities.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+Maps.\+Level\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,60 +17,263 @@ Inheritance diagram for Paoo\+Game.\+Maps.\+Level\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_aa64fff0bdc1b0bd8e24ab8d101153060}\label{classPaooGame_1_1Maps_1_1Level_aa64fff0bdc1b0bd8e24ab8d101153060}} 
-int\mbox{[}$\,$\mbox{]} {\bfseries get\+Visual\+IDs} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_a3ec77f80dfd448554d0b073c1329483a}\label{classPaooGame_1_1Maps_1_1Level_a3ec77f80dfd448554d0b073c1329483a}} 
-int\mbox{[}$\,$\mbox{]} {\bfseries get\+Behavior\+IDs} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_ae6a1e3a107fc84eb14f07b877b902937}\label{classPaooGame_1_1Maps_1_1Level_ae6a1e3a107fc84eb14f07b877b902937}} 
-int\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} {\bfseries get\+Visual\+Tiles} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_aab5ecdaa1b98ed0c518715cf4bbeaeb7}\label{classPaooGame_1_1Maps_1_1Level_aab5ecdaa1b98ed0c518715cf4bbeaeb7}} 
-int\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} {\bfseries get\+Behavior\+Tiles} ()
-\end{DoxyCompactItemize}
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level_aa64fff0bdc1b0bd8e24ab8d101153060}{get\+Visual\+IDs}} ()
+\begin{DoxyCompactList}\small\item\em Gets the 1D array of visual tile IDs. \end{DoxyCompactList}\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level_a3ec77f80dfd448554d0b073c1329483a}{get\+Behavior\+IDs}} ()
+\begin{DoxyCompactList}\small\item\em Gets the 1D array of behavior tile IDs. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_a780c1cf3fed4426f509bcd30cc45c48f}\label{classPaooGame_1_1Maps_1_1Level_a780c1cf3fed4426f509bcd30cc45c48f}} 
-static int {\bfseries check\+Falling} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} hitbox, int LEVEL\+\_\+\+WIDTH, int LEVEL\+\_\+\+HEIGHT, int\mbox{[}$\,$\mbox{]} behavior\+IDs)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_a41799ace07312f05c7c6b4f2134a606a}\label{classPaooGame_1_1Maps_1_1Level_a41799ace07312f05c7c6b4f2134a606a}} 
-static boolean {\bfseries is\+Tile\+Under\+Character\+Lethal} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} hitbox, int LEVEL\+\_\+\+WIDTH, int LEVEL\+\_\+\+HEIGHT, int\mbox{[}$\,$\mbox{]} behavior\+IDs)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_a3ca0e5ee8b83f83afbf1e41bcd28e733}\label{classPaooGame_1_1Maps_1_1Level_a3ca0e5ee8b83f83afbf1e41bcd28e733}} 
-static void {\bfseries snap\+To\+Ground} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} hitbox)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_ada22cd0068b42c8a3d8e4945c7c217f1}\label{classPaooGame_1_1Maps_1_1Level_ada22cd0068b42c8a3d8e4945c7c217f1}} 
-static boolean {\bfseries check\+Wall\+Collision} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} hitbox, boolean check\+Right, int LEVEL\+\_\+\+WIDTH, int LEVEL\+\_\+\+HEIGHT, int\mbox{[}$\,$\mbox{]} behavior\+IDs)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_aea7e52dd8f6acc0e4a218be5f6ee35ac}\label{classPaooGame_1_1Maps_1_1Level_aea7e52dd8f6acc0e4a218be5f6ee35ac}} 
-static boolean {\bfseries check\+Ceiling\+Collision} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} hitbox, int LEVEL\+\_\+\+WIDTH, int LEVEL\+\_\+\+HEIGHT, int\mbox{[}$\,$\mbox{]} behavior\+IDs)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_acdde18a406525db7946aa5291e77021c}\label{classPaooGame_1_1Maps_1_1Level_acdde18a406525db7946aa5291e77021c}} 
-static boolean {\bfseries is\+Tile\+Solid} (int tileX, int tileY, int LEVEL\+\_\+\+WIDTH\+\_\+\+IN\+\_\+\+NR\+\_\+\+TILES, int LEVEL\+\_\+\+HEIGHT\+\_\+\+IN\+\_\+\+NR\+\_\+\+TILES, int\mbox{[}$\,$\mbox{]} behavior\+IDs)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_ae4edc494ce121a44ea8d162f2c383790}\label{classPaooGame_1_1Maps_1_1Level_ae4edc494ce121a44ea8d162f2c383790}} 
-static int {\bfseries get\+Tile\+Behavior} (int tileX, int tileY, int LEVEL\+\_\+\+WIDTH\+\_\+\+IN\+\_\+\+NR\+\_\+\+TILES, int LEVEL\+\_\+\+HEIGHT\+\_\+\+IN\+\_\+\+NR\+\_\+\+TILES, int\mbox{[}$\,$\mbox{]} behavior\+IDs)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_a7985f25394226ebee213f7812cd94a4f}\label{classPaooGame_1_1Maps_1_1Level_a7985f25394226ebee213f7812cd94a4f}} 
-static boolean {\bfseries is\+Ground\+Ahead} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} hitbox, boolean heading\+Left, int LEVEL\+\_\+\+WIDTH, int LEVEL\+\_\+\+HEIGHT, int\mbox{[}$\,$\mbox{]} behavior\+IDs)
-\end{DoxyCompactItemize}
+static int \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level_a780c1cf3fed4426f509bcd30cc45c48f}{check\+Falling}} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} hitbox, int LEVEL\+\_\+\+WIDTH, int LEVEL\+\_\+\+HEIGHT, int\mbox{[}$\,$\mbox{]} behavior\+IDs)
+\begin{DoxyCompactList}\small\item\em Checks if an entity with the given hitbox is falling or standing on solid ground. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level_a3ca0e5ee8b83f83afbf1e41bcd28e733}{snap\+To\+Ground}} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} hitbox)
+\begin{DoxyCompactList}\small\item\em Adjusts the hitbox\textquotesingle{}s y-\/coordinate so that its bottom edge aligns perfectly with the top surface of the tile row it\textquotesingle{}s over. \end{DoxyCompactList}\item 
+static boolean \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level_ada22cd0068b42c8a3d8e4945c7c217f1}{check\+Wall\+Collision}} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} hitbox, boolean check\+Right, int LEVEL\+\_\+\+WIDTH, int LEVEL\+\_\+\+HEIGHT, int\mbox{[}$\,$\mbox{]} behavior\+IDs)
+\begin{DoxyCompactList}\small\item\em Checks for collision with a solid wall tile (behavior ID 2) to the left or right of the hitbox. \end{DoxyCompactList}\item 
+static boolean \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level_aea7e52dd8f6acc0e4a218be5f6ee35ac}{check\+Ceiling\+Collision}} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} hitbox, int LEVEL\+\_\+\+WIDTH, int LEVEL\+\_\+\+HEIGHT, int\mbox{[}$\,$\mbox{]} behavior\+IDs)
+\begin{DoxyCompactList}\small\item\em Checks for collision with a solid ceiling tile (behavior ID 2) directly above the hitbox. \end{DoxyCompactList}\item 
+static boolean \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level_acdde18a406525db7946aa5291e77021c}{is\+Tile\+Solid}} (int tileX, int tileY, int LEVEL\+\_\+\+WIDTH\+\_\+\+IN\+\_\+\+NR\+\_\+\+TILES, int LEVEL\+\_\+\+HEIGHT\+\_\+\+IN\+\_\+\+NR\+\_\+\+TILES, int\mbox{[}$\,$\mbox{]} behavior\+IDs)
+\begin{DoxyCompactList}\small\item\em Checks if a specific tile in the level is solid (behavior ID 2). \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level_ae4edc494ce121a44ea8d162f2c383790}{get\+Tile\+Behavior}} (int tileX, int tileY, int LEVEL\+\_\+\+WIDTH\+\_\+\+IN\+\_\+\+NR\+\_\+\+TILES, int LEVEL\+\_\+\+HEIGHT\+\_\+\+IN\+\_\+\+NR\+\_\+\+TILES, int\mbox{[}$\,$\mbox{]} behavior\+IDs)
+\begin{DoxyCompactList}\small\item\em Gets the behavior ID of a specific tile in the level. \end{DoxyCompactList}\item 
+static boolean \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level_a7985f25394226ebee213f7812cd94a4f}{is\+Ground\+Ahead}} (\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} hitbox, boolean heading\+Left, int LEVEL\+\_\+\+WIDTH, int LEVEL\+\_\+\+HEIGHT, int\mbox{[}$\,$\mbox{]} behavior\+IDs)
+\begin{DoxyCompactList}\small\item\em Checks if there is solid ground (behavior ID 2) just ahead and below an entity\textquotesingle{}s leading edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level_a25fbdbad5f1da38ee3c8270b9a8a56be}{set\+IDs}} (String Textures\+Csv, String Behavior\+Csv)
+\begin{DoxyCompactList}\small\item\em Loads visual and behavior tile IDs from specified CSV files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for game levels, managing tile data and providing collision detection utilities. 
+
+This class handles the storage of visual and behavioral tile data for a game level. It loads this data from CSV files. Additionally, it provides a suite of static utility methods for performing tile-\/based collision checks (falling, wall, ceiling, ground properties) against a given \mbox{\hyperlink{}{Hitbox}}.
+
+Tile behaviors are typically encoded as integers\+:
+\begin{DoxyItemize}
+\item 0\+: Lethal (e.\+g., water, lava) -\/ Causes death or falling.
+\item 1\+: Lethal / Fall-\/through (e.\+g., pit) -\/ Causes death or falling.
+\item 2\+: Solid (e.\+g., ground, wall) -\/ Blocks movement.
+\item Other values\+: Air or custom behaviors. 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_aea7e52dd8f6acc0e4a218be5f6ee35ac}\label{classPaooGame_1_1Maps_1_1Level_aea7e52dd8f6acc0e4a218be5f6ee35ac}} 
+\index{PaooGame.Maps.Level@{PaooGame.Maps.Level}!checkCeilingCollision@{checkCeilingCollision}}
+\index{checkCeilingCollision@{checkCeilingCollision}!PaooGame.Maps.Level@{PaooGame.Maps.Level}}
+\doxysubsubsection{\texorpdfstring{checkCeilingCollision()}{checkCeilingCollision()}}
+{\footnotesize\ttfamily static boolean Paoo\+Game.\+Maps.\+Level.\+check\+Ceiling\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}}}]{hitbox,  }\item[{int}]{LEVEL\+\_\+\+WIDTH,  }\item[{int}]{LEVEL\+\_\+\+HEIGHT,  }\item[{int\mbox{[}$\,$\mbox{]}}]{behavior\+IDs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Checks for collision with a solid ceiling tile (behavior ID 2) directly above the hitbox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hitbox} & The \mbox{\hyperlink{}{Hitbox}} of the entity. \\
+\hline
+{\em LEVEL\+\_\+\+WIDTH} & The width of the level in number of tiles. \\
+\hline
+{\em LEVEL\+\_\+\+HEIGHT} & The height of the level in number of tiles. \\
+\hline
+{\em behavior\+IDs} & A 1D array of tile behavior IDs for the level. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a solid ceiling tile is detected above the hitbox, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_a780c1cf3fed4426f509bcd30cc45c48f}\label{classPaooGame_1_1Maps_1_1Level_a780c1cf3fed4426f509bcd30cc45c48f}} 
+\index{PaooGame.Maps.Level@{PaooGame.Maps.Level}!checkFalling@{checkFalling}}
+\index{checkFalling@{checkFalling}!PaooGame.Maps.Level@{PaooGame.Maps.Level}}
+\doxysubsubsection{\texorpdfstring{checkFalling()}{checkFalling()}}
+{\footnotesize\ttfamily static int Paoo\+Game.\+Maps.\+Level.\+check\+Falling (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}}}]{hitbox,  }\item[{int}]{LEVEL\+\_\+\+WIDTH,  }\item[{int}]{LEVEL\+\_\+\+HEIGHT,  }\item[{int\mbox{[}$\,$\mbox{]}}]{behavior\+IDs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Checks if an entity with the given hitbox is falling or standing on solid ground. 
+
+It examines the tiles directly beneath the hitbox. 
+\begin{DoxyParams}{Parameters}
+{\em hitbox} & The \mbox{\hyperlink{}{Hitbox}} of the entity to check. \\
+\hline
+{\em LEVEL\+\_\+\+WIDTH} & The width of the level in number of tiles. \\
+\hline
+{\em LEVEL\+\_\+\+HEIGHT} & The height of the level in number of tiles. \\
+\hline
+{\em behavior\+IDs} & A 1D array of tile behavior IDs for the level. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item {\ttfamily 1}\+: Entity is over a lethal or fall-\/through tile (behavior ID 0 or 1).
+\item {\ttfamily 0}\+: Entity is over a solid tile (behavior ID 2), meaning it\textquotesingle{}s standing.
+\item {\ttfamily -\/1}\+: Entity is over air, off the map vertically, or an error occurred (e.\+g., invalid index). 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_ada22cd0068b42c8a3d8e4945c7c217f1}\label{classPaooGame_1_1Maps_1_1Level_ada22cd0068b42c8a3d8e4945c7c217f1}} 
+\index{PaooGame.Maps.Level@{PaooGame.Maps.Level}!checkWallCollision@{checkWallCollision}}
+\index{checkWallCollision@{checkWallCollision}!PaooGame.Maps.Level@{PaooGame.Maps.Level}}
+\doxysubsubsection{\texorpdfstring{checkWallCollision()}{checkWallCollision()}}
+{\footnotesize\ttfamily static boolean Paoo\+Game.\+Maps.\+Level.\+check\+Wall\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}}}]{hitbox,  }\item[{boolean}]{check\+Right,  }\item[{int}]{LEVEL\+\_\+\+WIDTH,  }\item[{int}]{LEVEL\+\_\+\+HEIGHT,  }\item[{int\mbox{[}$\,$\mbox{]}}]{behavior\+IDs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Checks for collision with a solid wall tile (behavior ID 2) to the left or right of the hitbox. 
+
+The check is performed along a vertical segment of the hitbox, slightly shrunk from the top and bottom. 
+\begin{DoxyParams}{Parameters}
+{\em hitbox} & The \mbox{\hyperlink{}{Hitbox}} of the entity. \\
+\hline
+{\em check\+Right} & True to check for collision on the right side, false to check on the left. \\
+\hline
+{\em LEVEL\+\_\+\+WIDTH} & The width of the level in number of tiles. \\
+\hline
+{\em LEVEL\+\_\+\+HEIGHT} & The height of the level in number of tiles. \\
+\hline
+{\em behavior\+IDs} & A 1D array of tile behavior IDs for the level. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a solid wall tile is detected in the checked direction, false otherwise. Also returns true if hitting the world boundary in the checked direction. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_a3ec77f80dfd448554d0b073c1329483a}\label{classPaooGame_1_1Maps_1_1Level_a3ec77f80dfd448554d0b073c1329483a}} 
+\index{PaooGame.Maps.Level@{PaooGame.Maps.Level}!getBehaviorIDs@{getBehaviorIDs}}
+\index{getBehaviorIDs@{getBehaviorIDs}!PaooGame.Maps.Level@{PaooGame.Maps.Level}}
+\doxysubsubsection{\texorpdfstring{getBehaviorIDs()}{getBehaviorIDs()}}
+{\footnotesize\ttfamily int \mbox{[}$\,$\mbox{]} Paoo\+Game.\+Maps.\+Level.\+get\+Behavior\+IDs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the 1D array of behavior tile IDs. 
+
+\begin{DoxyReturn}{Returns}
+The array of behavior tile IDs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_ae4edc494ce121a44ea8d162f2c383790}\label{classPaooGame_1_1Maps_1_1Level_ae4edc494ce121a44ea8d162f2c383790}} 
+\index{PaooGame.Maps.Level@{PaooGame.Maps.Level}!getTileBehavior@{getTileBehavior}}
+\index{getTileBehavior@{getTileBehavior}!PaooGame.Maps.Level@{PaooGame.Maps.Level}}
+\doxysubsubsection{\texorpdfstring{getTileBehavior()}{getTileBehavior()}}
+{\footnotesize\ttfamily static int Paoo\+Game.\+Maps.\+Level.\+get\+Tile\+Behavior (\begin{DoxyParamCaption}\item[{int}]{tileX,  }\item[{int}]{tileY,  }\item[{int}]{LEVEL\+\_\+\+WIDTH\+\_\+\+IN\+\_\+\+NR\+\_\+\+TILES,  }\item[{int}]{LEVEL\+\_\+\+HEIGHT\+\_\+\+IN\+\_\+\+NR\+\_\+\+TILES,  }\item[{int\mbox{[}$\,$\mbox{]}}]{behavior\+IDs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Gets the behavior ID of a specific tile in the level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tileX} & The x-\/coordinate of the tile in tile units. \\
+\hline
+{\em tileY} & The y-\/coordinate of the tile in tile units. \\
+\hline
+{\em LEVEL\+\_\+\+WIDTH\+\_\+\+IN\+\_\+\+NR\+\_\+\+TILES} & The width of the level in number of tiles. \\
+\hline
+{\em LEVEL\+\_\+\+HEIGHT\+\_\+\+IN\+\_\+\+NR\+\_\+\+TILES} & The height of the level in number of tiles. \\
+\hline
+{\em behavior\+IDs} & A 1D array of tile behavior IDs for the level. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The behavior ID of the tile at (tileX, tileY), or -\/2 if the coordinates are out of bounds or index is invalid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_aa64fff0bdc1b0bd8e24ab8d101153060}\label{classPaooGame_1_1Maps_1_1Level_aa64fff0bdc1b0bd8e24ab8d101153060}} 
+\index{PaooGame.Maps.Level@{PaooGame.Maps.Level}!getVisualIDs@{getVisualIDs}}
+\index{getVisualIDs@{getVisualIDs}!PaooGame.Maps.Level@{PaooGame.Maps.Level}}
+\doxysubsubsection{\texorpdfstring{getVisualIDs()}{getVisualIDs()}}
+{\footnotesize\ttfamily int \mbox{[}$\,$\mbox{]} Paoo\+Game.\+Maps.\+Level.\+get\+Visual\+IDs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the 1D array of visual tile IDs. 
+
+\begin{DoxyReturn}{Returns}
+The array of visual tile IDs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_a7985f25394226ebee213f7812cd94a4f}\label{classPaooGame_1_1Maps_1_1Level_a7985f25394226ebee213f7812cd94a4f}} 
+\index{PaooGame.Maps.Level@{PaooGame.Maps.Level}!isGroundAhead@{isGroundAhead}}
+\index{isGroundAhead@{isGroundAhead}!PaooGame.Maps.Level@{PaooGame.Maps.Level}}
+\doxysubsubsection{\texorpdfstring{isGroundAhead()}{isGroundAhead()}}
+{\footnotesize\ttfamily static boolean Paoo\+Game.\+Maps.\+Level.\+is\+Ground\+Ahead (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}}}]{hitbox,  }\item[{boolean}]{heading\+Left,  }\item[{int}]{LEVEL\+\_\+\+WIDTH,  }\item[{int}]{LEVEL\+\_\+\+HEIGHT,  }\item[{int\mbox{[}$\,$\mbox{]}}]{behavior\+IDs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Checks if there is solid ground (behavior ID 2) just ahead and below an entity\textquotesingle{}s leading edge. 
+
+This is useful for enemies to detect edges or cliffs. 
+\begin{DoxyParams}{Parameters}
+{\em hitbox} & The \mbox{\hyperlink{}{Hitbox}} of the entity. \\
+\hline
+{\em heading\+Left} & True if the entity is heading left, false if heading right. \\
+\hline
+{\em LEVEL\+\_\+\+WIDTH} & The width of the level in number of tiles. \\
+\hline
+{\em LEVEL\+\_\+\+HEIGHT} & The height of the level in number of tiles. \\
+\hline
+{\em behavior\+IDs} & A 1D array of tile behavior IDs for the level. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if solid ground is detected in the specified direction just below the entity\textquotesingle{}s leading edge, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_acdde18a406525db7946aa5291e77021c}\label{classPaooGame_1_1Maps_1_1Level_acdde18a406525db7946aa5291e77021c}} 
+\index{PaooGame.Maps.Level@{PaooGame.Maps.Level}!isTileSolid@{isTileSolid}}
+\index{isTileSolid@{isTileSolid}!PaooGame.Maps.Level@{PaooGame.Maps.Level}}
+\doxysubsubsection{\texorpdfstring{isTileSolid()}{isTileSolid()}}
+{\footnotesize\ttfamily static boolean Paoo\+Game.\+Maps.\+Level.\+is\+Tile\+Solid (\begin{DoxyParamCaption}\item[{int}]{tileX,  }\item[{int}]{tileY,  }\item[{int}]{LEVEL\+\_\+\+WIDTH\+\_\+\+IN\+\_\+\+NR\+\_\+\+TILES,  }\item[{int}]{LEVEL\+\_\+\+HEIGHT\+\_\+\+IN\+\_\+\+NR\+\_\+\+TILES,  }\item[{int\mbox{[}$\,$\mbox{]}}]{behavior\+IDs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Checks if a specific tile in the level is solid (behavior ID 2). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tileX} & The x-\/coordinate of the tile in tile units. \\
+\hline
+{\em tileY} & The y-\/coordinate of the tile in tile units. \\
+\hline
+{\em LEVEL\+\_\+\+WIDTH\+\_\+\+IN\+\_\+\+NR\+\_\+\+TILES} & The width of the level in number of tiles. \\
+\hline
+{\em LEVEL\+\_\+\+HEIGHT\+\_\+\+IN\+\_\+\+NR\+\_\+\+TILES} & The height of the level in number of tiles. \\
+\hline
+{\em behavior\+IDs} & A 1D array of tile behavior IDs for the level. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the tile at (tileX, tileY) is solid, false if it\textquotesingle{}s out of bounds or not solid. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_a25fbdbad5f1da38ee3c8270b9a8a56be}\label{classPaooGame_1_1Maps_1_1Level_a25fbdbad5f1da38ee3c8270b9a8a56be}} 
-void {\bfseries set\+IDs} (String Textures\+Csv, String Behavior\+Csv)
-\end{DoxyCompactItemize}
-\doxysubsection*{Protected Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_a796c61c872a6210cd6d8f8a828ad41ab}\label{classPaooGame_1_1Maps_1_1Level_a796c61c872a6210cd6d8f8a828ad41ab}} 
-int\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} {\bfseries visual\+Tiles}
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_a383b241692509528c9d8aeb62b4c5c62}\label{classPaooGame_1_1Maps_1_1Level_a383b241692509528c9d8aeb62b4c5c62}} 
-int\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} {\bfseries behavior\+Tiles}
-\end{DoxyCompactItemize}
+\index{PaooGame.Maps.Level@{PaooGame.Maps.Level}!setIDs@{setIDs}}
+\index{setIDs@{setIDs}!PaooGame.Maps.Level@{PaooGame.Maps.Level}}
+\doxysubsubsection{\texorpdfstring{setIDs()}{setIDs()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Maps.\+Level.\+set\+IDs (\begin{DoxyParamCaption}\item[{String}]{Textures\+Csv,  }\item[{String}]{Behavior\+Csv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Loads visual and behavior tile IDs from specified CSV files. 
+
+This method reads integer IDs from comma-\/separated value files and populates the \mbox{\hyperlink{}{visual\+IDs}} and \mbox{\hyperlink{}{behavior\+IDs}} arrays. 
+\begin{DoxyParams}{Parameters}
+{\em Textures\+Csv} & The file path to the CSV file containing visual tile IDs. \\
+\hline
+{\em Behavior\+Csv} & The file path to the CSV file containing behavior tile IDs. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Maps_1_1Level_a3ca0e5ee8b83f83afbf1e41bcd28e733}\label{classPaooGame_1_1Maps_1_1Level_a3ca0e5ee8b83f83afbf1e41bcd28e733}} 
+\index{PaooGame.Maps.Level@{PaooGame.Maps.Level}!snapToGround@{snapToGround}}
+\index{snapToGround@{snapToGround}!PaooGame.Maps.Level@{PaooGame.Maps.Level}}
+\doxysubsubsection{\texorpdfstring{snapToGround()}{snapToGround()}}
+{\footnotesize\ttfamily static void Paoo\+Game.\+Maps.\+Level.\+snap\+To\+Ground (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}}}]{hitbox }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Adjusts the hitbox\textquotesingle{}s y-\/coordinate so that its bottom edge aligns perfectly with the top surface of the tile row it\textquotesingle{}s over. 
+
+This is useful for ensuring an entity rests exactly on the ground after landing. 
+\begin{DoxyParams}{Parameters}
+{\em hitbox} & The \mbox{\hyperlink{}{Hitbox}} to adjust. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

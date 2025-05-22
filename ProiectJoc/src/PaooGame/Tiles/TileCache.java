@@ -258,10 +258,10 @@ public class TileCache {
         int passiveTileHeight=0;
         int inFightTileWidth=0;
         int inFightTileHeight=0;
-        String fallingMessageKey=""; // Renamed for clarity as cache key
-        String walkingMessageKey=""; // Renamed for clarity as cache key
-        String inFightIdleMessageKey=""; // Renamed for clarity as cache key
-        String inFightAttackingMessageKey=""; // Renamed for clarity as cache key
+        String fallingMessageKey="";
+        String walkingMessageKey="";
+        String inFightIdleMessageKey="";
+        String inFightAttackingMessageKey="";
         int walkingAnimationNrOfTiles=0;
         int inFightIdleNrOfTiles=0;
         int inFightAttackingNrOfTiles=0;
@@ -280,7 +280,7 @@ public class TileCache {
                 inFightIdleNrOfTiles = 1;
                 inFightAttackingNrOfTiles = 4;
                 fallingMessageKey = "TIGER_FALLING";
-                walkingMessageKey = "TIGER_WALKING"; // Added missing walking key
+                walkingMessageKey = "TIGER_WALKING";
                 inFightIdleMessageKey = "TIGER_IN_FIGHT_IDLE";
                 inFightAttackingMessageKey = "TIGER_IN_FIGHT_ATTACKING";
 
@@ -365,8 +365,8 @@ public class TileCache {
             case FALLING:
                 currentCacheKey = fallingMessageKey;
                 subImageX = 0;
-                subImageY = passiveTileHeight * 0; // Assuming falling is the first row of passive animations
-                subImageWidth = passiveTileWidth * 1; // Assuming single frame for falling
+                subImageY = passiveTileHeight * 0;
+                subImageWidth = passiveTileWidth * 1;
                 subImageHeight = passiveTileHeight;
                 break;
             case WALKING:
@@ -379,20 +379,6 @@ public class TileCache {
             case IN_FIGHT_IDLE:
                 currentCacheKey = inFightIdleMessageKey;
                 subImageX = 0;
-                // The y-coordinate needs to account for previous rows of animations.
-                // Assuming passive animations (like walking, falling) are above fighting animations.
-                // And within fighting, idle might be after attacking or vice-versa.
-                // This specific calculation: passiveTileHeight*1 + inFightTileHeight*1
-                // suggests one row of passive animations and then idle is the second row of fighting animations.
-                // This needs to be consistent with the spritesheet layout.
-                // For Tiger: passive (height 48) row 0. Fighting animations start after that.
-                // In_Fight_Idle (height 96) is at y = 48 (passive) + 96 (attacking) = 144, if attacking is row 0 of fighting.
-                // The original code has subImageY = passiveTileHeight*1 + inFightTileHeight*1
-                // Let's assume spritesheet layout is:
-                // Row 0: Passive (walking/falling)
-                // Row 1: In_Fight_Attacking
-                // Row 2: In_Fight_Idle
-                // So, for IN_FIGHT_IDLE, Y = passiveTileHeight (for the passive row) + inFightTileHeight (for the attacking row)
                 subImageY = passiveTileHeight + inFightTileHeight; // Adjusted based on typical sprite sheet layouts
                 subImageWidth = inFightTileWidth * inFightIdleNrOfTiles;
                 subImageHeight = inFightTileHeight;
@@ -458,11 +444,11 @@ public class TileCache {
      */
     public BufferedImage getHeroState(Constants.HERO_STATES state){
         BufferedImage returnIMG=null;
-        String cacheKey = state.name(); // Use enum name as cache key
+        String cacheKey = state.name();
         int subImageX = 0;
         int subImageY = 0;
-        int subImageWidth = 48 * 10; // Assuming 10 frames, 48px wide each
-        int subImageHeight = 48;     // Assuming 48px high
+        int subImageWidth = 48 * 10;
+        int subImageHeight = 48;
 
         if(heroStatesSheets.containsKey(cacheKey)){
             return heroStatesSheets.get(cacheKey);
@@ -483,7 +469,7 @@ public class TileCache {
                 case RUNNING:
                     subImageY = 48 * 1;
                     break;
-                case JUMPING: // JUMPING and FALLING might share sprites or be distinct
+                case JUMPING:
                     subImageY = 48 * 2;
                     break;
                 case ATTACKING:
@@ -492,9 +478,8 @@ public class TileCache {
                 case CROUCHING:
                     subImageY = 48 * 4;
                     break;
-                case FALLING: // Often uses same/similar sprites as JUMPING
-                    subImageY = 48 * 2; // Example: uses jumping sprites; adjust if FALLING has its own row
-                    // If FALLING is intended to be row 5, then subImageY = 48 * 5;
+                case FALLING:
+                    subImageY = 48 * 2;
                     break;
                 default:
                     System.err.println("INVALID HERO STATE GIVEN: " + state);

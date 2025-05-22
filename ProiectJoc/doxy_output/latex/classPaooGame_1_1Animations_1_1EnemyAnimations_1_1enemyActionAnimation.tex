@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation}\index{PaooGame.Animations.EnemyAnimations.enemyActionAnimation@{PaooGame.Animations.EnemyAnimations.enemyActionAnimation}}
 
 
-Inheritance diagram for Paoo\+Game.\+Animations.\+Enemy\+Animations.\+enemy\+Action\+Animation\+:
-\nopagebreak
+Manages and renders animations for various enemy actions.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+Animations.\+Enemy\+Animations.\+enemy\+Action\+Animation\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+Animations.\+Enemy\+Animations.\+enemy\+Act
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+Animations.\+Enemy\+Animations.\+enemy\+Action\+Animation\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+Animations.\+Enemy\+Animations.\+enemy\+Action\+Animation\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,22 +26,122 @@ Collaboration diagram for Paoo\+Game.\+Animations.\+Enemy\+Animations.\+enemy\+A
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_ab11ec777bcdf50f07739bc475e79a18c}\label{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_ab11ec777bcdf50f07739bc475e79a18c}} 
-{\bfseries enemy\+Action\+Animation} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} reflink, Constants.\+ENEMY\+\_\+\+STATES purpose, int nr\+Of\+Frames, int animation\+Speed, String entity\+Name)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_ac4d65d21f07c79032ea93b27ebe3d52b}\label{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_ac4d65d21f07c79032ea93b27ebe3d52b}} 
-void {\bfseries load\+Animation} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_a24ec2e91527fef76dc04f2d88f458866}\label{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_a24ec2e91527fef76dc04f2d88f458866}} 
-void {\bfseries update\+Animation} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_a556ac8a9c869df69fda393cef836e968}\label{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_a556ac8a9c869df69fda393cef836e968}} 
-void {\bfseries trigger\+Once} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_a89df1565a4d93df90f72bf031b86cb96}\label{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_a89df1565a4d93df90f72bf031b86cb96}} 
-void {\bfseries paint\+Animation} (Graphics g, int x, int y, boolean flipped, double scale)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_ab11ec777bcdf50f07739bc475e79a18c}{enemy\+Action\+Animation}} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_af34e94650b5da895f0efb9b0a69d57cf}{reflink}}, Constants.\+ENEMY\+\_\+\+STATES purpose, int \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_ad5a63fa7aee0aa588e5076e5f916b837}{nr\+Of\+Frames}}, int \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_a427a2339571eae2f9fbf8903934fa507}{animation\+Speed}}, String entity\+Name)
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation}{enemy\+Action\+Animation}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_ac4d65d21f07c79032ea93b27ebe3d52b}{load\+Animation}} ()
+\begin{DoxyCompactList}\small\item\em Loads the animation frames from the spritesheet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_a24ec2e91527fef76dc04f2d88f458866}{update\+Animation}} ()
+\begin{DoxyCompactList}\small\item\em Updates the current state of the animation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_a556ac8a9c869df69fda393cef836e968}{trigger\+Once}} ()
+\begin{DoxyCompactList}\small\item\em Resets the animation to its starting state to play once. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_a89df1565a4d93df90f72bf031b86cb96}{paint\+Animation}} (Graphics g, int x, int y, boolean flipped, double scale)
+\begin{DoxyCompactList}\small\item\em Renders the current frame of the enemy animation at the specified position. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Manages and renders animations for various enemy actions. 
+
+This class extends the base \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation}{Animation}} class to handle animations specific to enemies, such as walking, falling, idling in a fight, or attacking. It loads animation frames from spritesheets based on the enemy type and its current state (purpose). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_ab11ec777bcdf50f07739bc475e79a18c}\label{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_ab11ec777bcdf50f07739bc475e79a18c}} 
+\index{PaooGame.Animations.EnemyAnimations.enemyActionAnimation@{PaooGame.Animations.EnemyAnimations.enemyActionAnimation}!enemyActionAnimation@{enemyActionAnimation}}
+\index{enemyActionAnimation@{enemyActionAnimation}!PaooGame.Animations.EnemyAnimations.enemyActionAnimation@{PaooGame.Animations.EnemyAnimations.enemyActionAnimation}}
+\doxysubsubsection{\texorpdfstring{enemyActionAnimation()}{enemyActionAnimation()}}
+{\footnotesize\ttfamily Paoo\+Game.\+Animations.\+Enemy\+Animations.\+enemy\+Action\+Animation.\+enemy\+Action\+Animation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}}}]{reflink,  }\item[{Constants.\+ENEMY\+\_\+\+STATES}]{purpose,  }\item[{int}]{nr\+Of\+Frames,  }\item[{int}]{animation\+Speed,  }\item[{String}]{entity\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs an \mbox{\hyperlink{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation}{enemy\+Action\+Animation}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reflink} & A reference to the game\textquotesingle{}s shared resources and utilities. \\
+\hline
+{\em purpose} & The specific action or state the animation represents. \\
+\hline
+{\em nr\+Of\+Frames} & The total number of frames in the animation sequence. \\
+\hline
+{\em animation\+Speed} & The speed at which the animation plays (ticks per frame). \\
+\hline
+{\em entity\+Name} & The name of the enemy entity this animation is for. \\
+\hline
+\end{DoxyParams}
+$<$ Array to store individual animation frames.
+
+$<$ The speed of the animation playback.
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_ac4d65d21f07c79032ea93b27ebe3d52b}\label{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_ac4d65d21f07c79032ea93b27ebe3d52b}} 
+\index{PaooGame.Animations.EnemyAnimations.enemyActionAnimation@{PaooGame.Animations.EnemyAnimations.enemyActionAnimation}!loadAnimation@{loadAnimation}}
+\index{loadAnimation@{loadAnimation}!PaooGame.Animations.EnemyAnimations.enemyActionAnimation@{PaooGame.Animations.EnemyAnimations.enemyActionAnimation}}
+\doxysubsubsection{\texorpdfstring{loadAnimation()}{loadAnimation()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Animations.\+Enemy\+Animations.\+enemy\+Action\+Animation.\+load\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Loads the animation frames from the spritesheet. 
+
+This method iterates through the spritesheet (image\+Sheet), extracting each frame based on the configured image width (img\+Width) and height (img\+Height), and stores them in the animation\+Array. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_a1f183fa0d920251be9b55a21d2562626}{Paoo\+Game.\+Animations.\+Animation}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_a89df1565a4d93df90f72bf031b86cb96}\label{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_a89df1565a4d93df90f72bf031b86cb96}} 
+\index{PaooGame.Animations.EnemyAnimations.enemyActionAnimation@{PaooGame.Animations.EnemyAnimations.enemyActionAnimation}!paintAnimation@{paintAnimation}}
+\index{paintAnimation@{paintAnimation}!PaooGame.Animations.EnemyAnimations.enemyActionAnimation@{PaooGame.Animations.EnemyAnimations.enemyActionAnimation}}
+\doxysubsubsection{\texorpdfstring{paintAnimation()}{paintAnimation()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Animations.\+Enemy\+Animations.\+enemy\+Action\+Animation.\+paint\+Animation (\begin{DoxyParamCaption}\item[{Graphics}]{g,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{boolean}]{flipped,  }\item[{double}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renders the current frame of the enemy animation at the specified position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The Graphics context to draw on. \\
+\hline
+{\em x} & The x-\/coordinate where the animation should be drawn. \\
+\hline
+{\em y} & The y-\/coordinate where the animation should be drawn. \\
+\hline
+{\em flipped} & A boolean indicating whether the animation should be flipped horizontally. \\
+\hline
+{\em scale} & The scaling factor for the animation. This can be overridden by specific enemy/purpose conditions. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_a4bbb89fb5709e550719394035b551e8c}{Paoo\+Game.\+Animations.\+Animation}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_a556ac8a9c869df69fda393cef836e968}\label{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_a556ac8a9c869df69fda393cef836e968}} 
+\index{PaooGame.Animations.EnemyAnimations.enemyActionAnimation@{PaooGame.Animations.EnemyAnimations.enemyActionAnimation}!triggerOnce@{triggerOnce}}
+\index{triggerOnce@{triggerOnce}!PaooGame.Animations.EnemyAnimations.enemyActionAnimation@{PaooGame.Animations.EnemyAnimations.enemyActionAnimation}}
+\doxysubsubsection{\texorpdfstring{triggerOnce()}{triggerOnce()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Animations.\+Enemy\+Animations.\+enemy\+Action\+Animation.\+trigger\+Once (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resets the animation to its starting state to play once. 
+
+This method is used to trigger an animation that should play from the beginning, typically for actions like attacks that play once. It resets the finished flag, animation state (current frame), and tick counter. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_a2a96a20130e3f3aa15237a4e8081372c}{Paoo\+Game.\+Animations.\+Animation}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_a24ec2e91527fef76dc04f2d88f458866}\label{classPaooGame_1_1Animations_1_1EnemyAnimations_1_1enemyActionAnimation_a24ec2e91527fef76dc04f2d88f458866}} 
+\index{PaooGame.Animations.EnemyAnimations.enemyActionAnimation@{PaooGame.Animations.EnemyAnimations.enemyActionAnimation}!updateAnimation@{updateAnimation}}
+\index{updateAnimation@{updateAnimation}!PaooGame.Animations.EnemyAnimations.enemyActionAnimation@{PaooGame.Animations.EnemyAnimations.enemyActionAnimation}}
+\doxysubsubsection{\texorpdfstring{updateAnimation()}{updateAnimation()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Animations.\+Enemy\+Animations.\+enemy\+Action\+Animation.\+update\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the current state of the animation. 
+
+This method progresses the animation to the next frame based on the animation\+Speed. If the animation is set to play once (play\+Once is true) and has finished (is\+Finished is true), it will not update further. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation_a4475f6857bdf31b2ca7da423da8701ba}{Paoo\+Game.\+Animations.\+Animation}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

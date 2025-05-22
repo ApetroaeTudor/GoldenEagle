@@ -72,13 +72,16 @@ $(function() {
 <div class="title">PaooGame.DatabaseManaging.ProxyDataManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implements the <a class="el" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html" title="Defines the contract for managing game data, including loading, storing, and resetting data.">DataManager</a> interface using a Proxy pattern to control access and add validation to a <a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html" title="Implements the DataManager interface to manage game data using an in-memory buffer and an SQLite data...">ConcreteDataManager</a>.  
+ <a href="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for PaooGame.DatabaseManaging.ProxyDataManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager__inherit__graph.png" border="0" usemap="#aPaooGame_8DatabaseManaging_8ProxyDataManager_inherit__map" alt="Inheritance graph"/></div>
 <map name="aPaooGame_8DatabaseManaging_8ProxyDataManager_inherit__map" id="aPaooGame_8DatabaseManaging_8ProxyDataManager_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,95,232,136"/>
-<area shape="rect" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html" title=" " alt="" coords="5,5,232,47"/>
+<area shape="rect" title="Implements the DataManager interface using a Proxy pattern to control access and add validation to a ..." alt="" coords="5,95,232,136"/>
+<area shape="rect" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html" title="Defines the contract for managing game data, including loading, storing, and resetting data." alt="" coords="5,5,232,47"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -86,38 +89,432 @@ Collaboration diagram for PaooGame.DatabaseManaging.ProxyDataManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager__coll__graph.png" border="0" usemap="#aPaooGame_8DatabaseManaging_8ProxyDataManager_coll__map" alt="Collaboration graph"/></div>
 <map name="aPaooGame_8DatabaseManaging_8ProxyDataManager_coll__map" id="aPaooGame_8DatabaseManaging_8ProxyDataManager_coll__map">
-<area shape="rect" title=" " alt="" coords="5,95,232,136"/>
-<area shape="rect" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html" title=" " alt="" coords="5,5,232,47"/>
+<area shape="rect" title="Implements the DataManager interface using a Proxy pattern to control access and add validation to a ..." alt="" coords="5,95,232,136"/>
+<area shape="rect" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html" title="Defines the contract for managing game data, including loading, storing, and resetting data." alt="" coords="5,5,232,47"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1ee6e06340754e119d76efeaae1792ea"><td class="memItemLeft" align="right" valign="top"><a id="a1ee6e06340754e119d76efeaae1792ea"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ProxyDataManager</b> (<a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a> reflink)</td></tr>
+<tr class="memitem:a1ee6e06340754e119d76efeaae1792ea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager.html#a1ee6e06340754e119d76efeaae1792ea">ProxyDataManager</a> (<a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a> reflink)</td></tr>
+<tr class="memdesc:a1ee6e06340754e119d76efeaae1792ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager.html" title="Implements the DataManager interface using a Proxy pattern to control access and add validation to a ...">ProxyDataManager</a>.  <a href="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager.html#a1ee6e06340754e119d76efeaae1792ea">More...</a><br /></td></tr>
 <tr class="separator:a1ee6e06340754e119d76efeaae1792ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a8a72a65d11dcbec85f855f72fd64d1"><td class="memItemLeft" align="right" valign="top"><a id="a2a8a72a65d11dcbec85f855f72fd64d1"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>load</b> (String key, boolean access)  throws AccessDeniedException,IllegalArgumentException </td></tr>
+<tr class="memitem:a2a8a72a65d11dcbec85f855f72fd64d1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager.html#a2a8a72a65d11dcbec85f855f72fd64d1">load</a> (String key, boolean access)  throws AccessNotPermittedException, ValueStoreException, DataBufferNotReadyException </td></tr>
+<tr class="memdesc:a2a8a72a65d11dcbec85f855f72fd64d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads an integer value associated with a given key, with access control and validation.  <a href="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager.html#a2a8a72a65d11dcbec85f855f72fd64d1">More...</a><br /></td></tr>
 <tr class="separator:a2a8a72a65d11dcbec85f855f72fd64d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f48574435a79c3a383f456cda5f145c"><td class="memItemLeft" align="right" valign="top"><a id="a5f48574435a79c3a383f456cda5f145c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>store</b> (String key, int value, boolean access)  throws AccessDeniedException,IllegalArgumentException </td></tr>
+<tr class="memitem:a5f48574435a79c3a383f456cda5f145c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager.html#a5f48574435a79c3a383f456cda5f145c">store</a> (String key, int value, boolean access)  throws AccessNotPermittedException, ValueStoreException </td></tr>
+<tr class="memdesc:a5f48574435a79c3a383f456cda5f145c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores an integer value associated with a given key, with access control and input validation.  <a href="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager.html#a5f48574435a79c3a383f456cda5f145c">More...</a><br /></td></tr>
 <tr class="separator:a5f48574435a79c3a383f456cda5f145c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add8de04f08c53b76c65abdf79744e530"><td class="memItemLeft" align="right" valign="top"><a id="add8de04f08c53b76c65abdf79744e530"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resetBuffer</b> (boolean access)  throws AccessDeniedException </td></tr>
+<tr class="memitem:add8de04f08c53b76c65abdf79744e530"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager.html#add8de04f08c53b76c65abdf79744e530">resetBuffer</a> (boolean access)  throws AccessNotPermittedException</td></tr>
+<tr class="memdesc:add8de04f08c53b76c65abdf79744e530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the internal data buffer to a default state, with access control. Also restores the state of game levels.  <a href="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager.html#add8de04f08c53b76c65abdf79744e530">More...</a><br /></td></tr>
 <tr class="separator:add8de04f08c53b76c65abdf79744e530"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0da475959dfef1de6831b8a455d02f1a"><td class="memItemLeft" align="right" valign="top"><a id="a0da475959dfef1de6831b8a455d02f1a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>loadBuffer</b> (boolean access)  throws AccessDeniedException </td></tr>
+<tr class="memitem:a0da475959dfef1de6831b8a455d02f1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager.html#a0da475959dfef1de6831b8a455d02f1a">loadBuffer</a> (boolean access)  throws AccessNotPermittedException </td></tr>
+<tr class="memdesc:a0da475959dfef1de6831b8a455d02f1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads data from a persistent source into the buffer, with access control.  <a href="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager.html#a0da475959dfef1de6831b8a455d02f1a">More...</a><br /></td></tr>
 <tr class="separator:a0da475959dfef1de6831b8a455d02f1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a180b9999f017391c9994f368bc162c4e"><td class="memItemLeft" align="right" valign="top"><a id="a180b9999f017391c9994f368bc162c4e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>storeBuffer</b> (boolean access)  throws AccessDeniedException, IllegalArgumentException </td></tr>
+<tr class="memitem:a180b9999f017391c9994f368bc162c4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager.html#a180b9999f017391c9994f368bc162c4e">storeBuffer</a> (boolean access)  throws AccessNotPermittedException, ValueStoreException </td></tr>
+<tr class="memdesc:a180b9999f017391c9994f368bc162c4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the current buffer state to a persistent source, with access control and data validation.  <a href="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager.html#a180b9999f017391c9994f368bc162c4e">More...</a><br /></td></tr>
 <tr class="separator:a180b9999f017391c9994f368bc162c4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44b8e1a29ee2ab0853a093c6c71207d5"><td class="memItemLeft" align="right" valign="top"><a id="a44b8e1a29ee2ab0853a093c6c71207d5"></a>
-int[]&#160;</td><td class="memItemRight" valign="bottom"><b>loadScore</b> (boolean access)  throws AccessDeniedException </td></tr>
+<tr class="memitem:a44b8e1a29ee2ab0853a093c6c71207d5"><td class="memItemLeft" align="right" valign="top">int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager.html#a44b8e1a29ee2ab0853a093c6c71207d5">loadScore</a> (boolean access)  throws AccessNotPermittedException </td></tr>
+<tr class="memdesc:a44b8e1a29ee2ab0853a093c6c71207d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads game scores, with access control.  <a href="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager.html#a44b8e1a29ee2ab0853a093c6c71207d5">More...</a><br /></td></tr>
 <tr class="separator:a44b8e1a29ee2ab0853a093c6c71207d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0e840acda825bc258cc87141e98c4e3"><td class="memItemLeft" align="right" valign="top"><a id="aa0e840acda825bc258cc87141e98c4e3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>storeScore</b> (boolean access, int score1, int score2, int score3)  throws AccessDeniedException, IllegalArgumentException </td></tr>
+<tr class="memitem:aa0e840acda825bc258cc87141e98c4e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager.html#aa0e840acda825bc258cc87141e98c4e3">storeScore</a> (boolean access, int score1, int score2, int score3)  throws AccessNotPermittedException, ValueStoreException </td></tr>
+<tr class="memdesc:aa0e840acda825bc258cc87141e98c4e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores game scores, with access control and score validation.  <a href="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager.html#aa0e840acda825bc258cc87141e98c4e3">More...</a><br /></td></tr>
 <tr class="separator:aa0e840acda825bc258cc87141e98c4e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implements the <a class="el" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html" title="Defines the contract for managing game data, including loading, storing, and resetting data.">DataManager</a> interface using a Proxy pattern to control access and add validation to a <a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html" title="Implements the DataManager interface to manage game data using an in-memory buffer and an SQLite data...">ConcreteDataManager</a>. </p>
+<p>This class acts as an intermediary (proxy) for a <a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html">ConcreteDataManager</a> instance. It enforces access control (via the <code>access</code> boolean parameter), validates input keys and values before delegating operations to the concrete manager, and ensures the concrete manager is instantiated. This separation allows for additional logic (like security checks or validation) without modifying the core data management implementation. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a1ee6e06340754e119d76efeaae1792ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ee6e06340754e119d76efeaae1792ea">&#9670;&nbsp;</a></span>ProxyDataManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PaooGame.DatabaseManaging.ProxyDataManager.ProxyDataManager </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPaooGame_1_1RefLinks.html">RefLinks</a>&#160;</td>
+          <td class="paramname"><em>reflink</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager.html" title="Implements the DataManager interface using a Proxy pattern to control access and add validation to a ...">ProxyDataManager</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reflink</td><td>A reference to shared game resources, used for instantiating the <a class="el" href="classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html" title="Implements the DataManager interface to manage game data using an in-memory buffer and an SQLite data...">ConcreteDataManager</a> if needed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2a8a72a65d11dcbec85f855f72fd64d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a8a72a65d11dcbec85f855f72fd64d1">&#9670;&nbsp;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PaooGame.DatabaseManaging.ProxyDataManager.load </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>access</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> throws <a class="el" href="classPaooGame_1_1CustomExceptions_1_1AccessNotPermittedException.html">AccessNotPermittedException</a>, <a class="el" href="classPaooGame_1_1CustomExceptions_1_1ValueStoreException.html">ValueStoreException</a>, <a class="el" href="classPaooGame_1_1CustomExceptions_1_1DataBufferNotReadyException.html">DataBufferNotReadyException</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads an integer value associated with a given key, with access control and validation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The unique identifier for the data to be loaded. </td></tr>
+    <tr><td class="paramname">access</td><td>A boolean flag; if false, an AccessNotPermittedException is thrown. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The integer value associated with the key. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">AccessNotPermittedException</td><td>If <code>access</code> is false. </td></tr>
+    <tr><td class="paramname">ValueStoreException</td><td>If the provided <code>key</code> is not a valid known constant. </td></tr>
+    <tr><td class="paramname">DataBufferNotReadyException</td><td>If the loaded value from the concrete manager is -1 (indicating data not ready). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html#ae5b8d2e1e69fdfae152c5bf8252ca491">PaooGame.DatabaseManaging.DataManager</a>.</p>
+
+</div>
+</div>
+<a id="a0da475959dfef1de6831b8a455d02f1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0da475959dfef1de6831b8a455d02f1a">&#9670;&nbsp;</a></span>loadBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.DatabaseManaging.ProxyDataManager.loadBuffer </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>access</em></td><td>)</td>
+          <td> throws <a class="el" href="classPaooGame_1_1CustomExceptions_1_1AccessNotPermittedException.html">AccessNotPermittedException</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads data from a persistent source into the buffer, with access control. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">access</td><td>A boolean flag; if false, an AccessNotPermittedException is thrown. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">AccessNotPermittedException</td><td>If <code>access</code> is false. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html#af6fafa39d91b42ba431dc44a85037c59">PaooGame.DatabaseManaging.DataManager</a>.</p>
+
+</div>
+</div>
+<a id="a44b8e1a29ee2ab0853a093c6c71207d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44b8e1a29ee2ab0853a093c6c71207d5">&#9670;&nbsp;</a></span>loadScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int [] PaooGame.DatabaseManaging.ProxyDataManager.loadScore </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>access</em></td><td>)</td>
+          <td> throws <a class="el" href="classPaooGame_1_1CustomExceptions_1_1AccessNotPermittedException.html">AccessNotPermittedException</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads game scores, with access control. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">access</td><td>A boolean flag; if false, an AccessNotPermittedException is thrown. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An array of integers representing the loaded scores. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">AccessNotPermittedException</td><td>If <code>access</code> is false. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html#a10322128a593d95096b14ecc60d97456">PaooGame.DatabaseManaging.DataManager</a>.</p>
+
+</div>
+</div>
+<a id="add8de04f08c53b76c65abdf79744e530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add8de04f08c53b76c65abdf79744e530">&#9670;&nbsp;</a></span>resetBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.DatabaseManaging.ProxyDataManager.resetBuffer </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>access</em></td><td>)</td>
+          <td> throws <a class="el" href="classPaooGame_1_1CustomExceptions_1_1AccessNotPermittedException.html">AccessNotPermittedException</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resets the internal data buffer to a default state, with access control. Also restores the state of game levels. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">access</td><td>A boolean flag; if false, an AccessNotPermittedException is thrown. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">AccessNotPermittedException</td><td>If <code>access</code> is false. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html#a49d2830860ed2310e864c861ab57595f">PaooGame.DatabaseManaging.DataManager</a>.</p>
+
+</div>
+</div>
+<a id="a5f48574435a79c3a383f456cda5f145c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f48574435a79c3a383f456cda5f145c">&#9670;&nbsp;</a></span>store()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.DatabaseManaging.ProxyDataManager.store </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>access</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> throws <a class="el" href="classPaooGame_1_1CustomExceptions_1_1AccessNotPermittedException.html">AccessNotPermittedException</a>, <a class="el" href="classPaooGame_1_1CustomExceptions_1_1ValueStoreException.html">ValueStoreException</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stores an integer value associated with a given key, with access control and input validation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The unique identifier for the data to be stored. </td></tr>
+    <tr><td class="paramname">value</td><td>The integer value to store. </td></tr>
+    <tr><td class="paramname">access</td><td>A boolean flag; if false, an AccessNotPermittedException is thrown. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">AccessNotPermittedException</td><td>If <code>access</code> is false. </td></tr>
+    <tr><td class="paramname">ValueStoreException</td><td>If the <code>key</code> is invalid or the <code>value</code> is out of expected range for the given key. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html#a44487bfd10bbe98cb8130aa8d1cf0443">PaooGame.DatabaseManaging.DataManager</a>.</p>
+
+</div>
+</div>
+<a id="a180b9999f017391c9994f368bc162c4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a180b9999f017391c9994f368bc162c4e">&#9670;&nbsp;</a></span>storeBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.DatabaseManaging.ProxyDataManager.storeBuffer </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>access</em></td><td>)</td>
+          <td> throws <a class="el" href="classPaooGame_1_1CustomExceptions_1_1AccessNotPermittedException.html">AccessNotPermittedException</a>, <a class="el" href="classPaooGame_1_1CustomExceptions_1_1ValueStoreException.html">ValueStoreException</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stores the current buffer state to a persistent source, with access control and data validation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">access</td><td>A boolean flag; if false, an AccessNotPermittedException is thrown. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">AccessNotPermittedException</td><td>If <code>access</code> is false. </td></tr>
+    <tr><td class="paramname">ValueStoreException</td><td>If any data in the buffer is found to be invalid (-1) before storing. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html#a34f28f3aad93e84b36c760fcbe7eb490">PaooGame.DatabaseManaging.DataManager</a>.</p>
+
+</div>
+</div>
+<a id="aa0e840acda825bc258cc87141e98c4e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0e840acda825bc258cc87141e98c4e3">&#9670;&nbsp;</a></span>storeScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PaooGame.DatabaseManaging.ProxyDataManager.storeScore </td>
+          <td>(</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>access</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>score1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>score2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>score3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> throws <a class="el" href="classPaooGame_1_1CustomExceptions_1_1AccessNotPermittedException.html">AccessNotPermittedException</a>, <a class="el" href="classPaooGame_1_1CustomExceptions_1_1ValueStoreException.html">ValueStoreException</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stores game scores, with access control and score validation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">access</td><td>A boolean flag; if false, an AccessNotPermittedException is thrown. </td></tr>
+    <tr><td class="paramname">score1</td><td>The first score to store. </td></tr>
+    <tr><td class="paramname">score2</td><td>The second score to store. </td></tr>
+    <tr><td class="paramname">score3</td><td>The third score to store. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">AccessNotPermittedException</td><td>If <code>access</code> is false. </td></tr>
+    <tr><td class="paramname">ValueStoreException</td><td>If any score is outside the valid range (0-999). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html#a2c486fce52bb74f1441186048dc6e0c4">PaooGame.DatabaseManaging.DataManager</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/PaooGame/DatabaseManaging/ProxyDataManager.java</li>
 </ul>

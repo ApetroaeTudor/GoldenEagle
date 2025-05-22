@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1Game}\index{PaooGame.Game@{PaooGame.Game}}
 
 
-Inheritance diagram for Paoo\+Game.\+Game\+:
-\nopagebreak
+\mbox{\hyperlink{classPaooGame_1_1Main}{Main}} class for the game, responsible for initialization, game loop, and state management.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+Game\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+Game\+:
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+Game\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+Game\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,79 +26,435 @@ Collaboration diagram for Paoo\+Game.\+Game\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_a98be7176fa03f25e6ee6df83f3a44136}\label{classPaooGame_1_1Game_a98be7176fa03f25e6ee6df83f3a44136}} 
-{\bfseries Game} (String title, int width, int height)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_ac5a0a3d777de88cd127ef85ef69efb37}\label{classPaooGame_1_1Game_ac5a0a3d777de88cd127ef85ef69efb37}} 
-void {\bfseries run} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_abf9ea1842856913d3ced40a1943fc5ff}\label{classPaooGame_1_1Game_abf9ea1842856913d3ced40a1943fc5ff}} 
-synchronized void {\bfseries Start\+Game} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_a3697dc249cd795b7aff9f1d48708be69}\label{classPaooGame_1_1Game_a3697dc249cd795b7aff9f1d48708be69}} 
-synchronized void {\bfseries Stop\+Game} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_a182a9ade23b41bb228af9d82ec1c3dfb}\label{classPaooGame_1_1Game_a182a9ade23b41bb228af9d82ec1c3dfb}} 
-int {\bfseries get\+Width} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_a64d3d7b3c773fc1d2cfe25ddefd14657}\label{classPaooGame_1_1Game_a64d3d7b3c773fc1d2cfe25ddefd14657}} 
-int {\bfseries get\+Height} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_a27c003e5d212e2b5a8677a14e98d99dc}\label{classPaooGame_1_1Game_a27c003e5d212e2b5a8677a14e98d99dc}} 
-\mbox{\hyperlink{classPaooGame_1_1Input_1_1KeyManager}{Key\+Manager}} {\bfseries get\+Key\+Manager} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_a068157ad4efa5e88c08aa4316eac968a}\label{classPaooGame_1_1Game_a068157ad4efa5e88c08aa4316eac968a}} 
-\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} {\bfseries get\+Level1\+State} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_a31e469473ce0f324a94936e96aba8996}\label{classPaooGame_1_1Game_a31e469473ce0f324a94936e96aba8996}} 
-\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} {\bfseries get\+Level2\+State} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_a74ba55c9b881edd3c9c66ee4cdef5d75}\label{classPaooGame_1_1Game_a74ba55c9b881edd3c9c66ee4cdef5d75}} 
-\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} {\bfseries get\+Level3\+State} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_adab91ab947b4c9306e049ffac15257f8}\label{classPaooGame_1_1Game_adab91ab947b4c9306e049ffac15257f8}} 
-\mbox{\hyperlink{classPaooGame_1_1Input_1_1MouseInput}{Mouse\+Input}} {\bfseries get\+Mouse\+Input} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_ac89ce0ffd3ba29e0fcf2266d14810fe8}\label{classPaooGame_1_1Game_ac89ce0ffd3ba29e0fcf2266d14810fe8}} 
-\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} {\bfseries get\+Play\+State} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_af5ab43c9ca07776e7eb3c50c5be75dbf}\label{classPaooGame_1_1Game_af5ab43c9ca07776e7eb3c50c5be75dbf}} 
-\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} {\bfseries get\+Fight\+State} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_a03cd17edea17a10528f2a53ae72d1391}\label{classPaooGame_1_1Game_a03cd17edea17a10528f2a53ae72d1391}} 
-\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} {\bfseries get\+Win\+State} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_aa6b5edda9902b3e400913d31544cdf23}\label{classPaooGame_1_1Game_aa6b5edda9902b3e400913d31544cdf23}} 
-\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} {\bfseries get\+Pause\+Menu\+State} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_a2f0928fbe4cb2bc38718035f4ee8bd54}\label{classPaooGame_1_1Game_a2f0928fbe4cb2bc38718035f4ee8bd54}} 
-\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} {\bfseries get\+Shop\+State} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_a8173771e300e4b4087c10a4c0886d672}\label{classPaooGame_1_1Game_a8173771e300e4b4087c10a4c0886d672}} 
-\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} {\bfseries get\+Menu\+State} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_a04df7b5388b3138df8d69b4796b201c0}\label{classPaooGame_1_1Game_a04df7b5388b3138df8d69b4796b201c0}} 
-\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} {\bfseries get\+Death\+State} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_abef88c76b0afe45d8de0bead749d8b18}\label{classPaooGame_1_1Game_abef88c76b0afe45d8de0bead749d8b18}} 
-\mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level1}{Level1}} {\bfseries get\+Level1} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_acd82036e923d0f7b3e028c2d7d53905c}\label{classPaooGame_1_1Game_acd82036e923d0f7b3e028c2d7d53905c}} 
-\mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level2}{Level2}} {\bfseries get\+Level2} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Game_af54e6e1a5bbe88c5645e9f4c6573d9c6}\label{classPaooGame_1_1Game_af54e6e1a5bbe88c5645e9f4c6573d9c6}} 
-\mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level3}{Level3}} {\bfseries get\+Level3} ()
-\item 
+\mbox{\hyperlink{classPaooGame_1_1Game_a98be7176fa03f25e6ee6df83f3a44136}{Game}} (String title, int width, int height)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPaooGame_1_1Game}{Game}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Game_ac5a0a3d777de88cd127ef85ef69efb37}{run}} ()
+\begin{DoxyCompactList}\small\item\em The main game loop. \end{DoxyCompactList}\item 
+synchronized void \mbox{\hyperlink{classPaooGame_1_1Game_abf9ea1842856913d3ced40a1943fc5ff}{Start\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Starts the game thread if it\textquotesingle{}s not already running. \end{DoxyCompactList}\item 
+synchronized void \mbox{\hyperlink{classPaooGame_1_1Game_a3697dc249cd795b7aff9f1d48708be69}{Stop\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Stops the game thread if it\textquotesingle{}s running. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPaooGame_1_1Game_a182a9ade23b41bb228af9d82ec1c3dfb}{get\+Width}} ()
+\begin{DoxyCompactList}\small\item\em Gets the width of the game window. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPaooGame_1_1Game_a64d3d7b3c773fc1d2cfe25ddefd14657}{get\+Height}} ()
+\begin{DoxyCompactList}\small\item\em Gets the height of the game window. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1Input_1_1KeyManager}{Key\+Manager}} \mbox{\hyperlink{classPaooGame_1_1Game_a27c003e5d212e2b5a8677a14e98d99dc}{get\+Key\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Gets the keyboard input manager. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} \mbox{\hyperlink{classPaooGame_1_1Game_a068157ad4efa5e88c08aa4316eac968a}{get\+Level1\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the game state for Level 1. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} \mbox{\hyperlink{classPaooGame_1_1Game_a31e469473ce0f324a94936e96aba8996}{get\+Level2\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the game state for Level 2. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} \mbox{\hyperlink{classPaooGame_1_1Game_a74ba55c9b881edd3c9c66ee4cdef5d75}{get\+Level3\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the game state for Level 3. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1Input_1_1MouseInput}{Mouse\+Input}} \mbox{\hyperlink{classPaooGame_1_1Game_adab91ab947b4c9306e049ffac15257f8}{get\+Mouse\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Gets the mouse input manager. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} \mbox{\hyperlink{classPaooGame_1_1Game_ac89ce0ffd3ba29e0fcf2266d14810fe8}{get\+Play\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the primary play state (currently defaults to Level 1 State). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} \mbox{\hyperlink{classPaooGame_1_1Game_af5ab43c9ca07776e7eb3c50c5be75dbf}{get\+Fight\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the fight/combat game state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} \mbox{\hyperlink{classPaooGame_1_1Game_a03cd17edea17a10528f2a53ae72d1391}{get\+Win\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the game win state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} \mbox{\hyperlink{classPaooGame_1_1Game_aa6b5edda9902b3e400913d31544cdf23}{get\+Pause\+Menu\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the pause menu game state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} \mbox{\hyperlink{classPaooGame_1_1Game_a2f0928fbe4cb2bc38718035f4ee8bd54}{get\+Shop\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the in-\/game shop state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} \mbox{\hyperlink{classPaooGame_1_1Game_a8173771e300e4b4087c10a4c0886d672}{get\+Menu\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the main menu game state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} \mbox{\hyperlink{classPaooGame_1_1Game_a04df7b5388b3138df8d69b4796b201c0}{get\+Death\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the game over/death state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level1}{Level1}} \mbox{\hyperlink{classPaooGame_1_1Game_abef88c76b0afe45d8de0bead749d8b18}{get\+Level1}} ()
+\begin{DoxyCompactList}\small\item\em Gets the map data for Level 1. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level2}{Level2}} \mbox{\hyperlink{classPaooGame_1_1Game_acd82036e923d0f7b3e028c2d7d53905c}{get\+Level2}} ()
+\begin{DoxyCompactList}\small\item\em Gets the map data for Level 2. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level3}{Level3}} \mbox{\hyperlink{classPaooGame_1_1Game_af54e6e1a5bbe88c5645e9f4c6573d9c6}{get\+Level3}} ()
+\begin{DoxyCompactList}\small\item\em Gets the map data for Level 3. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Game_a5a060279b07631104fd4dec7639663e8}\label{classPaooGame_1_1Game_a5a060279b07631104fd4dec7639663e8}} 
-void {\bfseries reset\+Level1\+State} ()
-\item 
+void \mbox{\hyperlink{classPaooGame_1_1Game_a5a060279b07631104fd4dec7639663e8}{reset\+Level1\+State}} ()
+\begin{DoxyCompactList}\small\item\em Resets Level 1 to its initial state. Calls the \mbox{\hyperlink{classPaooGame_1_1States_1_1State_aec1c3e402381da4d4986c4eb957de55b}{State\#restore\+State()}} method of the Level 1 state. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Game_ac0d92887cb23ddbc0012c4f3219ffcdb}\label{classPaooGame_1_1Game_ac0d92887cb23ddbc0012c4f3219ffcdb}} 
-void {\bfseries reset\+Level2\+State} ()
-\item 
+void \mbox{\hyperlink{classPaooGame_1_1Game_ac0d92887cb23ddbc0012c4f3219ffcdb}{reset\+Level2\+State}} ()
+\begin{DoxyCompactList}\small\item\em Resets Level 2 to its initial state. Calls the \mbox{\hyperlink{classPaooGame_1_1States_1_1State_aec1c3e402381da4d4986c4eb957de55b}{State\#restore\+State()}} method of the Level 2 state. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Game_a12ada3314b97ebb83fba77d02d56f24e}\label{classPaooGame_1_1Game_a12ada3314b97ebb83fba77d02d56f24e}} 
-void {\bfseries reset\+Level3\+State} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classPaooGame_1_1Game_a12ada3314b97ebb83fba77d02d56f24e}{reset\+Level3\+State}} ()
+\begin{DoxyCompactList}\small\item\em Resets Level 3 to its initial state. Calls the \mbox{\hyperlink{classPaooGame_1_1States_1_1State_aec1c3e402381da4d4986c4eb957de55b}{State\#restore\+State()}} method of the Level 3 state. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPaooGame_1_1Game_a52dfc481a133552fa04d8ccfe54fe721}{get\+Score1}} ()
+\begin{DoxyCompactList}\small\item\em Gets the first top score. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPaooGame_1_1Game_ab413e55afa6509c6e499ca59633b97d9}{get\+Score2}} ()
+\begin{DoxyCompactList}\small\item\em Gets the second top score. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPaooGame_1_1Game_aad07d74b37af4669d1ab3d20d80af9b0}{get\+Score3}} ()
+\begin{DoxyCompactList}\small\item\em Gets the third top score. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Game_a0af07685f5c8c6daccdee06fae7d7929}{set\+Score1}} (int score1)
+\begin{DoxyCompactList}\small\item\em Sets the first top score. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Game_ab040658423f0ebd6eb5a6fa3e73d5cab}{set\+Score2}} (int score2)
+\begin{DoxyCompactList}\small\item\em Sets the second top score. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Game_ad275b8c457210ef59b93052e8810466b}{set\+Score3}} (int score3)
+\begin{DoxyCompactList}\small\item\em Sets the third top score. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classPaooGame_1_1Main}{Main}} class for the game, responsible for initialization, game loop, and state management. 
+
+This class implements the \mbox{\hyperlink{}{Runnable}} interface to handle the game loop in a separate thread. It initializes all game components, including the game window, input managers, game states, entities, levels, and data management systems. It also manages the update and rendering cycles. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Game_a98be7176fa03f25e6ee6df83f3a44136}\label{classPaooGame_1_1Game_a98be7176fa03f25e6ee6df83f3a44136}} 
+\index{PaooGame.Game@{PaooGame.Game}!Game@{Game}}
+\index{Game@{Game}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily Paoo\+Game.\+Game.\+Game (\begin{DoxyParamCaption}\item[{String}]{title,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPaooGame_1_1Game}{Game}} object. 
+
+Initializes the game window with the specified title, width, and height. 
+\begin{DoxyParams}{Parameters}
+{\em title} & The title of the game window. \\
+\hline
+{\em width} & The width of the game window in pixels. \\
+\hline
+{\em height} & The height of the game window in pixels. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Game_a04df7b5388b3138df8d69b4796b201c0}\label{classPaooGame_1_1Game_a04df7b5388b3138df8d69b4796b201c0}} 
+\index{PaooGame.Game@{PaooGame.Game}!getDeathState@{getDeathState}}
+\index{getDeathState@{getDeathState}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{getDeathState()}{getDeathState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} Paoo\+Game.\+Game.\+get\+Death\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the game over/death state. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{}{Death\+State}} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Game_af5ab43c9ca07776e7eb3c50c5be75dbf}\label{classPaooGame_1_1Game_af5ab43c9ca07776e7eb3c50c5be75dbf}} 
+\index{PaooGame.Game@{PaooGame.Game}!getFightState@{getFightState}}
+\index{getFightState@{getFightState}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{getFightState()}{getFightState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} Paoo\+Game.\+Game.\+get\+Fight\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the fight/combat game state. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{}{Fight\+State}} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Game_a64d3d7b3c773fc1d2cfe25ddefd14657}\label{classPaooGame_1_1Game_a64d3d7b3c773fc1d2cfe25ddefd14657}} 
+\index{PaooGame.Game@{PaooGame.Game}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily int Paoo\+Game.\+Game.\+get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the height of the game window. 
+
+\begin{DoxyReturn}{Returns}
+The height of the window in pixels. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Game_a27c003e5d212e2b5a8677a14e98d99dc}\label{classPaooGame_1_1Game_a27c003e5d212e2b5a8677a14e98d99dc}} 
+\index{PaooGame.Game@{PaooGame.Game}!getKeyManager@{getKeyManager}}
+\index{getKeyManager@{getKeyManager}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{getKeyManager()}{getKeyManager()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1Input_1_1KeyManager}{Key\+Manager}} Paoo\+Game.\+Game.\+get\+Key\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the keyboard input manager. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{}{Key\+Manager}} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Game_abef88c76b0afe45d8de0bead749d8b18}\label{classPaooGame_1_1Game_abef88c76b0afe45d8de0bead749d8b18}} 
+\index{PaooGame.Game@{PaooGame.Game}!getLevel1@{getLevel1}}
+\index{getLevel1@{getLevel1}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{getLevel1()}{getLevel1()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level1}{Level1}} Paoo\+Game.\+Game.\+get\+Level1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the map data for Level 1. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{}{Level1}} map data object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Game_a068157ad4efa5e88c08aa4316eac968a}\label{classPaooGame_1_1Game_a068157ad4efa5e88c08aa4316eac968a}} 
+\index{PaooGame.Game@{PaooGame.Game}!getLevel1State@{getLevel1State}}
+\index{getLevel1State@{getLevel1State}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{getLevel1State()}{getLevel1State()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} Paoo\+Game.\+Game.\+get\+Level1\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the game state for Level 1. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{}{Level1\+State}} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Game_acd82036e923d0f7b3e028c2d7d53905c}\label{classPaooGame_1_1Game_acd82036e923d0f7b3e028c2d7d53905c}} 
+\index{PaooGame.Game@{PaooGame.Game}!getLevel2@{getLevel2}}
+\index{getLevel2@{getLevel2}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{getLevel2()}{getLevel2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level2}{Level2}} Paoo\+Game.\+Game.\+get\+Level2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the map data for Level 2. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{}{Level2}} map data object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Game_a31e469473ce0f324a94936e96aba8996}\label{classPaooGame_1_1Game_a31e469473ce0f324a94936e96aba8996}} 
+\index{PaooGame.Game@{PaooGame.Game}!getLevel2State@{getLevel2State}}
+\index{getLevel2State@{getLevel2State}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{getLevel2State()}{getLevel2State()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} Paoo\+Game.\+Game.\+get\+Level2\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the game state for Level 2. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{}{Level2\+State}} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Game_af54e6e1a5bbe88c5645e9f4c6573d9c6}\label{classPaooGame_1_1Game_af54e6e1a5bbe88c5645e9f4c6573d9c6}} 
+\index{PaooGame.Game@{PaooGame.Game}!getLevel3@{getLevel3}}
+\index{getLevel3@{getLevel3}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{getLevel3()}{getLevel3()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1Maps_1_1Level3}{Level3}} Paoo\+Game.\+Game.\+get\+Level3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the map data for Level 3. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{}{Level3}} map data object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Game_a74ba55c9b881edd3c9c66ee4cdef5d75}\label{classPaooGame_1_1Game_a74ba55c9b881edd3c9c66ee4cdef5d75}} 
+\index{PaooGame.Game@{PaooGame.Game}!getLevel3State@{getLevel3State}}
+\index{getLevel3State@{getLevel3State}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{getLevel3State()}{getLevel3State()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} Paoo\+Game.\+Game.\+get\+Level3\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the game state for Level 3. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{}{Level3\+State}} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Game_a8173771e300e4b4087c10a4c0886d672}\label{classPaooGame_1_1Game_a8173771e300e4b4087c10a4c0886d672}} 
+\index{PaooGame.Game@{PaooGame.Game}!getMenuState@{getMenuState}}
+\index{getMenuState@{getMenuState}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{getMenuState()}{getMenuState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} Paoo\+Game.\+Game.\+get\+Menu\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the main menu game state. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{}{Menu\+State}} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Game_adab91ab947b4c9306e049ffac15257f8}\label{classPaooGame_1_1Game_adab91ab947b4c9306e049ffac15257f8}} 
+\index{PaooGame.Game@{PaooGame.Game}!getMouseInput@{getMouseInput}}
+\index{getMouseInput@{getMouseInput}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{getMouseInput()}{getMouseInput()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1Input_1_1MouseInput}{Mouse\+Input}} Paoo\+Game.\+Game.\+get\+Mouse\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the mouse input manager. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{}{Mouse\+Input}} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Game_aa6b5edda9902b3e400913d31544cdf23}\label{classPaooGame_1_1Game_aa6b5edda9902b3e400913d31544cdf23}} 
+\index{PaooGame.Game@{PaooGame.Game}!getPauseMenuState@{getPauseMenuState}}
+\index{getPauseMenuState@{getPauseMenuState}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{getPauseMenuState()}{getPauseMenuState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} Paoo\+Game.\+Game.\+get\+Pause\+Menu\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the pause menu game state. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{}{Pause\+Menu\+State}} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Game_ac89ce0ffd3ba29e0fcf2266d14810fe8}\label{classPaooGame_1_1Game_ac89ce0ffd3ba29e0fcf2266d14810fe8}} 
+\index{PaooGame.Game@{PaooGame.Game}!getPlayState@{getPlayState}}
+\index{getPlayState@{getPlayState}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{getPlayState()}{getPlayState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} Paoo\+Game.\+Game.\+get\+Play\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the primary play state (currently defaults to Level 1 State). 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{}{Level1\+State}} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Game_a52dfc481a133552fa04d8ccfe54fe721}\label{classPaooGame_1_1Game_a52dfc481a133552fa04d8ccfe54fe721}} 
+\index{PaooGame.Game@{PaooGame.Game}!getScore1@{getScore1}}
+\index{getScore1@{getScore1}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{getScore1()}{getScore1()}}
+{\footnotesize\ttfamily int Paoo\+Game.\+Game.\+get\+Score1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the first top score. 
+
+\begin{DoxyReturn}{Returns}
+The first top score. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Game_ab413e55afa6509c6e499ca59633b97d9}\label{classPaooGame_1_1Game_ab413e55afa6509c6e499ca59633b97d9}} 
+\index{PaooGame.Game@{PaooGame.Game}!getScore2@{getScore2}}
+\index{getScore2@{getScore2}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{getScore2()}{getScore2()}}
+{\footnotesize\ttfamily int Paoo\+Game.\+Game.\+get\+Score2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the second top score. 
+
+\begin{DoxyReturn}{Returns}
+The second top score. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Game_aad07d74b37af4669d1ab3d20d80af9b0}\label{classPaooGame_1_1Game_aad07d74b37af4669d1ab3d20d80af9b0}} 
+\index{PaooGame.Game@{PaooGame.Game}!getScore3@{getScore3}}
+\index{getScore3@{getScore3}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{getScore3()}{getScore3()}}
+{\footnotesize\ttfamily int Paoo\+Game.\+Game.\+get\+Score3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the third top score. 
+
+\begin{DoxyReturn}{Returns}
+The third top score. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Game_a2f0928fbe4cb2bc38718035f4ee8bd54}\label{classPaooGame_1_1Game_a2f0928fbe4cb2bc38718035f4ee8bd54}} 
+\index{PaooGame.Game@{PaooGame.Game}!getShopState@{getShopState}}
+\index{getShopState@{getShopState}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{getShopState()}{getShopState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} Paoo\+Game.\+Game.\+get\+Shop\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the in-\/game shop state. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{}{Shop\+State}} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Game_a182a9ade23b41bb228af9d82ec1c3dfb}\label{classPaooGame_1_1Game_a182a9ade23b41bb228af9d82ec1c3dfb}} 
+\index{PaooGame.Game@{PaooGame.Game}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily int Paoo\+Game.\+Game.\+get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the width of the game window. 
+
+\begin{DoxyReturn}{Returns}
+The width of the window in pixels. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Game_a03cd17edea17a10528f2a53ae72d1391}\label{classPaooGame_1_1Game_a03cd17edea17a10528f2a53ae72d1391}} 
+\index{PaooGame.Game@{PaooGame.Game}!getWinState@{getWinState}}
+\index{getWinState@{getWinState}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{getWinState()}{getWinState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} Paoo\+Game.\+Game.\+get\+Win\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the game win state. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{}{Win\+State}} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Game_ac5a0a3d777de88cd127ef85ef69efb37}\label{classPaooGame_1_1Game_ac5a0a3d777de88cd127ef85ef69efb37}} 
+\index{PaooGame.Game@{PaooGame.Game}!run@{run}}
+\index{run@{run}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Game.\+run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The main game loop. 
+
+Initializes the game and then enters a loop that updates and draws the game at a fixed rate (target 60 frames per second). \mbox{\Hypertarget{classPaooGame_1_1Game_a0af07685f5c8c6daccdee06fae7d7929}\label{classPaooGame_1_1Game_a0af07685f5c8c6daccdee06fae7d7929}} 
+\index{PaooGame.Game@{PaooGame.Game}!setScore1@{setScore1}}
+\index{setScore1@{setScore1}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{setScore1()}{setScore1()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Game.\+set\+Score1 (\begin{DoxyParamCaption}\item[{int}]{score1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the first top score. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em score1} & The value for the first top score. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Game_ab040658423f0ebd6eb5a6fa3e73d5cab}\label{classPaooGame_1_1Game_ab040658423f0ebd6eb5a6fa3e73d5cab}} 
+\index{PaooGame.Game@{PaooGame.Game}!setScore2@{setScore2}}
+\index{setScore2@{setScore2}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{setScore2()}{setScore2()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Game.\+set\+Score2 (\begin{DoxyParamCaption}\item[{int}]{score2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the second top score. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em score2} & The value for the second top score. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Game_ad275b8c457210ef59b93052e8810466b}\label{classPaooGame_1_1Game_ad275b8c457210ef59b93052e8810466b}} 
+\index{PaooGame.Game@{PaooGame.Game}!setScore3@{setScore3}}
+\index{setScore3@{setScore3}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{setScore3()}{setScore3()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Game.\+set\+Score3 (\begin{DoxyParamCaption}\item[{int}]{score3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the third top score. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em score3} & The value for the third top score. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Game_abf9ea1842856913d3ced40a1943fc5ff}\label{classPaooGame_1_1Game_abf9ea1842856913d3ced40a1943fc5ff}} 
+\index{PaooGame.Game@{PaooGame.Game}!StartGame@{StartGame}}
+\index{StartGame@{StartGame}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{StartGame()}{StartGame()}}
+{\footnotesize\ttfamily synchronized void Paoo\+Game.\+Game.\+Start\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Starts the game thread if it\textquotesingle{}s not already running. 
+
+Sets the \mbox{\hyperlink{}{run\+State}} to true and creates and starts a new \mbox{\hyperlink{}{Thread}} for the game loop. \mbox{\Hypertarget{classPaooGame_1_1Game_a3697dc249cd795b7aff9f1d48708be69}\label{classPaooGame_1_1Game_a3697dc249cd795b7aff9f1d48708be69}} 
+\index{PaooGame.Game@{PaooGame.Game}!StopGame@{StopGame}}
+\index{StopGame@{StopGame}!PaooGame.Game@{PaooGame.Game}}
+\doxysubsubsection{\texorpdfstring{StopGame()}{StopGame()}}
+{\footnotesize\ttfamily synchronized void Paoo\+Game.\+Game.\+Stop\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stops the game thread if it\textquotesingle{}s running. 
+
+Sets the \mbox{\hyperlink{}{run\+State}} to false and waits for the game thread to join (terminate). 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

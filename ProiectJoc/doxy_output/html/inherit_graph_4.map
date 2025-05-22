@@ -1,6 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classPaooGame_1_1Entities_1_1Entity.html" title=" " alt="" coords="5,56,192,83"/>
-<area shape="rect" id="node2" href="$classPaooGame_1_1Entities_1_1Enemy.html" title=" " alt="" coords="240,5,435,32"/>
-<area shape="rect" id="node3" href="$classPaooGame_1_1Entities_1_1Hero.html" title=" " alt="" coords="247,56,427,83"/>
-<area shape="rect" id="node4" href="$classPaooGame_1_1Entities_1_1NPC.html" title=" " alt="" coords="249,107,425,133"/>
+<area shape="rect" id="node1" href="$interfacePaooGame_1_1DatabaseManaging_1_1DataManager.html" title="Defines the contract for managing game data, including loading, storing, and resetting data." alt="" coords="5,39,232,80"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1DatabaseManaging_1_1ConcreteDataManager.html" title="Implements the DataManager interface to manage game data using an in&#45;memory buffer and an SQLite data..." alt="" coords="280,5,507,47"/>
+<area shape="rect" id="node3" href="$classPaooGame_1_1DatabaseManaging_1_1ProxyDataManager.html" title="Implements the DataManager interface using a Proxy pattern to control access and add validation to a ..." alt="" coords="280,71,507,112"/>
 </map>

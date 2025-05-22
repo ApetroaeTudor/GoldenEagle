@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1Items_1_1Item}\index{PaooGame.Items.Item@{PaooGame.Items.Item}}
 
 
-Inheritance diagram for Paoo\+Game.\+Items.\+Item\+:
-\nopagebreak
+Represents an abstract base class for all items in the game.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+Items.\+Item\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+Items.\+Item\+:
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+Items.\+Item\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+Items.\+Item\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,42 +26,132 @@ Collaboration diagram for Paoo\+Game.\+Items.\+Item\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1Items_1_1Item_a4ce9501b511b1bc86e2e4cff2d6e753d}\label{classPaooGame_1_1Items_1_1Item_a4ce9501b511b1bc86e2e4cff2d6e753d}} 
-\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} {\bfseries get\+Hitbox} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Items_1_1Item_aad06c92ff9c8d131aa918e2cc18cb7ae}\label{classPaooGame_1_1Items_1_1Item_aad06c92ff9c8d131aa918e2cc18cb7ae}} 
-String {\bfseries get\+Item\+Name} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Items_1_1Item_ac7ec8aa64141e0b859ac5b12f6c231ed}\label{classPaooGame_1_1Items_1_1Item_ac7ec8aa64141e0b859ac5b12f6c231ed}} 
-String {\bfseries get\+Item\+Sheet\+Path} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Items_1_1Item_afd85f5beb3846c53838fba92a9670455}\label{classPaooGame_1_1Items_1_1Item_afd85f5beb3846c53838fba92a9670455}} 
-abstract void {\bfseries draw\+Item} (Graphics g)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Items_1_1Item_a1a2a13af135036ac8ef84026195d33e3}\label{classPaooGame_1_1Items_1_1Item_a1a2a13af135036ac8ef84026195d33e3}} 
-abstract void {\bfseries update\+Item} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_a11508734150c8d83791aac862819e68d}{Item}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item}{Item}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_a4ce9501b511b1bc86e2e4cff2d6e753d}{get\+Hitbox}} ()
+\begin{DoxyCompactList}\small\item\em Gets the hitbox of the item. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_aad06c92ff9c8d131aa918e2cc18cb7ae}{get\+Item\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the item. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_ac7ec8aa64141e0b859ac5b12f6c231ed}{get\+Item\+Sheet\+Path}} ()
+\begin{DoxyCompactList}\small\item\em Gets the file path to the item\textquotesingle{}s sprite sheet. \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_afd85f5beb3846c53838fba92a9670455}{draw\+Item}} (Graphics g)
+\begin{DoxyCompactList}\small\item\em Abstract method to draw the item on the screen. \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_a1a2a13af135036ac8ef84026195d33e3}{update\+Item}} ()
+\begin{DoxyCompactList}\small\item\em Abstract method to update the item\textquotesingle{}s state. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classPaooGame_1_1Items_1_1Item_ae7a5f7d40d631eb4a91978b09a8468dd}\label{classPaooGame_1_1Items_1_1Item_ae7a5f7d40d631eb4a91978b09a8468dd}} 
-int {\bfseries x}
-\item 
+int \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_ae7a5f7d40d631eb4a91978b09a8468dd}{x}}
+\begin{DoxyCompactList}\small\item\em The x-\/coordinate of the item\textquotesingle{}s position in the game world. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Items_1_1Item_a0f7a182a96e794a61203b08e197a0e4f}\label{classPaooGame_1_1Items_1_1Item_a0f7a182a96e794a61203b08e197a0e4f}} 
-int {\bfseries y}
-\item 
+int \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_a0f7a182a96e794a61203b08e197a0e4f}{y}}
+\begin{DoxyCompactList}\small\item\em The y-\/coordinate of the item\textquotesingle{}s position in the game world. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Items_1_1Item_aef999c9876ade29ed0c53b0103dd8583}\label{classPaooGame_1_1Items_1_1Item_aef999c9876ade29ed0c53b0103dd8583}} 
-String {\bfseries item\+Name}
-\item 
+String \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_aef999c9876ade29ed0c53b0103dd8583}{item\+Name}}
+\begin{DoxyCompactList}\small\item\em The name of the item. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Items_1_1Item_a5624470c01f4b6888593a952d404efbb}\label{classPaooGame_1_1Items_1_1Item_a5624470c01f4b6888593a952d404efbb}} 
-String {\bfseries item\+Sheet\+Path}
-\item 
+String \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_a5624470c01f4b6888593a952d404efbb}{item\+Sheet\+Path}}
+\begin{DoxyCompactList}\small\item\em The file path to the sprite sheet used for the item\textquotesingle{}s animation. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Items_1_1Item_aba63551028c0008287489869a0a363a9}\label{classPaooGame_1_1Items_1_1Item_aba63551028c0008287489869a0a363a9}} 
-\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} {\bfseries hitbox}
-\item 
+\mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_aba63551028c0008287489869a0a363a9}{hitbox}}
+\begin{DoxyCompactList}\small\item\em The hitbox associated with the item, used for collision detection. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Items_1_1Item_ae3c0631292ce05c4364bde12bf978dfe}\label{classPaooGame_1_1Items_1_1Item_ae3c0631292ce05c4364bde12bf978dfe}} 
-\mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation}{Animation}} {\bfseries animation}
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPaooGame_1_1Animations_1_1Animation}{Animation}} \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_ae3c0631292ce05c4364bde12bf978dfe}{animation}}
+\begin{DoxyCompactList}\small\item\em The animation object responsible for rendering the item\textquotesingle{}s sprites. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an abstract base class for all items in the game. 
+
+This class defines the common properties and behaviors that all game items should possess, such as position, name, associated sprite sheet path, hitbox for collision detection, and an animation. Concrete item types must extend this class and implement the abstract methods for drawing and updating their specific logic. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Items_1_1Item_a11508734150c8d83791aac862819e68d}\label{classPaooGame_1_1Items_1_1Item_a11508734150c8d83791aac862819e68d}} 
+\index{PaooGame.Items.Item@{PaooGame.Items.Item}!Item@{Item}}
+\index{Item@{Item}!PaooGame.Items.Item@{PaooGame.Items.Item}}
+\doxysubsubsection{\texorpdfstring{Item()}{Item()}}
+{\footnotesize\ttfamily Paoo\+Game.\+Items.\+Item.\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor for the \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item}{Item}} class. 
+
+Initializes a new item. Concrete subclasses are responsible for setting the specific properties like position, name, sprite sheet, hitbox, and animation. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Items_1_1Item_afd85f5beb3846c53838fba92a9670455}\label{classPaooGame_1_1Items_1_1Item_afd85f5beb3846c53838fba92a9670455}} 
+\index{PaooGame.Items.Item@{PaooGame.Items.Item}!drawItem@{drawItem}}
+\index{drawItem@{drawItem}!PaooGame.Items.Item@{PaooGame.Items.Item}}
+\doxysubsubsection{\texorpdfstring{drawItem()}{drawItem()}}
+{\footnotesize\ttfamily abstract void Paoo\+Game.\+Items.\+Item.\+draw\+Item (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Abstract method to draw the item on the screen. 
+
+Concrete subclasses must implement this method to define how the item is rendered, typically using its animation. 
+\begin{DoxyParams}{Parameters}
+{\em g} & The \mbox{\hyperlink{}{Graphics}} context to draw on. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classPaooGame_1_1Items_1_1WhipItem_aa9765e74a124d29807d88840e71f7bbe}{Paoo\+Game.\+Items.\+Whip\+Item}}, \mbox{\hyperlink{classPaooGame_1_1Items_1_1FloppyItem_aec170c0a60ca79675a06e05ade1819b5}{Paoo\+Game.\+Items.\+Floppy\+Item}}, \mbox{\hyperlink{classPaooGame_1_1Items_1_1BoosterItem_a7be6ffc06f2fd12eff4d90f283c16f7c}{Paoo\+Game.\+Items.\+Booster\+Item}}, and \mbox{\hyperlink{classPaooGame_1_1Items_1_1BonfireItem_a918c6613fb11f64baec1788a83d9635e}{Paoo\+Game.\+Items.\+Bonfire\+Item}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1Items_1_1Item_a4ce9501b511b1bc86e2e4cff2d6e753d}\label{classPaooGame_1_1Items_1_1Item_a4ce9501b511b1bc86e2e4cff2d6e753d}} 
+\index{PaooGame.Items.Item@{PaooGame.Items.Item}!getHitbox@{getHitbox}}
+\index{getHitbox@{getHitbox}!PaooGame.Items.Item@{PaooGame.Items.Item}}
+\doxysubsubsection{\texorpdfstring{getHitbox()}{getHitbox()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPaooGame_1_1Hitbox_1_1Hitbox}{Hitbox}} Paoo\+Game.\+Items.\+Item.\+get\+Hitbox (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the hitbox of the item. 
+
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{}{Hitbox}} object associated with this item. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Items_1_1Item_aad06c92ff9c8d131aa918e2cc18cb7ae}\label{classPaooGame_1_1Items_1_1Item_aad06c92ff9c8d131aa918e2cc18cb7ae}} 
+\index{PaooGame.Items.Item@{PaooGame.Items.Item}!getItemName@{getItemName}}
+\index{getItemName@{getItemName}!PaooGame.Items.Item@{PaooGame.Items.Item}}
+\doxysubsubsection{\texorpdfstring{getItemName()}{getItemName()}}
+{\footnotesize\ttfamily String Paoo\+Game.\+Items.\+Item.\+get\+Item\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the name of the item. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the item\textquotesingle{}s name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Items_1_1Item_ac7ec8aa64141e0b859ac5b12f6c231ed}\label{classPaooGame_1_1Items_1_1Item_ac7ec8aa64141e0b859ac5b12f6c231ed}} 
+\index{PaooGame.Items.Item@{PaooGame.Items.Item}!getItemSheetPath@{getItemSheetPath}}
+\index{getItemSheetPath@{getItemSheetPath}!PaooGame.Items.Item@{PaooGame.Items.Item}}
+\doxysubsubsection{\texorpdfstring{getItemSheetPath()}{getItemSheetPath()}}
+{\footnotesize\ttfamily String Paoo\+Game.\+Items.\+Item.\+get\+Item\+Sheet\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the file path to the item\textquotesingle{}s sprite sheet. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the path to the sprite sheet. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Items_1_1Item_a1a2a13af135036ac8ef84026195d33e3}\label{classPaooGame_1_1Items_1_1Item_a1a2a13af135036ac8ef84026195d33e3}} 
+\index{PaooGame.Items.Item@{PaooGame.Items.Item}!updateItem@{updateItem}}
+\index{updateItem@{updateItem}!PaooGame.Items.Item@{PaooGame.Items.Item}}
+\doxysubsubsection{\texorpdfstring{updateItem()}{updateItem()}}
+{\footnotesize\ttfamily abstract void Paoo\+Game.\+Items.\+Item.\+update\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Abstract method to update the item\textquotesingle{}s state. 
+
+Concrete subclasses must implement this method to define any logic that needs to be executed per game update cycle, such as updating its animation or position. 
+
+Reimplemented in \mbox{\hyperlink{classPaooGame_1_1Items_1_1WhipItem_a263d79babebb5a8836bfc188edb971ec}{Paoo\+Game.\+Items.\+Whip\+Item}}, \mbox{\hyperlink{classPaooGame_1_1Items_1_1FloppyItem_ae646e0f2517984fe6ed56fccd3972f91}{Paoo\+Game.\+Items.\+Floppy\+Item}}, \mbox{\hyperlink{classPaooGame_1_1Items_1_1BoosterItem_a8645e7eff786bc0c9ebdff6354d54cb4}{Paoo\+Game.\+Items.\+Booster\+Item}}, and \mbox{\hyperlink{classPaooGame_1_1Items_1_1BonfireItem_a8101a213f21363c5bef84f4fd78fc853}{Paoo\+Game.\+Items.\+Bonfire\+Item}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

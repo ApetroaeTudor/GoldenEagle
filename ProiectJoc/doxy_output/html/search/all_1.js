@@ -1,5 +1,10 @@
 var searchData=
 [
-  ['basicskeletonenemystrategy_3',['BasicSkeletonEnemyStrategy',['../classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1BasicSkeletonEnemyStrategy.html',1,'PaooGame::Strategies::EnemyStrategies']]],
-  ['boosteritem_4',['BoosterItem',['../classPaooGame_1_1Items_1_1BoosterItem.html',1,'PaooGame::Items']]]
+  ['backgroundimgpath_11',['backgroundImgPath',['../classPaooGame_1_1Strategies_1_1Fight_1_1FightStrategy.html#af54c0ca49c9438b2b6733b71376f3d21',1,'PaooGame::Strategies::Fight::FightStrategy']]],
+  ['basicskeletonenemystrategy_12',['BasicSkeletonEnemyStrategy',['../classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1BasicSkeletonEnemyStrategy.html#a01986300c5e479fe1068066acf1edcb2',1,'PaooGame.Strategies.EnemyStrategies.BasicSkeletonEnemyStrategy.BasicSkeletonEnemyStrategy()'],['../classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1BasicSkeletonEnemyStrategy.html',1,'PaooGame.Strategies.EnemyStrategies.BasicSkeletonEnemyStrategy']]],
+  ['behavioridstorespect_13',['behaviorIDsToRespect',['../classPaooGame_1_1Entities_1_1Entity.html#a09c3e5217deb2f4b43a84bf64dc1beb7',1,'PaooGame.Entities.Entity.behaviorIDsToRespect()'],['../classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html#a708163d1ce714319a6beda2ecf252c50',1,'PaooGame.Strategies.EnemyStrategies.EnemyStrategy.behaviorIDsToRespect()']]],
+  ['blackfadestep_14',['blackFadeStep',['../classPaooGame_1_1States_1_1Level1State.html#a971ac5d1c200db9794a6e4c32c8c793f',1,'PaooGame.States.Level1State.blackFadeStep()'],['../classPaooGame_1_1States_1_1Level2State.html#a2cd624d4f9771705a100c83f7df961d6',1,'PaooGame.States.Level2State.blackFadeStep()'],['../classPaooGame_1_1States_1_1Level3State.html#aaca41fa00bd9d272aa95cd5f1f5b2177',1,'PaooGame.States.Level3State.blackFadeStep()']]],
+  ['bonfireitem_15',['BonfireItem',['../classPaooGame_1_1Items_1_1BonfireItem.html#a43d40b0c6349d82b20493349d5f90df5',1,'PaooGame.Items.BonfireItem.BonfireItem()'],['../classPaooGame_1_1Items_1_1BonfireItem.html',1,'PaooGame.Items.BonfireItem']]],
+  ['boosteritem_16',['BoosterItem',['../classPaooGame_1_1Items_1_1BoosterItem.html#a30af09aff1f886d323c590c5c121190c',1,'PaooGame.Items.BoosterItem.BoosterItem()'],['../classPaooGame_1_1Items_1_1BoosterItem.html',1,'PaooGame.Items.BoosterItem']]],
+  ['buildgamewindow_17',['BuildGameWindow',['../classPaooGame_1_1GameWindow_1_1GameWindow.html#a12ba321428d7e95d94b80eb18c81640b',1,'PaooGame::GameWindow::GameWindow']]]
 ];

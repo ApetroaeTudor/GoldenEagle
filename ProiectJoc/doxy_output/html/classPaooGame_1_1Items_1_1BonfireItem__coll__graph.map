@@ -1,0 +1,8 @@
+<map id="PaooGame.Items.BonfireItem" name="PaooGame.Items.BonfireItem">
+<area shape="rect" id="node1" title=" " alt="" coords="29,275,243,301"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1Items_1_1Item.html" title="Represents an abstract base class for all items in the game." alt="" coords="53,199,219,225"/>
+<area shape="rect" id="node3" href="$classPaooGame_1_1Hitbox_1_1Hitbox.html" title="Represents a rectangular area used for collision detection." alt="" coords="5,109,192,136"/>
+<area shape="rect" id="node4" href="$classPaooGame_1_1Animations_1_1Animation.html" title="Abstract base class for managing and rendering sprite animations." alt="" coords="217,109,458,136"/>
+<area shape="rect" id="node5" href="$classPaooGame_1_1RefLinks.html" title="Provides a centralized way to access shared game objects and utilities." alt="" coords="181,5,333,32"/>
+<area shape="rect" id="node6" title=" " alt="" coords="358,5,477,32"/>
+</map>

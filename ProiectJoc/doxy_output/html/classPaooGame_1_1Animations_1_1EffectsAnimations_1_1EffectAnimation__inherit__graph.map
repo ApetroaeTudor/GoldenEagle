@@ -1,4 +1,4 @@
 <map id="PaooGame.Animations.EffectsAnimations.EffectAnimation" name="PaooGame.Animations.EffectsAnimations.EffectAnimation">
-<area shape="rect" id="node1" title=" " alt="" coords="17,80,235,121"/>
-<area shape="rect" id="node2" href="$classPaooGame_1_1Animations_1_1Animation.html" title=" " alt="" coords="5,5,247,32"/>
+<area shape="rect" id="node1" title="Manages and renders animations for visual effects in the game." alt="" coords="17,80,235,121"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1Animations_1_1Animation.html" title="Abstract base class for managing and rendering sprite animations." alt="" coords="5,5,247,32"/>
 </map>

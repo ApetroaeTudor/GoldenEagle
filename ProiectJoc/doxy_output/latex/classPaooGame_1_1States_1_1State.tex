@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1States_1_1State}\index{PaooGame.States.State@{PaooGame.States.State}}
 
 
-Inheritance diagram for Paoo\+Game.\+States.\+State\+:
-\nopagebreak
+Defines an abstract base class for all game states.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+States.\+State\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+States.\+State\+:
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+States.\+State\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+States.\+State\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,48 +26,213 @@ Collaboration diagram for Paoo\+Game.\+States.\+State\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1State_a2c1ee84b95db72827c994b1ad99fa6d5}\label{classPaooGame_1_1States_1_1State_a2c1ee84b95db72827c994b1ad99fa6d5}} 
-{\bfseries State} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} ref\+Link)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1State_a256ead7c628d278ecda50a402465dab8}\label{classPaooGame_1_1States_1_1State_a256ead7c628d278ecda50a402465dab8}} 
-abstract String {\bfseries get\+State\+Name} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1State_a1afa04fafde48966a2cbb66c053afe9f}\label{classPaooGame_1_1States_1_1State_a1afa04fafde48966a2cbb66c053afe9f}} 
-abstract void {\bfseries set\+Enemy} (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy}{Enemy}} enemy)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1State_afafd048638af99f0f0b115ddec2fac1f}\label{classPaooGame_1_1States_1_1State_afafd048638af99f0f0b115ddec2fac1f}} 
-abstract void {\bfseries update} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1State_a61512d655ea178fd283fe57624b47250}\label{classPaooGame_1_1States_1_1State_a61512d655ea178fd283fe57624b47250}} 
-abstract void {\bfseries draw} (Graphics g)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1State_aec1c3e402381da4d4986c4eb957de55b}\label{classPaooGame_1_1States_1_1State_aec1c3e402381da4d4986c4eb957de55b}} 
-abstract void {\bfseries restore\+State} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1State_a90f74b9205e6fcb6232e264fd53bf14a}\label{classPaooGame_1_1States_1_1State_a90f74b9205e6fcb6232e264fd53bf14a}} 
-abstract void {\bfseries load\+State} (boolean access)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1State_af91f335ebaff413a782926e17cd80276}\label{classPaooGame_1_1States_1_1State_af91f335ebaff413a782926e17cd80276}} 
-abstract void {\bfseries store\+State} (boolean access)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPaooGame_1_1States_1_1State_a2c1ee84b95db72827c994b1ad99fa6d5}{State}} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} ref\+Link)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} object. \end{DoxyCompactList}\item 
+abstract String \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a256ead7c628d278ecda50a402465dab8}{get\+State\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the current state. \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a1afa04fafde48966a2cbb66c053afe9f}{set\+Enemy}} (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy}{Enemy}} enemy)
+\begin{DoxyCompactList}\small\item\em Sets an enemy for the current state. \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{classPaooGame_1_1States_1_1State_afafd048638af99f0f0b115ddec2fac1f}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the logic of the current state. \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a61512d655ea178fd283fe57624b47250}{draw}} (Graphics g)
+\begin{DoxyCompactList}\small\item\em Draws the current state to the screen. \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{classPaooGame_1_1States_1_1State_aec1c3e402381da4d4986c4eb957de55b}{restore\+State}} ()
+\begin{DoxyCompactList}\small\item\em Restores the state to its initial or a default configuration. \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a90f74b9205e6fcb6232e264fd53bf14a}{load\+State}} (boolean access)
+\begin{DoxyCompactList}\small\item\em Loads the state\textquotesingle{}s data from a persistent source. \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{classPaooGame_1_1States_1_1State_af91f335ebaff413a782926e17cd80276}{store\+State}} (boolean access)
+\begin{DoxyCompactList}\small\item\em Stores the state\textquotesingle{}s current data to a persistent source. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1State_a4e1aa05b9b853f66df0c8a112b35e8d5}\label{classPaooGame_1_1States_1_1State_a4e1aa05b9b853f66df0c8a112b35e8d5}} 
-static void {\bfseries set\+State} (\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} state)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1State_a3c505c9ca598a8813c3621beb56e53de}\label{classPaooGame_1_1States_1_1State_a3c505c9ca598a8813c3621beb56e53de}} 
-static \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} {\bfseries get\+State} ()
-\end{DoxyCompactItemize}
+static void \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a4e1aa05b9b853f66df0c8a112b35e8d5}{set\+State}} (\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} state)
+\begin{DoxyCompactList}\small\item\em Sets the current game state. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a3c505c9ca598a8813c3621beb56e53de}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current game state. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classPaooGame_1_1States_1_1State_ae71656d9d34cf1e2dac7943c7b09f6bd}\label{classPaooGame_1_1States_1_1State_ae71656d9d34cf1e2dac7943c7b09f6bd}} 
-String {\bfseries state\+Name} = \char`\"{}\char`\"{}
-\item 
+String \mbox{\hyperlink{classPaooGame_1_1States_1_1State_ae71656d9d34cf1e2dac7943c7b09f6bd}{state\+Name}} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em The name identifier for the specific state instance. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1States_1_1State_a621ece5c0cfdd772b0aeaba2e399a61d}\label{classPaooGame_1_1States_1_1State_a621ece5c0cfdd772b0aeaba2e399a61d}} 
-\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} {\bfseries reflink}
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a621ece5c0cfdd772b0aeaba2e399a61d}{reflink}}
+\begin{DoxyCompactList}\small\item\em A reference to shared game objects and utilities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines an abstract base class for all game states. 
+
+This class provides a common interface and static methods for managing different states within the game, such as the main menu, gameplay levels, settings, etc. Each specific state (e.\+g., \mbox{\hyperlink{classPaooGame_1_1States_1_1MenuState}{Menu\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level1State}{Level1\+State}}) must extend this class and implement its abstract methods. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1State_a2c1ee84b95db72827c994b1ad99fa6d5}\label{classPaooGame_1_1States_1_1State_a2c1ee84b95db72827c994b1ad99fa6d5}} 
+\index{PaooGame.States.State@{PaooGame.States.State}!State@{State}}
+\index{State@{State}!PaooGame.States.State@{PaooGame.States.State}}
+\doxysubsubsection{\texorpdfstring{State()}{State()}}
+{\footnotesize\ttfamily Paoo\+Game.\+States.\+State.\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}}}]{ref\+Link }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} object. 
+
+Initializes the state with a reference to the game\textquotesingle{}s shared \mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} object. 
+\begin{DoxyParams}{Parameters}
+{\em ref\+Link} & A \mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} object providing access to game-\/wide objects and utilities. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1State_a61512d655ea178fd283fe57624b47250}\label{classPaooGame_1_1States_1_1State_a61512d655ea178fd283fe57624b47250}} 
+\index{PaooGame.States.State@{PaooGame.States.State}!draw@{draw}}
+\index{draw@{draw}!PaooGame.States.State@{PaooGame.States.State}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily abstract void Paoo\+Game.\+States.\+State.\+draw (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Draws the current state to the screen. 
+
+This method is called repeatedly in the game loop and should handle all rendering specific to the state. 
+\begin{DoxyParams}{Parameters}
+{\em g} & The \mbox{\hyperlink{}{Graphics}} context used for drawing. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classPaooGame_1_1States_1_1WinState_ad750bd2a116a1145735f5bc22f4f7163}{Paoo\+Game.\+States.\+Win\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1ShopState_a2bed6af75a4005e5be140ff7ebde300c}{Paoo\+Game.\+States.\+Shop\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1PauseMenuState_a9370687334b589037b6f625c8ef4c2c6}{Paoo\+Game.\+States.\+Pause\+Menu\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1MenuState_a9c1c968b648cb18dea0dc7321cd46159}{Paoo\+Game.\+States.\+Menu\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_aac0fcc83c45060d3df748771a590faf9}{Paoo\+Game.\+States.\+Level3\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_ad5dbb546239f54c06ba48069d9868ef4}{Paoo\+Game.\+States.\+Level2\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level1State_a849ce5e107d8a16c30e0a4a12dd7ce88}{Paoo\+Game.\+States.\+Level1\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState_aa4dc8ecb3aa33d0d76ab4e17d15b609e}{Paoo\+Game.\+States.\+Fight\+State}}, and \mbox{\hyperlink{classPaooGame_1_1States_1_1DeathState_adf4a0fc94a8c486b6df4f65c4b5a0086}{Paoo\+Game.\+States.\+Death\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1State_a3c505c9ca598a8813c3621beb56e53de}\label{classPaooGame_1_1States_1_1State_a3c505c9ca598a8813c3621beb56e53de}} 
+\index{PaooGame.States.State@{PaooGame.States.State}!getState@{getState}}
+\index{getState@{getState}!PaooGame.States.State@{PaooGame.States.State}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} Paoo\+Game.\+States.\+State.\+get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Gets the current game state. 
+
+\begin{DoxyReturn}{Returns}
+The current active \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1State_a256ead7c628d278ecda50a402465dab8}\label{classPaooGame_1_1States_1_1State_a256ead7c628d278ecda50a402465dab8}} 
+\index{PaooGame.States.State@{PaooGame.States.State}!getStateName@{getStateName}}
+\index{getStateName@{getStateName}!PaooGame.States.State@{PaooGame.States.State}}
+\doxysubsubsection{\texorpdfstring{getStateName()}{getStateName()}}
+{\footnotesize\ttfamily abstract String Paoo\+Game.\+States.\+State.\+get\+State\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Gets the name of the current state. 
+
+This method must be implemented by concrete subclasses to return their specific state name. \begin{DoxyReturn}{Returns}
+A \mbox{\hyperlink{}{String}} representing the name of the state. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classPaooGame_1_1States_1_1WinState_a3eeca27e4e2f4a6f419132e9f2c1ddcc}{Paoo\+Game.\+States.\+Win\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1ShopState_a30466914f4e88bd52d68d6209ed8f35e}{Paoo\+Game.\+States.\+Shop\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1PauseMenuState_a43ace1c5ef3e7f5280fc748ab3c5cca3}{Paoo\+Game.\+States.\+Pause\+Menu\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1MenuState_aa78c0801c555d42b4a9c89f14600fd4c}{Paoo\+Game.\+States.\+Menu\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_a35dae42d97d14f96ff8fb460cc17eed7}{Paoo\+Game.\+States.\+Level3\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_a226ea77f0f0db2f222f1ef11d1bc4a3d}{Paoo\+Game.\+States.\+Level2\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level1State_a05de4aeaaaa194233ce439bea8e1b435}{Paoo\+Game.\+States.\+Level1\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState_ae7b1efc05c0114398de7569f1fbf5bee}{Paoo\+Game.\+States.\+Fight\+State}}, and \mbox{\hyperlink{classPaooGame_1_1States_1_1DeathState_a474af8943905d42afed4d98cd265dd66}{Paoo\+Game.\+States.\+Death\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1State_a90f74b9205e6fcb6232e264fd53bf14a}\label{classPaooGame_1_1States_1_1State_a90f74b9205e6fcb6232e264fd53bf14a}} 
+\index{PaooGame.States.State@{PaooGame.States.State}!loadState@{loadState}}
+\index{loadState@{loadState}!PaooGame.States.State@{PaooGame.States.State}}
+\doxysubsubsection{\texorpdfstring{loadState()}{loadState()}}
+{\footnotesize\ttfamily abstract void Paoo\+Game.\+States.\+State.\+load\+State (\begin{DoxyParamCaption}\item[{boolean}]{access }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Loads the state\textquotesingle{}s data from a persistent source. 
+
+This method is used to retrieve saved game progress or configuration specific to this state. 
+\begin{DoxyParams}{Parameters}
+{\em access} & A boolean flag, potentially for controlling access permissions during loading. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classPaooGame_1_1States_1_1WinState_ab80d5b3ecbd0550816bb8bd9446e1a6b}{Paoo\+Game.\+States.\+Win\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1ShopState_a7fc8e777748147b56cf026a7b8d23eb0}{Paoo\+Game.\+States.\+Shop\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1PauseMenuState_a5ed8705e046bb15596d5a02afe0a1ab9}{Paoo\+Game.\+States.\+Pause\+Menu\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1MenuState_aa4363922ad65186f9a82eb7ed67ee306}{Paoo\+Game.\+States.\+Menu\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_a4f5b3997d81e7732bc3d15273cb68253}{Paoo\+Game.\+States.\+Level3\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_a7ac4085551867f7d08e80e9302a4e135}{Paoo\+Game.\+States.\+Level2\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level1State_a07330c8cb164d60c463a179c9f9c03d7}{Paoo\+Game.\+States.\+Level1\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState_ac8ec34aba5a7699c1720baa2c7f46a93}{Paoo\+Game.\+States.\+Fight\+State}}, and \mbox{\hyperlink{classPaooGame_1_1States_1_1DeathState_af700c10957758487e98c4b97613504af}{Paoo\+Game.\+States.\+Death\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1State_aec1c3e402381da4d4986c4eb957de55b}\label{classPaooGame_1_1States_1_1State_aec1c3e402381da4d4986c4eb957de55b}} 
+\index{PaooGame.States.State@{PaooGame.States.State}!restoreState@{restoreState}}
+\index{restoreState@{restoreState}!PaooGame.States.State@{PaooGame.States.State}}
+\doxysubsubsection{\texorpdfstring{restoreState()}{restoreState()}}
+{\footnotesize\ttfamily abstract void Paoo\+Game.\+States.\+State.\+restore\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Restores the state to its initial or a default configuration. 
+
+This method is typically used when re-\/entering a state after a reset (e.\+g., after player death, starting a new game in a level). 
+
+Reimplemented in \mbox{\hyperlink{classPaooGame_1_1States_1_1WinState_ab1db14b604c97f31a365e120c13308d5}{Paoo\+Game.\+States.\+Win\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1ShopState_ace71770d0a031c248bd431cfa9ec83a5}{Paoo\+Game.\+States.\+Shop\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1PauseMenuState_a11c9d78858b8d91a9ad2cd65fb8d0105}{Paoo\+Game.\+States.\+Pause\+Menu\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1MenuState_a83e2b129fcbc76ca0ab348f777970da1}{Paoo\+Game.\+States.\+Menu\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_a775d3d84128c3ae49dfa4df68f64edf7}{Paoo\+Game.\+States.\+Level3\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_a41279b8c36ad5d02de11b77d22f191f3}{Paoo\+Game.\+States.\+Level2\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level1State_a886e5d66b39b9bcd0047a8b324665562}{Paoo\+Game.\+States.\+Level1\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState_a0f825a4daf75bd6f69a8a8e3b6dfe756}{Paoo\+Game.\+States.\+Fight\+State}}, and \mbox{\hyperlink{classPaooGame_1_1States_1_1DeathState_ad698b65d18c09d3c37d4f75e8de9a10f}{Paoo\+Game.\+States.\+Death\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1State_a1afa04fafde48966a2cbb66c053afe9f}\label{classPaooGame_1_1States_1_1State_a1afa04fafde48966a2cbb66c053afe9f}} 
+\index{PaooGame.States.State@{PaooGame.States.State}!setEnemy@{setEnemy}}
+\index{setEnemy@{setEnemy}!PaooGame.States.State@{PaooGame.States.State}}
+\doxysubsubsection{\texorpdfstring{setEnemy()}{setEnemy()}}
+{\footnotesize\ttfamily abstract void Paoo\+Game.\+States.\+State.\+set\+Enemy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy}{Enemy}}}]{enemy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Sets an enemy for the current state. 
+
+This method is intended for states that involve direct interaction with a specific enemy, such as a fight state. Concrete subclasses must implement this if applicable. 
+\begin{DoxyParams}{Parameters}
+{\em enemy} & The \mbox{\hyperlink{}{Enemy}} to be set for the state. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classPaooGame_1_1States_1_1WinState_a11035ea9a90b546d5afc6f33f44cb083}{Paoo\+Game.\+States.\+Win\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1ShopState_ac7e1805579ba29953fcc2848b5cbcb0d}{Paoo\+Game.\+States.\+Shop\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1PauseMenuState_af10f043004547c531906205486398078}{Paoo\+Game.\+States.\+Pause\+Menu\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1MenuState_a0eb6a2bb46433452f96bfd844b2fab66}{Paoo\+Game.\+States.\+Menu\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_afbdd92c6ed618c086ccae3dc797d6a25}{Paoo\+Game.\+States.\+Level3\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_afcb64aa767e3c5e13bb0a6a1e1e867ba}{Paoo\+Game.\+States.\+Level2\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level1State_a4ba28fc1aadbc8238d504f53bce24b4e}{Paoo\+Game.\+States.\+Level1\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState_a0d156d34892c2eb24cfbda6562b7b78e}{Paoo\+Game.\+States.\+Fight\+State}}, and \mbox{\hyperlink{classPaooGame_1_1States_1_1DeathState_ad2d9de5a4483343f27a49cc631e8132c}{Paoo\+Game.\+States.\+Death\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1State_a4e1aa05b9b853f66df0c8a112b35e8d5}\label{classPaooGame_1_1States_1_1State_a4e1aa05b9b853f66df0c8a112b35e8d5}} 
+\index{PaooGame.States.State@{PaooGame.States.State}!setState@{setState}}
+\index{setState@{setState}!PaooGame.States.State@{PaooGame.States.State}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily static void Paoo\+Game.\+States.\+State.\+set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}}}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Sets the current game state. 
+
+Updates the \mbox{\hyperlink{}{current\+State}} to the new state and stores the previous current state in \mbox{\hyperlink{}{previous\+State}}. 
+\begin{DoxyParams}{Parameters}
+{\em state} & The new \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} to be set as current. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1State_af91f335ebaff413a782926e17cd80276}\label{classPaooGame_1_1States_1_1State_af91f335ebaff413a782926e17cd80276}} 
+\index{PaooGame.States.State@{PaooGame.States.State}!storeState@{storeState}}
+\index{storeState@{storeState}!PaooGame.States.State@{PaooGame.States.State}}
+\doxysubsubsection{\texorpdfstring{storeState()}{storeState()}}
+{\footnotesize\ttfamily abstract void Paoo\+Game.\+States.\+State.\+store\+State (\begin{DoxyParamCaption}\item[{boolean}]{access }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Stores the state\textquotesingle{}s current data to a persistent source. 
+
+This method is used to save game progress or configuration specific to this state. 
+\begin{DoxyParams}{Parameters}
+{\em access} & A boolean flag, potentially for controlling access permissions during storing. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classPaooGame_1_1States_1_1WinState_a3595ca643df1e920c53842537c3a56fe}{Paoo\+Game.\+States.\+Win\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1ShopState_a00954a1e5cd09164eb51c8c9dbe34805}{Paoo\+Game.\+States.\+Shop\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1PauseMenuState_a8e5de1516d28bdf45505a811ef5f96b4}{Paoo\+Game.\+States.\+Pause\+Menu\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1MenuState_a3745a9ef14ab33cd6bc6e8f6de190bc8}{Paoo\+Game.\+States.\+Menu\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_ad7564e36d8816b73dc51543d83eaf56f}{Paoo\+Game.\+States.\+Level3\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_a48dae78fc1f5f9fb37450cb5294596ce}{Paoo\+Game.\+States.\+Level2\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level1State_a30d398b73187019f66e7b8c3a00f40b7}{Paoo\+Game.\+States.\+Level1\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState_ac2591de8afd6722e607c21d6e1b3e963}{Paoo\+Game.\+States.\+Fight\+State}}, and \mbox{\hyperlink{classPaooGame_1_1States_1_1DeathState_a54fa452b32ade032e4a7f431f01bb0f4}{Paoo\+Game.\+States.\+Death\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1State_afafd048638af99f0f0b115ddec2fac1f}\label{classPaooGame_1_1States_1_1State_afafd048638af99f0f0b115ddec2fac1f}} 
+\index{PaooGame.States.State@{PaooGame.States.State}!update@{update}}
+\index{update@{update}!PaooGame.States.State@{PaooGame.States.State}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily abstract void Paoo\+Game.\+States.\+State.\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Updates the logic of the current state. 
+
+This method is called repeatedly in the game loop and should contain all game logic updates specific to the state. 
+
+Reimplemented in \mbox{\hyperlink{classPaooGame_1_1States_1_1WinState_a24270656354cf1fb2f03060d657d2548}{Paoo\+Game.\+States.\+Win\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1ShopState_a685cc0ae5be7fc99eddc0386ca362ed8}{Paoo\+Game.\+States.\+Shop\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1PauseMenuState_a3ad9b87dcda165953657b5c94a580df0}{Paoo\+Game.\+States.\+Pause\+Menu\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1MenuState_a4cd5c4f36a29b167e6b5402df779be4b}{Paoo\+Game.\+States.\+Menu\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level3State_a21605670317271b52f4790998c51b636}{Paoo\+Game.\+States.\+Level3\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level2State_a08f61b4a166391d03b066e20ad454474}{Paoo\+Game.\+States.\+Level2\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1Level1State_aeaee42399d367d606d1f7d0dc6345e6f}{Paoo\+Game.\+States.\+Level1\+State}}, \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState_aa7f0d84673283e31d231673680954995}{Paoo\+Game.\+States.\+Fight\+State}}, and \mbox{\hyperlink{classPaooGame_1_1States_1_1DeathState_a600fd781968970b480f57ff2a51fbcbc}{Paoo\+Game.\+States.\+Death\+State}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

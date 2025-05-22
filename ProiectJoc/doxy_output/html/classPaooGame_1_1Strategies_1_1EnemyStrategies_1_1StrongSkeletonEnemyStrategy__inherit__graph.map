@@ -1,4 +1,4 @@
 <map id="PaooGame.Strategies.EnemyStrategies.StrongSkeletonEnemyStrategy" name="PaooGame.Strategies.EnemyStrategies.StrongSkeletonEnemyStrategy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,95,240,151"/>
-<area shape="rect" id="node2" href="$classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html" title=" " alt="" coords="17,5,228,47"/>
+<area shape="rect" id="node1" title="Implements the specific strategy for the Strong Skeleton enemy type." alt="" coords="5,95,240,151"/>
+<area shape="rect" id="node2" href="$classPaooGame_1_1Strategies_1_1EnemyStrategies_1_1EnemyStrategy.html" title="Defines an abstract base class for different enemy AI and property strategies." alt="" coords="17,5,228,47"/>
 </map>

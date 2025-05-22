@@ -1,0 +1,30 @@
+\label{index_md__home_tudor_AN2_PAOO_Proiect_paoo_proiect_apetroae_macovei_README}%
+\Hypertarget{index_md__home_tudor_AN2_PAOO_Proiect_paoo_proiect_apetroae_macovei_README}%
+ \hypertarget{index_autotoc_md1}{}\doxysection{Golden Eagle}\label{index_autotoc_md1}
+\hypertarget{index_autotoc_md2}{}\doxysubsubsection{Apetroae Tudor -\/ Macovei Paul}\label{index_autotoc_md2}
+\hypertarget{index_autotoc_md3}{}\doxysubsection{Notable features}\label{index_autotoc_md3}
+\hypertarget{index_autotoc_md4}{}\doxysubsubsection{3 Levels}\label{index_autotoc_md4}
+{\bfseries{Level 1}} -\/ Forest, with tigers as enemies~\newline
+ {\bfseries{Level 2}} -\/ Cave, with different types of skeletons as enemies. Here the player can find a goblin NPC that sells potions.~\newline
+ {\bfseries{Level 3}} -\/ Ancient city. Here the player must face different enemies such as a wizard, minotaurs and ghosts. The player must progress using a grappling hook.~\newline
+\hypertarget{index_autotoc_md5}{}\doxysubsubsection{Map loading}\label{index_autotoc_md5}
+{\bfseries{The levels}} are tile-\/based, loaded using the Flyweight design pattern to prevent loading the same resources into memory multiple times.~\newline
+ {\bfseries{The level data}} is taken from CSV files.~\newline
+\hypertarget{index_autotoc_md6}{}\doxysubsubsection{A main menu}\label{index_autotoc_md6}
+{\bfseries{From the main menu}} the player can select to start a new game, continue from the last save point or quit the game. While in the game the player can also go back to this menu.~\newline
+\hypertarget{index_autotoc_md7}{}\doxysubsubsection{Player movement}\label{index_autotoc_md7}
+{\bfseries{The player movement}} is implemented using key listeners. Some key input safety measures are also implemented.~\newline
+ The player can also {\bfseries{jump}} by pressing SPACE.~\newline
+\hypertarget{index_autotoc_md8}{}\doxysubsubsection{Camera}\label{index_autotoc_md8}
+{\bfseries{The Camera}} is implemented in order to only draw a portion of the screen, that follows the player.~\newline
+\hypertarget{index_autotoc_md9}{}\doxysubsubsection{Turn Based Combat}\label{index_autotoc_md9}
+{\bfseries{The combat}} is implemented in a turn based fashion. When the player encounters an enemy, a different state starts, and the player must attack. After dealing damage, the enemy takes its turn, and the player can press {\bfseries{SPACE}} in order to block a part of this damage. The player can also {\bfseries{ESCAPE}} from the fight.~\newline
+\hypertarget{index_autotoc_md10}{}\doxysubsubsection{Collisions}\label{index_autotoc_md10}
+{\bfseries{Collisions}} are implemented using a special {\bfseries{Behavior CSV}}, from which the current tile behavior is deduced. For example, tile ID 0 means death.~\newline
+\hypertarget{index_autotoc_md11}{}\doxysubsubsection{Saving and Loading}\label{index_autotoc_md11}
+{\bfseries{Saving and Loadind}} is realized through the use of an sqlite database, using a JDBC driver. The data management system is implemented using a Proxy Design Pattern. Between the database and the actual game lies a data buffer, into which data is first loaded.~\newline
+\hypertarget{index_autotoc_md12}{}\doxysubsubsection{Exception handling}\label{index_autotoc_md12}
+Some data validation {\bfseries{exceptions}} are managed with custom classes derived from the java Exception clas.~\newline
+\hypertarget{index_autotoc_md13}{}\doxysubsubsection{Score management}\label{index_autotoc_md13}
+The {\bfseries{top 3 scores}} are kept in the database. The logic to deduce which score is the highest is implemented in the game code. The current score and top 3 scores are displayed after defeating the Wizard in the third level.~\newline
+ 

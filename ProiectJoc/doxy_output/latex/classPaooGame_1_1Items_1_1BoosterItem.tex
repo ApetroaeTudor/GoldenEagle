@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1Items_1_1BoosterItem}\index{PaooGame.Items.BoosterItem@{PaooGame.Items.BoosterItem}}
 
 
-Inheritance diagram for Paoo\+Game.\+Items.\+Booster\+Item\+:
-\nopagebreak
+Represents a specific type of item in the game that acts as a \char`\"{}booster\char`\"{}.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+Items.\+Booster\+Item\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+Items.\+Booster\+Item\+:
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+Items.\+Booster\+Item\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+Items.\+Booster\+Item\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,16 +26,63 @@ Collaboration diagram for Paoo\+Game.\+Items.\+Booster\+Item\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1Items_1_1BoosterItem_a30af09aff1f886d323c590c5c121190c}\label{classPaooGame_1_1Items_1_1BoosterItem_a30af09aff1f886d323c590c5c121190c}} 
-{\bfseries Booster\+Item} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} reflink, int x, int y)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Items_1_1BoosterItem_a7be6ffc06f2fd12eff4d90f283c16f7c}\label{classPaooGame_1_1Items_1_1BoosterItem_a7be6ffc06f2fd12eff4d90f283c16f7c}} 
-void {\bfseries draw\+Item} (Graphics g)
-\item 
+\mbox{\hyperlink{classPaooGame_1_1Items_1_1BoosterItem_a30af09aff1f886d323c590c5c121190c}{Booster\+Item}} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} reflink, int \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_ae7a5f7d40d631eb4a91978b09a8468dd}{x}}, int \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_a0f7a182a96e794a61203b08e197a0e4f}{y}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPaooGame_1_1Items_1_1BoosterItem}{Booster\+Item}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Items_1_1BoosterItem_a7be6ffc06f2fd12eff4d90f283c16f7c}{draw\+Item}} (Graphics g)
+\begin{DoxyCompactList}\small\item\em Draws the booster item on the screen. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classPaooGame_1_1Items_1_1BoosterItem_a8645e7eff786bc0c9ebdff6354d54cb4}\label{classPaooGame_1_1Items_1_1BoosterItem_a8645e7eff786bc0c9ebdff6354d54cb4}} 
-void {\bfseries update\+Item} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classPaooGame_1_1Items_1_1BoosterItem_a8645e7eff786bc0c9ebdff6354d54cb4}{update\+Item}} ()
+\begin{DoxyCompactList}\small\item\em Updates the state of the booster item. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a specific type of item in the game that acts as a \char`\"{}booster\char`\"{}. 
+
+This class extends the abstract \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item}{Item}} class and defines a booster item. It initializes its properties such as name, sprite sheet path, hitbox, and a static animation, using constants defined in \mbox{\hyperlink{classPaooGame_1_1Config_1_1Constants}{Paoo\+Game.\+Config.\+Constants}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Items_1_1BoosterItem_a30af09aff1f886d323c590c5c121190c}\label{classPaooGame_1_1Items_1_1BoosterItem_a30af09aff1f886d323c590c5c121190c}} 
+\index{PaooGame.Items.BoosterItem@{PaooGame.Items.BoosterItem}!BoosterItem@{BoosterItem}}
+\index{BoosterItem@{BoosterItem}!PaooGame.Items.BoosterItem@{PaooGame.Items.BoosterItem}}
+\doxysubsubsection{\texorpdfstring{BoosterItem()}{BoosterItem()}}
+{\footnotesize\ttfamily Paoo\+Game.\+Items.\+Booster\+Item.\+Booster\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}}}]{reflink,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPaooGame_1_1Items_1_1BoosterItem}{Booster\+Item}} object. 
+
+Initializes the booster item at a specified position. It sets the item\textquotesingle{}s name, sprite sheet path, creates its hitbox, and loads its static animation. The properties are derived from \mbox{\hyperlink{classPaooGame_1_1Config_1_1Constants}{Paoo\+Game.\+Config.\+Constants}}. 
+\begin{DoxyParams}{Parameters}
+{\em reflink} & A \mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} object providing access to game-\/wide resources and utilities. \\
+\hline
+{\em x} & The initial x-\/coordinate of the booster item in the game world. \\
+\hline
+{\em y} & The initial y-\/coordinate of the booster item in the game world. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1Items_1_1BoosterItem_a7be6ffc06f2fd12eff4d90f283c16f7c}\label{classPaooGame_1_1Items_1_1BoosterItem_a7be6ffc06f2fd12eff4d90f283c16f7c}} 
+\index{PaooGame.Items.BoosterItem@{PaooGame.Items.BoosterItem}!drawItem@{drawItem}}
+\index{drawItem@{drawItem}!PaooGame.Items.BoosterItem@{PaooGame.Items.BoosterItem}}
+\doxysubsubsection{\texorpdfstring{drawItem()}{drawItem()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Items.\+Booster\+Item.\+draw\+Item (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Draws the booster item on the screen. 
+
+This method uses the item\textquotesingle{}s \mbox{\hyperlink{}{Static\+Item\+Animation}} to render its current frame at the item\textquotesingle{}s position. 
+\begin{DoxyParams}{Parameters}
+{\em g} & The \mbox{\hyperlink{}{Graphics}} context to draw on. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1Items_1_1Item_afd85f5beb3846c53838fba92a9670455}{Paoo\+Game.\+Items.\+Item}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

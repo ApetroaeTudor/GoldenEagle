@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1Input_1_1MouseInput}\index{PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}}
 
 
-Inheritance diagram for Paoo\+Game.\+Input.\+Mouse\+Input\+:
-\nopagebreak
+Implements \mbox{\hyperlink{}{Mouse\+Input\+Listener}} and \mbox{\hyperlink{}{Mouse\+Motion\+Listener}} to handle mouse input events.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+Input.\+Mouse\+Input\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+Input.\+Mouse\+Input\+:
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+Input.\+Mouse\+Input\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+Input.\+Mouse\+Input\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,39 +26,193 @@ Collaboration diagram for Paoo\+Game.\+Input.\+Mouse\+Input\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1Input_1_1MouseInput_afeb99644dc54272565687f6a3f7a6f12}\label{classPaooGame_1_1Input_1_1MouseInput_afeb99644dc54272565687f6a3f7a6f12}} 
-void {\bfseries mouse\+Pressed} (Mouse\+Event e)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Input_1_1MouseInput_a53aac0e361c884cfa5458c1ea56767df}\label{classPaooGame_1_1Input_1_1MouseInput_a53aac0e361c884cfa5458c1ea56767df}} 
-void {\bfseries mouse\+Released} (Mouse\+Event e)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Input_1_1MouseInput_a4f76b062ea215b41ccc597361a049e4b}\label{classPaooGame_1_1Input_1_1MouseInput_a4f76b062ea215b41ccc597361a049e4b}} 
-void {\bfseries mouse\+Moved} (Mouse\+Event e)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Input_1_1MouseInput_af6081bf3c63275e6c015990c72a71da9}\label{classPaooGame_1_1Input_1_1MouseInput_af6081bf3c63275e6c015990c72a71da9}} 
-void {\bfseries mouse\+Clicked} (Mouse\+Event e)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Input_1_1MouseInput_aab71b2c9219ac22d7616787a56abe610}\label{classPaooGame_1_1Input_1_1MouseInput_aab71b2c9219ac22d7616787a56abe610}} 
-void {\bfseries mouse\+Entered} (Mouse\+Event e)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Input_1_1MouseInput_aa5c24a2d1b0e2816145c9f0b8191b390}\label{classPaooGame_1_1Input_1_1MouseInput_aa5c24a2d1b0e2816145c9f0b8191b390}} 
-void {\bfseries mouse\+Exited} (Mouse\+Event e)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Input_1_1MouseInput_afc6ec3d63c832c6ae5b2fd08cfb5f723}\label{classPaooGame_1_1Input_1_1MouseInput_afc6ec3d63c832c6ae5b2fd08cfb5f723}} 
-void {\bfseries mouse\+Dragged} (Mouse\+Event e)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1Input_1_1MouseInput_a383f9a40e4dd6739055fe5909c670911}\label{classPaooGame_1_1Input_1_1MouseInput_a383f9a40e4dd6739055fe5909c670911}} 
-int {\bfseries get\+Number\+Of\+Mouse\+Presses} ()
-\item 
+void \mbox{\hyperlink{classPaooGame_1_1Input_1_1MouseInput_afeb99644dc54272565687f6a3f7a6f12}{mouse\+Pressed}} (Mouse\+Event e)
+\begin{DoxyCompactList}\small\item\em Invoked when a mouse button has been pressed on a component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Input_1_1MouseInput_a53aac0e361c884cfa5458c1ea56767df}{mouse\+Released}} (Mouse\+Event e)
+\begin{DoxyCompactList}\small\item\em Invoked when a mouse button has been released on a component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Input_1_1MouseInput_a4f76b062ea215b41ccc597361a049e4b}{mouse\+Moved}} (Mouse\+Event e)
+\begin{DoxyCompactList}\small\item\em Invoked when the mouse cursor has been moved onto a component but no buttons have been pushed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Input_1_1MouseInput_af6081bf3c63275e6c015990c72a71da9}{mouse\+Clicked}} (Mouse\+Event e)
+\begin{DoxyCompactList}\small\item\em Invoked when the mouse button has been clicked (pressed and released) on a component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Input_1_1MouseInput_aab71b2c9219ac22d7616787a56abe610}{mouse\+Entered}} (Mouse\+Event e)
+\begin{DoxyCompactList}\small\item\em Invoked when the mouse enters a component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Input_1_1MouseInput_aa5c24a2d1b0e2816145c9f0b8191b390}{mouse\+Exited}} (Mouse\+Event e)
+\begin{DoxyCompactList}\small\item\em Invoked when the mouse exits a component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1Input_1_1MouseInput_afc6ec3d63c832c6ae5b2fd08cfb5f723}{mouse\+Dragged}} (Mouse\+Event e)
+\begin{DoxyCompactList}\small\item\em Invoked when a mouse button is pressed on a component and then dragged. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPaooGame_1_1Input_1_1MouseInput_a383f9a40e4dd6739055fe5909c670911}{get\+Number\+Of\+Mouse\+Presses}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of times a mouse button has been pressed since the last release. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPaooGame_1_1Input_1_1MouseInput_a2bede7fbdde9f432f1ce5e198db943bb}{get\+MouseX}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current x-\/coordinate of the mouse cursor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPaooGame_1_1Input_1_1MouseInput_a45024ea9161d989492f1032af431dd6c}{get\+MouseY}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current y-\/coordinate of the mouse cursor. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{classPaooGame_1_1Input_1_1MouseInput_adaa4ededede7bea0079f074a2332d809}{is\+One\+Click}} ()
+\begin{DoxyCompactList}\small\item\em Detects if a mouse click has occurred and ensures it\textquotesingle{}s reported only once per press. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements \mbox{\hyperlink{}{Mouse\+Input\+Listener}} and \mbox{\hyperlink{}{Mouse\+Motion\+Listener}} to handle mouse input events. 
+
+This class tracks mouse button presses, releases, and movement. It provides methods to get the current mouse coordinates, the number of times the mouse has been pressed since the last release, and a mechanism to detect a single click event. 
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classPaooGame_1_1Input_1_1MouseInput_a2bede7fbdde9f432f1ce5e198db943bb}\label{classPaooGame_1_1Input_1_1MouseInput_a2bede7fbdde9f432f1ce5e198db943bb}} 
-int {\bfseries get\+MouseX} ()
-\item 
+\index{PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}!getMouseX@{getMouseX}}
+\index{getMouseX@{getMouseX}!PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}}
+\doxysubsubsection{\texorpdfstring{getMouseX()}{getMouseX()}}
+{\footnotesize\ttfamily int Paoo\+Game.\+Input.\+Mouse\+Input.\+get\+MouseX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current x-\/coordinate of the mouse cursor. 
+
+\begin{DoxyReturn}{Returns}
+The current value of \mbox{\hyperlink{}{mouseX}}. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classPaooGame_1_1Input_1_1MouseInput_a45024ea9161d989492f1032af431dd6c}\label{classPaooGame_1_1Input_1_1MouseInput_a45024ea9161d989492f1032af431dd6c}} 
-int {\bfseries get\+MouseY} ()
-\item 
+\index{PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}!getMouseY@{getMouseY}}
+\index{getMouseY@{getMouseY}!PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}}
+\doxysubsubsection{\texorpdfstring{getMouseY()}{getMouseY()}}
+{\footnotesize\ttfamily int Paoo\+Game.\+Input.\+Mouse\+Input.\+get\+MouseY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current y-\/coordinate of the mouse cursor. 
+
+\begin{DoxyReturn}{Returns}
+The current value of \mbox{\hyperlink{}{mouseY}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Input_1_1MouseInput_a383f9a40e4dd6739055fe5909c670911}\label{classPaooGame_1_1Input_1_1MouseInput_a383f9a40e4dd6739055fe5909c670911}} 
+\index{PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}!getNumberOfMousePresses@{getNumberOfMousePresses}}
+\index{getNumberOfMousePresses@{getNumberOfMousePresses}!PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}}
+\doxysubsubsection{\texorpdfstring{getNumberOfMousePresses()}{getNumberOfMousePresses()}}
+{\footnotesize\ttfamily int Paoo\+Game.\+Input.\+Mouse\+Input.\+get\+Number\+Of\+Mouse\+Presses (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the number of times a mouse button has been pressed since the last release. 
+
+\begin{DoxyReturn}{Returns}
+The current value of \mbox{\hyperlink{}{number\+Of\+Mouse\+Presses}}. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classPaooGame_1_1Input_1_1MouseInput_adaa4ededede7bea0079f074a2332d809}\label{classPaooGame_1_1Input_1_1MouseInput_adaa4ededede7bea0079f074a2332d809}} 
-boolean {\bfseries is\+One\+Click} ()
-\end{DoxyCompactItemize}
+\index{PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}!isOneClick@{isOneClick}}
+\index{isOneClick@{isOneClick}!PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}}
+\doxysubsubsection{\texorpdfstring{isOneClick()}{isOneClick()}}
+{\footnotesize\ttfamily boolean Paoo\+Game.\+Input.\+Mouse\+Input.\+is\+One\+Click (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Detects if a mouse click has occurred and ensures it\textquotesingle{}s reported only once per press. 
+
+It returns true if a mouse button is currently pressed and this specific press has not yet been reported as a click by this method. After reporting true once, it will return false for subsequent calls during the same press, until the mouse button is released and pressed again. \begin{DoxyReturn}{Returns}
+True if a new click is detected (mouse is pressed and not yet reported), false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPaooGame_1_1Input_1_1MouseInput_af6081bf3c63275e6c015990c72a71da9}\label{classPaooGame_1_1Input_1_1MouseInput_af6081bf3c63275e6c015990c72a71da9}} 
+\index{PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}!mouseClicked@{mouseClicked}}
+\index{mouseClicked@{mouseClicked}!PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}}
+\doxysubsubsection{\texorpdfstring{mouseClicked()}{mouseClicked()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Input.\+Mouse\+Input.\+mouse\+Clicked (\begin{DoxyParamCaption}\item[{Mouse\+Event}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Invoked when the mouse button has been clicked (pressed and released) on a component. 
+
+This method is part of the \mbox{\hyperlink{}{Mouse\+Input\+Listener}} interface but is not actively used for state tracking in this implementation. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The \mbox{\hyperlink{}{Mouse\+Event}} associated with the mouse click. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Input_1_1MouseInput_afc6ec3d63c832c6ae5b2fd08cfb5f723}\label{classPaooGame_1_1Input_1_1MouseInput_afc6ec3d63c832c6ae5b2fd08cfb5f723}} 
+\index{PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}!mouseDragged@{mouseDragged}}
+\index{mouseDragged@{mouseDragged}!PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}}
+\doxysubsubsection{\texorpdfstring{mouseDragged()}{mouseDragged()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Input.\+Mouse\+Input.\+mouse\+Dragged (\begin{DoxyParamCaption}\item[{Mouse\+Event}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Invoked when a mouse button is pressed on a component and then dragged. 
+
+This method is part of the \mbox{\hyperlink{}{Mouse\+Motion\+Listener}} interface but is not actively used for state tracking in this implementation. The current \mbox{\hyperlink{classPaooGame_1_1Input_1_1MouseInput_a4f76b062ea215b41ccc597361a049e4b}{mouse\+Moved(\+Mouse\+Event)}} handles general coordinate updates. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The \mbox{\hyperlink{}{Mouse\+Event}} associated with the mouse drag. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Input_1_1MouseInput_aab71b2c9219ac22d7616787a56abe610}\label{classPaooGame_1_1Input_1_1MouseInput_aab71b2c9219ac22d7616787a56abe610}} 
+\index{PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}!mouseEntered@{mouseEntered}}
+\index{mouseEntered@{mouseEntered}!PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}}
+\doxysubsubsection{\texorpdfstring{mouseEntered()}{mouseEntered()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Input.\+Mouse\+Input.\+mouse\+Entered (\begin{DoxyParamCaption}\item[{Mouse\+Event}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Invoked when the mouse enters a component. 
+
+This method is part of the \mbox{\hyperlink{}{Mouse\+Input\+Listener}} interface but is not used in this implementation. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The \mbox{\hyperlink{}{Mouse\+Event}} associated with the mouse enter event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Input_1_1MouseInput_aa5c24a2d1b0e2816145c9f0b8191b390}\label{classPaooGame_1_1Input_1_1MouseInput_aa5c24a2d1b0e2816145c9f0b8191b390}} 
+\index{PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}!mouseExited@{mouseExited}}
+\index{mouseExited@{mouseExited}!PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}}
+\doxysubsubsection{\texorpdfstring{mouseExited()}{mouseExited()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Input.\+Mouse\+Input.\+mouse\+Exited (\begin{DoxyParamCaption}\item[{Mouse\+Event}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Invoked when the mouse exits a component. 
+
+This method is part of the \mbox{\hyperlink{}{Mouse\+Input\+Listener}} interface but is not used in this implementation. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The \mbox{\hyperlink{}{Mouse\+Event}} associated with the mouse exit event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Input_1_1MouseInput_a4f76b062ea215b41ccc597361a049e4b}\label{classPaooGame_1_1Input_1_1MouseInput_a4f76b062ea215b41ccc597361a049e4b}} 
+\index{PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}!mouseMoved@{mouseMoved}}
+\index{mouseMoved@{mouseMoved}!PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}}
+\doxysubsubsection{\texorpdfstring{mouseMoved()}{mouseMoved()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Input.\+Mouse\+Input.\+mouse\+Moved (\begin{DoxyParamCaption}\item[{Mouse\+Event}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Invoked when the mouse cursor has been moved onto a component but no buttons have been pushed. 
+
+Updates \mbox{\hyperlink{}{mouseX}} and \mbox{\hyperlink{}{mouseY}} with the event coordinates. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The \mbox{\hyperlink{}{Mouse\+Event}} associated with the mouse movement. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Input_1_1MouseInput_afeb99644dc54272565687f6a3f7a6f12}\label{classPaooGame_1_1Input_1_1MouseInput_afeb99644dc54272565687f6a3f7a6f12}} 
+\index{PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}!mousePressed@{mousePressed}}
+\index{mousePressed@{mousePressed}!PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}}
+\doxysubsubsection{\texorpdfstring{mousePressed()}{mousePressed()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Input.\+Mouse\+Input.\+mouse\+Pressed (\begin{DoxyParamCaption}\item[{Mouse\+Event}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Invoked when a mouse button has been pressed on a component. 
+
+Sets the \mbox{\hyperlink{}{is\+Mouse\+Pressed}} flag to true, increments \mbox{\hyperlink{}{number\+Of\+Mouse\+Presses}} (capped at \mbox{\hyperlink{}{Integer\#\+MAX\+\_\+\+VALUE}}), and updates \mbox{\hyperlink{}{mouseX}} and \mbox{\hyperlink{}{mouseY}} with the event coordinates. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The \mbox{\hyperlink{}{Mouse\+Event}} associated with the mouse press. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPaooGame_1_1Input_1_1MouseInput_a53aac0e361c884cfa5458c1ea56767df}\label{classPaooGame_1_1Input_1_1MouseInput_a53aac0e361c884cfa5458c1ea56767df}} 
+\index{PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}!mouseReleased@{mouseReleased}}
+\index{mouseReleased@{mouseReleased}!PaooGame.Input.MouseInput@{PaooGame.Input.MouseInput}}
+\doxysubsubsection{\texorpdfstring{mouseReleased()}{mouseReleased()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+Input.\+Mouse\+Input.\+mouse\+Released (\begin{DoxyParamCaption}\item[{Mouse\+Event}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Invoked when a mouse button has been released on a component. 
+
+Sets the \mbox{\hyperlink{}{is\+Mouse\+Pressed}} flag to false, resets \mbox{\hyperlink{}{click\+Detected}} to false, resets \mbox{\hyperlink{}{number\+Of\+Mouse\+Presses}} to 0, and clears \mbox{\hyperlink{}{mouseX}} and \mbox{\hyperlink{}{mouseY}} to 0. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The \mbox{\hyperlink{}{Mouse\+Event}} associated with the mouse release. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

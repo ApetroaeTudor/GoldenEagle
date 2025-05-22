@@ -2,8 +2,12 @@
 \label{classPaooGame_1_1States_1_1FightState}\index{PaooGame.States.FightState@{PaooGame.States.FightState}}
 
 
-Inheritance diagram for Paoo\+Game.\+States.\+Fight\+State\+:
-\nopagebreak
+Represents the turn-\/based combat state of the game.  
+
+
+
+
+Inheritance diagram for Paoo\+Game.\+States.\+Fight\+State\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,8 +16,7 @@ Inheritance diagram for Paoo\+Game.\+States.\+Fight\+State\+:
 \end{figure}
 
 
-Collaboration diagram for Paoo\+Game.\+States.\+Fight\+State\+:
-\nopagebreak
+Collaboration diagram for Paoo\+Game.\+States.\+Fight\+State\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,37 +26,168 @@ Collaboration diagram for Paoo\+Game.\+States.\+Fight\+State\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1FightState_af9a49c756c18e6c20046c872a29c6f89}\label{classPaooGame_1_1States_1_1FightState_af9a49c756c18e6c20046c872a29c6f89}} 
-{\bfseries Fight\+State} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} reflink)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1FightState_aa7f0d84673283e31d231673680954995}\label{classPaooGame_1_1States_1_1FightState_aa7f0d84673283e31d231673680954995}} 
-void {\bfseries update} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1FightState_aa4dc8ecb3aa33d0d76ab4e17d15b609e}\label{classPaooGame_1_1States_1_1FightState_aa4dc8ecb3aa33d0d76ab4e17d15b609e}} 
-void {\bfseries draw} (Graphics g)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1FightState_a0f825a4daf75bd6f69a8a8e3b6dfe756}\label{classPaooGame_1_1States_1_1FightState_a0f825a4daf75bd6f69a8a8e3b6dfe756}} 
-void {\bfseries restore\+State} ()
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1FightState_ac8ec34aba5a7699c1720baa2c7f46a93}\label{classPaooGame_1_1States_1_1FightState_ac8ec34aba5a7699c1720baa2c7f46a93}} 
-void {\bfseries load\+State} (boolean access)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1FightState_ac2591de8afd6722e607c21d6e1b3e963}\label{classPaooGame_1_1States_1_1FightState_ac2591de8afd6722e607c21d6e1b3e963}} 
-void {\bfseries store\+State} (boolean access)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1FightState_a0d156d34892c2eb24cfbda6562b7b78e}\label{classPaooGame_1_1States_1_1FightState_a0d156d34892c2eb24cfbda6562b7b78e}} 
-void {\bfseries set\+Enemy} (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy}{Enemy}} enemy)
-\item 
-\mbox{\Hypertarget{classPaooGame_1_1States_1_1FightState_ae7b1efc05c0114398de7569f1fbf5bee}\label{classPaooGame_1_1States_1_1FightState_ae7b1efc05c0114398de7569f1fbf5bee}} 
-String {\bfseries get\+State\+Name} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classPaooGame_1_1States_1_1FightState_af9a49c756c18e6c20046c872a29c6f89}{Fight\+State}} (\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a621ece5c0cfdd772b0aeaba2e399a61d}{reflink}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState}{Fight\+State}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState_aa7f0d84673283e31d231673680954995}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the logic of the \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState}{Fight\+State}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState_aa4dc8ecb3aa33d0d76ab4e17d15b609e}{draw}} (Graphics g)
+\begin{DoxyCompactList}\small\item\em Draws the content of the \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState}{Fight\+State}} on the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState_a0f825a4daf75bd6f69a8a8e3b6dfe756}{restore\+State}} ()
+\begin{DoxyCompactList}\small\item\em Restores the \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState}{Fight\+State}} to its initial conditions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState_ac8ec34aba5a7699c1720baa2c7f46a93}{load\+State}} (boolean access)
+\begin{DoxyCompactList}\small\item\em Loads state-\/specific data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState_ac2591de8afd6722e607c21d6e1b3e963}{store\+State}} (boolean access)
+\begin{DoxyCompactList}\small\item\em Stores state-\/specific data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState_a0d156d34892c2eb24cfbda6562b7b78e}{set\+Enemy}} (\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy}{Enemy}} enemy)
+\begin{DoxyCompactList}\small\item\em Sets the enemy for the current fight. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState_ae7b1efc05c0114398de7569f1fbf5bee}{get\+State\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of this state. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classPaooGame_1_1States_1_1FightState_abf97e4dea62dd878421022d37ee4cae3}\label{classPaooGame_1_1States_1_1FightState_abf97e4dea62dd878421022d37ee4cae3}} 
-String {\bfseries state\+Name} = Constants.\+FIGHT\+\_\+\+STATE
-\end{DoxyCompactItemize}
+String \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState_abf97e4dea62dd878421022d37ee4cae3}{state\+Name}} = Constants.\+FIGHT\+\_\+\+STATE
+\begin{DoxyCompactList}\small\item\em The name identifier for this state. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents the turn-\/based combat state of the game. 
+
+This state manages the interaction between the player (hero) and an enemy. It handles turns, player actions (attack, flee, block), enemy actions, animations, UI elements (health bars, buttons, popups), and transitions to other states (\mbox{\hyperlink{classPaooGame_1_1States_1_1DeathState}{Death\+State}}, Victory leading back to Play\+State). It features a fade-\/in effect upon entering and fade-\/out effects for transitions.
+
+A blocking mechanic is implemented using a progress bar during the enemy\textquotesingle{}s turn. On the enemy turn the progress values will vary between 0 and 50. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1FightState_af9a49c756c18e6c20046c872a29c6f89}\label{classPaooGame_1_1States_1_1FightState_af9a49c756c18e6c20046c872a29c6f89}} 
+\index{PaooGame.States.FightState@{PaooGame.States.FightState}!FightState@{FightState}}
+\index{FightState@{FightState}!PaooGame.States.FightState@{PaooGame.States.FightState}}
+\doxysubsubsection{\texorpdfstring{FightState()}{FightState()}}
+{\footnotesize\ttfamily Paoo\+Game.\+States.\+Fight\+State.\+Fight\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}}}]{reflink }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState}{Fight\+State}} object. 
+
+Initializes timers, UI elements (buttons, progress bar), and flags for managing the fight sequence. Sets up the player attack animation. 
+\begin{DoxyParams}{Parameters}
+{\em reflink} & A \mbox{\hyperlink{classPaooGame_1_1RefLinks}{Ref\+Links}} object providing access to game-\/wide resources and utilities. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1FightState_aa4dc8ecb3aa33d0d76ab4e17d15b609e}\label{classPaooGame_1_1States_1_1FightState_aa4dc8ecb3aa33d0d76ab4e17d15b609e}} 
+\index{PaooGame.States.FightState@{PaooGame.States.FightState}!draw@{draw}}
+\index{draw@{draw}!PaooGame.States.FightState@{PaooGame.States.FightState}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+States.\+Fight\+State.\+draw (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Draws the content of the \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState}{Fight\+State}} on the screen. 
+
+This method is called every frame to render all visual elements of the combat scene, including the background, enemy, UI elements (health bars, buttons, popups), attack animations, and fade effects. 
+\begin{DoxyParams}{Parameters}
+{\em g} & The \mbox{\hyperlink{}{Graphics}} context to draw on. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a61512d655ea178fd283fe57624b47250}{Paoo\+Game.\+States.\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1FightState_ae7b1efc05c0114398de7569f1fbf5bee}\label{classPaooGame_1_1States_1_1FightState_ae7b1efc05c0114398de7569f1fbf5bee}} 
+\index{PaooGame.States.FightState@{PaooGame.States.FightState}!getStateName@{getStateName}}
+\index{getStateName@{getStateName}!PaooGame.States.FightState@{PaooGame.States.FightState}}
+\doxysubsubsection{\texorpdfstring{getStateName()}{getStateName()}}
+{\footnotesize\ttfamily String Paoo\+Game.\+States.\+Fight\+State.\+get\+State\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the name of this state. 
+
+\begin{DoxyReturn}{Returns}
+The string identifier for this state, as defined in \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState_abf97e4dea62dd878421022d37ee4cae3}{state\+Name}}. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a256ead7c628d278ecda50a402465dab8}{Paoo\+Game.\+States.\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1FightState_ac8ec34aba5a7699c1720baa2c7f46a93}\label{classPaooGame_1_1States_1_1FightState_ac8ec34aba5a7699c1720baa2c7f46a93}} 
+\index{PaooGame.States.FightState@{PaooGame.States.FightState}!loadState@{loadState}}
+\index{loadState@{loadState}!PaooGame.States.FightState@{PaooGame.States.FightState}}
+\doxysubsubsection{\texorpdfstring{loadState()}{loadState()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+States.\+Fight\+State.\+load\+State (\begin{DoxyParamCaption}\item[{boolean}]{access }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Loads state-\/specific data. 
+
+This method is part of the \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} contract. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a90f74b9205e6fcb6232e264fd53bf14a}{Paoo\+Game.\+States.\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1FightState_a0f825a4daf75bd6f69a8a8e3b6dfe756}\label{classPaooGame_1_1States_1_1FightState_a0f825a4daf75bd6f69a8a8e3b6dfe756}} 
+\index{PaooGame.States.FightState@{PaooGame.States.FightState}!restoreState@{restoreState}}
+\index{restoreState@{restoreState}!PaooGame.States.FightState@{PaooGame.States.FightState}}
+\doxysubsubsection{\texorpdfstring{restoreState()}{restoreState()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+States.\+Fight\+State.\+restore\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Restores the \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState}{Fight\+State}} to its initial conditions. 
+
+This method is called when transitioning into this state or when resetting it. It resets all flags, timers, enemy references, strategies, UI states, and effect variables to ensure a clean start for a new fight. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_aec1c3e402381da4d4986c4eb957de55b}{Paoo\+Game.\+States.\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1FightState_a0d156d34892c2eb24cfbda6562b7b78e}\label{classPaooGame_1_1States_1_1FightState_a0d156d34892c2eb24cfbda6562b7b78e}} 
+\index{PaooGame.States.FightState@{PaooGame.States.FightState}!setEnemy@{setEnemy}}
+\index{setEnemy@{setEnemy}!PaooGame.States.FightState@{PaooGame.States.FightState}}
+\doxysubsubsection{\texorpdfstring{setEnemy()}{setEnemy()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+States.\+Fight\+State.\+set\+Enemy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPaooGame_1_1Entities_1_1Enemy}{Enemy}}}]{enemy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the enemy for the current fight. 
+
+This method is called to specify which enemy the player will be fighting. 
+\begin{DoxyParams}{Parameters}
+{\em enemy} & The \mbox{\hyperlink{}{Enemy}} entity to engage in combat. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_a1afa04fafde48966a2cbb66c053afe9f}{Paoo\+Game.\+States.\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1FightState_ac2591de8afd6722e607c21d6e1b3e963}\label{classPaooGame_1_1States_1_1FightState_ac2591de8afd6722e607c21d6e1b3e963}} 
+\index{PaooGame.States.FightState@{PaooGame.States.FightState}!storeState@{storeState}}
+\index{storeState@{storeState}!PaooGame.States.FightState@{PaooGame.States.FightState}}
+\doxysubsubsection{\texorpdfstring{storeState()}{storeState()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+States.\+Fight\+State.\+store\+State (\begin{DoxyParamCaption}\item[{boolean}]{access }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Stores state-\/specific data. 
+
+This method is part of the \mbox{\hyperlink{classPaooGame_1_1States_1_1State}{State}} contract. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_af91f335ebaff413a782926e17cd80276}{Paoo\+Game.\+States.\+State}}.
+
+\mbox{\Hypertarget{classPaooGame_1_1States_1_1FightState_aa7f0d84673283e31d231673680954995}\label{classPaooGame_1_1States_1_1FightState_aa7f0d84673283e31d231673680954995}} 
+\index{PaooGame.States.FightState@{PaooGame.States.FightState}!update@{update}}
+\index{update@{update}!PaooGame.States.FightState@{PaooGame.States.FightState}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Paoo\+Game.\+States.\+Fight\+State.\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the logic of the \mbox{\hyperlink{classPaooGame_1_1States_1_1FightState}{Fight\+State}}. 
+
+This method is called every game tick. It updates the fight strategy, handles turn-\/based logic, checks for win/loss conditions (enemy or hero death), manages transitions, and updates the scrolling background. 
+
+Reimplemented from \mbox{\hyperlink{classPaooGame_1_1States_1_1State_afafd048638af99f0f0b115ddec2fac1f}{Paoo\+Game.\+States.\+State}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

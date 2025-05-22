@@ -73,15 +73,18 @@ $(function() {
 <div class="title">PaooGame.Items.Item Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents an abstract base class for all items in the game.  
+ <a href="classPaooGame_1_1Items_1_1Item.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for PaooGame.Items.Item:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPaooGame_1_1Items_1_1Item__inherit__graph.png" border="0" usemap="#aPaooGame_8Items_8Item_inherit__map" alt="Inheritance graph"/></div>
 <map name="aPaooGame_8Items_8Item_inherit__map" id="aPaooGame_8Items_8Item_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,81,172,108"/>
-<area shape="rect" href="classPaooGame_1_1Items_1_1BoosterItem.html" title=" " alt="" coords="220,5,437,32"/>
-<area shape="rect" href="classPaooGame_1_1Items_1_1FloppyItem.html" title=" " alt="" coords="223,56,434,83"/>
-<area shape="rect" href="classPaooGame_1_1Items_1_1SaveItem.html" title=" " alt="" coords="229,107,428,133"/>
+<area shape="rect" title="Represents an abstract base class for all items in the game." alt="" coords="5,81,172,108"/>
+<area shape="rect" href="classPaooGame_1_1Items_1_1BonfireItem.html" title=" " alt="" coords="222,5,435,32"/>
+<area shape="rect" href="classPaooGame_1_1Items_1_1BoosterItem.html" title="Represents a specific type of item in the game that acts as a &quot;booster&quot;." alt="" coords="220,56,437,83"/>
+<area shape="rect" href="classPaooGame_1_1Items_1_1FloppyItem.html" title="Represents a &quot;floppy disk&quot; item in the game, used for saving progress." alt="" coords="223,107,434,133"/>
 <area shape="rect" href="classPaooGame_1_1Items_1_1WhipItem.html" title=" " alt="" coords="229,157,429,184"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -90,53 +93,245 @@ Collaboration diagram for PaooGame.Items.Item:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPaooGame_1_1Items_1_1Item__coll__graph.png" border="0" usemap="#aPaooGame_8Items_8Item_coll__map" alt="Collaboration graph"/></div>
 <map name="aPaooGame_8Items_8Item_coll__map" id="aPaooGame_8Items_8Item_coll__map">
-<area shape="rect" title=" " alt="" coords="53,199,219,225"/>
-<area shape="rect" href="classPaooGame_1_1Hitbox_1_1Hitbox.html" title=" " alt="" coords="5,109,192,136"/>
-<area shape="rect" href="classPaooGame_1_1Animations_1_1Animation.html" title=" " alt="" coords="217,109,458,136"/>
-<area shape="rect" href="classPaooGame_1_1RefLinks.html" title=" " alt="" coords="181,5,333,32"/>
+<area shape="rect" title="Represents an abstract base class for all items in the game." alt="" coords="53,199,219,225"/>
+<area shape="rect" href="classPaooGame_1_1Hitbox_1_1Hitbox.html" title="Represents a rectangular area used for collision detection." alt="" coords="5,109,192,136"/>
+<area shape="rect" href="classPaooGame_1_1Animations_1_1Animation.html" title="Abstract base class for managing and rendering sprite animations." alt="" coords="217,109,458,136"/>
+<area shape="rect" href="classPaooGame_1_1RefLinks.html" title="Provides a centralized way to access shared game objects and utilities." alt="" coords="181,5,333,32"/>
 <area shape="rect" title=" " alt="" coords="358,5,477,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4ce9501b511b1bc86e2e4cff2d6e753d"><td class="memItemLeft" align="right" valign="top"><a id="a4ce9501b511b1bc86e2e4cff2d6e753d"></a>
-<a class="el" href="classPaooGame_1_1Hitbox_1_1Hitbox.html">Hitbox</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getHitbox</b> ()</td></tr>
+<tr class="memitem:a11508734150c8d83791aac862819e68d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Items_1_1Item.html#a11508734150c8d83791aac862819e68d">Item</a> ()</td></tr>
+<tr class="memdesc:a11508734150c8d83791aac862819e68d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for the <a class="el" href="classPaooGame_1_1Items_1_1Item.html" title="Represents an abstract base class for all items in the game.">Item</a> class.  <a href="classPaooGame_1_1Items_1_1Item.html#a11508734150c8d83791aac862819e68d">More...</a><br /></td></tr>
+<tr class="separator:a11508734150c8d83791aac862819e68d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ce9501b511b1bc86e2e4cff2d6e753d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPaooGame_1_1Hitbox_1_1Hitbox.html">Hitbox</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Items_1_1Item.html#a4ce9501b511b1bc86e2e4cff2d6e753d">getHitbox</a> ()</td></tr>
+<tr class="memdesc:a4ce9501b511b1bc86e2e4cff2d6e753d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the hitbox of the item.  <a href="classPaooGame_1_1Items_1_1Item.html#a4ce9501b511b1bc86e2e4cff2d6e753d">More...</a><br /></td></tr>
 <tr class="separator:a4ce9501b511b1bc86e2e4cff2d6e753d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad06c92ff9c8d131aa918e2cc18cb7ae"><td class="memItemLeft" align="right" valign="top"><a id="aad06c92ff9c8d131aa918e2cc18cb7ae"></a>
-String&#160;</td><td class="memItemRight" valign="bottom"><b>getItemName</b> ()</td></tr>
+<tr class="memitem:aad06c92ff9c8d131aa918e2cc18cb7ae"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Items_1_1Item.html#aad06c92ff9c8d131aa918e2cc18cb7ae">getItemName</a> ()</td></tr>
+<tr class="memdesc:aad06c92ff9c8d131aa918e2cc18cb7ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the item.  <a href="classPaooGame_1_1Items_1_1Item.html#aad06c92ff9c8d131aa918e2cc18cb7ae">More...</a><br /></td></tr>
 <tr class="separator:aad06c92ff9c8d131aa918e2cc18cb7ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7ec8aa64141e0b859ac5b12f6c231ed"><td class="memItemLeft" align="right" valign="top"><a id="ac7ec8aa64141e0b859ac5b12f6c231ed"></a>
-String&#160;</td><td class="memItemRight" valign="bottom"><b>getItemSheetPath</b> ()</td></tr>
+<tr class="memitem:ac7ec8aa64141e0b859ac5b12f6c231ed"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Items_1_1Item.html#ac7ec8aa64141e0b859ac5b12f6c231ed">getItemSheetPath</a> ()</td></tr>
+<tr class="memdesc:ac7ec8aa64141e0b859ac5b12f6c231ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the file path to the item's sprite sheet.  <a href="classPaooGame_1_1Items_1_1Item.html#ac7ec8aa64141e0b859ac5b12f6c231ed">More...</a><br /></td></tr>
 <tr class="separator:ac7ec8aa64141e0b859ac5b12f6c231ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd85f5beb3846c53838fba92a9670455"><td class="memItemLeft" align="right" valign="top"><a id="afd85f5beb3846c53838fba92a9670455"></a>
-abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>drawItem</b> (Graphics g)</td></tr>
+<tr class="memitem:afd85f5beb3846c53838fba92a9670455"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Items_1_1Item.html#afd85f5beb3846c53838fba92a9670455">drawItem</a> (Graphics g)</td></tr>
+<tr class="memdesc:afd85f5beb3846c53838fba92a9670455"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method to draw the item on the screen.  <a href="classPaooGame_1_1Items_1_1Item.html#afd85f5beb3846c53838fba92a9670455">More...</a><br /></td></tr>
 <tr class="separator:afd85f5beb3846c53838fba92a9670455"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a2a13af135036ac8ef84026195d33e3"><td class="memItemLeft" align="right" valign="top"><a id="a1a2a13af135036ac8ef84026195d33e3"></a>
-abstract void&#160;</td><td class="memItemRight" valign="bottom"><b>updateItem</b> ()</td></tr>
+<tr class="memitem:a1a2a13af135036ac8ef84026195d33e3"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Items_1_1Item.html#a1a2a13af135036ac8ef84026195d33e3">updateItem</a> ()</td></tr>
+<tr class="memdesc:a1a2a13af135036ac8ef84026195d33e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method to update the item's state.  <a href="classPaooGame_1_1Items_1_1Item.html#a1a2a13af135036ac8ef84026195d33e3">More...</a><br /></td></tr>
 <tr class="separator:a1a2a13af135036ac8ef84026195d33e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:ae7a5f7d40d631eb4a91978b09a8468dd"><td class="memItemLeft" align="right" valign="top"><a id="ae7a5f7d40d631eb4a91978b09a8468dd"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>x</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Items_1_1Item.html#ae7a5f7d40d631eb4a91978b09a8468dd">x</a></td></tr>
+<tr class="memdesc:ae7a5f7d40d631eb4a91978b09a8468dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The x-coordinate of the item's position in the game world. <br /></td></tr>
 <tr class="separator:ae7a5f7d40d631eb4a91978b09a8468dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f7a182a96e794a61203b08e197a0e4f"><td class="memItemLeft" align="right" valign="top"><a id="a0f7a182a96e794a61203b08e197a0e4f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>y</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Items_1_1Item.html#a0f7a182a96e794a61203b08e197a0e4f">y</a></td></tr>
+<tr class="memdesc:a0f7a182a96e794a61203b08e197a0e4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The y-coordinate of the item's position in the game world. <br /></td></tr>
 <tr class="separator:a0f7a182a96e794a61203b08e197a0e4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef999c9876ade29ed0c53b0103dd8583"><td class="memItemLeft" align="right" valign="top"><a id="aef999c9876ade29ed0c53b0103dd8583"></a>
-String&#160;</td><td class="memItemRight" valign="bottom"><b>itemName</b></td></tr>
+String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Items_1_1Item.html#aef999c9876ade29ed0c53b0103dd8583">itemName</a></td></tr>
+<tr class="memdesc:aef999c9876ade29ed0c53b0103dd8583"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the item. <br /></td></tr>
 <tr class="separator:aef999c9876ade29ed0c53b0103dd8583"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5624470c01f4b6888593a952d404efbb"><td class="memItemLeft" align="right" valign="top"><a id="a5624470c01f4b6888593a952d404efbb"></a>
-String&#160;</td><td class="memItemRight" valign="bottom"><b>itemSheetPath</b></td></tr>
+String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Items_1_1Item.html#a5624470c01f4b6888593a952d404efbb">itemSheetPath</a></td></tr>
+<tr class="memdesc:a5624470c01f4b6888593a952d404efbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file path to the sprite sheet used for the item's animation. <br /></td></tr>
 <tr class="separator:a5624470c01f4b6888593a952d404efbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba63551028c0008287489869a0a363a9"><td class="memItemLeft" align="right" valign="top"><a id="aba63551028c0008287489869a0a363a9"></a>
-<a class="el" href="classPaooGame_1_1Hitbox_1_1Hitbox.html">Hitbox</a>&#160;</td><td class="memItemRight" valign="bottom"><b>hitbox</b></td></tr>
+<a class="el" href="classPaooGame_1_1Hitbox_1_1Hitbox.html">Hitbox</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Items_1_1Item.html#aba63551028c0008287489869a0a363a9">hitbox</a></td></tr>
+<tr class="memdesc:aba63551028c0008287489869a0a363a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The hitbox associated with the item, used for collision detection. <br /></td></tr>
 <tr class="separator:aba63551028c0008287489869a0a363a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3c0631292ce05c4364bde12bf978dfe"><td class="memItemLeft" align="right" valign="top"><a id="ae3c0631292ce05c4364bde12bf978dfe"></a>
-<a class="el" href="classPaooGame_1_1Animations_1_1Animation.html">Animation</a>&#160;</td><td class="memItemRight" valign="bottom"><b>animation</b></td></tr>
+<a class="el" href="classPaooGame_1_1Animations_1_1Animation.html">Animation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPaooGame_1_1Items_1_1Item.html#ae3c0631292ce05c4364bde12bf978dfe">animation</a></td></tr>
+<tr class="memdesc:ae3c0631292ce05c4364bde12bf978dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The animation object responsible for rendering the item's sprites. <br /></td></tr>
 <tr class="separator:ae3c0631292ce05c4364bde12bf978dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents an abstract base class for all items in the game. </p>
+<p>This class defines the common properties and behaviors that all game items should possess, such as position, name, associated sprite sheet path, hitbox for collision detection, and an animation. Concrete item types must extend this class and implement the abstract methods for drawing and updating their specific logic. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a11508734150c8d83791aac862819e68d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11508734150c8d83791aac862819e68d">&#9670;&nbsp;</a></span>Item()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PaooGame.Items.Item.Item </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default constructor for the <a class="el" href="classPaooGame_1_1Items_1_1Item.html" title="Represents an abstract base class for all items in the game.">Item</a> class. </p>
+<p>Initializes a new item. Concrete subclasses are responsible for setting the specific properties like position, name, sprite sheet, hitbox, and animation. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="afd85f5beb3846c53838fba92a9670455"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd85f5beb3846c53838fba92a9670455">&#9670;&nbsp;</a></span>drawItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void PaooGame.Items.Item.drawItem </td>
+          <td>(</td>
+          <td class="paramtype">Graphics&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Abstract method to draw the item on the screen. </p>
+<p>Concrete subclasses must implement this method to define how the item is rendered, typically using its animation. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>The <a class="el" href="">Graphics</a> context to draw on. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classPaooGame_1_1Items_1_1WhipItem.html#aa9765e74a124d29807d88840e71f7bbe">PaooGame.Items.WhipItem</a>, <a class="el" href="classPaooGame_1_1Items_1_1FloppyItem.html#aec170c0a60ca79675a06e05ade1819b5">PaooGame.Items.FloppyItem</a>, <a class="el" href="classPaooGame_1_1Items_1_1BoosterItem.html#a7be6ffc06f2fd12eff4d90f283c16f7c">PaooGame.Items.BoosterItem</a>, and <a class="el" href="classPaooGame_1_1Items_1_1BonfireItem.html#a918c6613fb11f64baec1788a83d9635e">PaooGame.Items.BonfireItem</a>.</p>
+
+</div>
+</div>
+<a id="a4ce9501b511b1bc86e2e4cff2d6e753d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ce9501b511b1bc86e2e4cff2d6e753d">&#9670;&nbsp;</a></span>getHitbox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classPaooGame_1_1Hitbox_1_1Hitbox.html">Hitbox</a> PaooGame.Items.Item.getHitbox </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the hitbox of the item. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="">Hitbox</a> object associated with this item. </dd></dl>
+
+</div>
+</div>
+<a id="aad06c92ff9c8d131aa918e2cc18cb7ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad06c92ff9c8d131aa918e2cc18cb7ae">&#9670;&nbsp;</a></span>getItemName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String PaooGame.Items.Item.getItemName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the name of the item. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string representing the item's name. </dd></dl>
+
+</div>
+</div>
+<a id="ac7ec8aa64141e0b859ac5b12f6c231ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7ec8aa64141e0b859ac5b12f6c231ed">&#9670;&nbsp;</a></span>getItemSheetPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String PaooGame.Items.Item.getItemSheetPath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the file path to the item's sprite sheet. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string representing the path to the sprite sheet. </dd></dl>
+
+</div>
+</div>
+<a id="a1a2a13af135036ac8ef84026195d33e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a2a13af135036ac8ef84026195d33e3">&#9670;&nbsp;</a></span>updateItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract void PaooGame.Items.Item.updateItem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">abstract</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Abstract method to update the item's state. </p>
+<p>Concrete subclasses must implement this method to define any logic that needs to be executed per game update cycle, such as updating its animation or position. </p>
+
+<p>Reimplemented in <a class="el" href="classPaooGame_1_1Items_1_1WhipItem.html#a263d79babebb5a8836bfc188edb971ec">PaooGame.Items.WhipItem</a>, <a class="el" href="classPaooGame_1_1Items_1_1FloppyItem.html#ae646e0f2517984fe6ed56fccd3972f91">PaooGame.Items.FloppyItem</a>, <a class="el" href="classPaooGame_1_1Items_1_1BoosterItem.html#a8645e7eff786bc0c9ebdff6354d54cb4">PaooGame.Items.BoosterItem</a>, and <a class="el" href="classPaooGame_1_1Items_1_1BonfireItem.html#a8101a213f21363c5bef84f4fd78fc853">PaooGame.Items.BonfireItem</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/PaooGame/Items/Item.java</li>
 </ul>
