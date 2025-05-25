@@ -101,13 +101,13 @@ public class Level1State extends State {
         for (Enemy enemy : enemies) {
             contextHUD.addTrigger(new MessageTriggerZone(
                     enemy, -30, -100, 120, 150, // offsetX, offsetY, width, height relative to enemy
-                    "Învinge tigrul!" // Message to display
+                    "Fight the tiger" // Message to display
             ));
         }
         // Add message trigger zone for level exit
         contextHUD.addTrigger(new MessageTriggerZone(
                 850, 600, 100, 50, // x, y, width, height (absolute coordinates)
-                "Sari în peșteră!" // Message to display
+                "Jump in the cave" // Message to display
         ));
     }
 

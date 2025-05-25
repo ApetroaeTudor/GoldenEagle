@@ -115,19 +115,19 @@ public class Level2State extends State {
     private void addMessageTriggers() {
         contextHUD.addTrigger(new MessageTriggerZone(
                 415, 150, 80, 50,
-                "Parcurge peștera pentru a trece la nivelul următor!"
+                "Explore the cave"
         ));
         contextHUD.addTrigger(new MessageTriggerZone(
                 800, 220, 80, 50,
-                "Ai grijă, unele flori sunt otrăvitoare! "
+                "Be careful, the spikes are deadly!"
         ));
         contextHUD.addTrigger(new MessageTriggerZone(
                 1830, 380, 60, 50,
-                "Calea către orașul uitat"
+                "Forgotten city"
         ));
         contextHUD.addTrigger(new MessageTriggerZone(
                 1500, 280, 60, 50,
-                "Acest jump este foarte riscant, asigură-te ca ești bine poziționat"
+                "Dangerous jump"
         ));
     }
 

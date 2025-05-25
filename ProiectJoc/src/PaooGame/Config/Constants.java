@@ -127,7 +127,6 @@ public class Constants {
     public static final String BOOT_ITEM_SHEET_PATH = "res/Items/EscapeItem.png";
     public static final String WHIP_FRAMED_SHEET_PATH = "res/Items/WhipFramed.png";
     public static final String BONFIRE_SHEET_PATH = "res/Items/save_bonfire.png";
-    public static final String SHADOW_PATH = "res/Items/shadow.png";
     public static final String SAVE_ITEM_PATH = "res/Items/SaveFloppy.png";
 
     public static final String LEVEL1_STATE = "LEVEL1_STATE";
