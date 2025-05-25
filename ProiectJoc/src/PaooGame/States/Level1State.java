@@ -8,6 +8,7 @@ import PaooGame.Camera.Camera;
 import PaooGame.Config.Constants;
 import PaooGame.Entities.Hero;
 import PaooGame.HUD.ContextHUD;
+import PaooGame.HUD.Gold;
 import PaooGame.HUD.MessageTriggerZone;
 import PaooGame.Input.MouseInput;
 import PaooGame.Items.FloppyItem;
@@ -39,6 +40,7 @@ public class Level1State extends State {
     private Level1 level1;                              ///< The Level1 map data object.
     private Camera camera;                              ///< The game camera for this level.
     private PauseButton pauseButton;                    ///< The UI button to pause the game.
+    private Gold gold;
     private int levelWidth;                             ///< The total width of the level in pixels.
     private int levelHeight;                            ///< The total height of the level in pixels.
     private int tiger1X =Constants.TIGER1_X;            ///< Initial x-coordinate for the first tiger enemy.
@@ -75,7 +77,7 @@ public class Level1State extends State {
         this.level1 = level1;
         camera = new Camera(0, 0);
         this.contextHUD = new ContextHUD(refLink.getHero());
-
+        this.gold= new Gold(refLink.getHero());
         // Initialize save points (bonfires)
         this.saves = new BonfireItem[this.nrOfSaves];
         this.saves[0] = new BonfireItem(this.reflink,Constants.LEVEL1_SAVE1_X,Constants.LEVEL1_SAVE1_Y);
@@ -215,6 +217,7 @@ public class Level1State extends State {
         g2d.setTransform(originalTransform);
         this.reflink.getHero().DrawHealthBar(g); // Draw hero health bar (HUD)
         pauseButton.draw(g2d); // Draw pause button (HUD)
+        gold.draw(g2d);
         contextHUD.draw(g2d); // Draw contextual messages (HUD)
     }
 

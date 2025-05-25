@@ -9,6 +9,7 @@ import PaooGame.Entities.Enemy;
 import PaooGame.Entities.Entity;
 import PaooGame.Entities.NPC;
 import PaooGame.HUD.ContextHUD;
+import PaooGame.HUD.Gold;
 import PaooGame.HUD.MessageTriggerZone;
 import PaooGame.HUD.PauseButton;
 import PaooGame.Input.MouseInput;
@@ -42,7 +43,7 @@ public class Level2State extends State {
     private PauseButton pauseButton;                        ///< The UI button to pause the game.
     private int levelWidth;                                 ///< The total width of the level in pixels.
     private int levelHeight;                                ///< The total height of the level in pixels.
-
+    private Gold gold;
     protected boolean transitioning = false;                ///< General flag indicating if a transition (fade) to another level or state is in progress.
     protected boolean transition_to_fight = false;          ///< Flag indicating a transition to FightState.
     private boolean isCameraSet = false;                    ///< Flag indicating if the camera has been initially set
@@ -80,7 +81,7 @@ public class Level2State extends State {
         this.floppyDisks = new FloppyItem[this.nrOfSaves];
         this.boosters = new BoosterItem[this.nrOfBoosters];
         this.npcs = new Entity[this.nrOfNpcs];
-
+        this.gold = new Gold(reflink.getHero());
         this.boosters[0] = new BoosterItem(this.reflink, Constants.BOOSTER1_X, Constants.BOOSTER1_Y);
         this.boosters[1] = new BoosterItem(this.reflink, Constants.BOOSTER2_X, Constants.BOOSTER2_Y);
         this.boosters[2] = new BoosterItem(this.reflink, Constants.BOOSTER3_X, Constants.BOOSTER3_Y);
@@ -114,19 +115,19 @@ public class Level2State extends State {
     private void addMessageTriggers() {
         contextHUD.addTrigger(new MessageTriggerZone(
                 415, 150, 80, 50,
-                "Parcurge peste pentru a trece la nivelul următor!"
+                "Parcurge peștera pentru a trece la nivelul următor!"
         ));
         contextHUD.addTrigger(new MessageTriggerZone(
                 800, 220, 80, 50,
-                "Ai grija, unde flori sunt otravitoare! "
+                "Ai grijă, unele flori sunt otrăvitoare! "
         ));
         contextHUD.addTrigger(new MessageTriggerZone(
                 1830, 380, 60, 50,
-                "Apasa E pentru a deschide usa catre nivelul 3"
+                "Calea către orașul uitat"
         ));
         contextHUD.addTrigger(new MessageTriggerZone(
                 1500, 280, 60, 50,
-                "Acest jump este foarte riscant, asigura te ca esti bine pozitionat"
+                "Acest jump este foarte riscant, asigură-te ca ești bine poziționat"
         ));
     }
 
@@ -222,6 +223,7 @@ public class Level2State extends State {
 
         this.reflink.getHero().DrawHealthBar(g); // Draw hero health bar
         pauseButton.draw(g2d); // Draw pause button
+        gold.draw(g2d);
         this.contextHUD.draw(g2d); // Draw contextual messages
     }
 

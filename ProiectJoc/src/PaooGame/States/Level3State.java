@@ -5,6 +5,7 @@ import PaooGame.CustomExceptions.AccessNotPermittedException;
 import PaooGame.CustomExceptions.DataBufferNotReadyException;
 import PaooGame.CustomExceptions.ValueStoreException;
 import PaooGame.Entities.Enemy;
+import PaooGame.HUD.Gold;
 import PaooGame.HUD.PauseButton;
 import PaooGame.Input.MouseInput;
 import PaooGame.Items.FloppyItem;
@@ -39,6 +40,7 @@ public class Level3State extends State{
     private PauseButton pauseButton;                        ///< The UI button to pause the game.
     private int levelWidth;                                 ///< The total width of the level in pixels.
     private int levelHeight;                                ///< The total height of the level in pixels.
+    private Gold gold;
 
     private LinkedList<Point> MarkedHooks;                  ///< List of active grapple hook locations.
     private Timer unmarkHookTimer;                          ///< Timer to clear a marked grapple hook.
@@ -84,7 +86,7 @@ public class Level3State extends State{
         this.whip = new WhipItem(this.reflink,Constants.WHIP_POSITION_X,Constants.WHIP_POSITION_Y);
         this.saves = new BonfireItem[this.nrOfSaves];
         this.floppyDisks = new FloppyItem[this.nrOfSaves];
-
+        this.gold  = new Gold(reflink.getHero());
         this.level3 = level3;
         this.MarkedHooks = new LinkedList<Point>();
         levelWidth = Constants.LEVEL3_WIDTH*Constants.TILE_SIZE;
@@ -263,7 +265,7 @@ public class Level3State extends State{
         g2d.setTransform(originalTransform);
         this.reflink.getHero().DrawHealthBar(g);
         pauseButton.draw(g2d);
-
+        gold.draw(g2d);
 
     }
 

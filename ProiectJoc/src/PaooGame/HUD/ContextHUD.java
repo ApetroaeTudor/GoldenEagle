@@ -113,7 +113,7 @@ public class ContextHUD extends HUD {
 
             // Fixed position
             int boxX = Constants.WINDOW_WIDTH / 2 - textWidth / 2 - padding;
-            int boxY = 120; // Fixed Y position for the message box
+            int boxY = 50; // Fixed Y position for the message box
             int boxWidth = textWidth + padding * 2;
             int boxHeight = textHeight + padding;
 
