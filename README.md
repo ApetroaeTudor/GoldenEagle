@@ -1,7 +1,6 @@
 # PROIECT PAOO
 
 # Golden Eagle
-### Apetroae Tudor - Macovei Paul
 
 ## Notable features
 
