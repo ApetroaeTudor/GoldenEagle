@@ -15,8 +15,6 @@ import PaooGame.Config.Constants;
  */
 public class Tile
 {
-    public static final int TILE_WIDTH  = 48;       ///< Default width of a tile in pixels. Note: This might conflict with Constants.TILE_SIZE if they are different.
-    public static final int TILE_HEIGHT = 48;       ///< Default height of a tile in pixels. Note: This might conflict with Constants.TILE_SIZE if they are different.
 
     protected BufferedImage img;                    ///< The image representing this tile.
     protected final int id;                         ///< The unique identifier for this tile type.

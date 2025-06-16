@@ -6,9 +6,9 @@
 ## Notable features
 
 ### 3 Levels
-**Level 1** - Forest, with tigers as enemies<br>
+**Level 1** - Forest, with tigers as enemies.<br>
 **Level 2** - Cave, with different types of skeletons as enemies. Here the player can find a goblin NPC that sells potions.<br>
-**Level 3** -  Ancient city. Here the player must face different enemies such as a wizard, minotaurs and ghosts. The player must progress using a grappling hook.<br>
+**Level 3** - Ancient city. Here the player must face different enemies such as a wizard, minotaurs and ghosts. The player must progress using a grappling hook.<br>
 
 ### Map loading
 **The levels** are tile-based, loaded using the Flyweight design pattern to prevent loading the same resources into memory multiple times.<br>
@@ -31,7 +31,7 @@ The player can also **jump** by pressing SPACE.<br>
 **Collisions** are implemented using a special **Behavior CSV**, from which the current tile behavior is deduced. For example, tile ID 0 means death.<br>
 
 ### Saving and Loading
-**Saving and Loadind** is realized through the use of an sqlite database, using a JDBC driver. The data management system is implemented using a Proxy Design Pattern. Between the database and the actual game lies a data buffer, into which data is first loaded.<br>
+**Saving and Loading** is done through the use of an sqlite database, using a JDBC driver. The data management system is implemented using a Proxy Design Pattern. Between the database and the actual game lies a data buffer, into which data is first loaded.<br>
 
 ### Exception handling
 Some data validation **exceptions** are managed with custom classes derived from the java Exception clas.<br>

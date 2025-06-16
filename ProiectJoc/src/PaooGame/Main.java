@@ -21,6 +21,11 @@ public class Main
      */
     public static void main(String[] args)
     {
+
+        int a[] = new int[10];
+        a[1]= 10;
+        System.out.println(a[1]);
+
         // Create a new Game instance with the title "GoldenEagle" and dimensions from Constants
         Game paooGame = new Game("GoldenEagle", Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT);
         // Start the game
